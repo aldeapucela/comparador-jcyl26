@@ -180,13 +180,11 @@ export function toggleContext() {
 }
 
 function normalizePartyId(id) {
-    const mapping = {
-        'PP': 'pp',
-        'PSOE': 'psoe',
-        'EN_COMUN': 'en-comun',
-        'MEV': 'mev'
-    };
-    return mapping[id] || id.toLowerCase();
+    // Convert to lowercase and replace spaces/special chars with hyphens
+    return id.toLowerCase()
+        .replace(/[^a-z0-9]/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
 }
 
 export function calculateAndShowResults() {

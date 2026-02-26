@@ -133,6 +133,15 @@ function setupEventListeners() {
     }
 }
 
+// Helper function to normalize party ID (same as in afinidad.js)
+function normalizePartyId(id) {
+    // Convert to lowercase and replace spaces/special chars with hyphens
+    return id.toLowerCase()
+        .replace(/[^a-z0-9]/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+}
+
 // Helper function to generate page titles for Matomo
 function getPageTitle(hash) {
     const parts = hash.split('/').filter(p => p && p !== '#');
@@ -153,7 +162,7 @@ function getPageTitle(hash) {
     }
     
     // Find party name
-    const party = appState.allData[partyId];
+    const party = appState.allData[partyId] || appState.allData[normalizePartyId(partyId)];
     if (party) {
         return `${party.name} - Programa Electoral CyL 2026`;
     }
