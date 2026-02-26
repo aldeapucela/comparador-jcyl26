@@ -379,8 +379,8 @@ function renderCategoryBreakdown(winnerData) {
 function setupShareLinks(results) {
     const sorted = Object.entries(results).sort((a, b) => b[1].affinity - a[1].affinity);
     const winner = PARTIES.find(p => p.id === sorted[0][0]);
-    const shareUrlForImage = `${window.location.host}${window.location.pathname}#afinidad`;
-    const shareUrl = `${window.location.origin}${window.location.pathname}#afinidad`;
+    const shareUrlForImage = `${window.location.host}${window.location.pathname}#/afinidad`;
+    const shareUrl = `${window.location.origin}${window.location.pathname}#/afinidad`;
     const shareText = `Mi resultado en el Cuestionario de Afinidad CyL 2026: ${sorted[0][1].affinity}% afín a ${winner.name}\n\nDescubre la tuya:\n${shareUrl}`;
     
     // Share button - copy text result
@@ -480,9 +480,6 @@ function setupShareLinks(results) {
         
         btn.innerHTML = originalText;
     };
-    
-    // Hide Twitter button
-    document.getElementById('afinidad-share-twitter').classList.add('hidden');
 }
 
 function showCopiedMessage() {
