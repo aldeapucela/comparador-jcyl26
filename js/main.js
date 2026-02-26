@@ -4,7 +4,7 @@
 
 import { PARTIES, fetchPartyData, fetchAllPartiesData, getCategoriesFromProposals, CATEGORIES } from './api.js';
 import { UI } from './ui.js';
-import { initAfinidad, renderQuestion, handleAnswer, toggleImportant, nextQuestion, prevQuestion, toggleContext, loadFromUrl, calculateAndShowResults, setSharedResults } from './afinidad.js';
+import { initAfinidad, renderQuestion, handleAnswer, toggleImportant, nextQuestion, prevQuestion, toggleContext, loadFromUrl, calculateAndShowResults, setSharedResults, startAfinidad } from './afinidad.js';
 
 let appState = {
     selectedParty: null,
@@ -224,7 +224,7 @@ async function handleRouting() {
                 window.location.hash = '#/afinidad';
             }
         } else {
-            // Start new cuestionario
+            // Show cuestionario (will restore session state if available)
             UI.switchView('afinidad');
             renderQuestion();
         }

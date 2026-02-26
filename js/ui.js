@@ -476,6 +476,13 @@ export const UI = {
             this.containers.headerActions.classList.remove('hidden');
             if (stickyBar) stickyBar.classList.add('-translate-y-full');
             if (mobileFilter) mobileFilter.classList.add('hidden');
+            
+            // Remove sticky party identity bar when in afinidad view
+            const existingBar = document.getElementById('sticky-party-identity');
+            if (existingBar) {
+                existingBar.remove();
+            }
+            
             window.scrollTo(0, 0);
         }
     },

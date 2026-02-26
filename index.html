@@ -321,14 +321,20 @@
 
                 <!-- Share Section -->
                 <div id="afinidad-share" class="max-w-2xl mx-auto text-center space-y-4">
-                    <div class="flex justify-center gap-3">
-                        <button id="afinidad-share-copy" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl transition-colors font-medium flex items-center">
+                    <div class="flex flex-col sm:flex-row justify-center gap-3">
+                        <button id="afinidad-share-copy" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl transition-colors font-medium flex items-center justify-center">
                             <i class="fa-solid fa-link mr-2"></i>
                             <span>Compartir cuestionario</span>
                         </button>
-                        <button id="afinidad-share-image" class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl transition-colors font-medium flex items-center">
+                        <button id="afinidad-share-image" class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl transition-colors font-medium flex items-center justify-center">
                             <i class="fa-solid fa-image mr-2"></i>
                             <span>Compartir resultado</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-center">
+                        <button id="afinidad-restart" class="px-6 py-3 bg-slate-600 hover:bg-slate-700 text-white rounded-xl transition-colors font-medium flex items-center">
+                            <i class="fa-solid fa-redo mr-2"></i>
+                            <span>Hacer de nuevo</span>
                         </button>
                     </div>
                     <p id="afinidad-share-copied" class="text-green-600 text-sm hidden">¡Copiado al portapapeles!</p>

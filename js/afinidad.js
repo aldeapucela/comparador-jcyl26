@@ -43,7 +43,8 @@ let afinidadState = {
     partyScores: {},
     currentIndex: 0,
     answers: {},
-    importantQuestions: new Set()
+    importantQuestions: new Set(),
+    restored: false
 };
 
 function getStorageKey() {
@@ -51,47 +52,99 @@ function getStorageKey() {
 }
 
 export async function initAfinidad() {
-    try {
-        const [questionsRes, scoresRes] = await Promise.all([
-            fetch('./data/master-questions.json'),
-            fetch('./data/party-scores.json')
-        ]);
-        
-        afinidadState.questions = await questionsRes.json();
-        afinidadState.partyScores = await scoresRes.json();
-        
-        loadFromSession();
+    // Load data
+    return Promise.all([
+        fetch('./data/master-questions.json').then(r => r.json()),
+        fetch('./data/party-scores.json').then(r => r.json())
+    ]).then(([questions, partyScores]) => {
+        afinidadState.questions = questions;
+        afinidadState.partyScores = partyScores;
         return true;
-    } catch (error) {
+    }).catch(error => {
         console.error('Error loading afinidad data:', error);
         return false;
-    }
+    });
 }
 
-function loadFromSession() {
-    const saved = sessionStorage.getItem(getStorageKey());
+// Reset afinidad state to start fresh
+function resetAfinidadState() {
+    afinidadState.currentIndex = 0;
+    afinidadState.answers = {};
+    afinidadState.importantQuestions = new Set();
+    afinidadState.restored = false;
+    
+    // Clear persisted storage
+    localStorage.removeItem(getStorageKey());
+}
+
+function loadFromSession(autoComplete = true) {
+    const saved = localStorage.getItem(getStorageKey());
     if (saved) {
         try {
             const data = JSON.parse(saved);
             afinidadState.answers = data.answers || {};
             afinidadState.importantQuestions = new Set(data.importantQuestions || []);
             afinidadState.currentIndex = data.currentIndex || 0;
+            
+            // If completed, show results directly
+            if (data.completed && data.results) {
+                renderResults(data.results);
+                return true; // Indicate results were loaded
+            }
+
+            // If all questions are answered, recompute results and show them
+            if (autoComplete && afinidadState.questions?.length && Object.keys(afinidadState.answers).length >= afinidadState.questions.length) {
+                const results = calculateAffinity();
+                renderResults(results);
+                return true;
+            }
         } catch (e) {
             console.error('Error parsing saved data:', e);
         }
     }
+    return false; // No results loaded
 }
 
 function saveToSession() {
+    // If we already have a completed result saved, do not overwrite it.
+    // This prevents losing results on reload and falling back to the last question.
+    const existing = localStorage.getItem(getStorageKey());
+    if (existing) {
+        try {
+            const parsed = JSON.parse(existing);
+            if (parsed?.completed && parsed?.results) {
+                return;
+            }
+        } catch (e) {
+            // If parsing fails, we proceed to overwrite with fresh state.
+        }
+    }
+
     const data = {
         answers: afinidadState.answers,
         importantQuestions: Array.from(afinidadState.importantQuestions),
         currentIndex: afinidadState.currentIndex
     };
-    sessionStorage.setItem(getStorageKey(), JSON.stringify(data));
+    localStorage.setItem(getStorageKey(), JSON.stringify(data));
+}
+
+export function startAfinidad() {
+    // Reset state for fresh start when user begins questionnaire
+    resetAfinidadState();
+    renderQuestion();
 }
 
 export function renderQuestion() {
+    // Restore persisted state only once per view entry.
+    // This prevents auto-complete to results from triggering right after answering the last question.
+    if (!afinidadState.restored) {
+        const resultsLoaded = loadFromSession(true);
+        afinidadState.restored = true;
+        if (resultsLoaded) {
+            return; // Results were loaded and displayed
+        }
+    }
+    
     const q = afinidadState.questions[afinidadState.currentIndex];
     if (!q) return;
 
@@ -243,8 +296,8 @@ function calculateAffinity() {
             totalDistance
         };
     }
-    
-    renderResults(results);
+
+    return results;
 }
 
 function calculateMaxDistance() {
@@ -257,6 +310,16 @@ function renderResults(results) {
     document.getElementById('afinidad-question-card').classList.add('hidden');
     document.getElementById('afinidad-progress').classList.add('hidden');
     document.getElementById('afinidad-results').classList.remove('hidden');
+    
+    // Save completion state to session
+    const completionData = {
+        answers: afinidadState.answers,
+        importantQuestions: Array.from(afinidadState.importantQuestions),
+        currentIndex: afinidadState.currentIndex,
+        completed: true,
+        results: results
+    };
+    localStorage.setItem(getStorageKey(), JSON.stringify(completionData));
     
     const sorted = Object.entries(results).sort((a, b) => b[1].affinity - a[1].affinity);
     
@@ -486,6 +549,25 @@ function setupShareLinks(results) {
         
         btn.innerHTML = originalText;
     };
+    
+    // Restart button
+    const restartBtn = document.getElementById('afinidad-restart');
+    if (restartBtn) {
+        restartBtn.onclick = () => {
+            resetAfinidadState();
+
+            const resultsEl = document.getElementById('afinidad-results');
+            const questionCardEl = document.getElementById('afinidad-question-card');
+            const progressEl = document.getElementById('afinidad-progress');
+
+            if (resultsEl) resultsEl.classList.add('hidden');
+            if (questionCardEl) questionCardEl.classList.remove('hidden');
+            if (progressEl) progressEl.classList.remove('hidden');
+
+            window.scrollTo(0, 0);
+            renderQuestion();
+        };
+    }
 }
 
 // Track anonymous affinity result with Matomo
