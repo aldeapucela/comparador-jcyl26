@@ -190,6 +190,14 @@ function normalizePartyId(id) {
 }
 
 export function calculateAndShowResults() {
+    const results = calculateAffinity();
+    renderResults(results);
+    
+    // Track anonymous affinity result
+    trackAffinityResult(results);
+}
+
+function calculateAffinity() {
     const answers = afinidadState.answers;
     const partyScoresRaw = afinidadState.partyScores;
     const importantQuestions = afinidadState.importantQuestions;
@@ -480,6 +488,49 @@ function setupShareLinks(results) {
         
         btn.innerHTML = originalText;
     };
+}
+
+// Track anonymous affinity result with Matomo
+function trackAffinityResult(results) {
+    // Find the party with highest affinity
+    const sorted = Object.entries(results).sort((a, b) => b[1].affinity - a[1].affinity);
+    const winnerId = sorted[0][0];
+    const winnerAffinity = sorted[0][1].affinity;
+    
+    // Generate daily hash to prevent spam (based on date + user agent)
+    const today = new Date().toDateString();
+    const userAgent = navigator.userAgent;
+    const hash = btoa(today + userAgent).substring(0, 16);
+    
+    // Check if already tracked today
+    const storageKey = 'afinidad_tracked_' + hash;
+    if (localStorage.getItem(storageKey)) {
+        return; // Already tracked today
+    }
+    
+    // Track with Matomo as custom event
+    if (typeof _paq !== 'undefined') {
+        _paq.push(['trackEvent', 'Afinidad', 'Resultado', winnerId, winnerAffinity]);
+        
+        // Also track without value for compatibility
+        _paq.push(['trackEvent', 'Afinidad', 'Partido', winnerId]);
+        
+        // Mark as tracked today
+        localStorage.setItem(storageKey, 'true');
+        
+        // Clean old entries (keep only last 7 days)
+        const keys = Object.keys(localStorage);
+        const todayTime = new Date().getTime();
+        keys.forEach(key => {
+            if (key.startsWith('afinidad_tracked_')) {
+                const keyDate = new Date(key.substring(17)).getTime();
+                const sevenDaysAgo = todayTime - (7 * 24 * 60 * 60 * 1000);
+                if (keyDate < sevenDaysAgo) {
+                    localStorage.removeItem(key);
+                }
+            }
+        });
+    }
 }
 
 function showCopiedMessage() {
