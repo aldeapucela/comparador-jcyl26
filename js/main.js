@@ -169,6 +169,12 @@ function renderNavigation(categories) {
         const hash = (cat === 'Todas' || !cat) ? `#/${appState.selectedParty.id}` : `#/${appState.selectedParty.id}/${encodeURIComponent(cat)}`;
         window.location.hash = hash;
     });
+
+    // Also render proposals with floating navigation
+    UI.renderProposals(appState.currentData.propuestas, appState.currentCategory, appState.selectedParty, sortedCategories, (cat) => {
+        const hash = (cat === 'Todas' || !cat) ? `#/${appState.selectedParty.id}` : `#/${appState.selectedParty.id}/${encodeURIComponent(cat)}`;
+        window.location.hash = hash;
+    });
 }
 
 function doCategorySelect(category) {
@@ -177,7 +183,7 @@ function doCategorySelect(category) {
 
     const categories = getCategoriesFromProposals(appState.currentData.propuestas);
     renderNavigation(categories);
-    UI.renderProposals(appState.currentData.propuestas, appState.currentCategory, appState.selectedParty);
+    UI.renderProposals(appState.currentData.propuestas, appState.currentCategory, appState.selectedParty, categories, doCategorySelect);
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 

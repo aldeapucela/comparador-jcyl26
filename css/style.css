@@ -480,3 +480,26 @@ body {
     border-radius: 0.75rem 0 0 0.75rem; /* Match rounded-2xl */
     z-index: 1;
 }
+
+/* Floating Category Button */
+#floating-category-btn {
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+#floating-category-btn:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+#category-dropdown {
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.category-dropdown-item {
+    transition: all 0.2s ease;
+}
+
+.category-dropdown-item:hover {
+    padding-left: 1.25rem;
+}

@@ -84,7 +84,7 @@ export const UI = {
         this.setupMobileFilter(categories, activeCategory, onSelect);
     },
 
-    renderProposals(proposals, category, partyInfo) {
+    renderProposals(proposals, category, partyInfo, categories, onSelect) {
         let filtered;
         if (!category) {
             filtered = proposals;
@@ -132,6 +132,7 @@ export const UI = {
 
         this.renderStickyIdentity(partyInfo);
         this.updateMobileFilterLabel(category);
+        this.renderFloatingCategoryNavigation(categories, category, onSelect);
     },
 
     createProposalHTML(prop, partyInfo) {
@@ -194,6 +195,102 @@ export const UI = {
                 <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Comp. ${config.text}</span>
             </div>
         `;
+    },
+
+    renderFloatingCategoryNavigation(categories, activeCategory, onSelect) {
+        // Remove existing floating button
+        const existing = document.getElementById('floating-category-btn');
+        if (existing) existing.remove();
+
+        if (!categories || categories.length <= 1) return;
+
+        // Don't add "Todas" if it's already in the list
+        const allCategories = categories.includes('Todas') ? categories : ['Todas', ...categories];
+        const currentActiveCategory = activeCategory || 'Todas';
+
+        // Create floating button
+        const floatingBtn = document.createElement('button');
+        floatingBtn.id = 'floating-category-btn';
+        floatingBtn.className = 'fixed bottom-6 right-6 w-14 h-14 bg-slate-900 text-white rounded-full shadow-lg border border-slate-200 z-[60] transition-all duration-300 opacity-0 translate-y-full flex items-center justify-center hover:bg-slate-800 hover:scale-110';
+        floatingBtn.innerHTML = `
+            <i class="fa-solid fa-layer-group text-lg"></i>
+        `;
+
+        document.body.appendChild(floatingBtn);
+
+        // Setup scroll behavior
+        let scrollTimeout;
+        const showFloatingBtn = () => {
+            clearTimeout(scrollTimeout);
+            if (window.scrollY > 200) {
+                floatingBtn.classList.remove('opacity-0', 'translate-y-full');
+                floatingBtn.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                floatingBtn.classList.add('opacity-0', 'translate-y-full');
+                floatingBtn.classList.remove('opacity-100', 'translate-y-0');
+            }
+            
+            scrollTimeout = setTimeout(() => {
+                if (window.scrollY > 200) {
+                    floatingBtn.classList.add('opacity-100', 'translate-y-0');
+                    floatingBtn.classList.remove('opacity-0', 'translate-y-full');
+                }
+            }, 150);
+        };
+
+        window.addEventListener('scroll', showFloatingBtn);
+        
+        // Initial check
+        showFloatingBtn();
+
+        // Setup category dropdown on click
+        floatingBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            
+            // Remove existing dropdown
+            const existingDropdown = document.getElementById('category-dropdown');
+            if (existingDropdown) existingDropdown.remove();
+
+            // Create dropdown
+            const dropdown = document.createElement('div');
+            dropdown.id = 'category-dropdown';
+            dropdown.className = 'fixed bottom-24 right-6 bg-white border border-slate-200 rounded-2xl shadow-xl z-[70] max-h-80 overflow-y-auto min-w-48';
+            
+            const dropdownHTML = allCategories.map(cat => {
+                const isActive = cat === currentActiveCategory;
+                return `
+                    <button class="category-dropdown-item w-full text-left px-4 py-3 text-sm hover:bg-slate-50 transition-colors flex items-center justify-between ${
+                        isActive ? 'bg-slate-100 text-slate-900 font-semibold' : 'text-slate-700'
+                    }" data-category="${cat}">
+                        <span>${cat}</span>
+                        ${isActive ? '<i class="fa-solid fa-check text-slate-400"></i>' : ''}
+                    </button>
+                `;
+            }).join('');
+
+            dropdown.innerHTML = dropdownHTML;
+            document.body.appendChild(dropdown);
+
+            // Setup category selection
+            dropdown.querySelectorAll('.category-dropdown-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    onSelect(item.dataset.category);
+                    dropdown.remove();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+
+            // Close dropdown when clicking outside
+            const closeDropdown = (e) => {
+                if (!dropdown.contains(e.target) && e.target !== floatingBtn) {
+                    dropdown.remove();
+                    document.removeEventListener('click', closeDropdown);
+                }
+            };
+            setTimeout(() => {
+                document.addEventListener('click', closeDropdown);
+            }, 100);
+        });
     },
 
     renderStickyIdentity(partyInfo) {
@@ -335,9 +432,15 @@ export const UI = {
         const stickyBar = document.getElementById('sticky-party-identity');
         const mobileFilter = document.getElementById('mobile-filter-container');
         const duelSelector = document.getElementById('duel-selector-container');
+        const floatingNav = document.getElementById('floating-category-nav');
 
         // Hide all views first
         Object.values(this.views).forEach(view => view?.classList.add('hidden'));
+
+        // Clean up floating navigation when leaving detail view
+        if (floatingNav && viewName !== 'detail') {
+            floatingNav.remove();
+        }
 
         if (viewName === 'selection') {
             this.views.selection.classList.remove('hidden');
