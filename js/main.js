@@ -32,6 +32,12 @@ async function init() {
 
     UI.renderPartySelection();
     setupEventListeners();
+    
+    // Track initial page view
+    if (typeof _paq !== 'undefined') {
+        _paq.push(['trackPageView']);
+    }
+    
     handleRouting();
 }
 
@@ -130,6 +136,12 @@ function setupEventListeners() {
 async function handleRouting() {
     const hash = window.location.hash || '#/';
     const parts = hash.split('/').filter(p => p && p !== '#');
+
+    // Track page view with Matomo
+    if (typeof _paq !== 'undefined') {
+        _paq.push(['setCustomUrl', window.location.href]);
+        _paq.push(['trackPageView']);
+    }
 
     if (parts.length === 0) {
         UI.switchView('selection');
