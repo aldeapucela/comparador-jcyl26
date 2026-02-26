@@ -9,7 +9,8 @@ export const UI = {
     views: {
         selection: document.getElementById('view-party-selection'),
         detail: document.getElementById('view-party-detail'),
-        topic: document.getElementById('view-topic-first')
+        topic: document.getElementById('view-topic-first'),
+        afinidad: document.getElementById('view-afinidad')
     },
     containers: {
         parties: document.getElementById('parties-container'),
@@ -466,6 +467,12 @@ export const UI = {
             window.scrollTo(0, 0);
         } else if (viewName === 'topic') {
             this.views.topic.classList.remove('hidden');
+            this.containers.headerActions.classList.remove('hidden');
+            if (stickyBar) stickyBar.classList.add('-translate-y-full');
+            if (mobileFilter) mobileFilter.classList.add('hidden');
+            window.scrollTo(0, 0);
+        } else if (viewName === 'afinidad') {
+            this.views.afinidad.classList.remove('hidden');
             this.containers.headerActions.classList.remove('hidden');
             if (stickyBar) stickyBar.classList.add('-translate-y-full');
             if (mobileFilter) mobileFilter.classList.add('hidden');

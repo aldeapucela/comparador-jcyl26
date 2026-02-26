@@ -31,6 +31,7 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     </head>
@@ -79,6 +80,23 @@
                     <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </button>
                 <p class="text-slate-400 mt-4 text-sm font-light">Sanidad, Vivienda, Empleo...</p>
+            </div>
+
+            <div class="max-w-md mx-auto mb-16 text-center">
+                <!-- Temporarily hidden button - uncomment to show
+                <button id="btn-goto-afinidad"
+                    class="group relative w-full bg-gradient-to-br from-indigo-50 to-white text-indigo-700 border border-indigo-200/60 p-6 rounded-2xl font-semibold text-lg shadow-sm hover:shadow-lg hover:border-indigo-300/80 transition-all duration-300 active:scale-[0.98] overflow-hidden">
+                    <div class="relative z-10 flex items-center justify-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-100/50 flex items-center justify-center group-hover:bg-indigo-200/50 transition-colors">
+                            <i class="fa-solid fa-heart-pulse text-indigo-600"></i>
+                        </div>
+                        <span>Cuestionario de Afinidad</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-purple-50/30 via-transparent to-pink-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-200 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </button>
+                <p class="text-slate-400 mt-4 text-sm font-light">Descubre qué partido se parece más a ti</p>
+                -->
             </div>
 
             <h2 class="text-2xl font-light text-center mb-12 text-slate-700">O elige una formación para explorar su
@@ -232,6 +250,160 @@
             <div id="comparison-results" class="space-y-16">
                 <!-- Dynamic: Measures grid -->
             </div>
+        </section>
+
+        <!-- View: Cuestionario de Afinidad -->
+        <section id="view-afinidad" class="hidden fade-in">
+            <!-- Progress Bar -->
+            <div id="afinidad-progress" class="mb-8">
+                <div class="flex justify-between text-sm text-slate-500 mb-2">
+                    <span id="afinidad-progress-text">Pregunta 1 de 22</span>
+                    <span id="afinidad-progress-percent">0%</span>
+                </div>
+                <div class="h-2 bg-slate-200 rounded-full overflow-hidden">
+                    <div id="afinidad-progress-bar" class="h-full bg-indigo-600 transition-all duration-300" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Question Card -->
+            <div id="afinidad-question-card" class="max-w-2xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span id="afinidad-category-badge" class="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-semibold rounded-full"></span>
+                        <button id="afinidad-context-btn" class="ml-auto text-slate-400 hover:text-indigo-600 transition-colors" title="Ver contexto">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </button>
+                    </div>
+                    
+                    <h2 id="afinidad-question-text" class="text-xl md:text-2xl font-semibold text-slate-800 mb-8 leading-relaxed"></h2>
+                    
+                    <!-- Context Panel (hidden by default) -->
+                    <div id="afinidad-context-panel" class="hidden mb-6 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                        <p id="afinidad-context-content" class="text-sm text-slate-600"></p>
+                    </div>
+
+                    <!-- Response Options -->
+                    <div id="afinidad-options" class="space-y-3">
+                        <!-- Likert buttons will be rendered here -->
+                    </div>
+
+                    <!-- Importance Toggle -->
+                    <div class="mt-6 pt-4 border-t border-slate-100">
+                        <button id="afinidad-important-btn" class="flex items-center gap-2 text-sm text-slate-500 hover:text-amber-600 transition-colors">
+                            <i class="fa-regular fa-star"></i>
+                            <span>Este tema me importa mucho</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="flex justify-between mt-6">
+                    <button id="afinidad-prev" class="px-4 py-2 text-slate-500 hover:text-slate-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                        <i class="fa-solid fa-chevron-left mr-1"></i> Anterior
+                    </button>
+                    <button id="afinidad-next" class="px-4 py-2 text-indigo-600 hover:text-indigo-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                        Siguiente <i class="fa-solid fa-chevron-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results View (hidden until completion) -->
+            <div id="afinidad-results" class="hidden">
+                <!-- Winner Card -->
+                <div id="afinidad-winner" class="max-w-2xl mx-auto mb-8">
+                    <!-- Dynamic content -->
+                </div>
+
+                <!-- Bars Chart -->
+                <div id="afinidad-chart" class="max-w-2xl mx-auto mb-8 space-y-4">
+                    <!-- Dynamic content -->
+                </div>
+
+                <!-- Share Section -->
+                <div id="afinidad-share" class="max-w-2xl mx-auto text-center space-y-4">
+                    <div class="flex justify-center gap-3">
+                        <button id="afinidad-share-copy" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl transition-colors font-medium flex items-center">
+                            <i class="fa-solid fa-link mr-2"></i>
+                            <span>Compartir cuestionario</span>
+                        </button>
+                        <button id="afinidad-share-image" class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl transition-colors font-medium flex items-center">
+                            <i class="fa-solid fa-image mr-2"></i>
+                            <span>Compartir resultado</span>
+                        </button>
+                    </div>
+                    <p id="afinidad-share-copied" class="text-green-600 text-sm hidden">¡Copiado al portapapeles!</p>
+                </div>
+
+                <!-- Category Breakdown -->
+                <div id="afinidad-categories" class="max-w-2xl mx-auto mt-8">
+                    <!-- Dynamic content -->
+                </div>
+
+                <!-- Methodology Section -->
+                <div class="max-w-2xl mx-auto mt-8">
+                    <div class="bg-white rounded-xl border border-slate-200 p-6">
+                        <h3 class="text-lg font-semibold text-slate-800 mb-4">Metodología</h3>
+                        <p class="text-slate-600 mb-4 leading-relaxed">
+                            El cálculo mide tu afinidad con cada partido comparando tus respuestas. 
+                            Usamos una escala de 5 puntos y calculamos la distancia ideológica total.
+                        </p>
+                        <a href="./docs/metodologia.html" target="_blank" rel="noopener noreferrer" 
+                           class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium transition-colors">
+                            <i class="fa-solid fa-book-open mr-2"></i>
+                            Ver metodología completa
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Community Section -->
+                <div class="max-w-2xl mx-auto mt-8 space-y-6">
+                    <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+                        <div class="flex flex-col items-center text-left">
+                            <div class="w-14 h-14 rounded-full flex items-center justify-center mb-4 overflow-hidden bg-slate-100">
+                                <img src="img/favicon.png" alt="Aldea Pucela" class="w-8 h-8 object-contain">
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-semibold mb-3" style="color: rgb(80, 60, 96);">Aldea Pucela</h3>
+                            <p class="text-base md:text-lg leading-relaxed max-w-xl mb-6" style="color: rgb(80, 60, 96);">
+                                Somos la comunidad vecinal online más grande sobre Valladolid y apoyamos iniciativas que fomenten la participación ciudadana en la toma de decisiones municipales.
+                            </p>
+                            <a href="https://aldeapucela.org" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl font-semibold text-lg transition-colors" style="background-color: rgb(80, 60, 96); color: white;">
+                                Descubre la comunidad
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+                        <h3 class="text-xl md:text-xl font-semibold mb-3" style="color: rgb(80, 60, 96);">Síguenos para más novedades</h3>
+                        <p class="text-base md:text-lg mb-8" style="color: rgb(80, 60, 96);">Mantente al día de iniciativas, debates y más</p>
+
+                        <div class="grid grid-cols-2 gap-y-12">
+                            <a href="https://t.me/aldeapucela" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center text-center">
+                                <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fa-brands fa-telegram text-4xl text-sky-500"></i>
+                                </div>
+                                <span class="text-base font-semibold" style="color: rgb(80, 60, 96);">Telegram</span>
+                            </a>
+                            <a href="https://foro.aldeapucela.org" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center text-center">
+                                <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fa-regular fa-comment-dots text-4xl text-emerald-500"></i>
+                                </div>
+                                <span class="text-base font-semibold" style="color: rgb(80, 60, 96);">Foro</span>
+                            </a>
+                            <a href="https://creators.spotify.com/pod/show/aldea-pucela" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center text-center">
+                                <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fa-solid fa-podcast text-4xl text-purple-500"></i>
+                                </div>
+                                <span class="text-base font-semibold" style="color: rgb(80, 60, 96);">Podcasts</span>
+                            </a>
+                            <a href="https://bsky.app/profile/pucelobot.aldeapucela.org" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center text-center">
+                                <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                                    <img src="img/bluesky-square.png" alt="BlueSky" class="w-10 h-10 object-contain">
+                                </div>
+                                <span class="text-base font-semibold" style="color: rgb(80, 60, 96);">BlueSky</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
         </section>
     </main>
 

@@ -4,6 +4,7 @@
 
 import { PARTIES, fetchPartyData, fetchAllPartiesData, getCategoriesFromProposals, CATEGORIES } from './api.js';
 import { UI } from './ui.js';
+import { initAfinidad, renderQuestion, handleAnswer, toggleImportant, nextQuestion, prevQuestion, toggleContext, loadFromUrl, calculateAndShowResults, setSharedResults } from './afinidad.js';
 
 let appState = {
     selectedParty: null,
@@ -23,8 +24,11 @@ let appState = {
 };
 
 async function init() {
-    // 1. Bulk Load all data at start
+    // 1. Bulk Load all data at start (including afinidad data)
     appState.allData = await fetchAllPartiesData();
+    
+    // Also pre-load afinidad data
+    await initAfinidad();
 
     UI.renderPartySelection();
     setupEventListeners();
@@ -55,6 +59,42 @@ function setupEventListeners() {
             window.location.hash = '#/comparar';
         });
     }
+
+    // Goto Afinidad
+    const btnAfinidad = document.getElementById('btn-goto-afinidad');
+    if (btnAfinidad) {
+        btnAfinidad.addEventListener('click', () => {
+            window.location.hash = '#/afinidad';
+        });
+    }
+
+    // Afinidad event listeners
+    document.addEventListener('click', (e) => {
+        const option = e.target.closest('.afinidad-option');
+        if (option) {
+            handleAnswer(option.dataset.question, parseInt(option.dataset.value));
+        }
+        
+        const importantBtn = e.target.closest('#afinidad-important-btn');
+        if (importantBtn) {
+            toggleImportant();
+        }
+        
+        const prevBtn = e.target.closest('#afinidad-prev');
+        if (prevBtn) {
+            prevQuestion();
+        }
+        
+        const nextBtn = e.target.closest('#afinidad-next');
+        if (nextBtn) {
+            nextQuestion();
+        }
+        
+        const contextBtn = e.target.closest('#afinidad-context-btn');
+        if (contextBtn) {
+            toggleContext();
+        }
+    });
 
     // Comparison Mode: Party selection
     document.addEventListener('click', (e) => {
@@ -113,6 +153,27 @@ async function handleRouting() {
 
         UI.switchView('topic');
         renderComparison();
+        return;
+    }
+
+    // Check if it's afinidad mode
+    if (partyId === 'afinidad') {
+        const sharedData = parts[1] || null;
+        appState.mode = 'afinidad';
+        
+        if (sharedData) {
+            // Load from shared URL - show results directly
+            try {
+                await loadFromUrl(sharedData);
+            } catch (err) {
+                console.error('Error loading shared URL:', err);
+                window.location.hash = '#/afinidad';
+            }
+        } else {
+            // Start new cuestionario
+            UI.switchView('afinidad');
+            renderQuestion();
+        }
         return;
     }
 
