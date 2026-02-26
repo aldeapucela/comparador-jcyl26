@@ -183,11 +183,11 @@ export const UI = {
     renderCompetenceBadge(competence) {
         if (!competence) return '';
         const c = competence.toLowerCase();
-        let config = { icon: 'fa-circle-check', color: 'text-emerald-500', text: 'Directa' };
+        let config = { icon: 'fa-circle-check', color: 'text-emerald-500', text: 'Propia' };
         if (c.includes('compartida') || c.includes('coordinada') || c.includes('shared')) {
             config = { icon: 'fa-circle-nodes', color: 'text-amber-500', text: 'Compartida' };
-        } else if (c.includes('petición') || c.includes('petition')) {
-            config = { icon: 'fa-circle-arrow-up', color: 'text-rose-500', text: 'Petición' };
+        } else if (c.includes('petición') || c.includes('petition') || c.includes('estatal')) {
+            config = { icon: 'fa-circle-arrow-up', color: 'text-rose-500', text: 'Estatal' };
         }
         return `
             <div class="flex items-center gap-1.5" title="Competencia ${config.text}">
@@ -501,7 +501,7 @@ export const UI = {
 
             // Apply Quality Filters
             if (filters.rural) filtered = filtered.filter(p => p.analisis.foco_rural);
-            if (filters.competition) filtered = filtered.filter(p => p.analisis.competencia?.toLowerCase() === 'directa');
+            if (filters.competition) filtered = filtered.filter(p => p.analisis.competencia?.toLowerCase() === 'propia');
             if (filters.query) {
                 filtered = filtered.filter(p =>
                     p.titulo_corto.toLowerCase().includes(filters.query) ||
