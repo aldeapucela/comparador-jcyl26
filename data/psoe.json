@@ -1,0 +1,3072 @@
+{
+  "bloque_informacion": {
+    "rango_paginas": "1-118",
+    "estado": "finalizado"
+  },
+  "metadatos": {
+    "partido": "PSOE Castilla y León",
+    "candidato": "Carlos Martínez",
+    "lema": "Castilla y León: cambiar el modelo para activar su futuro",
+    "anio": 2026
+  },
+  "propuestas": [
+    {
+      "id": 1,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Nueva Ley de Ordenación del Sistema de Salud",
+      "resumen": "Desarrollo de una nueva ley para blindar recursos personales y materiales en todos los centros de salud y atención primaria.",
+      "cita_literal": "Desarrollaremos una nueva Ley de Ordenación del Sistema de Salud de Castilla y León",
+      "pagina": 14,
+      "tags": [
+        "#Gobernanza",
+        "#Salud"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Estaría usted de acuerdo con crear una nueva ley que garantice los recursos necesarios en todos los centros de salud?"
+    },
+    {
+      "id": 2,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Salud Pública",
+      "titulo_corto": "Creación de la primera Agencia de Salud Pública",
+      "resumen": "Crear una agencia para reducir desigualdades sanitarias, mejorar la calidad de vida y gestionar crisis sanitarias.",
+      "cita_literal": "Crearemos la primera Agencia de Salud Pública con el objetivo de reducir las desigualdades en atención sanitaria",
+      "pagina": 14,
+      "tags": [
+        "#AgenciaSalud",
+        "#Prevencion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parecería bien crear una Agencia de Salud Pública para coordinar mejor las crisis sanitarias y reducir desigualdades?"
+    },
+    {
+      "id": 3,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Financiación",
+      "titulo_corto": "25% del presupuesto sanitario para Atención Primaria",
+      "resumen": "Incrementar la inversión en infraestructuras y equipamiento de Atención Primaria hasta alcanzar el 25% del total del gasto sanitario.",
+      "cita_literal": "aumentando los recursos económicos destinados a Atención Primaria hasta el 25% del total del presupuesto sanitario",
+      "pagina": 15,
+      "tags": [
+        "#Presupuesto",
+        "#AtencionPrimaria"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría usted destinar al menos una cuarta parte del presupuesto total de salud específicamente a la atención primaria?"
+    },
+    {
+      "id": 4,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Listas de Espera",
+      "titulo_corto": "Ley de Lista de Espera Cero en Primaria",
+      "resumen": "Garantizar por ley que ninguna persona espere más de 48 horas para recibir atención sanitaria ordinaria en su centro de salud.",
+      "cita_literal": "Estableceremos por Ley la Lista de Espera Cero en la Atención Primaria. Ninguna persona tendrá que esperar más de 48 horas",
+      "pagina": 15,
+      "tags": [
+        "#ListasDeEspera",
+        "#Eficiencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Estaría de acuerdo con garantizar por ley un tiempo máximo de 48 horas para ser atendido por su médico de cabecera?"
+    },
+    {
+      "id": 5,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Personal",
+      "titulo_corto": "Aumento de plantillas de fisioterapeutas",
+      "resumen": "Incrementar las plantillas de fisioterapeutas para eliminar las listas de espera en rehabilitación.",
+      "cita_literal": "Aumentaremos las plantillas de fisioterapeutas para mejorar la atención rehabilitadora eliminando las listas de espera",
+      "pagina": 15,
+      "tags": [
+        "#Fisioterapia",
+        "#Rehabilitacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree necesario aumentar el número de fisioterapeutas en los centros públicos para reducir las esperas en rehabilitación?"
+    },
+    {
+      "id": 6,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Infraestructura Rural",
+      "titulo_corto": "Fondo específico para consultorios locales",
+      "resumen": "Creación de un fondo plurianual para subvencionar la adecuación y equipamiento de los consultorios locales en los pueblos.",
+      "cita_literal": "Crearemos un fondo específico, de ejecución plurianual, para subvencionar la adecuación y el equipamiento de consultorios locales",
+      "pagina": 15,
+      "tags": [
+        "#MedioRural",
+        "#Consultorios"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyaría la creación de un fondo especial para modernizar y equipar mejor los centros de salud de los pueblos pequeños?"
+    },
+    {
+      "id": 7,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Personal",
+      "titulo_corto": "Incremento de plantillas de enfermería",
+      "resumen": "Aumentar el número de enfermeras y enfermeros para alcanzar los estándares europeos de atención.",
+      "cita_literal": "Aumentaremos las plantillas de personal de enfermería... hasta cumplir con los estándares europeos",
+      "pagina": 15,
+      "tags": [
+        "#Enfermeria",
+        "#Personal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Estaría de acuerdo con aumentar la contratación de personal de enfermería para mejorar la calidad de los cuidados públicos?"
+    },
+    {
+      "id": 8,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Cuidados",
+      "titulo_corto": "Atención médica asegurada en residencias",
+      "resumen": "Garantizar ratios de un profesional de enfermería por cada 30 residentes en centros de dependientes grado II o III.",
+      "cita_literal": "Garantizaremos la atención médica y de enfermería en todas las residencias, estableciendo ratios de un personal de enfermería por cada 30 residentes",
+      "pagina": 15,
+      "tags": [
+        "#Residencias",
+        "#Mayores"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parecería bien obligar a que haya al menos una enfermera por cada 30 residentes en los centros de mayores?"
+    },
+    {
+      "id": 9,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Mayores",
+      "titulo_corto": "Plan Autonómico de Residencias Públicas",
+      "resumen": "Aprobación de un plan para garantizar la cobertura médica y asistencial residencial pública.",
+      "cita_literal": "aprobando un Plan Autonómico de Residencias Públicas que garantizará la cobertura médica residencial",
+      "pagina": 15,
+      "tags": [
+        "#ResidenciasPublicas",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría un plan para aumentar y mejorar la red de residencias de ancianos de gestión pública?"
+    },
+    {
+      "id": 10,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Personal Rural",
+      "titulo_corto": "Ayudas por accidentes en desplazamientos médicos rurales",
+      "resumen": "Cubrir gastos o indemnizaciones por accidentes ocurridos en el uso de vehículos propios del personal médico rural.",
+      "cita_literal": "Volveremos a incorporar ayudas que cubran los accidentes producidos en los trayectos del personal médico y de enfermería con sus vehículos propios",
+      "pagina": 15,
+      "tags": [
+        "#SanidadRural",
+        "#CondicionesLaborales"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería la Junta asegurar y compensar los accidentes de los médicos que usan su propio coche para ir a los pueblos?"
+    },
+    {
+      "id": 11,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Dependencia",
+      "titulo_corto": "Protocolos contra soledad y cronicidad",
+      "resumen": "Integración del trabajo de profesionales sanitarios y trabajadores sociales para atender la soledad no deseada.",
+      "cita_literal": "Desarrollaremos protocolos específicos sobre cronicidad, dependencia... y atención a la soledad no deseada",
+      "pagina": 15,
+      "tags": [
+        "#Soledad",
+        "#TrabajoSocial"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría coordinar mejor a médicos y trabajadores sociales para combatir la soledad de las personas mayores?"
+    },
+    {
+      "id": 12,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Prevención",
+      "titulo_corto": "Programas integrales de hábitos saludables",
+      "resumen": "Dotar de recursos para prevenir tabaquismo, alcoholismo, sedentarismo y obesidad.",
+      "cita_literal": "Dotaremos de los necesarios recursos humanos y materiales para abordar programas de prevención y promoción de hábitos saludables",
+      "pagina": 15,
+      "tags": [
+        "#Prevencion",
+        "#VidaSana"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que la Sanidad pública debería invertir más en programas para prevenir la obesidad y el tabaquismo?"
+    },
+    {
+      "id": 13,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Sanidad Rural",
+      "titulo_corto": "Potenciación de la enfermería familiar rural",
+      "resumen": "Incrementar plazas de enfermería en el medio rural para mejorar la gestión de enfermedades crónicas.",
+      "cita_literal": "Favoreceremos la sanidad rural, potenciando la enfermería familiar y comunitaria en la gestión de la cronicidad",
+      "pagina": 15,
+      "tags": [
+        "#MedioRural",
+        "#Enfermeria"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyaría aumentar las enfermeras en los pueblos para que hagan un seguimiento más cercano de los enfermos crónicos?"
+    },
+    {
+      "id": 14,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Servicios Básicos",
+      "titulo_corto": "Garantía de apertura de consultorios locales",
+      "resumen": "Compromiso de mantener abiertos los consultorios locales garantizando la atención más cercana.",
+      "cita_literal": "compromiso de apertura de consultorios locales, que suponen la atención más cercana para nuestros vecinos",
+      "pagina": 16,
+      "tags": [
+        "#MedioRural",
+        "#Consultorios"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Es partidario de asegurar por ley que los consultorios médicos de los pueblos siempre estén abiertos para atender a los vecinos?"
+    },
+    {
+      "id": 15,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Infancia",
+      "titulo_corto": "Pediatría en todas las Zonas Básicas de Salud",
+      "resumen": "Reforzar y asegurar el servicio de pediatría en la totalidad de las Zonas Básicas de Salud del territorio.",
+      "cita_literal": "Reforzaremos el servicio de pediatría en la totalidad de Zonas Básicas de Salud",
+      "pagina": 16,
+      "tags": [
+        "#Pediatria",
+        "#Infancia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyaría garantizar que todos los niños tengan un pediatra asignado en su zona de salud, sin importar dónde vivan?"
+    },
+    {
+      "id": 16,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Urgencias",
+      "titulo_corto": "Unidades medicalizadas en cada zona de salud",
+      "resumen": "Implantación definitiva de unidades medicalizadas y soporte vital básico en cada Punto de Atención Continuada.",
+      "cita_literal": "Potenciaremos la implantación definitiva de las unidades medicalizadas en todas las Zonas Básicas de Salud",
+      "pagina": 16,
+      "tags": [
+        "#Urgencias",
+        "#ZBS"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Cree necesario que cada comarca cuente con una ambulancia medicalizada para atender emergencias rápidas?"
+    },
+    {
+      "id": 17,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Transporte Sanitario",
+      "titulo_corto": "Transporte a la demanda para consultas rurales",
+      "resumen": "Establecer transporte a la demanda para facilitar la asistencia a consultas y pruebas médicas en el medio rural.",
+      "cita_literal": "estableciendo el transporte a la demanda para asistencia a consultas y pruebas en el medio rural",
+      "pagina": 16,
+      "tags": [
+        "#TransporteADemanda",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parecería útil un servicio de transporte a la carta para que los vecinos de los pueblos puedan ir a sus citas médicas?"
+    },
+    {
+      "id": 18,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Infraestructura",
+      "titulo_corto": "Radioterapia en todas las áreas de salud",
+      "resumen": "Dotar de servicios de radioterapia a todas las áreas de salud de la Comunidad para evitar desplazamientos largos.",
+      "cita_literal": "Dotaremos de radioterapia en todas la áreas de Salud de Castilla y León",
+      "pagina": 16,
+      "tags": [
+        "#Radioterapia",
+        "#Cancer"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría que todas las capitales y áreas de salud tengan servicio de radioterapia para que los pacientes no tengan que viajar lejos?"
+    },
+    {
+      "id": 19,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Hospitales",
+      "titulo_corto": "Acceso al hospital en menos de 30 minutos",
+      "resumen": "Impulsar hospitales comarcales para que toda la ciudadanía tenga acceso al servicio hospitalario en un tiempo récord.",
+      "cita_literal": "todo ciudadana y ciudadano tenga acceso al servicio público de salud en menos de 30 minutos desde su domicilio",
+      "pagina": 16,
+      "tags": [
+        "#Hospitales",
+        "#30Minutos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Estaría de acuerdo con potenciar los hospitales pequeños de comarca para estar a menos de 30 minutos del médico?"
+    },
+    {
+      "id": 20,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Pacientes",
+      "titulo_corto": "Aumento de ayudas por desplazamiento de pacientes",
+      "resumen": "Incrementar la cuantía por kilómetro y por estancia asistencial tanto para pacientes como para acompañantes.",
+      "cita_literal": "Aumentaremos la cuantía de las ayudas por kilómetro del desplazamiento, las ayudas para el alojamiento y las ayudas por manutención",
+      "pagina": 16,
+      "tags": [
+        "#AyudasPacientes",
+        "#Traslados"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parecería justo subir el dinero que se paga a los enfermos por la gasolina y el hotel cuando tienen que operarse lejos?"
+    },
+    {
+      "id": 21,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Hospitales",
+      "titulo_corto": "Gestión pública del Hospital de Burgos (HUBU)",
+      "resumen": "Recuperar la gestión pública completa del Hospital de Burgos para reducir costes estructurales.",
+      "cita_literal": "Recuperaremos la gestión pública del Hospital de Burgos, excesivamente costosa para el conjunto del sistema",
+      "pagina": 16,
+      "tags": [
+        "#Publi-Privada",
+        "#Burgos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría que la Junta asuma la gestión directa del Hospital de Burgos, eliminando el actual contrato privado?"
+    },
+    {
+      "id": 22,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo Público",
+      "titulo_corto": "Incentivos para plazas de difícil cobertura sanitaria",
+      "resumen": "Incentivar económicamente los puestos de trabajo en hospitales rurales o zonas limítrofes para garantizar plantillas.",
+      "cita_literal": "incentivando económicamente aquellos puestos de trabajo que, por sus características, lo requieran",
+      "pagina": 16,
+      "tags": [
+        "#Incentivos",
+        "#MedicosRurales"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parece bien pagar un sobresueldo a los médicos que acepten trabajar en las zonas rurales donde nadie quiere ir?"
+    },
+    {
+      "id": 23,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Salud Mental",
+      "titulo_corto": "Psicólogos en todos los centros de salud",
+      "resumen": "Incorporar psicólogos en los equipos de atención primaria y ampliar la cartera de servicios de salud mental.",
+      "cita_literal": "Incorporaremos psicólogos en los equipos de atención primaria e implementaremos la cartera de servicios más amplia",
+      "pagina": 17,
+      "tags": [
+        "#SaludMental",
+        "#Psicologia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría que hubiera psicólogos en los centros de salud para atender el estrés o la depresión sin necesidad de ir al hospital?"
+    },
+    {
+      "id": 24,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Salud Mental",
+      "titulo_corto": "Refuerzo de salud mental en hospitales",
+      "resumen": "Aumentar las plazas de psiquiatría y psicología clínica en hospitales y centros de salud.",
+      "cita_literal": "Aumentaremos las plazas de psiquiatría y psicología en nuestros hospitales públicos",
+      "pagina": 17,
+      "tags": [
+        "#Psiquiatria",
+        "#Hospitales"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que faltan médicos especialistas en salud mental en los hospitales públicos de la Comunidad?"
+    },
+    {
+      "id": 25,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Prevención",
+      "titulo_corto": "Programas de prevención del suicidio",
+      "resumen": "Campañas de concienciación y refuerzo de programas de prevención del suicidio en entornos educativos y laborales.",
+      "cita_literal": "reforzando los programas de prevención del suicidio",
+      "pagina": 17,
+      "tags": [
+        "#Suicidio",
+        "#Prevencion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Debería el gobierno regional invertir más dinero en programas destinados específicamente a prevenir el suicidio?"
+    },
+    {
+      "id": 26,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Investigación",
+      "titulo_corto": "Aumento presupuesto investigación (Cáncer y Raras)",
+      "resumen": "Elevar el presupuesto para investigación sanitaria en áreas como oncología, enfermedades raras y salud pública.",
+      "cita_literal": "Elevaremos el presupuesto destinado a investigación, particularmente en áreas como oncología, enfermedades raras",
+      "pagina": 17,
+      "tags": [
+        "#I+D+i",
+        "#Oncologia"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría aumentar los fondos regionales para investigar curas contra el cáncer y enfermedades poco comunes?"
+    },
+    {
+      "id": 27,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Mayores",
+      "titulo_corto": "Servicios de geriatría en todos los hospitales",
+      "resumen": "Garantizar servicios de geriatría coordinados con atención primaria en toda la red hospitalaria pública.",
+      "cita_literal": "Fomentaremos los servicios de geriatría en todos los hospitales estableciendo protocolos de coordinación",
+      "pagina": 17,
+      "tags": [
+        "#Geriatria",
+        "#Mayores"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree necesario que todos los hospitales tengan una unidad de geriatría especializada solo en personas mayores?"
+    },
+    {
+      "id": 28,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Cuidados Paliativos",
+      "titulo_corto": "Plan de Cuidados Paliativos Domiciliarios",
+      "resumen": "Mejora de los equipos de atención paliativa en el domicilio, con especial foco en el medio rural e infantil.",
+      "cita_literal": "Pondremos en marcha un Plan Integral de Mejora Efectiva de equipos de atención de cuidados paliativos domiciliarios",
+      "pagina": 17,
+      "tags": [
+        "#CuidadosPaliativos",
+        "#AtencionDomiciliaria"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyaría que se mejore la atención de médicos paliativos en el propio domicilio para pacientes terminales en los pueblos?"
+    },
+    {
+      "id": 29,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Derechos",
+      "titulo_corto": "Garantía cumplimiento Ley de Eutanasia",
+      "resumen": "Asegurar que cualquier persona que cumpla los requisitos pueda ejercer su derecho a una muerte digna en el sistema público.",
+      "cita_literal": "Garantizaremos el cumplimiento íntegro de la Ley 3/2021... de regulación de la eutanasia",
+      "pagina": 17,
+      "tags": [
+        "#Eutanasia",
+        "#Derechos"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Debería la Junta asegurar que se pueda ejercer el derecho a la eutanasia en todos los hospitales públicos sin problemas?"
+    },
+    {
+      "id": 30,
+      "categoria": "Otros",
+      "subcategoria": "Igualdad",
+      "titulo_corto": "Garantía de acceso al aborto en la sanidad pública",
+      "resumen": "Asegurar el acceso a la interrupción voluntaria del embarazo dentro del sistema público de salud con equidad territorial.",
+      "cita_literal": "Garantizaremos el acceso a la prestación de la interrupción voluntaria del embarazo dentro del sistema público de salud",
+      "pagina": 18,
+      "tags": [
+        "#Aborto",
+        "#SanidadPublica"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo en que el aborto se deba realizar obligatoriamente en hospitales públicos en lugar de enviarse a clínicas privadas?"
+    },
+    {
+      "id": 31,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Educación Sexual",
+      "titulo_corto": "Refuerzo de la educación sexual integral",
+      "resumen": "Desarrollar campañas de educación sexual, anticoncepción y derechos reproductivos en centros de salud.",
+      "cita_literal": "Reforzaremos la educación sexual en todas las edades, enmarcándola dentro de la estrategia de actividades comunitarias",
+      "pagina": 18,
+      "tags": [
+        "#EducacionSexual",
+        "#Prevencion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que el sistema público de salud dé charlas de educación sexual y anticoncepción a todas las edades?"
+    },
+    {
+      "id": 32,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Mujer",
+      "titulo_corto": "Potenciación de las funciones de las matronas",
+      "resumen": "Aumentar la participación de matronas en el seguimiento del embarazo de bajo riesgo y lactancia materna.",
+      "cita_literal": "Potenciaremos las funciones de las matronas en atención a la salud sexual y reproductiva",
+      "pagina": 18,
+      "tags": [
+        "#Matronas",
+        "#Maternidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien dar más importancia y recursos a las matronas para el seguimiento de los embarazos normales?"
+    },
+    {
+      "id": 33,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Salud Escolar",
+      "titulo_corto": "Lucha contra la obesidad infantil en colegios",
+      "resumen": "Promover menús saludables y educación nutricional en centros educativos para combatir enfermedades crónicas.",
+      "cita_literal": "Impulsaremos políticas públicas destinadas a combatir la obesidad infantil, integrando estrategias de educación nutricional",
+      "pagina": 18,
+      "tags": [
+        "#ObesidadInfantil",
+        "#ComedoresEscolares"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría que se regulen más estrictamente los menús de los colegios para que sean más saludables y evitar la obesidad?"
+    },
+    {
+      "id": 34,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Servicios",
+      "titulo_corto": "Ampliación de la salud bucodental pública",
+      "resumen": "Incluir todas las actuaciones de salud bucodental en SACYL para menores de 7 a 15 años, embarazadas y personas con diversidad.",
+      "cita_literal": "Ampliaremos en la Cartera Básica de Servicios del SACYL todas las actuaciones en salud bucodental",
+      "pagina": 18,
+      "tags": [
+        "#SaludBucodental",
+        "#Dentista"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría que el dentista público fuera gratuito para los niños hasta los 15 años y para las mujeres embarazadas?"
+    },
+    {
+      "id": 35,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Vulnerabilidad",
+      "titulo_corto": "Ayudas para gafas y lentillas en familias vulnerables",
+      "resumen": "Incorporación del servicio de óptica en el sistema público y subvenciones para gafas en hogares con pocos recursos.",
+      "cita_literal": "Incorporaremos ayudas en los costes de gafas y lentillas a los miembros de familias vulnerables",
+      "pagina": 18,
+      "tags": [
+        "#Gafas",
+        "#AyudasSociales"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que la Junta pague las gafas o las lentillas a las familias que no tienen dinero para comprarlas?"
+    },
+    {
+      "id": 36,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Profesionales",
+      "titulo_corto": "Contratación de logopedas en hospitales",
+      "resumen": "Incorporar logopedas como personal estatutario para procesos de rehabilitación tras problemas de salud.",
+      "cita_literal": "Aumentaremos la contratación de logopedas para que se incorporen como personal estatutario a las plantillas del SACYL",
+      "pagina": 18,
+      "tags": [
+        "#Logopedia",
+        "#Rehabilitacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que debería haber más logopedas públicos en los hospitales para ayudar a recuperar el habla tras enfermedades?"
+    },
+    {
+      "id": 37,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Farmacia",
+      "titulo_corto": "Acceso a medicamentos innovadores y biosimilares",
+      "resumen": "Optimizar el gasto farmacéutico garantizando que los últimos tratamientos lleguen a toda la población.",
+      "cita_literal": "Garantizaremos el acceso a nuevos medicamentos, como los biosimilares",
+      "pagina": 18,
+      "tags": [
+        "#Medicamentos",
+        "#Farmacia"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece prioritario asegurar que los medicamentos más modernos estén disponibles gratis para todos los pacientes que los necesiten?"
+    },
+    {
+      "id": 38,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "COVID",
+      "titulo_corto": "Unidades de COVID persistente",
+      "resumen": "Crear unidades especializadas para atender de forma personalizada a pacientes que sufren síntomas prolongados de COVID.",
+      "cita_literal": "Crearemos y mantendremos unidades de COVID persistente para atender de manera personalizada",
+      "pagina": 18,
+      "tags": [
+        "#COVIDPersistente",
+        "#Salud"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría mantener centros especiales para curar a las personas que todavía tienen secuelas del COVID?"
+    },
+    {
+      "id": 39,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Mayores",
+      "titulo_corto": "Nueva Ley Integral de las Personas Mayores",
+      "resumen": "Ley para garantizar la eficacia de las políticas públicas frente al envejecimiento y la dependencia.",
+      "cita_literal": "Aprobaremos la Ley Integral de las Personas Mayores de Castilla y León",
+      "pagina": 19,
+      "tags": [
+        "#Mayores",
+        "#Gobernanza"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría una ley específica para proteger mejor a los ancianos y mejorar su calidad de vida?"
+    },
+    {
+      "id": 40,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "CEAS",
+      "titulo_corto": "Atención en CEAS en menos de una semana",
+      "resumen": "Reducir los tiempos de espera en los Centros de Acción Social a un máximo de 7 días para casos generales y prioridad inmediata en urgencias.",
+      "cita_literal": "comprometiendo la atención en los CEAS en un plazo inferior a una semana",
+      "pagina": 20,
+      "tags": [
+        "#CEAS",
+        "#ServiciosSociales"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parecería bien obligar a los servicios sociales a atender a cualquier ciudadano en menos de una semana?"
+    },
+    {
+      "id": 41,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Soledad",
+      "titulo_corto": "Programa de prevención de la soledad mayor",
+      "resumen": "Detección y acompañamiento de personas mayores en situación de aislamiento social con actividades de ocio.",
+      "cita_literal": "Crearemos un programa de detección, prevención y acompañamiento de la soledad no deseada",
+      "pagina": 20,
+      "tags": [
+        "#Soledad",
+        "#Mayores"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría que el gobierno autonómico enviara personal a casa de personas solas para acompañarlas y ayudarlas?"
+    },
+    {
+      "id": 42,
+      "categoria": "Vivienda",
+      "subcategoria": "Adaptabilidad",
+      "titulo_corto": "Ayudas para adaptación de viviendas de mayores",
+      "resumen": "Plan de ayudas para reformar casas de personas mayores facilitando su permanencia en su entorno habitual.",
+      "cita_literal": "creación de un Plan de Ayudas específico para la adaptación de viviendas de las personas mayores",
+      "pagina": 20,
+      "tags": [
+        "#Vivienda",
+        "#Reformas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien dar subvenciones a los mayores para que reformen su baño o instalen un ascensor y no tengan que ir a una residencia?"
+    },
+    {
+      "id": 43,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Mayores",
+      "titulo_corto": "Creación de Clubes de Vida rurales",
+      "resumen": "Poner en marcha centros sociales en los pueblos para incentivar la convivencia y el acompañamiento de mayores.",
+      "cita_literal": "Pondremos en marcha Clubes de Vida en los pueblos, para incentivar a las personas mayores a relacionarse",
+      "pagina": 20,
+      "tags": [
+        "#MedioRural",
+        "#Socializacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya crear centros de ocio y reunión en los pueblos pequeños para que los ancianos no se sientan solos?"
+    },
+    {
+      "id": 44,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Mayores",
+      "titulo_corto": "Consultor de geriatría en Atención Primaria",
+      "resumen": "Incorporar especialistas en geriatría en los centros de salud para mejorar el seguimiento físico y cognitivo.",
+      "cita_literal": "incorporaremos la figura del consultor de geriatría en atención primaria",
+      "pagina": 20,
+      "tags": [
+        "#Geriatria",
+        "#AtencionPrimaria"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parecería bien que su médico de cabecera tuviera el apoyo de un experto en vejez en el mismo centro de salud?"
+    },
+    {
+      "id": 45,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Dependencia",
+      "titulo_corto": "Más plazas de convalecencia sociosanitaria",
+      "resumen": "Aumentar las plazas para atender a pacientes tras cirugías o estancias hospitalarias que no tienen autonomía plena.",
+      "cita_literal": "Aumentaremos el número de plazas de unidades de convalecencia sociosanitaria",
+      "pagina": 20,
+      "tags": [
+        "#Convalecencia",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría que hubiera más centros públicos donde recuperarse después de una operación si no puede valerse por sí mismo en casa?"
+    },
+    {
+      "id": 46,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Servicios Proximidad",
+      "titulo_corto": "Plataformas de Servicios de Proximidad",
+      "resumen": "Desarrollar centros que ofrezcan comida, lavandería y fisioterapia a mayores para que sigan en su domicilio.",
+      "cita_literal": "Potenciaremos el desarrollo de los Centros de Vida Activa como ejes de las plataformas de Servicios de Proximidad",
+      "pagina": 20,
+      "tags": [
+        "#CuidadoDomiciliario",
+        "#Servicios"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría servicios públicos que llevaran la comida o la colada a casa de los ancianos para ayudarles a vivir solos?"
+    },
+    {
+      "id": 47,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Cuidados",
+      "titulo_corto": "Plan de apoyo a cuidadoras familiares",
+      "resumen": "Reconocimiento y apoyo específico a personas que cuidan a familiares dependientes bajo la Ley de Dependencia.",
+      "cita_literal": "Desarrollaremos un Plan Específico dirigido al apoyo de las personas reconocidas... como cuidadoras en el entorno familiar",
+      "pagina": 20,
+      "tags": [
+        "#Cuidadoras",
+        "#Dependencia"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Debería el gobierno dar más ayudas económicas y apoyo psicológico a las personas que cuidan a sus familiares enfermos en casa?"
+    },
+    {
+      "id": 48,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Mayores",
+      "titulo_corto": "Duplicar plazas convalecencia sociosanitaria",
+      "resumen": "Aumentar al doble las plazas de convalecencia en toda la Comunidad.",
+      "cita_literal": "Aumentaremos las plazas de convalecencia sociosanitaria en toda la Comunidad, duplicando su número",
+      "pagina": 21,
+      "tags": [
+        "#Convalecencia",
+        "#Mayores"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parecería bien duplicar las plazas para atender a mayores que salen de cirugía y necesitan cuidados?"
+    },
+    {
+      "id": 49,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Residencias",
+      "titulo_corto": "Residencia pública por comarca",
+      "resumen": "Garantizar una residencia pública en cada comarca y una nueva por provincia cada 4 años.",
+      "cita_literal": "garantizar la cobertura residencial en cada comarca en cada una de las provincias",
+      "pagina": 21,
+      "tags": [
+        "#Residencias",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyaría que cada comarca de la región tuviera al menos una residencia de ancianos pública?"
+    },
+    {
+      "id": 50,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Centros de Día",
+      "titulo_corto": "Duplicar capacidad de centros de día",
+      "resumen": "Duplicar plazas existentes y abrir al menos dos centros nuevos por provincia.",
+      "cita_literal": "duplicaremos la capacidad de los centros de día existentes",
+      "pagina": 21,
+      "tags": [
+        "#CentrosDeDia",
+        "#Mayores"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que se debería doblar el número de plazas en los centros de día para mayores?"
+    },
+    {
+      "id": 51,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Cohousing",
+      "titulo_corto": "Recursos intermedios y cohousing para mayores",
+      "resumen": "Promover viviendas colaborativas y unidades convivenciales diversas.",
+      "cita_literal": "Proponemos un prototipo diverso que favorezca... cohousing, viviendas colaborativas",
+      "pagina": 21,
+      "tags": [
+        "#Cohousing",
+        "#Vivienda"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría fomentar modelos de vivienda compartida (cohousing) para que los mayores vivan juntos pero independientes?"
+    },
+    {
+      "id": 52,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "CEAS",
+      "titulo_corto": "Fisioterapia y podología a domicilio via CEAS",
+      "resumen": "Potenciar cuidados personales (podología, fisio) en casa mediante equipos CEAS.",
+      "cita_literal": "Potenciaremos los servicios de fisioterapia, podología... en el domicilio de las personas mayores",
+      "pagina": 21,
+      "tags": [
+        "#Podologia",
+        "#Fisioterapia",
+        "#Domicilio"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parecería útil que el podólogo o el fisioterapeuta público fueran a casa de los mayores que no pueden desplazarse?"
+    },
+    {
+      "id": 53,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Mayores",
+      "titulo_corto": "Programas de formación intergeneracional",
+      "resumen": "Fomentar convivencia entre jóvenes y mayores en universidades y centros de formación.",
+      "cita_literal": "promover la formación activa, la convivencia intergeneracional",
+      "pagina": 21,
+      "tags": [
+        "#Formacion",
+        "#Intergeneracional"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya crear programas donde jóvenes y mayores aprendan juntos y compartan experiencias?"
+    },
+    {
+      "id": 54,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Discriminación",
+      "titulo_corto": "Lucha contra el edadismo en la legislación",
+      "resumen": "Incluir el edadismo como forma de discriminación y sensibilizar a profesionales.",
+      "cita_literal": "incluyendo en la legislación el edadismo como forma de discriminación",
+      "pagina": 21,
+      "tags": [
+        "#Edadismo",
+        "#Derechos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que la ley debería castigar específicamente la discriminación por ser mayor (edadismo)?"
+    },
+    {
+      "id": 55,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Banca",
+      "titulo_corto": "Asesoramiento bancario público para mayores",
+      "resumen": "Crear servicios de acompañamiento para trámites estatales y privados (banca).",
+      "cita_literal": "exigiendo a las empresas privadas, y de manera especial a las entidades bancarias, la formación",
+      "pagina": 21,
+      "tags": [
+        "#Banca",
+        "#Tramites"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Estaría de acuerdo con que la Junta obligue a los bancos a tener personal que atienda mejor a los mayores?"
+    },
+    {
+      "id": 56,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Accesibilidad",
+      "titulo_corto": "Plan Integral de Accesibilidad en Viviendas",
+      "resumen": "Financiar la adaptación de viviendas para personas con movilidad reducida.",
+      "cita_literal": "financiando la adaptación de sus viviendas a sus necesidades diarias",
+      "pagina": 22,
+      "tags": [
+        "#Accesibilidad",
+        "#Vivienda"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien que la administración ayude a pagar las reformas de accesibilidad en casas de personas con discapacidad?"
+    },
+    {
+      "id": 57,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Nueva Ley de Innovación Social",
+      "resumen": "Ley para dar respuesta personalizada via tercer sector y administración.",
+      "cita_literal": "Aprobaremos la Ley de Innovación Social con el objetivo de dar respuesta personalizada",
+      "pagina": 22,
+      "tags": [
+        "#InnovacionSocial",
+        "#Ley"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría una nueva ley que facilite a las ONGs trabajar más estrechamente con la Junta?"
+    },
+    {
+      "id": 58,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Discapacidad",
+      "titulo_corto": "Revisión Plan Oportunidades Discapacidad",
+      "resumen": "Actualizar el plan estratégico junto al tercer sector.",
+      "cita_literal": "Revisaremos el Plan Estratégico de Igualdad de Oportunidades para las Personas con Discapacidad",
+      "pagina": 22,
+      "tags": [
+        "#Discapacidad",
+        "#IgualdadOportunidades"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que se deben mejorar los planes actuales para la integración de personas con discapacidad?"
+    },
+    {
+      "id": 59,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo",
+      "titulo_corto": "Plan Empleo Discapacidad con Ayuntamientos",
+      "resumen": "Potenciar centros especiales de empleo e inserción laboral ordinaria.",
+      "cita_literal": "un plan de empleo para las personas con discapacidad que potencie los centros especiales",
+      "pagina": 22,
+      "tags": [
+        "#Empleo",
+        "#Discapacidad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Debería la Junta incentivar más a las empresas para que contraten a personas con discapacidad?"
+    },
+    {
+      "id": 60,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Inclusión",
+      "titulo_corto": "Promoción social del pueblo gitano",
+      "resumen": "Combatir infravivienda y fracaso escolar en el colectivo gitano.",
+      "cita_literal": "Apoyaremos las entidades que desarrollan programas dirigidos a la promoción social del pueblo gitano",
+      "pagina": 22,
+      "tags": [
+        "#Gitano",
+        "#Inclusion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que se dediquen fondos específicos para evitar el abandono escolar en la comunidad gitana?"
+    },
+    {
+      "id": 61,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Infancia",
+      "titulo_corto": "Erradicación de la pobreza infantil",
+      "resumen": "Asegurar alimentación y escolarización digna a familias en riesgo.",
+      "cita_literal": "programa dirigido a erradicar la pobreza infantil, destinado a las familias en riesgo",
+      "pagina": 23,
+      "tags": [
+        "#PobrezaInfantil",
+        "#Infancia"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Estaría de acuerdo con que la Junta garantice por completo la alimentación de cualquier niño en riesgo de pobreza?"
+    },
+    {
+      "id": 62,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Brecha Digital",
+      "titulo_corto": "Superación de la brecha digital",
+      "resumen": "Facilitar acceso y uso de herramientas tecnológicas seguras.",
+      "cita_literal": "acciones específicas para ayudar a superar la brecha digital",
+      "pagina": 23,
+      "tags": [
+        "#Digital",
+        "#Igualdad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya que se den cursos tecnológicos gratuitos para que nadie se quede atrás por no saber usar internet?"
+    },
+    {
+      "id": 63,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Migración",
+      "titulo_corto": "Acogida digna para población extranjera",
+      "resumen": "Colaboración estatal para acogida por razones económicas o refugio.",
+      "cita_literal": "garantizar un trato adecuado de acogida a la población extranjera",
+      "pagina": 23,
+      "tags": [
+        "#Inmigracion",
+        "#DerechosHumanos"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Debería la Junta colaborar más con el Gobierno central para acoger ordenadamente a los inmigrantes?"
+    },
+    {
+      "id": 64,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Migración",
+      "titulo_corto": "Campañas contra el racismo y xenofobia",
+      "resumen": "Hacer visibles ejemplos de éxito e integración para erradicar estereotipos.",
+      "cita_literal": "Desarrollaremos campañas informativas para erradicar los estereotipos dirigidos a fomentar el racismo",
+      "pagina": 23,
+      "tags": [
+        "#Racismo",
+        "#Violencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que la Junta debería pagar anuncios en televisión para combatir el racismo?"
+    },
+    {
+      "id": 65,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Cooperación",
+      "titulo_corto": "0,7% presupuesto para Cooperación al Desarrollo",
+      "resumen": "Alcanzar el 0,7% del presupuesto en ocho años para ONGs.",
+      "cita_literal": "presupuesto anual de la Junta... hasta alcanzar el 0,7% en ocho años",
+      "pagina": 23,
+      "tags": [
+        "#Cooperacion",
+        "#07Presupuesto"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría destinar el 0,7% de los impuestos de la región a ayudar a los países más pobres?"
+    },
+    {
+      "id": 66,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Infantil",
+      "titulo_corto": "Red Autonómica de Escuelas Infantiles (0-3)",
+      "resumen": "Crear red pública gratuita para conciliar vida laboral y familiar.",
+      "cita_literal": "Crearemos una Red Autonómica de Escuelas Infantiles públicas y gratuitas",
+      "pagina": 25,
+      "tags": [
+        "#EscuelasInfantiles",
+        "#Conciliacion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría que la educación de 0 a 3 años fuera totalmente gratuita para todas las familias?"
+    },
+    {
+      "id": 67,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Dinamización Rural",
+      "titulo_corto": "Garantía escuelas rurales con 3 alumnos",
+      "resumen": "Evitar cierre de escuelas rurales si mantienen al menos tres estudiantes.",
+      "cita_literal": "Blindaremos la apertura de escuelas rurales con tres alumnos",
+      "pagina": 25,
+      "tags": [
+        "#EscuelaRural",
+        "#RetoDemografico"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parece bien que no se cierren los colegios de los pueblos aunque solo tengan 3 niños?"
+    },
+    {
+      "id": 68,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Gratuidad",
+      "titulo_corto": "Gratuidad total de libros de texto",
+      "resumen": "Garantizar libros gratis en todas las enseñanzas obligatorias.",
+      "cita_literal": "Impondremos la gratuidad de libros de texto en las enseñanzas obligatorias",
+      "pagina": 25,
+      "tags": [
+        "#LibrosGratis",
+        "#EducacionPublica"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Deberían los libros de texto ser gratis para todos los alumnos, sin excepción?"
+    },
+    {
+      "id": 69,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Digital",
+      "titulo_corto": "Alfabetización Digital en Secundaria",
+      "resumen": "Incluir programas para distinguir fuentes fiables y uso responsable.",
+      "cita_literal": "Incluiremos en la educación secundaria programas de Alfabetización Digital",
+      "pagina": 25,
+      "tags": [
+        "#TIC",
+        "#FakeNews"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que en los institutos se enseñe obligatoriamente a detectar noticias falsas en internet?"
+    },
+    {
+      "id": 70,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Docentes",
+      "titulo_corto": "Mejora salarial y de sexenios docente",
+      "resumen": "Equiparar salarios a otras CCAA y actualizar complementos congelados.",
+      "cita_literal": "Mejoraremos las condiciones laborales y salariales del profesorado... hasta equipararlas",
+      "pagina": 25,
+      "tags": [
+        "#Docentes",
+        "#Salarios"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que los profesores de la región deberían cobrar lo mismo que los de otras comunidades autónomas?"
+    },
+    {
+      "id": 71,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Salud Escolar",
+      "titulo_corto": "Enfermería en todos los centros educativos",
+      "resumen": "Dotar a colegios e institutos de personal de enfermería propio.",
+      "cita_literal": "Dotaremos a los centros educativos de personal de enfermería",
+      "pagina": 26,
+      "tags": [
+        "#EnfermeriaEscolar",
+        "#Salud"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que haya un enfermero o enfermera permanente en cada colegio e instituto?"
+    },
+    {
+      "id": 72,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "FP",
+      "titulo_corto": "Mapa Regional de Titulaciones de FP",
+      "resumen": "Adecuar oferta de FP al territorio evitando duplicidades urbanas.",
+      "cita_literal": "Diseñaremos un Mapa Regional de Titulaciones de FP que adecue la oferta a la demanda del territorio",
+      "pagina": 26,
+      "tags": [
+        "#FormacionProfesional",
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería la FP adaptarse a lo que necesitan las empresas de cada comarca en lugar de ser igual en todas partes?"
+    },
+    {
+      "id": 73,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "FP Rural",
+      "titulo_corto": "Extensión de FP y Bachillerato rural",
+      "resumen": "Asegurar que se pueda estudiar FP y Bachillerato en zonas rurales.",
+      "cita_literal": "Garantizaremos la extensión de la oferta de la FP y Bachillerato en las zonas rurales",
+      "pagina": 27,
+      "tags": [
+        "#Jovenes",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya que los jóvenes de los pueblos puedan estudiar el bachillerato o la FP sin tener que irse a vivir a la ciudad?"
+    },
+    {
+      "id": 74,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Universidad",
+      "titulo_corto": "Matrícula Universitaria Gratuita (1er año)",
+      "resumen": "Gratuidad en primera matrícula de Grado y Máster según rendimiento.",
+      "cita_literal": "El PSOE aplicará la Gratuidad de la primera matrícula universitaria en Grados y Másteres",
+      "pagina": 27,
+      "tags": [
+        "#Universidad",
+        "#Gratuidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parecería bien que el primer año de universidad fuera gratis para todos los alumnos que aprueben?"
+    },
+    {
+      "id": 75,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Universidad",
+      "titulo_corto": "Inversión universitaria del 1% del PIB regional",
+      "resumen": "Garantizar una financiación pública potente para docencia e investigación.",
+      "cita_literal": "avanzar en el objetivo de destinar al menos el 1% del PIB autonómico al gasto público en educación universitaria",
+      "pagina": 27,
+      "tags": [
+        "#PIB",
+        "#Universidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Opina que se debería fijar por ley una inversión mínima para las universidades públicas?"
+    },
+    {
+      "id": 76,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Universidad",
+      "titulo_corto": "Programa Erasmus Rural",
+      "resumen": "Prácticas de universitarios en empresas de pueblos.",
+      "cita_literal": "aprovechando programas como el Erasmus Rural",
+      "pagina": 27,
+      "tags": [
+        "#ErasmusRural",
+        "#RetoDemografico"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Cree positivo que los estudiantes universitarios hagan sus prácticas en empresas de los pueblos?"
+    },
+    {
+      "id": 77,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Ciencia",
+      "titulo_corto": "Pacto por la Ciencia 2026-2036",
+      "resumen": "Acuerdo a 10 años para la inversión en I+D+i con todos los sectores.",
+      "cita_literal": "Impulsaremos... un Pacto por la Ciencia 2026-2036",
+      "pagina": 28,
+      "tags": [
+        "#I+D+i",
+        "#Ciencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Debe la ciencia ser una prioridad política con un pacto que dure al menos 10 años?"
+    },
+    {
+      "id": 78,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Ciencia",
+      "titulo_corto": "Creación del Organismo Autonómico para la Ciencia",
+      "resumen": "Nuevo ente para gestionar investigación y contratar personal científico.",
+      "cita_literal": "Crearemos un nuevo organismo autonómico para la Ciencia",
+      "pagina": 28,
+      "tags": [
+        "#Ciencia",
+        "#Investigacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya crear un organismo regional dedicado exclusivamente a gestionar y financiar la ciencia?"
+    },
+    {
+      "id": 79,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Investigación",
+      "titulo_corto": "Centro de Investigación del Cáncer en Ponferrada",
+      "resumen": "Impulsar un nuevo centro vinculado a la CIUDEN.",
+      "cita_literal": "Impulsaremos un Centro de Investigación del Cáncer en Ponferrada",
+      "pagina": 28,
+      "tags": [
+        "#Ponferrada",
+        "#Cancer"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría abrir un centro especializado en investigación contra el cáncer en El Bierzo?"
+    },
+    {
+      "id": 80,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "I+D Rural",
+      "titulo_corto": "Reapertura Centro Investigación Forestal Soria",
+      "resumen": "Recuperar centro estratégico para el sector maderero y forestal.",
+      "cita_literal": "Reabriremos el Centro de Investigación Forestal en Soria",
+      "pagina": 28,
+      "tags": [
+        "#Soria",
+        "#Forestal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parece bien reabrir centros de investigación en provincias despobladas como Soria?"
+    },
+    {
+      "id": 81,
+      "categoria": "Otros",
+      "subcategoria": "Igualdad",
+      "titulo_corto": "Creación de la Consejería de Igualdad",
+      "resumen": "Nueva consejería con rango propio y presupuesto específico.",
+      "cita_literal": "Crearemos una Consejería de Igualdad con rango propio",
+      "pagina": 30,
+      "tags": [
+        "#Igualdad",
+        "#Gobernanza"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que la Igualdad debe tener su propia consejería con un presupuesto dedicado?"
+    },
+    {
+      "id": 82,
+      "categoria": "Otros",
+      "subcategoria": "Igualdad",
+      "titulo_corto": "Instituto de la Mujer de Castilla y León",
+      "resumen": "Nuevo órgano autónomo para investigación y políticas de igualdad.",
+      "cita_literal": "Crearemos el Instituto de la Mujer de Castilla y León como organismo público",
+      "pagina": 30,
+      "tags": [
+        "#Mujer",
+        "#Derechos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya la creación de un Instituto de la Mujer regional para defender los derechos de las ciudadanas?"
+    },
+    {
+      "id": 83,
+      "categoria": "Otros",
+      "subcategoria": "Igualdad",
+      "titulo_corto": "Estatuto de las Mujeres Rurales",
+      "resumen": "Marco normativo para garantizar igualdad real en el campo.",
+      "cita_literal": "Impulsaremos la creación del Estatuto de las Mujeres Rurales de Castilla y León",
+      "pagina": 30,
+      "tags": [
+        "#MujerRural",
+        "#Derechos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería haber una ley especial que proteja y reconozca el trabajo de las mujeres en los pueblos?"
+    },
+    {
+      "id": 84,
+      "categoria": "Otros",
+      "subcategoria": "Igualdad",
+      "titulo_corto": "Carnet de familia monoparental autonómico",
+      "resumen": "Creación de certificación específica para acceso a becas y ayudas.",
+      "cita_literal": "creación de un sistema de certificación específico (carnet) que acredite la condición... de familia monoparental",
+      "pagina": 31,
+      "tags": [
+        "#Familia",
+        "#Ayudas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya crear un carnet oficial para familias monoparentales que les dé descuentos y ayudas?"
+    },
+    {
+      "id": 85,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Igualdad",
+      "titulo_corto": "Observatorio Autonómico de Violencia Machista",
+      "resumen": "Órgano para evaluar medidas y sistematizar datos de violencia.",
+      "cita_literal": "Crearemos el Observatorio Autonómico de Violencia Machista",
+      "pagina": 31,
+      "tags": [
+        "#ViolenciaDeGenero",
+        "#Transparencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Estaría de acuerdo con crear un observatorio que vigile y analice todos los casos de violencia machista?"
+    },
+    {
+      "id": 86,
+      "categoria": "Otros",
+      "subcategoria": "Violencia",
+      "titulo_corto": "Centros de Emergencia 24h en ciudades >20k inhab",
+      "resumen": "Atención integral 24 horas a víctimas en grandes núcleos urbanos.",
+      "cita_literal": "garantizando que en cada una de las provincias... municipios de más de 20.000 habitantes haya al menos un Centro de Emergencia",
+      "pagina": 31,
+      "tags": [
+        "#Urgencias",
+        "#ViolenciaGenero"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Deberían todas las ciudades grandes tener un centro abierto 24 horas para ayudar a las mujeres maltratadas?"
+    },
+    {
+      "id": 87,
+      "categoria": "Otros",
+      "subcategoria": "Familia",
+      "titulo_corto": "Puntos de Encuentro Familiar en municipios >10k",
+      "resumen": "Ampliar la red actual fuera de las capitales de provincia.",
+      "cita_literal": "servicio autonómico de puntos de encuentro familiar... a todos los municipios con más de 10.000 habitantes",
+      "pagina": 31,
+      "tags": [
+        "#PuntosEncuentro",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya que los puntos de encuentro para padres separados estén en más pueblos y no solo en las capitales?"
+    },
+    {
+      "id": 88,
+      "categoria": "Otros",
+      "subcategoria": "Violencia",
+      "titulo_corto": "Fin de la gestión privada en violencia de género",
+      "resumen": "Asegurar que la atención no esté en manos de empresas sin formación específica.",
+      "cita_literal": "evitando que la atención a las víctimas... esté en manos de instituciones u organizaciones privadas",
+      "pagina": 32,
+      "tags": [
+        "#GestionPublica",
+        "#ViolenciaGénero"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que la atención a mujeres maltratadas debe ser llevada solo por funcionarios públicos y no por empresas privadas?"
+    },
+    {
+      "id": 89,
+      "categoria": "Otros",
+      "subcategoria": "Violencia",
+      "titulo_corto": "Intérpretes de lengua de signos para víctimas",
+      "resumen": "Garantizar accesibilidad universal en el proceso de salida de la violencia.",
+      "cita_literal": "Garantizaremos la presencia de intérpretes de lengua de signos",
+      "pagina": 32,
+      "tags": [
+        "#Accesibilidad",
+        "#Sordos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Debería el sistema asegurar siempre un traductor de signos para las mujeres sordas víctimas de violencia?"
+    },
+    {
+      "id": 90,
+      "categoria": "Otros",
+      "subcategoria": "Violencia",
+      "titulo_corto": "Apoyo a huérfanos de violencia de género",
+      "resumen": "Atención pedagógica y refuerzo educativo específico para hijos de víctimas mortales.",
+      "cita_literal": "sistema específico de atención pedagógica y educativa para los hijos e hijas de las víctimas mortales",
+      "pagina": 32,
+      "tags": [
+        "#Huerfanos",
+        "#Educacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que se dé ayuda escolar y psicológica especial a los niños cuyas madres han sido asesinadas por sus padres?"
+    },
+    {
+      "id": 91,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Comedores",
+      "titulo_corto": "Comedores escolares gratis para hijos de víctimas",
+      "resumen": "Gratuidad total en periodo lectivo y no lectivo.",
+      "cita_literal": "Implantaremos la gratuidad de comedores escolares... para los hijos e hijas víctimas de la violencia de género",
+      "pagina": 33,
+      "tags": [
+        "#ComedoresEscolares",
+        "#Ayudas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien que el comedor del colegio sea gratis para los hijos de mujeres víctimas de malos tratos?"
+    },
+    {
+      "id": 92,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Ayudas Económicas",
+      "titulo_corto": "Ayudas de hasta 2.000€ a víctimas de violencia",
+      "resumen": "Subvenciones directas para salir de casas de acogida.",
+      "cita_literal": "ayudas que serán resueltas en un plazo no superior a veinte días, hasta 2.000 euros",
+      "pagina": 33,
+      "tags": [
+        "#AyudasDirectas",
+        "#ViolenciaGenero"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría dar una ayuda de hasta 2.000 euros a las mujeres para que puedan rehacer su vida tras salir de un refugio?"
+    },
+    {
+      "id": 93,
+      "categoria": "Otros",
+      "subcategoria": "LGTBI",
+      "titulo_corto": "Plan de protección contra la LGTBI+fobia",
+      "resumen": "Garantizar protección y desarrollo pleno de jóvenes LGTBI+.",
+      "cita_literal": "trabajando en la prevención de la LGTBI+fobia",
+      "pagina": 33,
+      "tags": [
+        "#LGTBI",
+        "#Derechos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Debería el gobierno regional tener leyes específicas para proteger a los jóvenes LGTBI del acoso?"
+    },
+    {
+      "id": 94,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Patrimonio",
+      "titulo_corto": "1% presupuesto para patrimonio cultural",
+      "resumen": "Inversión mínima para conservación y promoción de patrimonio.",
+      "cita_literal": "Dedicaremos a los programas de conservación... al menos el 1 % del presupuesto",
+      "pagina": 35,
+      "tags": [
+        "#Cultura",
+        "#Fondos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Estaría de acuerdo con blindar por ley que el 1% de todo el presupuesto se gaste en arreglar monumentos?"
+    },
+    {
+      "id": 95,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Cultura",
+      "titulo_corto": "Digitalización de archivos históricos (PARCYL)",
+      "resumen": "Crear el Portal de Archivos en Red de CyL para consulta pública.",
+      "cita_literal": "programa de descripción y digitalización de fondos documentales... (PARCYL)",
+      "pagina": 35,
+      "tags": [
+        "#Digital",
+        "#Historia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le gustaría poder consultar por internet de forma gratuita todos los documentos antiguos de los archivos regionales?"
+    },
+    {
+      "id": 96,
+      "categoria": "Otros",
+      "subcategoria": "Cultura",
+      "titulo_corto": "Protección de las lenguas leonesa y gallega",
+      "resumen": "Protección y promoción del leonés y del gallego en zonas de uso habitual.",
+      "cita_literal": "actuaciones de protección, uso y promoción del leonés... igualmente respecto a la lengua gallega",
+      "pagina": 35,
+      "tags": [
+        "#Leones",
+        "#Gallego",
+        "#Cultura"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería la Junta gastar dinero en proteger el leonés y el gallego que se hablan en algunas zonas de la región?"
+    },
+    {
+      "id": 97,
+      "categoria": "Otros",
+      "subcategoria": "Deporte",
+      "titulo_corto": "Pacto de Inversión Deportiva CyL",
+      "resumen": "Financiación mínima garantizada entre Junta, Ayuntamientos y Diputaciones.",
+      "cita_literal": "Implementaremos un Pacto de Inversión Deportiva... que garantice una financiación mínima",
+      "pagina": 36,
+      "tags": [
+        "#Deporte",
+        "#Inversion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría que las administraciones se pusieran de acuerdo para garantizar siempre un dinero mínimo para el deporte?"
+    },
+    {
+      "id": 98,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo Joven",
+      "titulo_corto": "Incentivos fiscales por contratación de jóvenes",
+      "resumen": "Ayudas a empresas que contraten jóvenes con condiciones dignas.",
+      "cita_literal": "programa de empleo juvenil con incentivos fiscales para las empresas",
+      "pagina": 38,
+      "tags": [
+        "#Jovenes",
+        "#Empleo",
+        "#Empresas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien bajarle los impuestos a las empresas que contraten jóvenes con un buen sueldo?"
+    },
+    {
+      "id": 99,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Coworking",
+      "titulo_corto": "Centros de coworking rural",
+      "resumen": "Espacios de innovación y trabajo en cabeceras de comarca.",
+      "cita_literal": "crearemos espacios coworking o hubs de innovación rural",
+      "pagina": 38,
+      "tags": [
+        "#Jovenes",
+        "#Innovacion",
+        "#Pueblos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya que se abran oficinas compartidas gratuitas en los pueblos grandes para que los jóvenes puedan teletrabajar?"
+    },
+    {
+      "id": 100,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Fiscalidad Rural",
+      "titulo_corto": "Bonificación cotizaciones en municipios <5.000",
+      "resumen": "Ayuda a empresas instaladas en pueblos pequeños para contratar jóvenes.",
+      "cita_literal": "Bonificaremos parte de las cotizaciones... en empresas... de municipios de menos de 5.000 habitantes",
+      "pagina": 38,
+      "tags": [
+        "#RetoDemografico",
+        "#Fiscalidad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Estaría de acuerdo con pagarle a las empresas la seguridad social de sus trabajadores si se instalan en pueblos pequeños?"
+    },
+    {
+      "id": 101,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Infancia",
+      "titulo_corto": "Ley de Infancia y Adolescencia de CyL",
+      "resumen": "Culminar la tramitación legislativa incluyendo la participación de menores.",
+      "cita_literal": "Culminar la tramitación de la futura Ley de Infancia y Adolescencia",
+      "pagina": 41,
+      "tags": [
+        "#Infancia",
+        "#Derechos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que Castilla y León tenga una ley propia para proteger los derechos de los niños y adolescentes?"
+    },
+    {
+      "id": 102,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Infancia",
+      "titulo_corto": "Implementación Garantía Infantil Europea",
+      "resumen": "Inversión vinculada al Pacto Social por las Familias para asegurar servicios básicos.",
+      "cita_literal": "Implementaremos la Garantía Infantil Europea mediante la inversión destinada al Pacto Social",
+      "pagina": 41,
+      "tags": [
+        "#Infancia",
+        "#FondosEuropeos"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece prioritario asegurar que ningún niño sufra exclusión social mediante fondos europeos?"
+    },
+    {
+      "id": 103,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Industria",
+      "titulo_corto": "Digitalización de Pymes Industriales",
+      "resumen": "Ayudas para capacitación y herramientas digitales en el sector industrial.",
+      "cita_literal": "Impulsaremos la digitalización de las Pymes industriales, facilitando su acceso a herramientas",
+      "pagina": 46,
+      "tags": [
+        "#Pymes",
+        "#Digitalizacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya dar ayudas directas a las pequeñas fábricas para que se modernicen con tecnología digital?"
+    },
+    {
+      "id": 104,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Industria",
+      "titulo_corto": "Polos de reciclaje de baterías",
+      "resumen": "Creación de centros industriales para recuperación de materiales de baterías.",
+      "cita_literal": "Crearemos polos industriales de reciclaje de baterías",
+      "pagina": 47,
+      "tags": [
+        "#Reciclaje",
+        "#Baterias",
+        "#Sostenibilidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que la región debería liderar el reciclaje de baterías de coches eléctricos como nueva industria?"
+    },
+    {
+      "id": 105,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empresas",
+      "titulo_corto": "Ley de Estímulo a la Creación de Empresas",
+      "resumen": "Primar acceso a incentivos y dotar líneas de microcréditos y avales.",
+      "cita_literal": "Adaptaremos la Ley de Estímulo a la Creación de Empresas de Castilla y León",
+      "pagina": 48,
+      "tags": [
+        "#Emprendedores",
+        "#Financiacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría una ley que facilite préstamos rápidos y avales públicos para quienes quieran abrir un negocio?"
+    },
+    {
+      "id": 106,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo",
+      "titulo_corto": "Plan Estratégico de Empleo 2026-2030",
+      "resumen": "Acuerdo con agentes sociales para mejorar la intermediación y formación.",
+      "cita_literal": "Nos comprometemos a elaborar un Plan Estratégico de Empleo 2026–2030",
+      "pagina": 51,
+      "tags": [
+        "#Empleo",
+        "#Sindicatos"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree necesario un gran plan de empleo pactado entre el gobierno, los sindicatos y la patronal?"
+    },
+    {
+      "id": 107,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo",
+      "titulo_corto": "Bonos de contratación indefinida",
+      "resumen": "Incentivos para transformar contratos temporales en fijos, penalizando abusos.",
+      "cita_literal": "Implantaremos un sistema de incentivos con “bonos de contratación” para jóvenes",
+      "pagina": 52,
+      "tags": [
+        "#ContratoFijo",
+        "#EmpleoJoven"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Daría usted premios económicos a las empresas que hagan contratos fijos a los jóvenes?"
+    },
+    {
+      "id": 108,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Empleo",
+      "titulo_corto": "Atención prioritaria a parados >55 años",
+      "resumen": "Plan de contratación via entidades locales (PREPLAN) para mayores de 55.",
+      "cita_literal": "Recuperación y fomento de la contratación de desempleados mayores de 55 años",
+      "pagina": 52,
+      "tags": [
+        "#Mayores55",
+        "#Ayuntamientos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien que los ayuntamientos contraten con dinero público a parados de larga duración mayores de 55 años?"
+    },
+    {
+      "id": 109,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Teletrabajo",
+      "titulo_corto": "Fomento del teletrabajo en zonas rurales",
+      "resumen": "Crear espacios dotados de medios para facilitar el arraigo poblacional.",
+      "cita_literal": "apoyo y fomento del teletrabajo y creación de espacios dotados de los medios",
+      "pagina": 53,
+      "tags": [
+        "#Teletrabajo",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyaría que la Junta pagara centros de teletrabajo en los pueblos para que la gente no tenga que mudarse a la ciudad?"
+    },
+    {
+      "id": 110,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Empleo",
+      "titulo_corto": "Plan de Retorno Juvenil",
+      "resumen": "Subvenciones a empresas y ayudas a la movilidad para jóvenes emigrados.",
+      "cita_literal": "Pondremos en marcha un Plan de Retorno Juvenil que persiga la contratación efectiva",
+      "pagina": 53,
+      "tags": [
+        "#Retorno",
+        "#Jovenes"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que la región debería dar dinero a los jóvenes que se fueron fuera para que vuelvan con un contrato de trabajo?"
+    },
+    {
+      "id": 111,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Energía",
+      "titulo_corto": "Creación de Polos Renovables",
+      "resumen": "Integrar producción, almacenamiento y distribución de energía limpia para atraer industria.",
+      "cita_literal": "Desarrollaremos “Polos Renovables” que integren producción, almacenamiento",
+      "pagina": 55,
+      "tags": [
+        "#Renovables",
+        "#IndustriaVerde"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya crear grandes zonas de energía barata y limpia para que las fábricas se instalen en nuestra región?"
+    },
+    {
+      "id": 112,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Agroalimentación",
+      "titulo_corto": "Centro de Innovación Agroalimentaria regional",
+      "resumen": "Centro de referencia nacional con participación de universidades y CSIC.",
+      "cita_literal": "Crearemos un centro de investigación, transferencia e innovación del sector agroalimentario",
+      "pagina": 56,
+      "tags": [
+        "#I+D+i",
+        "#Agricultura"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería la región tener un gran centro científico dedicado solo a mejorar la agricultura y la ganadería?"
+    },
+    {
+      "id": 113,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Freelancers",
+      "titulo_corto": "Cuota Cero para nuevos autónomos (24 meses)",
+      "resumen": "Bonificación del 100% de la cuota durante dos años para nuevos emprendedores.",
+      "cita_literal": "bonificando el 100% de la cuota de nuevos autónomos durante 24 meses",
+      "pagina": 58,
+      "tags": [
+        "#Autonomos",
+        "#Empresas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Estaría de acuerdo con que los nuevos autónomos no paguen nada de cuota durante sus primeros dos años?"
+    },
+    {
+      "id": 114,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Ley de Promoción del Trabajo Autónomo",
+      "resumen": "Marco para fomentar el empleo por cuenta propia y activar el Consejo del Trabajo Autónomo.",
+      "cita_literal": "Aprobaremos una Ley de Promoción del Trabajo Autónomo",
+      "pagina": 58,
+      "tags": [
+        "#Autonomos",
+        "#Ley"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree necesaria una ley específica que defienda y ayude solamente a los trabajadores autónomos?"
+    },
+    {
+      "id": 115,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Empresas",
+      "titulo_corto": "Ayudas al relevo generacional rural",
+      "resumen": "Subvenciones para cubrir gastos de transmisión de negocios en pueblos <2.000 hab.",
+      "cita_literal": "plan económico para el relevo generacional en zonas rurales... municipios de menos de 2.000",
+      "pagina": 58,
+      "tags": [
+        "#RelevoGeneracional",
+        "#Pueblos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería el gobierno pagar los gastos de traspaso de un negocio en un pueblo para que no cierre cuando el dueño se jubile?"
+    },
+    {
+      "id": 116,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Deuda",
+      "titulo_corto": "Sistema de Compensación de Deudas Pyme",
+      "resumen": "Permitir compensar deudas entre empresas y con la administración regional.",
+      "cita_literal": "Crearemos un Sistema de Compensación de Deudas de las PYMEs",
+      "pagina": 58,
+      "tags": [
+        "#Pymes",
+        "#Finanzas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que las pequeñas empresas puedan pagar sus impuestos restando el dinero que la administración les debe a ellas?"
+    },
+    {
+      "id": 117,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Freelancers",
+      "titulo_corto": "Plan para autónomos desempleados >45 años",
+      "resumen": "Ayuda económica y reinserción para autónomos que han agotado prestaciones.",
+      "cita_literal": "Plan para autónomos desempleados de larga duración mayores de 45 años",
+      "pagina": 58,
+      "tags": [
+        "#Autonomos",
+        "#Mayores45"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien dar una ayuda especial a los autónomos de más de 45 años que se han quedado sin paro?"
+    },
+    {
+      "id": 118,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Freelancers",
+      "titulo_corto": "Ley de Segunda Oportunidad regional",
+      "resumen": "Seguros de crédito por cese de actividad y moratorias en deudas con la Junta.",
+      "cita_literal": "Apostaremos por la Ley de “Segunda Oportunidad”",
+      "pagina": 59,
+      "tags": [
+        "#SegundaOportunidad",
+        "#Autonomos"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría facilitar que los empresarios que han quebrado puedan volver a empezar sin arrastrar deudas impagables?"
+    },
+    {
+      "id": 119,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Commerce",
+      "titulo_corto": "Plataforma de venta online para comercio local",
+      "resumen": "Crear marca común y digitalizar puntos de venta rurales y urbanos.",
+      "cita_literal": "Crearemos una plataforma regional de venta online, integrando comercios de proximidad",
+      "pagina": 59,
+      "tags": [
+        "#Comercio",
+        "#Ecommerce"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le gustaría que hubiera un 'Amazon regional' para comprar por internet a las tiendas de su barrio o pueblo?"
+    },
+    {
+      "id": 120,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Reto Demográfico",
+      "titulo_corto": "Plan de Convergencia Turística",
+      "resumen": "Aumentar pernoctaciones en provincias menos favorecidas turísticamente.",
+      "cita_literal": "Desarrollaremos un Plan de Convergencia Turística",
+      "pagina": 60,
+      "tags": [
+        "#Turismo",
+        "#DesarrolloLocal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Cree necesario invertir más en turismo para las provincias que suelen tener menos visitantes?"
+    },
+    {
+      "id": 121,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Turismo",
+      "titulo_corto": "Creación del Bono Turístico CyL",
+      "resumen": "Incentivo para el turismo interior y reducción de la estacionalidad.",
+      "cita_literal": "Creación del Bono Turístico Castilla y León",
+      "pagina": 60,
+      "tags": [
+        "#BonoTuristico",
+        "#TurismoInterior"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que la Junta dé bonos de descuento para que los ciudadanos viajen dentro de la propia comunidad?"
+    },
+    {
+      "id": 122,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Turismo Rural",
+      "titulo_corto": "Plan de Turismo Minero de Castilla y León",
+      "resumen": "Potenciar ecomuseos y rutas guiadas en antiguos pozos y centrales.",
+      "cita_literal": "Desarrollaremos el Plan Turismo Minero de Castilla y León",
+      "pagina": 61,
+      "tags": [
+        "#Mineria",
+        "#TurismoRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parece bien aprovechar las antiguas minas cerradas como museos para atraer turistas a esos pueblos?"
+    },
+    {
+      "id": 123,
+      "categoria": "Vivienda",
+      "subcategoria": "Turismo",
+      "titulo_corto": "Control de viviendas de uso turístico",
+      "resumen": "Regular la proliferación descontrolada y limitar número en zonas residenciales.",
+      "cita_literal": "regulación autonómica marco para controlar la proliferación descontrolada de viviendas para su explotación turística",
+      "pagina": 61,
+      "tags": [
+        "#VUT",
+        "#Vivienda"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que la Junta debería poner límites al número de pisos turísticos para que no suba el precio del alquiler?"
+    },
+    {
+      "id": 124,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Turismo",
+      "titulo_corto": "Atracción de rodajes cinematográficos",
+      "resumen": "Medidas para favorecer la llegada de producciones de cine y TV.",
+      "cita_literal": "Potenciaremos el turismo asociado a las localizaciones de producciones cinematográficas",
+      "pagina": 61,
+      "tags": [
+        "#Cine",
+        "#Promocion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya dar facilidades para que se graben más películas y series en nuestra Comunidad?"
+    },
+    {
+      "id": 125,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Fiscalidad Rural",
+      "titulo_corto": "Deducción IRPF por residencia rural (25%)",
+      "resumen": "Deducción de hasta el 25% para quienes vivan y trabajen en zonas despobladas.",
+      "cita_literal": "deducciones hasta el 25% en la base liquidable autonómica del IRPF para quienes residan y trabajen en zonas escasamente pobladas",
+      "pagina": 63,
+      "tags": [
+        "#Impuestos",
+        "#RetoDemografico"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parece bien que la gente que vive y trabaja en pueblos pequeños pague mucho menos IRPF que los de la ciudad?"
+    },
+    {
+      "id": 126,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Fiscalidad",
+      "titulo_corto": "Incentivos fiscales por baja densidad poblacional",
+      "resumen": "Ayudas a autónomos y pymes en zonas con menos de 12,5 hab/km2.",
+      "cita_literal": "incentivos fiscales para autónomos y empresas... densidad de población inferior a 12,5 habitantes por km cuadrado",
+      "pagina": 63,
+      "tags": [
+        "#Despoblacion",
+        "#Empresas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyaría bajar los impuestos a los negocios que se instalen en las comarcas con menos habitantes de la región?"
+    },
+    {
+      "id": 127,
+      "categoria": "Vivienda",
+      "subcategoria": "Fiscalidad",
+      "titulo_corto": "Beneficios fiscales para rehabilitación rural",
+      "resumen": "Ayudas para comprar o arreglar casas en zonas despobladas para nuevos residentes.",
+      "cita_literal": "ayudas fiscales para la adquisición o rehabilitación de vivienda habitual en zonas escasamente pobladas",
+      "pagina": 64,
+      "tags": [
+        "#Rehabilitacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Daría usted ayudas de impuestos a quienes compren y arreglen una casa antigua en un pueblo para irse a vivir allí?"
+    },
+    {
+      "id": 128,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler",
+      "titulo_corto": "Impulso fiscal a la salida al mercado de casas vacías",
+      "resumen": "Medidas legislativas para equilibrar el mercado y moderar precios.",
+      "cita_literal": "medidas fiscales para favorecer la puesta en el mercado de viviendas vacías",
+      "pagina": 64,
+      "tags": [
+        "#CasasVacias",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que se debería penalizar o incentivar por ley que los dueños de casas vacías las pongan en alquiler?"
+    },
+    {
+      "id": 129,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Cambio Climático",
+      "titulo_corto": "Estrategia de Resiliencia ante el Cambio Climático",
+      "resumen": "Plan de gestión eficiente de agua, energía y ecosistemas frente al clima.",
+      "cita_literal": "Aprobaremos una Estrategia frente al Cambio Climático de Castilla y León",
+      "pagina": 68,
+      "tags": [
+        "#Sostenibilidad",
+        "#Clima"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que la región tenga un plan de choque contra la sequía y las olas de calor causadas por el cambio climático?"
+    },
+    {
+      "id": 130,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Agua",
+      "titulo_corto": "Reducción de nitratos en aguas subterráneas",
+      "resumen": "Plan de limpieza y prevención de contaminación por nitratos en la cuenca del Duero.",
+      "cita_literal": "Reducción de la contaminación por nitratos de las aguas subterráneas",
+      "pagina": 70,
+      "tags": [
+        "#Agua",
+        "#Agricultura",
+        "#MedioAmbiente"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería la Junta ser más estricta con los abonos y vertidos para asegurar que el agua de los pozos sea potable?"
+    },
+    {
+      "id": 131,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Energía",
+      "titulo_corto": "Fiscalidad sobre plusvalías energéticas excedentes",
+      "resumen": "Regulación de beneficios extraordinarios para evitar burbujas especulativas.",
+      "cita_literal": "Arbitraremos una fiscalidad específica sobre las plusvalías de generación excedentaria de energía",
+      "pagina": 70,
+      "tags": [
+        "#Renovables",
+        "#Impuestos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien cobrar un impuesto especial a las empresas eléctricas que ganan mucho dinero con los molinos y placas solares?"
+    },
+    {
+      "id": 132,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Energía",
+      "titulo_corto": "Fomento de comunidades energéticas solares",
+      "resumen": "Ayudas para autoconsumo compartido en tejados de ayuntamientos y naves.",
+      "cita_literal": "fomentar el autoconsumo energético y energías renovables, en especial fotovoltaico",
+      "pagina": 70,
+      "tags": [
+        "#Autoconsumo",
+        "#Solar"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que los vecinos puedan producir y compartir su propia electricidad solar con ayuda pública?"
+    },
+    {
+      "id": 133,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Energía",
+      "titulo_corto": "Red de recarga eléctrica e hidrolineras",
+      "resumen": "Infraestructura local para vehículos híbridos, eléctricos y de hidrógeno.",
+      "cita_literal": "Apoyaremos las redes de recarga eléctrica e hidrolineras",
+      "pagina": 71,
+      "tags": [
+        "#VehiculoElectrico",
+        "#Hidrogeno"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le gustaría que hubiera postes de carga para coches eléctricos en todos los municipios de la región?"
+    },
+    {
+      "id": 134,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Ley de Economía Circular de CyL",
+      "resumen": "Marco jurídico para transformar residuos en empleo y recursos.",
+      "cita_literal": "Elaboraremos una Ley de Economía Circular que ofrezca seguridad jurídica",
+      "pagina": 72,
+      "tags": [
+        "#Reciclaje",
+        "#EconomiaVerde"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree necesaria una ley que obligue a reutilizar los residuos industriales para crear nuevos empleos?"
+    },
+    {
+      "id": 135,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Comercio",
+      "titulo_corto": "Cláusulas Espejo en acuerdos comerciales",
+      "resumen": "Exigir reciprocidad ambiental y social a los productos importados.",
+      "cita_literal": "Exigimos reciprocidad en los acuerdos comerciales, cláusulas espejo y precios justos",
+      "pagina": 73,
+      "tags": [
+        "#CAP",
+        "#PAC",
+        "#ComercioExterior"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Deberíamos prohibir la entrada de alimentos extranjeros que no cumplen las mismas normas de salud que los nuestros?"
+    },
+    {
+      "id": 136,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Plan de defensa de la PAC rural",
+      "resumen": "Corregir efectos negativos y primar al agricultor profesional.",
+      "cita_literal": "corrija los efectos negativos de la PAC... prime al agricultor profesional",
+      "pagina": 74,
+      "tags": [
+        "#PAC",
+        "#Agricultores"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya que las ayudas de Europa vayan solo a los que viven de verdad de la agricultura y no a los 'señoritos'?"
+    },
+    {
+      "id": 137,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Agua",
+      "titulo_corto": "Plan de Infraestructuras Hidráulicas eficientes",
+      "resumen": "Reducción de pérdidas en acequias y digitalización de canales.",
+      "cita_literal": "reducción de pérdidas en conducción y la incorporación de sistemas digitales de control",
+      "pagina": 75,
+      "tags": [
+        "#Regadio",
+        "#Agua"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya gastar dinero público en arreglar las fugas de agua en los canales de riego de los campos?"
+    },
+    {
+      "id": 138,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Ganadería",
+      "titulo_corto": "Apoyo a la ganadería extensiva contra incendios",
+      "resumen": "Promover pastoreo para limpiar biomasa del sotobosque.",
+      "cita_literal": "ganadería extensiva que contribuyan a la quita de biomasa del sotobosque",
+      "pagina": 76,
+      "tags": [
+        "#Ganaderia",
+        "#IncendiosForestales"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le gustaría que se pagara a los pastores para que sus ovejas limpien el monte de hierba seca y evitar incendios?"
+    },
+    {
+      "id": 139,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Ganadería",
+      "titulo_corto": "Protección de razas y variedades autóctonas",
+      "resumen": "Fomentar sostenibilidad y biodiversidad mediante especies locales.",
+      "cita_literal": "reforzar el fomento de las variedades y razas autóctonas que marcan la identidad",
+      "pagina": 77,
+      "tags": [
+        "#Biodiversidad",
+        "#Identidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya dar subvenciones especiales para que no se pierdan las vacas, ovejas o semillas típicas de nuestra tierra?"
+    },
+    {
+      "id": 140,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Bosques",
+      "titulo_corto": "Operativo contra incendios permanente (todo el año)",
+      "resumen": "Establecer unidades de prevención y extinción que trabajen los 12 meses.",
+      "cita_literal": "Estableceremos un operativo permanente durante todo el año con el que prevenir y combatir los incendios",
+      "pagina": 79,
+      "tags": [
+        "#Infocal",
+        "#BomberosForestales"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Cree que los bomberos forestales deberían trabajar y estar contratados todo el año y no solo en verano?"
+    },
+    {
+      "id": 141,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Gobernanza forestal",
+      "titulo_corto": "Creación del Fondo Forestal de CyL",
+      "resumen": "Asegurar que los recursos que genera el monte revierten en su mejora.",
+      "cita_literal": "Crearemos el Fondo Forestal de Castilla y León",
+      "pagina": 80,
+      "tags": [
+        "#Montes",
+        "#Bosques"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Estaría de acuerdo en que el dinero que se saca de la madera de los montes se use solo para cuidar esos mismos montes?"
+    },
+    {
+      "id": 142,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Bosques",
+      "titulo_corto": "Impulso al sector resinero y micología",
+      "resumen": "Fomentar aprovechamientos forestales como motor económico rural.",
+      "cita_literal": "Fomentaremos la actividad del sector resinero, el de la madera y mueble, la micología",
+      "pagina": 81,
+      "tags": [
+        "#Resina",
+        "#Micologia",
+        "#Pueblos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya que la Junta de más ayudas para que se pueda vivir de coger resina o setas en nuestros montes?"
+    },
+    {
+      "id": 143,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Bosques",
+      "titulo_corto": "Ley de Bomberos Profesionales (SPEIS)",
+      "resumen": "Garantizar servicio público esencial y regular la figura del bombero profesional.",
+      "cita_literal": "regule y garantice el servicio público esencial... y la figura de los bomberos profesionales",
+      "pagina": 81,
+      "tags": [
+        "#Bomberos",
+        "#Emergencias"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que todos los parques de bomberos de la región deberían ser de gestión pública y con bomberos profesionales?"
+    },
+    {
+      "id": 144,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Biodiversidad",
+      "titulo_corto": "Zonificación rigorosa para renovables",
+      "resumen": "Proteger suelos fértiles y Red Natura frente al despliegue energético.",
+      "cita_literal": "estableceremos la zonificación ambiental con criterios específicos para el despliegue de las energías renovables",
+      "pagina": 83,
+      "tags": [
+        "#Renovables",
+        "#Biodiversidad",
+        "#Zonificacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Estaría de acuerdo con prohibir que se pongan placas solares o molinos en tierras de cultivo de regadío o zonas protegidas?"
+    },
+    {
+      "id": 145,
+      "categoria": "Vivienda",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Consorcio Autonómico de Vivienda y Suelo",
+      "resumen": "Ente para movilizar suelo y construir parque público permanente.",
+      "cita_literal": "Crearemos un Consorcio Autonómico de Vivienda y Suelo",
+      "pagina": 88,
+      "tags": [
+        "#ViviendaPublica",
+        "#Suelo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría crear una gran empresa pública que se encargue de construir pisos a precios bajos en toda la región?"
+    },
+    {
+      "id": 146,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler",
+      "titulo_corto": "Ayuda al alquiler de 350€ (fuera de protegida)",
+      "resumen": "Reconocimiento de ayuda directa al arrendamiento en mercado libre.",
+      "cita_literal": "reconocimiento de una prestación económica de 350 euros como ayuda al arrendamiento",
+      "pagina": 88,
+      "tags": [
+        "#AyudaAlquiler",
+        "#Jovenes"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien que la Junta dé 350 euros al mes a quienes viven de alquiler pero no consiguen un piso de protección oficial?"
+    },
+    {
+      "id": 147,
+      "categoria": "Vivienda",
+      "subcategoria": "Jóvenes",
+      "titulo_corto": "Avales públicos para compra de primera vivienda",
+      "resumen": "Facilitar hipoteca a menores de 35 años mediante aval regional.",
+      "cita_literal": "Diseñaremos Plan de avales e intermediación hipotecaria para jóvenes menores de 35 años",
+      "pagina": 89,
+      "tags": [
+        "#Hipoteca",
+        "#Jovenes"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Debería el gobierno regional avalar a los jóvenes que no tienen ahorros para que el banco les dé la hipoteca?"
+    },
+    {
+      "id": 148,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler",
+      "titulo_corto": "Construcción de 5.000 viviendas de alquiler asequible",
+      "resumen": "Objetivo de nueva construcción en suelo público o derecho de superficie.",
+      "cita_literal": "alcanzar al menos 5.000 nuevas viviendas de alquiler",
+      "pagina": 89,
+      "tags": [
+        "#ViviendaAsequible",
+        "#Construccion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría el compromiso de construir 5.000 nuevos pisos de alquiler barato en los próximos años?"
+    },
+    {
+      "id": 149,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler",
+      "titulo_corto": "Límite al precio máximo del alquiler mensual",
+      "resumen": "Topar precios en inmuebles con ayuda pública o suelos calificados.",
+      "cita_literal": "Limitaremos el precio máximo del alquiler en aquellos inmuebles que hayan recibido cualquier tipo de ayuda",
+      "pagina": 89,
+      "tags": [
+        "#TopesAlquiler",
+        "#PoliticaVivienda"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con que la ley ponga un límite máximo a lo que los caseros pueden cobrar por el alquiler?"
+    },
+    {
+      "id": 150,
+      "categoria": "Vivienda",
+      "subcategoria": "Mayores",
+      "titulo_corto": "Rehabilitación de ascensores para accesibilidad",
+      "resumen": "Financiar obras de ascensores y supresión de barreras en bloques antiguos.",
+      "cita_literal": "financiando obras para mejorar la accesibilidad (instalación de ascensores...)",
+      "pagina": 90,
+      "tags": [
+        "#Ascensores",
+        "#Mayores",
+        "#Rehabilitacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Daría ayudas públicas para que los edificios viejos pongan ascensor y que los mayores puedan salir de casa?"
+    },
+    {
+      "id": 151,
+      "categoria": "Vivienda",
+      "subcategoria": "Pobreza",
+      "titulo_corto": "Erradicación de la infravivienda",
+      "resumen": "Protocolos de emergencia y eliminación de chabolismo y malas condiciones.",
+      "cita_literal": "Intervendremos para hacer realidad la erradicación de la infravivienda",
+      "pagina": 91,
+      "tags": [
+        "#ViviendaDigna",
+        "#ExclusionSocial"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que la prioridad absoluta del gobierno debería ser que nadie viva en chavolas o casas en ruinas?"
+    },
+    {
+      "id": 152,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Transporte Colectivo",
+      "titulo_corto": "Tarjeta Única de Transporte de Castilla y León",
+      "resumen": "Soporte único para todos los medios de transporte público regional.",
+      "cita_literal": "crearemos una tarjeta única de transporte que permita utilizar cualquier medio",
+      "pagina": 100,
+      "tags": [
+        "#TransportePublico",
+        "#MovilidadDigital"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le gustaría tener una única tarjeta para poder subir al autobús urbano, al interurbano y al tren de toda la región?"
+    },
+    {
+      "id": 153,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Transporte Rural",
+      "titulo_corto": "Conexión directa transporte pueblo-cabecera",
+      "resumen": "Garantizar al 100% de municipios conexión diaria con su centro de comarca.",
+      "cita_literal": "Todos los municipios contarán con conexión directa con su cabecera de comarca",
+      "pagina": 100,
+      "tags": [
+        "#Autobus",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyaría garantizar por ley que todos los pueblos tengan un autobús diario para ir a su centro médico o administrativo de referencia?"
+    },
+    {
+      "id": 154,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Nueva Ley de Ordenación del Territorio",
+      "resumen": "Modificar ley de 1998 para incluir clima, género y movilidad sostenible.",
+      "cita_literal": "Modificaremos la Ley de Ordenación del Territorio... contemplando las nuevas realidades",
+      "pagina": 93,
+      "tags": [
+        "#Ordenacion",
+        "#Gobernanza"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree necesario modernizar las leyes de organización del territorio para adaptarlas a la crisis del clima?"
+    },
+    {
+      "id": 155,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Emergencias",
+      "titulo_corto": "Fondo de Contingencia de 500M€ anuales",
+      "resumen": "Fondo para actuar ante borrascas, incendios o catástrofes inmediatas.",
+      "cita_literal": "Dotaremos al Presupuesto anual un fondo de contingencia de 500 millones de euros",
+      "pagina": 94,
+      "tags": [
+        "#Emergencias",
+        "#Presupuesto"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría reservar siempre 500 millones para arreglar los destrozos de incendios o nevadas sin esperas?"
+    },
+    {
+      "id": 156,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Ley Autonómica frente a la Despoblación",
+      "resumen": "Política estructural vinculando financiación al impacto demográfico.",
+      "cita_literal": "Impulsaremos una Ley autonómica frente a la despoblación",
+      "pagina": 96,
+      "tags": [
+        "#Despoblacion",
+        "#Ley"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya una ley que obligue a que el dinero se reparta según la falta de gente en cada zona?"
+    },
+    {
+      "id": 157,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Administración",
+      "titulo_corto": "Descentralización de sedes administrativas",
+      "resumen": "Llevar oficinas de la Junta fuera de las capitales a los pueblos.",
+      "cita_literal": "Apostaremos por la descentralización de las sedes de organismos públicos",
+      "pagina": 97,
+      "tags": [
+        "#Descentralizacion",
+        "#EmpleoRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parecería bien que las consejerías de la Junta estuvieran repartidas por los pueblos en lugar de todas juntas en Valladolid?"
+    },
+    {
+      "id": 158,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Administración",
+      "titulo_corto": "Creación de Áreas Metropolitanas",
+      "resumen": "Ley para planificación conjunta de servicios en grandes entornos urbanos.",
+      "cita_literal": "permita la creación de Áreas Metropolitanas para la planificación conjunta",
+      "pagina": 97,
+      "tags": [
+        "#Gobernanza",
+        "#Ciudades"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría que las ciudades y sus pueblos de alrededor se organicen juntos para tener mejores autobuses y alumbrado?"
+    },
+    {
+      "id": 159,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Cooperación",
+      "titulo_corto": "Impulso estratégico a 'La Raya' (Portugal)",
+      "resumen": "Desarrollo interregional y transfronterizo con el norte de Portugal.",
+      "cita_literal": "Primaremos el desarrollo interregional y transfronterizo con Portugal",
+      "pagina": 98,
+      "tags": [
+        "#Portugal",
+        "#LaRaya",
+        "#Frontera"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Cree prioritario invertir más en los pueblos de la frontera con Portugal para evitar que mueran?"
+    },
+    {
+      "id": 160,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Transporte Rural",
+      "titulo_corto": "Autobuses sostenibles en zonas despobladas",
+      "resumen": "Reforzar conexiones rurales con flotas de bajas emisiones.",
+      "cita_literal": "ampliando la cobertura de autobuses sostenibles en las zonas más despobladas",
+      "pagina": 98,
+      "tags": [
+        "#Autobus",
+        "#Sostenibilidad",
+        "#RetoDemografico"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya que el transporte público en los pueblos se haga con vehículos eléctricos o ecológicos?"
+    },
+    {
+      "id": 161,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Logística",
+      "titulo_corto": "Estrategia Logística de Castilla y León",
+      "resumen": "Herramienta para ordenar el desarrollo logístico y reforzar el Corredor Atlántico.",
+      "cita_literal": "mediante la aprobación de la Estrategia Logística de Castilla y León",
+      "pagina": 102,
+      "tags": [
+        "#Logistica",
+        "#Transporte",
+        "#CorredorAtlantico"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría que la Junta lidere un plan para convertir a la región en el gran centro logístico del noroeste de España?"
+    },
+    {
+      "id": 162,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Transparencia",
+      "titulo_corto": "Regulación de puertas giratorias (5 años)",
+      "resumen": "Imponer un periodo de incompatibilidad de cinco años para altos cargos.",
+      "cita_literal": "Regulación de “puertas giratorias” con un periodo de incompatibilidad de cinco años",
+      "pagina": 108,
+      "tags": [
+        "#Transparencia",
+        "#Corrupcion",
+        "#CargosPublicos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parecería bien prohibir que los políticos trabajen para empresas que ellos mismos regularon hasta 5 años después de dejar el cargo?"
+    },
+    {
+      "id": 163,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Transparencia",
+      "titulo_corto": "Eliminación de aforamientos para políticos",
+      "resumen": "Eliminar privilegios judiciales en causas ajenas a la actividad pública.",
+      "cita_literal": "Eliminación de aforamientos, al menos en causas ajenas a la actividad pública",
+      "pagina": 108,
+      "tags": [
+        "#Justicia",
+        "#Igualdad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Estaría de acuerdo con eliminar el aforamiento para que los políticos sean juzgados por tribunales normales como cualquier ciudadano?"
+    },
+    {
+      "id": 164,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Administración",
+      "titulo_corto": "Nueva Ley de Función Pública de CyL",
+      "resumen": "Modernizar la administración, reducir temporalidad y fomentar profesionalización.",
+      "cita_literal": "Castilla y León necesita una nueva Ley de Función Pública",
+      "pagina": 109,
+      "tags": [
+        "#Funcionarios",
+        "#EmpleoPublico"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que se debería renovar por completo la ley de funcionarios para que la administración sea más ágil y eficiente?"
+    },
+    {
+      "id": 165,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Administración",
+      "titulo_corto": "Regularización del teletrabajo público",
+      "resumen": "Conciliar derecho del empleado con atención presencial de calidad.",
+      "cita_literal": "Regularización del teletrabajo, conciliando el derecho del empleado público",
+      "pagina": 109,
+      "tags": [
+        "#Teletrabajo",
+        "#Modernizacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que los funcionarios puedan teletrabajar siempre que se garantice que las oficinas sigan atendiendo bien al público?"
+    },
+    {
+      "id": 166,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Pacto de Financiación Local demográfico",
+      "resumen": "Nuevo sistema de reparto de fondos basado en población, dispersión y edad.",
+      "cita_literal": "Proponemos un Pacto de Financiación Local estable y suficiente, con criterios concretos como población, dispersión",
+      "pagina": 111,
+      "tags": [
+        "#Financiación",
+        "#Ayuntamientos",
+        "#RetoDemografico"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Estaría de acuerdo con que los ayuntamientos de los pueblos reciban mucho más dinero por cada vecino que las ciudades?"
+    },
+    {
+      "id": 167,
+      "categoria": "Otros",
+      "subcategoria": "Memoria Histórica",
+      "titulo_corto": "Plan de exhumaciones y memoria democrática",
+      "resumen": "Localización e identificación de personas desaparecidas por represión política.",
+      "cita_literal": "Impulsaremos los planes de exhumaciones para la búsqueda, localización e identificación de las personas desaparecidas",
+      "pagina": 115,
+      "tags": [
+        "#MemoriaHistorica",
+        "#DerechosHumanos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que la Junta pague con dinero público la apertura de fosas comunes para identificar a los fusilados de la Guerra Civil?"
+    },
+    {
+      "id": 168,
+      "categoria": "Otros",
+      "subcategoria": "Memoria Histórica",
+      "titulo_corto": "Memoria histórica en el currículo escolar",
+      "resumen": "Incorporar contenidos sobre historia reciente en ESO y Bachillerato.",
+      "cita_literal": "Incorporaremos contenidos relacionados con la memoria histórica en los currículos de Educación Secundaria",
+      "pagina": 115,
+      "tags": [
+        "#Educacion",
+        "#Historia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien que se enseñen obligatoriamente los hechos de la represión franquista en los institutos?"
+    },
+    {
+      "id": 169,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Unión Europea",
+      "titulo_corto": "Defensa de fondos FEDER por baja densidad",
+      "resumen": "Exigir que Europa adapte los fondos a las regiones despobladas como CyL.",
+      "cita_literal": "Promoveremos una reforma de los fondos FEDER para que incluyan financiación especial para las regiones que estén enfrentándose al desafío demográfico",
+      "pagina": 117,
+      "tags": [
+        "#Europa",
+        "#RetoDemografico",
+        "#FondosFEDER"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Cree que la Junta debería presionar más en Bruselas para que Europa envíe más dinero solo por el hecho de tener pocos habitantes?"
+    }
+  ]
+}

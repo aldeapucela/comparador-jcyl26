@@ -1,0 +1,112 @@
+[
+    {
+        "id": "SAN_1",
+        "categoria": "Sanidad Pública",
+        "pregunta": "¿Debería fijarse por ley que el 25% del presupuesto de sanidad vaya exclusivamente a la Atención Primaria?"
+    },
+    {
+        "id": "SAN_2",
+        "categoria": "Sanidad Pública",
+        "pregunta": "¿Apoya la gestión 100% pública de ambulancias y limpieza, prohibiendo por ley su externalización a empresas privadas?"
+    },
+    {
+        "id": "EDU_1",
+        "categoria": "Educación y Futuro",
+        "pregunta": "¿Estás de acuerdo con una Prueba de Acceso a la Universidad (EBAU/PAU) única y con el mismo examen para toda España?"
+    },
+    {
+        "id": "EDU_2",
+        "categoria": "Educación y Futuro",
+        "pregunta": "¿Debería la Junta garantizar por ley mantener abiertas las escuelas rurales que tengan al menos 3 alumnos?"
+    },
+    {
+        "id": "SOC_1",
+        "categoria": "Servicios Sociales",
+        "pregunta": "¿Debería prohibirse que empresas privadas con ánimo de lucro gestionen residencias de mayores financiadas con dinero público?"
+    },
+    {
+        "id": "SOC_2",
+        "categoria": "Servicios Sociales",
+        "pregunta": "¿Apoya que la Junta pague un complemento económico a los jubilados con pensiones por debajo de los 730€?"
+    },
+    {
+        "id": "RET_1",
+        "categoria": "Reto Demográfico",
+        "pregunta": "¿Debería ser obligatorio evaluar el impacto económico en los pueblos antes de aprobar cualquier ley regional (Garantía Rural)?"
+    },
+    {
+        "id": "RET_2",
+        "categoria": "Reto Demográfico",
+        "pregunta": "¿Es partidario de trasladar las sedes oficiales de la Junta fuera de Valladolid hacia el resto de provincias?"
+    },
+    {
+        "id": "VIV_1",
+        "categoria": "Vivienda",
+        "pregunta": "¿Debería la Junta aplicar límites por ley al precio máximo que un casero puede cobrar por el alquiler (Zonas Tensionadas)?"
+    },
+    {
+        "id": "VIV_2",
+        "categoria": "Vivienda",
+        "pregunta": "¿Prefiere que la Junta avale hipotecas privadas para jóvenes antes que construir vivienda pública de alquiler social?"
+    },
+    {
+        "id": "FIS_1",
+        "categoria": "Fiscalidad",
+        "pregunta": "¿Apoya eliminar casi totalmente el impuesto de sucesiones (herencias) para hermanos, tíos y sobrinos?"
+    },
+    {
+        "id": "FIS_2",
+        "categoria": "Fiscalidad",
+        "pregunta": "¿Debería aplicarse una rebaja extra del 25% en el IRPF solo para las personas que vivan y trabajen en zonas rurales despobladas?"
+    },
+    {
+        "id": "AGR_1",
+        "categoria": "Sector Primario",
+        "pregunta": "¿Debe la Junta intervenir para asegurar que los agricultores cobren un precio que siempre cubra sus costes de producción?"
+    },
+    {
+        "id": "AGR_2",
+        "categoria": "Sector Primario",
+        "pregunta": "¿Apoya que las ayudas europeas (PAC) se limiten solo a agricultores profesionales que vivan principalmente del campo?"
+    },
+    {
+        "id": "AMB_1",
+        "categoria": "Medio Ambiente",
+        "pregunta": "¿Debería la Junta paralizar inmediatamente todos los proyectos de ganadería industrial (macrogranjas) y biogás?"
+    },
+    {
+        "id": "AMB_2",
+        "categoria": "Medio Ambiente",
+        "pregunta": "¿Apoya que el operativo contra incendios forestales sea 100% público y trabaje durante los 12 meses del año?"
+    },
+    {
+        "id": "MOV_1",
+        "categoria": "Movilidad e Internet",
+        "pregunta": "¿Debería la ley obligar a que cualquier servicio básico (médico, oficina) esté a menos de 30 minutos de cualquier pueblo?"
+    },
+    {
+        "id": "MOV_2",
+        "categoria": "Movilidad e Internet",
+        "pregunta": "¿Debería la Junta garantizar por ley que el 100% de los municipios tengan conexión a internet de 100 Mbps?"
+    },
+    {
+        "id": "TRA_1",
+        "categoria": "Calidad Democrática",
+        "pregunta": "¿Debería prohibirse por ley que un alto cargo de la Junta trabaje en el sector que gestionó hasta 10 años después de su cese?"
+    },
+    {
+        "id": "TRA_2",
+        "categoria": "Calidad Democrática",
+        "pregunta": "¿Deberían eliminarse los aforamientos para que los políticos sean juzgados por tribunales normales?"
+    },
+    {
+        "id": "CUL_1",
+        "categoria": "Otros",
+        "pregunta": "¿Deberían eliminarse todas las subvenciones públicas destinadas a la tauromaquia y festejos taurinos?"
+    },
+    {
+        "id": "CUL_2",
+        "categoria": "Otros",
+        "pregunta": "¿Debe ser obligatorio incluir contenidos sobre la memoria democrática y la represión franquista en los institutos?"
+    }
+]

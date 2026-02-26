@@ -1,0 +1,1343 @@
+{
+  "bloque_informacion": {
+    "rango_paginas": "Completo",
+    "estado": "finalizado"
+  },
+  "metadatos": {
+    "partido": "PP",
+    "candidato": "Alfonso Fernández Mañueco",
+    "lema": "Castilla y León Mejores",
+    "anio": 2026
+  },
+  "propuestas": [
+    {
+      "id": 1,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Innovación",
+      "titulo_corto": "Apoyo a sectores de mayor valor añadido",
+      "resumen": "Impulso a los sectores aeronáutico, químico, farmacéutico y logístico.",
+      "cita_literal": "Apoyaremos a los sectores de mayor valor añadido y con capacidad de crecimiento, como el sector aeronáutico, el químico, el farmacéutico y el logístico.",
+      "pagina": 11,
+      "tags": [
+        "#Industria",
+        "#Innovacion",
+        "#Crecimiento"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien que la Junta priorice las ayudas públicas a las empresas de aeronáutica, farmacia y química?"
+    },
+    {
+      "id": 2,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Automoción",
+      "titulo_corto": "Plan estratégico de la automoción 2030",
+      "resumen": "Reforzar la cadena de suministro, movilidad eléctrica y digitalización del sector industrial.",
+      "cita_literal": "Impulsaremos con el sector un Plan estratégico de la automoción de Castilla y León horizonte 2030",
+      "pagina": 11,
+      "tags": [
+        "#Automocion",
+        "#Industria",
+        "#Cyl2030"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría dedicar fondos públicos para que las fábricas de coches de la región se adapten al vehículo eléctrico y digital?"
+    },
+    {
+      "id": 3,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Industria",
+      "titulo_corto": "Polo de tecnología de vehículo autónomo",
+      "resumen": "Posicionar a CyL como referente en inversión para fabricantes y proveedores de vehículos autónomos.",
+      "cita_literal": "Fijaremos a Castilla y León como un polo para la tecnología de vehículo autónomo y conectado",
+      "pagina": 11,
+      "tags": [
+        "#VehiculoAutonomo",
+        "#I+D+i",
+        "#Inversion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le gustaría que Castilla y León lidere la investigación sobre coches que conducen solos para atraer a grandes fabricantes?"
+    },
+    {
+      "id": 4,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Emprendimiento",
+      "titulo_corto": "Uso empresarial de la IA",
+      "resumen": "Fomentar el uso de Inteligencia Artificial para la eficiencia en clústeres, universidades y pymes.",
+      "cita_literal": "Reforzaremos nuestra apuesta por el uso empresarial de la Inteligencia Artificial como elemento imprescindible para la eficiencia",
+      "pagina": 11,
+      "tags": [
+        "#IA",
+        "#Tecnologia",
+        "#Empresas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que la Junta debería subvencionar el uso de la Inteligencia Artificial en los pequeños negocios para que sean más productivos?"
+    },
+    {
+      "id": 5,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Energía",
+      "titulo_corto": "Liderazgo en Hidrógeno Verde",
+      "resumen": "Impulso de la producción de hidrógeno verde como recurso energético industrial competitivo.",
+      "cita_literal": "Impulsaremos el desarrollo de hidrógeno verde en Castilla y León desde la perspectiva de la demanda de este recurso.",
+      "pagina": 11,
+      "tags": [
+        "#HidrogenoVerde",
+        "#Renovables",
+        "#Energia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que la región invierta en plantas de hidrógeno verde para dar energía barata a nuestras fábricas?"
+    },
+    {
+      "id": 6,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Construcción",
+      "titulo_corto": "Hub de construcción industrializada",
+      "resumen": "Posicionar a la Comunidad como referente en modelos constructivos eficientes y sostenibles.",
+      "cita_literal": "Promoveremos la creación de un Hub de construcción industrializada que actúe como espacio de referencia",
+      "pagina": 11,
+      "tags": [
+        "#Construccion",
+        "#Sostenibilidad",
+        "#Hub"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parecería bien incentivar la construcción de casas fabricadas en módulos para bajar el precio de la vivienda?"
+    },
+    {
+      "id": 7,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Innovación",
+      "titulo_corto": "Nuevo sistema autonómico de innovación",
+      "resumen": "Simplificación administrativa y apoyo a proyectos I+D+i estratégicos en colaboración público-privada.",
+      "cita_literal": "Impulsaremos un nuevo sistema autonómico de innovación, basado en la colaboración público-privada",
+      "pagina": 12,
+      "tags": [
+        "#I+D+i",
+        "#Gobernanza",
+        "#Empresas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que el gobierno colabore estrechamente con empresas privadas para financiar proyectos de investigación?"
+    },
+    {
+      "id": 8,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "IA Rural",
+      "titulo_corto": "Digitalización e IA en entornos rurales",
+      "resumen": "Financiación al 100% de programas de formación en digitalización e IA para emprendedores rurales.",
+      "cita_literal": "Impulsaremos la digitalización y la IA en entornos rurales, a través de la financiación al 100% de programas de formación",
+      "pagina": 12,
+      "tags": [
+        "#IA",
+        "#Formacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parece bien que la Junta pague todo el curso de informática e IA a quien quiera abrir un negocio en un pueblo?"
+    },
+    {
+      "id": 9,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Talento",
+      "titulo_corto": "Programa integral de Retorno de Talento",
+      "resumen": "Incentivos y facilidades para conectar perfiles vacantes con profesionales emigrados.",
+      "cita_literal": "Desarrollaremos un Programa integral de Retorno de Talento basado en las necesidades de perfiles vacantes",
+      "pagina": 13,
+      "tags": [
+        "#Talento",
+        "#Empleo",
+        "#Retorno"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Daría ayudas especiales a los trabajadores de la región que viven fuera para que vuelvan a ocupar puestos vacantes aquí?"
+    },
+    {
+      "id": 10,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Internacionalización",
+      "titulo_corto": "Nuevo Plan de Internacionalización",
+      "resumen": "Simplificar burocracia para la salida al exterior de empresas de Castilla y León.",
+      "cita_literal": "Diseñaremos un nuevo Plan de Internacionalización... se simplificarán los procesos administrativos",
+      "pagina": 13,
+      "tags": [
+        "#Exportacion",
+        "#SinBurocracia",
+        "#Pymes"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Debería la Junta eliminar la mayoría de los trámites para que nuestras pequeñas empresas puedan vender fuera más fácilmente?"
+    },
+    {
+      "id": 11,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Inversión",
+      "titulo_corto": "Captación de financiación internacional",
+      "resumen": "Atraer capital exterior aprovechando la paz social y el talento regional.",
+      "cita_literal": "Impulsaremos la captación de financiación y ahorro internacional para desarrollar proyectos empresariales",
+      "pagina": 13,
+      "tags": [
+        "#Inversion",
+        "#CrecimientoEconomico",
+        "#PazSocial"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría que la Junta viaje al extranjero para convencer a inversores de que pongan su dinero en nuestra Comunidad?"
+    },
+    {
+      "id": 12,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Ley de Mercado Abierto de CyL",
+      "resumen": "Garantizar que cualquier operador nacional pueda trabajar en CyL sin requisitos adicionales.",
+      "cita_literal": "Aprobaremos la Ley de Mercado Abierto de Castilla y León",
+      "pagina": 13,
+      "tags": [
+        "#MercadoAbierto",
+        "#Ley",
+        "#Autonomos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Debería permitirse que un fontanero de Madrid o Galicia trabaje aquí sin tener que pedir nuevos carnets o licencias locales?"
+    },
+    {
+      "id": 13,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Energía",
+      "titulo_corto": "Hibridación de instalaciones renovables",
+      "resumen": "Favorecer sistemas de generación híbridos y almacenamiento para seguridad de suministro.",
+      "cita_literal": "Favoreciendo los sistemas de generación híbridos y la seguridad de suministro a través del almacenamiento energético.",
+      "pagina": 14,
+      "tags": [
+        "#Renovables",
+        "#EnergiaHibrida",
+        "#Almacenamiento"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que en un mismo terreno se mezclen molinos y placas solares para producir energía con menos cables?"
+    },
+    {
+      "id": 14,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Autoconsumo",
+      "titulo_corto": "Mesa de Autoconsumo de Castilla y León",
+      "resumen": "Continuar el despliegue de la autosuficiencia energética mediante colaboración público-privada.",
+      "cita_literal": "Continuaremos con el despliegue de la autosuficiencia energética... a través de la Mesa de Autoconsumo",
+      "pagina": 14,
+      "tags": [
+        "#Autoconsumo",
+        "#EficienciaEnergetica"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien que la Junta ayude a los ciudadanos a ponerse sus propias placas solares para no depender de las eléctricas?"
+    },
+    {
+      "id": 15,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Autoconsumo Industrial",
+      "titulo_corto": "Suelo industrial verde en polígonos",
+      "resumen": "Fomentar el autoconsumo en áreas empresariales para mejorar competitividad y empleo.",
+      "cita_literal": "Fomentaremos el autoconsumo industrial en nuestros polígonos empresariales, a través de la creación de suelo industrial verde",
+      "pagina": 14,
+      "tags": [
+        "#Poligonos",
+        "#EnergiaVerde",
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría que las empresas de los polígonos industriales compartan placas solares bajo el sello de 'suelo verde'?"
+    },
+    {
+      "id": 16,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Béjar",
+      "titulo_corto": "Nuevos tejidos 'Tipo Béjar'",
+      "resumen": "Impulso a la industria textil de la comarca de Béjar mediante el reciclaje y nuevos materiales.",
+      "cita_literal": "Trabajaremos, especialmente en la comarca de Béjar con la industria textil... impulsando su competitividad a través del desarrollo de nuevos tejidos 'Tipo Béjar'",
+      "pagina": 14,
+      "tags": [
+        "#Bejar",
+        "#Textil",
+        "#IndustriaLocal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Cree que la Junta debe dar subvenciones exclusivas a la industria textil de Béjar para que no cierre sus fábricas?"
+    },
+    {
+      "id": 17,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Edificación",
+      "titulo_corto": "Sustitución de calderas de gas antiguas",
+      "resumen": "Focalizar ayudas en sistemas de aerotermia o biomasa ante la prohibición europea de fósiles.",
+      "cita_literal": "sustitución que se focalizará en soluciones ligadas a sistemas de bombas de calor, o soluciones híbridas y uso de combustibles renovables",
+      "pagina": 15,
+      "tags": [
+        "#Calderas",
+        "#Aerotermia",
+        "#Sostenibilidad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que el gobierno pague parte del coste de cambiar las calderas viejas de gas por sistemas modernos de calefacción eléctrica?"
+    },
+    {
+      "id": 18,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Vehículo Eléctrico",
+      "titulo_corto": "Completar la red de recarga eléctrica",
+      "resumen": "Priorizar tramitación y apoyo económico para puntos de recarga pública en toda la red.",
+      "cita_literal": "Trabajaremos por completar la red de recarga de vehículos eléctricos... manteniendo así el liderazgo de Castilla y León",
+      "pagina": 15,
+      "tags": [
+        "#CocheElectrico",
+        "#CargaEléctrica",
+        "#Infraestructuras"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le gustaría que hubiera postes públicos de carga para coches eléctricos en todos los rincones de la Comunidad?"
+    },
+    {
+      "id": 19,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Industria Rural",
+      "titulo_corto": "Maquinaria industrial especializada para pymes rurales",
+      "resumen": "Incrementar ayudas para adquisición de equipos con el fin de asentar industria en el campo.",
+      "cita_literal": "ayudas a las industrias para la adquisición de maquinaria industrial, con especial incidencia en las pymes y en la industria en el mundo rural.",
+      "pagina": 15,
+      "tags": [
+        "#Pymes",
+        "#Maquinaria",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Estaría de acuerdo en dar más dinero a las fábricas que se instalen en pueblos para que compren máquinas nuevas?"
+    },
+    {
+      "id": 20,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Logística",
+      "titulo_corto": "Desarrollo de nodos logísticos 2030",
+      "resumen": "Acelerar nodos de León y Valladolid en 2030 y Burgos/Salamanca en 2040 dentro del Corredor Atlántico.",
+      "cita_literal": "Defendemos la inclusión de los nodos logísticos de Burgos y Salamanca... para el año 2040 y el desarrollo de los nodos de León y Valladolid en el año 2030",
+      "pagina": 15,
+      "tags": [
+        "#Logistica",
+        "#CorredorAtlantico",
+        "#Transporte"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece prioritario convertir a Valladolid y León en los grandes puertos secos de entrada de mercancías desde Europa?"
+    },
+    {
+      "id": 21,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Fiscalidad",
+      "titulo_corto": "Nueva bajada en la tarifa autonómica del IRPF",
+      "resumen": "Reducción de la presión fiscal con incidencia en rentas bajas y medias.",
+      "cita_literal": "Haremos una nueva bajada en la tarifa autonómica del IRPF, de la que se beneficiarán todos los contribuyentes",
+      "pagina": 30,
+      "tags": [
+        "#Impuestos",
+        "#IRPF",
+        "#Familias"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría que la Junta baje el tramo regional del IRPF para que todos paguemos menos impuestos?"
+    },
+    {
+      "id": 22,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Fiscalidad Rural",
+      "titulo_corto": "Impuestos cero en el medio rural para transmisiones",
+      "resumen": "Supresión de impuestos en compra de primera vivienda, locales y explotaciones agrarias en el 97% de municipios.",
+      "cita_literal": "Aprobaremos una política fiscal de impuestos cero en el medio rural para la transmisión de propiedades",
+      "pagina": 30,
+      "tags": [
+        "#ExencionesSectoriales",
+        "#MedioRural",
+        "#Poblacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parece bien eliminar totalmente los impuestos al comprar una casa o un negocio en los pueblos de la región?"
+    },
+    {
+      "id": 23,
+      "categoria": "Vivienda",
+      "subcategoria": "Jóvenes",
+      "titulo_corto": "Cuenta Ahorro Vivienda Joven",
+      "resumen": "Deducciones en el IRPF por cantidades depositadas para la compra de la primera vivienda habitual.",
+      "cita_literal": "crearemos la “Cuenta Ahorro Vivienda Joven” que permitirá aplicar deducciones en el IRPF",
+      "pagina": 31,
+      "tags": [
+        "#ViviendaJoven",
+        "#Deducciones",
+        "#Ahorro"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Daría incentivos de impuestos a los jóvenes que ahorren dinero específicamente para comprar su primer piso?"
+    },
+    {
+      "id": 24,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Sucesiones",
+      "titulo_corto": "Bonificación para familiares cercanos (Sucesiones)",
+      "resumen": "Extender progresivamente la bonificación a hermanos, tíos y sobrinos en herencias y donaciones.",
+      "cita_literal": "Extenderemos de forma progresiva la bonificación en el impuesto sobre sucesiones y donaciones a los familiares cercanos",
+      "pagina": 30,
+      "tags": [
+        "#Herencias",
+        "#Sucesiones",
+        "#Bonificacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que no se paguen impuestos al recibir una herencia de un hermano, un tío o un sobrino?"
+    },
+    {
+      "id": 25,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Autónomos",
+      "titulo_corto": "Bono cuota autónomos y Tarifa Cero",
+      "resumen": "Ayudas económicas para paliar subidas de cotizaciones estatales y ampliación de la tarifa cero.",
+      "cita_literal": "Ayudaremos económicamente a nuestros autónomos con el “bono cuota autónomos”",
+      "pagina": 34,
+      "tags": [
+        "#Autonomos",
+        "#TarifaCero",
+        "#Ayudas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Debe la Junta pagar parte de la cuota de la Seguridad Social a los autónomos para ayudarles frente a las subidas de Madrid?"
+    },
+    {
+      "id": 26,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Conciliación",
+      "titulo_corto": "Ayudas conciliación para autónomos",
+      "resumen": "Mejorar las ayudas para facilitar la vida profesional y laboral de los trabajadores por cuenta propia.",
+      "cita_literal": "Incidiremos en la mejora de las ayudas a la conciliación de la vida profesional y laboral por parte de trabajadores autónomos",
+      "pagina": 34,
+      "tags": [
+        "#Conciliacion",
+        "#Autonomos",
+        "#Servicios"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya dar subvenciones específicas a los autónomos para que puedan cuidar de sus hijos o mayores sin dejar de trabajar?"
+    },
+    {
+      "id": 27,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo Rural",
+      "titulo_corto": "Mentoring Inverso y Nómada Digital",
+      "resumen": "Fomentar el retorno de talento y la movilidad digital en zonas rurales mediante programas de acompañamiento.",
+      "cita_literal": "estos programas de “Mentoring Inverso”, donde profesionales jóvenes y digitalmente cualificados actúen como mentores",
+      "pagina": 39,
+      "tags": [
+        "#Talento",
+        "#Digital",
+        "#Pueblos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parece bien dar facilidades a quienes trabajan por internet para que se instalen en los pueblos de la región?"
+    },
+    {
+      "id": 28,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Formación",
+      "titulo_corto": "Cheques de Formación Digital",
+      "resumen": "Ayudas para que trabajadores y desempleados elijan cursos de alta demanda tecnológica.",
+      "cita_literal": "Implementaremos programas de “Cheques de Formación Digital” dirigidos a empresas que permitan a sus trabajadores y a desempleados elegir cursos",
+      "pagina": 40,
+      "tags": [
+        "#Formacion",
+        "#Digitalizacion",
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Daría un 'cheque' de dinero público a los parados para que se paguen ellos mismos el curso de informática que prefieran?"
+    },
+    {
+      "id": 29,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención Primaria",
+      "titulo_corto": "Cita en menos de 48 horas en Primaria",
+      "resumen": "Compromiso de acceso a consultas de medicina familiar en un plazo máximo de dos días.",
+      "cita_literal": "Mantendremos el compromiso de un acceso a las consultas de medicina familiar y comunitaria que no supere las 48 horas.",
+      "pagina": 35,
+      "tags": [
+        "#Sanidad",
+        "#AtencionPrimaria",
+        "#Eficiencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que la Junta debe garantizar por ley que todos tengamos cita con el médico de cabecera en menos de 48 horas?"
+    },
+    {
+      "id": 30,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Tecnología",
+      "titulo_corto": "Cribado de cáncer mediante IA",
+      "resumen": "Introducción de Inteligencia Artificial para mejorar diagnósticos en cáncer de mama, cuello de útero y colon.",
+      "cita_literal": "Introduciremos inteligencia artificial en las pruebas de cribado de cáncer de mama y seguiremos mejorando los indicadores",
+      "pagina": 35,
+      "tags": [
+        "#IA",
+        "#Cancer",
+        "#Diagnostico"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que el sistema público de salud use ordenadores inteligentes para detectar el cáncer antes y mejor?"
+    },
+    {
+      "id": 31,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Salud Mental",
+      "titulo_corto": "Atención integral en salud mental rural",
+      "resumen": "Refuerzo de dispositivos y abordaje comunitario centrado en jóvenes y mayores del medio rural.",
+      "cita_literal": "Reforzaremos la atención en salud mental en el entorno más próximo al ciudadano, con especial atención al medio rural",
+      "pagina": 36,
+      "tags": [
+        "#SaludMental",
+        "#MedioRural",
+        "#CylCuida"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Cree prioritario que haya más psicólogos y psiquiatras en los centros de salud de los pueblos?"
+    },
+    {
+      "id": 32,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Profesionales",
+      "titulo_corto": "Plan de Ordenación de Recursos Humanos",
+      "resumen": "Dotación de plazas de difícil cobertura en Primaria, Hospitalaria y Emergencias.",
+      "cita_literal": "Potenciaremos en especial la dotación de aquellos puestos de difícil cobertura tanto en Atención Primaria como Atención Hospitalaria",
+      "pagina": 36,
+      "tags": [
+        "#Sanidad",
+        "#EmpleoPublico",
+        "#ZonasRurales"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parece bien cobrar un extra a los médicos para convencerles de que vayan a trabajar a los pueblos más apartados?"
+    },
+    {
+      "id": 33,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Infraestructuras",
+      "titulo_corto": "Nuevos hospitales de Aranda y consultorios rurales",
+      "resumen": "Culminación de grandes obras hospitalarias y plan de mejora de la red de consultorios locales.",
+      "cita_literal": "culminaremos... el nuevo Hospital de Aranda de Duero... Estableceremos un programa de ayudas a las entidades locales para la mejora de los consultorios",
+      "pagina": 37,
+      "tags": [
+        "#Hospitales",
+        "#Consultorios",
+        "#Inversion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya que la Junta dé dinero a los ayuntamientos para arreglar sus pequeños consultorios médicos locales?"
+    },
+    {
+      "id": 34,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Telemedicina",
+      "titulo_corto": "Conexión satélite para consultorios rurales",
+      "resumen": "Dotar de internet vía satélite a consultorios sin cobertura para garantizar asistencia on-line.",
+      "cita_literal": "Dotaremos a todos los consultorios rurales sin cobertura terrestre de conexión mediante satélite de órbita baja",
+      "pagina": 37,
+      "tags": [
+        "#Telemedicina",
+        "#Satélite",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le gustaría que su médico del pueblo pudiera pasar consulta por videollamada con un especialista del hospital?"
+    },
+    {
+      "id": 35,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Investigación",
+      "titulo_corto": "Unidades de Investigación Clínica en cada Área",
+      "resumen": "Llevar la investigación clínica a todos los hospitales del sistema público para asegurar equidad territorial.",
+      "cita_literal": "Dotaremos progresivamente a los hospitales del sistema público de Unidades de Investigación Clínica en cada Área de Salud",
+      "pagina": 38,
+      "tags": [
+        "#I+D+i",
+        "#Hospitales",
+        "#Sanidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que en todos los hospitales de provincias se investiguen nuevos tratamientos y no solo en los de las capitales?"
+    },
+    {
+      "id": 36,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Libertad de Elección",
+      "titulo_corto": "Libre elección de centro y PAU única",
+      "resumen": "Defensa de la libertad de padres para elegir colegio e impulso de una prueba de acceso universitaria nacional.",
+      "cita_literal": "garantía irrenunciable de la libertad de los padres para elegir centro... Continuaremos reivindicando una PAU única en todo el territorio nacional",
+      "pagina": 29,
+      "tags": [
+        "#Educacion",
+        "#PAU",
+        "#Libertad"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que el examen de selectividad (PAU) debería ser igual de difícil y con las mismas preguntas en toda España?"
+    },
+    {
+      "id": 37,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación Rural",
+      "titulo_corto": "Colegios rurales abiertos con 3 alumnos",
+      "resumen": "Mantener abiertas las escuelas de pueblos con ratios mínimas para evitar desplazamientos.",
+      "cita_literal": "Mantendremos abiertos los colegios que tengan escolarizados a un mínimo de 3 alumnos",
+      "pagina": 30,
+      "tags": [
+        "#EscuelaRural",
+        "#Pueblos",
+        "#Educacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con mantener abierta una escuela de pueblo aunque solo tenga 3 alumnos matriculados?"
+    },
+    {
+      "id": 38,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Gratuidad",
+      "titulo_corto": "Gratuidad 0-3 años universal",
+      "resumen": "Consolidar el acceso gratuito al primer ciclo de educación infantil para todas las familias.",
+      "cita_literal": "se consiguió la gratuidad universal para la etapa de 0 a 3 años... Proseguiremos con la consolidación del acceso gratuito",
+      "pagina": 33,
+      "tags": [
+        "#Guarderias",
+        "#Gratuidad",
+        "#Conciliacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien que la guardería (0-3 años) sea totalmente gratis para todos los niños de la región?"
+    },
+    {
+      "id": 39,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Mayores",
+      "titulo_corto": "Ampliación Universidad de la Experiencia",
+      "resumen": "Incrementar plazas y sedes (especialmente online y rurales) para formación de mayores.",
+      "cita_literal": "Incrementaremos el número de plazas de la Universidad de la Experiencia, aumentando las sedes on-line, especialmente en el ámbito rural",
+      "pagina": 40,
+      "tags": [
+        "#Mayores",
+        "#Educacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya que la Junta gaste más dinero en cursos universitarios para que los jubilados sigan aprendiendo en sus pueblos?"
+    },
+    {
+      "id": 40,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Dependencia",
+      "titulo_corto": "Plan de Atención Sociosanitaria conjunto",
+      "resumen": "Coordinación entre Salud y Familia para mejorar la atención a dependientes y reducir burocracia.",
+      "cita_literal": "Elaboraremos un nuevo Plan de Atención Sociosanitaria, de forma conjunta entre las Consejerías competentes en sanidad y en servicios sociales",
+      "pagina": 40,
+      "tags": [
+        "#Dependencia",
+        "#BurocraciaZero",
+        "#Mayores"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le gustaría que los médicos y los trabajadores sociales se coordinaran mejor para atender a los dependientes sin tanto papel?"
+    },
+    {
+      "id": 41,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Discapacidad",
+      "titulo_corto": "Oficina de Apoyo y Autonomía para Personas con Discapacidad",
+      "resumen": "Crear un ente para fomentar autonomía personal y facilitar toma de decisiones libre e informada.",
+      "cita_literal": "Crearemos la Oficina de Apoyo y Autonomía para Personas con Discapacidad con el objetivo de fomentar su autonomía personal",
+      "pagina": 41,
+      "tags": [
+        "#Discapacidad",
+        "#Autonomia",
+        "#ServiciosSociales"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece necesaria una oficina pública dedicada solo a ayudar a las personas con discapacidad a vivir de forma independiente?"
+    },
+    {
+      "id": 42,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Discapacidad",
+      "titulo_corto": "Control domótico para personas con movilidad reducida",
+      "resumen": "Instalar sistemas de activación por voz y domótica en hogares de grandes dependientes.",
+      "cita_literal": "Instalaremos sistemas de control domótico en los hogares de las personas con discapacidad con graves dificultades de movilidad",
+      "pagina": 41,
+      "tags": [
+        "#Domotica",
+        "#ViviendaAdaptada",
+        "#Tecnologia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que la Junta instale gratis sistemas de voz para que las personas que no pueden moverse controlen las luces o persianas de su casa?"
+    },
+    {
+      "id": 43,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Familia",
+      "titulo_corto": "Nueva Ley de Familia de Castilla y León",
+      "resumen": "Actualizar el marco normativo para adaptarlo a las nuevas realidades y necesidades familiares.",
+      "cita_literal": "Aprobaremos una nueva la Ley de Familia que actualice y adapte la actual normativa a las nuevas realidades",
+      "pagina": 42,
+      "tags": [
+        "#Familia",
+        "#Ley",
+        "#DerechosSociales"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que la región necesita una nueva ley para proteger mejor a todos los tipos de familias actuales?"
+    },
+    {
+      "id": 44,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Natalidad",
+      "titulo_corto": "Bono Nacimiento de 5.000 euros",
+      "resumen": "Duplicar la cuantía de la ayuda directa por nacimiento hasta alcanzar los 5.000 euros.",
+      "cita_literal": "bono nacimiento, cuya cuantía duplicaremos hasta los 5.000 euros por nacimiento",
+      "pagina": 42,
+      "tags": [
+        "#Natalidad",
+        "#Ayudas",
+        "#Familias"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien que el gobierno de la Junta dé 5.000 euros a cada familia por tener un hijo?"
+    },
+    {
+      "id": 45,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Conciliación",
+      "titulo_corto": "Bono Infantil para gastos extraescolares",
+      "resumen": "Ayuda económica directa para familias con hijos de entre 4 y 12 años para financiar actividades fuera de horario lectivo.",
+      "cita_literal": "Pondremos en marcha el Bono Infantil, una ayuda económica directa destinada a familias con hijos de entre 4 y 12 años",
+      "pagina": 42,
+      "tags": [
+        "#Conciliacion",
+        "#Educacion",
+        "#Familias"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Desea que la Junta pague parte de las actividades extraescolares o 'el cole después de clase' para que los padres puedan trabajar?"
+    },
+    {
+      "id": 46,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Igualdad",
+      "titulo_corto": "FP STEAM Talent Girl renovado",
+      "resumen": "Fomentar la presencia femenina en ciencias y tecnologías desde edades tempranas con mentorías y orientación.",
+      "cita_literal": "Pondremos en marcha el programa FP STEAM Talent Girl para impulsar la presencia femenina en la Formación Profesional de ámbitos STEAM",
+      "pagina": 43,
+      "tags": [
+        "#Igualdad",
+        "#Mujer",
+        "#STEAM"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría que el gobierno dé becas y apoyo extra solo a las niñas y mujeres que quieran estudiar carreras técnicas o de ciencias?"
+    },
+    {
+      "id": 47,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Violencia de Género",
+      "titulo_corto": "Nueva Ley de Atención Integral a Víctimas",
+      "resumen": "Tipificar nuevas formas de agresión como la digital y la vicaria, y reforzar recursos del sistema ATIENDO.",
+      "cita_literal": "Aprobaremos una nueva Ley de Atención Integral a las Víctimas de violencia de género, que tipifique las nuevas formas de agresión",
+      "pagina": 43,
+      "tags": [
+        "#ViolenciaDeGenero",
+        "#Ley",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Es partidario de cambiar la ley para que el acoso por internet a mujeres se castigue con la misma dureza que el físico?"
+    },
+    {
+      "id": 48,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Carreteras",
+      "titulo_corto": "Planificación Estratégica de Carreteras 2026-2040",
+      "resumen": "Horizonte de inversión a largo plazo centrado en seguridad vial, digitalización y conservación sostenible.",
+      "cita_literal": "Implantaremos una nueva planificación estratégica con un horizonte temporal 2026-2040",
+      "pagina": 44,
+      "tags": [
+        "#Carreteras",
+        "#Infraestructuras",
+        "#SeguridadVial"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya un plan de 15 años para arreglar y modernizar todas las carreteras de la región, incluso las menos transitadas?"
+    },
+    {
+      "id": 49,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Logística",
+      "titulo_corto": "Estrategia Logística de Castilla y León 2030",
+      "resumen": "Convertir a la región en referente logístico mediante programas territoriales de fomento y desarrollo de suelo industrial.",
+      "cita_literal": "Desarrollaremos la Estrategia logística de Castilla y León 2030, con un enfoque multisectorial",
+      "pagina": 45,
+      "tags": [
+        "#Logistica",
+        "#Transporte",
+        "#Economia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien que la Junta dedique mucho dinero a crear grandes parques logísticos para que los camiones de toda Europa pasen por aquí?"
+    },
+    {
+      "id": 50,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Ferrocarril",
+      "titulo_corto": "Recuperación de la Vía de la Plata",
+      "resumen": "Exigir al Gobierno central la reapertura ferroviaria del corredor Plasencia-Salamanca-Zamora-Astorga.",
+      "cita_literal": "La reapertura de la Ruta de la Plata en sus tramos Plasencia-Salamanca-Zamora- Benavente-Astorga",
+      "pagina": 45,
+      "tags": [
+        "#Tren",
+        "#ViaDeLaPlata",
+        "#Oeste"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Desea que la Junta presione al Gobierno de España para que los trenes vuelvan a circular por la antigua Vía de la Plata?"
+    },
+    {
+      "id": 51,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Transporte Rural",
+      "titulo_corto": "Transporte a Demanda Flexible",
+      "resumen": "Universalizar el bono rural de transporte gratuito y modernizar la gestión con digitalización.",
+      "cita_literal": "Promoveremos el Transporte a la Demanda Flexible como un valor añadido al actual sistema de movilidad pública",
+      "pagina": 46,
+      "tags": [
+        "#TransporteADemanda",
+        "#BonoRural",
+        "#Pueblos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le gusta que el autobús en los pueblos sea gratis para los vecinos y se pueda pedir por teléfono o internet?"
+    },
+    {
+      "id": 52,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Administración",
+      "titulo_corto": "SCAYLE: Liderazgo en Supercomputación",
+      "resumen": "Nueva sede para el centro de supercomputación y alcanzar 50 petaflops de potencia para I+D+i.",
+      "cita_literal": "Expandiremos la capacidad de supercomputación de SCAYLE con la meta de alcanzar... los 50 petaflops",
+      "pagina": 46,
+      "tags": [
+        "#Supercomputacion",
+        "#SCAYLE",
+        "#I+D+i"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría que la Junta gaste millones de euros en comprar ordenadores superpotentes para que los científicos investiguen aquí?"
+    },
+    {
+      "id": 53,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Internet",
+      "titulo_corto": "Programa Cyl Digital para el medio rural",
+      "resumen": "Laboratorios móviles de innovación digital para llevar la tecnología 'mano a mano' a los municipios.",
+      "cita_literal": "Pondremos en marcha laboratorios móviles de innovación digital, unidades itinerantes que recorrerán los municipios",
+      "pagina": 47,
+      "tags": [
+        "#Digitalización",
+        "#MedioRural",
+        "#Inclusion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le gustaría que un autobús especializado visitara su pueblo para enseñarle a usar internet o la banca online?"
+    },
+    {
+      "id": 54,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Defensa de una PAC profesional y financiada",
+      "resumen": "Garantizar fondos europeos suficientes tras 2027 y exigir reciprocidad ambiental ante importaciones.",
+      "cita_literal": "Seguiremos defendiendo una PAC adaptada a la agricultura profesional y con una dotación presupuestaria fuerte",
+      "pagina": 48,
+      "tags": [
+        "#PAC",
+        "#Agricultura",
+        "#Europa"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya que el gobierno pelee en Europa para que las ayudas del campo no bajen y solo sean para agricultores profesionales?"
+    },
+    {
+      "id": 55,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Modernización",
+      "titulo_corto": "Digitalización y Robótica en el campo",
+      "resumen": "Poner a disposición de las explotaciones sensores, drones y cuadernos digitales de gestión gratuita.",
+      "cita_literal": "Lideraremos la incorporación de tecnologías de vanguardia —sensores en campo, drones de precisión y sistemas de robotización—",
+      "pagina": 51,
+      "tags": [
+        "#AgroTech",
+        "#Drones",
+        "#Modernización"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parece bien que la Junta pague el uso de drones o sensores para que los agricultores sepan exactamente cuánto regar o abonar?"
+    },
+    {
+      "id": 56,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Natalidad Rural",
+      "titulo_corto": "Natalidad y Emprendimiento en el mundo rural",
+      "resumen": "Vincular el bono nacimiento y las ayudas al emprendimiento con beneficios fiscales máximos para quienes eligen el pueblo.",
+      "cita_literal": "aplicamos mayores beneficios fiscales por nacimiento... para favorecer la continuidad de la actividad agraria",
+      "pagina": 16,
+      "tags": [
+        "#MedioRural",
+        "#Natalidad",
+        "#Impuestos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Desea que el cheque-bebé sea de mucho más dinero en los pueblos pequeños que en las ciudades?"
+    },
+    {
+      "id": 57,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Ganadería",
+      "titulo_corto": "Plan Ovino-Caprino y Ganadería Extensiva",
+      "resumen": "Modernización de explotaciones, fomento del pastoreo e incremento de ayudas preventivas contra el lobo.",
+      "cita_literal": "Apoyaremos las medidas preventivas que reduzcan los ataques del lobo, incrementando las cuantías de las ayudas públicas",
+      "pagina": 49,
+      "tags": [
+        "#Ganaderia",
+        "#Lobo",
+        "#Ayudas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Daría más dinero público a los ganaderos para proteger sus ovejas y vacas del ataque de los lobos?"
+    },
+    {
+      "id": 58,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Regadíos",
+      "titulo_corto": "Transformación de 30.000 ha de regadío",
+      "resumen": "Nuevas obras de regadío modernizado a lo largo de la legislatura centrado en eficiencia hídrica.",
+      "cita_literal": "Impulsaremos la modernización y las transformaciones de regadío, iniciando actuaciones en 30.000 hectáreas más",
+      "pagina": 50,
+      "tags": [
+        "#Regadio",
+        "#Agua",
+        "#Inversion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya gastar dinero público en transformar tierras de secano en modernos regadíos para que los campos produzcan más?"
+    },
+    {
+      "id": 59,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Gestión Forestal",
+      "titulo_corto": "Plan Integral de Gestión Forestal",
+      "resumen": "Reforzar el operativo de prevención y extinción de incendios público, estable y permanente todo el año.",
+      "cita_literal": "consolidación en un plazo de tres años de un operativo de extinción público, estable y permanente a lo largo de todo el año.",
+      "pagina": 17,
+      "tags": [
+        "#Incendios",
+        "#Montes",
+        "#EmpleoPublico"
+      ],
+      "analisis": {
+        "competence": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya que los bomberos forestales trabajen y estén contratados por la Junta durante todo el año, incluso en invierno?"
+    },
+    {
+      "id": 60,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Transparencia",
+      "titulo_corto": "Agencia Antifraude de Castilla y León",
+      "resumen": "Crear un organismo independiente para la fiscalización pública y prevención de la corrupción.",
+      "cita_literal": "creación de una Agencia Antifraude de Castilla y León. Fiscalización pública y auditorías externas",
+      "pagina": 62,
+      "tags": [
+        "#Antifraude",
+        "#Transparencia",
+        "#Corrupción"
+      ],
+      "analisis": {
+        "competence": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece necesaria una agencia independiente que vigile y castigue cualquier intento de corrupción en el gobierno regional?"
+    },
+    {
+      "id": 61,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler",
+      "titulo_corto": "Plan Rehabitare Plus 5.000",
+      "resumen": "Ayudas para rehabilitar viviendas privadas en pueblos de menos de 5.000 habitantes para alquiler asequible.",
+      "cita_literal": "Pondremos en marcha un “Plan Rehabitare Plus 5.000” para impulsar en municipios de menos de 5.000 habitantes la rehabilitación",
+      "pagina": 53,
+      "tags": [
+        "#Rehabilitacion",
+        "#MedioRural",
+        "#Pueblos"
+      ],
+      "analisis": {
+        "competence": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Daría subvenciones a los dueños de casas viejas en los pueblos para que las arreglen y las alquilen baratas?"
+    },
+    {
+      "id": 62,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Participación",
+      "titulo_corto": "Nueva Ley de Participación Ciudadana",
+      "resumen": "Garantizar voz a las personas en el diseño de políticas públicas y desarrollo normativo.",
+      "cita_literal": "Aprobaremos una Ley de Participación Ciudadana que garantice la intervención de las personas y les dé voz",
+      "pagina": 63,
+      "tags": [
+        "#Participacion",
+        "#GobiernoAbierto",
+        "#Ley"
+      ],
+      "analisis": {
+        "competence": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya una ley que obligue a la Junta a consultar y escuchar a los ciudadanos antes de aprobar nuevas normas?"
+    },
+    {
+      "id": 63,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Administración",
+      "titulo_corto": "Reducción a la mitad de tiempos de trámites",
+      "resumen": "Digitalización total y nuevo marco normativo para agilizar expedientes administrativos.",
+      "cita_literal": "reducción a la mitad de los tiempos en la tramitación de expedientes.",
+      "pagina": 63,
+      "tags": [
+        "#Burocracia",
+        "#Digitalización",
+        "#Eficiencia"
+      ],
+      "analisis": {
+        "competence": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que la prioridad de la administración debería ser responder a cualquier solicitud en la mitad de tiempo que ahora?"
+    },
+    {
+      "id": 64,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Sostenibilidad",
+      "titulo_corto": "Estrategia de Economía Circular de CyL",
+      "resumen": "Fomentar modelos de producción y consumo responsables, potenciando la bioeconomía.",
+      "cita_literal": "Seguiremos impulsando la Estrategia de Economía Circular de Castilla y León",
+      "pagina": 55,
+      "tags": [
+        "#Sostenibilidad",
+        "#EconomiaCircular",
+        "#Bioeconomia"
+      ],
+      "analisis": {
+        "competence": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con dar ayudas solo a las empresas que utilicen materiales reciclados y no generen residuos?"
+    },
+    {
+      "id": 65,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Digitalización",
+      "titulo_corto": "Carta de Derechos Digitales",
+      "resumen": "Garantizar universalidad, neutralidad y no discriminación en el acceso telemático a la Junta.",
+      "cita_literal": "Aprobaremos una Carta de Derechos Digitales de los ciudadanos ante la Administración Autonómica",
+      "pagina": 65,
+      "tags": [
+        "#DerechosDigitales",
+        "#InclusionDigital",
+        "#Transparencia"
+      ],
+      "analisis": {
+        "competence": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Debería el gobierno regional garantizar que nadie se quede atrás por no saber usar internet o no tener ordenador?"
+    },
+    {
+      "id": 66,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Financiación Local",
+      "titulo_corto": "Estatuto Básico para Pequeños Municipios",
+      "resumen": "Exigir al Estado un marco legal para reducir cargas administrativas a pueblos pequeños.",
+      "cita_literal": "Reclamaremos al Gobierno de España... un Estatuto Básico para los Pequeños Municipios",
+      "pagina": 65,
+      "tags": [
+        "#Pueblos",
+        "#Gobernanza",
+        "#SinPapeles"
+      ],
+      "analisis": {
+        "competence": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya que los ayuntamientos de pueblos muy pequeños tengan muchas menos normas y controles que las grandes ciudades?"
+    },
+    {
+      "id": 67,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Cooperación",
+      "titulo_corto": "Revitalización de la Zona de La Raya",
+      "resumen": "Dinamización socioeconómica y cultural transfronteriza con las regiones fronterizas de Portugal.",
+      "cita_literal": "Impulsaremos acciones de revitalización de la Zona de la Raya con Portugal",
+      "pagina": 60,
+      "tags": [
+        "#LaRaya",
+        "#Portugal",
+        "#Frontera"
+      ],
+      "analisis": {
+        "competence": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Cree prioritario que Castilla y León y Portugal se unan para dar vida a los pueblos abandonados de la frontera?"
+    },
+    {
+      "id": 68,
+      "categoria": "Otros",
+      "subcategoria": "Cultura Rural",
+      "titulo_corto": "Plan Integral de Cultura Rural",
+      "resumen": "Garantizar el acceso cultural fomentando tradiciones, folclore y patrimonio inmaterial en pueblos.",
+      "cita_literal": "Desarrollar un Plan Integral de Cultura Rural para garantizar el derecho a la cultura en el medio rural",
+      "pagina": 58,
+      "tags": [
+        "#Cultura",
+        "#Tradicion",
+        "#PueblosVivos"
+      ],
+      "analisis": {
+        "competence": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parece bien que la Junta dedique fondos exclusivos para organizar conciertos o teatro en pueblos muy pequeños?"
+    },
+    {
+      "id": 69,
+      "categoria": "Otros",
+      "subcategoria": "Tauromaquia",
+      "titulo_corto": "Fomento de la Tauromaquia y Biblioteca Digital",
+      "resumen": "Impulso de escuelas taurinas, circuitos de novilladas y digitalización del patrimonio taurino.",
+      "cita_literal": "Apoyaremos a las escuelas taurinas oficiales... Impulsaremos la Biblioteca Digital Taurina",
+      "pagina": 59,
+      "tags": [
+        "#Toros",
+        "#Tradiciones",
+        "#Cultura"
+      ],
+      "analisis": {
+        "competence": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría que el dinero público se use para financiar escuelas donde se aprenda a ser torero?"
+    },
+    {
+      "id": 70,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Patrimonio",
+      "titulo_corto": "Exigencia de devolución documental (Guerra Civil)",
+      "resumen": "Demanda de regreso a CyL de documentos del Archivo de la Guerra Civil trasladados a Cataluña.",
+      "cita_literal": "mantendremos nuestra exigencia de devolución de los documentos que salieron indebidamente del Archivo General de la Guerra Civil Española hacia Cataluña",
+      "pagina": 59,
+      "tags": [
+        "#ArchivoGuerraCivil",
+        "#Patrimonio",
+        "#España"
+      ],
+      "analisis": {
+        "competence": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con que la Junta exija que vuelvan a Salamanca todos los documentos extraídos del archivo de la Guerra Civil?"
+    }
+  ]
+}

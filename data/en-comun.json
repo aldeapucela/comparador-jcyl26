@@ -1,0 +1,409 @@
+{
+  "bloque_informacion": {
+    "rango_paginas": "Completo",
+    "estado": "finalizado"
+  },
+  "metadatos": {
+    "partido": "EN COMÚN",
+    "candidato": "Colectivo (Izquierda Unida, Podemos, etc.)",
+    "lema": "El camino hacia el bienestar de todas las personas",
+    "anio": 2026
+  },
+  "propuestas": [
+    {
+      "id": 1,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Talento",
+      "titulo_corto": "Plan integral de retorno del talento",
+      "resumen": "Ayudas al alquiler para jóvenes retornados y renta universal de 3 años para emancipación.",
+      "cita_literal": "Plan integral de retorno del talento al territorio de Castilla y León: ayudas al alquiler de viviendas públicas para personas jóvenes retornadas.",
+      "pagina": 2,
+      "tags": [
+        "#Jovenes",
+        "#Retorno",
+        "#Vivienda"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Estaría a favor de dar ayudas directas al alquiler y una renta de 3 años a los jóvenes que vuelvan a la región?"
+    },
+    {
+      "id": 2,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Empleo Rural",
+      "titulo_corto": "Cooperativas de jóvenes en nuevas tecnologías rurales",
+      "resumen": "Programas mixtos de empleo/formación para crear cooperativas tecnológicas en el mundo rural.",
+      "cita_literal": "creación de cooperativas con personas jóvenes tituladas en nuevas tecnologías aplicadas al mundo rural.",
+      "pagina": 2,
+      "tags": [
+        "#Cooperativas",
+        "#Tecnologia",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyaría que la Junta financie la creación de cooperativas de jóvenes expertos en tecnología para trabajar en los pueblos?"
+    },
+    {
+      "id": 3,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Dependencia",
+      "titulo_corto": "Modelo de atención a la dependencia en el entorno",
+      "resumen": "Refuerzo de residencias asistidas públicas y servicios geriátricos comarcales con transporte adaptado.",
+      "cita_literal": "Desarrollar un modelo de atención a la dependencia que permita la permanencia de las personas mayores en su entorno",
+      "pagina": 2,
+      "tags": [
+        "#Dependencia",
+        "#Mayores",
+        "#TransporteAdaptado"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Cree que se deberían abrir pequeñas residencias públicas en todas las comarcas para que los ancianos no tengan que dejar su entorno?"
+    },
+    {
+      "id": 4,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Ferrocarril",
+      "titulo_corto": "Recuperación de líneas de ferrocarril abandonadas",
+      "resumen": "Crear servicios de cercanías aprovechando trazados antiguos e implantar trenes de hidrógeno.",
+      "cita_literal": "Crear servicios de cercanías nuevos que aprovechen los trazados abandonados de las antiguas líneas provinciales",
+      "pagina": 2,
+      "tags": [
+        "#Tren",
+        "#MovilidadSostenible",
+        "#Hidrogeno"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya reabrir las antiguas líneas de tren cerradas para crear una red de cercanías regional?"
+    },
+    {
+      "id": 5,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Internet",
+      "titulo_corto": "Cobertura universal de internet 4G/5G al 100%",
+      "resumen": "Garantizar fibra óptica o similar y cobertura móvil en todo el territorio.",
+      "cita_literal": "Asegurar la cobertura universal de internet de alta velocidad... en el 100% del territorio.",
+      "pagina": 2,
+      "tags": [
+        "#Internet",
+        "#BrechaDigital",
+        "#100PorCiento"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debe el gobierno regional garantizar por ley que llegue internet de alta velocidad a todos los pueblos, sin excepción?"
+    },
+    {
+      "id": 6,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Ley de Ordenación Territorial sostenible",
+      "resumen": "Planificación equilibrada para una transición ecológica justa ante el cambio climático.",
+      "cita_literal": "Una Ley de Ordenación Territorial sostenible que nos lleve a una planificación equilibrada",
+      "pagina": 3,
+      "tags": [
+        "#Ordenacion",
+        "#Clima",
+        "#TransicionJusta"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría una ley estatal para obligar a que el crecimiento de la región respete siempre los límites ecológicos?"
+    },
+    {
+      "id": 7,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Residuos",
+      "titulo_corto": "Agencia Autonómica de Residuos",
+      "resumen": "Centralizar el reciclaje y aplicar fiscalidad basada en 'quien contamina paga'.",
+      "cita_literal": "Una Agencia Autonómica de Residuos que... promueva una fiscalidad ambiental justa con el principio de 'quien contamina paga'.",
+      "pagina": 3,
+      "tags": [
+        "#Reciclaje",
+        "#FiscalidadVerde"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parecería bien crear una agencia que multe severamente a las empresas que no reciclen correctamente sus residuos?"
+    },
+    {
+      "id": 8,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Ganadería",
+      "titulo_corto": "Paralización de macrogranjas",
+      "resumen": "Frenar proyectos de macrogranjas y ganadería intensiva por daño ecosistémico.",
+      "cita_literal": "Paralizar cualquier proyecto de macrogranjas y ganadería intensiva que dañan los ecosistemas",
+      "pagina": 3,
+      "tags": [
+        "#Macrogranjas",
+        "#Ecosistemas",
+        "#Sostenibilidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está usted de acuerdo con prohibir la apertura de nuevas macrogranjas en toda la Comunidad?"
+    },
+    {
+      "id": 9,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Aborto",
+      "titulo_corto": "Aborto libre y gratuito en centros públicos",
+      "resumen": "Garantizar el acceso efectivo al aborto voluntario en la red sanitaria pública regional.",
+      "cita_literal": "garantía de acceso al aborto voluntario, libre y gratuito en los centros sanitarios públicos de la comunidad.",
+      "pagina": 3,
+      "tags": [
+        "#Aborto",
+        "#SanidadPublica",
+        "#Derechos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Es partidario de que el aborto se realice siempre en los hospitales públicos de la región en lugar de clínicas privadas?"
+    },
+    {
+      "id": 10,
+      "categoria": "Otros",
+      "subcategoria": "Igualdad LGTBI",
+      "titulo_corto": "Aprobación de la Ley LGBTIQA+ de CyL",
+      "resumen": "Marco legal para la igualdad integral y defensa de derechos del colectivo.",
+      "cita_literal": "Aprobación de la Ley LGBTIQA+ de Castilla y León.",
+      "pagina": 4,
+      "tags": [
+        "#LGTBI",
+        "#Igualdad",
+        "#Ley"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría una ley regional específica para proteger a las personas LGTBI del acoso y la discriminación?"
+    },
+    {
+      "id": 11,
+      "categoria": "Vivienda",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Sociedad Pública de Vivienda de CyL",
+      "resumen": "Entidad para comprar, promover y gestionar 20.000 viviendas públicas de alquiler.",
+      "cita_literal": "Creación de la Sociedad Pública de Vivienda... objetivo de movilizar 20.000 viviendas en la legislatura.",
+      "pagina": 4,
+      "tags": [
+        "#ViviendaPublica",
+        "#Inversion",
+        "#AlquilerAsequible"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría crear una empresa pública regional que gestione hasta 20.000 pisos de alquiler barato?"
+    },
+    {
+      "id": 12,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler",
+      "titulo_corto": "Tope del 30% de ingresos para alquiler público",
+      "resumen": "Garantizar por norma que ningún inquilino pague más del 30% de su sueldo al parque público.",
+      "cita_literal": "Garantía normativa de que ningún inquilino del parque público destine más del 30% de sus ingresos al pago del alquiler.",
+      "pagina": 4,
+      "tags": [
+        "#Alquiler",
+        "#RentasBajas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece justo que el precio del alquiler público se adapte al sueldo de cada familia para que nunca supere el 30%?"
+    },
+    {
+      "id": 13,
+      "categoria": "Vivienda",
+      "subcategoria": "Mercado",
+      "titulo_corto": "Declaración inmediata de Zonas Tensionadas",
+      "resumen": "Aplicar la Ley estatal para congelar rentas y obligar a prórrogas de contratos.",
+      "cita_literal": "Aplicación inmediata de la Ley de Vivienda estatal para declarar zonas tensionadas",
+      "pagina": 4,
+      "tags": [
+        "#Alquiler",
+        "#ZonasTensionadas",
+        "#Precios"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Desea que la Junta declare 'zonas tensionadas' para congelar el precio de los alquileres en los barrios más caros?"
+    },
+    {
+      "id": 14,
+      "categoria": "Vivienda",
+      "subcategoria": "Especulación",
+      "titulo_corto": "Impuesto a viviendas vacías de grandes tenedores",
+      "resumen": "Recargo en IRPF regional y tasas propias para penalizar el desuso residencial.",
+      "cita_literal": "impuestos propios sobre viviendas vacías de grandes tenedores para penalizar la vivienda vacía",
+      "pagina": 5,
+      "tags": [
+        "#Impuestos",
+        "#GrandesTenedores",
+        "#Especulacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Estaría de acuerdo con cobrar un impuesto especial a los bancos o fondos que tengan pisos vacíos para obligarlos a alquilarlos?"
+    },
+    {
+      "id": 15,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Vivienda Rural",
+      "titulo_corto": "Cuota Rural del 25% en el plan público de vivienda",
+      "resumen": "Reserva obligatoria de 5.000 viviendas públicas destinadas a pueblos.",
+      "cita_literal": "Reserva obligatoria de que 5.000 viviendas del plan público... se destinen específicamente a los pueblos",
+      "pagina": 5,
+      "tags": [
+        "#MedioRural",
+        "#Poblacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyaría que uno de cada cuatro pisos públicos construidos por la Junta tenga que estar obligatoriamente en un pueblo?"
+    },
+    {
+      "id": 16,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Planes comarcales vinculantes con fuerza legal",
+      "resumen": "Obligar a ayuntamientos a coordinarse en consorcios para gestionar servicios y energía.",
+      "cita_literal": "Crear planes estratégicos con fuerza legal... que los ayuntamientos estén obligados a coordinarse",
+      "pagina": 5,
+      "tags": [
+        "#Comarcas",
+        "#Gobernanza",
+        "#Pueblos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Cree que los ayuntamientos pequeños deberían estar obligados por ley a trabajar juntos en comarcas para ahorrar costes?"
+    },
+    {
+      "id": 17,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Democracia Local",
+      "titulo_corto": "Recuperación de los Concechos y Comunales",
+      "resumen": "Gestión vecinal directa de pastos, montes y recursos públicos.",
+      "cita_literal": "Mecanismos de participación ciudadana como los tradicionales 'Comunales o Concechos'",
+      "pagina": 10,
+      "tags": [
+        "#Participacion",
+        "#Tradicion",
+        "#GestionComunal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le gustaría que los vecinos de los pueblos pudieran decidir directamente cómo usar los pastos y montes del municipio?"
+    },
+    {
+      "id": 18,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Jornada Laboral",
+      "titulo_corto": "Reducción de jornada y Renta Básica Universal",
+      "resumen": "Incentivar la reducción de horas de trabajo y establecer una renta mínima para todos.",
+      "cita_literal": "incentivando medidas como la reducción de la jornada y la Renta Básica Universal.",
+      "pagina": 10,
+      "tags": [
+        "#Sueldo",
+        "#DerechosLaborales",
+        "#RentaBasica"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Estaría a favor de que el gobierno implantara una Renta Básica Universal para que nadie viva sin ingresos?"
+    },
+    {
+      "id": 19,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Corrupción",
+      "titulo_corto": "Agencia Antifraude de Castilla y León",
+      "resumen": "Fiscalización pública sistemática y auditorías externas para prevenir corrupción.",
+      "cita_literal": "creación de una Agencia Antifraude de Castilla y León.",
+      "pagina": 11,
+      "tags": [
+        "#Antifraude",
+        "#Transparencia",
+        "#Corrupcion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree necesario crear un cuerpo independiente de auditores para vigilar cada euro que gasta la Junta?"
+    },
+    {
+      "id": 20,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Puertas Giratorias",
+      "titulo_corto": "Prohibición de puertas giratorias (10 años)",
+      "resumen": "Incompatibilidad de una década para ex altos cargos en empresas beneficiarias de concesiones.",
+      "cita_literal": "periodos de incompatibilidad de 10 años a ex altos cargos... en las empresas beneficiarias",
+      "pagina": 11,
+      "tags": [
+        "#PuertasGiratorias",
+        "#EticaPublica"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría prohibir que un político trabaje para una eléctrica o constructora hasta que pasen 10 años desde que dejó el cargo?"
+    },
+    {
+      "id": 21,
+      "categoria": "Otros",
+      "subcategoria": "Tauromaquia",
+      "titulo_corto": "Eliminación de subvenciones a la tauromaquia",
+      "resumen": "Redefinir política cultural quitando fondos públicos a los toros.",
+      "cita_literal": "Redefinir la política cultural eliminando subvenciones a la tauromaquia",
+      "pagina": 12,
+      "tags": [
+        "#BienestarAnimal",
+        "#Toros",
+        "#Cultura"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Estaría de acuerdo con dejar de financiar corridas de toros con dinero público?"
+    }
+  ]
+}

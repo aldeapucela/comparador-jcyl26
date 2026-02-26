@@ -1,0 +1,280 @@
+{
+  "bloque_informacion": {
+    "rango_paginas": "Completo",
+    "estado": "finalizado"
+  },
+  "metadatos": {
+    "partido": "MUNICIPALISTAS – ESPAÑA VACIADA",
+    "candidato": "Colectivo (Unión Municipalista + España Vaciada)",
+    "lema": "Derechos iguales vivas en un pueblo o en un barrio",
+    "anio": 2026
+  },
+  "propuestas": [
+    {
+      "id": 1,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Prueba Municipal obligatoria para leyes",
+      "resumen": "Ninguna norma autonómica podrá aprobarse sin evaluar su impacto real en pueblos y costes para ayuntamientos.",
+      "cita_literal": "Ninguna norma autonómica podrá aprobarse sin evaluar su impacto real en pueblos... con participación local.",
+      "pagina": 2,
+      "tags": [
+        "#Pueblos",
+        "#Municipios",
+        "#Gobernanza"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parecería bien prohibir que la Junta apruebe leyes que perjudiquen o cuesten dinero a los ayuntamientos pequeños?"
+    },
+    {
+      "id": 2,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Administración",
+      "titulo_corto": "Agencia de Desarrollo del Mundo Rural",
+      "resumen": "Crear un ente independiente con presupuesto real para proyectos de repoblación y emprendimiento local.",
+      "cita_literal": "Crear un ente independiente para ejecutar proyectos de repoblación, emprendimiento, servicios",
+      "pagina": 2,
+      "tags": [
+        "#DesarrolloRural",
+        "#Repoblacion",
+        "#Emprendimiento"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya crear una agencia autónoma con dinero propio dedicada exclusivamente a frenar la despoblación?"
+    },
+    {
+      "id": 3,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Zonas Blancas",
+      "titulo_corto": "Plan 100-30-30 de servicios e internet",
+      "resumen": "Garantizar 100 Mbps en todo el territorio, servicios esenciales a ≤30 min y alta capacidad a ≤30 km.",
+      "cita_literal": "100 Mbps simétricos en todo el territorio; servicios esenciales a ≤30 min; y acceso a alta capacidad a ≤30 km.",
+      "pagina": 2,
+      "tags": [
+        "#Internet",
+        "#Infraestructuras",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Cree que la ley debería obligar a que cualquier médico u oficina de la Junta esté a menos de 30 minutos de su pueblo?"
+    },
+    {
+      "id": 4,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención Primaria",
+      "titulo_corto": "Plantillas sanitarias dimensionadas por dispersión",
+      "resumen": "Atención presencial real ajustada al envejecimiento y dispersión geográfica con incentivos de difícil cobertura.",
+      "cita_literal": "Atención presencial real, plantillas dimensionadas por dispersión y envejecimiento",
+      "pagina": 2,
+      "tags": [
+        "#SanidadRural",
+        "#Profesionales",
+        "#AtencionDirecta"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería la Junta contratar a más médicos solo por el hecho de que la gente viva muy repartida en pueblos?"
+    },
+    {
+      "id": 5,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Emergencias",
+      "titulo_corto": "Tiempos de respuesta exigibles en ambulancias",
+      "resumen": "Estándares mínimos de respuesta por zonas con auditoría pública y penalizaciones por incumplimiento.",
+      "cita_literal": "Estándares mínimos, auditoría pública y penalizaciones si no se cumple.",
+      "pagina": 2,
+      "tags": [
+        "#Ambulancias",
+        "#Emergencias",
+        "#Auditoria"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien multar a las empresas de ambulancias si tardan más tiempo del estipulado por ley en llegar a un aviso?"
+    },
+    {
+      "id": 6,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Dependencia",
+      "titulo_corto": "Modelo mixto domicilio-residencia",
+      "resumen": "Más ayuda a domicilio y centros de día de cercanía. Complemento regional a pensiones bajas hasta 730€.",
+      "cita_literal": "Modelo mixto domicilio–residencia... Ley de complementos para pensiones inferiores a 730€.",
+      "pagina": 2,
+      "tags": [
+        "#Dependencia",
+        "#Mayores",
+        "#Pensiones"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría que la Junta pague un extra de dinero a los jubilados que cobran menos de 730 euros al mes?"
+    },
+    {
+      "id": 7,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Corrupción",
+      "titulo_corto": "Transparencia con multas coercitivas",
+      "resumen": "Ranking mensual de cumplimiento y multas reales a responsables identificables cuando se desobedezcan resoluciones.",
+      "cita_literal": "Multas coercitivas/medidas reales cuando se desobedezcan resoluciones.",
+      "pagina": 2,
+      "tags": [
+        "#Transparencia",
+        "#Multas",
+        "#Sancion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le gustaría que los políticos que oculten información pública tengan que pagar multas de su propio bolsillo?"
+    },
+    {
+      "id": 8,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Industria Rural",
+      "titulo_corto": "Ventanilla única para autónomos y pymes",
+      "resumen": "Simplificación burocrática radical y oficina comercial para captar inversiones en agroindustria y logística.",
+      "cita_literal": "Ventanilla única y menos burocracia; teletrabajo y coworking para atraer talento",
+      "pagina": 2,
+      "tags": [
+        "#Autonomos",
+        "#Pymes",
+        "#MenosPapeles"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que abrir un negocio en la región debería poder hacerse a través de una sola oficina y sin trámites lentos?"
+    },
+    {
+      "id": 9,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Precios",
+      "titulo_corto": "Precios mínimos agroganaderos sobre costes",
+      "resumen": "Mesa de negociación para fijar precios en origen mínimos y defensa de estándares ante importaciones.",
+      "cita_literal": "Mesa de negociación agroganadera para precios mínimos por encima de costes",
+      "pagina": 2,
+      "tags": [
+        "#SoberaniaAlimentaria",
+        "#PreciosJustos",
+        "#Campo"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con prohibir que se vendan alimentos que se han pagado al agricultor por debajo de lo que le costó producirlos?"
+    },
+    {
+      "id": 10,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Fiscalidad Rural",
+      "titulo_corto": "Fiscalidad diferenciada para el arraigo",
+      "resumen": "Reducción de IRPF autonómico y deducciones por residencia o traslado a zonas rurales en riesgo.",
+      "cita_literal": "Deducciones y tipos reducidos para residir/trasladarse a zonas en riesgo",
+      "pagina": 2,
+      "tags": [
+        "#Impuestos",
+        "#Arraigo",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parece bien que quien se vaya a vivir a un pueblo abandonado pague muchísimos menos impuestos que quien vive en la capital?"
+    },
+    {
+      "id": 11,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "FP Rural",
+      "titulo_corto": "FP rural a medida con transporte gratuito",
+      "resumen": "Ciclos ligados al empleo real en cabeceras de comarca y transporte a coste cero en educación no obligatoria.",
+      "cita_literal": "FP rural a medida en cabeceras de comarca... con transporte gratuito en educación no obligatoria/FP.",
+      "pagina": 6,
+      "tags": [
+        "#Educacion",
+        "#FP",
+        "#TransporteGratis"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya que el autobús para ir a estudiar Formación Profesional sea gratis para todos los jóvenes rurales?"
+    },
+    {
+      "id": 12,
+      "categoria": "Vivienda",
+      "subcategoria": "Vivienda Rural",
+      "titulo_corto": "Ampliación del Plan Rehabitare",
+      "resumen": "Subvenciones para rehabilitar vivienda privada rural para alquiler de 5 años con seguro para propietarios.",
+      "cita_literal": "Vivienda rural: ampliar Rehabitare para vivienda privada (alquiler durante 5 años) con garantías/seguro",
+      "pagina": 7,
+      "tags": [
+        "#Vivienda Rural",
+        "#Rehabilitacion",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parece bien que la Junta arregle casas privadas de pueblos a cambio de que el dueño las alquile baratas durante unos años?"
+    },
+    {
+      "id": 13,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Energía",
+      "titulo_corto": "Ley autonómica de renovables y moratoria Biogás",
+      "resumen": "Reglas claras para macroproyectos, moratoria inmediata de biogás y consultas locales vinculantes.",
+      "cita_literal": "Biogás: revisión/moratoria inmediata y nueva regulación con zonificación de exclusión y consultas locales vinculantes",
+      "pagina": 7,
+      "tags": [
+        "#Renovables",
+        "#Biogas",
+        "#ParticipacionLocas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería dejarse en manos de los vecinos del pueblo la decisión final de si se abre o no una planta de biogás en su término municipal?"
+    },
+    {
+      "id": 14,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Gestión Forestal",
+      "titulo_corto": "Cuadrillas forestales de 12 meses",
+      "resumen": "Gestión forestal permanente con mantenimiento de cuadrillas durante todo el año para prevención.",
+      "cita_literal": "Gestión forestal permanente: cuadrillas 12 meses, prevención y restauración ecológica",
+      "pagina": 7,
+      "tags": [
+        "#Incendios",
+        "#BomberosForestales",
+        "#EmpleoRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Considera necesario que las brigadas que limpian el monte trabajen todo el año y no solo cuando hay riesgo de fuego?"
+    }
+  ]
+}
