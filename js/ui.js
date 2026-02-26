@@ -52,7 +52,13 @@ export const UI = {
         this.elements.partyTitle.textContent = partyInfo.name;
         this.elements.partyTitle.style.color = partyInfo.color;
 
-        this.elements.partyCandidate.querySelector('span').textContent = metadata.candidato;
+        // Show candidate name, and coalition if it exists
+        let candidateText = metadata.candidato;
+        if (metadata.coalicion) {
+            candidateText += ` • ${metadata.coalicion}`;
+        }
+        this.elements.partyCandidate.querySelector('span').textContent = candidateText;
+        
         this.elements.partySlogan.textContent = metadata.lema ? `"${metadata.lema}"` : '';
 
         this.elements.partyLogo.innerHTML = `<img src="${partyInfo.logo}" alt="Logo ${partyInfo.name}" class="w-full h-full object-contain p-2">`;

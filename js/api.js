@@ -5,8 +5,8 @@
 export const PARTIES = [
     { id: 'psoe', name: 'PSOE', color: '#e30613', logo: 'img/psoe.png' },
     { id: 'pp', name: 'PP', color: '#0056a3', logo: 'img/pp.png' },
-    { id: 'mev', name: 'España Vaciada', color: '#f39200', logo: 'img/mev.png' },
-    { id: 'en-comun', name: 'En Común', color: '#6d2d91', logo: 'img/encomun.svg' }
+    { id: 'mev', name: 'España Vaciada', color: '#cf211b', logo: 'img/mev.png' },
+    { id: 'en-comun', name: 'En Común', color: '#bb112a', logo: 'img/encomun.svg' }
 ];
 
 export const CATEGORIES = [

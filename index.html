@@ -5,6 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programas Electorales CyL 2026</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Comparador de programas electorales para las elecciones a Cortes de Castilla y León 2026">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elecciones26.aldeapucela.org/">
+    <meta property="og:title" content="Programas Electorales CyL 2026">
+    <meta property="og:description" content="Comparador de programas electorales para las elecciones a las Cortes de Castilla y León 2026">
+    <meta property="og:image" content="https://elecciones26.aldeapucela.org/img/social.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Programas Electorales CyL 2026">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://elecciones26.aldeapucela.org/">
+    <meta property="twitter:title" content="Programas Electorales CyL 2026">
+    <meta property="twitter:description" content="Comparador de programas electorales para las elecciones a las Cortes de Castilla y León 2026">
+    <meta property="twitter:image" content="https://elecciones26.aldeapucela.org/img/social.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -17,13 +42,18 @@
                 <h1 class="text-3xl font-light tracking-tight text-slate-800">ELECCIONES <span class="font-bold">CyL
                         2026</span></h1>
                 <p class="text-slate-500 mt-1 font-light italic">Comparador de Programas Electorales</p>
+                <p><a href="https://aldeapucela.org" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-600 transition-colors text-sm font-medium">
+                    Por Aldea Pucela
+                </a></p>
             </div>
-            <div id="header-actions" class="hidden">
-                <button id="btn-back"
-                    class="text-slate-500 hover:text-slate-800 transition-colors flex items-center gap-2">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    <span>Volver</span>
-                </button>
+            <div class="flex flex-col items-end gap-2">
+                <div id="header-actions" class="hidden">
+                    <button id="btn-back"
+                        class="text-slate-500 hover:text-slate-800 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Volver</span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -33,13 +63,13 @@
         <section id="view-party-selection" class="fade-in">
             <div class="max-w-md mx-auto mb-16 text-center">
                 <button id="btn-goto-topics"
-                    class="group relative w-full bg-slate-900 text-white p-6 rounded-2xl font-bold text-xl shadow-2xl hover:bg-slate-800 transition-all active:scale-[0.98] overflow-hidden">
+                    class="group relative w-full bg-white text-slate-800 border border-slate-300 p-6 rounded-2xl font-bold text-xl shadow-xl hover:shadow-2xl hover:border-slate-400 transition-all active:scale-[0.98] overflow-hidden">
                     <div class="relative z-10 flex items-center justify-center gap-4">
-                        <i class="fa-solid fa-magnifying-glass-chart text-sky-400"></i>
-                        <span>Comparar programas por temas</span>
+                        <i class="fa-solid fa-magnifying-glass-chart text-slate-800"></i>
+                        <span>Comparar por temática</span>
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-r from-sky-500/20 to-indigo-500/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                        class="absolute inset-0 bg-gradient-to-r from-slate-50 to-white opacity-0 group-hover:opacity-100 transition-opacity">
                     </div>
                 </button>
                 <p class="text-slate-400 mt-4 text-sm font-light">Sanidad, Vivienda, Empleo...</p>
@@ -189,10 +219,18 @@
         </section>
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-12 px-4 mt-auto">
+    <footer class="bg-white border-t border-slate-200 py-8 px-4 mt-auto">
         <div class="max-w-6xl mx-auto text-center">
-            <p class="text-slate-400 text-sm font-light uppercase tracking-widest">Aldea Pucela &middot; Elecciones 2026
-            </p>
+            <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-sm text-slate-500">
+                <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+                    <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener noreferrer" class="hover:text-slate-700 underline underline-offset-2 transition-colors">Licencia</a>
+                    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-700 underline underline-offset-2 transition-colors">Licencia de datos</a>
+                    <a href="https://github.com/aldeapucela/comparador-jcyl26" target="_blank" rel="noopener noreferrer" class="hover:text-slate-700 underline underline-offset-2 transition-colors">Código</a>
+                </div>
+                <div>
+                    <a href="https://aldeapucela.org" target="_blank" rel="noopener noreferrer" class="hover:text-slate-700 underline underline-offset-2 transition-colors font-medium">aldeapucela.org</a>
+                </div>
+            </div>
         </div>
     </footer>
 
