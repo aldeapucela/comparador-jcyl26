@@ -133,13 +133,46 @@ function setupEventListeners() {
     }
 }
 
+// Helper function to generate page titles for Matomo
+function getPageTitle(hash) {
+    const parts = hash.split('/').filter(p => p && p !== '#');
+    
+    if (parts.length === 0) {
+        return 'Comparador Programas Electorales CyL 2026';
+    }
+    
+    const partyId = parts[0];
+    
+    if (partyId === 'comparar') {
+        const topicId = parts[1] || '';
+        return `Comparar: ${decodeURIComponent(topicId)} - CyL 2026`;
+    }
+    
+    if (partyId === 'afinidad') {
+        return 'Cuestionario de Afinidad - CyL 2026';
+    }
+    
+    // Find party name
+    const party = appState.allData[partyId];
+    if (party) {
+        return `${party.name} - Programa Electoral CyL 2026`;
+    }
+    
+    return 'Comparador Programas Electorales CyL 2026';
+}
+
 async function handleRouting() {
     const hash = window.location.hash || '#/';
     const parts = hash.split('/').filter(p => p && p !== '#');
 
     // Track page view with Matomo
     if (typeof _paq !== 'undefined') {
-        _paq.push(['setCustomUrl', window.location.href]);
+        // Set custom URL and title for SPA
+        const customUrl = window.location.href;
+        const customTitle = getPageTitle(hash);
+        
+        _paq.push(['setCustomUrl', customUrl]);
+        _paq.push(['setDocumentTitle', customTitle]);
         _paq.push(['trackPageView']);
     }
 
