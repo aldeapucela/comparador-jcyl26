@@ -8,14 +8,18 @@ export const UI = {
     // Selectors
     views: {
         selection: document.getElementById('view-party-selection'),
-        detail: document.getElementById('view-party-detail')
+        detail: document.getElementById('view-party-detail'),
+        topic: document.getElementById('view-topic-first')
     },
     containers: {
         parties: document.getElementById('parties-container'),
         categories: document.getElementById('categories-nav'),
         proposals: document.getElementById('proposals-container'),
         headerActions: document.getElementById('header-actions'),
-        mobileFilter: document.getElementById('mobile-filter-container')
+        mobileFilter: document.getElementById('mobile-filter-container'),
+        duelParties: document.getElementById('duel-parties-list'),
+        topicsGrid: document.getElementById('topics-grid'),
+        comparisonResults: document.getElementById('comparison-results')
     },
     elements: {
         categoryName: document.getElementById('current-category-name'),
@@ -324,18 +328,373 @@ export const UI = {
     switchView(viewName) {
         const stickyBar = document.getElementById('sticky-party-identity');
         const mobileFilter = document.getElementById('mobile-filter-container');
+        const duelSelector = document.getElementById('duel-selector-container');
+
+        // Hide all views first
+        Object.values(this.views).forEach(view => view?.classList.add('hidden'));
+
         if (viewName === 'selection') {
             this.views.selection.classList.remove('hidden');
-            this.views.detail.classList.add('hidden');
             this.containers.headerActions.classList.add('hidden');
             if (stickyBar) stickyBar.classList.add('-translate-y-full');
             if (mobileFilter) mobileFilter.classList.add('hidden');
-        } else {
-            this.views.selection.classList.add('hidden');
+        } else if (viewName === 'detail') {
             this.views.detail.classList.remove('hidden');
             this.containers.headerActions.classList.remove('hidden');
             if (mobileFilter) mobileFilter.classList.remove('hidden');
             window.scrollTo(0, 0);
+        } else if (viewName === 'topic') {
+            this.views.topic.classList.remove('hidden');
+            this.containers.headerActions.classList.remove('hidden');
+            if (stickyBar) stickyBar.classList.add('-translate-y-full');
+            if (mobileFilter) mobileFilter.classList.add('hidden');
+            window.scrollTo(0, 0);
+        }
+    },
+
+    // --- Comparison Specific Methods ---
+
+    renderComparison(allData, selectedIds, currentCategory, filters, allCategories) {
+        // 1. Render Party Selector (Duel)
+        this.renderDuelSelector(selectedIds);
+
+        // 2. Render Topics Grid
+        this.renderTopicsGrid(allCategories, currentCategory?.id);
+
+        // 3. Render Filters state
+        this.updateFilterButtons(filters);
+
+        // 4. Setup Simple Mobile Navigation
+        this.setupSimpleMobileNav(selectedIds);
+
+        // 5. Render Results
+        if (!currentCategory) {
+            this.containers.comparisonResults.innerHTML = `
+                <div class="text-center py-20 bg-white rounded-3xl border border-dashed border-slate-300">
+                    <i class="fa-solid fa-arrow-up text-4xl text-slate-200 mb-4"></i>
+                    <p class="text-slate-500 font-light">Selecciona un tema arriba para comparar medidas</p>
+                </div>
+            `;
+            return;
+        }
+
+        const categoryName = currentCategory.name;
+
+        // 6. Build Contrast Grid - Direct to proposals, no redundant header
+        let html = `<div class="contrast-grid" style="--cols: ${selectedIds.length}">`;
+
+        selectedIds.forEach((partyId, index) => {
+            const partyInfo = PARTIES.find(p => p.id === partyId);
+            const proposals = allData[partyId]?.propuestas || [];
+
+            // Apply Topic Filter
+            let filtered = proposals.filter(p => p.categoria === categoryName);
+
+            // Apply Quality Filters
+            if (filters.rural) filtered = filtered.filter(p => p.analisis.foco_rural);
+            if (filters.competition) filtered = filtered.filter(p => p.analisis.competencia?.toLowerCase() === 'directa');
+            if (filters.query) {
+                filtered = filtered.filter(p =>
+                    p.titulo_corto.toLowerCase().includes(filters.query) ||
+                    p.resumen.toLowerCase().includes(filters.query) ||
+                    p.tags.some(t => t.toLowerCase().includes(filters.query))
+                );
+            }
+
+            html += `
+                <div class="party-comparison-col" data-party-col="${partyId}" data-party-index="${index}" style="--party-color: ${partyInfo.color}">
+                    <div class="space-y-6">
+                        ${filtered.length > 0 ?
+                    filtered.map(prop => this.createComparisonCardHTML(prop, partyInfo)).join('') :
+                    `<div class="p-8 rounded-2xl bg-slate-50 text-slate-400 text-xs text-center border border-dashed border-slate-200">No hay medidas con estos filtros</div>`
+                }
+                    </div>
+                </div>
+            `;
+        });
+
+        html += `</div>`;
+        this.containers.comparisonResults.innerHTML = html;
+
+        // Set first column active on mobile
+        const firstCol = this.containers.comparisonResults.querySelector('.party-comparison-col');
+        if (firstCol) firstCol.classList.add('mobile-active');
+
+        // Setup simple mobile swipe
+        this.setupSimpleMobileSwipe(selectedIds);
+
+        // Attach quote toggle events
+        this.containers.comparisonResults.querySelectorAll('.btn-toggle-quote').forEach(btn => {
+            btn.addEventListener('click', () => this.toggleQuote(btn.dataset.id, btn));
+        });
+
+        // Attach share events
+        this.containers.comparisonResults.querySelectorAll('.btn-share').forEach(btn => {
+            const partyId = btn.dataset.party;
+            const partyInfo = PARTIES.find(p => p.id === partyId);
+            const propId = btn.dataset.id;
+            const prop = allData[partyId]?.propuestas?.find(p => p.id == propId);
+            btn.addEventListener('click', () => this.shareProposal(partyInfo, currentCategory?.name || 'Comparación', prop, btn));
+        });
+    },
+
+    renderDuelSelector(selectedIds) {
+        this.containers.duelParties.innerHTML = PARTIES.map(party => {
+            const active = selectedIds.includes(party.id);
+            return `
+                <button class="party-pill px-4 py-2 rounded-full border transition-all flex items-center gap-2 ${active ? 'bg-white border-slate-900 ring-2 ring-slate-900/5 active' : 'bg-slate-100 border-transparent text-slate-500 hover:bg-white hover:border-slate-200'}"
+                        data-party-id="${party.id}" style="--shadow-color: ${party.color}20">
+                    <img src="${party.logo}" alt="${party.name}" class="h-4 object-contain ${active ? '' : 'grayscale opacity-70'}">
+                    <span class="text-sm font-bold">${party.name}</span>
+                    ${active ? `<i class="fa-solid fa-circle-check text-slate-900 text-[10px]"></i>` : ''}
+                </button>
+            `;
+        }).join('');
+
+        document.getElementById('selected-parties-count').textContent = `${selectedIds.length} partido${selectedIds.length !== 1 ? 's' : ''}`;
+    },
+
+    renderTopicsGrid(categories, activeTopicId) {
+        const activeCat = categories.find(c => c.id === activeTopicId);
+        const label = activeCat ? `<i class="fa-solid ${activeCat.icon}"></i> ${activeCat.name}` : '<i class="fa-solid fa-list"></i> Elige un tema';
+
+        // Render a single dropdown-trigger button
+        this.containers.topicsGrid.innerHTML = `
+            <button id="btn-topic-dropdown"
+                class="w-full bg-white border border-slate-200 p-4 rounded-xl flex items-center justify-between text-slate-700 font-medium shadow-sm hover:border-slate-400 transition-colors">
+                <div class="flex items-center gap-3">
+                    ${label}
+                </div>
+                <i class="fa-solid fa-chevron-down text-xs text-slate-300"></i>
+            </button>
+        `;
+
+        // Remove old overlay if exists
+        const oldOverlay = document.getElementById('topic-overlay');
+        if (oldOverlay) oldOverlay.remove();
+
+        // Create overlay (same pattern as mobile category filter)
+        const overlay = document.createElement('div');
+        overlay.id = 'topic-overlay';
+        overlay.className = 'fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] hidden flex-col justify-end';
+        overlay.innerHTML = `
+            <div class="bg-white rounded-t-3xl p-6 max-h-[80vh] overflow-y-auto transform translate-y-full transition-transform duration-300">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-bold text-slate-800">Elige un tema</h3>
+                    <button id="close-topic-overlay" class="p-2 text-slate-400 hover:text-slate-800">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+                <div class="grid gap-2">
+                    ${categories.map(cat => `
+                        <button class="topic-dropdown-option w-full text-left p-4 rounded-xl border flex items-center gap-4
+                            ${cat.id === activeTopicId ? 'bg-slate-900 text-white border-slate-900' : 'bg-slate-50 border-slate-100 text-slate-700 hover:border-slate-300'}"
+                            data-topic-id="${cat.id}">
+                            <div class="w-9 h-9 rounded-xl flex items-center justify-center ${cat.id === activeTopicId ? 'bg-white/10' : 'bg-white border border-slate-200'}">
+                                <i class="fa-solid ${cat.icon} ${cat.id === activeTopicId ? 'text-sky-300' : 'text-slate-400'}"></i>
+                            </div>
+                            <span class="font-semibold">${cat.name}</span>
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+
+        const openOverlay = () => {
+            overlay.classList.remove('hidden');
+            overlay.classList.add('flex');
+            setTimeout(() => overlay.querySelector('div').classList.remove('translate-y-full'), 10);
+        };
+        const closeOverlay = () => {
+            overlay.querySelector('div').classList.add('translate-y-full');
+            setTimeout(() => { overlay.classList.add('hidden'); overlay.classList.remove('flex'); }, 300);
+        };
+
+        document.getElementById('btn-topic-dropdown').addEventListener('click', openOverlay);
+        document.getElementById('close-topic-overlay').addEventListener('click', closeOverlay);
+        overlay.querySelectorAll('.topic-dropdown-option').forEach(opt => {
+            opt.addEventListener('click', () => {
+                closeOverlay();
+                window.location.hash = `#/comparar/${opt.dataset.topicId}`;
+            });
+        });
+    },
+
+    updateFilterButtons(filters) {
+        const btnRural = document.getElementById('filter-rural');
+        const btnComp = document.getElementById('filter-competition');
+
+        if (filters.rural) btnRural.classList.add('active'); else btnRural.classList.remove('active');
+        if (filters.competition) btnComp.classList.add('active'); else btnComp.classList.remove('active');
+    },
+
+    createComparisonCardHTML(prop, partyInfo) {
+        return `
+            <article class="proposal-card relative bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow" id="prop-${prop.id}">
+                <div class="party-indicator" style="background-color: ${partyInfo.color}"></div>
+                <div class="mb-4">
+                    <h4 class="text-lg font-bold text-slate-800 leading-tight">${prop.titulo_corto}</h4>
+                </div>
+                <p class="text-slate-600 mb-6 text-sm leading-relaxed">${prop.resumen}</p>
+
+                <div class="quote-section overflow-hidden transition-all duration-300 max-h-0" id="quote-${prop.id}">
+                    <div class="bg-slate-50 p-5 rounded-xl border-l-4 mb-4" style="border-color: ${partyInfo.color}50">
+                        <p class="text-sm italic text-slate-500 mb-4 leading-relaxed font-serif">"${prop.cita_literal}"</p>
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="text-slate-400">Fuente: Programa Electoral 2026</span>
+                            <a href="programas/${partyInfo.id}.pdf#page=${prop.pagina}" target="_blank"
+                               class="font-bold px-2 py-1 bg-white border border-slate-200 rounded text-blue-600 hover:bg-blue-50 transition-colors">
+                                Ver PDF (Pág. ${prop.pagina}) <i class="fa-solid fa-up-right-from-square ml-1 text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between pt-4 border-t border-slate-50">
+                    <div class="flex items-center gap-2">
+                        ${prop.foco_rural ? '<i class="fa-solid fa-tractor text-amber-500 text-xs" title="Foco Rural"></i>' : ''}
+                    </div>
+                    <div class="flex gap-3">
+                        <button class="btn-share text-xs font-semibold text-slate-400 hover:text-slate-800 flex items-center gap-2 transition-colors" data-id="${prop.id}" data-party="${partyInfo.id}">
+                            <i class="fa-solid fa-share-nodes text-[10px]"></i>
+                            <span>Compartir</span>
+                        </button>
+                        <button class="btn-toggle-quote text-xs font-semibold text-slate-400 hover:text-slate-800 flex items-center gap-2 transition-colors" data-id="${prop.id}">
+                            <i class="fa-solid fa-quote-left text-[10px]"></i>
+                            <span>Ver fuente</span>
+                        </button>
+                    </div>
+                </div>
+            </article>
+        `;
+    },
+
+    // --- Simple Mobile Navigation ---
+
+    setupSimpleMobileNav(selectedIds) {
+        const navContainer = document.getElementById('mobile-party-nav');
+        const logoEl = document.getElementById('current-party-logo');
+        const nameEl = document.getElementById('current-party-name');
+        const counterEl = document.getElementById('current-party-counter');
+        
+        if (selectedIds.length <= 1) {
+            navContainer?.classList.add('hidden');
+            return;
+        }
+
+        navContainer?.classList.remove('hidden');
+        
+        // Update current party info (first party)
+        const firstPartyId = selectedIds[0];
+        const firstParty = PARTIES.find(p => p.id === firstPartyId);
+        
+        if (firstParty) {
+            logoEl.innerHTML = `<img src="${firstParty.logo}" alt="${firstParty.name}" class="w-full h-full object-contain p-1">`;
+            nameEl.textContent = firstParty.name;
+            counterEl.textContent = `1 / ${selectedIds.length}`;
+        }
+
+        // Setup navigation buttons
+        const prevBtn = document.getElementById('btn-prev-party');
+        const nextBtn = document.getElementById('btn-next-party');
+
+        if (prevBtn) {
+            prevBtn.onclick = () => this.navigateSimpleMobile(-1, selectedIds);
+            prevBtn.disabled = true; // First party, disable prev
+        }
+
+        if (nextBtn) {
+            nextBtn.onclick = () => this.navigateSimpleMobile(1, selectedIds);
+            nextBtn.disabled = false;
+        }
+    },
+
+    setupSimpleMobileSwipe(selectedIds) {
+        if (selectedIds.length <= 1) return;
+
+        let startX = 0;
+        let currentIndex = 0;
+        let isDragging = false;
+
+        const grid = this.containers.comparisonResults.querySelector('.contrast-grid');
+        if (!grid) return;
+
+        const handleSwipeEnd = (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+
+            const endX = e.type.includes('mouse') ? e.clientX : e.changedTouches[0].clientX;
+            const diff = startX - endX;
+            const threshold = 50;
+
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0 && currentIndex < selectedIds.length - 1) {
+                    // Swipe left - next party
+                    this.navigateSimpleMobile(1, selectedIds);
+                } else if (diff < 0 && currentIndex > 0) {
+                    // Swipe right - previous party
+                    this.navigateSimpleMobile(-1, selectedIds);
+                }
+            }
+        };
+
+        const handleSwipeStart = (e) => {
+            startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+            isDragging = true;
+        };
+
+        // Touch events
+        grid.addEventListener('touchstart', handleSwipeStart);
+        grid.addEventListener('touchend', handleSwipeEnd);
+    },
+
+    navigateSimpleMobile(direction, selectedIds) {
+        const activeCol = this.containers.comparisonResults.querySelector('.party-comparison-col.mobile-active');
+        if (!activeCol) return;
+
+        const currentIndex = parseInt(activeCol.dataset.partyIndex);
+        const newIndex = currentIndex + direction;
+        
+        if (newIndex < 0 || newIndex >= selectedIds.length) return;
+
+        const targetPartyId = selectedIds[newIndex];
+        const targetParty = PARTIES.find(p => p.id === targetPartyId);
+        
+        // Update navigation state
+        this.updateSimpleNavState(newIndex, selectedIds, targetParty);
+        
+        // Switch to target party
+        this.containers.comparisonResults.querySelectorAll('.party-comparison-col').forEach(col => {
+            col.classList.toggle('mobile-active', col.dataset.partyCol === targetPartyId);
+        });
+    },
+
+    updateSimpleNavState(currentIndex, selectedIds, currentParty) {
+        const logoEl = document.getElementById('current-party-logo');
+        const nameEl = document.getElementById('current-party-name');
+        const counterEl = document.getElementById('current-party-counter');
+        const prevBtn = document.getElementById('btn-prev-party');
+        const nextBtn = document.getElementById('btn-next-party');
+
+        if (logoEl && currentParty) {
+            logoEl.innerHTML = `<img src="${currentParty.logo}" alt="${currentParty.name}" class="w-full h-full object-contain p-1">`;
+        }
+        
+        if (nameEl && currentParty) {
+            nameEl.textContent = currentParty.name;
+        }
+
+        if (counterEl) {
+            counterEl.textContent = `${currentIndex + 1} / ${selectedIds.length}`;
+        }
+
+        if (prevBtn) {
+            prevBtn.disabled = currentIndex === 0;
+        }
+
+        if (nextBtn) {
+            nextBtn.disabled = currentIndex === selectedIds.length - 1;
         }
     }
 };

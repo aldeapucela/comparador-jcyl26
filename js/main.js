@@ -2,17 +2,30 @@
  * Main module - Application entry point and state management
  */
 
-import { PARTIES, fetchPartyData, getCategoriesFromProposals } from './api.js';
+import { PARTIES, fetchPartyData, fetchAllPartiesData, getCategoriesFromProposals, CATEGORIES } from './api.js';
 import { UI } from './ui.js';
 
 let appState = {
     selectedParty: null,
     currentData: null,
     currentCategory: null,
-    highlightedId: null
+    highlightedId: null,
+
+    // Topic-First state
+    mode: 'party', // 'party' or 'topic'
+    allData: {},
+    selectedParties: [], // Array of party IDs
+    filters: {
+        rural: false,
+        competition: false,
+        query: ''
+    }
 };
 
 async function init() {
+    // 1. Bulk Load all data at start
+    appState.allData = await fetchAllPartiesData();
+
     UI.renderPartySelection();
     setupEventListeners();
     handleRouting();
@@ -34,6 +47,44 @@ function setupEventListeners() {
     UI.elements.btnBack.addEventListener('click', () => {
         window.location.hash = '#/';
     });
+
+    // Goto Topics
+    const btnTopics = document.getElementById('btn-goto-topics');
+    if (btnTopics) {
+        btnTopics.addEventListener('click', () => {
+            window.location.hash = '#/comparar';
+        });
+    }
+
+    // Comparison Mode: Party selection
+    document.addEventListener('click', (e) => {
+        const pill = e.target.closest('.party-pill');
+        if (pill) {
+            const partyId = pill.dataset.partyId;
+            togglePartySelection(partyId);
+        }
+
+        const topicCard = e.target.closest('.topic-card');
+        if (topicCard) {
+            const topicId = topicCard.dataset.topicId;
+            window.location.hash = `#/comparar/${topicId}`;
+        }
+
+        const filterBtn = e.target.closest('.filter-btn');
+        if (filterBtn) {
+            const filterId = filterBtn.id;
+            toggleFilter(filterId);
+        }
+    });
+
+    // Search input
+    const bSearch = document.getElementById('search-input');
+    if (bSearch) {
+        bSearch.addEventListener('input', (e) => {
+            appState.filters.query = e.target.value.toLowerCase();
+            if (appState.mode === 'topic') renderComparison();
+        });
+    }
 }
 
 async function handleRouting() {
@@ -48,15 +99,34 @@ async function handleRouting() {
     }
 
     const partyId = parts[0];
+
+    // Check if it's comparison mode
+    if (partyId === 'comparar') {
+        const topicId = parts[1] || null;
+        appState.mode = 'topic';
+        appState.currentCategory = topicId;
+
+        // Default selection if empty
+        if (appState.selectedParties.length === 0) {
+            appState.selectedParties = ['pp', 'psoe'];
+        }
+
+        UI.switchView('topic');
+        renderComparison();
+        return;
+    }
+
+    // --- Party-first mode ---
     const categoryName = parts[1] ? decodeURIComponent(parts[1]) : null;
     const propId = parts[2] || null;
 
+    appState.mode = 'party';
     // 1. Load Party if needed
     if (appState.selectedParty?.id !== partyId) {
-        await doPartySelect(partyId);
+        doPartySelect(partyId);
     }
 
-    // 2. Navigate to category if specified (or force re-render if party changed)
+    // 2. Navigate to category if specified
     doCategorySelect(categoryName);
 
     // 3. Highlight specific measure
@@ -73,7 +143,7 @@ async function doPartySelect(partyId) {
     }
 
     appState.selectedParty = partyInfo;
-    const data = await fetchPartyData(partyId);
+    const data = appState.allData[partyId];
     if (data) {
         appState.currentData = data;
         const categories = getCategoriesFromProposals(data.propuestas);
@@ -125,6 +195,39 @@ function highlightMeasure(id) {
             }, 3000);
         }
     }, 500);
+}
+
+// --- Topic-First Logic ---
+
+function togglePartySelection(partyId) {
+    const index = appState.selectedParties.indexOf(partyId);
+    if (index > -1) {
+        if (appState.selectedParties.length > 1) {
+            appState.selectedParties.splice(index, 1);
+        }
+    } else {
+        appState.selectedParties.push(partyId);
+    }
+    renderComparison();
+}
+
+function toggleFilter(filterId) {
+    if (filterId === 'filter-rural') appState.filters.rural = !appState.filters.rural;
+    if (filterId === 'filter-competition') appState.filters.competition = !appState.filters.competition;
+    renderComparison();
+}
+
+function renderComparison() {
+    const categoryObj = appState.currentCategory ?
+        CATEGORIES.find(c => c.id === appState.currentCategory) : null;
+
+    UI.renderComparison(
+        appState.allData,
+        appState.selectedParties,
+        categoryObj,
+        appState.filters,
+        CATEGORIES
+    );
 }
 
 document.addEventListener('DOMContentLoaded', init);

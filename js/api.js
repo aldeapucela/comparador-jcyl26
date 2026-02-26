@@ -9,6 +9,20 @@ export const PARTIES = [
     { id: 'en-comun', name: 'En Común', color: '#6d2d91', logo: 'img/encomun.svg' }
 ];
 
+export const CATEGORIES = [
+    { id: 'demografia', name: 'Reto Demográfico y Despoblación', icon: 'fa-people-group' },
+    { id: 'sanidad', name: 'Sanidad Pública', icon: 'fa-hospital' },
+    { id: 'vivienda', name: 'Vivienda', icon: 'fa-house-chimney' },
+    { id: 'economia', name: 'Economía, Empleo y Fiscalidad', icon: 'fa-chart-line' },
+    { id: 'educacion', name: 'Educación y Futuro', icon: 'fa-graduation-cap' },
+    { id: 'servicios-sociales', name: 'Servicios Sociales y Cuidados', icon: 'fa-hand-holding-heart' },
+    { id: 'conectividad', name: 'Conectividad y Movilidad', icon: 'fa-tower-cell' },
+    { id: 'medio-ambiente', name: 'Medio Ambiente y Energía', icon: 'fa-leaf' },
+    { id: 'sector-primario', name: 'Sector Primario (Agricultura y Ganadería)', icon: 'fa-tractor' },
+    { id: 'democracia', name: 'Calidad Democrática y Transparencia', icon: 'fa-building-shield' },
+    { id: 'otros', name: 'Otros', icon: 'fa-ellipsis' }
+];
+
 export async function fetchPartyData(partyId) {
     try {
         const response = await fetch(`./data/partidos/${partyId}.json`);
@@ -18,6 +32,18 @@ export async function fetchPartyData(partyId) {
         console.error('Error fetching party data:', error);
         return null;
     }
+}
+
+export async function fetchAllPartiesData() {
+    const data = {};
+    const promises = PARTIES.map(async (party) => {
+        const partyData = await fetchPartyData(party.id);
+        if (partyData) {
+            data[party.id] = partyData;
+        }
+    });
+    await Promise.all(promises);
+    return data;
 }
 
 export function getCategoriesFromProposals(proposals) {

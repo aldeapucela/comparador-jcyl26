@@ -8,14 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
-</head>
+    </head>
 
 <body class="bg-slate-50 text-slate-900 min-h-screen">
     <header class="bg-white border-b border-slate-200 py-8 px-4 mb-8">
@@ -38,9 +31,24 @@
     <main class="max-w-6xl mx-auto px-4 pb-20">
         <!-- View: Party Selection -->
         <section id="view-party-selection" class="fade-in">
-            <h2 class="text-2xl font-light text-center mb-12 text-slate-700">Selecciona una formación para explorar su
-                programa</h2>
-            <div id="parties-container" class="grid grid-cols-2 gap-4 md:gap-8">
+            <div class="max-w-md mx-auto mb-16 text-center">
+                <button id="btn-goto-topics"
+                    class="group relative w-full bg-slate-900 text-white p-6 rounded-2xl font-bold text-xl shadow-2xl hover:bg-slate-800 transition-all active:scale-[0.98] overflow-hidden">
+                    <div class="relative z-10 flex items-center justify-center gap-4">
+                        <i class="fa-solid fa-magnifying-glass-chart text-sky-400"></i>
+                        <span>Comparar programas por temas</span>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-sky-500/20 to-indigo-500/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                </button>
+                <p class="text-slate-400 mt-4 text-sm font-light">Sanidad, Vivienda, Empleo...</p>
+            </div>
+
+            <h2 class="text-2xl font-light text-center mb-12 text-slate-700">O elige una formación para explorar su
+                programa
+                completo</h2>
+            <div id="parties-container" class="grid grid-cols-2 gap-4 md:gap-8 max-w-4xl mx-auto">
                 <!-- Dynamic Content -->
             </div>
         </section>
@@ -102,6 +110,81 @@
                         <!-- Dynamic Content -->
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- View: Topic-First Comparison -->
+        <section id="view-topic-first" class="hidden fade-in">
+            <!-- Party Sticky Selector (Duel) -->
+            <div id="duel-selector-container"
+                class="sticky top-0 z-40 bg-slate-50/90 backdrop-blur-md pt-4 pb-4 mb-8 border-b border-slate-200">
+                <div class="flex flex-col gap-3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest">Comparador</h3>
+                        <div id="selected-parties-count"
+                            class="text-xs font-bold px-2 py-1 bg-slate-200 rounded-full text-slate-600">0 partidos
+                        </div>
+                    </div>
+                    <div id="duel-parties-list" class="flex flex-wrap gap-3">
+                        <!-- Dynamic Party Pills -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic Selector -->
+            <div id="topic-selector-container" class="mb-8">
+                <div id="topics-grid">
+                    <!-- Dynamic: single dropdown button rendered by JS -->
+                </div>
+            </div>
+
+            <!-- Mobile Party Navigation (only shows when comparing) -->
+            <div id="mobile-party-nav" class="lg:hidden sticky top-16 z-30 mb-6 hidden">
+                <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <button id="btn-prev-party" class="p-2 rounded-lg text-slate-400 hover:text-slate-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <div class="flex items-center gap-3">
+                            <div id="current-party-logo" class="w-8 h-8 rounded-lg overflow-hidden">
+                                <!-- Dynamic logo -->
+                            </div>
+                            <div class="text-center">
+                                <div id="current-party-name" class="text-sm font-semibold text-slate-800">
+                                    <!-- Dynamic party name -->
+                                </div>
+                                <div id="current-party-counter" class="text-xs text-slate-500">
+                                    1 / 2
+                                </div>
+                            </div>
+                        </div>
+                        <button id="btn-next-party" class="p-2 rounded-lg text-slate-400 hover:text-slate-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quality Filters -->
+            <div id="quality-filters-container"
+                class="mb-10 flex flex-wrap items-center gap-4 p-5 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                <button id="filter-rural"
+                    class="filter-btn px-4 py-2 rounded-xl border border-slate-200 text-sm font-medium flex items-center gap-2 hover:bg-slate-50 transition-colors"
+                    data-active="false">
+                    <i class="fa-solid fa-tractor text-slate-400"></i>
+                    <span>Solo Rural</span>
+                </button>
+                <button id="filter-competition"
+                    class="filter-btn px-4 py-2 rounded-xl border border-slate-200 text-sm font-medium flex items-center gap-2 hover:bg-slate-50 transition-colors"
+                    data-active="false">
+                    <i class="fa-solid fa-circle-check text-slate-400"></i>
+                    <span>Directas Junta</span>
+                </button>
+            </div>
+
+            <!-- Comparison Results -->
+            <div id="comparison-results" class="space-y-16">
+                <!-- Dynamic: Measures grid -->
             </div>
         </section>
     </main>
