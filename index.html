@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programas Electorales CyL 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 min-h-screen">
+    <header class="bg-white border-b border-slate-200 py-8 px-4 mb-8">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div>
+                <h1 class="text-3xl font-light tracking-tight text-slate-800">ELECCIONES <span class="font-bold">CyL
+                        2026</span></h1>
+                <p class="text-slate-500 mt-1 font-light italic">Comparador de Programas Electorales</p>
+            </div>
+            <div id="header-actions" class="hidden">
+                <button id="btn-back"
+                    class="text-slate-500 hover:text-slate-800 transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Volver</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 pb-20">
+        <!-- View: Party Selection -->
+        <section id="view-party-selection" class="fade-in">
+            <h2 class="text-2xl font-light text-center mb-12 text-slate-700">Selecciona una formación para explorar su
+                programa</h2>
+            <div id="parties-container" class="grid grid-cols-2 gap-4 md:gap-8">
+                <!-- Dynamic Content -->
+            </div>
+        </section>
+
+        <!-- View: Party Detail -->
+        <section id="view-party-detail" class="hidden fade-in">
+            <!-- Party Header Metadata -->
+            <div id="party-metadata-container"
+                class="mb-10 flex flex-col md:flex-row items-center gap-6 pb-8 border-b border-slate-200/60">
+                <div id="party-logo-detail"
+                    class="w-20 h-20 rounded-full flex items-center justify-center text-3xl shadow-sm"></div>
+                <div class="text-center md:text-left">
+                    <h2 id="party-title-detail" class="text-4xl font-black tracking-tight text-slate-800"></h2>
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-1 mt-2">
+                        <p id="party-candidate-detail" class="text-slate-600 font-semibold flex items-center gap-2">
+                            <i class="fa-solid fa-user-circle text-slate-400"></i>
+                            <span></span>
+                        </p>
+                        <div class="h-4 w-px bg-slate-300 hidden md:block"></div>
+                        <p id="party-slogan-detail" class="text-slate-400 italic font-light text-lg"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Sidebar: Categories -->
+                <aside class="lg:w-1/4">
+                    <div class="sticky top-8">
+                        <h3 class="text-lg font-semibold mb-6 text-slate-800 flex items-center gap-2">
+                            <i class="fa-solid fa-list-ul text-slate-400"></i>
+                            Categorías
+                        </h3>
+                        <nav id="categories-nav" class="space-y-1">
+                            <!-- Dynamic Content -->
+                        </nav>
+                    </div>
+                </aside>
+
+                <!-- Main: Proposals -->
+                <div class="lg:w-3/4">
+                    <!-- Mobile Filter Trigger -->
+                    <div id="mobile-filter-container" class="lg:hidden mb-6">
+                        <button id="btn-mobile-filter"
+                            class="w-full bg-white border border-slate-200 p-4 rounded-xl flex items-center justify-between text-slate-700 font-medium shadow-sm active:bg-slate-50">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-filter text-slate-400"></i>
+                                <span>Filtrar por categoría</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down text-xs text-slate-300"></i>
+                        </button>
+                    </div>
+
+
+                    <header id="category-header" class="mb-8 pb-4 border-b border-slate-100">
+                        <h2 id="current-category-name" class="text-3xl font-bold text-slate-800 mb-2"></h2>
+                        <p id="current-category-description" class="text-slate-500 font-light"></p>
+                    </header>
+                    <div id="proposals-container" class="space-y-8">
+                        <!-- Dynamic Content -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-12 px-4 mt-auto">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-slate-400 text-sm font-light uppercase tracking-widest">Aldea Pucela &middot; Elecciones 2026
+            </p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
