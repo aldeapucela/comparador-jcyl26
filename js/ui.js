@@ -65,6 +65,18 @@ export const UI = {
         this.elements.partyLogo.style.backgroundColor = 'white';
         this.elements.partyLogo.style.border = `2px solid ${partyInfo.color}20`;
         this.elements.partyLogo.classList.add('overflow-hidden', 'rounded-xl');
+
+        // Add link to complete program
+        const programLinkContainer = document.getElementById('party-program-link');
+        if (programLinkContainer) {
+            programLinkContainer.innerHTML = `
+                <a href="programas/${partyInfo.id}.pdf" target="_blank" 
+                   class="inline-flex items-center gap-2 px-3 py-1.5 text-slate-500 hover:text-slate-700 text-sm font-medium border border-slate-200 rounded-lg hover:border-slate-300 transition-colors">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    Programa en PDF
+                </a>
+            `;
+        }
     },
 
     renderCategories(categories, activeCategory, onSelect) {
