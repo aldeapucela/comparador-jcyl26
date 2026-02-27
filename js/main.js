@@ -69,8 +69,14 @@ function tokenizeSearchText(value = '') {
 
 function fieldMatchesSearchTerm(fieldValue = '', queryTokens = []) {
     if (!Array.isArray(queryTokens) || queryTokens.length === 0) return false;
-    const fieldTokens = new Set(tokenizeSearchText(fieldValue));
-    return queryTokens.every((token) => fieldTokens.has(token));
+    const fieldTokens = tokenizeSearchText(fieldValue);
+    return queryTokens.every((token) => {
+        return fieldTokens.some((fieldToken) => {
+            if (fieldToken === token) return true;
+            if (token.length < 4 || fieldToken.length < 4) return false;
+            return fieldToken.startsWith(token) || token.startsWith(fieldToken);
+        });
+    });
 }
 
 function getSearchTermFromParts(parts) {
