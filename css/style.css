@@ -108,6 +108,28 @@ body {
     box-shadow: inset 0 0 0 1px rgba(51, 65, 85, 0.25);
 }
 
+.header-action-btn {
+    height: 2.5rem;
+    padding: 0 0.875rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+    background: #fff;
+    color: #64748b;
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.header-action-btn:hover {
+    color: #1e293b;
+    border-color: #cbd5e1;
+    background: #f8fafc;
+}
+
 /* Mobile Optimizations */
 @media (max-width: 1024px) {
     aside {
@@ -118,17 +140,6 @@ body {
         padding-top: 1.5rem !important;
         padding-bottom: 1.5rem !important;
         margin-bottom: 1rem !important;
-    }
-
-    header > div {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 1rem !important;
-    }
-
-    header > div > div:last-child {
-        align-self: flex-end !important;
-        margin-top: 0.5rem !important;
     }
 
     h1 {
@@ -146,17 +157,96 @@ body {
 
 @media (max-width: 640px) {
     header {
-        padding-top: 1rem !important;
-        padding-bottom: 1rem !important;
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
     }
 
-    header > div > div:last-child {
-        margin-top: 0.75rem !important;
+    header > div {
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        gap: 0.75rem !important;
+    }
+
+    #header-actions {
+        width: auto;
+        margin-left: auto;
+        justify-content: flex-end;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    #header-inner > div:first-child {
+        min-width: 0;
+        align-items: center;
+        gap: 0;
+    }
+
+    #header-brand-icon {
+        display: none !important;
+    }
+
+    #header-brand-icon i {
+        font-size: 1rem !important;
+    }
+
+    #header-title {
+        font-size: 2rem !important;
+        line-height: 1.08 !important;
+        letter-spacing: -0.02em !important;
+        margin: 0 !important;
+    }
+
+    #header-subtitle {
+        font-size: 0.8rem !important;
+        line-height: 1.25 !important;
+        margin-top: 0.25rem !important;
+        font-style: normal !important;
+        color: #64748b !important;
+    }
+
+    #header-byline {
+        font-size: 0.7rem !important;
+        line-height: 1.2 !important;
+        color: #94a3b8 !important;
     }
 
     #btn-back {
-        font-size: 0.875rem !important;
-        padding: 0.5rem 0.75rem !important;
+        order: 1;
+    }
+
+    #btn-global-search {
+        order: 2;
+    }
+
+    .header-action-btn {
+        width: 2.25rem;
+        height: 2.25rem;
+        padding: 0;
+        border-radius: 999px;
+        border-color: transparent;
+        background: transparent;
+        gap: 0;
+    }
+
+    .header-action-btn span {
+        display: none;
+    }
+
+    /* Home: keep header compact without introducing floating overlap */
+    body.home-view #header-inner {
+        position: static;
+    }
+
+    body.home-view #header-actions {
+        position: static;
+        width: auto;
+    }
+
+    body.home-view header {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
     }
 }
 

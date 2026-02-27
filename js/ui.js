@@ -19,10 +19,14 @@ if (typeof window !== 'undefined') {
 export const UI = {
     floatingCategoryScrollHandler: null,
     comparisonTopScrollHandler: null,
+    searchTopScrollHandler: null,
+    lastSearchResults: [],
+    lastSearchTerm: '',
 
     // Selectors
     views: {
         selection: document.getElementById('view-party-selection'),
+        search: document.getElementById('view-search'),
         detail: document.getElementById('view-party-detail'),
         topic: document.getElementById('view-topic-first'),
         afinidad: document.getElementById('view-afinidad')
@@ -35,7 +39,9 @@ export const UI = {
         mobileFilter: document.getElementById('mobile-filter-container'),
         duelParties: document.getElementById('duel-parties-list'),
         topicsGrid: document.getElementById('topics-grid'),
-        comparisonResults: document.getElementById('comparison-results')
+        comparisonResults: document.getElementById('comparison-results'),
+        searchResults: document.getElementById('global-search-results'),
+        searchSummary: document.getElementById('global-search-summary')
     },
     elements: {
         categoryName: document.getElementById('current-category-name'),
@@ -45,6 +51,15 @@ export const UI = {
         partyCandidate: document.getElementById('party-candidate-detail'),
         partySlogan: document.getElementById('party-slogan-detail'),
         partyLogo: document.getElementById('party-logo-detail')
+    },
+
+    escapeHtml(value = '') {
+        return String(value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
     },
 
     navigateHash(hash) {
@@ -75,6 +90,160 @@ export const UI = {
                 <h3 class="text-lg md:text-xl font-bold text-slate-800">${party.name}</h3>
             </div>
         `).join('');
+    },
+
+    renderGlobalSearch(term, results) {
+        this.setupSearchTopButton();
+        this.lastSearchResults = results;
+        this.lastSearchTerm = term || '';
+        const input = document.getElementById('global-search-input');
+        if (input) input.value = term || '';
+        const shareSearchBtn = document.getElementById('btn-share-search-query');
+        if (shareSearchBtn) {
+            shareSearchBtn.classList.toggle('hidden', !term);
+        }
+
+        if (!term) {
+            this.containers.searchSummary.textContent = 'Escribe un término y pulsa Enter para buscar en todos los programas.';
+            this.containers.searchResults.innerHTML = `
+                <div class="bg-white border border-dashed border-slate-300 rounded-2xl p-8 text-center text-slate-500">
+                    Prueba con: vivienda, ambulancias, IRPF rural, macrogranjas
+                </div>
+            `;
+            return;
+        }
+
+        this.containers.searchSummary.textContent = `${results.length} resultado${results.length === 1 ? '' : 's'} para "${term}"`;
+
+        if (results.length === 0) {
+            this.containers.searchResults.innerHTML = `
+                <div class="bg-white border border-dashed border-slate-300 rounded-2xl p-8 text-center text-slate-500">
+                    No hay resultados para "${this.escapeHtml(term)}". Prueba con otra palabra.
+                </div>
+            `;
+            return;
+        }
+
+        this.containers.searchResults.innerHTML = results.map((item, index) => `
+            <div class="bg-white border border-slate-200 rounded-2xl p-5 hover:shadow-md hover:border-slate-300 transition-all">
+                <a href="#/${item.partyId}/${encodeURIComponent(item.category)}/${item.proposalId}" class="block">
+                    <div class="flex flex-wrap items-center gap-2 mb-2">
+                        <span class="text-xs font-semibold px-2 py-1 rounded-full" style="background-color: ${this.escapeHtml(item.partyColor)}20; color: ${this.escapeHtml(item.partyColor)};">
+                            ${this.escapeHtml(item.partyName)}
+                        </span>
+                        <span class="text-xs text-slate-500">${this.escapeHtml(item.category)}</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-800 mb-1">${this.escapeHtml(item.title)}</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">${this.escapeHtml(item.summary)}</p>
+                </a>
+                <div class="mt-3 pt-3 border-t border-slate-100 flex justify-end">
+                    <button class="btn-share-search w-8 h-8 rounded-full text-slate-500 hover:text-slate-800 transition-colors flex items-center justify-center"
+                        data-result-index="${index}" aria-label="Compartir resultado de búsqueda" title="Compartir resultado">
+                        <i class="fa-solid fa-share-nodes text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        `).join('');
+
+        this.containers.searchResults.querySelectorAll('.btn-share-search').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const index = Number(btn.dataset.resultIndex);
+                const item = this.lastSearchResults[index];
+                if (!item) return;
+                this.shareSearchResult(item, btn);
+            });
+        });
+    },
+
+    async shareSearchResult(item, btn) {
+        const url = `${window.location.origin}${window.location.pathname}#/${item.partyId}/${encodeURIComponent(item.category)}/${item.proposalId}`;
+        const shareText = `El ${item.partyName} en CyL propone "${item.title}"\n\n${url}`;
+        const fullMessage = shareText;
+
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: `${item.partyName} propone: ${item.title}`,
+                    text: shareText,
+                    url
+                });
+            } catch (err) {
+                if (err.name !== 'AbortError') console.error('Error sharing search result:', err);
+            }
+            return;
+        }
+
+        try {
+            await navigator.clipboard.writeText(fullMessage);
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-check text-emerald-500"></i> <span class="text-emerald-600">Copiado</span>';
+            setTimeout(() => { btn.innerHTML = originalText; }, 2000);
+        } catch (err) {
+            console.error('Failed to copy search result: ', err);
+        }
+    },
+
+    async shareSearchTerm(btn) {
+        const term = this.lastSearchTerm;
+        if (!term) return;
+
+        const url = `${window.location.origin}${window.location.pathname}#/s/${encodeURIComponent(term)}`;
+        const shareText = `Qué dice sobre "${term}" cada formación en las elecciones a las Cortes de CyL 2026:\n\n${url}`;
+        const fullMessage = shareText;
+
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: `Búsqueda: ${term} | CyL 2026`,
+                    text: shareText,
+                    url
+                });
+            } catch (err) {
+                if (err.name !== 'AbortError') console.error('Error sharing search query:', err);
+            }
+            return;
+        }
+
+        try {
+            await navigator.clipboard.writeText(fullMessage);
+            if (btn) {
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check text-emerald-500"></i> <span class="text-emerald-600">Copiado</span>';
+                setTimeout(() => { btn.innerHTML = originalText; }, 2000);
+            }
+        } catch (err) {
+            console.error('Failed to copy search query: ', err);
+        }
+    },
+
+    setupSearchTopButton() {
+        let btn = document.getElementById('floating-search-top-btn');
+        if (!btn) {
+            btn = document.createElement('button');
+            btn.id = 'floating-search-top-btn';
+            btn.className = 'fixed bottom-6 right-6 w-12 h-12 bg-slate-900 text-white rounded-full shadow-lg z-[70] transition-all duration-300 opacity-0 translate-y-full flex items-center justify-center hover:bg-slate-800';
+            btn.setAttribute('aria-label', 'Subir al inicio de resultados');
+            btn.setAttribute('title', 'Subir arriba');
+            btn.innerHTML = '<i class="fa-solid fa-arrow-up text-sm"></i>';
+            btn.style.bottom = 'calc(1rem + env(safe-area-inset-bottom))';
+            btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            document.body.appendChild(btn);
+        }
+
+        if (this.searchTopScrollHandler) {
+            window.removeEventListener('scroll', this.searchTopScrollHandler);
+        }
+
+        this.searchTopScrollHandler = () => {
+            const shouldShow = window.scrollY > 140;
+            btn.classList.toggle('opacity-100', shouldShow);
+            btn.classList.toggle('translate-y-0', shouldShow);
+            btn.classList.toggle('opacity-0', !shouldShow);
+            btn.classList.toggle('translate-y-full', !shouldShow);
+        };
+
+        window.addEventListener('scroll', this.searchTopScrollHandler);
+        this.searchTopScrollHandler();
     },
 
     renderPartyHeader(metadata, partyInfo) {
@@ -484,6 +653,11 @@ export const UI = {
 
     switchView(viewName) {
         document.body.classList.remove('afinidad-layout');
+        document.body.classList.remove('home-view');
+        const globalSearchBtn = document.getElementById('btn-global-search');
+        if (globalSearchBtn) {
+            globalSearchBtn.classList.toggle('hidden', viewName === 'search');
+        }
 
         const stickyBar = document.getElementById('sticky-party-identity');
         const mobileFilter = document.getElementById('mobile-filter-container');
@@ -513,6 +687,15 @@ export const UI = {
             }
         }
 
+        if (viewName !== 'search') {
+            const searchTopBtn = document.getElementById('floating-search-top-btn');
+            if (searchTopBtn) searchTopBtn.remove();
+            if (this.searchTopScrollHandler) {
+                window.removeEventListener('scroll', this.searchTopScrollHandler);
+                this.searchTopScrollHandler = null;
+            }
+        }
+
         // Hide all views first
         Object.values(this.views).forEach(view => view?.classList.add('hidden'));
 
@@ -522,23 +705,33 @@ export const UI = {
         }
 
         if (viewName === 'selection') {
+            document.body.classList.add('home-view');
             this.views.selection.classList.remove('hidden');
-            this.containers.headerActions.classList.add('hidden');
+            this.elements.btnBack.classList.add('hidden');
             if (stickyBar) stickyBar.classList.add('-translate-y-full');
             if (mobileFilter) mobileFilter.classList.add('hidden');
+        } else if (viewName === 'search') {
+            this.views.search.classList.remove('hidden');
+            this.elements.btnBack.classList.remove('hidden');
+            if (mobileFilter) mobileFilter.classList.add('hidden');
+            window.scrollTo(0, 0);
+            const searchInput = document.getElementById('global-search-input');
+            if (searchInput) {
+                requestAnimationFrame(() => searchInput.focus());
+            }
         } else if (viewName === 'detail') {
             this.views.detail.classList.remove('hidden');
-            this.containers.headerActions.classList.remove('hidden');
+            this.elements.btnBack.classList.remove('hidden');
             if (mobileFilter) mobileFilter.classList.remove('hidden');
             window.scrollTo(0, 0);
         } else if (viewName === 'topic') {
             this.views.topic.classList.remove('hidden');
-            this.containers.headerActions.classList.remove('hidden');
+            this.elements.btnBack.classList.remove('hidden');
             if (mobileFilter) mobileFilter.classList.add('hidden');
             window.scrollTo(0, 0);
         } else if (viewName === 'afinidad') {
             this.views.afinidad.classList.remove('hidden');
-            this.containers.headerActions.classList.remove('hidden');
+            this.elements.btnBack.classList.remove('hidden');
             if (mobileFilter) mobileFilter.classList.add('hidden');
             document.body.classList.add('afinidad-layout');
 

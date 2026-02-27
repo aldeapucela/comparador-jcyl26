@@ -11,6 +11,8 @@ let appState = {
     currentData: null,
     currentCategory: null,
     highlightedId: null,
+    currentHash: '#/',
+    previousHash: null,
 
     // Topic-First state
     mode: 'party', // 'party' or 'topic'
@@ -22,6 +24,105 @@ let appState = {
         query: ''
     }
 };
+
+function safeDecodeURIComponent(value = '') {
+    try {
+        return decodeURIComponent(value);
+    } catch {
+        return '';
+    }
+}
+
+function sanitizeSearchTerm(raw = '') {
+    const normalized = raw
+        .normalize('NFKC')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 200);
+
+    if (!normalized) return '';
+
+    return normalized
+        .replace(/[^\p{L}\p{N}\s-]/gu, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 60);
+}
+
+function foldSearchText(value = '') {
+    return value
+        .toString()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase();
+}
+
+function getSearchTermFromParts(parts) {
+    const raw = parts.slice(1).join('/');
+    return sanitizeSearchTerm(safeDecodeURIComponent(raw));
+}
+
+function buildSearchHash(term) {
+    return term ? `#/s/${encodeURIComponent(term)}` : '#/s';
+}
+
+function replaceSearchHash(term) {
+    const nextHash = buildSearchHash(term);
+    if (window.location.hash === nextHash) return;
+    window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}${nextHash}`);
+}
+
+function searchAllProposals(term) {
+    if (!term) return [];
+
+    const needle = foldSearchText(term);
+    const results = [];
+
+    Object.entries(appState.allData).forEach(([partyId, partyData]) => {
+        const partyInfo = PARTIES.find(p => p.id === partyId);
+        if (!partyInfo || !partyData?.propuestas) return;
+
+        partyData.propuestas.forEach((prop) => {
+            const title = prop.titulo_corto || '';
+            const summary = prop.resumen || '';
+            const category = prop.categoria || '';
+            const tags = Array.isArray(prop.tags) ? prop.tags : [];
+
+            const titleFolded = foldSearchText(title);
+            const summaryFolded = foldSearchText(summary);
+            const categoryFolded = foldSearchText(category);
+            const tagsFolded = tags.map(t => foldSearchText(t)).join(' ');
+
+            const matches = titleFolded.includes(needle)
+                || summaryFolded.includes(needle)
+                || categoryFolded.includes(needle)
+                || tagsFolded.includes(needle);
+
+            if (!matches) return;
+
+            let score = 0;
+            if (titleFolded.includes(needle)) score += 4;
+            if (summaryFolded.includes(needle)) score += 2;
+            if (categoryFolded.includes(needle)) score += 1;
+            if (tagsFolded.includes(needle)) score += 1;
+
+            results.push({
+                partyId,
+                partyName: partyInfo.name,
+                partyColor: partyInfo.color,
+                proposalId: prop.id,
+                title,
+                summary,
+                category,
+                score
+            });
+        });
+    });
+
+    return results
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 100);
+}
 
 async function init() {
     // 1. Bulk Load all data at start (including afinidad data)
@@ -50,8 +151,57 @@ function setupEventListeners() {
 
     // Back Button
     UI.elements.btnBack.addEventListener('click', () => {
-        window.location.hash = '#/';
+        const previousHash = appState.previousHash;
+        if (previousHash && previousHash !== appState.currentHash) {
+            UI.navigateHash(previousHash);
+            return;
+        }
+
+        if (window.history.length > 1) {
+            window.history.back();
+            return;
+        }
+
+        UI.navigateHash('#/');
     });
+
+    const btnGlobalSearch = document.getElementById('btn-global-search');
+    if (btnGlobalSearch) {
+        btnGlobalSearch.addEventListener('click', () => {
+            UI.navigateHash('#/s');
+        });
+    }
+
+    const searchForm = document.getElementById('global-search-form');
+    if (searchForm) {
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const input = document.getElementById('global-search-input');
+            const term = sanitizeSearchTerm(input?.value || '');
+            UI.navigateHash(buildSearchHash(term));
+        });
+    }
+
+    const globalSearchInput = document.getElementById('global-search-input');
+    if (globalSearchInput) {
+        let searchDebounceId = null;
+        globalSearchInput.addEventListener('input', (e) => {
+            if (appState.mode !== 'search') return;
+            clearTimeout(searchDebounceId);
+            searchDebounceId = setTimeout(() => {
+                const term = sanitizeSearchTerm(e.target.value || '');
+                replaceSearchHash(term);
+                UI.renderGlobalSearch(term, searchAllProposals(term));
+            }, 120);
+        });
+    }
+
+    const shareSearchQueryBtn = document.getElementById('btn-share-search-query');
+    if (shareSearchQueryBtn) {
+        shareSearchQueryBtn.addEventListener('click', () => {
+            UI.shareSearchTerm(shareSearchQueryBtn);
+        });
+    }
 
     // Goto Topics
     const btnTopics = document.getElementById('btn-goto-topics');
@@ -119,14 +269,6 @@ function setupEventListeners() {
 
     });
 
-    // Search input
-    const bSearch = document.getElementById('search-input');
-    if (bSearch) {
-        bSearch.addEventListener('input', (e) => {
-            appState.filters.query = e.target.value.toLowerCase();
-            if (appState.mode === 'topic') renderComparison();
-        });
-    }
 }
 
 // Helper function to normalize party ID (same as in afinidad.js)
@@ -153,6 +295,13 @@ function getPageTitle(hash) {
         return `Comparar: ${decodeURIComponent(topicId)} - CyL 2026`;
     }
     
+    if (partyId === 's') {
+        const term = getSearchTermFromParts(parts);
+        return term
+            ? `Buscar: ${term} - CyL 2026`
+            : 'Buscar medidas - CyL 2026';
+    }
+
     if (partyId === 'afinidad') {
         return 'Cuestionario de Afinidad - CyL 2026';
     }
@@ -166,22 +315,25 @@ function getPageTitle(hash) {
     return 'Comparador Programas Electorales CyL 2026';
 }
 
+function trackSpaPageView(hash) {
+    if (typeof _paq === 'undefined') return;
+
+    _paq.push(['setCustomUrl', window.location.href]);
+    _paq.push(['setDocumentTitle', getPageTitle(hash)]);
+    _paq.push(['trackPageView']);
+}
+
 async function handleRouting() {
     const hash = window.location.hash || '#/';
     const parts = hash.split('/').filter(p => p && p !== '#');
 
-    // Track page view with Matomo
-    if (typeof _paq !== 'undefined') {
-        // Set custom URL and title for SPA
-        const customUrl = window.location.href;
-        const customTitle = getPageTitle(hash);
-        
-        _paq.push(['setCustomUrl', customUrl]);
-        _paq.push(['setDocumentTitle', customTitle]);
-        _paq.push(['trackPageView']);
+    if (hash !== appState.currentHash) {
+        appState.previousHash = appState.currentHash;
+        appState.currentHash = hash;
     }
 
     if (parts.length === 0) {
+        trackSpaPageView(hash);
         UI.switchView('selection');
         appState.selectedParty = null;
         appState.currentCategory = null;
@@ -201,8 +353,25 @@ async function handleRouting() {
             appState.selectedParties = ['pp', 'psoe'];
         }
 
+        trackSpaPageView(hash);
         UI.switchView('topic');
         renderComparison();
+        return;
+    }
+
+    // Check if it's global search mode
+    if (partyId === 's') {
+        appState.mode = 'search';
+        const term = getSearchTermFromParts(parts);
+        const canonicalHash = buildSearchHash(term);
+        if (hash !== canonicalHash) {
+            UI.navigateHash(canonicalHash);
+            return;
+        }
+
+        trackSpaPageView(hash);
+        UI.switchView('search');
+        UI.renderGlobalSearch(term, searchAllProposals(term));
         return;
     }
 
@@ -210,6 +379,7 @@ async function handleRouting() {
     if (partyId === 'afinidad') {
         const sharedData = parts[1] || null;
         appState.mode = 'afinidad';
+        trackSpaPageView(hash);
         
         if (sharedData) {
             // Load from shared URL - show results directly
@@ -232,6 +402,7 @@ async function handleRouting() {
     const propId = parts[2] || null;
 
     appState.mode = 'party';
+    trackSpaPageView(hash);
     // 1. Always ensure detail view is mounted for party routes.
     // In mobile back/forward flows, selectedParty can match while UI is still
     // in topic view, which would update hash but not switch screen.
