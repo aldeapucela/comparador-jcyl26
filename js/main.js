@@ -62,6 +62,17 @@ function foldSearchText(value = '') {
         .toLowerCase();
 }
 
+function tokenizeSearchText(value = '') {
+    const folded = foldSearchText(value);
+    return folded.match(/[\p{L}\p{N}]+/gu) || [];
+}
+
+function fieldMatchesSearchTerm(fieldValue = '', queryTokens = []) {
+    if (!Array.isArray(queryTokens) || queryTokens.length === 0) return false;
+    const fieldTokens = new Set(tokenizeSearchText(fieldValue));
+    return queryTokens.every((token) => fieldTokens.has(token));
+}
+
 function getSearchTermFromParts(parts) {
     const raw = parts.slice(1).join('/');
     return sanitizeSearchTerm(safeDecodeURIComponent(raw));
@@ -111,7 +122,8 @@ function replaceSearchHash(term, partyIds = []) {
 function searchAllProposals(term, partyIds = []) {
     if (!term) return [];
 
-    const needle = foldSearchText(term);
+    const queryTokens = tokenizeSearchText(term);
+    if (queryTokens.length === 0) return [];
     const normalizedPartyIds = normalizeSearchPartyIds(partyIds);
     const hasPartyFilter = normalizedPartyIds.length > 0;
     const allowedParties = new Set(normalizedPartyIds);
@@ -126,25 +138,21 @@ function searchAllProposals(term, partyIds = []) {
             const title = prop.titulo_corto || '';
             const summary = prop.resumen || '';
             const category = prop.categoria || '';
-            const tags = Array.isArray(prop.tags) ? prop.tags : [];
+            const tags = (Array.isArray(prop.tags) ? prop.tags : []).join(' ');
 
-            const titleFolded = foldSearchText(title);
-            const summaryFolded = foldSearchText(summary);
-            const categoryFolded = foldSearchText(category);
-            const tagsFolded = tags.map(t => foldSearchText(t)).join(' ');
-
-            const matches = titleFolded.includes(needle)
-                || summaryFolded.includes(needle)
-                || categoryFolded.includes(needle)
-                || tagsFolded.includes(needle);
+            const titleMatch = fieldMatchesSearchTerm(title, queryTokens);
+            const summaryMatch = fieldMatchesSearchTerm(summary, queryTokens);
+            const categoryMatch = fieldMatchesSearchTerm(category, queryTokens);
+            const tagsMatch = fieldMatchesSearchTerm(tags, queryTokens);
+            const matches = titleMatch || summaryMatch || categoryMatch || tagsMatch;
 
             if (!matches) return;
 
             let score = 0;
-            if (titleFolded.includes(needle)) score += 4;
-            if (summaryFolded.includes(needle)) score += 2;
-            if (categoryFolded.includes(needle)) score += 1;
-            if (tagsFolded.includes(needle)) score += 1;
+            if (titleMatch) score += 4;
+            if (summaryMatch) score += 2;
+            if (categoryMatch) score += 1;
+            if (tagsMatch) score += 1;
 
             results.push({
                 partyId,
@@ -172,24 +180,19 @@ function countMatchesByParty(term) {
 
     if (!term) return counts;
 
-    const needle = foldSearchText(term);
+    const queryTokens = tokenizeSearchText(term);
+    if (queryTokens.length === 0) return counts;
 
     Object.entries(appState.allData).forEach(([partyId, partyData]) => {
         if (!Object.prototype.hasOwnProperty.call(counts, partyId)) return;
         if (!partyData?.propuestas) return;
 
         partyData.propuestas.forEach((prop) => {
-            const titleFolded = foldSearchText(prop.titulo_corto || '');
-            const summaryFolded = foldSearchText(prop.resumen || '');
-            const categoryFolded = foldSearchText(prop.categoria || '');
-            const tagsFolded = (Array.isArray(prop.tags) ? prop.tags : [])
-                .map((tag) => foldSearchText(tag))
-                .join(' ');
-
-            const matches = titleFolded.includes(needle)
-                || summaryFolded.includes(needle)
-                || categoryFolded.includes(needle)
-                || tagsFolded.includes(needle);
+            const titleMatch = fieldMatchesSearchTerm(prop.titulo_corto || '', queryTokens);
+            const summaryMatch = fieldMatchesSearchTerm(prop.resumen || '', queryTokens);
+            const categoryMatch = fieldMatchesSearchTerm(prop.categoria || '', queryTokens);
+            const tagsMatch = fieldMatchesSearchTerm((Array.isArray(prop.tags) ? prop.tags : []).join(' '), queryTokens);
+            const matches = titleMatch || summaryMatch || categoryMatch || tagsMatch;
 
             if (matches) counts[partyId] += 1;
         });
