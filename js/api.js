@@ -3,10 +3,10 @@
  */
 
 export const PARTIES = [
-    { id: 'psoe', name: 'PSOE', color: '#e30613', logo: 'img/psoe.png', candidatePhoto: 'img/candidatos/carlos-martinez.jpg' },
-    { id: 'pp', name: 'PP', color: '#0056a3', logo: 'img/pp.png', candidatePhoto: 'img/candidatos/alfonso-fernandez-manueco.jpg' },
-    { id: 'mev', name: 'España Vaciada', color: '#cf211b', logo: 'img/mev.png' },
-    { id: 'en-comun', name: 'En Común', color: '#bb112a', logo: 'img/encomun.svg' }
+    { id: 'psoe', name: 'PSOE', logo: 'img/psoe.png' },
+    { id: 'pp', name: 'PP', logo: 'img/pp.png' },
+    { id: 'mev', name: 'España Vaciada', logo: 'img/mev.png' },
+    { id: 'en-comun', name: 'En Común', logo: 'img/encomun.svg' }
 ];
 
 export const CATEGORIES = [
@@ -39,6 +39,9 @@ export async function fetchAllPartiesData() {
     const promises = PARTIES.map(async (party) => {
         const partyData = await fetchPartyData(party.id);
         if (partyData) {
+            const metadata = partyData.metadatos || {};
+            party.color = metadata.color || party.color || '#64748b';
+            if (metadata.foto_candidato) party.candidatePhoto = metadata.foto_candidato;
             data[party.id] = partyData;
         }
     });

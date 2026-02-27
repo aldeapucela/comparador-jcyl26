@@ -20,6 +20,7 @@ export const UI = {
     floatingCategoryScrollHandler: null,
     comparisonTopScrollHandler: null,
     searchTopScrollHandler: null,
+    candidatePhotoKeydownHandler: null,
     lastSearchResults: [],
     lastSearchTerm: '',
     lastSearchPartyIds: [],
@@ -62,6 +63,70 @@ export const UI = {
             .replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;')
             .replace(/'/g, '&#39;');
+    },
+
+    ensureCandidatePhotoModal() {
+        let modal = document.getElementById('candidate-photo-modal');
+        if (modal) return modal;
+
+        modal = document.createElement('div');
+        modal.id = 'candidate-photo-modal';
+        modal.className = 'fixed inset-0 z-[90] hidden';
+        modal.innerHTML = `
+            <div class="candidate-photo-backdrop absolute inset-0 bg-slate-900/75"></div>
+            <div class="absolute inset-0 flex items-center justify-center p-4">
+                <div class="w-full max-w-xl bg-white rounded-2xl shadow-2xl overflow-hidden">
+                    <div class="flex items-center justify-between px-4 py-3 border-b border-slate-200">
+                        <p id="candidate-photo-modal-name" class="text-sm sm:text-base font-semibold text-slate-800 pr-4"></p>
+                        <button type="button" id="candidate-photo-modal-close" class="w-8 h-8 rounded-full text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors" aria-label="Cerrar diálogo">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <div class="bg-slate-100">
+                        <img id="candidate-photo-modal-image" src="" alt="" class="w-full h-auto max-h-[70vh] object-contain">
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+
+        const closeModal = () => this.closeCandidatePhotoModal();
+        modal.querySelector('.candidate-photo-backdrop')?.addEventListener('click', closeModal);
+        modal.querySelector('#candidate-photo-modal-close')?.addEventListener('click', closeModal);
+
+        if (!this.candidatePhotoKeydownHandler) {
+            this.candidatePhotoKeydownHandler = (event) => {
+                if (event.key === 'Escape') this.closeCandidatePhotoModal();
+            };
+            window.addEventListener('keydown', this.candidatePhotoKeydownHandler);
+        }
+
+        return modal;
+    },
+
+    openCandidatePhotoModal(photoSrc, candidateName) {
+        if (!photoSrc) return;
+        const modal = this.ensureCandidatePhotoModal();
+        const img = modal.querySelector('#candidate-photo-modal-image');
+        const nameEl = modal.querySelector('#candidate-photo-modal-name');
+
+        if (img) {
+            img.src = photoSrc;
+            img.alt = `Foto de ${candidateName || 'candidato'}`;
+        }
+        if (nameEl) {
+            nameEl.textContent = candidateName || 'Candidato';
+        }
+
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+    },
+
+    closeCandidatePhotoModal() {
+        const modal = document.getElementById('candidate-photo-modal');
+        if (!modal) return;
+        modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
     },
 
     navigateHash(hash) {
@@ -334,20 +399,40 @@ export const UI = {
 
     renderPartyHeader(metadata, partyInfo) {
         this.elements.partyTitle.textContent = partyInfo.name;
-        this.elements.partyTitle.style.color = partyInfo.color;
+        const partyColor = partyInfo.color || metadata.color || '#334155';
+        this.elements.partyTitle.style.color = partyColor;
+        // Keep heading in DOM for accessibility/SEO, but avoid visual duplication with the logo.
+        this.elements.partyTitle.classList.add('sr-only');
 
         // Show candidate name, and coalition if it exists
         let candidateText = metadata.candidato;
         if (metadata.coalicion) {
             candidateText += ` • ${metadata.coalicion}`;
         }
-        this.elements.partyCandidate.querySelector('span').textContent = candidateText;
+        const candidatePhoto = metadata.foto_candidato || partyInfo.candidatePhoto;
+        if (candidatePhoto) {
+            this.elements.partyCandidate.innerHTML = `
+                <button type="button" class="candidate-photo-trigger w-9 h-9 rounded-full overflow-hidden border border-slate-200 shrink-0 cursor-zoom-in hover:opacity-90 transition-opacity" aria-label="Ver foto de ${this.escapeHtml(metadata.candidato || partyInfo.name)} a tamaño completo">
+                    <img src="${this.escapeHtml(candidatePhoto)}" alt="Foto de ${this.escapeHtml(metadata.candidato || partyInfo.name)}" class="w-full h-full object-cover">
+                </button>
+                <span>${this.escapeHtml(candidateText)}</span>
+            `;
+            const trigger = this.elements.partyCandidate.querySelector('.candidate-photo-trigger');
+            if (trigger) {
+                trigger.addEventListener('click', () => this.openCandidatePhotoModal(candidatePhoto, metadata.candidato || partyInfo.name));
+            }
+        } else {
+            this.elements.partyCandidate.innerHTML = `
+                <i class="fa-solid fa-user-circle text-slate-400"></i>
+                <span>${this.escapeHtml(candidateText)}</span>
+            `;
+        }
         
         this.elements.partySlogan.textContent = metadata.lema ? `"${metadata.lema}"` : '';
 
         this.elements.partyLogo.innerHTML = `<img src="${partyInfo.logo}" alt="Logo ${partyInfo.name}" class="w-full h-full object-contain p-2">`;
         this.elements.partyLogo.style.backgroundColor = 'white';
-        this.elements.partyLogo.style.border = `2px solid ${partyInfo.color}20`;
+        this.elements.partyLogo.style.border = `2px solid ${partyColor}20`;
         this.elements.partyLogo.classList.add('overflow-hidden', 'rounded-xl');
 
         // Add link to complete program

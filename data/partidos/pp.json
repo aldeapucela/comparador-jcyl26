@@ -6,6 +6,8 @@
   "metadatos": {
     "partido": "PP",
     "candidato": "Alfonso Fernández Mañueco",
+    "foto_candidato": "img/candidatos/alfonso-fernandez-manueco.jpg",
+    "color": "#0056a3",
     "lema": "Castilla y León Mejores",
     "anio": 2026
   },

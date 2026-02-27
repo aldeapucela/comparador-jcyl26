@@ -6,6 +6,8 @@
   "metadatos": {
     "partido": "PSOE Castilla y León",
     "candidato": "Carlos Martínez",
+    "foto_candidato": "img/candidatos/carlos-martinez.jpg",
+    "color": "#e30613",
     "lema": "Castilla y León: cambiar el modelo para activar su futuro",
     "anio": 2026
   },
