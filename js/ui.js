@@ -4,7 +4,22 @@
 
 import { PARTIES } from './api.js';
 
+function updateAfinidadViewportOffset() {
+    const section = document.getElementById('view-afinidad');
+    if (!section || section.classList.contains('hidden')) return;
+
+    const topOffset = Math.max(section.getBoundingClientRect().top, 0);
+    document.documentElement.style.setProperty('--afinidad-top-offset', `${topOffset}px`);
+}
+
+if (typeof window !== 'undefined') {
+    window.addEventListener('resize', updateAfinidadViewportOffset);
+}
+
 export const UI = {
+    floatingCategoryScrollHandler: null,
+    comparisonTopScrollHandler: null,
+
     // Selectors
     views: {
         selection: document.getElementById('view-party-selection'),
@@ -196,7 +211,7 @@ export const UI = {
     renderCompetenceBadge(competence) {
         if (!competence) return '';
         const c = competence.toLowerCase();
-        let config = { icon: 'fa-circle-check', color: 'text-emerald-500', text: 'Propia' };
+        let config = { icon: 'fa-circle-check', color: 'text-emerald-500', text: 'Regional' };
         if (c.includes('compartida') || c.includes('coordinada') || c.includes('shared')) {
             config = { icon: 'fa-circle-nodes', color: 'text-amber-500', text: 'Compartida' };
         } else if (c.includes('petición') || c.includes('petition') || c.includes('estatal')) {
@@ -210,10 +225,22 @@ export const UI = {
         `;
     },
 
+    isRegionalCompetence(competence) {
+        if (!competence) return false;
+        const c = competence.toLowerCase();
+        return c.includes('directa') || c.includes('propia') || c.includes('regional');
+    },
+
     renderFloatingCategoryNavigation(categories, activeCategory, onSelect) {
         // Remove existing floating button
         const existing = document.getElementById('floating-category-btn');
         if (existing) existing.remove();
+        const existingDropdown = document.getElementById('category-dropdown');
+        if (existingDropdown) existingDropdown.remove();
+        if (this.floatingCategoryScrollHandler) {
+            window.removeEventListener('scroll', this.floatingCategoryScrollHandler);
+            this.floatingCategoryScrollHandler = null;
+        }
 
         if (!categories || categories.length <= 1) return;
 
@@ -251,7 +278,8 @@ export const UI = {
             }, 150);
         };
 
-        window.addEventListener('scroll', showFloatingBtn);
+        this.floatingCategoryScrollHandler = showFloatingBtn;
+        window.addEventListener('scroll', this.floatingCategoryScrollHandler);
         
         // Initial check
         showFloatingBtn();
@@ -442,10 +470,35 @@ export const UI = {
     },
 
     switchView(viewName) {
+        document.body.classList.remove('afinidad-layout');
+
         const stickyBar = document.getElementById('sticky-party-identity');
         const mobileFilter = document.getElementById('mobile-filter-container');
         const duelSelector = document.getElementById('duel-selector-container');
         const floatingNav = document.getElementById('floating-category-nav');
+
+        // Sticky party header only exists in detail view.
+        if (viewName !== 'detail') {
+            if (stickyBar) stickyBar.remove();
+            window.onscroll = null;
+            const floatingBtn = document.getElementById('floating-category-btn');
+            if (floatingBtn) floatingBtn.remove();
+            const floatingDropdown = document.getElementById('category-dropdown');
+            if (floatingDropdown) floatingDropdown.remove();
+            if (this.floatingCategoryScrollHandler) {
+                window.removeEventListener('scroll', this.floatingCategoryScrollHandler);
+                this.floatingCategoryScrollHandler = null;
+            }
+        }
+
+        if (viewName !== 'topic') {
+            const comparisonTopBtn = document.getElementById('floating-comparison-top-btn');
+            if (comparisonTopBtn) comparisonTopBtn.remove();
+            if (this.comparisonTopScrollHandler) {
+                window.removeEventListener('scroll', this.comparisonTopScrollHandler);
+                this.comparisonTopScrollHandler = null;
+            }
+        }
 
         // Hide all views first
         Object.values(this.views).forEach(view => view?.classList.add('hidden'));
@@ -468,30 +521,29 @@ export const UI = {
         } else if (viewName === 'topic') {
             this.views.topic.classList.remove('hidden');
             this.containers.headerActions.classList.remove('hidden');
-            if (stickyBar) stickyBar.classList.add('-translate-y-full');
             if (mobileFilter) mobileFilter.classList.add('hidden');
             window.scrollTo(0, 0);
         } else if (viewName === 'afinidad') {
             this.views.afinidad.classList.remove('hidden');
             this.containers.headerActions.classList.remove('hidden');
-            if (stickyBar) stickyBar.classList.add('-translate-y-full');
             if (mobileFilter) mobileFilter.classList.add('hidden');
-            
-            // Remove sticky party identity bar when in afinidad view
-            const existingBar = document.getElementById('sticky-party-identity');
-            if (existingBar) {
-                existingBar.remove();
-            }
-            
+            document.body.classList.add('afinidad-layout');
+
             window.scrollTo(0, 0);
+            requestAnimationFrame(updateAfinidadViewportOffset);
         }
     },
 
     // --- Comparison Specific Methods ---
 
     renderComparison(allData, selectedIds, currentCategory, filters, allCategories) {
+        this.setupComparisonTopButton();
+
+        const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+        const comparisonIds = isMobile ? selectedIds.slice(0, 2) : selectedIds;
+
         // 1. Render Party Selector (Duel)
-        this.renderDuelSelector(selectedIds);
+        this.renderDuelSelector(comparisonIds);
 
         // 2. Render Topics Grid
         this.renderTopicsGrid(allCategories, currentCategory?.id);
@@ -500,7 +552,7 @@ export const UI = {
         this.updateFilterButtons(filters);
 
         // 4. Setup Simple Mobile Navigation
-        this.setupSimpleMobileNav(selectedIds);
+        this.setupSimpleMobileNav(comparisonIds);
 
         // 5. Render Results
         if (!currentCategory) {
@@ -516,9 +568,10 @@ export const UI = {
         const categoryName = currentCategory.name;
 
         // 6. Build Contrast Grid - Direct to proposals, no redundant header
-        let html = `<div class="contrast-grid" style="--cols: ${selectedIds.length}">`;
+        const gridClass = isMobile ? 'contrast-grid mobile-two-col' : 'contrast-grid';
+        let html = `<div class="${gridClass}" style="--cols: ${comparisonIds.length}">`;
 
-        selectedIds.forEach((partyId, index) => {
+        comparisonIds.forEach((partyId, index) => {
             const partyInfo = PARTIES.find(p => p.id === partyId);
             const proposals = allData[partyId]?.propuestas || [];
 
@@ -527,7 +580,7 @@ export const UI = {
 
             // Apply Quality Filters
             if (filters.rural) filtered = filtered.filter(p => p.analisis.foco_rural);
-            if (filters.competition) filtered = filtered.filter(p => p.analisis.competencia?.toLowerCase() === 'propia');
+            if (filters.competition) filtered = filtered.filter(p => this.isRegionalCompetence(p.analisis?.competencia));
             if (filters.query) {
                 filtered = filtered.filter(p =>
                     p.titulo_corto.toLowerCase().includes(filters.query) ||
@@ -540,7 +593,7 @@ export const UI = {
                 <div class="party-comparison-col" data-party-col="${partyId}" data-party-index="${index}" style="--party-color: ${partyInfo.color}">
                     <div class="space-y-6">
                         ${filtered.length > 0 ?
-                    filtered.map(prop => this.createComparisonCardHTML(prop, partyInfo)).join('') :
+                    filtered.map(prop => this.createComparisonCardHTML(prop, partyInfo, { compact: isMobile, categoryName })).join('') :
                     `<div class="p-8 rounded-2xl bg-slate-50 text-slate-400 text-xs text-center border border-dashed border-slate-200">No hay medidas con estos filtros</div>`
                 }
                     </div>
@@ -553,10 +606,10 @@ export const UI = {
 
         // Set first column active on mobile
         const firstCol = this.containers.comparisonResults.querySelector('.party-comparison-col');
-        if (firstCol) firstCol.classList.add('mobile-active');
+        if (firstCol && !isMobile) firstCol.classList.add('mobile-active');
 
         // Setup simple mobile swipe
-        this.setupSimpleMobileSwipe(selectedIds);
+        if (!isMobile) this.setupSimpleMobileSwipe(comparisonIds);
 
         // Attach quote toggle events
         this.containers.comparisonResults.querySelectorAll('.btn-toggle-quote').forEach(btn => {
@@ -571,6 +624,46 @@ export const UI = {
             const prop = allData[partyId]?.propuestas?.find(p => p.id == propId);
             btn.addEventListener('click', () => this.shareProposal(partyInfo, currentCategory?.name || 'Comparación', prop, btn));
         });
+
+        this.containers.comparisonResults.querySelectorAll('.btn-detail').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const partyId = btn.dataset.party;
+                const propId = btn.dataset.id;
+                const category = btn.dataset.category || 'Todas';
+                if (!partyId || !propId) return;
+                window.location.hash = `#/${partyId}/${encodeURIComponent(category)}/${propId}`;
+            });
+        });
+    },
+
+    setupComparisonTopButton() {
+        let btn = document.getElementById('floating-comparison-top-btn');
+        if (!btn) {
+            btn = document.createElement('button');
+            btn.id = 'floating-comparison-top-btn';
+            btn.className = 'fixed bottom-6 right-6 w-12 h-12 bg-slate-900 text-white rounded-full shadow-lg z-[70] transition-all duration-300 opacity-0 translate-y-full flex items-center justify-center hover:bg-slate-800';
+            btn.setAttribute('aria-label', 'Subir al inicio del comparador');
+            btn.setAttribute('title', 'Subir arriba');
+            btn.innerHTML = '<i class="fa-solid fa-arrow-up text-sm"></i>';
+            btn.style.bottom = 'calc(1rem + env(safe-area-inset-bottom))';
+            btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            document.body.appendChild(btn);
+        }
+
+        if (this.comparisonTopScrollHandler) {
+            window.removeEventListener('scroll', this.comparisonTopScrollHandler);
+        }
+
+        this.comparisonTopScrollHandler = () => {
+            const shouldShow = window.scrollY > 140;
+            btn.classList.toggle('opacity-100', shouldShow);
+            btn.classList.toggle('translate-y-0', shouldShow);
+            btn.classList.toggle('opacity-0', !shouldShow);
+            btn.classList.toggle('translate-y-full', !shouldShow);
+        };
+
+        window.addEventListener('scroll', this.comparisonTopScrollHandler);
+        this.comparisonTopScrollHandler();
     },
 
     renderDuelSelector(selectedIds) {
@@ -664,9 +757,33 @@ export const UI = {
         if (filters.competition) btnComp.classList.add('active'); else btnComp.classList.remove('active');
     },
 
-    createComparisonCardHTML(prop, partyInfo) {
+    createComparisonCardHTML(prop, partyInfo, options = {}) {
+        if (options.compact) {
+            return `
+                <article
+                    class="proposal-card proposal-card-compact relative bg-white p-4 rounded-xl border border-slate-100 shadow-sm"
+                    id="prop-${prop.id}">
+                    <div class="party-indicator" style="background-color: ${partyInfo.color}"></div>
+                    <p class="text-slate-700 text-sm leading-relaxed">${prop.resumen}</p>
+                    <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+                        <button class="btn-share w-8 h-8 rounded-md text-slate-400 hover:text-slate-800 transition-colors flex items-center justify-center"
+                                data-id="${prop.id}" data-party="${partyInfo.id}" aria-label="Compartir propuesta" title="Compartir">
+                            <i class="fa-solid fa-share-nodes text-xs"></i>
+                        </button>
+                        <button class="btn-detail w-8 h-8 rounded-md text-slate-400 hover:text-slate-800 transition-colors flex items-center justify-center"
+                                data-id="${prop.id}" data-party="${partyInfo.id}" data-category="${options.categoryName || 'Todas'}"
+                                aria-label="Ver detalle de propuesta" title="Ver detalle">
+                            <i class="fa-solid fa-eye text-xs"></i>
+                        </button>
+                    </div>
+                </article>
+            `;
+        }
+
         return `
-            <article class="proposal-card relative bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow" id="prop-${prop.id}">
+            <article
+                class="proposal-card relative bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
+                id="prop-${prop.id}">
                 <div class="party-indicator" style="background-color: ${partyInfo.color}"></div>
                 <div class="mb-4">
                     <h4 class="text-lg font-bold text-slate-800 leading-tight">${prop.titulo_corto}</h4>
@@ -709,11 +826,12 @@ export const UI = {
 
     setupSimpleMobileNav(selectedIds) {
         const navContainer = document.getElementById('mobile-party-nav');
+        const isMobile = window.matchMedia('(max-width: 1023px)').matches;
         const logoEl = document.getElementById('current-party-logo');
         const nameEl = document.getElementById('current-party-name');
         const counterEl = document.getElementById('current-party-counter');
-        
-        if (selectedIds.length <= 1) {
+
+        if (isMobile) {
             navContainer?.classList.add('hidden');
             return;
         }

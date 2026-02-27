@@ -177,6 +177,30 @@ body {
     display: block;
 }
 
+@media (max-width: 1023px) {
+    .contrast-grid.mobile-two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+
+    .contrast-grid.mobile-two-col .party-comparison-col {
+        display: block;
+    }
+
+    .contrast-grid.mobile-two-col .party-comparison-col::before {
+        opacity: 1;
+    }
+
+    .contrast-grid.mobile-two-col .proposal-card-compact {
+        min-height: 100%;
+    }
+
+    .contrast-grid.mobile-two-col .proposal-card-compact .party-indicator {
+        width: 3px;
+    }
+}
+
 /* Mobile Party Tab Switcher */
 .party-tab-switcher {
     display: flex;
@@ -502,4 +526,66 @@ body {
 
 .category-dropdown-item:hover {
     padding-left: 1.25rem;
+}
+
+/* Afinidad: full mobile viewport layout */
+@media (max-width: 768px) {
+    body.afinidad-layout main {
+        padding-bottom: 0.75rem;
+    }
+
+    body.afinidad-layout #view-afinidad:not(.hidden) {
+        display: flex;
+        flex-direction: column;
+        min-height: calc(100vh - var(--afinidad-top-offset, 0px) - env(safe-area-inset-bottom));
+        min-height: calc(100dvh - var(--afinidad-top-offset, 0px) - env(safe-area-inset-bottom));
+        gap: 0.5rem;
+    }
+
+    body.afinidad-layout #afinidad-progress {
+        margin-bottom: 0.25rem;
+    }
+
+    body.afinidad-layout #afinidad-question-card:not(.hidden) {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-height: 0;
+    }
+
+    body.afinidad-layout #afinidad-question-card > div:first-child {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-height: 0;
+        padding: 0.875rem;
+    }
+
+    body.afinidad-layout #afinidad-question-text {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+    }
+
+    body.afinidad-layout #afinidad-options {
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        padding-right: 0.125rem;
+        row-gap: 0.5rem;
+    }
+
+    body.afinidad-layout .afinidad-option {
+        padding: 0.625rem;
+    }
+
+    body.afinidad-layout #afinidad-question-card > div:first-child > .mt-6.pt-4.border-t {
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+    }
+
+    body.afinidad-layout #afinidad-question-card > .flex.justify-between.mt-6 {
+        margin-top: 0;
+        padding-bottom: max(0.125rem, env(safe-area-inset-bottom));
+    }
 }

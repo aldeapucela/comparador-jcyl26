@@ -33,7 +33,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20260227120249">
+    <link rel="stylesheet" href="css/style.css?v=20260227123833">
     </head>
 
 <body class="bg-slate-50 text-slate-900 min-h-screen">
@@ -231,18 +231,18 @@
 
             <!-- Quality Filters -->
             <div id="quality-filters-container"
-                class="mb-10 flex flex-wrap items-center gap-4 p-5 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                class="mb-10 flex flex-nowrap sm:flex-wrap items-center gap-3 sm:gap-4 p-4 sm:p-5 overflow-x-auto no-scrollbar bg-white rounded-2xl border border-slate-200 shadow-sm">
                 <button id="filter-rural"
-                    class="filter-btn px-4 py-2 rounded-xl border border-slate-200 text-sm font-medium flex items-center gap-2 hover:bg-slate-50 transition-colors"
+                    class="filter-btn shrink-0 whitespace-nowrap px-3 sm:px-4 py-2 rounded-xl border border-slate-200 text-sm font-medium flex items-center gap-2 hover:bg-slate-50 transition-colors"
                     data-active="false">
                     <i class="fa-solid fa-tractor text-slate-400"></i>
                     <span>Solo Rural</span>
                 </button>
                 <button id="filter-competition"
-                    class="filter-btn px-4 py-2 rounded-xl border border-slate-200 text-sm font-medium flex items-center gap-2 hover:bg-slate-50 transition-colors"
+                    class="filter-btn shrink-0 whitespace-nowrap px-3 sm:px-4 py-2 rounded-xl border border-slate-200 text-sm font-medium flex items-center gap-2 hover:bg-slate-50 transition-colors"
                     data-active="false">
                     <i class="fa-solid fa-circle-check text-slate-400"></i>
-                    <span>Competencia Propia</span>
+                    <span>Competencia Regional</span>
                 </button>
             </div>
 
@@ -447,8 +447,8 @@
         </div>
     </footer>
 
-    <script src="js/analytics.js?v=20260227120249"></script>
-    <script type="module" src="js/main.js?v=20260227120249"></script>
+    <script src="js/analytics.js?v=20260227123833"></script>
+    <script type="module" src="js/main.js?v=20260227123833"></script>
 </body>
 
 </html>

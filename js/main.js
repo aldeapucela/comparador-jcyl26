@@ -121,6 +121,7 @@ function setupEventListeners() {
             const filterId = filterBtn.id;
             toggleFilter(filterId);
         }
+
     });
 
     // Search input
@@ -321,12 +322,16 @@ function highlightMeasure(id) {
 // --- Topic-First Logic ---
 
 function togglePartySelection(partyId) {
+    const isMobile = window.matchMedia('(max-width: 1023px)').matches;
     const index = appState.selectedParties.indexOf(partyId);
     if (index > -1) {
         if (appState.selectedParties.length > 1) {
             appState.selectedParties.splice(index, 1);
         }
     } else {
+        if (isMobile && appState.selectedParties.length >= 2) {
+            appState.selectedParties.shift();
+        }
         appState.selectedParties.push(partyId);
     }
     renderComparison();
@@ -339,6 +344,11 @@ function toggleFilter(filterId) {
 }
 
 function renderComparison() {
+    const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+    if (isMobile && appState.selectedParties.length > 2) {
+        appState.selectedParties = appState.selectedParties.slice(0, 2);
+    }
+
     const categoryObj = appState.currentCategory ?
         CATEGORIES.find(c => c.id === appState.currentCategory) : null;
 
