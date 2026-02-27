@@ -22,6 +22,7 @@ PARTY_FILES = [
     ROOT / "data" / "partidos" / "psoe.json",
     ROOT / "data" / "partidos" / "en-comun.json",
     ROOT / "data" / "partidos" / "mev.json",
+    ROOT / "data" / "partidos" / "vox.json",
 ]
 
 ALIAS_MAP = {

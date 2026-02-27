@@ -5,6 +5,7 @@
 export const PARTIES = [
     { id: 'psoe', name: 'PSOE', logo: 'img/psoe.png' },
     { id: 'pp', name: 'PP', logo: 'img/pp.png' },
+    { id: 'vox', name: 'VOX', logo: 'img/vox.svg' },
     { id: 'mev', name: 'España Vaciada', logo: 'img/mev.png' },
     { id: 'en-comun', name: 'En Común', logo: 'img/encomun.svg' }
 ];

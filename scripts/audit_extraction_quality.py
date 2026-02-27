@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PARTIES = [
     ("pp", "PP"),
     ("psoe", "PSOE"),
+    ("vox", "VOX"),
     ("en-comun", "EN_COMUN"),
     ("mev", "MEV"),
 ]

@@ -1,0 +1,3126 @@
+{
+  "bloque_informacion": {
+    "rango_paginas": "Completo",
+    "estado": "finalizado"
+  },
+  "metadatos": {
+    "partido": "VOX Castilla y León",
+    "candidato": "Carlos Pollán",
+    "foto_candidato": "img/candidatos/carlos-pollan.jpg",
+    "color": "#63be21",
+    "lema": "Un programa con sentido común",
+    "anio": 2026
+  },
+  "propuestas": [
+    {
+      "id": 1,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Anticorrupción integral",
+      "titulo_corto": "Plan integral anticorrupción y recuperación de fondos",
+      "resumen": "Endurecer incompatibilidades y sanciones, perseguir la corrupción en todas las administraciones, auditar recursos públicos, proteger denunciantes, personar a la Junta en los procesos y reclamar la devolución íntegra del dinero defraudado.",
+      "cita_literal": "Estableceremos un régimen de tolerancia cero con la corrupción y el clientelismo, con incompatibilidades y sanciones mucho más estricto para aquellos cargos públicos que utilicen su posición con fines partidistas o personales.",
+      "pagina": 9,
+      "tags": [
+        "#Transparencia",
+        "#Corrupcion",
+        "#Antifraude",
+        "#Gobernanza"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con un plan integral que combine sanciones más duras, auditorías y recuperación total de fondos en casos de corrupción?"
+    },
+    {
+      "id": 2,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Revisión de políticas públicas",
+      "titulo_corto": "Revisión de planes y presupuestos sin sesgo ideológico",
+      "resumen": "Revisar objetivos presupuestarios y programas de consejerías para orientarlos a intereses generales y no a grupos de presión.",
+      "cita_literal": "Desterraremos de las políticas públicas de Castilla y León todo el lastre ideológico consolidado por el bipartidismo a nivel nacional, regional y local.",
+      "pagina": 10,
+      "tags": [
+        "#Transparencia",
+        "#Gobernanza",
+        "#ServiciosPublicos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con revisar planes y presupuestos autonómicos para eliminar objetivos ideológicos?"
+    },
+    {
+      "id": 3,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Política climática",
+      "titulo_corto": "Oposición al Pacto Verde y blindaje de tradiciones",
+      "resumen": "Confrontar la agenda climática europea y blinda legalmente tradiciones y actividad del mundo rural.",
+      "cita_literal": "Desde la Junta de Castilla y León, combatiremos el fanatismo climático que tanto el PP como el PSOE han impulsado desde Bruselas y tanto daño ha causado a nuestra tierra.",
+      "pagina": 10,
+      "tags": [
+        "#MedioRural",
+        "#MedioAmbiente",
+        "#Energia",
+        "#Tradiciones"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con que la Junta se oponga al Pacto Verde Europeo para proteger al mundo rural?"
+    },
+    {
+      "id": 4,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Memoria y concordia",
+      "titulo_corto": "Sustitución del marco de memoria por concordia",
+      "resumen": "Reemplazar el Decreto autonómico de Memoria Histórica por un marco de concordia centrado en reconciliación.",
+      "cita_literal": "Impulsaremos la superación del Decreto 9/2018, de 12 de abril, de Memoria Histórica y Democrática de Castilla y León, sustituyéndolo por un marco de Concordia que una a los españoles.",
+      "pagina": 10,
+      "tags": [
+        "#Transparencia",
+        "#Gobernanza",
+        "#MemoriaHistorica"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con sustituir la normativa de memoria histórica autonómica por una ley de concordia?"
+    },
+    {
+      "id": 5,
+      "categoria": "Otros",
+      "subcategoria": "Patrimonio religioso",
+      "titulo_corto": "Protección de cruces y símbolos religiosos",
+      "resumen": "Impedir retiradas de símbolos religiosos cuando formen parte del patrimonio y de la religiosidad popular.",
+      "cita_literal": "En Castilla y León nos opondremos al derribo de cruces y símbolos religiosos que forman parte del patrimonio y de la religiosidad popular.",
+      "pagina": 11,
+      "tags": [
+        "#Derechos",
+        "#Cultura",
+        "#Patrimonio"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con proteger cruces y símbolos religiosos como parte del patrimonio cultural?"
+    },
+    {
+      "id": 6,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Memoria histórica",
+      "titulo_corto": "Reversión de retiradas por políticas de memoria",
+      "resumen": "Revertir actuaciones autonómicas que hayan retirado cruces o emblemas históricos en los últimos años.",
+      "cita_literal": "Revertiremos desde el Gobierno regional las políticas de memoria histórica que han supuesto el derribo o la retirada de cruces y emblemas históricos en Castilla y León en los últimos años.",
+      "pagina": 11,
+      "tags": [
+        "#Transparencia",
+        "#Gobernanza",
+        "#MemoriaHistorica"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con revertir retiradas de cruces y emblemas históricos asociadas a políticas de memoria?"
+    },
+    {
+      "id": 7,
+      "categoria": "Otros",
+      "subcategoria": "Protección patrimonial",
+      "titulo_corto": "Declaración BIC para bienes amenazados",
+      "resumen": "Impulsar la declaración de Bien de Interés Cultural para bienes en riesgo por la normativa de memoria histórica.",
+      "cita_literal": "Exigiremos la declaración como Bien de Interés Cultural (BIC) de todos los bienes históricos y artísticos amenazados por las leyes de memoria histórica.",
+      "pagina": 11,
+      "tags": [
+        "#Derechos",
+        "#Cultura",
+        "#Patrimonio"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar declaraciones BIC para bienes considerados en riesgo por leyes de memoria histórica?"
+    },
+    {
+      "id": 8,
+      "categoria": "Otros",
+      "subcategoria": "Restauración patrimonial",
+      "titulo_corto": "Restauración de monumentos dañados o derribados",
+      "resumen": "Restaurar monumentos destruidos o dañados y refuerza su protección frente a vandalismo.",
+      "cita_literal": "Restauraremos todo monumento que haya sido derribado o sufrido daños, ya sea por la acción u omisión de vándalos instalados en la Administración u organizados en bandas de extrema izquierda.",
+      "pagina": 11,
+      "tags": [
+        "#Derechos",
+        "#Cultura",
+        "#Patrimonio"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar la restauración de monumentos retirados o dañados?"
+    },
+    {
+      "id": 9,
+      "categoria": "Otros",
+      "subcategoria": "Difusión histórica",
+      "titulo_corto": "Programación cultural contra la leyenda negra",
+      "resumen": "Activar programación cultural y educativa para difundir la historia de Castilla y León y de España en Iberoamérica.",
+      "cita_literal": "Impulsaremos iniciativas culturales y educativas, tanto dentro como fuera de nuestras fronteras, destinadas a combatir la «leyenda negra» y a dar a conocer la historia de los reinos de Castilla y de León.",
+      "pagina": 12,
+      "tags": [
+        "#Derechos",
+        "#Cultura",
+        "#Patrimonio"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con financiar iniciativas culturales para difundir esta interpretación histórica de Castilla y León y España?"
+    },
+    {
+      "id": 10,
+      "categoria": "Otros",
+      "subcategoria": "Lengua y patrimonio",
+      "titulo_corto": "Protección patrimonial y de modalidades lingüísticas",
+      "resumen": "Desarrollar la ley autonómica de patrimonio cultural y protege el uso del español, leonés y gallego donde corresponda.",
+      "cita_literal": "Reforzaremos el marco normativo de protección del patrimonio cultural aplicando y desarrollando la Ley 7/2024, de 20 de junio, de Patrimonio Cultural de Castilla y León.",
+      "pagina": 12,
+      "tags": [
+        "#Derechos",
+        "#Cultura",
+        "#Patrimonio"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforzar la protección autonómica del patrimonio cultural y de las modalidades lingüísticas propias?"
+    },
+    {
+      "id": 11,
+      "categoria": "Otros",
+      "subcategoria": "Protección a mujeres",
+      "titulo_corto": "Nuevo marco contra agresiones a mujeres",
+      "resumen": "Sustituir la normativa de género vigente, endurece sanciones por agresiones y refuerza apoyo institucional a víctimas.",
+      "cita_literal": "Aprobaremos leyes y normas que de verdad protejan a las mujeres víctimas de violencia, en especial, a aquellas que sufran maltrato, y que no dejen a ninguna víctima desamparada.",
+      "pagina": 12,
+      "tags": [
+        "#Derechos",
+        "#Igualdad",
+        "#ViolenciaGenero"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con cambiar la legislación de género actual por otro modelo de protección a mujeres víctimas de violencia?"
+    },
+    {
+      "id": 12,
+      "categoria": "Otros",
+      "subcategoria": "Inmigración y seguridad",
+      "titulo_corto": "Revisión de políticas de inmigración masiva",
+      "resumen": "Endurecer la política migratoria y revisa el modelo de puertas abiertas por su impacto en seguridad e identidad.",
+      "cita_literal": "Combatiremos, desde la Junta de Castilla y León, los consensos del bipartidismo; en especial, todas las políticas relacionadas con la inmigración masiva que amenazan nuestra seguridad, identidad, libertad y prosperidad.",
+      "pagina": 13,
+      "tags": [
+        "#Derechos",
+        "#Inmigracion",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con endurecer la política migratoria por su impacto en seguridad y servicios públicos?"
+    },
+    {
+      "id": 13,
+      "categoria": "Otros",
+      "subcategoria": "Normativa de igualdad",
+      "titulo_corto": "Superación de leyes divisivas sobre género",
+      "resumen": "Revisar y reemplaza las normas vigentes de género para reforzar, según el programa, la protección de las mujeres.",
+      "cita_literal": "Promoveremos la superación de todas las leyes divisivas aprobadas por la izquierda con el fin de proteger de verdad a las mujeres.",
+      "pagina": 14,
+      "tags": [
+        "#Derechos",
+        "#Igualdad",
+        "#ViolenciaGenero"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con sustituir las leyes de género actuales por un nuevo marco normativo?"
+    },
+    {
+      "id": 14,
+      "categoria": "Otros",
+      "subcategoria": "Prevención de violencia",
+      "titulo_corto": "Ayudas directas y prevención frente a agresiones",
+      "resumen": "Redirigir recursos a ayudas directas para víctimas y refuerza prevención policial y judicial de agresiones.",
+      "cita_literal": "Todo este dinero malgastado debe ir destinado a ayudas directas a las mujeres víctimas de violencia y a partidas presupuestarias policiales y judiciales.",
+      "pagina": 14,
+      "tags": [
+        "#Derechos",
+        "#Igualdad",
+        "#ViolenciaGenero"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar ayudas directas y refuerzo policial-judicial frente a programas de intermediación en violencia contra la mujer?"
+    },
+    {
+      "id": 15,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Modelo sanitario",
+      "titulo_corto": "Modelo sanitario nacional coordinado",
+      "resumen": "Defender un sistema sanitario coordinado desde el Estado para igualar acceso y prestaciones entre territorios.",
+      "cita_literal": "Defenderemos un modelo sanitario nacional, coordinado desde el Estado, que garantice el acceso de todos los españoles en condiciones de igualdad a los servicios sanitarios, con independencia de su lugar de residencia.",
+      "pagina": 19,
+      "tags": [
+        "#SanidadPublica",
+        "#Salud",
+        "#Gobernanza"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con recentralizar la coordinación sanitaria para homogeneizar la atención en toda España?"
+    },
+    {
+      "id": 16,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Coordinación interterritorial",
+      "titulo_corto": "Fin de fragmentación sanitaria autonómica",
+      "resumen": "Reducir diferencias entre territorios y elimina duplicidades administrativas del sistema sanitario autonómico.",
+      "cita_literal": "Proponemos la superación de la fragmentación propia del sistema autonómico. Queremos una sanidad coordinada que ponga fin a las diferencias injustas y las duplicidades administrativas.",
+      "pagina": 19,
+      "tags": [
+        "#SanidadPublica",
+        "#Salud",
+        "#Eficiencia"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reducir competencias sanitarias autonómicas para evitar desigualdades territoriales?"
+    },
+    {
+      "id": 17,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Sistema Nacional de Salud",
+      "titulo_corto": "Refuerzo estatal del Sistema Nacional de Salud",
+      "resumen": "Reforzar un sistema nacional con mayor capacidad de decisión y con datos homogéneos entre comunidades.",
+      "cita_literal": "Apostaremos por un Sistema Nacional de Salud fuerte y con capacidad de decisión y de ejecución, que cuente con información actualizada y veraz de todas las regiones de España.",
+      "pagina": 19,
+      "tags": [
+        "#SanidadPublica",
+        "#Salud",
+        "#Gobernanza"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforzar el papel del Estado en la gestión estratégica del Sistema Nacional de Salud?"
+    },
+    {
+      "id": 18,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Regeneración institucional",
+      "titulo_corto": "Regeneración institucional y recorte de gasto político",
+      "resumen": "Reducir estructura política y administración paralela, eliminar subvenciones a organizaciones de carácter político-sindical, imponer auditorías integrales a entes y contratos públicos, y suprimir privilegios como la puerta giratoria de expresidentes.",
+      "cita_literal": "Suprimiremos las duplicidades y todo el gasto político superfluo. Auditaremos las instituciones públicas para detectar gasto inútil o ideológico sin retorno social.",
+      "pagina": 20,
+      "tags": [
+        "#Transparencia",
+        "#Gobernanza",
+        "#Corrupcion",
+        "#SinBurocracia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con un recorte amplio del gasto político acompañado de auditorías integrales y eliminación de privilegios institucionales?"
+    },
+    {
+      "id": 19,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Criterios de acceso a ayudas",
+      "titulo_corto": "Prioridad nacional en ayudas sociales y vivienda pública",
+      "resumen": "Priorizar a nacionales españoles en el acceso a ayudas sociales, empleo y vivienda pública, vincular beneficios a residencia legal y arraigo, y reforzar controles contra fraude de empadronamiento y acceso irregular.",
+      "cita_literal": "Aseguraremos el acceso prioritario de los españoles a las ayudas sociales y a los servicios públicos. Promoveremos la máxima transparencia publicando todos los datos estadísticos del uso de los servicios públicos por parte de extranjeros.",
+      "pagina": 20,
+      "tags": [
+        "#ServiciosSociales",
+        "#Inmigracion",
+        "#ViviendaPublica",
+        "#Transparencia"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con fijar prioridad nacional y requisitos de arraigo para acceder a ayudas sociales y vivienda pública?"
+    },
+    {
+      "id": 20,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Transporte a demanda",
+      "titulo_corto": "Extensión del transporte a demanda rural",
+      "resumen": "Ampliar el transporte a demanda a municipios pequeños y lo apoya con gestión digital para llegar a servicios básicos.",
+      "cita_literal": "Promoveremos una adecuada vertebración del territorio a través de la extensión del actual sistema de transporte a demanda a todos los municipios menores de 500 habitantes.",
+      "pagina": 20,
+      "tags": [
+        "#MedioRural",
+        "#Movilidad",
+        "#TransporteADemanda"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar el transporte a demanda a todos los municipios de menos de 500 habitantes?"
+    },
+    {
+      "id": 21,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Conectividad digital",
+      "titulo_corto": "Cobertura rural de fibra y 5G",
+      "resumen": "Completar cobertura de fibra y 5G en municipios con déficit de conectividad y usa digitalización para reducir trámites.",
+      "cita_literal": "Aseguraremos la aplicación de los fondos autonómicos y europeos suficientes para garantizar la conectividad rural y completar la cobertura de fibra óptica y 5G.",
+      "pagina": 20,
+      "tags": [
+        "#MedioRural",
+        "#Movilidad",
+        "#Infraestructuras",
+        "#Digitalizacion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar inversión pública para cerrar la brecha de fibra y 5G en el medio rural?"
+    },
+    {
+      "id": 22,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Acceso administrativo",
+      "titulo_corto": "Menos burocracia para solicitar ayudas",
+      "resumen": "Simplificar trámites para que familias y hogares accedan con mayor rapidez a ayudas sociales.",
+      "cita_literal": "Combatiremos la burocracia excesiva para agilizar el acceso de las familias a las ayudas sociales.",
+      "pagina": 20,
+      "tags": [
+        "#ServiciosSociales",
+        "#Cuidados",
+        "#SinBurocracia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con simplificar de forma drástica la tramitación de ayudas sociales para familias?"
+    },
+    {
+      "id": 23,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención en zonas rurales",
+      "titulo_corto": "Garantía de atención presencial o transporte sanitario",
+      "resumen": "Mantener atención presencial en zonas rurales y garantiza transporte adecuado cuando no sea posible.",
+      "cita_literal": "Garantizaremos la atención presencial en las zonas rurales y, cuando ésta no sea posible, que exista un transporte adecuado para todos los pacientes.",
+      "pagina": 20,
+      "tags": [
+        "#SanidadPublica",
+        "#MedioRural",
+        "#Movilidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con garantizar por norma atención presencial rural o transporte sanitario alternativo?"
+    },
+    {
+      "id": 24,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Derivación sanitaria",
+      "titulo_corto": "Derivación interregional con colaboración público-privada",
+      "resumen": "Activar protocolos de derivación interregional para evitar colapsos y usar toda la capacidad asistencial disponible.",
+      "cita_literal": "Aprobaremos protocolos de derivación interregional para atender a pacientes en las mejores condiciones de acuerdo con su situación particular y potenciaremos la colaboración público-privada.",
+      "pagina": 21,
+      "tags": [
+        "#SanidadPublica",
+        "#Salud",
+        "#ColaboracionPublicoPrivada"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar derivaciones interregionales y colaboración público-privada para reducir saturación sanitaria?"
+    },
+    {
+      "id": 25,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Cobertura de personal",
+      "titulo_corto": "Refuerzo urgente de plantillas en unidades críticas",
+      "resumen": "Reforzar personal y recursos en áreas con déficit para evitar cierres de servicios por falta de especialistas.",
+      "cita_literal": "Dotaremos de personal suficiente y de recursos a aquellas unidades o áreas de servicio más necesitadas con el objetivo de evitar cierres como consecuencia de la falta de personal médico especialista.",
+      "pagina": 21,
+      "tags": [
+        "#SanidadPublica",
+        "#Personal",
+        "#ServiciosPublicos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con concentrar refuerzos de plantilla en unidades sanitarias con riesgo de cierre?"
+    },
+    {
+      "id": 26,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Farmacia comunitaria",
+      "titulo_corto": "Farmacia rural conectada con atención primaria",
+      "resumen": "Integrar la farmacia comunitaria como agente asistencial y garantiza interoperabilidad digital con médicos y enfermería.",
+      "cita_literal": "Impulsaremos la farmacia comunitaria como un agente asistencial integrado en el servicio de salud, fortaleciendo su papel en las zonas rurales.",
+      "pagina": 21,
+      "tags": [
+        "#SanidadPublica",
+        "#MedioRural",
+        "#Farmacia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con dar a las farmacias rurales un papel sanitario más activo y coordinado con primaria?"
+    },
+    {
+      "id": 27,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Infraestructura sanitaria",
+      "titulo_corto": "Reactivación de servicios y modernización provincial",
+      "resumen": "Reabrir servicios paralizados tras la pandemia y actualiza equipamientos sanitarios en todas las provincias.",
+      "cita_literal": "Reforzaremos las infraestructuras y equipamientos sanitarios en todas las provincias. Reactivaremos los servicios que han sido paralizados tras la pandemia.",
+      "pagina": 21,
+      "tags": [
+        "#SanidadPublica",
+        "#Salud",
+        "#Infraestructuras"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar inversión sanitaria para reactivar servicios cerrados tras la pandemia?"
+    },
+    {
+      "id": 28,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Retorno y relevo generacional",
+      "titulo_corto": "Retorno joven con vivienda, empleo y relevo familiar",
+      "resumen": "Facilitar el regreso y arraigo de jóvenes y familias mediante acceso a vivienda, ventajas fiscales, teletrabajo e incentivos que aseguren el relevo generacional de empresas y explotaciones familiares.",
+      "cita_literal": "Pondremos en marcha las políticas necesarias para que los jóvenes y las familias que se han marchado puedan volver a su tierra, facilitando el acceso a una vivienda y favoreciendo el teletrabajo.",
+      "pagina": 21,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#Vivienda",
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con concentrar las políticas de retorno joven en vivienda, empleo, teletrabajo y relevo generacional familiar?"
+    },
+    {
+      "id": 29,
+      "categoria": "Otros",
+      "subcategoria": "Bioética y objeción",
+      "titulo_corto": "Defensa de objeción de conciencia sanitaria",
+      "resumen": "Garantizar objeción de conciencia para profesionales sanitarios y elimina el registro de objetores.",
+      "cita_literal": "Garantizaremos que ningún profesional sanitario, médico, enfermero o farmacéutico se vea obligado a actuar en contra de su conciencia. Suprimiremos el registro de objetores de conciencia.",
+      "pagina": 22,
+      "tags": [
+        "#SanidadPublica",
+        "#Derechos",
+        "#Bioetica"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar por ley la objeción de conciencia del personal sanitario?"
+    },
+    {
+      "id": 30,
+      "categoria": "Otros",
+      "subcategoria": "Apoyo a maternidad",
+      "titulo_corto": "Red de apoyo para embarazos problemáticos",
+      "resumen": "Ofrecer acompañamiento y alternativas para mujeres con embarazos inesperados.",
+      "cita_literal": "Daremos información, apoyo y alternativas a todas aquellas madres con un embarazo problemático e inesperado para que no se vean abocadas a abortar.",
+      "pagina": 22,
+      "tags": [
+        "#Derechos",
+        "#Igualdad",
+        "#Familia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con crear un programa público específico de apoyo a embarazos inesperados?"
+    },
+    {
+      "id": 31,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Cuidados paliativos",
+      "titulo_corto": "Refuerzo de paliativos con equipos especializados",
+      "resumen": "Aumentar inversión y personal de cuidados paliativos para atención integral a pacientes y familias.",
+      "cita_literal": "Mejoraremos la atención en cuidados paliativos. Es imprescindible aumentar la inversión en recursos sanitarios y en personal especializado en cuidados paliativos.",
+      "pagina": 22,
+      "tags": [
+        "#SanidadPublica",
+        "#Salud",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aumentar de forma prioritaria recursos y plantilla en cuidados paliativos?"
+    },
+    {
+      "id": 32,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Marco profesional médico",
+      "titulo_corto": "Estatuto médico propio con negociación diferenciada",
+      "resumen": "Reconocer la especificidad de la profesión médica y fija interlocución propia para condiciones laborales.",
+      "cita_literal": "Impulsaremos un Estatuto Médico Propio que reconozca de forma expresa la especificidad de la profesión médica y garantice una interlocución directa y diferenciada del colectivo médico.",
+      "pagina": 22,
+      "tags": [
+        "#SanidadPublica",
+        "#Personal",
+        "#CondicionesLaborales"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con crear un estatuto profesional específico para médicos dentro del sistema público?"
+    },
+    {
+      "id": 33,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Contratación e incentivos",
+      "titulo_corto": "Contratos extraordinarios para cubrir picos asistenciales",
+      "resumen": "Activar bolsas y contratos específicos, junto con incentivos, para cubrir picos de trabajo y plazas difíciles.",
+      "cita_literal": "Impulsaremos la aprobación de contratos específicos y bolsas extraordinarias para profesionales sanitarios, e implementaremos incentivos económicos y laborales.",
+      "pagina": 23,
+      "tags": [
+        "#SanidadPublica",
+        "#Personal",
+        "#Incentivos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con usar contratos extraordinarios e incentivos para cubrir vacantes sanitarias de difícil cobertura?"
+    },
+    {
+      "id": 34,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Condiciones laborales",
+      "titulo_corto": "Salarios, estabilidad y retención de especialistas",
+      "resumen": "Mejorar retribuciones, reduce temporalidad y frena la salida de especialistas hacia otras regiones.",
+      "cita_literal": "Mejoraremos las condiciones laborales y salariales de los profesionales sanitarios de Sacyl para combatir el déficit estructural en la plantilla sanitaria.",
+      "pagina": 23,
+      "tags": [
+        "#SanidadPublica",
+        "#CondicionesLaborales",
+        "#Personal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar subidas salariales y estabilidad laboral para retener médicos especialistas?"
+    },
+    {
+      "id": 35,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Compatibilidad profesional",
+      "titulo_corto": "Compatibilidad entre actividad pública y privada",
+      "resumen": "Mantener la compatibilidad para jefes y profesionales entre trabajo en sanidad pública y centros privados.",
+      "cita_literal": "Garantizaremos que los profesionales sanitarios y jefes de servicio y de sección puedan seguir compatibilizando su labor en la sanidad pública con la actividad en centros privados.",
+      "pagina": 23,
+      "tags": [
+        "#SanidadPublica",
+        "#Personal",
+        "#ColaboracionPublicoPrivada"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con mantener la compatibilidad entre empleo sanitario público y privado?"
+    },
+    {
+      "id": 36,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Conciliación laboral",
+      "titulo_corto": "Prioridad de turnos para personal con cargas familiares",
+      "resumen": "Dar prioridad en turnos y guardias al personal sanitario con menores, mayores o personas con discapacidad a cargo.",
+      "cita_literal": "El personal sanitario a cargo de hijos menores de 14 años, personas mayores o con discapacidad tendrá prioridad a la hora de no cubrir turnos de guardia en fines de semana o festivos.",
+      "pagina": 24,
+      "tags": [
+        "#SanidadPublica",
+        "#Conciliacion",
+        "#Personal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar cambios de turno para personal sanitario con responsabilidades de cuidados?"
+    },
+    {
+      "id": 37,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Farmacia y cribados",
+      "titulo_corto": "Farmacias como apoyo en detección precoz",
+      "resumen": "Reforzar colaboración con farmacias para campañas de cribado y diagnóstico temprano, sobre todo en entorno rural.",
+      "cita_literal": "Reconoceremos el valor del servicio que prestan nuestros farmacéuticos, reforzando la colaboración con estos profesionales para atender campañas de cribado y de detección precoz de enfermedades.",
+      "pagina": 24,
+      "tags": [
+        "#SanidadPublica",
+        "#Farmacia",
+        "#Prevencion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar el papel de las farmacias en cribados y detección precoz de enfermedades?"
+    },
+    {
+      "id": 38,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Financiación y compras",
+      "titulo_corto": "Más presupuesto sanitario y compra centralizada",
+      "resumen": "Elevar el presupuesto de sanidad y centraliza compras para abaratar suministros asistenciales.",
+      "cita_literal": "Impulsaremos un aumento general en el presupuesto de Sanidad para atender las necesidades más urgentes. Impulsaremos la compra agregada de los suministros para los centros asistenciales.",
+      "pagina": 24,
+      "tags": [
+        "#SanidadPublica",
+        "#Presupuesto",
+        "#Eficiencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aumentar presupuesto sanitario y centralizar compras para mejorar eficiencia?"
+    },
+    {
+      "id": 39,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "ELA y enfermedades raras",
+      "titulo_corto": "Cobertura asistencial para ELA y enfermedades raras",
+      "resumen": "Cubrir costes asistenciales autonómicos mientras llega financiación estatal y acelera acceso a tratamientos innovadores.",
+      "cita_literal": "Hasta que exista una financiación nacional suficiente para la Ley ELA, cubriremos el coste asistencial para todos los pacientes que sufren esta enfermedad en la región con la aprobación de ayudas específicas.",
+      "pagina": 24,
+      "tags": [
+        "#SanidadPublica",
+        "#Cuidados",
+        "#EnfermedadesRaras"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con que la Junta asuma temporalmente más costes de ELA y enfermedades raras hasta que actúe el Estado?"
+    },
+    {
+      "id": 40,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Crónicos y atención temprana",
+      "titulo_corto": "Apoyo fiscal y detección precoz en crónicos",
+      "resumen": "Introducir bonificaciones para enfermos crónicos, atiende demandas asociativas y organiza detección precoz y apoyo familiar.",
+      "cita_literal": "Estableceremos una bonificación fiscal para enfermos crónicos respecto de aquellos gastos farmacéuticos, tratamientos y material de apoyo.",
+      "pagina": 25,
+      "tags": [
+        "#SanidadPublica",
+        "#Fiscalidad",
+        "#Prevencion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aplicar bonificaciones fiscales a enfermos crónicos por gastos sanitarios no cubiertos?"
+    },
+    {
+      "id": 41,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Atención temprana",
+      "titulo_corto": "Modelo regional único de atención temprana",
+      "resumen": "Unificar la atención temprana en toda la comunidad y reduce diferencias entre zonas urbanas y rurales.",
+      "cita_literal": "Impulsaremos un modelo regional único de atención temprana, igualitario en toda la región, que evite diferencias entre la Castilla y León rural y la urbana.",
+      "pagina": 26,
+      "tags": [
+        "#ServiciosSociales",
+        "#Cuidados",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con implantar un modelo único de atención temprana para toda Castilla y León?"
+    },
+    {
+      "id": 42,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención primaria",
+      "titulo_corto": "Más inversión en primaria y plan contra listas de espera",
+      "resumen": "Descongestionar atención primaria, refuerza prevención y ordena auditorías y un plan integral para bajar listas de espera.",
+      "cita_literal": "Aumentaremos la inversión en atención primaria, promoviendo su descongestión especialmente en las áreas rurales. Promoveremos auditorías públicas completas sobre la gestión de las listas de espera.",
+      "pagina": 26,
+      "tags": [
+        "#SanidadPublica",
+        "#AtencionPrimaria",
+        "#ListasDeEspera"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar atención primaria y auditorías públicas para reducir listas de espera sanitarias?"
+    },
+    {
+      "id": 43,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Dependencia y cuidados",
+      "titulo_corto": "Refuerzo de dependencia y apoyo a familias cuidadoras",
+      "resumen": "Reforzar ayuda a domicilio, coordinación sociosanitaria y apoyo económico-laboral a familias que cuidan dependientes.",
+      "cita_literal": "Reconoceremos y apoyaremos a las familias que cuidan a personas con discapacidad y dependientes. Apostaremos por un fortalecimiento del sistema de atención a la dependencia y reforzaremos el Servicio de Ayuda a Domicilio.",
+      "pagina": 26,
+      "tags": [
+        "#ServiciosSociales",
+        "#Cuidados",
+        "#Dependencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar de forma prioritaria apoyo a familias cuidadoras y servicio de ayuda a domicilio?"
+    },
+    {
+      "id": 44,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Prevención y planes clínicos",
+      "titulo_corto": "Planes de prevención en cáncer, salud mental y obesidad",
+      "resumen": "Aumentar recursos para cribados y ejecuta planes regionales en salud mental, cardiovascular, obesidad, próstata y demencias.",
+      "cita_literal": "Incrementaremos el presupuesto específico en prevención de cáncer de mama, colon y cérvix, para garantizar la suficiencia de recursos humanos y materiales.",
+      "pagina": 27,
+      "tags": [
+        "#SanidadPublica",
+        "#SaludMental",
+        "#Prevencion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con desplegar planes sanitarios específicos de prevención para cáncer, salud mental y enfermedades crónicas?"
+    },
+    {
+      "id": 45,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Pediatría",
+      "titulo_corto": "Cobertura pediátrica estable con refuerzo rural",
+      "resumen": "Garantizar plazas estables de pediatría y activa un plan urgente en zonas rurales con déficit estructural.",
+      "cita_literal": "Garantizaremos la cobertura estable y permanente de las plazas de pediatría, asegurando la presencia continua de profesionales titulados. Pondremos en marcha un plan de refuerzo urgente de la atención pediátrica en el medio rural.",
+      "pagina": 27,
+      "tags": [
+        "#SanidadPublica",
+        "#MedioRural",
+        "#Pediatria"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar incentivos y plazas estables para asegurar pediatría en todo el medio rural?"
+    },
+    {
+      "id": 46,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Formación sanitaria",
+      "titulo_corto": "Mantenimiento del acceso MIR único y retención de residentes",
+      "resumen": "Mantener el sistema nacional único MIR/EIR/FIR y mejora condiciones para que residentes permanezcan en la comunidad.",
+      "cita_literal": "Exigiremos el mantenimiento de un sistema nacional único de acceso MIR/EIR/FIR y garantizaremos condiciones atractivas para retener a los residentes en Castilla y León.",
+      "pagina": 28,
+      "tags": [
+        "#SanidadPublica",
+        "#Formacion",
+        "#Personal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con mantener un acceso MIR nacional único y reforzar incentivos para retener residentes?"
+    },
+    {
+      "id": 47,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Infraestructuras territoriales",
+      "titulo_corto": "Plan de ejecución de centros y hospitales pendientes",
+      "resumen": "Desbloquear obras y aperturas sanitarias en distintas provincias para ampliar capacidad asistencial territorial.",
+      "cita_literal": "Terminaremos las obras pendientes del Hospital Clínico Universitario de Valladolid, así como las obras de reforma en los centros de salud de Arturo Eyries y Magdalena.",
+      "pagina": 28,
+      "tags": [
+        "#SanidadPublica",
+        "#Infraestructuras",
+        "#ServiciosPublicos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar la finalización de centros de salud y hospitales comprometidos pero aún sin ejecutar?"
+    },
+    {
+      "id": 48,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Emergencias",
+      "titulo_corto": "Desfibriladores y formación en reanimación",
+      "resumen": "Extender desfibriladores en espacios sociosanitarios y educativos y forma a profesionales y usuarios en soporte vital.",
+      "cita_literal": "Promoveremos la instalación de desfibriladores en todas las instalaciones socio-dependientes, así como en gimnasios, colegios o áreas deportivas.",
+      "pagina": 31,
+      "tags": [
+        "#SanidadPublica",
+        "#Prevencion",
+        "#Emergencias"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con instalar desfibriladores de forma generalizada en centros educativos y sociosanitarios?"
+    },
+    {
+      "id": 49,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Acceso hospitalario",
+      "titulo_corto": "Acondicionamiento de aparcamientos hospitalarios",
+      "resumen": "Mejorar acceso a hospitales mediante un plan específico de aparcamientos en la red autonómica.",
+      "cita_literal": "Impulsaremos un Plan de acondicionamiento de aparcamientos en los hospitales de Castilla y León.",
+      "pagina": 31,
+      "tags": [
+        "#SanidadPublica",
+        "#Movilidad",
+        "#Infraestructuras"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ejecutar un plan autonómico de aparcamientos en hospitales públicos?"
+    },
+    {
+      "id": 50,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Nuevas figuras asistenciales",
+      "titulo_corto": "Enfermera escolar y refuerzo de fisioterapia y logopedia",
+      "resumen": "Incorporar enfermería escolar y aumenta presencia de fisioterapia, logopedia y terapia ocupacional en primaria.",
+      "cita_literal": "Crearemos la figura de la «enfermera escolar» para la atención de salud del alumnado. Aumentaremos la plantilla de fisioterapeutas en la atención primaria.",
+      "pagina": 32,
+      "tags": [
+        "#SanidadPublica",
+        "#AtencionPrimaria",
+        "#Educacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con incorporar enfermera escolar y reforzar fisioterapia y logopedia en atención primaria?"
+    },
+    {
+      "id": 51,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Facturación sanitaria",
+      "titulo_corto": "Reintegro de asistencia no urgente a extranjeros sin derecho",
+      "resumen": "Reclamar de forma sistemática el coste de atención sanitaria no urgente prestada a personas sin cobertura legal.",
+      "cita_literal": "Exigiremos exhaustivamente el reintegro del coste de la asistencia sanitaria no urgente prestada a personas extranjeras que no tengan derecho a asistencia.",
+      "pagina": 34,
+      "tags": [
+        "#SanidadPublica",
+        "#Fiscalidad",
+        "#Inmigracion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reclamar el coste de atención sanitaria no urgente a extranjeros sin derecho de cobertura?"
+    },
+    {
+      "id": 52,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Centros de inmigración",
+      "titulo_corto": "Cierre y reubicación de centros de inmigración irregular",
+      "resumen": "Cerrar centros de inmigración ilegal; mientras sigan abiertos, los aleja de núcleos urbanos y asume gestión directa autonómica de centros de menores extranjeros.",
+      "cita_literal": "Promoveremos el cierre de todos los centros de inmigrantes ilegales abiertos por el bipartidismo en nuestra región.",
+      "pagina": 41,
+      "tags": [
+        "#ServiciosSociales",
+        "#Inmigracion",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con cerrar o reubicar centros de inmigración irregular fuera de núcleos urbanos?"
+    },
+    {
+      "id": 53,
+      "categoria": "Otros",
+      "subcategoria": "Delitos sexuales",
+      "titulo_corto": "Endurecimiento penal y expulsión de agresores extranjeros",
+      "resumen": "Endurecer penas por delitos sexuales, fija la expulsión de condenados extranjeros y prioriza ejecución de la pena en origen.",
+      "cita_literal": "Exigiremos la reforma del Código Penal para proteger de verdad a las mujeres españolas elevando las penas para los delitos sexuales.",
+      "pagina": 41,
+      "tags": [
+        "#Derechos",
+        "#Igualdad",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con endurecer penas por delitos sexuales y expulsar a condenados extranjeros tras cumplir condena?"
+    },
+    {
+      "id": 54,
+      "categoria": "Otros",
+      "subcategoria": "Inmigración e islamismo",
+      "titulo_corto": "Fin de financiación pública a redes de inmigración ilegal",
+      "resumen": "Cortar fondos a ONG vinculadas a inmigración ilegal y veta prácticas islamistas consideradas contrarias a derechos y costumbres locales.",
+      "cita_literal": "Pondremos fin a cualquier partida destinada al fomento o financiación de chiringuitos y/o ONG que promuevan la inmigración ilegal.",
+      "pagina": 42,
+      "tags": [
+        "#Derechos",
+        "#Inmigracion",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con retirar financiación pública a entidades que el gobierno vincule con inmigración ilegal?"
+    },
+    {
+      "id": 55,
+      "categoria": "Otros",
+      "subcategoria": "Tradiciones públicas",
+      "titulo_corto": "Prioridad a festividades nacionales y regionales",
+      "resumen": "Mantener festividades tradicionales y bloquea actos públicos considerados incompatibles con costumbres regionales.",
+      "cita_literal": "Garantizaremos la conservación de festividades nacionales y regionales tradicionales, e impulsaremos activamente la difusión y promoción de estas celebraciones.",
+      "pagina": 43,
+      "tags": [
+        "#Derechos",
+        "#Cultura",
+        "#Tradiciones"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reservar espacios públicos para festividades tradicionales nacionales y regionales?"
+    },
+    {
+      "id": 56,
+      "categoria": "Otros",
+      "subcategoria": "Seguridad ciudadana",
+      "titulo_corto": "Refuerzo de prisiones y Guardia Civil rural",
+      "resumen": "Reforzar plantillas penitenciarias y exige cobertura de vacantes de Guardia Civil en zonas rurales dispersas.",
+      "cita_literal": "Exigiremos el refuerzo de la seguridad ciudadana en las zonas rurales de Castilla y León, donde la dispersión poblacional de nuestra región agrava la dificultad operativa.",
+      "pagina": 44,
+      "tags": [
+        "#MedioRural",
+        "#Derechos",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con exigir más efectivos de Guardia Civil y personal penitenciario en Castilla y León?"
+    },
+    {
+      "id": 57,
+      "categoria": "Otros",
+      "subcategoria": "Defensa y emergencias",
+      "titulo_corto": "Cooperación autonómica con Fuerzas Armadas y UME",
+      "resumen": "Fortalecer colaboración institucional con unidades militares presentes en la comunidad para emergencias y prevención.",
+      "cita_literal": "Promoveremos la colaboración institucional de las unidades militares con presencia en Castilla y León, en especial de la UME.",
+      "pagina": 45,
+      "tags": [
+        "#Derechos",
+        "#Seguridad",
+        "#Emergencias"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforzar convenios de colaboración entre Junta y Fuerzas Armadas para gestión de emergencias?"
+    },
+    {
+      "id": 58,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Acceso a empleo público",
+      "titulo_corto": "Nacionalidad española en empleo y policía local",
+      "resumen": "Modificar leyes autonómicas para reservar o priorizar acceso a empleo público y policías locales a nacionales españoles.",
+      "cita_literal": "Modificaremos la Ley 7/2005, de 24 de mayo, de la Función Pública de Castilla y León, para que, en el acceso al empleo público o en la promoción profesional, los nacionales españoles tengan prioridad.",
+      "pagina": 46,
+      "tags": [
+        "#Transparencia",
+        "#Gobernanza",
+        "#EmpleoPublico"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar por nacionalidad española el acceso a determinados puestos de empleo público?"
+    },
+    {
+      "id": 59,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Transparencia migratoria",
+      "titulo_corto": "Auditoría anual del gasto e impacto migratorio",
+      "resumen": "Publicar auditorías completas del gasto ligado a inmigración e informes anuales sobre efectos en vivienda y alquiler.",
+      "cita_literal": "Exigiremos la máxima transparencia en el gasto público destinado a la inmigración ilegal. Realizaremos un análisis exhaustivo del gasto directo e indirecto.",
+      "pagina": 47,
+      "tags": [
+        "#Vivienda",
+        "#Transparencia",
+        "#Inmigracion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con publicar auditorías periódicas del gasto público vinculado a inmigración y su impacto en vivienda?"
+    },
+    {
+      "id": 60,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "PAC y simplificación",
+      "titulo_corto": "Bloqueo de reforma PAC y alivio burocrático",
+      "resumen": "Rechazar la reforma PAC 2028-2034, simplifica trámites y mantiene ayudas reforzadas para jóvenes agricultores y ganaderos.",
+      "cita_literal": "Rechazaremos enérgicamente la propuesta de reforma de la PAC 2028-2034. Pondremos fin a todas las trabas burocráticas que impiden a nuestros agricultores solicitar con normalidad las ayudas.",
+      "pagina": 51,
+      "tags": [
+        "#SectorPrimario",
+        "#PAC",
+        "#SinBurocracia"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con oponerse a la reforma de la PAC y reducir trámites para cobrar ayudas agrarias?"
+    },
+    {
+      "id": 61,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Comercio exterior agrario",
+      "titulo_corto": "Cláusulas espejo y revisión de acuerdos UE",
+      "resumen": "Exigir revisar acuerdos con terceros países y aplicar cláusulas espejo para igualar exigencias sanitarias y ambientales.",
+      "cita_literal": "Exigiremos la suspensión y/o revisión inmediata de todos los acuerdos comerciales suscritos entre la UE y países extracomunitarios que supongan un enorme perjuicio para nuestro sector primario.",
+      "pagina": 52,
+      "tags": [
+        "#Comercio",
+        "#SectorPrimario",
+        "#PAC"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con revisar acuerdos comerciales de la UE cuando perjudiquen al sector primario regional?"
+    },
+    {
+      "id": 62,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Control de importaciones",
+      "titulo_corto": "Más controles fronterizos y fraude en etiquetado",
+      "resumen": "Reforzar controles en frontera y sanciona el fraude de etiquetado para proteger trazabilidad y origen de productos.",
+      "cita_literal": "Exigiremos el aumento de los controles en frontera, incrementando la dotación de personal, materiales y centros de análisis en los Puestos de Inspección Fronteriza.",
+      "pagina": 53,
+      "tags": [
+        "#SectorPrimario",
+        "#Transparencia",
+        "#SeguridadAlimentaria"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aumentar controles fronterizos y sanciones por fraude de etiquetado alimentario?"
+    },
+    {
+      "id": 63,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Suelo agrario",
+      "titulo_corto": "Protección de suelos frente a macroproyectos renovables",
+      "resumen": "Priorizar protección de suelos productivos y paisaje frente a macroproyectos energéticos considerados especulativos.",
+      "cita_literal": "Desarrollaremos un marco normativo regional con el fin principal de salvaguardar nuestros suelos agrarios y nuestro paisaje frente a la proliferación de macroplantas de renovables.",
+      "pagina": 53,
+      "tags": [
+        "#SectorPrimario",
+        "#MedioAmbiente",
+        "#Energia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con limitar macroproyectos renovables cuando afecten a suelo agrario productivo?"
+    },
+    {
+      "id": 64,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Apoyo a explotaciones",
+      "titulo_corto": "Ayudas por incendios y plan contra robos en el campo",
+      "resumen": "Aumentar ayudas por daños de incendios y despliega medidas urgentes frente a robos en explotaciones agrarias.",
+      "cita_literal": "Incrementaremos considerablemente las ayudas destinadas al sector primario para hacer frente a las pérdidas ante los incendios e implementaremos medidas urgentes para poner fin a la creciente inseguridad en nuestro campo.",
+      "pagina": 54,
+      "tags": [
+        "#SectorPrimario",
+        "#Seguridad",
+        "#Incendios"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforzar ayudas al campo por incendios y activar un plan específico contra robos rurales?"
+    },
+    {
+      "id": 65,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Rentabilidad y seguros",
+      "titulo_corto": "Ley de Cadena y reforma de seguros agrarios",
+      "resumen": "Exigir aplicación estricta de la Ley de la Cadena Alimentaria y moderniza seguros agrarios para cubrir mejor riesgos.",
+      "cita_literal": "Exigiremos una correcta aplicación de la Ley de Cadena Alimentaria que garantice realmente la protección y la rentabilidad de nuestros productores.",
+      "pagina": 54,
+      "tags": [
+        "#SectorPrimario",
+        "#Agricultura",
+        "#Seguros"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforzar controles de cadena alimentaria y ampliar cobertura de seguros agrarios?"
+    },
+    {
+      "id": 66,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Agua y regadío",
+      "titulo_corto": "Plan nacional del agua y modernización de regadíos",
+      "resumen": "Impulsar planes nacionales para gestión hídrica y modernización de regadíos con mayor eficiencia del agua.",
+      "cita_literal": "Impulsaremos un Plan Nacional del Agua que contemple la gestión racional de los recursos hídricos en todo el territorio nacional.",
+      "pagina": 55,
+      "tags": [
+        "#SectorPrimario",
+        "#Regadio",
+        "#Agua"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reclamar un plan nacional del agua y otro de regadíos para sostener el campo?"
+    },
+    {
+      "id": 67,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Relevo generacional",
+      "titulo_corto": "Menos burocracia y entrada de jóvenes al campo",
+      "resumen": "Reducir cargas administrativas y acelera apoyo a relevo generacional en explotaciones agrícolas y ganaderas.",
+      "cita_literal": "Impulsaremos una reforma decidida para reducir drásticamente la losa burocrática que tienen que soportar nuestros agricultores y ganaderos.",
+      "pagina": 55,
+      "tags": [
+        "#Empleo",
+        "#SectorPrimario",
+        "#SinBurocracia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar relevo generacional en el campo mediante simplificación administrativa?"
+    },
+    {
+      "id": 68,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Cultivos estratégicos",
+      "titulo_corto": "Impulso a lúpulo, remolacha y maquinaria agraria",
+      "resumen": "Reforzar cultivos estratégicos y abre ayudas para compra y modernización de maquinaria, con prioridad a pequeñas explotaciones.",
+      "cita_literal": "Defenderemos e impulsaremos el desarrollo de producciones autóctonas como el cultivo de lúpulo. Pondremos en marcha una línea de ayudas para la adquisición y/o modernización de maquinaria agraria.",
+      "pagina": 56,
+      "tags": [
+        "#SectorPrimario",
+        "#Agricultura",
+        "#Modernizacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con concentrar ayudas en cultivos estratégicos y modernización de maquinaria agrícola?"
+    },
+    {
+      "id": 69,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Ganadería",
+      "titulo_corto": "Plan de refuerzo para ganadería intensiva y ovino",
+      "resumen": "Activar medidas para sostener ganadería intensiva y frenar la reducción de la cabaña ovina.",
+      "cita_literal": "Implementaremos un plan estratégico para reforzar la ganadería intensiva en la región e implementaremos todas las medidas necesarias para poner fin a la reducción de la cabaña ganadera de ovino.",
+      "pagina": 56,
+      "tags": [
+        "#MedioRural",
+        "#SectorPrimario",
+        "#Ganaderia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con impulsar un plan específico para sostener ganadería intensiva y ovina en Castilla y León?"
+    },
+    {
+      "id": 70,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Formación agraria",
+      "titulo_corto": "FP agraria y educación escolar sobre campo",
+      "resumen": "Reforzar formación profesional agraria y acerca en colegios el papel de agricultura y ganadería en la economía regional.",
+      "cita_literal": "Impulsaremos la Formación Profesional en el sector primario de Castilla y León a través de un programa formativo público y concertado.",
+      "pagina": 57,
+      "tags": [
+        "#Educacion",
+        "#FormacionProfesional",
+        "#SectorPrimario"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar FP agraria y programas escolares para acercar el sector primario a los jóvenes?"
+    },
+    {
+      "id": 71,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Fauna y sanidad vegetal",
+      "titulo_corto": "Control del lobo y defensa de fitosanitarios eficaces",
+      "resumen": "Reclamar un plan nacional del lobo con compensaciones y evita prohibiciones de fitosanitarios sin alternativa viable.",
+      "cita_literal": "Impulsaremos un Plan Nacional del Lobo que comprenda un adecuado control cinegético, un censo actualizado y un sistema de compensaciones proporcional.",
+      "pagina": 57,
+      "tags": [
+        "#SectorPrimario",
+        "#Ganaderia",
+        "#Fauna"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con mantener control cinegético del lobo y priorizar fitosanitarios cuando no haya alternativas eficaces?"
+    },
+    {
+      "id": 72,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Innovación y resiliencia",
+      "titulo_corto": "Genómica, fondo de contingencia e Internet rural",
+      "resumen": "Impulsar tecnología genética, crea fondo ante plagas y eventos extremos, refuerza sanidad animal y extiende conectividad digital en el medio rural.",
+      "cita_literal": "Promoveremos avances en el uso de la ciencia y la tecnología, especialmente en las nuevas técnicas de edición genómica. Impulsaremos un fondo de contingencia regional destinado a situaciones sobrevenidas.",
+      "pagina": 58,
+      "tags": [
+        "#MedioRural",
+        "#SectorPrimario",
+        "#Digitalizacion",
+        "#Innovacion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con combinar innovación tecnológica y fondos de contingencia para reforzar la resiliencia del sector primario?"
+    },
+    {
+      "id": 73,
+      "categoria": "Otros",
+      "subcategoria": "Patrimonio histórico y religioso",
+      "titulo_corto": "Protección integral del patrimonio histórico y religioso",
+      "resumen": "Reforzar la conservación de patrimonio monumental y religioso, asegurar mantenimiento de catedrales, monasterios, santuarios y Semana Santa, y promover su proyección cultural y turística en el ámbito nacional e internacional.",
+      "cita_literal": "En VOX consideramos un deber la defensa de nuestro rico patrimonio como herencia recibida de nuestros mayores, que ha de ser transmitida a las futuras generaciones.",
+      "pagina": 63,
+      "tags": [
+        "#Cultura",
+        "#Patrimonio",
+        "#Tradiciones",
+        "#Turismo"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con un plan integral de protección del patrimonio histórico-religioso que incluya conservación y promoción turística internacional?"
+    },
+    {
+      "id": 74,
+      "categoria": "Otros",
+      "subcategoria": "Tauromaquia",
+      "titulo_corto": "Apoyo integral a la tauromaquia regional",
+      "resumen": "Sostener festejos y escuelas taurinas, financiar difusión y formación, y consolidar actividades taurinas como componente cultural y turístico de la región.",
+      "cita_literal": "Continuaremos defendiendo los festejos taurinos e impulsaremos nuestras escuelas taurinas para garantizar la presencia de este legado cultural inmemorial en nuestra región.",
+      "pagina": 63,
+      "tags": [
+        "#Cultura",
+        "#Tauromaquia",
+        "#Tradiciones",
+        "#Turismo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con mantener un apoyo público integral a la tauromaquia, incluyendo escuelas, promoción y actividades?"
+    },
+    {
+      "id": 75,
+      "categoria": "Otros",
+      "subcategoria": "Turismo cultural",
+      "titulo_corto": "Rutas históricas y trenes turísticos temáticos",
+      "resumen": "Potenciar rutas históricas, recreaciones y trenes temáticos para ampliar oferta turística y dinamizar economías locales.",
+      "cita_literal": "Promocionaremos el conocimiento y la conservación de nuestras rutas, como pueden ser las propias del Camino de Santiago.",
+      "pagina": 63,
+      "tags": [
+        "#Turismo",
+        "#Derechos",
+        "#Cultura",
+        "#Patrimonio"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar inversión en rutas históricas y trenes turísticos temáticos en Castilla y León?"
+    },
+    {
+      "id": 76,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Política ambiental",
+      "titulo_corto": "Gestión ambiental alejada del Pacto Verde",
+      "resumen": "Orientar la política ambiental hacia aprovechamiento forestal y conservación compatible con actividad económica del campo.",
+      "cita_literal": "Promoveremos el cuidado del medio ambiente mediante una política alejada de los delirios climáticos del Pacto Verde Europeo.",
+      "pagina": 65,
+      "tags": [
+        "#SectorPrimario",
+        "#MedioAmbiente",
+        "#Energia"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con apartar la política autonómica del enfoque del Pacto Verde Europeo?"
+    },
+    {
+      "id": 77,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Caminos rurales",
+      "titulo_corto": "Modernización de caminos e infraestructuras rurales",
+      "resumen": "Actualizar caminos rurales e infraestructuras de acceso para explotaciones y núcleos con baja conectividad.",
+      "cita_literal": "Mantendremos, mejoraremos y modernizaremos las infraestructuras y caminos rurales de Castilla y León.",
+      "pagina": 65,
+      "tags": [
+        "#MedioRural",
+        "#Movilidad",
+        "#Infraestructuras"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar inversión pública en caminos rurales de acceso a explotaciones?"
+    },
+    {
+      "id": 78,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Paisaje y renovables",
+      "titulo_corto": "Ley del paisaje frente a macroproyectos energéticos",
+      "resumen": "Frenar macroparques en áreas sensibles, protege suelos productivos y exige mayor participación local en autorizaciones.",
+      "cita_literal": "Promoveremos una normativa que garantice la protección de nuestro patrimonio natural y de los suelos productivos frente a macroproyectos especulativos de energías renovables.",
+      "pagina": 66,
+      "tags": [
+        "#MedioRural",
+        "#MedioAmbiente",
+        "#Energia",
+        "#Participacion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con limitar nuevos macroproyectos renovables en zonas de alto valor paisajístico y agrario?"
+    },
+    {
+      "id": 79,
+      "categoria": "Otros",
+      "subcategoria": "Seguridad rural",
+      "titulo_corto": "Refuerzo policial y prevención en el medio rural",
+      "resumen": "Aumentar efectivos y coordinación operativa para reducir tiempos de respuesta ante robos y delitos en pueblos.",
+      "cita_literal": "Exigiremos al Gobierno de la Nación un mayor despliegue de efectivos de las Fuerzas y Cuerpos de Seguridad del Estado, en especial en el medio rural.",
+      "pagina": 67,
+      "tags": [
+        "#MedioRural",
+        "#Derechos",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con exigir más efectivos de seguridad del Estado para zonas rurales de Castilla y León?"
+    },
+    {
+      "id": 80,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Incendios forestales",
+      "titulo_corto": "Más bomberos forestales y plan de reforestación",
+      "resumen": "Reforzar INFOCAL, mejora condiciones de bomberos forestales y ejecuta planes de reforestación en áreas quemadas.",
+      "cita_literal": "Aumentaremos los efectivos y mejoraremos las condiciones materiales y laborales de los bomberos forestales de Castilla y León.",
+      "pagina": 68,
+      "tags": [
+        "#MedioAmbiente",
+        "#Forestal",
+        "#Incendios",
+        "#Emergencias"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar plantilla y presupuesto de bomberos forestales para prevención y extinción de incendios?"
+    },
+    {
+      "id": 81,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Gestión agroforestal",
+      "titulo_corto": "Pastoreo preventivo y refuerzo del SEPRONA",
+      "resumen": "Usar pastoreo y gestión agroforestal para reducir combustible vegetal y reclama más medios del SEPRONA en áreas de riesgo.",
+      "cita_literal": "Reconoceremos y promoveremos el pastoreo y la gestión agroforestal activa como instrumentos clave para reducir la carga de combustible.",
+      "pagina": 69,
+      "tags": [
+        "#MedioRural",
+        "#MedioAmbiente",
+        "#Forestal",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con combinar gestión agroforestal preventiva y refuerzo del SEPRONA en zonas rurales?"
+    },
+    {
+      "id": 82,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Caza y pesca",
+      "titulo_corto": "Caza y pesca como herramienta de gestión",
+      "resumen": "Reconocer caza y pesca como actividades clave de gestión ambiental y simplifica licencias y trámites asociados.",
+      "cita_literal": "Impulsaremos la caza y la pesca como actividades esenciales para la conservación de la fauna terrestre y acuática.",
+      "pagina": 70,
+      "tags": [
+        "#MedioRural",
+        "#SectorPrimario",
+        "#Caza",
+        "#Pesca"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con considerar caza y pesca actividades prioritarias de gestión del medio natural?"
+    },
+    {
+      "id": 83,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Fauna salvaje",
+      "titulo_corto": "Control de fauna y compensación por daños",
+      "resumen": "Reforzar control de ungulados y lobo, acelera indemnizaciones por ataques y mejora medidas preventivas para ganaderos.",
+      "cita_literal": "Aumentaremos y agilizaremos las compensaciones económicas por ataques de fauna salvaje, garantizando una valoración justa de los daños y el pago en el menor plazo posible.",
+      "pagina": 72,
+      "tags": [
+        "#MedioRural",
+        "#SectorPrimario",
+        "#Ganaderia",
+        "#Fauna"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforzar el control de fauna salvaje y acelerar compensaciones por daños a ganaderos?"
+    },
+    {
+      "id": 84,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Turismo de naturaleza",
+      "titulo_corto": "Plan de turismo sostenible de montaña y pesca",
+      "resumen": "Desplegar turismo sostenible en cordillera Cantábrica y promueve un plan nacional para impulsar pesca deportiva.",
+      "cita_literal": "Desarrollaremos un plan de turismo sostenible específico para la cordillera Cantábrica en Castilla y León.",
+      "pagina": 72,
+      "tags": [
+        "#MedioRural",
+        "#Turismo",
+        "#SectorPrimario",
+        "#Pesca"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con impulsar un plan específico de turismo sostenible de montaña y pesca deportiva?"
+    },
+    {
+      "id": 85,
+      "categoria": "Otros",
+      "subcategoria": "Tradiciones locales",
+      "titulo_corto": "Promoción de costumbres locales y gastronomía tradicional",
+      "resumen": "Impulsar fiestas y costumbres locales, protege gastronomía tradicional y da incentivos a productores vinculados al arraigo cultural.",
+      "cita_literal": "Promoveremos las tradiciones y fiestas populares de nuestras localidades, así como las expresiones artísticas, gastronómicas, musicales, cinegéticas o taurinas arraigadas en nuestra historia.",
+      "pagina": 74,
+      "tags": [
+        "#MedioRural",
+        "#Derechos",
+        "#Cultura",
+        "#Tradiciones"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con orientar ayudas culturales a la preservación de tradiciones y gastronomía locales?"
+    },
+    {
+      "id": 86,
+      "categoria": "Otros",
+      "subcategoria": "Calendario festivo",
+      "titulo_corto": "Refuerzo institucional de fiestas históricas y patronales",
+      "resumen": "Impulsar celebración oficial de hitos históricos y fiestas patronales provinciales con mayor visibilidad institucional.",
+      "cita_literal": "Aseguraremos la celebración de la festividad nacional de Santiago Patrón de España en toda Castilla y León el 25 de julio.",
+      "pagina": 77,
+      "tags": [
+        "#Derechos",
+        "#Cultura",
+        "#Patrimonio",
+        "#Tradiciones"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforzar institucionalmente festividades históricas y patronales en el calendario autonómico?"
+    },
+    {
+      "id": 87,
+      "categoria": "Otros",
+      "subcategoria": "Patrimonio inmaterial",
+      "titulo_corto": "Apoyo al toque de campanas y al belenismo",
+      "resumen": "Sostener programas de formación y relevo para campaneros y belenistas, junto con ayudas materiales para su continuidad.",
+      "cita_literal": "Impulsaremos medidas para salvaguardar y promover el toque tradicional de campanas en Castilla y León.",
+      "pagina": 80,
+      "tags": [
+        "#Derechos",
+        "#Cultura",
+        "#Patrimonio",
+        "#Tradiciones"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con financiar programas de relevo generacional para campaneros y belenistas?"
+    },
+    {
+      "id": 88,
+      "categoria": "Otros",
+      "subcategoria": "Conmemoraciones históricas",
+      "titulo_corto": "Calendario de efemérides estratégicas de Castilla y León",
+      "resumen": "Programar conmemoraciones autonómicas de hitos históricos para reforzar identidad común y proyección cultural.",
+      "cita_literal": "Celebraremos, con la debida relevancia, los siguientes acontecimientos vinculados a Castilla y León.",
+      "pagina": 80,
+      "tags": [
+        "#Derechos",
+        "#Cultura",
+        "#Patrimonio",
+        "#Tradiciones"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con impulsar un calendario oficial de efemérides históricas de Castilla y León?"
+    },
+    {
+      "id": 89,
+      "categoria": "Otros",
+      "subcategoria": "Patrimonio cultural",
+      "titulo_corto": "Rutas históricas y recuperación de bienes culturales",
+      "resumen": "Realzar rutas culturales y reclama devolución de fondos documentales y bienes culturales de titularidad castellano-leonesa.",
+      "cita_literal": "Promocionaremos iniciativas que realcen el valor de estas rutas, destacando su recorrido y el patrimonio histórico-artístico de los lugares que abarcan.",
+      "pagina": 81,
+      "tags": [
+        "#Turismo",
+        "#Derechos",
+        "#Cultura",
+        "#Patrimonio"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con exigir la devolución de fondos documentales y bienes culturales vinculados a Castilla y León?"
+    },
+    {
+      "id": 90,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Plan industrial",
+      "titulo_corto": "Reequilibrio territorial con sectores estratégicos",
+      "resumen": "Reducir desequilibrios territoriales y prioriza automoción, logística, aeronáutica, TIC y cadena agroalimentaria como motores regionales.",
+      "cita_literal": "Castilla y León es la región española territorialmente más extensa, por lo que resulta fundamental combatir los desequilibrios territoriales.",
+      "pagina": 85,
+      "tags": [
+        "#MedioRural",
+        "#Empleo",
+        "#Industria",
+        "#Crecimiento"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con concentrar la política industrial en sectores estratégicos para reducir desigualdades territoriales?"
+    },
+    {
+      "id": 91,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Competitividad empresarial",
+      "titulo_corto": "Simplificación regulatoria e impulso tecnológico industrial",
+      "resumen": "Simplificar normativa, acelera tramitación y mejora capacidad tecnológica de la industria manufacturera para elevar productividad.",
+      "cita_literal": "Revisaremos el entorno regulatorio con el fin de favorecer la competitividad de las empresas y el desarrollo industrial de Castilla y León.",
+      "pagina": 86,
+      "tags": [
+        "#Empleo",
+        "#Industria",
+        "#SinBurocracia",
+        "#Innovacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con simplificar regulación industrial para acelerar inversión y modernización productiva?"
+    },
+    {
+      "id": 92,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Talento y territorio",
+      "titulo_corto": "Retención de talento y defensa de polos industriales",
+      "resumen": "Frenar salida de talento cualificado, conecta formación con tejido productivo y protege comarcas industriales en competencia fiscal desigual.",
+      "cita_literal": "Una de las prioridades de VOX en la Consejería de Industria, Comercio y Empleo fue hacer frente a la pérdida de talento cualificado.",
+      "pagina": 87,
+      "tags": [
+        "#Empleo",
+        "#Industria",
+        "#Talento"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar medidas de retención de talento y protección de polos industriales regionales?"
+    },
+    {
+      "id": 93,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Soberanía energética",
+      "titulo_corto": "Energía competitiva con apuesta nuclear",
+      "resumen": "Asegurar suministro eléctrico estable para industria, alarga vida de centrales nucleares y rechaza nuevas normas climáticas restrictivas.",
+      "cita_literal": "Seguiremos apostando por el renacimiento de la industria nuclear nacional.",
+      "pagina": 88,
+      "tags": [
+        "#Industria",
+        "#MedioAmbiente",
+        "#Energia"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con extender la vida útil de las centrales nucleares para abaratar y estabilizar el suministro energético?"
+    },
+    {
+      "id": 94,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Biomasa y biogás",
+      "titulo_corto": "Diversificación energética con límites territoriales",
+      "resumen": "Diversificar con biomasa y biogás, exige transparencia en nuevas plantas y limita renovables en suelos de alto valor productivo.",
+      "cita_literal": "Impulsaremos la elaboración de un mapa de afección medioambiental y de usos del suelo que limite la instalación de macroproyectos de energías renovables.",
+      "pagina": 89,
+      "tags": [
+        "#MedioRural",
+        "#SectorPrimario",
+        "#MedioAmbiente",
+        "#Energia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con condicionar plantas de biogás y renovables a límites territoriales estrictos sobre suelo productivo?"
+    },
+    {
+      "id": 95,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Comercio y economía social",
+      "titulo_corto": "Impulso a artesanía, economía social y comercio local",
+      "resumen": "Reforzar apoyo a artesanía y comercio de proximidad como base de empleo y tejido productivo local.",
+      "cita_literal": "El sector de la artesanía tiene un lugar destacado en nuestra cultura e identidad local, generando en Castilla y León más de 6.000 empleos directos.",
+      "pagina": 90,
+      "tags": [
+        "#Empleo",
+        "#Autonomos",
+        "#Comercio"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar ayudas económicas a artesanía y comercio local frente a grandes operadores?"
+    },
+    {
+      "id": 96,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Mercado laboral",
+      "titulo_corto": "Empleo indefinido y rebaja de cotizaciones empresariales",
+      "resumen": "Bonificar cotizaciones para contratación indefinida y rechaza coacciones en huelgas de carácter político.",
+      "cita_literal": "Promoveremos el empleo estable, duradero y de calidad mediante la reducción de las cotizaciones a las empresas que contraten trabajadores de manera indefinida.",
+      "pagina": 90,
+      "tags": [
+        "#Empleo",
+        "#Fiscalidad",
+        "#Pymes"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con rebajar cotizaciones empresariales para incentivar contratos indefinidos?"
+    },
+    {
+      "id": 97,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Condiciones laborales",
+      "titulo_corto": "Salud laboral, absentismo y diálogo social revisado",
+      "resumen": "Actualizar estrategia de seguridad laboral, mide absentismo por sectores y redefine el marco autonómico de diálogo social.",
+      "cita_literal": "Elaboraremos un diagnóstico actualizado del absentismo laboral en Castilla y León, con desglose por sectores y provincias.",
+      "pagina": 91,
+      "tags": [
+        "#Empleo",
+        "#Gobernanza",
+        "#CondicionesLaborales"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con rediseñar el diálogo social autonómico y aplicar un plan específico contra absentismo laboral?"
+    },
+    {
+      "id": 98,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Turismo",
+      "titulo_corto": "Turismo rural como palanca de empleo comarcal",
+      "resumen": "Consolidar liderazgo en turismo rural, reduce trabas a empresas locales y conecta oferta turística con cultura y tradiciones.",
+      "cita_literal": "Trabajaremos para mejorar el posicionamiento turístico de Castilla y León y hacer que siga manteniendo el liderazgo en el turismo rural.",
+      "pagina": 92,
+      "tags": [
+        "#MedioRural",
+        "#Empleo",
+        "#Turismo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con centrar la estrategia turística autonómica en turismo rural y emprendimiento local?"
+    },
+    {
+      "id": 99,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Sector vitivinícola",
+      "titulo_corto": "Refuerzo económico y promocional del vino",
+      "resumen": "Mantener al sector vitivinícola como actividad prioritaria por su aporte a empleo, exportación y marca territorial.",
+      "cita_literal": "El sector vitivinícola trae consigo riqueza, calidad y prestigio a Castilla y León.",
+      "pagina": 93,
+      "tags": [
+        "#Empleo",
+        "#Comercio",
+        "#SectorPrimario"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar inversiones públicas en la cadena vitivinícola de Castilla y León?"
+    },
+    {
+      "id": 100,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Red viaria estatal",
+      "titulo_corto": "Ejecución de autovías pendientes y fin de peajes",
+      "resumen": "Exigir completar autovías estratégicas, conectar corredores pendientes y eliminar peajes en vías de uso intensivo.",
+      "cita_literal": "Exigiremos al Gobierno de España la ejecución de las autovías todavía pendientes en Castilla y León.",
+      "pagina": 97,
+      "tags": [
+        "#Movilidad",
+        "#Infraestructuras",
+        "#Transporte"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar autovías pendientes y supresión de peajes en los corredores de Castilla y León?"
+    },
+    {
+      "id": 101,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Carreteras y seguridad vial",
+      "titulo_corto": "Mejora integral de red viaria y siniestralidad por fauna",
+      "resumen": "Modernizar corredores transfronterizos, repara tramos degradados y aplica medidas específicas ante accidentes causados por fauna.",
+      "cita_literal": "Se estima que el 57% de la red viaria de Castilla y León necesita actuaciones de mejora.",
+      "pagina": 98,
+      "tags": [
+        "#Movilidad",
+        "#Infraestructuras",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar inversión en carreteras deterioradas y medidas contra accidentes por fauna salvaje?"
+    },
+    {
+      "id": 102,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Ferrocarril",
+      "titulo_corto": "Recuperación FEVE y definición del Corredor Atlántico",
+      "resumen": "Reclamar retorno de FEVE al centro de León y exige calendario claro para desarrollar el Corredor Atlántico.",
+      "cita_literal": "Exigiremos la vuelta de los trenes FEVE al centro de la ciudad de León.",
+      "pagina": 99,
+      "tags": [
+        "#Movilidad",
+        "#Tren",
+        "#Infraestructuras"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con exigir la vuelta de FEVE al centro de León y acelerar el Corredor Atlántico?"
+    },
+    {
+      "id": 103,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Infraestructura aeroportuaria",
+      "titulo_corto": "Competitividad de aeropuertos y carga aérea",
+      "resumen": "Reforzar inversión en aeropuertos regionales y activa terminal de carga aérea de León para captar actividad logística.",
+      "cita_literal": "Exigiremos las inversiones necesarias para lograr aumentar la competitividad de los aeropuertos de Burgos, León, Salamanca y Valladolid.",
+      "pagina": 99,
+      "tags": [
+        "#Empleo",
+        "#Movilidad",
+        "#Infraestructuras"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con invertir en aeropuertos regionales y desarrollar carga aérea para impulsar empleo logístico?"
+    },
+    {
+      "id": 104,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Transporte público e internet rural",
+      "titulo_corto": "Frecuencias a demanda y fin de pueblos sin Internet",
+      "resumen": "Aumentar frecuencias de transporte a demanda, moderniza estaciones de autobús y cierra la brecha digital en comarcas interiores.",
+      "cita_literal": "No debe haber ni un solo pueblo aislado y sin Internet.",
+      "pagina": 100,
+      "tags": [
+        "#MedioRural",
+        "#Movilidad",
+        "#TransporteADemanda",
+        "#Digitalizacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar transporte a demanda e Internet de calidad para evitar aislamiento de pueblos pequeños?"
+    },
+    {
+      "id": 105,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Red ferroviaria",
+      "titulo_corto": "Mantenimiento de paradas y reapertura de líneas",
+      "resumen": "Mantener paradas actuales, mejora mantenimiento ferroviario y reclama reapertura de corredores clausurados y soterramientos urbanos.",
+      "cita_literal": "Continuaremos demandando al Gobierno de España que garantice el mantenimiento de las paradas existentes en las líneas ferroviarias que atraviesan Castilla y León.",
+      "pagina": 101,
+      "tags": [
+        "#Movilidad",
+        "#Tren",
+        "#Infraestructuras"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con exigir reapertura y refuerzo de líneas ferroviarias históricas en Castilla y León?"
+    },
+    {
+      "id": 106,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Movilidad por carretera",
+      "titulo_corto": "Apoyo al transporte de mercancías y rechazo a ZBE",
+      "resumen": "Proteger al transporte por carretera y rechaza zonas de bajas emisiones por su impacto en trabajadores, pymes y familias.",
+      "cita_literal": "Seguiremos comprometidos con el sector del transporte de mercancías por carretera.",
+      "pagina": 102,
+      "tags": [
+        "#Empleo",
+        "#Movilidad",
+        "#Transporte"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con limitar o revertir Zonas de Bajas Emisiones en una comunidad extensa como Castilla y León?"
+    },
+    {
+      "id": 107,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Agua",
+      "titulo_corto": "Plan nacional del agua y garantía de suministro",
+      "resumen": "Defender asegurar agua de calidad para consumo y actividad agraria y reclama un Plan Nacional del Agua con ejecución real.",
+      "cita_literal": "Protegeremos a las familias, agricultores y ganaderos castellanos y leoneses impulsando cuantas actuaciones sean necesarias para garantizar el suministro y acceso a agua de calidad.",
+      "pagina": 102,
+      "tags": [
+        "#SectorPrimario",
+        "#MedioAmbiente",
+        "#Agua"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar un Plan Nacional del Agua para garantizar suministro en Castilla y León?"
+    },
+    {
+      "id": 108,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Política familiar",
+      "titulo_corto": "Familia como eje de todas las políticas",
+      "resumen": "Situar el impacto familiar como criterio transversal de gobierno y refuerza matrimonio, maternidad, paternidad y natalidad.",
+      "cita_literal": "Pondremos a las familias castellanas y leonesas en el centro de todas las políticas públicas.",
+      "pagina": 109,
+      "tags": [
+        "#RetoDemografico",
+        "#Familia",
+        "#Natalidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con que toda norma autonómica incorpore un análisis obligatorio de impacto familiar?"
+    },
+    {
+      "id": 109,
+      "categoria": "Otros",
+      "subcategoria": "Vida y bioética",
+      "titulo_corto": "Defensa de la vida y objeción sanitaria",
+      "resumen": "Defender la vida desde la concepción, refuerza objeción de conciencia sanitaria y rechaza los vientres de alquiler.",
+      "cita_literal": "Defendemos el derecho a la vida desde la concepción hasta la muerte natural.",
+      "pagina": 109,
+      "tags": [
+        "#Derechos",
+        "#Familia",
+        "#Bioetica"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforzar por ley la objeción de conciencia sanitaria y un enfoque institucional de defensa de la vida?"
+    },
+    {
+      "id": 110,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Natalidad",
+      "titulo_corto": "Incentivos a natalidad y automatización de ayudas",
+      "resumen": "Aumentar ayudas por nacimiento, automatiza beneficios por cruce de datos y eleva presupuesto de políticas familiares.",
+      "cita_literal": "Fomentaremos la natalidad con incentivos fiscales y más ayudas progresivas a la maternidad.",
+      "pagina": 110,
+      "tags": [
+        "#RetoDemografico",
+        "#Fiscalidad",
+        "#Natalidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar ayudas por nacimiento y automatizar su concesión mediante datos administrativos?"
+    },
+    {
+      "id": 111,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Familias numerosas",
+      "titulo_corto": "Refuerzo de bono nacimiento y descuentos familiares",
+      "resumen": "Mantener ayudas a familias numerosas hasta emancipación, refuerza bono nacimiento y extiende beneficios a cuerpos de servicio público.",
+      "cita_literal": "Mantendremos las ayudas y descuentos a las familias numerosas hasta la emancipación del miembro menor de la unidad familiar.",
+      "pagina": 111,
+      "tags": [
+        "#RetoDemografico",
+        "#Familia",
+        "#Natalidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con mantener beneficios de familia numerosa hasta la emancipación del último hijo?"
+    },
+    {
+      "id": 112,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Fiscalidad familiar",
+      "titulo_corto": "Deducciones IRPF por hijo y plus rural",
+      "resumen": "Elevar deducciones autonómicas por hijos, añade incremento en medio rural y rebaja umbral de familia numerosa especial.",
+      "cita_literal": "Aumentaremos la deducción autonómica en el IRPF, eliminando el límite de renta, con importes más elevados por cada hijo.",
+      "pagina": 112,
+      "tags": [
+        "#MedioRural",
+        "#Empleo",
+        "#Fiscalidad",
+        "#Familia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar deducciones fiscales por hijos y aplicar un extra para familias del medio rural?"
+    },
+    {
+      "id": 113,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Servicios locales",
+      "titulo_corto": "Servicios básicos garantizados en todos los municipios",
+      "resumen": "Asegurar consultorios y servicios esenciales en municipios pequeños para facilitar arraigo familiar fuera de capitales.",
+      "cita_literal": "Garantizaremos la prestación efectiva de servicios básicos esenciales en todos los municipios de Castilla y León.",
+      "pagina": 112,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#ServiciosPublicos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con garantizar por ley servicios básicos permanentes en todos los municipios, incluidos los más pequeños?"
+    },
+    {
+      "id": 114,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Reconocimiento familiar",
+      "titulo_corto": "Bonificaciones locales y reconocimiento de ex familias numerosas",
+      "resumen": "Negociar rebajas de IBI y tasas municipales para familias con hijos y reconoce título a antiguos hogares numerosos.",
+      "cita_literal": "Exigiremos la aplicación de la bonificación máxima del IBI a las familias numerosas.",
+      "pagina": 113,
+      "tags": [
+        "#RetoDemografico",
+        "#Fiscalidad",
+        "#Familia"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar bonificaciones municipales para familias con hijos, incluyendo IBI y tasas básicas?"
+    },
+    {
+      "id": 115,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Conciliación",
+      "titulo_corto": "Más presupuesto y servicios de conciliación",
+      "resumen": "Ampliar presupuesto de conciliación, mejora servicios complementarios escolares e impulsa medidas para equilibrar crianza y empleo.",
+      "cita_literal": "Aumentaremos el presupuesto en conciliación familiar, mejorando los servicios de conciliación familiar y laboral.",
+      "pagina": 114,
+      "tags": [
+        "#RetoDemografico",
+        "#Conciliacion",
+        "#Familia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aumentar el presupuesto autonómico de conciliación familiar y laboral?"
+    },
+    {
+      "id": 116,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Brecha maternal",
+      "titulo_corto": "Reincorporación laboral de madres y capacitación específica",
+      "resumen": "Ofrecer itinerarios formativos para madres que interrumpieron su carrera y refuerza su retorno al empleo con apoyo público.",
+      "cita_literal": "Combatiremos la brecha maternal facilitando la formación y reincorporación al trabajo de las madres que han interrumpido sus carreras por la maternidad.",
+      "pagina": 114,
+      "tags": [
+        "#Formacion",
+        "#Empleo",
+        "#Conciliacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con crear programas específicos de capacitación y retorno laboral para madres tras periodos de cuidados?"
+    },
+    {
+      "id": 117,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Incentivos empresariales",
+      "titulo_corto": "Incentivos a empresas con políticas familiares",
+      "resumen": "Premiar a empresas que faciliten conciliación y estabilicen empleo de personas con responsabilidades familiares.",
+      "cita_literal": "Crearemos incentivos para las empresas que favorezcan la conciliación familiar y laboral.",
+      "pagina": 114,
+      "tags": [
+        "#Empleo",
+        "#Pymes",
+        "#Conciliacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con conceder incentivos fiscales a empresas que acrediten medidas reales de conciliación?"
+    },
+    {
+      "id": 118,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Empresa rural",
+      "titulo_corto": "Incentivos de empleo y negocio en municipios pequeños",
+      "resumen": "Activar rebajas de cuotas, cesión de locales y ayudas a familias con hijos pequeños que fijen residencia en pueblos.",
+      "cita_literal": "Aprobaremos incentivos económicos y fiscales para la instalación de empresas, industrias y centros de trabajo en zonas rurales.",
+      "pagina": 116,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#Empleo",
+        "#Autonomos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con concentrar incentivos empresariales en municipios rurales para fijar población?"
+    },
+    {
+      "id": 119,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Vertebración territorial",
+      "titulo_corto": "Autonomía local, transporte a demanda y conectividad digital",
+      "resumen": "Reforzar capacidad municipal, extiende transporte a demanda y acelera conectividad digital para trabajar y estudiar desde pueblos.",
+      "cita_literal": "Impulsaremos la creación de redes de transporte público a demanda para facilitar el traslado de los vecinos a los centros de atención.",
+      "pagina": 118,
+      "tags": [
+        "#MedioRural",
+        "#Movilidad",
+        "#TransporteADemanda",
+        "#Digitalizacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar transporte a demanda y conectividad digital como eje contra despoblación?"
+    },
+    {
+      "id": 120,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Comercio de proximidad",
+      "titulo_corto": "Protección del pequeño comercio y compra nacional",
+      "resumen": "Reforzar al comercio de proximidad con incentivos y bonificaciones ligadas a compra de producto nacional.",
+      "cita_literal": "Protegeremos el pequeño comercio de proximidad, elemento de cohesión clave en nuestros pueblos y ciudades.",
+      "pagina": 118,
+      "tags": [
+        "#Empleo",
+        "#Autonomos",
+        "#Comercio"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con incentivar fiscalmente a empresas y comercios que prioricen proveedores nacionales?"
+    },
+    {
+      "id": 121,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Soledad y salud mental",
+      "titulo_corto": "Plan contra soledad no deseada y depresión",
+      "resumen": "Combatir soledad no deseada de mayores, refuerza prevención en salud mental y despliega campañas de sensibilización comunitaria.",
+      "cita_literal": "Combatiremos la soledad no deseada, especialmente la de nuestros mayores.",
+      "pagina": 119,
+      "tags": [
+        "#SaludMental",
+        "#ServiciosSociales",
+        "#Mayores"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con implantar un plan autonómico específico contra soledad no deseada de personas mayores?"
+    },
+    {
+      "id": 122,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Cuidados en el hogar",
+      "titulo_corto": "Apoyo económico y social a cuidadores familiares",
+      "resumen": "Aumentar ayudas a contratación de cuidadores y da respaldo económico e institucional a familias cuidadoras.",
+      "cita_literal": "Reforzaremos las ayudas a la contratación de cuidadores a domicilio, incrementando la cuantía máxima y simplificando el proceso.",
+      "pagina": 119,
+      "tags": [
+        "#ServiciosSociales",
+        "#Cuidados",
+        "#Dependencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aumentar ayudas directas para cuidados familiares en domicilio?"
+    },
+    {
+      "id": 123,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Adicciones digitales",
+      "titulo_corto": "Prevención de adicción a pantallas en menores",
+      "resumen": "Coordinar protocolos interadministrativos de prevención y ofrece seguimiento continuado a menores y familias afectadas.",
+      "cita_literal": "Elaboraremos, en coordinación con otras administraciones, un protocolo de prevención de las adicciones de comportamiento, entre las que se incluirá la adicción a las pantallas.",
+      "pagina": 120,
+      "tags": [
+        "#SaludMental",
+        "#Educacion",
+        "#Prevencion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con crear un protocolo autonómico específico para prevenir adicciones digitales en menores?"
+    },
+    {
+      "id": 124,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación infantil",
+      "titulo_corto": "Acceso gratuito real a educación de 0 a 3 años",
+      "resumen": "Garantizar acceso gratuito efectivo a etapa 0-3 en toda la comunidad, también en zonas con menor oferta.",
+      "cita_literal": "Garantizaremos la accesibilidad a la educación gratuita de 0 a 3 años en toda Castilla y León.",
+      "pagina": 120,
+      "tags": [
+        "#Educacion",
+        "#RetoDemografico",
+        "#Conciliacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con garantizar por norma la gratuidad y accesibilidad de la educación infantil 0-3 en todo el territorio?"
+    },
+    {
+      "id": 125,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Igualdad educativa",
+      "titulo_corto": "Educación excelente y libre de adoctrinamiento",
+      "resumen": "Defender un modelo educativo centrado en igualdad de oportunidades y amplía apoyo económico familiar para gastos escolares.",
+      "cita_literal": "Queremos una educación excelente que garantice la igualdad de oportunidades y libre de adoctrinamiento.",
+      "pagina": 121,
+      "tags": [
+        "#Educacion",
+        "#Igualdad",
+        "#Familia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforzar un modelo educativo orientado a igualdad de oportunidades y explícitamente contrario al adoctrinamiento?"
+    },
+    {
+      "id": 126,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Universidad y talento",
+      "titulo_corto": "Alianza con universidades para retener talento joven",
+      "resumen": "Reforzar la cooperación con universidades como vía de captación y permanencia de talento en Castilla y León.",
+      "cita_literal": "Fomentaremos una colaboración estrecha con nuestras universidades como medio de captación y retención del talento en nuestra región.",
+      "pagina": 121,
+      "tags": [
+        "#Educacion",
+        "#Universidad",
+        "#Talento"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con usar la política universitaria como instrumento principal para retener talento joven en Castilla y León?"
+    },
+    {
+      "id": 127,
+      "categoria": "Otros",
+      "subcategoria": "Violencia y seguridad",
+      "titulo_corto": "Seguridad para víctimas sin enfoque de género",
+      "resumen": "Endurecer penas por agresiones sexuales y articula apoyo integral a víctimas desde un enfoque no basado en legislación de género.",
+      "cita_literal": "Promoveremos políticas de seguridad para todas las víctimas de violencia, sin discriminaciones ideológicas ni sectarismo de género.",
+      "pagina": 123,
+      "tags": [
+        "#Derechos",
+        "#ViolenciaGenero",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con sustituir el enfoque legal de género por un modelo general de protección a todas las víctimas de violencia?"
+    },
+    {
+      "id": 128,
+      "categoria": "Otros",
+      "subcategoria": "Marco normativo",
+      "titulo_corto": "Supresión de normativa LGTBI y de género vigente",
+      "resumen": "Eliminar programas y normativa que identifica como ideológicos y blinda deporte femenino frente a categorías mixtas por autodeterminación.",
+      "cita_literal": "Promoveremos la superación de todas las leyes LGTBi y de género.",
+      "pagina": 123,
+      "tags": [
+        "#Derechos",
+        "#Igualdad",
+        "#Deporte"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con derogar normativa autonómica LGTBI y de género y redefinir reglas de deporte femenino?"
+    },
+    {
+      "id": 129,
+      "categoria": "Vivienda",
+      "subcategoria": "Suelo",
+      "titulo_corto": "Liberación de suelo y aumento de densidad urbana",
+      "resumen": "Ampliar suelo edificable no protegido, acelera transformación urbanística y eleva densidades para aumentar oferta residencial.",
+      "cita_literal": "Ampliaremos el suelo disponible poniendo fin al secuestro de suelo por parte de las Administraciones Públicas.",
+      "pagina": 128,
+      "tags": [
+        "#Vivienda",
+        "#ViviendaAsequible",
+        "#Urbanismo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con liberalizar más suelo y permitir mayor densidad para aumentar rápidamente la oferta de vivienda?"
+    },
+    {
+      "id": 130,
+      "categoria": "Vivienda",
+      "subcategoria": "Tramitación urbanística",
+      "titulo_corto": "Digitalización de expedientes y apoyo técnico municipal",
+      "resumen": "Financiar equipos de apoyo y digitalización completa para reducir bloqueos administrativos en licencias y promociones.",
+      "cita_literal": "Financiaremos desde el Gobierno de Castilla y León equipos de apoyo y la digitalización completa de los expedientes.",
+      "pagina": 129,
+      "tags": [
+        "#Vivienda",
+        "#Digitalizacion",
+        "#SinBurocracia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar digitalización integral y apoyo técnico para acelerar licencias de vivienda?"
+    },
+    {
+      "id": 131,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso a propiedad",
+      "titulo_corto": "Deducciones y cuentas vivienda para jóvenes",
+      "resumen": "Reforzar deducciones autonómicas por compra o rehabilitación y recupera instrumentos de ahorro para primera vivienda.",
+      "cita_literal": "Implementaremos y reforzaremos la deducción en el IRPF autonómico por adquisición o rehabilitación de vivienda habitual.",
+      "pagina": 129,
+      "tags": [
+        "#Vivienda",
+        "#Fiscalidad",
+        "#Juventud"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar deducciones y herramientas fiscales para facilitar a jóvenes la compra de vivienda?"
+    },
+    {
+      "id": 132,
+      "categoria": "Vivienda",
+      "subcategoria": "VPO",
+      "titulo_corto": "Aumento masivo de vivienda protegida",
+      "resumen": "Multiplicar construcción de VPO mediante colaboración público-privada, incentivos al cooperativismo y cesión de suelo.",
+      "cita_literal": "Inundaremos Castilla y León de bloques de vivienda protegida para las familias españolas, mediante diversas fórmulas de colaboración público-privada.",
+      "pagina": 131,
+      "tags": [
+        "#Vivienda",
+        "#ViviendaPublica",
+        "#ColaboracionPublicoPrivada"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar de forma intensa la VPO mediante colaboración público-privada y cooperativas?"
+    },
+    {
+      "id": 133,
+      "categoria": "Vivienda",
+      "subcategoria": "Rehabilitación",
+      "titulo_corto": "Rehabilitación útil, accesibilidad y eficiencia energética",
+      "resumen": "Dirigir rehabilitación a vivienda habitable real, mejora parque social y financia accesibilidad y eficiencia energética de edificios.",
+      "cita_literal": "Reorientaremos las políticas de rehabilitación para que tengan como objetivo incrementar el número de viviendas habitables reales.",
+      "pagina": 131,
+      "tags": [
+        "#Vivienda",
+        "#Rehabilitacion",
+        "#EficienciaEnergetica"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar rehabilitación de vivienda existente frente a actuaciones urbanas no habitacionales?"
+    },
+    {
+      "id": 134,
+      "categoria": "Vivienda",
+      "subcategoria": "Fiscalidad inmobiliaria",
+      "titulo_corto": "Bonificaciones en compra a plazos y transmisiones",
+      "resumen": "Impulsar compra a plazos con opción a compra y reduce impuestos sobre transmisiones y actos jurídicos para dinamizar mercado.",
+      "cita_literal": "Promocionaremos la compra a plazos con condición resolutoria, y la bonificación del alquiler con opción a compra.",
+      "pagina": 132,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler",
+        "#Fiscalidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con rebajar impuestos de compra y transmisión para facilitar acceso a vivienda?"
+    },
+    {
+      "id": 135,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler",
+      "titulo_corto": "Alquiler asequible con seguridad jurídica",
+      "resumen": "Equilibrar garantías para propietarios e inquilinos con incentivos al alquiler de larga duración y simplificación urbanística.",
+      "cita_literal": "Promocionaremos un modelo de alquileres que armonice los intereses de arrendadores y arrendatarios.",
+      "pagina": 133,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler",
+        "#ViviendaAsequible"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar alquiler de larga duración con más seguridad jurídica para propietarios?"
+    },
+    {
+      "id": 136,
+      "categoria": "Vivienda",
+      "subcategoria": "Transparencia",
+      "titulo_corto": "Inventario real de vivienda disponible",
+      "resumen": "Exigir auditoría pública de vivienda disponible para evaluar si planes anunciados generan oferta efectiva.",
+      "cita_literal": "Los castellanos y leoneses desconocen cuántas viviendas hay realmente disponibles.",
+      "pagina": 133,
+      "tags": [
+        "#Vivienda",
+        "#Transparencia",
+        "#Gobernanza"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con publicar un inventario público actualizado de vivienda realmente disponible?"
+    },
+    {
+      "id": 137,
+      "categoria": "Vivienda",
+      "subcategoria": "Okupación",
+      "titulo_corto": "Tolerancia cero frente a okupación ilegal",
+      "resumen": "Endurecer respuesta policial y judicial ante okupación, ofrece asistencia gratuita a afectados y limita acceso a ayudas a infractores.",
+      "cita_literal": "Defenderemos la tolerancia cero con la okupación.",
+      "pagina": 134,
+      "tags": [
+        "#Vivienda",
+        "#Transparencia",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con endurecer protocolos de desalojo y excluir de ayudas públicas a ocupantes ilegales reincidentes?"
+    },
+    {
+      "id": 138,
+      "categoria": "Vivienda",
+      "subcategoria": "Vivienda turística",
+      "titulo_corto": "Regulación de pisos turísticos en cascos históricos",
+      "resumen": "Ordenar vivienda turística para preservar convivencia vecinal en centros urbanos con presión de alquiler temporal.",
+      "cita_literal": "La saturación y masificación de los cascos históricos de pisos turísticos ha dinamitado la armonía entre residentes y turistas.",
+      "pagina": 135,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler",
+        "#Turismo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con endurecer la regulación de vivienda turística en cascos históricos saturados?"
+    },
+    {
+      "id": 139,
+      "categoria": "Vivienda",
+      "subcategoria": "Mercado y extranjería",
+      "titulo_corto": "Control de alquiler irregular y compra masiva extranjera",
+      "resumen": "Perseguir alquiler a inmigración ilegal y plantea fiscalidad específica para frenar compra masiva de vivienda por capital extranjero.",
+      "cita_literal": "Prohibiremos el arrendamiento a inmigrantes ilegales y perseguiremos su contratación irregular.",
+      "pagina": 135,
+      "tags": [
+        "#Vivienda",
+        "#Fiscalidad",
+        "#Inmigracion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con imponer restricciones adicionales al alquiler irregular y a la compra masiva de vivienda por capital extranjero?"
+    },
+    {
+      "id": 140,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Revitalización urbana y comarcal",
+      "titulo_corto": "Rehabilitación de barrios y cabeceras de comarca",
+      "resumen": "Revitalizar ciudades medias y pueblos con ayudas de rehabilitación estructural, cofinanciación vecinal y plan contra degradación urbana.",
+      "cita_literal": "Reindustrializaremos y revitalizaremos la vida en cabezas de comarca, pequeñas y medianas ciudades y mundo rural.",
+      "pagina": 136,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#Rehabilitacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con financiar un plan integral de rehabilitación y revitalización para barrios degradados y cabeceras de comarca?"
+    },
+    {
+      "id": 141,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Currículo y neutralidad",
+      "titulo_corto": "Neutralidad ideológica y control parental en aulas",
+      "resumen": "Imponer neutralidad en centros, limita actividades externas sin consentimiento familiar y elimina contenidos ideológicos del currículo.",
+      "cita_literal": "Garantizaremos la neutralidad en las aulas y el respeto a las convicciones de las familias.",
+      "pagina": 142,
+      "tags": [
+        "#Educacion",
+        "#Igualdad",
+        "#Familia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con exigir autorización familiar previa para actividades externas en centros educativos?"
+    },
+    {
+      "id": 142,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Rendimiento académico",
+      "titulo_corto": "Humanidades, esfuerzo y excelencia docente",
+      "resumen": "Reforzar historia y humanidades, recupera cultura del esfuerzo y crea incentivos públicos al mérito académico y docente.",
+      "cita_literal": "Recuperaremos la cultura del esfuerzo mediante evaluaciones justas que valoren el trabajo, la constancia y la superación personal.",
+      "pagina": 143,
+      "tags": [
+        "#Educacion",
+        "#Formacion",
+        "#Merito"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforzar evaluaciones exigentes y premios al mérito académico y docente?"
+    },
+    {
+      "id": 143,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Gobernanza educativa",
+      "titulo_corto": "Sistema educativo homogéneo y EBAU común",
+      "resumen": "Defender convergencia estatal de sistemas educativos, prueba de acceso común y una inspección centrada en resultados.",
+      "cita_literal": "Defenderemos una prueba de acceso a la universidad común en toda España, con criterios homogéneos y exigentes.",
+      "pagina": 144,
+      "tags": [
+        "#Educacion",
+        "#Universidad",
+        "#Gobernanza"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con implantar una prueba de acceso universitaria común para toda España?"
+    },
+    {
+      "id": 144,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Convivencia escolar",
+      "titulo_corto": "Plan integral contra acoso y ciberacoso",
+      "resumen": "Activar protocolos coordinados contra acoso, forma al profesorado y blinda por ley su protección ante agresiones.",
+      "cita_literal": "Desarrollaremos un Plan regional contra el acoso escolar, coordinado con familias, servicios sociales y sanitarios.",
+      "pagina": 144,
+      "tags": [
+        "#Educacion",
+        "#Prevencion",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con implantar un plan autonómico obligatorio contra acoso y ciberacoso en todos los centros?"
+    },
+    {
+      "id": 145,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Profesores",
+      "titulo_corto": "Estabilidad docente y menos burocracia educativa",
+      "resumen": "Reducir carga administrativa del profesorado, consolida carrera profesional y refuerza captación docente en zonas rurales.",
+      "cita_literal": "Reduciremos de forma drástica la carga burocrática que asfixia al profesorado.",
+      "pagina": 146,
+      "tags": [
+        "#Educacion",
+        "#MedioRural",
+        "#CondicionesLaborales"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con recortar trámites docentes y usar incentivos específicos para atraer profesorado al medio rural?"
+    },
+    {
+      "id": 146,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Escuela rural",
+      "titulo_corto": "Blindaje de la red educativa rural",
+      "resumen": "Evitar cierres automáticos de centros rurales y asegura continuidad de enseñanzas postobligatorias en todas las provincias.",
+      "cita_literal": "Blindaremos la escuela rural como infraestructura estratégica, evitando cierres automáticos y evaluando caso por caso.",
+      "pagina": 147,
+      "tags": [
+        "#Educacion",
+        "#RetoDemografico",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con mantener escuelas rurales abiertas aunque la matrícula sea baja, evaluando cada caso?"
+    },
+    {
+      "id": 147,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Formación Profesional",
+      "titulo_corto": "FP dual orientada a empleo real",
+      "resumen": "Conectar FP dual con pymes y cooperativas, publica inserción laboral por centros y abre docencia a profesionales en activo.",
+      "cita_literal": "Reforzaremos la FP Dual con pymes, autónomos y cooperativas, reduciendo carga administrativa y garantizando calidad del aprendizaje en la empresa.",
+      "pagina": 149,
+      "tags": [
+        "#Educacion",
+        "#FormacionProfesional",
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con rediseñar la FP dual según datos de inserción laboral y demanda empresarial?"
+    },
+    {
+      "id": 148,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Acceso educativo",
+      "titulo_corto": "Gratuidad 0-3, becas y libertad de elección",
+      "resumen": "Garantizar gratuidad en 0-3, ajusta becas por mérito y necesidad, amplía comedor gratuito y protege educación especial y diferenciada.",
+      "cita_literal": "Garantizaremos la gratuidad de la educación infantil de 0 a 3 años en toda Castilla y León.",
+      "pagina": 150,
+      "tags": [
+        "#Educacion",
+        "#Becas",
+        "#Conciliacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con combinar gratuidad universal 0-3, becas por mérito-necesidad y libertad de elección educativa?"
+    },
+    {
+      "id": 149,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Evaluación del sistema",
+      "titulo_corto": "Indicadores públicos y auditorías educativas periódicas",
+      "resumen": "Publicar indicadores anuales por provincias, impone auditorías internas y homogeneiza criterios de inspección educativa.",
+      "cita_literal": "Publicaremos anualmente indicadores educativos por provincia y etapa que permitan evaluar la evolución del sistema.",
+      "pagina": 151,
+      "tags": [
+        "#Educacion",
+        "#Transparencia",
+        "#Gobernanza"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con exigir auditorías educativas periódicas y publicación anual de indicadores por provincia?"
+    },
+    {
+      "id": 150,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Infraestructura escolar",
+      "titulo_corto": "Digitalización útil y plan de mantenimiento trianual",
+      "resumen": "Simplificar plataformas digitales educativas y ejecuta mantenimiento preventivo trianual en centros para evitar deterioro estructural.",
+      "cita_literal": "Pondremos en marcha un Plan trianual de mantenimiento preventivo de los centros educativos.",
+      "pagina": 152,
+      "tags": [
+        "#Educacion",
+        "#Infraestructuras",
+        "#Digitalizacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar mantenimiento preventivo e infraestructuras sobre expansión de herramientas digitales en educación?"
+    },
+    {
+      "id": 151,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Emprendimiento juvenil rural",
+      "titulo_corto": "Apoyo fiscal y formativo a jóvenes emprendedores rurales",
+      "resumen": "Reforzar emprendimiento joven en pueblos mediante simplificación administrativa, alivio fiscal y conexión con formación profesional.",
+      "cita_literal": "Apoyaremos a los emprendedores jóvenes del ámbito rural mediante la simplificación administrativa, la reducción de cargas fiscales y la conexión directa con la oferta formativa.",
+      "pagina": 153,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#Empleo",
+        "#Juventud"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con concentrar incentivos al emprendimiento juvenil en municipios rurales en riesgo de despoblación?"
+    },
+    {
+      "id": 152,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Reforma fiscal",
+      "titulo_corto": "Rebaja fiscal general e IRPF simplificado",
+      "resumen": "Reducir tasas e impuestos autonómicos y aplicar una reforma profunda del IRPF en línea con su propuesta nacional.",
+      "cita_literal": "VOX se compromete a rebajar drásticamente las tasas e impuestos. Llevaremos a cabo la mayor rebaja fiscal de la historia.",
+      "pagina": 164,
+      "tags": [
+        "#Empleo",
+        "#Fiscalidad",
+        "#SinBurocracia"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con acometer una rebaja fiscal autonómica general y simplificar el IRPF?"
+    },
+    {
+      "id": 153,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Fiscalidad familiar y rural",
+      "titulo_corto": "Ampliar bonificaciones para residencia efectiva y vulnerables",
+      "resumen": "Ampliar bonificaciones autonómicas para residentes activos, reforzar deducciones a enfermos crónicos y aliviar fiscalidad familiar.",
+      "cita_literal": "Ampliaremos las bonificaciones fiscales en todos los impuestos autonómicos con capacidad normativa para quienes residan de forma efectiva y desarrollen una actividad económica en nuestra región.",
+      "pagina": 165,
+      "tags": [
+        "#RetoDemografico",
+        "#Empleo",
+        "#Fiscalidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar bonificaciones fiscales autonómicas ligadas a residencia efectiva y actividad económica en Castilla y León?"
+    },
+    {
+      "id": 154,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Impuestos patrimoniales",
+      "titulo_corto": "Bonificar patrimonio y reducir AJD e ITP",
+      "resumen": "Bonificar al 100% patrimonio, rebajar AJD e introducir bonificaciones en transmisiones para dinamizar actividad inmobiliaria.",
+      "cita_literal": "Exigiremos una bonificación del 100% del Impuesto sobre el Patrimonio en Castilla y León. Reduciremos el tipo general del 1,5% al 0,5% del Impuesto de Actos Jurídicos Documentados.",
+      "pagina": 166,
+      "tags": [
+        "#Vivienda",
+        "#Empleo",
+        "#Fiscalidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con bonificar al 100% patrimonio y reducir impuestos sobre actos jurídicos y transmisiones?"
+    },
+    {
+      "id": 155,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Fiscalidad agraria",
+      "titulo_corto": "Rebajar tasas autonómicas al campo y la caza",
+      "resumen": "Reducir tributos propios y tasas veterinarias, agrarias y cinegéticas para aliviar costes del sector primario.",
+      "cita_literal": "Promocionaremos el sector primario y la actividad económica propia de las zonas rurales mediante la rebaja de impuestos y tasas autonómicas.",
+      "pagina": 166,
+      "tags": [
+        "#Fiscalidad",
+        "#SectorPrimario",
+        "#Agricultura",
+        "#Ganaderia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con una rebaja específica de tasas autonómicas para agricultura, ganadería y actividad cinegética?"
+    },
+    {
+      "id": 156,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Autónomos y empleo",
+      "titulo_corto": "Apoyar autónomos y empleo juvenil con incentivos",
+      "resumen": "Aplicar compensaciones y deducciones a autónomos, frenar falsos autónomos y reforzar contratación juvenil y compra de producto nacional.",
+      "cita_literal": "Apoyaremos a los trabajadores autónomos mediante compensaciones. Tomaremos las medidas necesarias para acabar con la figura del falso autónomo.",
+      "pagina": 167,
+      "tags": [
+        "#Empleo",
+        "#Autonomos",
+        "#Comercio",
+        "#Juventud"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar incentivos a autónomos y contratación juvenil como eje de la política laboral autonómica?"
+    },
+    {
+      "id": 157,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Comercio local",
+      "titulo_corto": "Incrementar ayudas a pequeño comercio y hostelería rural",
+      "resumen": "Aumentar ayudas para mercados, artesanía, tiendas básicas y bares en municipios pequeños para sostener servicios de proximidad.",
+      "cita_literal": "Ampliaremos el presupuesto en la campaña de promoción del pequeño comercio.",
+      "pagina": 168,
+      "tags": [
+        "#MedioRural",
+        "#Empleo",
+        "#Autonomos",
+        "#Comercio"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aumentar ayudas directas a comercio local y hostelería en municipios de baja población?"
+    },
+    {
+      "id": 158,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empresa y competitividad",
+      "titulo_corto": "Reforzar incentivos para retener empresas y empleo",
+      "resumen": "Reforzar rebajas fiscales y políticas de competitividad para frenar salida de empresas y consolidar empleo regional.",
+      "cita_literal": "Estableceremos rebajas fiscales y estímulos para favorecer la creación y mantenimiento de empleo en Castilla y León.",
+      "pagina": 168,
+      "tags": [
+        "#Empleo",
+        "#Fiscalidad",
+        "#Pymes"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar incentivos fiscales para evitar la deslocalización empresarial en Castilla y León?"
+    },
+    {
+      "id": 159,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Simplificación administrativa",
+      "titulo_corto": "Simplificar creación de empresas con silencio positivo",
+      "resumen": "Eliminar trabas normativas, aplicar silencio administrativo positivo y usar inteligencia artificial para agilizar trámites.",
+      "cita_literal": "Eliminaremos todas las trabas burocráticas para la creación de empresas en Castilla y León. El silencio administrativo positivo pasará a ser la norma.",
+      "pagina": 169,
+      "tags": [
+        "#Empleo",
+        "#Digitalizacion",
+        "#SinBurocracia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con implantar el silencio administrativo positivo como regla general en relaciones con la Junta?"
+    },
+    {
+      "id": 160,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Control presupuestario",
+      "titulo_corto": "Fortalecer intervención y límites a modificaciones",
+      "resumen": "Fortalecer fiscalización interna, ampliar control parlamentario y restringir créditos ampliables para contener desvíos presupuestarios.",
+      "cita_literal": "Reforzaremos la plantilla de la Intervención General y de las intervenciones delegadas para mejorar la fiscalización previa y el control permanente.",
+      "pagina": 170,
+      "tags": [
+        "#Transparencia",
+        "#Antifraude",
+        "#Gobernanza"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con limitar de forma estricta modificaciones presupuestarias y créditos ampliables en la Junta?"
+    },
+    {
+      "id": 161,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Subvenciones",
+      "titulo_corto": "Suprimir subvenciones ideológicas y cooperación autonómica",
+      "resumen": "Eliminar subvenciones a partidos, sindicatos y entidades ideológicas, retirar cooperación al desarrollo autonómica y revisar partidas ligadas a inmigración masiva.",
+      "cita_literal": "Acabaremos con las subvenciones a los sindicatos, partidos políticos, patronal y chiringuitos ideológicos.",
+      "pagina": 170,
+      "tags": [
+        "#Transparencia",
+        "#Gobernanza",
+        "#Inmigracion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con eliminar subvenciones públicas a partidos, sindicatos y entidades ideológicas desde el presupuesto autonómico?"
+    },
+    {
+      "id": 162,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Planificación plurianual",
+      "titulo_corto": "Memoria plurianual obligatoria de infraestructuras",
+      "resumen": "Incorporar memoria plurianual de infraestructuras en presupuestos para planificar carreteras y actuaciones con horizonte estable.",
+      "cita_literal": "En los proyectos de ley de presupuestos, incorporaremos obligatoriamente una memoria plurianual de infraestructuras.",
+      "pagina": 171,
+      "tags": [
+        "#Movilidad",
+        "#Infraestructuras",
+        "#Transparencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con exigir una memoria plurianual de infraestructuras en cada ley de presupuestos autonómicos?"
+    }
+  ]
+}
