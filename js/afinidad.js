@@ -13,30 +13,20 @@ const LIKERT_OPTIONS = [
     { value: 2, label: 'Muy de acuerdo', color: 'bg-green-100 border-green-300 text-green-800 hover:bg-green-200' }
 ];
 
-const CONTEXT_TEXTS = {
-    'SAN_1': { tema: 'Sanidad - Atención Primaria', contexto: 'La Junta de Castilla y León destina actualmente alrededor del 14% del presupuesto sanitario a Atención Primaria. Esta pregunta propone elevarlo al 25% por ley.' },
-    'SAN_2': { tema: 'Sanidad - Gestión Pública', contexto: 'Actualmente muchos servicios como ambulancias o limpieza hospitalaria están externalizados a empresas privadas. Esta pregunta propone que vuelvan a gestión 100% pública.' },
-    'EDU_1': { tema: 'Educación - EBAU Única', contexto: 'Cada comunidad autónoma tiene su propia Selectividad. Esta pregunta propone una prueba única para toda España.' },
-    'EDU_2': { tema: 'Educación - Escuelas Rurales', contexto: 'Muchas escuelas rurales закрываются cuando bajan los alumnos. Esta pregunta propone mantenerlas abiertas con al menos 3 alumnos.' },
-    'SOC_1': { tema: 'Servicios Sociales - Residencias', contexto: 'Algunas residencias de mayores son gestionadas por empresas privadas con ánimo de lucro usando dinero público. Esta pregunta propone prohibirlo.' },
-    'SOC_2': { tema: 'Servicios Sociales - Pensiones', contexto: 'Castilla y León tiene muchas pensiones bajas. Esta pregunta propone un complemento económico de la Junta para quienes cobren menos de 730€.' },
-    'RET_1': { tema: 'Reto Demográfico - Garantía Rural', contexto: 'Muchas leyes perjudican a los pueblos sin pretenderlo. Esta pregunta propone evaluar siempre su impacto económico en el medio rural.' },
-    'RET_2': { tema: 'Reto Demográfico - Sedes', contexto: 'La Junta tiene su sede principal en Valladolid. Esta pregunta propone distribuir sedes oficiales por todas las provincias.' },
-    'VIV_1': { tema: 'Vivienda - Alquileres', contexto: 'El precio del alquiler ha subido mucho en ciudades como Valladolid. Esta pregunta propone limitar por ley los precios en zonas tensionadas.' },
-    'VIV_2': { tema: 'Vivienda - Ayudas', contexto: 'Hay dos modelos: avalar hipotecas de jóvenes o construir vivienda pública de alquiler social. Esta pregunta se decanta por lo primero.' },
-    'FIS_1': { tema: 'Fiscalidad - Sucesiones', contexto: 'El impuesto de sucesiones en Castilla y León ya es bajo. Esta pregunta propone eliminarlo casi totalmente para hermanos, tíos y sobrinos.' },
-    'FIS_2': { tema: 'Fiscalidad - Rural', contexto: 'Los pueblos pierden habitantes. Esta pregunta propone una rebaja extra del 25% en IRPF para quienes vivan y trabajen en zonas rurales.' },
-    'AGR_1': { tema: 'Sector Primario - Precios', contexto: 'Los agricultores cobran a veces por debajo de costes. Esta pregunta propone que la Junta intervenga para garantizar precios mínimos.' },
-    'AGR_2': { tema: 'Sector Primario - PAC', contexto: 'Las ayudas europeas (PAC) van a veces a grandes propietarios que no viven del campo. Esta pregunta propone limitarlas a agricultores profesionales.' },
-    'AMB_1': { tema: 'Medio Ambiente - Macrogranjas', contexto: 'Las macrogranjas de ganado generan contaminación. Esta pregunta propone paralizar todos los proyectos de ganadería industrial y biogás.' },
-    'AMB_2': { tema: 'Medio Ambiente - Incendios', contexto: 'El operativo contra incendios trabaja sobre todo en verano. Esta pregunta propone que sea 100% público y trabaje los 12 meses.' },
-    'MOV_1': { tema: 'Movilidad - Servicios Básicos', contexto: 'Muchos pueblos pierden servicios. Esta pregunta propone que cualquier servicio básico (médico, oficina) esté a menos de 30 minutos.' },
-    'MOV_2': { tema: 'Movilidad - Internet', contexto: 'Muchos pueblos no tienen buena conexión. Esta pregunta propone garantizar 100 Mbps de internet para todos los municipios.' },
-    'TRA_1': { tema: 'Democracia - Puertas Giratorias', contexto: 'Un alto cargo de la Junta podría luego trabajar para la empresa que regulaba. Esta pregunta propone prohibirlo durante 10 años.' },
-    'TRA_2': { tema: 'Democracia - Aforamientos', contexto: 'Los políticos tienen privilegios judiciales. Esta pregunta propone eliminar los aforamientos para que sean juzgados por tribunales normales.' },
-    'CUL_1': { tema: 'Otros - Tauromaquia', contexto: 'Las corridas de toros reciben subvenciones públicas. Esta pregunta propone eliminar todas las ayudas a la tauromaquia.' },
-    'CUL_2': { tema: 'Otros - Memoria Democrática', contexto: 'El franquismo fue una dictadura. Esta pregunta propone que sea obligatorio estudiar la memoria democrática en los institutos.' }
-};
+function getQuestionContextData(question) {
+    if (!question) return { tema: '', contexto: '' };
+    return {
+        tema: question.tema || question.categoria || '',
+        contexto: question.contexto || question.pregunta || ''
+    };
+}
+
+function getQuestionBadgeLabel(question) {
+    const tema = question?.tema;
+    if (!tema) return question?.categoria || 'Tema';
+    const parts = tema.split(' - ');
+    return (parts[1] || parts[0]).trim();
+}
 
 let afinidadState = {
     questions: [],
@@ -158,12 +148,8 @@ export function renderQuestion() {
     document.getElementById('afinidad-category-badge').textContent = q.categoria;
     document.getElementById('afinidad-question-text').textContent = q.pregunta;
 
-    const contextData = CONTEXT_TEXTS[q.id];
-    if (contextData) {
-        document.getElementById('afinidad-context-content').innerHTML = `<strong>${contextData.tema}</strong><br>${contextData.contexto}`;
-    } else {
-        document.getElementById('afinidad-context-content').textContent = q.pregunta;
-    }
+    const contextData = getQuestionContextData(q);
+    document.getElementById('afinidad-context-content').innerHTML = `<strong>${contextData.tema}</strong><br>${contextData.contexto}`;
 
     const optionsContainer = document.getElementById('afinidad-options');
     optionsContainer.innerHTML = LIKERT_OPTIONS.map(opt => {
@@ -459,7 +445,7 @@ export function renderResults(results) {
                                 <div class="flex flex-wrap gap-2">
                                     ${silencios.map(q => `
                                         <span class="bg-white border border-amber-200 text-amber-700 text-[10px] px-2.5 py-1.5 rounded-full shadow-sm font-semibold">
-                                            ${CONTEXT_TEXTS[q.id]?.tema.split(' - ')[1] || q.categoria}
+                                            ${getQuestionBadgeLabel(q)}
                                         </span>`).join('')}
                                 </div>
                             </div>` : ''}

@@ -8,7 +8,10 @@ Te voy a proporcionar varios archivos JSON, cada uno contiene las propuestas de 
 Genera un listado de **22 preguntas** (exactamente 2 por cada una de las 11 categorías de la Junta).
 1. **Lógica de selección:** Ignora las propuestas donde todos los partidos coinciden. Selecciona solo aquellas donde haya una división clara (unos dicen Sí, otros No, otros proponen modelos opuestos).
 2. **Redacción:** Las preguntas deben ser afirmaciones neutrales en tercera persona para ser respondidas en escala Likert (Muy de acuerdo a Muy en desacuerdo).
-3. **Categorías:**
+3. **Campos obligatorios por pregunta:** además de `id`, `categoria` y `pregunta`, añade:
+   - `tema`: etiqueta corta para UI (formato recomendado: `Area - Tema`).
+   - `contexto`: explicación breve y clara para vecinos (1-2 frases), sin citas literales largas.
+4. **Categorías:**
    1. Sanidad Pública | 2. Educación y Futuro | 3. Servicios Sociales | 4. Reto Demográfico | 5. Vivienda | 6. Economía y Fiscalidad | 7. Sector Primario | 8. Medio Ambiente y Energía | 9. Movilidad e Internet | 10. Calidad Democrática | 11. Otros (Igualdad/Cultura).
 
 # TAREA 2: MATRIZ DE SCORING (party-scores.json)
@@ -25,7 +28,13 @@ Entrégame dos bloques de código JSON independientes.
 
 **Bloque 1: `master-questions.json`**
 [
-  { "id": "SAN_1", "categoria": "Sanidad Pública", "pregunta": "¿..." },
+  {
+    "id": "SAN_1",
+    "categoria": "Sanidad Pública",
+    "pregunta": "La Junta debería ...",
+    "tema": "Sanidad - ...",
+    "contexto": "Explicación breve en lenguaje claro."
+  },
   ...
 ]
 
@@ -40,3 +49,4 @@ Entrégame dos bloques de código JSON independientes.
 1. No inventes datos. Si no está escrito en el JSON del partido, el score ES `null`. Esto es vital para el rigor científico del test.
 2. Las preguntas deben generar contraste. Es preferible una pregunta donde un partido tenga `+2` y tres tengan `null`, a una pregunta donde todos tengan `+1`.
 3. Justifica mentalmente cada nota basándote en las "citas_literales" de los archivos proporcionados antes de generar el JSON.
+4. `master-questions.json` es la única fuente de verdad para el panel "Saber más": no dejes `tema/contexto` para que se rellenen luego en JavaScript.
