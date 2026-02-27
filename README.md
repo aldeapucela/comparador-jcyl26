@@ -1,68 +1,118 @@
-# Comparador Electoral: Castilla y León 2026
+# Comparador Electoral: Castilla y Leon 2026
 
-Este proyecto tiene como objetivo transformar los programas electorales (PDF) de los partidos políticos en datos estructurados (JSON) para alimentar un comparador web de afinidad política.
+Aplicacion web estatica para explorar y comparar propuestas de programas electorales de Castilla y Leon 2026, incluyendo un modo de comparacion por tematicas y un cuestionario de afinidad.
 
-## 🚀 Metodología de Procesamiento
+## 1. La Web
 
-Para mantener la integridad de los datos y evitar límites de memoria o tokens en los modelos de lenguaje (LLM), el proceso se divide en pasos claros:
+### 1.1 Que hace
 
-### 1. Extracción de Datos (PDF ➔ JSON)
+La web ofrece tres vistas principales:
 
-Utiliza un LLM avanzado con el prompt ubicado en `docs/EXTRACTOR-PROMPT.md`.
+- Exploracion por partido: navegar medidas por categorias.
+- Comparacion por tematica: ver una misma categoria entre varios partidos.
+- Cuestionario de afinidad: responder preguntas y obtener similitud por partido.
 
-*   **Paso A**: Carga el PDF del partido en la interfaz del LLM.
-*   **Paso B**: Ejecuta el prompt de extracción. El documento se procesa en bloques de **20 páginas** para asegurar que no se omita ninguna medida.
-*   **Paso C**: Guarda cada bloque como un archivo JSON independiente en la carpeta `data/` (ej. `pp_01_20.json`, `pp_21_40.json`, etc.).
+Datos consumidos por la web:
 
-### 2. Unificación de Bloques
+- `data/partidos/*.json`: propuestas por partido.
+- `data/master-questions.json`: preguntas del cuestionario.
+- `data/party-scores.json`: matriz de puntuaciones para afinidad.
 
-Una vez extraídos todos los bloques de un partido, utiliza el script automático para unificarlo en un solo archivo:
+### 1.2 Estructura tecnica (resumen)
+
+- `index.html`: unica pagina de la SPA.
+- `js/main.js`: enrutado hash y estado general.
+- `js/api.js`: carga de datos JSON.
+- `js/ui.js`: renderizado de interfaz.
+- `js/afinidad.js`: logica del cuestionario.
+- `js/analytics.js`: integracion Matomo.
+- `css/style.css`: estilos propios.
+
+### 1.3 Ejecutar en local
+
+Como la app usa `fetch` para cargar JSON, hay que levantar un servidor HTTP local.
 
 ```bash
-python3 scripts/merge_batches.py --dir ./data --out nombre_partido.json --pattern "prefijo_partido_*.json"
+cd /ruta/al/proyecto
+python3 -m http.server 8000
 ```
 
-### 3. Generación del Cuestionario y Matriz de Puntos
+Abrir en navegador: `http://localhost:8000`
 
-Con todos los archivos JSON de los partidos listos en `data/`, utiliza el prompt avanzado en `docs/QUESTIONS-GENERATOR-PROMPT.md`.
+### 1.4 Despliegue
 
-Este prompt analizará todos los programas en conjunto para:
-*   Identificar las **22 preguntas clave** (2 por cada competencia de la Junta) donde los partidos tienen posturas enfrentadas.
-*   Generar el archivo `master-questions.json`.
-*   Generar la matriz `party-scores.json` con las puntuaciones de cada partido (-2 a +2).
+La web es 100% estatica y se puede desplegar en GitHub Pages, Netlify, Cloudflare Pages, Vercel (modo estatico) o cualquier servidor de ficheros.
 
----
+Requisitos minimos:
 
-## 🛠️ Desarrollo de la Web
+- Publicar el contenido del repositorio manteniendo rutas relativas.
+- Servir `index.html` en raiz.
+- Mantener disponible `CNAME` si se usa dominio personalizado (`elecciones26.aldeapucela.org`).
 
-*(Este espacio está reservado para las instrucciones técnicas sobre el frontend y la integración de los datos en la aplicación web del comparador)*
+Checklist recomendado antes de desplegar:
 
-### Versionado automático de CSS/JS en cada commit
+1. Verificar que se cargan `data/partidos/*.json`, `data/master-questions.json` y `data/party-scores.json`.
+2. Probar navegacion por hash (`#/`, `#/comparar`, `#/afinidad`, `#/psoe`, etc.).
+3. Confirmar que Matomo sigue apuntando al `siteId` correcto en `js/analytics.js`.
 
-Para evitar caché de navegador tras despliegues, el repositorio incluye:
+### 1.5 Versionado automatico de CSS/JS en cada commit
 
-* `scripts/bump_asset_version.sh`: actualiza en `index.html` los assets locales con `?v=YYYYMMDDHHMMSS`.
-* `.githooks/pre-commit`: ejecuta ese script antes de cada commit y deja `index.html` staged automáticamente.
+Para evitar cache de navegador tras despliegues, el repositorio incluye:
 
-Activación (una sola vez por clon):
+- `scripts/bump_asset_version.sh`: actualiza en `index.html` los assets locales con `?v=YYYYMMDDHHMMSS`.
+- `.githooks/pre-commit`: ejecuta ese script antes de cada commit y deja `index.html` staged automaticamente.
+
+Activacion (una sola vez):
 
 ```bash
 git config core.hooksPath .githooks
 chmod +x .githooks/pre-commit scripts/bump_asset_version.sh
 ```
 
----
+## 2. Metodologia de datos (regenerarlos desde cero)
 
-## 📜 Licencias
+Objetivo: transformar programas electorales PDF en JSON estructurado y generar los ficheros de afinidad.
 
-*   **Código**: Publicado bajo la licencia **GNU Affero General Public License v3.0 (AGPL-3.0)**. Ver el archivo [LICENSE](LICENSE) para más detalles.
-*   **Datos y Contenido**: Los archivos generados en la carpeta `/data` y la documentación se publican bajo la licencia **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)**.
+### 2.1 Extraccion de datos (PDF -> JSON por bloques)
 
----
+Usa un LLM con el prompt de `docs/EXTRACTOR-PROMPT.md`.
 
-## 📁 Estructura del Proyecto
+Pasos:
 
-*   `/data`: Archivos JSON con las propuestas extraídas y matrices de puntuación.
-*   `/docs`: Prompts avanzados y documentación metodológica.
-*   `/programas`: Los archivos PDF originales de los partidos políticos.
-*   `/scripts`: Herramientas de automatización para el procesamiento de datos.
+1. Cargar el PDF del partido.
+2. Ejecutar el prompt de extraccion.
+3. Procesar en bloques de 20 paginas para no perder medidas.
+4. Guardar cada bloque como JSON en `data/` (ejemplo: `pp_01_20.json`, `pp_21_40.json`).
+
+### 2.2 Unificacion de bloques por partido
+
+Cuando tengas todos los bloques de un partido, unificalos con:
+
+```bash
+python3 scripts/merge_batches.py --dir ./data --out nombre_partido.json --pattern "prefijo_partido_*.json"
+```
+
+### 2.3 Generacion del cuestionario y matriz de puntos
+
+Con los JSON de partidos listos, usa `docs/QUESTIONS-GENERATOR-PROMPT.md` para generar:
+
+- `data/master-questions.json`
+- `data/party-scores.json`
+
+Salida esperada:
+
+- 22 preguntas clave (2 por cada competencia de la Junta) con contraste entre partidos.
+- Puntuaciones por partido en rango -2 a +2 para el calculo de afinidad.
+
+## 3. Estructura del proyecto
+
+- `/data`: JSON de propuestas, preguntas y matriz de puntuaciones.
+- `/docs`: prompts y documentacion metodologica.
+- `/programas`: PDFs originales.
+- `/scripts`: utilidades de procesamiento.
+- `/js` y `/css`: frontend de la aplicacion.
+
+## 4. Licencias
+
+- Codigo: **GNU Affero General Public License v3.0 (AGPL-3.0)**. Ver [LICENSE](LICENSE).
+- Datos y contenido: **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)**.
