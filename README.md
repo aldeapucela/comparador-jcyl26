@@ -37,6 +37,20 @@ Este prompt analizará todos los programas en conjunto para:
 
 *(Este espacio está reservado para las instrucciones técnicas sobre el frontend y la integración de los datos en la aplicación web del comparador)*
 
+### Versionado automático de CSS/JS en cada commit
+
+Para evitar caché de navegador tras despliegues, el repositorio incluye:
+
+* `scripts/bump_asset_version.sh`: actualiza en `index.html` los assets locales con `?v=YYYYMMDDHHMMSS`.
+* `.githooks/pre-commit`: ejecuta ese script antes de cada commit y deja `index.html` staged automáticamente.
+
+Activación (una sola vez por clon):
+
+```bash
+git config core.hooksPath .githooks
+chmod +x .githooks/pre-commit scripts/bump_asset_version.sh
+```
+
 ---
 
 ## 📜 Licencias
