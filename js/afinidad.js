@@ -448,8 +448,9 @@ function renderCategoryBreakdown(winnerData) {
 function setupShareLinks(results) {
     const sorted = Object.entries(results).sort((a, b) => b[1].affinity - a[1].affinity);
     const winner = PARTIES.find(p => p.id === sorted[0][0]);
-    const shareUrlForImage = `${window.location.host}${window.location.pathname}#/afinidad`;
-    const shareUrl = `${window.location.origin}${window.location.pathname}#/afinidad`;
+    const basePath = window.location.pathname.replace(/\/+$/, '');
+    const shareUrlForImage = `${window.location.host}${basePath}`;
+    const shareUrl = `${window.location.origin}${basePath}`;
     const shareText = `Mi resultado en el Cuestionario de Afinidad CyL 2026: ${sorted[0][1].affinity}% afín a ${winner.name}\n\nDescubre la tuya:\n${shareUrl}`;
     
     // Share button - copy text result
@@ -509,9 +510,9 @@ function setupShareLinks(results) {
                         `;
                     }).join('')}
                 </div>
-                <div style="text-align: center; padding: 20px; background: #ffffff; border-radius: 12px; margin-top: 12px; border: 1px solid #e2e8f0;">
-                    <p style="color: #334155; font-size: 20px; margin: 0 0 12px 0; line-height: 1.4; font-weight: 600; letter-spacing: 0.01em;">Descubre la tuya</p>
-                    <p style="color: #1e293b; font-size: 16px; margin: 0; line-height: 1.4; font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace; word-break: break-all; padding: 8px 12px; border-radius: 6px;">${shareUrlForImage}</p>
+                <div style="text-align: center; padding: 18px; background: #ffffff; border-radius: 12px; margin-top: 12px; border: 1px solid #e2e8f0;">
+                    <p style="color: #334155; font-size: 20px; margin: 0; line-height: 1; font-weight: 500; letter-spacing: -0.01em;">Descubre la tuya</p>
+                    <p style="color: #0f172a; font-size: 24px; margin: 0 0 8px 0; line-height: 1.5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; word-break: break-word; font-weight: 700;">${shareUrlForImage}</p>
                 </div>
             `;
             
