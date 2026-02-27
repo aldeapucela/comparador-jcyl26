@@ -119,7 +119,17 @@ Chequeo global rapido de cobertura por partido:
 python3 scripts/audit_extraction_quality.py
 ```
 
-### 2.4 Generacion del cuestionario y matriz de puntos
+### 2.4 Normalizacion de tags (obligatorio)
+
+Despues de extraer/unificar cada partido, normaliza las etiquetas para mantener comparabilidad entre formaciones:
+
+```bash
+python3 scripts/normalize_tags.py --write
+```
+
+Reglas y taxonomia: `docs/TAGGING-STANDARD.md`.
+
+### 2.5 Generacion del cuestionario y matriz de puntos
 
 Con los JSON de partidos listos, usa `docs/QUESTIONS-GENERATOR-PROMPT.md` para generar:
 

@@ -3,8 +3,8 @@
  */
 
 export const PARTIES = [
-    { id: 'psoe', name: 'PSOE', color: '#e30613', logo: 'img/psoe.png' },
-    { id: 'pp', name: 'PP', color: '#0056a3', logo: 'img/pp.png' },
+    { id: 'psoe', name: 'PSOE', color: '#e30613', logo: 'img/psoe.png', candidatePhoto: 'img/candidatos/carlos-martinez.jpg' },
+    { id: 'pp', name: 'PP', color: '#0056a3', logo: 'img/pp.png', candidatePhoto: 'img/candidatos/alfonso-fernandez-manueco.jpg' },
     { id: 'mev', name: 'España Vaciada', color: '#cf211b', logo: 'img/mev.png' },
     { id: 'en-comun', name: 'En Común', color: '#bb112a', logo: 'img/encomun.svg' }
 ];

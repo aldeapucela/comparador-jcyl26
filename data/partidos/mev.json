@@ -19,8 +19,10 @@
       "cita_literal": "Mecanismo de Garantía Rural : auditoría normativa obligatoria en fase de diseño (impacto demográfico, económico y de servicios).",
       "pagina": 4,
       "tags": [
+        "#RetoDemografico",
         "#Despoblacion",
-        "#MedioRural"
+        "#MedioRural",
+        "#Gobernanza"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -37,8 +39,10 @@
       "cita_literal": "Prueba municipal : si una ley obliga a hacer algo al ayuntamiento, debe venir con financiación y memoria de coste.",
       "pagina": 4,
       "tags": [
+        "#RetoDemografico",
         "#Despoblacion",
-        "#MedioRural"
+        "#MedioRural",
+        "#Gobernanza"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -55,8 +59,10 @@
       "cita_literal": "Codiseño con agentes locales y gobernanza transversal (salud, educación, transporte, digitalización).",
       "pagina": 4,
       "tags": [
+        "#RetoDemografico",
         "#Despoblacion",
-        "#MedioRural"
+        "#MedioRural",
+        "#Digitalizacion"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -73,6 +79,7 @@
       "cita_literal": "Crear una Agencia independiente (modelo Highlands) con 60 M€ para ejecutar proyectos de repoblación, emprendimiento, servicios y red de técnicos/agentes comarcales.",
       "pagina": 4,
       "tags": [
+        "#RetoDemografico",
         "#Despoblacion",
         "#MedioRural"
       ],
@@ -91,6 +98,7 @@
       "cita_literal": "Oficinas comarcales y cartera anual de proyectos con calendario y evaluación pública.",
       "pagina": 4,
       "tags": [
+        "#RetoDemografico",
         "#Despoblacion",
         "#MedioRural"
       ],
@@ -109,8 +117,9 @@
       "cita_literal": "100 Mbps simétricos en el 100% del territorio (rural y urbano).",
       "pagina": 4,
       "tags": [
+        "#MedioRural",
         "#Movilidad",
-        "#MedioRural"
+        "#Digitalizacion"
       ],
       "analisis": {
         "competencia": "Shared",
@@ -127,8 +136,9 @@
       "cita_literal": "≤ 30 minutos para acceder a servicios sanitarios, educativos, sociales y culturales.",
       "pagina": 4,
       "tags": [
+        "#MedioRural",
         "#Movilidad",
-        "#MedioRural"
+        "#Digitalizacion"
       ],
       "analisis": {
         "competencia": "Shared",
@@ -145,8 +155,10 @@
       "cita_literal": "≤ 30 km a vías de alta capacidad (autovías/ferrocarril), con prioridad a infraestructuras pendientes.",
       "pagina": 4,
       "tags": [
+        "#MedioRural",
         "#Movilidad",
-        "#MedioRural"
+        "#Infraestructuras",
+        "#Digitalizacion"
       ],
       "analisis": {
         "competencia": "Petition",
@@ -164,8 +176,9 @@
       "pagina": 4,
       "tags": [
         "#Movilidad",
-        "#MedioRural",
-        "#Valladolid"
+        "#TransportePublico",
+        "#TransporteADemanda",
+        "#Digitalizacion"
       ],
       "analisis": {
         "competencia": "Shared",
@@ -182,8 +195,10 @@
       "cita_literal": "Impulso a ejes ferroviarios estratégicos (p. ej. Ruta de la Plata ).",
       "pagina": 5,
       "tags": [
+        "#MedioRural",
         "#Movilidad",
-        "#MedioRural"
+        "#Tren",
+        "#Digitalizacion"
       ],
       "analisis": {
         "competencia": "Petition",
@@ -201,7 +216,9 @@
       "pagina": 5,
       "tags": [
         "#SanidadPublica",
-        "#MedioRural"
+        "#Dependencia",
+        "#MedioRural",
+        "#Mayores"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -237,6 +254,7 @@
       "pagina": 5,
       "tags": [
         "#SanidadPublica",
+        "#Urgencias",
         "#MedioRural"
       ],
       "analisis": {
@@ -255,6 +273,7 @@
       "pagina": 5,
       "tags": [
         "#SanidadPublica",
+        "#AtencionPrimaria",
         "#MedioRural",
         "#Valladolid"
       ],
@@ -274,6 +293,8 @@
       "pagina": 5,
       "tags": [
         "#SanidadPublica",
+        "#Salud",
+        "#SaludMental",
         "#MedioRural"
       ],
       "analisis": {
@@ -292,6 +313,8 @@
       "pagina": 5,
       "tags": [
         "#SanidadPublica",
+        "#Salud",
+        "#Urgencias",
         "#MedioRural"
       ],
       "analisis": {
@@ -310,7 +333,8 @@
       "pagina": 5,
       "tags": [
         "#SanidadPublica",
-        "#MedioRural"
+        "#MedioRural",
+        "#Gobernanza"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -328,7 +352,9 @@
       "pagina": 5,
       "tags": [
         "#SanidadPublica",
-        "#MedioRural"
+        "#Hospitales",
+        "#MedioRural",
+        "#Mayores"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -345,7 +371,9 @@
       "cita_literal": "Nuevo modelo de cuidados domicilio –residencia, con servicios asociados y enfoque de atención centrada en la persona.",
       "pagina": 5,
       "tags": [
+        "#ServiciosSociales",
         "#Cuidados",
+        "#Dependencia",
         "#MedioRural"
       ],
       "analisis": {
@@ -363,7 +391,9 @@
       "cita_literal": "Reducir listas de espera de dependencia, reforzar ayuda a domicilio y centros de día comarcales y de barrio.",
       "pagina": 5,
       "tags": [
+        "#ServiciosSociales",
         "#Cuidados",
+        "#Dependencia",
         "#MedioRural"
       ],
       "analisis": {
@@ -381,7 +411,9 @@
       "cita_literal": "Empleo de cuidados con ratios y estabilidad (profesionalización).",
       "pagina": 5,
       "tags": [
+        "#ServiciosSociales",
         "#Cuidados",
+        "#Dependencia",
         "#MedioRural"
       ],
       "analisis": {
@@ -399,7 +431,9 @@
       "cita_literal": "Ley de complementos para pensiones inferiores a 730€ .",
       "pagina": 5,
       "tags": [
+        "#ServiciosSociales",
         "#Cuidados",
+        "#Dependencia",
         "#MedioRural"
       ],
       "analisis": {
@@ -417,7 +451,9 @@
       "cita_literal": "Multas coercitivas y responsabilidades cuando se desobedezcan resoluciones.",
       "pagina": 5,
       "tags": [
-        "#Transparencia"
+        "#Transparencia",
+        "#Antifraude",
+        "#Gobernanza"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -434,7 +470,9 @@
       "cita_literal": "Expediente trazable: plazos máximos, responsable identificable y cuadro de mando público.",
       "pagina": 5,
       "tags": [
-        "#Transparencia"
+        "#Transparencia",
+        "#Antifraude",
+        "#Gobernanza"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -451,7 +489,9 @@
       "cita_literal": "Ranking anual de cumplimiento por administraciones (para que se vea quién cumple y quién no).",
       "pagina": 6,
       "tags": [
-        "#Transparencia"
+        "#Transparencia",
+        "#Antifraude",
+        "#Gobernanza"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -468,7 +508,8 @@
       "cita_literal": "Estrategia industrial provincial y oficina comercial para captar inversiones.",
       "pagina": 6,
       "tags": [
-        "#Empleo"
+        "#Empleo",
+        "#Industria"
       ],
       "analisis": {
         "competencia": "Shared",
@@ -486,7 +527,9 @@
       "pagina": 6,
       "tags": [
         "#Empleo",
-        "#Valladolid"
+        "#Pymes",
+        "#Autonomos",
+        "#Industria"
       ],
       "analisis": {
         "competencia": "Shared",
@@ -503,7 +546,8 @@
       "cita_literal": "Logística y parques logísticos; extensión del modelo “parque científico” al alfoz y cabeceras de comarca.",
       "pagina": 6,
       "tags": [
-        "#Empleo"
+        "#Empleo",
+        "#Industria"
       ],
       "analisis": {
         "competencia": "Shared",
@@ -520,7 +564,9 @@
       "cita_literal": "Teletrabajo (fiscalidad + coworking), turismo de estancias largas y enseñanza del castellano como industria ligada al territorio.",
       "pagina": 6,
       "tags": [
-        "#Empleo"
+        "#Empleo",
+        "#Fiscalidad",
+        "#Industria"
       ],
       "analisis": {
         "competencia": "Shared",
@@ -537,8 +583,9 @@
       "cita_literal": "Mesa de Negociación Agroganadera para fijar precios mínimos en origen por encima de costes (complemento a la Cadena Alimentaria).",
       "pagina": 6,
       "tags": [
+        "#MedioRural",
         "#SectorPrimario",
-        "#MedioRural"
+        "#Ganaderia"
       ],
       "analisis": {
         "competencia": "Shared",
@@ -555,8 +602,9 @@
       "cita_literal": "Principio de reciprocidad: “lo que está prohibido producir, está prohibido vender” ; etiquetado claro y medidas disuasorias a importaciones con sustancias prohibidas por EFSA (propuesta de arancel).",
       "pagina": 6,
       "tags": [
+        "#MedioRural",
         "#SectorPrimario",
-        "#MedioRural"
+        "#Agricultura"
       ],
       "analisis": {
         "competencia": "Petition",
@@ -573,8 +621,10 @@
       "cita_literal": "Impulso a transformación agroindustrial en origen (valor añadido y empleo).",
       "pagina": 6,
       "tags": [
-        "#SectorPrimario",
-        "#MedioRural"
+        "#MedioRural",
+        "#Empleo",
+        "#Industria",
+        "#SectorPrimario"
       ],
       "analisis": {
         "competencia": "Shared",
@@ -591,8 +641,10 @@
       "cita_literal": "Reducción del tramo autonómico del IRPF y tipos reducidos (Patrimonio, ITP/AJD, Sucesiones/Donaciones) para zonas objetivo.",
       "pagina": 6,
       "tags": [
+        "#MedioRural",
         "#Empleo",
-        "#MedioRural"
+        "#Fiscalidad",
+        "#Patrimonio"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -609,8 +661,9 @@
       "cita_literal": "Deducciones por residencia/traslado a zonas rurales en riesgo.",
       "pagina": 6,
       "tags": [
+        "#MedioRural",
         "#Empleo",
-        "#MedioRural"
+        "#Fiscalidad"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -627,8 +680,9 @@
       "cita_literal": "Bonificaciones en explotaciones agrarias considerando unidad familiar (no solo titularidad).",
       "pagina": 6,
       "tags": [
-        "#SectorPrimario",
-        "#MedioRural"
+        "#MedioRural",
+        "#Fiscalidad",
+        "#SectorPrimario"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -645,7 +699,10 @@
       "cita_literal": "FP rural a medida en cabeceras de comarca, reduciendo ratios cuando haga falta y con transporte gratuito en educación no obligatoria/FP .",
       "pagina": 6,
       "tags": [
-        "#Educacion"
+        "#Educacion",
+        "#FormacionProfesional",
+        "#MedioRural",
+        "#FP"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -662,7 +719,9 @@
       "cita_literal": "FP dual real con pymes y grandes empresas para empleabilidad.",
       "pagina": 6,
       "tags": [
-        "#Educacion"
+        "#Educacion",
+        "#FormacionProfesional",
+        "#FP"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -679,7 +738,8 @@
       "cita_literal": "Proyectos educativos que pongan en valor oportunidades de emprendimiento en el territorio.",
       "pagina": 7,
       "tags": [
-        "#Educacion"
+        "#Educacion",
+        "#Formacion"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -696,7 +756,8 @@
       "cita_literal": "Educación infantil segura (0 –6): coordinación de bienestar y protocolos en centros.",
       "pagina": 7,
       "tags": [
-        "#Educacion"
+        "#Educacion",
+        "#Formacion"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -713,7 +774,8 @@
       "cita_literal": "Implantación del modelo Barnahus (Casa de la Infancia) para evitar revictimización en abusos.",
       "pagina": 7,
       "tags": [
-        "#Educacion"
+        "#Educacion",
+        "#Formacion"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -749,7 +811,9 @@
       "pagina": 7,
       "tags": [
         "#Vivienda",
-        "#MedioRural"
+        "#Alquiler",
+        "#ViviendaAsequible",
+        "#Rehabilitacion"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -767,8 +831,9 @@
       "pagina": 7,
       "tags": [
         "#Vivienda",
-        "#MedioRural",
-        "#Valladolid"
+        "#Alquiler",
+        "#ViviendaAsequible",
+        "#Rehabilitacion"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -785,8 +850,10 @@
       "cita_literal": "Ley autonómica de renovables : impulso a autoconsumo y comunidades energéticas; reglas para grandes proyectos (compatibilidad ambiental/social, desmantelamiento, residuos, retornos locales).",
       "pagina": 7,
       "tags": [
+        "#MedioRural",
         "#MedioAmbiente",
-        "#MedioRural"
+        "#Renovables",
+        "#Reciclaje"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -803,8 +870,9 @@
       "cita_literal": "Biogás : revisión/moratoria inmediata y nueva regulación con zonificación de exclusión y consultas locales vinculantes (según el planteamiento de España Vaciada).",
       "pagina": 7,
       "tags": [
+        "#MedioRural",
         "#MedioAmbiente",
-        "#MedioRural"
+        "#Energia"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -821,8 +889,9 @@
       "cita_literal": "Gestión forestal permanente : cuadrillas 12 meses, prevención y restauración ecológica; corredores ecológicos y protección de biodiversidad.",
       "pagina": 7,
       "tags": [
+        "#MedioRural",
         "#MedioAmbiente",
-        "#MedioRural"
+        "#Forestal"
       ],
       "analisis": {
         "competencia": "Shared",
@@ -839,9 +908,10 @@
       "cita_literal": "Agua y suelo : eficiencia hídrica y plan contra desertificación y degradación del suelo; en Valladolid capital, plan de sombra y refugios climáticos y más verde urbano.",
       "pagina": 7,
       "tags": [
-        "#MedioAmbiente",
         "#MedioRural",
-        "#Valladolid"
+        "#MedioAmbiente",
+        "#Energia",
+        "#Agua"
       ],
       "analisis": {
         "competencia": "Shared",

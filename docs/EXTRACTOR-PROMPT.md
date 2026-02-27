@@ -90,6 +90,12 @@ Usa solo estas 11:
    - Neutral, entendible y no tendenciosa.
    - Debe empezar con `¿` y terminar con `?`.
    - Evita fórmulas pobres tipo “esta propuesta...”.
+5. `tags`
+   - Deben ser 2-4 por propuesta.
+   - Incluir siempre 1 tag macro alineado con la categoria.
+   - No usar `#Otros`.
+   - No duplicar variantes equivalentes por acento/sinonimo (`#Digitalización` vs `#Digitalizacion`).
+   - Usar como referencia obligatoria `docs/TAGGING-STANDARD.md`.
 
 **REGLAS DE INTEGRIDAD**
 - **Agrupación permitida y recomendada**: fusiona medidas casi idénticas o instrumentales del mismo objetivo para mejorar legibilidad.

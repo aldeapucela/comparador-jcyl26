@@ -20,9 +20,10 @@
       "cita_literal": "Plan integral de retorno del talento al territorio de Castilla y León: ayudas al alquiler de viviendas públicas para personas jóvenes retornadas. Programas mixtos de empleo/formación para la creación de cooperativas con personas jóvenes tituladas en nuevas tecnologías aplicadas al mundo rural.",
       "pagina": 2,
       "tags": [
-        "#Vivienda",
         "#MedioRural",
-        "#Alquiler"
+        "#Vivienda",
+        "#Alquiler",
+        "#ViviendaAsequible"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -39,7 +40,9 @@
       "cita_literal": "Desarrollar un modelo de atención a la dependencia que permita la permanencia de las personas mayores en su entorno el máximo tiempo posible. Refuerzo de la red pública de servicios para mayores: nuevas residencias asistidas con personal profesionalizado y ratios adecuados, y pisos compartidos.",
       "pagina": 2,
       "tags": [
+        "#ServiciosSociales",
         "#Cuidados",
+        "#Dependencia",
         "#MedioRural"
       ],
       "analisis": {
@@ -57,8 +60,10 @@
       "cita_literal": "Mejorar las infraestructuras, racionalizar las líneas regulares de autobús y fomentar el transporte a demanda en el medio rural. Crear servicios de cercanías nuevos que aprovechen los trazados abandonados de las antiguas líneas provinciales de ferrocarril.",
       "pagina": 2,
       "tags": [
+        "#MedioRural",
         "#Movilidad",
-        "#MedioRural"
+        "#TransportePublico",
+        "#Infraestructuras"
       ],
       "analisis": {
         "competencia": "Petition",
@@ -75,7 +80,8 @@
       "cita_literal": "Asegurar la cobertura universal de internet de alta velocidad (fibra óptica o similar) y cobertura móvil 4G/5G en el 100% del territorio.",
       "pagina": 2,
       "tags": [
-        "#Movilidad"
+        "#Movilidad",
+        "#Digitalizacion"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -92,7 +98,10 @@
       "cita_literal": "Programa de ayudas integrales a 8/10 años para aquellas personas jóvenes tituladas de ciclos superiores de FP o universitarias, que decidan desarrollar su proyecto de vida en nuestro territorio.",
       "pagina": 2,
       "tags": [
-        "#Educacion"
+        "#Educacion",
+        "#FormacionProfesional",
+        "#Universidad",
+        "#FP"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -109,7 +118,8 @@
       "cita_literal": "Una Ley de Ordenación Territorial sostenible que nos lleve a una planificación equilibrada, para una transición ecológica justa ante la amenaza del cambio climático y el desastre ecológico presente ya en nuestros ecosistemas.",
       "pagina": 3,
       "tags": [
-        "#MedioAmbiente"
+        "#MedioAmbiente",
+        "#Energia"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -126,7 +136,9 @@
       "cita_literal": "Una Agencia Autonómica de Residuos que actualice el Plan Integral de Residuos de Castilla y León (PIRCYL), centralice y mejore las tasas de reciclaje, que sea el interlocutor único ante operadores del sistema: Ecoembes, Ecovidrio etc.",
       "pagina": 3,
       "tags": [
-        "#Empleo"
+        "#Empleo",
+        "#Fiscalidad",
+        "#Reciclaje"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -143,8 +155,10 @@
       "cita_literal": "Desarrollo de un Plan Energético Autonómico rediseñando y reorientando el EREN, que planifique las necesidades urbanas y rurales, apostando por las energías renovables, pero no a cualquier precio, para que dejen de ser el negocio de las élites y promoviendo medidas participativas como las comunidades energéticas, etc.",
       "pagina": 3,
       "tags": [
+        "#MedioRural",
         "#MedioAmbiente",
-        "#MedioRural"
+        "#Energia",
+        "#Renovables"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -161,7 +175,9 @@
       "cita_literal": "Desde las Cortes Autonómicas crear una Asamblea Climática para desarrollar una estrategia climática y dotar de máxima participación ciudadana e intergeneracional de las consecuencias del cambio climático.",
       "pagina": 3,
       "tags": [
-        "#Empleo"
+        "#Empleo",
+        "#Energia",
+        "#Participacion"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -178,7 +194,9 @@
       "cita_literal": "Paralizar cualquier proyecto de macrogranjas y ganadería intensiva que dañan los ecosistemas y el bienestar animal y humano.",
       "pagina": 3,
       "tags": [
-        "#SectorPrimario"
+        "#MedioRural",
+        "#SectorPrimario",
+        "#Ganaderia"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -195,7 +213,8 @@
       "cita_literal": "Gestión pública de las masas forestales evitando las subcontratas que precarizan el empleo del sector y la calidad del servicio. Plan ordenado de aprovechamiento forestal.",
       "pagina": 3,
       "tags": [
-        "#MedioAmbiente"
+        "#MedioAmbiente",
+        "#Forestal"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -212,7 +231,9 @@
       "cita_literal": "Cumplimiento de la ley y garantía de acceso al aborto voluntario, libre y gratuito en los centros sanitarios públicos de la comunidad.",
       "pagina": 3,
       "tags": [
-        "#SanidadPublica"
+        "#SanidadPublica",
+        "#Gobernanza",
+        "#Aborto"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -230,7 +251,9 @@
       "pagina": 4,
       "tags": [
         "#Educacion",
-        "#MedioRural"
+        "#Formacion",
+        "#MedioRural",
+        "#Igualdad"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -247,7 +270,10 @@
       "cita_literal": "Dotación de medios materiales de apoyo a las víctimas de la violencia machista y LGBTIfóbica, así como el incremento del número de plazas en centros de acogida.Es necesario dar respuesta institucional, pensada desde la interseccionalidad, para no invisibilizar situaciones extremas como la del sinhogarismo.",
       "pagina": 4,
       "tags": [
-        "#Cuidados"
+        "#ServiciosSociales",
+        "#Cuidados",
+        "#ExclusionSocial",
+        "#Igualdad"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -264,7 +290,9 @@
       "cita_literal": "Aprobación de la Ley LGBTIQA+ de Castilla y León. Desarrollo de los protocolos exigidos por la ley general contra la discriminación y por la ley de igualdad real y efectiva de las personas trans y de garantía de los derechos de las personas LGBTIQA+.",
       "pagina": 4,
       "tags": [
-        "#Otros"
+        "#Derechos",
+        "#Igualdad",
+        "#LGTBI"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -281,7 +309,9 @@
       "cita_literal": "Implementación de las políticas públicas conducentes a la igualdad real y efectiva de todos los ciudadanos. Lucha contra la segregación escolar, el racismo y el creciente número de delitos de odio en la comunidad, que es la que manifiesta un mayor incremento de incidentes en los últimos dos años.",
       "pagina": 4,
       "tags": [
-        "#Otros"
+        "#Derechos",
+        "#DerechosHumanos",
+        "#Igualdad"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -299,7 +329,9 @@
       "pagina": 4,
       "tags": [
         "#Vivienda",
-        "#Alquiler"
+        "#Alquiler",
+        "#ViviendaPublica",
+        "#ViviendaAsequible"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -317,7 +349,9 @@
       "pagina": 4,
       "tags": [
         "#Vivienda",
-        "#Alquiler"
+        "#Alquiler",
+        "#ViviendaPublica",
+        "#ViviendaAsequible"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -335,7 +369,9 @@
       "pagina": 4,
       "tags": [
         "#Vivienda",
-        "#Alquiler"
+        "#Alquiler",
+        "#ViviendaPublica",
+        "#ViviendaAsequible"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -352,7 +388,9 @@
       "cita_literal": "Inversión histórica de 2.000 millones de euros: Un plan financiero a cuatro años (fondos europeos, estatales y propios) que generará 15.000 empleos directos en construcción y rehabilitación.",
       "pagina": 4,
       "tags": [
-        "#Empleo"
+        "#Vivienda",
+        "#ViviendaPublica",
+        "#Rehabilitacion"
       ],
       "analisis": {
         "competencia": "Shared",
@@ -369,7 +407,8 @@
       "cita_literal": "Cesión de suelo: reserva de porcentajes superiores de suelo para VPO en los nuevos desarrollos urbanísticos. Ejercicio del tanteo y retracto para aumentar el parque público.",
       "pagina": 4,
       "tags": [
-        "#Otros"
+        "#Derechos",
+        "#Cultura"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -405,7 +444,8 @@
       "pagina": 4,
       "tags": [
         "#Vivienda",
-        "#Alquiler"
+        "#Alquiler",
+        "#ViviendaAsequible"
       ],
       "analisis": {
         "competencia": "Shared",
@@ -422,7 +462,8 @@
       "cita_literal": "Índice de Referencia Autonómico: Creación de un índice propio para limitar las subidas anuales por encima del IPC y controlar los precios en los nuevos contratos.",
       "pagina": 4,
       "tags": [
-        "#Empleo"
+        "#Empleo",
+        "#Gobernanza"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -440,7 +481,8 @@
       "pagina": 4,
       "tags": [
         "#Vivienda",
-        "#Alquiler"
+        "#Alquiler",
+        "#ViviendaAsequible"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -457,9 +499,8 @@
       "cita_literal": "Fiscalidad a Grandes Tenedores: Uso del tramo autonómico del IRPF y de impuestos propios sobre viviendas vacías de grandes tenedores para penalizar la vivienda vacía y desincentivar la acumulación de inmuebles en pocas manos. 🚜 Reto Demográfico y Vivienda Rural.",
       "pagina": 5,
       "tags": [
-        "#Vivienda",
         "#MedioRural",
-        "#Alquiler"
+        "#Vivienda"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -476,9 +517,9 @@
       "cita_literal": "Cuota Rural del 25%: Reserva obligatoria de que 5.000 viviendas del plan público (una de cada cuatro) se destinen específicamente a los pueblos para fijar población.",
       "pagina": 5,
       "tags": [
-        "#Vivienda",
         "#MedioRural",
-        "#Alquiler"
+        "#Vivienda",
+        "#ViviendaPublica"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -495,9 +536,10 @@
       "cita_literal": "Bono Vivienda Joven Rural: Ayudas directas al alquiler y compra para jóvenes, condicionadas al traslado o permanencia en municipios en riesgo de despoblación.",
       "pagina": 5,
       "tags": [
-        "#Vivienda",
         "#MedioRural",
-        "#Alquiler"
+        "#Vivienda",
+        "#Alquiler",
+        "#ViviendaAsequible"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -514,9 +556,9 @@
       "cita_literal": "Rehabilitación de Vivienda en Pueblos: Subvenciones específicas para recuperar casas en el medio rural, priorizando la eficiencia energética y la habitabilidad. Rehabilitación y Empleo Verde.",
       "pagina": 5,
       "tags": [
-        "#Vivienda",
         "#MedioRural",
-        "#Alquiler"
+        "#Vivienda",
+        "#Rehabilitacion"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -533,7 +575,8 @@
       "cita_literal": "Prioridad a la rehabilitación sobre Construcción: El plan prioriza recuperar lo existente frente a construir nuevo, reduciendo costes y huella ecológica.",
       "pagina": 5,
       "tags": [
-        "#Otros"
+        "#Gobernanza",
+        "#Derechos"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -550,7 +593,10 @@
       "cita_literal": "Empleo Local y Formación: Programas que vinculan las ayudas de rehabilitación a la contratación de cooperativas locales y formación profesional (FP) en oficios de construcción sostenible. Derechos Sociales y Cambio de Modelo.",
       "pagina": 5,
       "tags": [
-        "#Educacion"
+        "#Educacion",
+        "#Formacion",
+        "#FormacionProfesional",
+        "#FP"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -568,7 +614,8 @@
       "pagina": 5,
       "tags": [
         "#Vivienda",
-        "#Alquiler"
+        "#Alquiler",
+        "#ViviendaAsequible"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -586,7 +633,8 @@
       "pagina": 5,
       "tags": [
         "#Vivienda",
-        "#Alquiler"
+        "#Alquiler",
+        "#ViviendaAsequible"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -603,7 +651,9 @@
       "cita_literal": "Impulsar el modelo “Housing First” en la atención social a personas sin hogar.",
       "pagina": 5,
       "tags": [
-        "#Otros"
+        "#ServiciosSociales",
+        "#Cuidados",
+        "#ExclusionSocial"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -620,8 +670,8 @@
       "cita_literal": "Acceso a servicios esenciales en un tiempo razonable. Plan de movilidad rural que garantice los servicios sanitarios, educativos, farmacéuticos, y otros, en distancias cercanas o mediante vehículos adaptados que realicen rutas de asistencia.",
       "pagina": 5,
       "tags": [
-        "#Movilidad",
-        "#MedioRural"
+        "#MedioRural",
+        "#Movilidad"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -638,8 +688,8 @@
       "cita_literal": "Planes comarcales integrales adaptados al territorio. Crear planes estratégicos con fuerza legal, donde se definan usos del suelo, prioridades económicas y criterios ambientales. La clave: que los ayuntamientos estén obligados a coordinarse, no a “sugerir cosas”.",
       "pagina": 5,
       "tags": [
-        "#MedioAmbiente",
-        "#MedioRural"
+        "#MedioRural",
+        "#MedioAmbiente"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -656,6 +706,7 @@
       "cita_literal": "Participación de la sociedad civil en la programación estratégica mediante mecanismos comunitarios de gestión local. Estos planes deben diseñarse con la participación de los ayuntamientos y los órganos democráticos de ámbito comarcal (consorcios, mancomunidades, grupos de acción local, etc.).",
       "pagina": 5,
       "tags": [
+        "#RetoDemografico",
         "#Despoblacion",
         "#MedioRural"
       ],
@@ -675,7 +726,9 @@
       "pagina": 6,
       "tags": [
         "#Educacion",
-        "#MedioRural"
+        "#Formacion",
+        "#MedioRural",
+        "#Digitalizacion"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -692,8 +745,10 @@
       "cita_literal": "Creación de un Observatorio Científico del Desarrollo del Medio Rural, de carácter multidisciplinar, compuesto por investigadores, docentes, profesionales del sector y organizaciones del medio rural, que sea de consulta obligatoria en los planes y licencias que se tramiten, cuyos informes tendrán carácter público.",
       "pagina": 6,
       "tags": [
+        "#RetoDemografico",
         "#Despoblacion",
-        "#MedioRural"
+        "#MedioRural",
+        "#Gobernanza"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -710,7 +765,9 @@
       "cita_literal": "Paralización inmediata de los proyectos en trámite de macroplantas de biogás en toda Castilla y León, así como la suspensión de nuevas autorizaciones de macrogranjas o ampliación de las existentes. Revisión de todas las licencias y evaluación de impacto.",
       "pagina": 6,
       "tags": [
-        "#SectorPrimario"
+        "#SectorPrimario",
+        "#Agricultura",
+        "#Ganaderia"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -727,7 +784,9 @@
       "cita_literal": "Ampliación de las funciones y las plantillas de los servicios de bienestar animal, que intensificarán la vigilancia de las condiciones de vida de animales de producción y animales de trabajo.",
       "pagina": 6,
       "tags": [
-        "#SectorPrimario"
+        "#Empleo",
+        "#SectorPrimario",
+        "#Ganaderia"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -744,8 +803,9 @@
       "cita_literal": "Desarrollo organizado y profesionalizado de bancos de tierras de ámbito comarcal, que faciliten el relevo generacional en el sector agrario con garantías para las personas y la administración, y propicien el arraigo de los jóvenes en el medio rural.",
       "pagina": 6,
       "tags": [
+        "#MedioRural",
         "#SectorPrimario",
-        "#MedioRural"
+        "#Agricultura"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -762,7 +822,8 @@
       "cita_literal": "OPE masiva y estable. Realizar ofertas públicas de empleo amplias, continuas y con especial atención a plazas vacantes reales, reduciendo la temporalidad y asegurando selección por mérito y capacidad.",
       "pagina": 6,
       "tags": [
-        "#Empleo"
+        "#Empleo",
+        "#Fiscalidad"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -779,7 +840,8 @@
       "cita_literal": "Prohibición de externalizaciones innecesarias. Limitar las externalizaciones a casos estrictamente excepcionales, con controles rigurosos de eficacia y coste. Priorizar la gestión directa pública de servicios esenciales para evitar dependencias de intereses privados o partidistas.",
       "pagina": 6,
       "tags": [
-        "#Otros"
+        "#Gobernanza",
+        "#Derechos"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -796,7 +858,8 @@
       "cita_literal": "Revisión de cargos de libre designación. Reducir drásticamente los cargos de libre designación y las comisiones de servicio, sustituyéndolos por puestos ocupados por personal funcionario o laboral seleccionado por concurso, con criterios transparentes y objetivos.",
       "pagina": 6,
       "tags": [
-        "#Otros"
+        "#Gobernanza",
+        "#Derechos"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -813,7 +876,8 @@
       "cita_literal": "Profesionalización de la administración: es urgente promulgar una Ley de Cuerpos y Escalas de Castilla y León con figuras profesionales como el Cuerpo de Bomberos Forestales, la Escala de Agentes Medioambientales, de Técnicos en Orientación y Empleo, de Inspectores de Calidad y Fraude Alimentario, entre otras.",
       "pagina": 7,
       "tags": [
-        "#MedioAmbiente"
+        "#MedioAmbiente",
+        "#Forestal"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -830,8 +894,10 @@
       "cita_literal": "Contratación de personas y servicios adaptados al territorio: Limitación y control de los contratos menores. Evaluación externa con indicadores públicos claros. Programas específicos para comarcas rurales y sus sectores estratégicos con una coordinación real entre empleo, industria, desarrollo rural.",
       "pagina": 7,
       "tags": [
+        "#RetoDemografico",
         "#Despoblacion",
-        "#MedioRural"
+        "#MedioRural",
+        "#Empleo"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -848,7 +914,8 @@
       "cita_literal": "Contratación pública basada en criterios éticos, de proximidad, transparentes y con el compromiso de pago puntual a los proveedores más vulnerables.",
       "pagina": 7,
       "tags": [
-        "#Otros"
+        "#Gobernanza",
+        "#Derechos"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -865,7 +932,8 @@
       "cita_literal": "Más financiación pública: Alcanzar la media europea de gasto sanitario (al menos el 8% del PIB). Alcanzando progresivamente el 25% de gasto para Atención Primaria, sin contar los gastos en farmacia.",
       "pagina": 7,
       "tags": [
-        "#SanidadPublica"
+        "#SanidadPublica",
+        "#AtencionPrimaria"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -882,7 +950,10 @@
       "cita_literal": "Acceso para las personas más vulnerables: Garantizar empadronamiento y cobertura sanitaria gratuita a personas en situación irregular, flexibilizando documentación y eliminando trabas absurdas. Adaptar centros para permitir el acceso con mascotas, principal vínculo emocional de muchas personas sin hogar.",
       "pagina": 7,
       "tags": [
-        "#Cuidados"
+        "#ServiciosSociales",
+        "#Cuidados",
+        "#Dependencia",
+        "#ExclusionSocial"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -899,7 +970,9 @@
       "cita_literal": "Reforzar la Salud Pública: Potenciar recursos propios para prevención, cribados, vigilancia epidemiológica, control de crisis y planificación a largo plazo teniendo en cuenta los determinantes ambientales y sociales de la salud.",
       "pagina": 7,
       "tags": [
-        "#SanidadPublica"
+        "#SanidadPublica",
+        "#Salud",
+        "#Gobernanza"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -917,6 +990,8 @@
       "pagina": 7,
       "tags": [
         "#SanidadPublica",
+        "#Salud",
+        "#AtencionPrimaria",
         "#MedioRural"
       ],
       "analisis": {
@@ -935,6 +1010,7 @@
       "pagina": 7,
       "tags": [
         "#SanidadPublica",
+        "#Salud",
         "#SaludMental"
       ],
       "analisis": {
@@ -953,7 +1029,8 @@
       "pagina": 7,
       "tags": [
         "#SanidadPublica",
-        "#MedioRural",
+        "#Salud",
+        "#Hospitales",
         "#SaludMental"
       ],
       "analisis": {
@@ -971,7 +1048,10 @@
       "cita_literal": "Blindar lo público: Frenar y revertir privatizaciones y externalizaciones (tanto en atención hospitalaria, incluyendo las cocinas, ambulancias, como en primaria y en los cribados). Reforzar la exclusividad profesional en la sanidad pública. Plantear la centralización de la compra de medicamentos y productos.",
       "pagina": 7,
       "tags": [
-        "#SanidadPublica"
+        "#SanidadPublica",
+        "#AtencionPrimaria",
+        "#Hospitales",
+        "#Urgencias"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -988,7 +1068,8 @@
       "cita_literal": "Dignificar las condiciones laborales: mejorando las condiciones de todo el personal, incluyendo incentivos para puestos de difícil cobertura y distribución equilibrada de los profesionales en toda la comunidad.",
       "pagina": 8,
       "tags": [
-        "#Otros"
+        "#SanidadPublica",
+        "#Salud"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1005,7 +1086,9 @@
       "cita_literal": "Recuperar e incrementar recursos sociosanitarios: Aprovechar centros infrautilizados y asegurar recursos de media y larga estancia, geriatría y cuidados paliativos para cubrir las necesidades previsibles.",
       "pagina": 8,
       "tags": [
-        "#SanidadPublica"
+        "#SanidadPublica",
+        "#Dependencia",
+        "#Mayores"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1022,7 +1105,8 @@
       "cita_literal": "Participación ciudadana real: Facilitar la participación de la sociedad en el sistema sanitario de forma efectiva a través de los Consejos de Salud en todos sus niveles, atendiendo a las demandas y propuestas de las plataformas en defensa de la sanidad pública y de las asociaciones de pacientes.",
       "pagina": 8,
       "tags": [
-        "#SanidadPublica"
+        "#SanidadPublica",
+        "#Salud"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1039,8 +1123,9 @@
       "cita_literal": "Medidas efectivas que den respaldo a las dificultades estructurales, como son las derivadas de un amplio territorio, centros rurales infradotados y con baja matrícula, junto a centros urbanos con ratios altas.",
       "pagina": 8,
       "tags": [
-        "#Otros",
-        "#MedioRural"
+        "#MedioRural",
+        "#Gobernanza",
+        "#Derechos"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1057,7 +1142,8 @@
       "cita_literal": "Financiar y potenciar la red de centros públicos, evitando el cierre de líneas y unidades en centros públicos y por contra, el cese de la ampliación de las unidades concertadas.",
       "pagina": 8,
       "tags": [
-        "#Otros"
+        "#Gobernanza",
+        "#Derechos"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1075,7 +1161,8 @@
       "pagina": 8,
       "tags": [
         "#Educacion",
-        "#MedioRural"
+        "#MedioRural",
+        "#EducacionPublica"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1092,7 +1179,10 @@
       "cita_literal": "Implementación crítica y eficaz de la nueva Ley de Formación Profesional.",
       "pagina": 8,
       "tags": [
-        "#Educacion"
+        "#Educacion",
+        "#Formacion",
+        "#FormacionProfesional",
+        "#FP"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1109,7 +1199,8 @@
       "cita_literal": "Dedicar recursos y atención suficientes a la alta diversidad, que afecta al alumnado con necesidades de atención educativa (ACNEAE) donde encontramos numeroso alumnado con necesidades educativas derivadas de sus características personales, junto el perteneciente a minorías y situaciones socioculturales complejas.",
       "pagina": 8,
       "tags": [
-        "#Educacion"
+        "#Educacion",
+        "#Formacion"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1126,7 +1217,9 @@
       "cita_literal": "Gratuidad real de la enseñanza sin barreras económicas segregadoras.",
       "pagina": 8,
       "tags": [
-        "#Otros"
+        "#Gobernanza",
+        "#Derechos",
+        "#Igualdad"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1144,7 +1237,8 @@
       "pagina": 8,
       "tags": [
         "#Educacion",
-        "#MedioRural"
+        "#MedioRural",
+        "#EducacionPublica"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1161,7 +1255,8 @@
       "cita_literal": "Introducción en el currículo de la ESO y bachillerato la enseñanza elemental de otras lenguas y culturas españolas, así como educación en memoria democrática, ciudadanía y consumo responsable.",
       "pagina": 8,
       "tags": [
-        "#Educacion"
+        "#Educacion",
+        "#Formacion"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1178,7 +1273,8 @@
       "cita_literal": "Fortalecimiento de la Formación Profesional, con especial atención a las relacionadas con las necesidades del territorio (agraria, industria alimentaria, industrias extractivas, instalación y mantenimiento, inteligencia artificial y data, sanidad, seguridad y medio ambiente, servicios socioculturales y a la comunidad.",
       "pagina": 8,
       "tags": [
-        "#SanidadPublica"
+        "#SanidadPublica",
+        "#Salud"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1195,7 +1291,10 @@
       "cita_literal": "Financiación justa y suficiente para las universidades públicas de Castilla y León, y paralización de las licencias para nuevas universidades privadas. Vigilancia exhaustiva de los estándares de calidad e investigación de las universidades privadas.",
       "pagina": 8,
       "tags": [
-        "#Educacion"
+        "#Educacion",
+        "#FormacionProfesional",
+        "#Universidad",
+        "#FP"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1212,7 +1311,8 @@
       "cita_literal": "Dotación de aulas de 0 a 3 años en todas los centros públicos que imparten Educación Infantil de la Comunidad, con plantilla estable y medios suficientes.",
       "pagina": 8,
       "tags": [
-        "#Educacion"
+        "#Educacion",
+        "#Formacion"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1229,8 +1329,9 @@
       "cita_literal": "Ampliar plantillas de educadores, psicólogos, trabajadores sociales y auxiliares de ayuda a domicilio.",
       "pagina": 9,
       "tags": [
+        "#ServiciosSociales",
         "#Cuidados",
-        "#SaludMental"
+        "#AtencionDomiciliaria"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1247,7 +1348,8 @@
       "cita_literal": "Formación obligatoria y continua en infancia vulnerable, trauma, justicia juvenil y envejecimiento.",
       "pagina": 9,
       "tags": [
-        "#Otros"
+        "#Gobernanza",
+        "#Derechos"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1264,7 +1366,9 @@
       "cita_literal": "Crear una supervisión externa independiente para prevenir y detectar violencia institucional en centros de menores.",
       "pagina": 9,
       "tags": [
-        "#Otros"
+        "#ServiciosSociales",
+        "#Cuidados",
+        "#Gobernanza"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1281,7 +1385,9 @@
       "cita_literal": "Plan urgente de Dependencia: reducción real de plazos, trámites simplificados y aumento de plazas públicas en residencias y centros de día.",
       "pagina": 9,
       "tags": [
-        "#Cuidados"
+        "#ServiciosSociales",
+        "#Cuidados",
+        "#Dependencia"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1298,8 +1404,10 @@
       "cita_literal": "Estrategia integral para personas mayores en el medio rural, con servicios de proximidad, acompañamiento y atención presencial suficiente.",
       "pagina": 9,
       "tags": [
+        "#ServiciosSociales",
         "#Cuidados",
-        "#MedioRural"
+        "#MedioRural",
+        "#Gobernanza"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1316,6 +1424,7 @@
       "cita_literal": "Transporte público comarcal funcional, que garantice acceso rápido a servicios sociales y sanitarios.",
       "pagina": 9,
       "tags": [
+        "#RetoDemografico",
         "#Despoblacion",
         "#MedioRural"
       ],
@@ -1334,7 +1443,8 @@
       "cita_literal": "Coordinación efectiva entre Junta, Diputaciones y Ayuntamientos para evitar duplicidades y cerrar vacíos en zonas rurales.",
       "pagina": 9,
       "tags": [
-        "#Otros",
+        "#RetoDemografico",
+        "#Despoblacion",
         "#MedioRural"
       ],
       "analisis": {
@@ -1352,7 +1462,8 @@
       "cita_literal": "Programa normalizado de alivio y descanso de las familias con miembros dependientes, con plantillas profesionales suficientes y dinámica flexible y simplificada.",
       "pagina": 9,
       "tags": [
-        "#Otros"
+        "#Gobernanza",
+        "#Derechos"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1369,7 +1480,9 @@
       "cita_literal": "Dignificación de las personas trabajadoras en el sector de los cuidados, con la creación de un órgano de apoyo y seguimiento, atento a sus necesidades y que ofrezca formación y asesoramiento laboral.",
       "pagina": 9,
       "tags": [
-        "#Cuidados"
+        "#ServiciosSociales",
+        "#Cuidados",
+        "#Dependencia"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1386,7 +1499,10 @@
       "cita_literal": "Medidas de apoyo al bienestar de las personas mayores como la creación de un seguro público de asistencia veterinaria para mascotas, que estará bonificado para mayores de 70 años, o una ayuda directa para la adquisición de gafas progresivas.",
       "pagina": 9,
       "tags": [
-        "#Cuidados"
+        "#ServiciosSociales",
+        "#Cuidados",
+        "#Gobernanza",
+        "#Mayores"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1403,8 +1519,8 @@
       "cita_literal": "Aumentar la financiación y cobertura de los servicios sociales en general y para las personas en situación de extrema exclusión donde se anulen los copagos y se faciliten recursos de vivienda digna.",
       "pagina": 9,
       "tags": [
-        "#Vivienda",
-        "#Alquiler"
+        "#ServiciosSociales",
+        "#Cuidados"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1421,8 +1537,10 @@
       "cita_literal": "Financiación estable a organizaciones sociales y comunitarias. Un sistema plurianual para la realización de programas de intervención en el entorno rural, garantizando continuidad y presencia estable en municipios pequeños.",
       "pagina": 9,
       "tags": [
+        "#RetoDemografico",
         "#Despoblacion",
-        "#MedioRural"
+        "#MedioRural",
+        "#Gobernanza"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1439,7 +1557,9 @@
       "cita_literal": "Espacios permanentes de diálogo con instituciones. Consejo Social de Territorio por provincia donde ONG, ayuntamientos, organizaciones agrarias y colectivos vecinales discutan problemas concretos.",
       "pagina": 9,
       "tags": [
-        "#SectorPrimario"
+        "#SectorPrimario",
+        "#Agricultura",
+        "#Gobernanza"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1456,7 +1576,9 @@
       "cita_literal": "Mecanismos de participación ciudadana como los tradicionales “Comunales o Concechos” encargados de la gestión por los vecinos de activos como pastos, campos, montes y recursos públicos.",
       "pagina": 10,
       "tags": [
-        "#Transparencia"
+        "#Transparencia",
+        "#Gobernanza",
+        "#Participacion"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1473,8 +1595,10 @@
       "cita_literal": "Promoción de actuaciones participativas a nivel autonómico, llevando a cabo presupuestos participativos, consultas vinculantes sobre la apertura/cierre de servicios esenciales (centros de salud, transporte escolar, oficinas bancarias en zonas rurales), etc.",
       "pagina": 10,
       "tags": [
+        "#MedioRural",
         "#Transparencia",
-        "#MedioRural"
+        "#Gobernanza",
+        "#Participacion"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1491,6 +1615,7 @@
       "cita_literal": "Impulso a la profesionalización y coordinación del tercer sector. Programas de formación financiados (gestión de proyectos, captación de fondos, evaluación de impacto). Plataformas comarcales que compartan recursos: asesoría jurídica común, redes de voluntariado.",
       "pagina": 10,
       "tags": [
+        "#RetoDemografico",
         "#Despoblacion",
         "#MedioRural"
       ],
@@ -1509,7 +1634,8 @@
       "cita_literal": "Regular, reubicar y reciclar los empleos afectados por la IA. Estas medidas se aplicarán desde el ECyL, que debe recuperar su papel central en las políticas activas de empleo (orientación, formación, ayudas.",
       "pagina": 10,
       "tags": [
-        "#Empleo"
+        "#Empleo",
+        "#Reciclaje"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1526,7 +1652,8 @@
       "cita_literal": "Blindar las competencias públicas de formación, orientación e intermediación en los servicios públicos de empleo para evitar externalizaciones que utilicen los recursos públicos para convertir el ECyL en una ETT gratuita a su servicio.",
       "pagina": 10,
       "tags": [
-        "#Empleo"
+        "#Empleo",
+        "#Fiscalidad"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1561,8 +1688,10 @@
       "cita_literal": "Fomentar el cooperativismo creando polígonos cooperativos en zonas despobladas con asesoramiento, microcréditos y fiscalidad reducida. Programas específicos para convertir empresas familiares sin relevo en cooperativas de trabajadores. Refuerzo de las cajas rurales como motor financiero estable para proyectos locales.",
       "pagina": 10,
       "tags": [
+        "#MedioRural",
+        "#Fiscalidad",
         "#SectorPrimario",
-        "#MedioRural"
+        "#Cooperativas"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1579,8 +1708,10 @@
       "cita_literal": "Impulsar iniciativas de gestión circular. Con centros comarcales de valorización de residuos forestales para gestionar la biomasa local o mediante Incentivos para que industrias agroalimentarias reutilicen subproductos (piensos, biogás, fertilizantes naturales).",
       "pagina": 10,
       "tags": [
+        "#MedioRural",
+        "#Industria",
         "#SectorPrimario",
-        "#MedioRural"
+        "#Ganaderia"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1597,7 +1728,8 @@
       "cita_literal": "Desarrollar una Ley específica de tributación de grandes fortunas y empresas energéticas y/o extractivas que operen en Castilla y León .",
       "pagina": 11,
       "tags": [
-        "#Empleo"
+        "#Empleo",
+        "#Fiscalidad"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1614,8 +1746,10 @@
       "cita_literal": "Ventajas fiscales para iniciativas de tipo cooperativista y de autoconsumo que generen energía limpia en comunidades energéticas comarcales, locales y otros ámbitos.",
       "pagina": 11,
       "tags": [
+        "#MedioRural",
         "#Empleo",
-        "#MedioRural"
+        "#Fiscalidad",
+        "#Energia"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1632,7 +1766,8 @@
       "cita_literal": "Eliminar las tarifas y tipos reducidos en los tributos autonómicos sobre el juego.",
       "pagina": 11,
       "tags": [
-        "#Empleo"
+        "#Empleo",
+        "#Fiscalidad"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1649,7 +1784,8 @@
       "cita_literal": "Eliminar las exenciones en tributos propios correspondientes a los parques eólicos.",
       "pagina": 11,
       "tags": [
-        "#MedioAmbiente"
+        "#MedioAmbiente",
+        "#Renovables"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1666,7 +1802,8 @@
       "cita_literal": "Impulsar el establecimiento de tasas turísticas que puedan revertir en los municipios con más afectación para que puedan compensarse los efectos negativos que conlleva el turismo.",
       "pagina": 11,
       "tags": [
-        "#Empleo"
+        "#Empleo",
+        "#Fiscalidad"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1683,7 +1820,9 @@
       "cita_literal": "Más recursos destinados a las entidades locales para fortalecer sus competencias. Es imprescindible ampliar la capacidad de actuación de los ayuntamientos para que pueden afrontar con mayor solvencia su servicio a la ciudadanía.",
       "pagina": 11,
       "tags": [
-        "#SectorPrimario"
+        "#SectorPrimario",
+        "#Agricultura",
+        "#Gobernanza"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1700,7 +1839,9 @@
       "cita_literal": "Ventajas fiscales para explotaciones agropecuarias que apuesten por formatos sostenibles y respetuosos con el entorno.",
       "pagina": 11,
       "tags": [
-        "#SectorPrimario"
+        "#Fiscalidad",
+        "#SectorPrimario",
+        "#Agricultura"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1717,7 +1858,9 @@
       "cita_literal": "Transparencia y mayores consecuencias: creación de una Agencia Antifraude de Castilla y León. Fiscalización pública y auditorías externas sistemáticas.",
       "pagina": 11,
       "tags": [
-        "#Transparencia"
+        "#Transparencia",
+        "#Antifraude",
+        "#Gobernanza"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1734,7 +1877,8 @@
       "cita_literal": "Regulación de las “Puertas Giratorias” con periodos de incompatibilidad de 10 años a ex altos cargos de la administración autonómica en las empresas beneficiarias de concesiones durante su mandato.",
       "pagina": 11,
       "tags": [
-        "#Empleo"
+        "#Empleo",
+        "#Fiscalidad"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1751,7 +1895,8 @@
       "cita_literal": "Plan humanitario de acogida. Canales seguros, apoyo jurídico y acompañamiento especializado para personas refugiadas y solicitantes de asilo, reforzando la red de entidades sociales.",
       "pagina": 11,
       "tags": [
-        "#Otros"
+        "#Derechos",
+        "#Cultura"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1768,8 +1913,8 @@
       "cita_literal": "Atención a menores no acompañados. Recursos específicos: familias de acogida, educadores, apoyo psicológico y planes de transición a la vida adulta que eviten su vulnerabilidad y favorezcan su autonomía.",
       "pagina": 11,
       "tags": [
-        "#Cuidados",
-        "#SaludMental"
+        "#ServiciosSociales",
+        "#Cuidados"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1786,7 +1931,8 @@
       "cita_literal": "Comunidades de acogida. Facilitar que municipios pequeños se conviertan en entornos seguros donde estas personas puedan rehacer su vida con estabilidad.",
       "pagina": 12,
       "tags": [
-        "#Despoblacion"
+        "#MedioRural",
+        "#Derechos"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1803,7 +1949,8 @@
       "cita_literal": "Reconocimiento ágil de cualificaciones y formación práctica. Para aprovechar talento y cubrir necesidades reales sin eternizar trámites.",
       "pagina": 12,
       "tags": [
-        "#Otros"
+        "#Gobernanza",
+        "#Derechos"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1820,9 +1967,10 @@
       "cita_literal": "Incentivos para zonas rurales. Ayudas al alquiler de vivienda y apoyo municipal para fijar población en pueblos con riesgo demográfico.",
       "pagina": 12,
       "tags": [
-        "#Vivienda",
         "#MedioRural",
-        "#Alquiler"
+        "#Vivienda",
+        "#Alquiler",
+        "#ViviendaAsequible"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1839,7 +1987,8 @@
       "cita_literal": "Empleo estable y digno. Evitar precariedad y facilitar contratos duraderos que permitan integración real.",
       "pagina": 12,
       "tags": [
-        "#Empleo"
+        "#Empleo",
+        "#Fiscalidad"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1856,7 +2005,8 @@
       "cita_literal": "Refuerzo de servicios públicos. Salud, educación, transporte y servicios sociales adaptados al crecimiento poblacional.",
       "pagina": 12,
       "tags": [
-        "#Educacion"
+        "#Educacion",
+        "#Formacion"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1874,7 +2024,8 @@
       "pagina": 12,
       "tags": [
         "#Vivienda",
-        "#Alquiler"
+        "#Alquiler",
+        "#ViviendaAsequible"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1891,7 +2042,8 @@
       "cita_literal": "Participación y sensibilización. Actividades comunitarias y campañas que muestren la aportación de estas nuevas familias y refuercen la imagen de Castilla y León como territorio de paz, acogida y futuro.",
       "pagina": 12,
       "tags": [
-        "#Otros"
+        "#Participacion",
+        "#Derechos"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1908,7 +2060,8 @@
       "cita_literal": "Suprimir la Fundación Siglo: Recuperar todas sus competencias para la administración autonómica, garantizando control público, transparencia y supervisión democrática.",
       "pagina": 12,
       "tags": [
-        "#Otros"
+        "#Gobernanza",
+        "#Derechos"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1925,7 +2078,9 @@
       "cita_literal": "Desarrollo de una Ley autonómica de memoria democrática en colaboración con asociaciones y cátedras universitarias de memoria.",
       "pagina": 12,
       "tags": [
-        "#Otros"
+        "#Gobernanza",
+        "#Derechos",
+        "#MemoriaHistorica"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1942,7 +2097,9 @@
       "cita_literal": "Redefinir la política cultural eliminando subvenciones a la tauromaquia, es decir, los recursos públicos se destinarán a actividades culturales basadas en valores sociales compartidos.",
       "pagina": 12,
       "tags": [
-        "#Otros"
+        "#Derechos",
+        "#Cultura",
+        "#Tauromaquia"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1959,6 +2116,7 @@
       "cita_literal": "Desarrollar un Plan Integral de Cultura Rural para garantizar el derecho a la cultura en el medio rural: Impulsar la conservación y revitalización de la cultura tradicional apoyando el folclore, etnografía.",
       "pagina": 12,
       "tags": [
+        "#RetoDemografico",
         "#Despoblacion",
         "#MedioRural"
       ],
@@ -1977,7 +2135,8 @@
       "cita_literal": "Refuerzo del apoyo a artistas, creadoras y proyectos independientes: ayudas claras, accesibles y con criterios públicos; apoyo a colectivos emergentes y espacios culturales comunitarios.",
       "pagina": 13,
       "tags": [
-        "#Otros"
+        "#Derechos",
+        "#Cultura"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1994,7 +2153,10 @@
       "cita_literal": "Memoria LGTBIQA+ y patrimonio histórico: Ayudas a proyectos que recuperen historias locales, archivos municipales, patrimonio inmaterial y espacios de memoria.",
       "pagina": 13,
       "tags": [
-        "#Otros"
+        "#Derechos",
+        "#Igualdad",
+        "#LGTBI",
+        "#Patrimonio"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -2011,7 +2173,9 @@
       "cita_literal": "Plan de protección y reutilización del patrimonio industrial mediante un inventario público autonómico del patrimonio industrial y un programa de reutilización cultural, museística y educativa.",
       "pagina": 13,
       "tags": [
-        "#Empleo"
+        "#Empleo",
+        "#Industria",
+        "#Patrimonio"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -2028,7 +2192,8 @@
       "cita_literal": "Financiar y fomentar la divulgación y exhibición de actividades culturales de artistas, pensadores e iniciativas internacionales.",
       "pagina": 13,
       "tags": [
-        "#Otros"
+        "#Derechos",
+        "#Cultura"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -2045,7 +2210,8 @@
       "cita_literal": "Puesta en marcha de un canal de televisión autonómica pública.",
       "pagina": 13,
       "tags": [
-        "#Otros"
+        "#Derechos",
+        "#Cultura"
       ],
       "analisis": {
         "competencia": "Directa",

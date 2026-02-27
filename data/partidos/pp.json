@@ -19,6 +19,7 @@
       "cita_literal": "Apoyaremos a los sectores de mayor valor añadido y con capacidad de crecimiento, como el sector aeronáutico, el químico, el farmacéutico y el logístico.",
       "pagina": 11,
       "tags": [
+        "#Empleo",
         "#Industria",
         "#Innovacion",
         "#Crecimiento"
@@ -38,8 +39,9 @@
       "cita_literal": "Impulsaremos con el sector un Plan estratégico de la automoción de Castilla y León horizonte 2030",
       "pagina": 11,
       "tags": [
-        "#Automocion",
+        "#Empleo",
         "#Industria",
+        "#Automocion",
         "#Cyl2030"
       ],
       "analisis": {
@@ -57,6 +59,7 @@
       "cita_literal": "Fijaremos a Castilla y León como un polo para la tecnología de vehículo autónomo y conectado",
       "pagina": 11,
       "tags": [
+        "#Empleo",
         "#VehiculoAutonomo",
         "#I+D+i",
         "#Inversion"
@@ -76,6 +79,7 @@
       "cita_literal": "Reforzaremos nuestra apuesta por el uso empresarial de la Inteligencia Artificial como elemento imprescindible para la eficiencia",
       "pagina": 11,
       "tags": [
+        "#Empleo",
         "#IA",
         "#Tecnologia",
         "#Empresas"
@@ -95,9 +99,10 @@
       "cita_literal": "Impulsaremos el desarrollo de hidrógeno verde en Castilla y León desde la perspectiva de la demanda de este recurso.",
       "pagina": 11,
       "tags": [
-        "#HidrogenoVerde",
+        "#Empleo",
+        "#Energia",
         "#Renovables",
-        "#Energia"
+        "#HidrogenoVerde"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -114,6 +119,7 @@
       "cita_literal": "Promoveremos la creación de un Hub de construcción industrializada que actúe como espacio de referencia",
       "pagina": 11,
       "tags": [
+        "#Empleo",
         "#Construccion",
         "#Sostenibilidad",
         "#Hub"
@@ -133,8 +139,9 @@
       "cita_literal": "Impulsaremos un nuevo sistema autonómico de innovación, basado en la colaboración público-privada",
       "pagina": 12,
       "tags": [
-        "#I+D+i",
+        "#Empleo",
         "#Gobernanza",
+        "#I+D+i",
         "#Empresas"
       ],
       "analisis": {
@@ -152,9 +159,10 @@
       "cita_literal": "Impulsaremos la digitalización y la IA en entornos rurales, a través de la financiación al 100% de programas de formación",
       "pagina": 12,
       "tags": [
-        "#IA",
         "#Formacion",
-        "#MedioRural"
+        "#MedioRural",
+        "#Empleo",
+        "#IA"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -171,8 +179,8 @@
       "cita_literal": "Desarrollaremos un Programa integral de Retorno de Talento basado en las necesidades de perfiles vacantes",
       "pagina": 13,
       "tags": [
-        "#Talento",
         "#Empleo",
+        "#Talento",
         "#Retorno"
       ],
       "analisis": {
@@ -190,9 +198,10 @@
       "cita_literal": "Diseñaremos un nuevo Plan de Internacionalización... se simplificarán los procesos administrativos",
       "pagina": 13,
       "tags": [
+        "#Empleo",
+        "#Pymes",
         "#Exportacion",
-        "#SinBurocracia",
-        "#Pymes"
+        "#SinBurocracia"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -209,6 +218,7 @@
       "cita_literal": "Impulsaremos la captación de financiación y ahorro internacional para desarrollar proyectos empresariales",
       "pagina": 13,
       "tags": [
+        "#Empleo",
         "#Inversion",
         "#CrecimientoEconomico",
         "#PazSocial"
@@ -228,9 +238,10 @@
       "cita_literal": "Aprobaremos la Ley de Mercado Abierto de Castilla y León",
       "pagina": 13,
       "tags": [
+        "#Empleo",
+        "#Autonomos",
         "#MercadoAbierto",
-        "#Ley",
-        "#Autonomos"
+        "#Ley"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -247,6 +258,7 @@
       "cita_literal": "Favoreciendo los sistemas de generación híbridos y la seguridad de suministro a través del almacenamiento energético.",
       "pagina": 14,
       "tags": [
+        "#MedioAmbiente",
         "#Renovables",
         "#EnergiaHibrida",
         "#Almacenamiento"
@@ -266,6 +278,7 @@
       "cita_literal": "Continuaremos con el despliegue de la autosuficiencia energética... a través de la Mesa de Autoconsumo",
       "pagina": 14,
       "tags": [
+        "#MedioAmbiente",
         "#Autoconsumo",
         "#EficienciaEnergetica"
       ],
@@ -284,9 +297,9 @@
       "cita_literal": "Fomentaremos el autoconsumo industrial en nuestros polígonos empresariales, a través de la creación de suelo industrial verde",
       "pagina": 14,
       "tags": [
+        "#Empleo",
         "#Poligonos",
-        "#EnergiaVerde",
-        "#Empleo"
+        "#EnergiaVerde"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -303,6 +316,7 @@
       "cita_literal": "Trabajaremos, especialmente en la comarca de Béjar con la industria textil... impulsando su competitividad a través del desarrollo de nuevos tejidos 'Tipo Béjar'",
       "pagina": 14,
       "tags": [
+        "#Empleo",
         "#Bejar",
         "#Textil",
         "#IndustriaLocal"
@@ -322,6 +336,7 @@
       "cita_literal": "sustitución que se focalizará en soluciones ligadas a sistemas de bombas de calor, o soluciones híbridas y uso de combustibles renovables",
       "pagina": 15,
       "tags": [
+        "#MedioAmbiente",
         "#Calderas",
         "#Aerotermia",
         "#Sostenibilidad"
@@ -341,9 +356,10 @@
       "cita_literal": "Trabajaremos por completar la red de recarga de vehículos eléctricos... manteniendo así el liderazgo de Castilla y León",
       "pagina": 15,
       "tags": [
+        "#Movilidad",
+        "#Infraestructuras",
         "#CocheElectrico",
-        "#CargaEléctrica",
-        "#Infraestructuras"
+        "#CargaElectrica"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -360,9 +376,10 @@
       "cita_literal": "ayudas a las industrias para la adquisición de maquinaria industrial, con especial incidencia en las pymes y en la industria en el mundo rural.",
       "pagina": 15,
       "tags": [
+        "#MedioRural",
+        "#Empleo",
         "#Pymes",
-        "#Maquinaria",
-        "#MedioRural"
+        "#Maquinaria"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -379,6 +396,7 @@
       "cita_literal": "Defendemos la inclusión de los nodos logísticos de Burgos y Salamanca... para el año 2040 y el desarrollo de los nodos de León y Valladolid en el año 2030",
       "pagina": 15,
       "tags": [
+        "#Empleo",
         "#Logistica",
         "#CorredorAtlantico",
         "#Transporte"
@@ -398,6 +416,7 @@
       "cita_literal": "Haremos una nueva bajada en la tarifa autonómica del IRPF, de la que se beneficiarán todos los contribuyentes",
       "pagina": 30,
       "tags": [
+        "#Empleo",
         "#Impuestos",
         "#IRPF",
         "#Familias"
@@ -417,8 +436,9 @@
       "cita_literal": "Aprobaremos una política fiscal de impuestos cero en el medio rural para la transmisión de propiedades",
       "pagina": 30,
       "tags": [
-        "#ExencionesSectoriales",
+        "#RetoDemografico",
         "#MedioRural",
+        "#ExencionesSectoriales",
         "#Poblacion"
       ],
       "analisis": {
@@ -436,6 +456,7 @@
       "cita_literal": "crearemos la “Cuenta Ahorro Vivienda Joven” que permitirá aplicar deducciones en el IRPF",
       "pagina": 31,
       "tags": [
+        "#Vivienda",
         "#ViviendaJoven",
         "#Deducciones",
         "#Ahorro"
@@ -455,6 +476,7 @@
       "cita_literal": "Extenderemos de forma progresiva la bonificación en el impuesto sobre sucesiones y donaciones a los familiares cercanos",
       "pagina": 30,
       "tags": [
+        "#Empleo",
         "#Herencias",
         "#Sucesiones",
         "#Bonificacion"
@@ -474,6 +496,7 @@
       "cita_literal": "Ayudaremos económicamente a nuestros autónomos con el “bono cuota autónomos”",
       "pagina": 34,
       "tags": [
+        "#Empleo",
         "#Autonomos",
         "#TarifaCero",
         "#Ayudas"
@@ -493,9 +516,10 @@
       "cita_literal": "Incidiremos en la mejora de las ayudas a la conciliación de la vida profesional y laboral por parte de trabajadores autónomos",
       "pagina": 34,
       "tags": [
-        "#Conciliacion",
+        "#Empleo",
         "#Autonomos",
-        "#Servicios"
+        "#Conciliacion",
+        "#ServiciosPublicos"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -512,6 +536,7 @@
       "cita_literal": "estos programas de “Mentoring Inverso”, donde profesionales jóvenes y digitalmente cualificados actúen como mentores",
       "pagina": 39,
       "tags": [
+        "#Empleo",
         "#Talento",
         "#Digital",
         "#Pueblos"
@@ -532,8 +557,8 @@
       "pagina": 40,
       "tags": [
         "#Formacion",
-        "#Digitalizacion",
-        "#Empleo"
+        "#Empleo",
+        "#Digitalizacion"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -550,7 +575,7 @@
       "cita_literal": "Mantendremos el compromiso de un acceso a las consultas de medicina familiar y comunitaria que no supere las 48 horas.",
       "pagina": 35,
       "tags": [
-        "#Sanidad",
+        "#SanidadPublica",
         "#AtencionPrimaria",
         "#Eficiencia"
       ],
@@ -569,6 +594,7 @@
       "cita_literal": "Introduciremos inteligencia artificial en las pruebas de cribado de cáncer de mama y seguiremos mejorando los indicadores",
       "pagina": 35,
       "tags": [
+        "#SanidadPublica",
         "#IA",
         "#Cancer",
         "#Diagnostico"
@@ -588,6 +614,7 @@
       "cita_literal": "Reforzaremos la atención en salud mental en el entorno más próximo al ciudadano, con especial atención al medio rural",
       "pagina": 36,
       "tags": [
+        "#SanidadPublica",
         "#SaludMental",
         "#MedioRural",
         "#CylCuida"
@@ -607,7 +634,7 @@
       "cita_literal": "Potenciaremos en especial la dotación de aquellos puestos de difícil cobertura tanto en Atención Primaria como Atención Hospitalaria",
       "pagina": 36,
       "tags": [
-        "#Sanidad",
+        "#SanidadPublica",
         "#EmpleoPublico",
         "#ZonasRurales"
       ],
@@ -626,6 +653,7 @@
       "cita_literal": "culminaremos... el nuevo Hospital de Aranda de Duero... Estableceremos un programa de ayudas a las entidades locales para la mejora de los consultorios",
       "pagina": 37,
       "tags": [
+        "#SanidadPublica",
         "#Hospitales",
         "#Consultorios",
         "#Inversion"
@@ -645,9 +673,10 @@
       "cita_literal": "Dotaremos a todos los consultorios rurales sin cobertura terrestre de conexión mediante satélite de órbita baja",
       "pagina": 37,
       "tags": [
+        "#SanidadPublica",
+        "#MedioRural",
         "#Telemedicina",
-        "#Satélite",
-        "#MedioRural"
+        "#Satelite"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -664,9 +693,9 @@
       "cita_literal": "Dotaremos progresivamente a los hospitales del sistema público de Unidades de Investigación Clínica en cada Área de Salud",
       "pagina": 38,
       "tags": [
-        "#I+D+i",
+        "#SanidadPublica",
         "#Hospitales",
-        "#Sanidad"
+        "#I+D+i"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -702,9 +731,9 @@
       "cita_literal": "Mantendremos abiertos los colegios que tengan escolarizados a un mínimo de 3 alumnos",
       "pagina": 30,
       "tags": [
+        "#Educacion",
         "#EscuelaRural",
-        "#Pueblos",
-        "#Educacion"
+        "#Pueblos"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -721,6 +750,7 @@
       "cita_literal": "se consiguió la gratuidad universal para la etapa de 0 a 3 años... Proseguiremos con la consolidación del acceso gratuito",
       "pagina": 33,
       "tags": [
+        "#Educacion",
         "#Guarderias",
         "#Gratuidad",
         "#Conciliacion"
@@ -740,9 +770,10 @@
       "cita_literal": "Incrementaremos el número de plazas de la Universidad de la Experiencia, aumentando las sedes on-line, especialmente en el ámbito rural",
       "pagina": 40,
       "tags": [
-        "#Mayores",
         "#Educacion",
-        "#MedioRural"
+        "#ServiciosSociales",
+        "#MedioRural",
+        "#Mayores"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -759,6 +790,7 @@
       "cita_literal": "Elaboraremos un nuevo Plan de Atención Sociosanitaria, de forma conjunta entre las Consejerías competentes en sanidad y en servicios sociales",
       "pagina": 40,
       "tags": [
+        "#ServiciosSociales",
         "#Dependencia",
         "#BurocraciaZero",
         "#Mayores"
@@ -778,9 +810,9 @@
       "cita_literal": "Crearemos la Oficina de Apoyo y Autonomía para Personas con Discapacidad con el objetivo de fomentar su autonomía personal",
       "pagina": 41,
       "tags": [
+        "#ServiciosSociales",
         "#Discapacidad",
-        "#Autonomia",
-        "#ServiciosSociales"
+        "#Autonomia"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -797,6 +829,7 @@
       "cita_literal": "Instalaremos sistemas de control domótico en los hogares de las personas con discapacidad con graves dificultades de movilidad",
       "pagina": 41,
       "tags": [
+        "#ServiciosSociales",
         "#Domotica",
         "#ViviendaAdaptada",
         "#Tecnologia"
@@ -816,6 +849,7 @@
       "cita_literal": "Aprobaremos una nueva la Ley de Familia que actualice y adapte la actual normativa a las nuevas realidades",
       "pagina": 42,
       "tags": [
+        "#ServiciosSociales",
         "#Familia",
         "#Ley",
         "#DerechosSociales"
@@ -835,6 +869,7 @@
       "cita_literal": "bono nacimiento, cuya cuantía duplicaremos hasta los 5.000 euros por nacimiento",
       "pagina": 42,
       "tags": [
+        "#ServiciosSociales",
         "#Natalidad",
         "#Ayudas",
         "#Familias"
@@ -854,8 +889,9 @@
       "cita_literal": "Pondremos en marcha el Bono Infantil, una ayuda económica directa destinada a familias con hijos de entre 4 y 12 años",
       "pagina": 42,
       "tags": [
-        "#Conciliacion",
         "#Educacion",
+        "#ServiciosSociales",
+        "#Conciliacion",
         "#Familias"
       ],
       "analisis": {
@@ -873,6 +909,7 @@
       "cita_literal": "Pondremos en marcha el programa FP STEAM Talent Girl para impulsar la presencia femenina en la Formación Profesional de ámbitos STEAM",
       "pagina": 43,
       "tags": [
+        "#ServiciosSociales",
         "#Igualdad",
         "#Mujer",
         "#STEAM"
@@ -892,6 +929,7 @@
       "cita_literal": "Aprobaremos una nueva Ley de Atención Integral a las Víctimas de violencia de género, que tipifique las nuevas formas de agresión",
       "pagina": 43,
       "tags": [
+        "#ServiciosSociales",
         "#ViolenciaDeGenero",
         "#Ley",
         "#Seguridad"
@@ -911,8 +949,9 @@
       "cita_literal": "Implantaremos una nueva planificación estratégica con un horizonte temporal 2026-2040",
       "pagina": 44,
       "tags": [
-        "#Carreteras",
+        "#Movilidad",
         "#Infraestructuras",
+        "#Carreteras",
         "#SeguridadVial"
       ],
       "analisis": {
@@ -930,6 +969,7 @@
       "cita_literal": "Desarrollaremos la Estrategia logística de Castilla y León 2030, con un enfoque multisectorial",
       "pagina": 45,
       "tags": [
+        "#Movilidad",
         "#Logistica",
         "#Transporte",
         "#Economia"
@@ -949,6 +989,7 @@
       "cita_literal": "La reapertura de la Ruta de la Plata en sus tramos Plasencia-Salamanca-Zamora- Benavente-Astorga",
       "pagina": 45,
       "tags": [
+        "#Movilidad",
         "#Tren",
         "#ViaDeLaPlata",
         "#Oeste"
@@ -968,6 +1009,7 @@
       "cita_literal": "Promoveremos el Transporte a la Demanda Flexible como un valor añadido al actual sistema de movilidad pública",
       "pagina": 46,
       "tags": [
+        "#Movilidad",
         "#TransporteADemanda",
         "#BonoRural",
         "#Pueblos"
@@ -987,6 +1029,7 @@
       "cita_literal": "Expandiremos la capacidad de supercomputación de SCAYLE con la meta de alcanzar... los 50 petaflops",
       "pagina": 46,
       "tags": [
+        "#Movilidad",
         "#Supercomputacion",
         "#SCAYLE",
         "#I+D+i"
@@ -1006,8 +1049,9 @@
       "cita_literal": "Pondremos en marcha laboratorios móviles de innovación digital, unidades itinerantes que recorrerán los municipios",
       "pagina": 47,
       "tags": [
-        "#Digitalización",
         "#MedioRural",
+        "#Movilidad",
+        "#Digitalizacion",
         "#Inclusion"
       ],
       "analisis": {
@@ -1025,8 +1069,9 @@
       "cita_literal": "Seguiremos defendiendo una PAC adaptada a la agricultura profesional y con una dotación presupuestaria fuerte",
       "pagina": 48,
       "tags": [
-        "#PAC",
+        "#SectorPrimario",
         "#Agricultura",
+        "#PAC",
         "#Europa"
       ],
       "analisis": {
@@ -1044,9 +1089,10 @@
       "cita_literal": "Lideraremos la incorporación de tecnologías de vanguardia —sensores en campo, drones de precisión y sistemas de robotización—",
       "pagina": 51,
       "tags": [
+        "#SectorPrimario",
         "#AgroTech",
         "#Drones",
-        "#Modernización"
+        "#Modernizacion"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1063,6 +1109,7 @@
       "cita_literal": "aplicamos mayores beneficios fiscales por nacimiento... para favorecer la continuidad de la actividad agraria",
       "pagina": 16,
       "tags": [
+        "#RetoDemografico",
         "#MedioRural",
         "#Natalidad",
         "#Impuestos"
@@ -1082,6 +1129,7 @@
       "cita_literal": "Apoyaremos las medidas preventivas que reduzcan los ataques del lobo, incrementando las cuantías de las ayudas públicas",
       "pagina": 49,
       "tags": [
+        "#SectorPrimario",
         "#Ganaderia",
         "#Lobo",
         "#Ayudas"
@@ -1101,6 +1149,7 @@
       "cita_literal": "Impulsaremos la modernización y las transformaciones de regadío, iniciando actuaciones en 30.000 hectáreas más",
       "pagina": 50,
       "tags": [
+        "#SectorPrimario",
         "#Regadio",
         "#Agua",
         "#Inversion"
@@ -1120,6 +1169,7 @@
       "cita_literal": "consolidación en un plazo de tres años de un operativo de extinción público, estable y permanente a lo largo de todo el año.",
       "pagina": 17,
       "tags": [
+        "#MedioAmbiente",
         "#Incendios",
         "#Montes",
         "#EmpleoPublico"
@@ -1140,9 +1190,9 @@
       "cita_literal": "creación de una Agencia Antifraude de Castilla y León. Fiscalización pública y auditorías externas",
       "pagina": 62,
       "tags": [
-        "#Antifraude",
         "#Transparencia",
-        "#Corrupción"
+        "#Antifraude",
+        "#Corrupcion"
       ],
       "analisis": {
         "competence": "Directa",
@@ -1160,8 +1210,9 @@
       "cita_literal": "Pondremos en marcha un “Plan Rehabitare Plus 5.000” para impulsar en municipios de menos de 5.000 habitantes la rehabilitación",
       "pagina": 53,
       "tags": [
-        "#Rehabilitacion",
         "#MedioRural",
+        "#Vivienda",
+        "#Rehabilitacion",
         "#Pueblos"
       ],
       "analisis": {
@@ -1180,6 +1231,7 @@
       "cita_literal": "Aprobaremos una Ley de Participación Ciudadana que garantice la intervención de las personas y les dé voz",
       "pagina": 63,
       "tags": [
+        "#Transparencia",
         "#Participacion",
         "#GobiernoAbierto",
         "#Ley"
@@ -1200,8 +1252,9 @@
       "cita_literal": "reducción a la mitad de los tiempos en la tramitación de expedientes.",
       "pagina": 63,
       "tags": [
+        "#Digitalizacion",
+        "#Transparencia",
         "#Burocracia",
-        "#Digitalización",
         "#Eficiencia"
       ],
       "analisis": {
@@ -1220,6 +1273,7 @@
       "cita_literal": "Seguiremos impulsando la Estrategia de Economía Circular de Castilla y León",
       "pagina": 55,
       "tags": [
+        "#MedioAmbiente",
         "#Sostenibilidad",
         "#EconomiaCircular",
         "#Bioeconomia"
@@ -1240,9 +1294,9 @@
       "cita_literal": "Aprobaremos una Carta de Derechos Digitales de los ciudadanos ante la Administración Autonómica",
       "pagina": 65,
       "tags": [
+        "#Transparencia",
         "#DerechosDigitales",
-        "#InclusionDigital",
-        "#Transparencia"
+        "#InclusionDigital"
       ],
       "analisis": {
         "competence": "Directa",
@@ -1260,8 +1314,9 @@
       "cita_literal": "Reclamaremos al Gobierno de España... un Estatuto Básico para los Pequeños Municipios",
       "pagina": 65,
       "tags": [
-        "#Pueblos",
+        "#RetoDemografico",
         "#Gobernanza",
+        "#Pueblos",
         "#SinPapeles"
       ],
       "analisis": {
@@ -1280,6 +1335,7 @@
       "cita_literal": "Impulsaremos acciones de revitalización de la Zona de la Raya con Portugal",
       "pagina": 60,
       "tags": [
+        "#RetoDemografico",
         "#LaRaya",
         "#Portugal",
         "#Frontera"
@@ -1300,8 +1356,9 @@
       "cita_literal": "Desarrollar un Plan Integral de Cultura Rural para garantizar el derecho a la cultura en el medio rural",
       "pagina": 58,
       "tags": [
+        "#Derechos",
         "#Cultura",
-        "#Tradicion",
+        "#Tradiciones",
         "#PueblosVivos"
       ],
       "analisis": {
@@ -1320,9 +1377,10 @@
       "cita_literal": "Apoyaremos a las escuelas taurinas oficiales... Impulsaremos la Biblioteca Digital Taurina",
       "pagina": 59,
       "tags": [
-        "#Toros",
-        "#Tradiciones",
-        "#Cultura"
+        "#Derechos",
+        "#Cultura",
+        "#Tauromaquia",
+        "#Tradiciones"
       ],
       "analisis": {
         "competence": "Directa",
@@ -1340,8 +1398,9 @@
       "cita_literal": "mantendremos nuestra exigencia de devolución de los documentos que salieron indebidamente del Archivo General de la Guerra Civil Española hacia Cataluña",
       "pagina": 59,
       "tags": [
-        "#ArchivoGuerraCivil",
+        "#Empleo",
         "#Patrimonio",
+        "#ArchivoGuerraCivil",
         "#España"
       ],
       "analisis": {
@@ -1398,9 +1457,9 @@
       "cita_literal": "Aprobaremos el “Plan Coopera Digital” con ayudas para digitalizar procesos, implantar trazabilidad, comercio electrónico y logística cooperativa.",
       "pagina": 22,
       "tags": [
-        "#Cooperativas",
+        "#Empleo",
         "#Digitalizacion",
-        "#Empleo"
+        "#Cooperativas"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1417,6 +1476,7 @@
       "cita_literal": "Aprobaremos una nueva ley autonómica de economía social armonizada y adaptada a las nuevas necesidades y los nuevos retos de la economía social en nuestra comunidad.",
       "pagina": 23,
       "tags": [
+        "#Empleo",
         "#EconomiaSocial",
         "#EmpleoInclusivo",
         "#Insercion"
@@ -1436,8 +1496,9 @@
       "cita_literal": "Aprobaremos ayudas directas y microcréditos a nuevos proyectos de economía social en zonas rurales con riesgo de despoblación. Crearemos un fondo de capital semilla público destinado a startups de economía social.",
       "pagina": 23,
       "tags": [
-        "#EconomiaSocial",
         "#MedioRural",
+        "#Empleo",
+        "#EconomiaSocial",
         "#Microcreditos"
       ],
       "analisis": {
@@ -1455,8 +1516,9 @@
       "cita_literal": "Desarrollaremos una Estrategia de Comercio a muy largo plazo que defina el modelo comercial y de ciudad y proteja al comercio de proximidad.",
       "pagina": 24,
       "tags": [
-        "#ComercioLocal",
+        "#Empleo",
         "#Digitalizacion",
+        "#ComercioLocal",
         "#BonosConsumo"
       ],
       "analisis": {
@@ -1474,9 +1536,10 @@
       "cita_literal": "Ampliaremos el “Cheque Comercio Rural” a través del Plan Comercio Rural Vivo.",
       "pagina": 25,
       "tags": [
+        "#RetoDemografico",
+        "#Despoblacion",
         "#MedioRural",
-        "#Comercio",
-        "#Despoblacion"
+        "#Comercio"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1493,6 +1556,7 @@
       "cita_literal": "Impulsaremos un proyecto de ley de turismo de Castilla y León que se adapte a la realidad actual del sector.",
       "pagina": 26,
       "tags": [
+        "#Empleo",
         "#Turismo",
         "#Regulacion",
         "#Calidad"
@@ -1532,8 +1596,8 @@
       "pagina": 27,
       "tags": [
         "#Vivienda",
-        "#VPO",
-        "#Alquiler"
+        "#Alquiler",
+        "#VPO"
       ],
       "analisis": {
         "competencia": "Directa",
@@ -1569,9 +1633,10 @@
       "cita_literal": "Reforzaremos el Programa Arte Joven con el desarrollo de un Plan de Apoyo a Jóvenes Artistas.",
       "pagina": 68,
       "tags": [
-        "#Jovenes",
+        "#Participacion",
+        "#Derechos",
         "#Cultura",
-        "#Participacion"
+        "#Jovenes"
       ],
       "analisis": {
         "competencia": "Directa",
