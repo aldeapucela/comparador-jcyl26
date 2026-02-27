@@ -6,6 +6,7 @@ corrija títulos, resúmenes y estructura antes de dar por buena la extracción.
 """
 
 import argparse
+import difflib
 import json
 import re
 import sys
@@ -121,7 +122,11 @@ def issue(issues: list[tuple[str, str]], level: str, msg: str) -> None:
     issues.append((level, msg))
 
 
-def validate_file(path: Path, pdf_path: Optional[Path] = None) -> list[tuple[str, str]]:
+def validate_file(
+    path: Path,
+    pdf_path: Optional[Path] = None,
+    literal_threshold: float = 0.85,
+) -> list[tuple[str, str]]:
     issues: list[tuple[str, str]] = []
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
@@ -243,6 +248,21 @@ def validate_file(path: Path, pdf_path: Optional[Path] = None) -> list[tuple[str
             if nt and nr == nt:
                 issue(issues, "WARN", f"{prefix}: resumen idéntico al título")
 
+            # Detecta resúmenes demasiado literales frente a cita_literal.
+            cita_for_similarity = p.get("cita_literal")
+            if isinstance(cita_for_similarity, str) and cita_for_similarity.strip():
+                nc = norm_text(cita_for_similarity.strip())
+                sim = difflib.SequenceMatcher(a=nr, b=nc).ratio()
+                if sim >= literal_threshold:
+                    issue(
+                        issues,
+                        "WARN",
+                        (
+                            f"{prefix}: resumen demasiado literal respecto a cita_literal "
+                            f"(sim={sim:.2f}, umbral={literal_threshold:.2f})"
+                        ),
+                    )
+
         cita = p.get("cita_literal")
         if not isinstance(cita, str) or not cita.strip():
             issue(issues, "ERROR", f"{prefix}: cita_literal vacía")
@@ -345,6 +365,12 @@ def parse_args(argv: Iterable[str]) -> argparse.Namespace:
         action="store_true",
         help="Devuelve código de error si hay warnings",
     )
+    parser.add_argument(
+        "--literal-threshold",
+        type=float,
+        default=0.85,
+        help="Umbral de similitud resumen/cita para marcar literalidad (0-1).",
+    )
     return parser.parse_args(list(argv))
 
 
@@ -359,7 +385,11 @@ def main(argv: Iterable[str]) -> int:
 
     all_issues: list[tuple[str, str]] = []
     for path in json_paths:
-        issues = validate_file(path, pdf_path=pdf_path if len(json_paths) == 1 else None)
+        issues = validate_file(
+            path,
+            pdf_path=pdf_path if len(json_paths) == 1 else None,
+            literal_threshold=args.literal_threshold,
+        )
         all_issues.extend(issues)
 
     err_count = sum(1 for level, _ in all_issues if level == "ERROR")

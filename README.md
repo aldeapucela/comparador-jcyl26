@@ -107,6 +107,12 @@ Si quieres fallar tambien con warnings:
 python3 scripts/validate_extraction.py data/partidos/nombre_partido.json --pdf programas/nombre_partido.pdf --fail-on-warning
 ```
 
+Para exigir mayor re-redaccion (menos literalidad), puedes endurecer el umbral:
+
+```bash
+python3 scripts/validate_extraction.py data/partidos/nombre_partido.json --pdf programas/nombre_partido.pdf --literal-threshold 0.85 --fail-on-warning
+```
+
 Chequeo global rapido de cobertura por partido:
 
 ```bash

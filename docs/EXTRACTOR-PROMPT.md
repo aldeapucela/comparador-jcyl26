@@ -16,8 +16,12 @@ No basta con copiar texto bruto ni con truncar frases.
    - Genera un JSON por bloque en `data/` (`partido_01_20.json`, etc.).
 3. **Integridad antes de redactar**
    - Haz una lista interna de todas las medidas del bloque.
-   - Cada punto/propuesta independiente del programa debe convertirse en 1 objeto JSON.
-   - Si un bullet incluye varias acciones separables, divídelas en varias propuestas.
+   - Detecta qué medidas son nucleares y cuáles son micro-medidas instrumentales del mismo objetivo.
+4. **Síntesis por eje (orientada a lectura vecinal)**
+   - No conviertas el JSON en un volcado literal.
+   - Agrupa micro-medidas cuando formen parte de una misma política y no aporten comprensión separada.
+   - Regla práctica: una propuesta debe responder con claridad a “qué cambia” y “a quién beneficia”.
+   - Evita títulos técnicos internos de administración si puedes expresarlo en lenguaje ciudadano.
 4. **Redacción LLM de campos**
    - Redacta `titulo_corto`, `resumen` y `pregunta_afinidad` con lenguaje natural.
    - No uses plantillas repetitivas tipo “La propuesta establece...”.
@@ -88,7 +92,8 @@ Usa solo estas 11:
    - Evita fórmulas pobres tipo “esta propuesta...”.
 
 **REGLAS DE INTEGRIDAD**
-- **No agrupar**: cada medida individual en su propio objeto.
+- **Agrupación permitida y recomendada**: fusiona medidas casi idénticas o instrumentales del mismo objetivo para mejorar legibilidad.
+- **Granularidad útil**: evita que una única propuesta mezcle políticas de objetivos distintos.
 - **No inventar**: si no está en el programa, no se añade.
 - **No duplicar**: registrar la primera aparición con su página de origen.
 - **Foco rural**: `true` cuando haya referencia a pueblos, dispersión, ruralidad, agricultura o ganadería.
