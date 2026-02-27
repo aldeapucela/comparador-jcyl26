@@ -103,6 +103,11 @@ body {
     transition: max-height 0.3s ease-out;
 }
 
+.afinidad-option-selected {
+    border-color: #334155 !important;
+    box-shadow: inset 0 0 0 1px rgba(51, 65, 85, 0.25);
+}
+
 /* Mobile Optimizations */
 @media (max-width: 1024px) {
     aside {
@@ -188,8 +193,10 @@ body {
         display: block;
     }
 
+    /* In two-column mobile layout this top accent leaks through rounded
+       corners of the first card, so disable it to avoid visual artifacts. */
     .contrast-grid.mobile-two-col .party-comparison-col::before {
-        opacity: 1;
+        opacity: 0;
     }
 
     .contrast-grid.mobile-two-col .proposal-card-compact {

@@ -47,8 +47,10 @@ let afinidadState = {
     restored: false
 };
 
+const AFINIDAD_STORAGE_KEY = 'afinidad_answers_latest';
+
 function getStorageKey() {
-    return 'afinidad_answers_' + new Date().toISOString().split('T')[0];
+    return AFINIDAD_STORAGE_KEY;
 }
 
 export async function initAfinidad() {
@@ -167,11 +169,11 @@ export function renderQuestion() {
     optionsContainer.innerHTML = LIKERT_OPTIONS.map(opt => {
         const isSelected = afinidadState.answers[q.id] === opt.value;
         return `
-            <button class="afinidad-option w-full text-left p-4 rounded-xl border-2 transition-all duration-200 ${opt.color} ${isSelected ? 'ring-2 ring-offset-2 ring-indigo-500' : ''}"
+            <button class="afinidad-option w-full text-left p-4 rounded-xl border-2 transition-all duration-200 ${opt.color} ${isSelected ? 'afinidad-option-selected' : ''}"
                     data-value="${opt.value}" data-question="${q.id}">
                 <div class="flex items-center justify-between">
                     <span class="font-medium">${opt.label}</span>
-                    ${isSelected ? '<i class="fa-solid fa-check-circle text-indigo-600"></i>' : ''}
+                    ${isSelected ? '<i class="fa-solid fa-check-circle text-slate-700"></i>' : ''}
                 </div>
             </button>
         `;
