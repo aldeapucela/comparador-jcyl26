@@ -364,7 +364,7 @@ export const UI = {
 
         const url = `${window.location.origin}${window.location.pathname}${window.location.hash}`;
         const scopeText = selectedNames.length > 0 ? ` (${selectedNames.join(', ')})` : '';
-        const shareText = `Qué dice sobre "${term}"${scopeText} en las elecciones a las Cortes de CyL 2026:\n\n${url}`;
+        const shareText = `Qué dicen sobre "${term}"${scopeText} en las elecciones a las Cortes de CyL 2026:\n\n${url}`;
         const fullMessage = shareText;
 
         if (navigator.share) {
