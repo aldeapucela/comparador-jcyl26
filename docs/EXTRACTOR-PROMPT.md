@@ -1,16 +1,36 @@
 **ROLE**
-Actúa como un Experto en Análisis Político y Científico de Datos. Tu objetivo es procesar el programa electoral adjunto y transformarlo en un archivo JSON estructurado para alimentar un comparador web.
+Actúa como analista político y de datos. Tu objetivo es transformar el programa electoral en JSON estructurado **sin perder medidas** y con redacción de calidad para frontend.
 
-**INSTRUCCIONES DE FLUJO (CRÍTICO)**
-1. **Fase 0: Escaneo**: Dime cuántas páginas tiene el documento y quiénes son los candidatos principales mencionados.
-2. **Fase 1: Extracción por Bloques**: Procesa el documento en rangos de **20 páginas** (Bloque 1: págs 1-20, Bloque 2: 21-40, etc.).
-3. **Evitar Límites de Token**: Genera un archivo `.json` independiente para cada bloque en la carpeta `data/` (ej. `partido_01_20.json`).
-4. **Mantenimiento de ID**: Mantén una numeración de `id` correlativa absoluta entre bloques.
-5. **Metadata**: Extrae metadatos completos solo en el Bloque 1. En los demás, indica `"metadatos": "continúa"`.
-6. **Fase 2: Unificación**: Tras procesar todos los bloques, utiliza el script `scripts/merge_batches.py` para unificar los datos.
+**OBJETIVO CRÍTICO**
+La extracción debe ser **híbrida**:
+1. Extracción fiel del contenido (integridad documental).
+2. Reescritura útil por LLM (títulos y resúmenes claros, naturales y no mecánicos).
 
-**ESTRUCTURA DE CATEGORÍAS (OBLIGATORIO)**
-Clasifica cada propuesta en una de estas 11 categorías únicamente:
+No basta con copiar texto bruto ni con truncar frases.
+
+**FLUJO OBLIGATORIO**
+1. **Fase 0: Escaneo**
+   - Indica cuántas páginas tiene el PDF y candidato(s) principal(es).
+2. **Fase 1: Bloques**
+   - Procesa en rangos de **20 páginas** (1-20, 21-40, etc.).
+   - Genera un JSON por bloque en `data/` (`partido_01_20.json`, etc.).
+3. **Integridad antes de redactar**
+   - Haz una lista interna de todas las medidas del bloque.
+   - Cada punto/propuesta independiente del programa debe convertirse en 1 objeto JSON.
+   - Si un bullet incluye varias acciones separables, divídelas en varias propuestas.
+4. **Redacción LLM de campos**
+   - Redacta `titulo_corto`, `resumen` y `pregunta_afinidad` con lenguaje natural.
+   - No uses plantillas repetitivas tipo “La propuesta establece...”.
+5. **ID y metadatos**
+   - `id` correlativo global entre bloques (sin reiniciar).
+   - Metadatos completos solo en bloque 1; en el resto `"metadatos": "continúa"`.
+6. **Fase 2: Unificación**
+   - Unifica con `scripts/merge_batches.py`.
+7. **Control de calidad**
+   - Ejecuta validación antes de dar por finalizado (checklist + script de validación).
+
+**CATEGORÍAS PERMITIDAS (OBLIGATORIO)**
+Usa solo estas 11:
 1. Sanidad Pública
 2. Educación y Futuro
 3. Servicios Sociales y Cuidados
@@ -23,33 +43,69 @@ Clasifica cada propuesta en una de estas 11 categorías únicamente:
 10. Calidad Democrática y Transparencia
 11. Otros (Igualdad, Cultura, Caza y Tauromaquia)
 
-**ANÁLISIS DE COMPETENCIA (EL SEMÁFORO)**
-Classifica cada medida según la capacidad de la Junta de CyL:
-- `"Directa"`: La Junta tiene la competencia exclusiva.
-- `"Shared"`: Depende de leyes estatales o fondos europeos.
-- `"Petition"`: Es una exigencia al Gobierno de España.
+**SEMÁFORO DE COMPETENCIA**
+- `"Directa"`: competencia autonómica directa.
+- `"Shared"`: depende también de normativa/financiación estatal o UE.
+- `"Petition"`: exigencia dirigida al Gobierno de España u otra administración.
 
-**FORMATO DE SALIDA (JSON)**
-Cada objeto de propuesta debe seguir este esquema:
+**FORMATO JSON (OBLIGATORIO)**
 ```json
 {
   "id": 1,
   "categoria": "",
   "subcategoria": "Nombre funcional (ej. 'Salud Mental', 'VPO')",
-  "titulo_corto": "Máx 10 palabras",
-  "resumen": "Descripción clara de la medida",
-  "cita_literal": "Cita breve para verificación",
+  "titulo_corto": "Sintético, natural y completo",
+  "resumen": "Explicación breve en lenguaje natural",
+  "cita_literal": "Fragmento literal verificable",
   "pagina": 0,
   "tags": ["#Tag1", "#Tag2"],
   "analisis": {
     "competencia": "Directa | Shared | Petition",
-    "foco_rural": true/false
+    "foco_rural": true
   },
-  "pregunta_afinidad": "¿Estaría usted de acuerdo con [propuesta neutral]?"
+  "pregunta_afinidad": "Pregunta neutral y clara para Likert"
 }
 ```
 
-**REGLAS DE ORO**
-- **Foco Rural**: Si menciona "pueblos", "municipios pequeños", "agricultura", "dispersión" o "ganadería", `foco_rural` debe ser `true`.
-- **Integridad**: No resumas grupos de medidas. Cada punto del programa es una propuesta individual en el array.
-- **Sin duplicados**: Solo registra una medida la primera vez que aparezca con su página original.
+**REGLAS POR CAMPO (CALIDAD EDITORIAL)**
+1. `titulo_corto`
+   - 4-12 palabras aprox.
+   - Debe poder leerse completo (sin cortes tipo “... de Castilla y”).
+   - No termines en preposición/artículo (`de`, `en`, `y`, `la`, etc.).
+   - Estilo frase en castellano: evita mayúsculas internas arbitrarias.
+   - Siglas válidas en mayúscula (`FP`, `IRPF`, `PAC`, `4G/5G`, etc.).
+2. `resumen`
+   - 1-2 frases, claro y útil para usuario.
+   - No debe empezar repitiendo el título.
+   - No usar prefijos repetitivos (ej. “La propuesta establece...” en masa).
+   - No recortes ni puntos suspensivos por truncado.
+3. `cita_literal`
+   - Debe ser literal y verificable.
+   - Debe cerrar en límite natural (frase o cláusula), no cortar palabra.
+4. `pregunta_afinidad`
+   - Neutral, entendible y no tendenciosa.
+   - Debe empezar con `¿` y terminar con `?`.
+   - Evita fórmulas pobres tipo “esta propuesta...”.
+
+**REGLAS DE INTEGRIDAD**
+- **No agrupar**: cada medida individual en su propio objeto.
+- **No inventar**: si no está en el programa, no se añade.
+- **No duplicar**: registrar la primera aparición con su página de origen.
+- **Foco rural**: `true` cuando haya referencia a pueblos, dispersión, ruralidad, agricultura o ganadería.
+
+**ERRORES A EVITAR (SE HAN DETECTADO EN ITERACIONES PREVIAS)**
+- Títulos recortados o partidos entre título/resumen.
+- Resúmenes que copian literalmente el título.
+- Palabras deformadas por mayúsculas internas (`socIAles`, `accESO`).
+- Extracción parcial (especialmente en bloques con muchos bullets).
+- Clasificaciones de categoría incoherentes con el contenido.
+
+**CHECKLIST FINAL (ANTES DE CERRAR BLOQUE)**
+1. ¿Se capturaron todas las medidas del bloque?
+2. ¿No hay títulos truncados?
+3. ¿No hay resúmenes duplicando título?
+4. ¿No hay mayúsculas raras en mitad de palabra?
+5. ¿`cita_literal` es verificable y está completa?
+6. ¿`pregunta_afinidad` es neutral y bien formada?
+7. ¿Categoría y competencia son coherentes?
+8. ¿IDs correlativos sin saltos ni duplicados?

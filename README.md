@@ -82,7 +82,8 @@ Pasos:
 1. Cargar el PDF del partido.
 2. Ejecutar el prompt de extraccion.
 3. Procesar en bloques de 20 paginas para no perder medidas.
-4. Guardar cada bloque como JSON en `data/` (ejemplo: `pp_01_20.json`, `pp_21_40.json`).
+4. El LLM debe redactar `titulo_corto`, `resumen` y `pregunta_afinidad` en lenguaje natural (no copiar/pegar mecanico del PDF).
+5. Guardar cada bloque como JSON en `data/` (ejemplo: `pp_01_20.json`, `pp_21_40.json`).
 
 ### 2.2 Unificacion de bloques por partido
 
@@ -92,7 +93,27 @@ Cuando tengas todos los bloques de un partido, unificalos con:
 python3 scripts/merge_batches.py --dir ./data --out nombre_partido.json --pattern "prefijo_partido_*.json"
 ```
 
-### 2.3 Generacion del cuestionario y matriz de puntos
+### 2.3 Validacion de calidad de extraccion (obligatorio)
+
+Antes de dar por cerrada la extraccion de un partido, valida el JSON final:
+
+```bash
+python3 scripts/validate_extraction.py data/partidos/nombre_partido.json --pdf programas/nombre_partido.pdf
+```
+
+Si quieres fallar tambien con warnings:
+
+```bash
+python3 scripts/validate_extraction.py data/partidos/nombre_partido.json --pdf programas/nombre_partido.pdf --fail-on-warning
+```
+
+Chequeo global rapido de cobertura por partido:
+
+```bash
+python3 scripts/audit_extraction_quality.py
+```
+
+### 2.4 Generacion del cuestionario y matriz de puntos
 
 Con los JSON de partidos listos, usa `docs/QUESTIONS-GENERATOR-PROMPT.md` para generar:
 
