@@ -151,6 +151,16 @@ function setupEventListeners() {
 
     // Back Button
     UI.elements.btnBack.addEventListener('click', () => {
+        const route = (appState.currentHash || '#/')
+            .split('/')
+            .filter(p => p && p !== '#')[0] || '';
+        const isPartyRoute = PARTIES.some(p => p.id === route);
+
+        if (route === 'comparar' || isPartyRoute) {
+            UI.navigateHash('#/');
+            return;
+        }
+
         const previousHash = appState.previousHash;
         if (previousHash && previousHash !== appState.currentHash) {
             UI.navigateHash(previousHash);
@@ -466,7 +476,6 @@ function doCategorySelect(category) {
     const categories = getCategoriesFromProposals(appState.currentData.propuestas);
     renderNavigation(categories);
     UI.renderProposals(appState.currentData.propuestas, appState.currentCategory, appState.selectedParty, categories, doCategorySelect);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function highlightMeasure(id) {

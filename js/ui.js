@@ -75,6 +75,20 @@ export const UI = {
         window.location.hash = hash;
     },
 
+    scrollToCategoryHeader(behavior = 'smooth') {
+        const header = document.getElementById('category-header');
+        if (!header) return;
+
+        const stickyBar = document.getElementById('sticky-party-identity');
+        const stickyOffset = stickyBar && !stickyBar.classList.contains('-translate-y-full') ? stickyBar.offsetHeight : 0;
+        const targetTop = header.getBoundingClientRect().top + window.scrollY - stickyOffset - 12;
+
+        window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior
+        });
+    },
+
     // Methods
     renderPartySelection() {
         // Create a copy and shuffle for fairness
@@ -497,9 +511,16 @@ export const UI = {
             // Setup category selection
             dropdown.querySelectorAll('.category-dropdown-item').forEach(item => {
                 item.addEventListener('click', () => {
-                    onSelect(item.dataset.category);
+                    const selectedCategory = item.dataset.category;
+                    const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+                    const didChangeCategory = selectedCategory !== currentActiveCategory;
+
+                    onSelect(selectedCategory);
                     dropdown.remove();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                    if (isMobile && didChangeCategory) {
+                        setTimeout(() => this.scrollToCategoryHeader('smooth'), 120);
+                    }
                 });
             });
 
