@@ -820,7 +820,9 @@ export const UI = {
     },
 
     toggleQuote(id, btn) {
-        const quoteDiv = document.getElementById(`quote-${id}`);
+        const quoteId = String(id).startsWith('quote-') ? String(id) : `quote-${id}`;
+        const quoteDiv = document.getElementById(quoteId);
+        if (!quoteDiv) return;
         const isHidden = quoteDiv.style.maxHeight === '0px' || !quoteDiv.style.maxHeight || quoteDiv.style.maxHeight === '0';
         if (isHidden) {
             quoteDiv.style.maxHeight = '500px';
@@ -1038,7 +1040,7 @@ export const UI = {
 
         // Attach quote toggle events
         this.containers.comparisonResults.querySelectorAll('.btn-toggle-quote').forEach(btn => {
-            btn.addEventListener('click', () => this.toggleQuote(btn.dataset.id, btn));
+            btn.addEventListener('click', () => this.toggleQuote(btn.dataset.quoteId || btn.dataset.id, btn));
         });
 
         // Attach share events
@@ -1185,11 +1187,13 @@ export const UI = {
     },
 
     createComparisonCardHTML(prop, partyInfo, options = {}) {
+        const quoteKey = `${partyInfo.id}-${prop.id}`;
+
         if (options.compact) {
             return `
                 <article
                     class="proposal-card proposal-card-compact relative bg-white p-4 rounded-xl border border-slate-100 shadow-sm"
-                    id="prop-${prop.id}">
+                    id="prop-${quoteKey}">
                     <div class="party-indicator" style="background-color: ${partyInfo.color}"></div>
                     <p class="text-slate-700 text-sm leading-relaxed">${prop.resumen}</p>
                     <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
@@ -1210,14 +1214,14 @@ export const UI = {
         return `
             <article
                 class="proposal-card relative bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
-                id="prop-${prop.id}">
+                id="prop-${quoteKey}">
                 <div class="party-indicator" style="background-color: ${partyInfo.color}"></div>
                 <div class="mb-4">
                     <h4 class="text-lg font-bold text-slate-800 leading-tight">${prop.titulo_corto}</h4>
                 </div>
                 <p class="text-slate-600 mb-6 text-sm leading-relaxed">${prop.resumen}</p>
 
-                <div class="quote-section overflow-hidden transition-all duration-300 max-h-0" id="quote-${prop.id}">
+                <div class="quote-section overflow-hidden transition-all duration-300 max-h-0" id="quote-${quoteKey}">
                     <div class="bg-slate-50 p-5 rounded-xl border-l-4 mb-4" style="border-color: ${partyInfo.color}50">
                         <p class="text-sm italic text-slate-500 mb-4 leading-relaxed font-serif">"${prop.cita_literal}"</p>
                         <div class="flex justify-between items-center text-xs">
@@ -1239,7 +1243,7 @@ export const UI = {
                             <i class="fa-solid fa-share-nodes text-[10px]"></i>
                             <span>Compartir</span>
                         </button>
-                        <button class="btn-toggle-quote text-xs font-semibold text-slate-400 hover:text-slate-800 flex items-center gap-2 transition-colors" data-id="${prop.id}">
+                        <button class="btn-toggle-quote text-xs font-semibold text-slate-400 hover:text-slate-800 flex items-center gap-2 transition-colors" data-id="${prop.id}" data-quote-id="${quoteKey}">
                             <i class="fa-solid fa-quote-left text-[10px]"></i>
                             <span>Ver fuente</span>
                         </button>
