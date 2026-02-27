@@ -3,7 +3,6 @@
     var _paq = window._paq = window._paq || [];
     
     // Tracker configuration
-    _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
     
     // Matomo configuration

@@ -33,11 +33,6 @@ async function init() {
     UI.renderPartySelection();
     setupEventListeners();
     
-    // Track initial page view
-    if (typeof _paq !== 'undefined') {
-        _paq.push(['trackPageView']);
-    }
-    
     handleRouting();
 }
 

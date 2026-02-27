@@ -201,7 +201,7 @@ export const UI = {
                             ${this.renderCompetenceBadge(prop.analisis.competencia)}
                             <div class="h-3 w-px bg-slate-200 mx-1 mobile-hidden"></div>
                             <div class="flex flex-wrap gap-2">
-                                ${prop.foco_rural ? '<span class="px-2 py-1 bg-amber-50 text-amber-600 text-[10px] font-bold rounded uppercase flex items-center gap-1"><i class="fa-solid fa-tractor"></i> Foco Rural</span>' : ''}
+                                ${prop.analisis?.foco_rural ? '<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-50 text-amber-600" title="Foco rural"><i class="fa-solid fa-tractor text-[10px]"></i><span class="sr-only">Foco rural</span></span>' : ''}
                                 ${prop.tags.map(tag => `<span class="px-2 py-1 bg-slate-100 text-slate-500 text-[10px] font-medium rounded">${tag}</span>`).join('')}
                             </div>
                         </div>
@@ -564,10 +564,7 @@ export const UI = {
         // 3. Render Filters state
         this.updateFilterButtons(filters);
 
-        // 4. Setup Simple Mobile Navigation
-        this.setupSimpleMobileNav(comparisonIds);
-
-        // 5. Render Results
+        // 4. Render Results
         if (!currentCategory) {
             this.containers.comparisonResults.innerHTML = `
                 <div class="text-center py-20 bg-white rounded-3xl border border-dashed border-slate-300">
@@ -616,13 +613,6 @@ export const UI = {
 
         html += `</div>`;
         this.containers.comparisonResults.innerHTML = html;
-
-        // Set first column active on mobile
-        const firstCol = this.containers.comparisonResults.querySelector('.party-comparison-col');
-        if (firstCol && !isMobile) firstCol.classList.add('mobile-active');
-
-        // Setup simple mobile swipe
-        if (!isMobile) this.setupSimpleMobileSwipe(comparisonIds);
 
         // Attach quote toggle events
         this.containers.comparisonResults.querySelectorAll('.btn-toggle-quote').forEach(btn => {
@@ -820,7 +810,7 @@ export const UI = {
 
                 <div class="flex items-center justify-between pt-4 border-t border-slate-50">
                     <div class="flex items-center gap-2">
-                        ${prop.foco_rural ? '<i class="fa-solid fa-tractor text-amber-500 text-xs" title="Foco Rural"></i>' : ''}
+                        ${prop.analisis?.foco_rural ? '<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-50 text-amber-600" title="Foco rural"><i class="fa-solid fa-tractor text-xs"></i><span class="sr-only">Foco rural</span></span>' : ''}
                     </div>
                     <div class="flex gap-3">
                         <button class="btn-share text-xs font-semibold text-slate-400 hover:text-slate-800 flex items-center gap-2 transition-colors" data-id="${prop.id}" data-party="${partyInfo.id}">
