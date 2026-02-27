@@ -2,155 +2,155 @@
     {
         "id": "SAN_1",
         "categoria": "Sanidad Pública",
-        "pregunta": "La Junta debería blindar por ley que el 25% del presupuesto sanitario se destine a Atención Primaria.",
+        "pregunta": "La Junta debería blindar por ley que al menos el 25% del presupuesto sanitario se destine a Atención Primaria.",
         "tema": "Sanidad - Atención Primaria",
-        "contexto": "Se plantea fijar por ley un mínimo del 25% del gasto sanitario para reforzar centros de salud, personal y capacidad resolutiva de la Atención Primaria."
+        "contexto": "La propuesta plantea reservar por ley una parte fija del gasto sanitario para reforzar centros de salud, plantillas y capacidad resolutiva de la Primaria."
     },
     {
         "id": "SAN_2",
         "categoria": "Sanidad Pública",
-        "pregunta": "La Junta debería fijar tiempos máximos de atención sanitaria (cita en Primaria, respuesta de ambulancias y listas de espera) con seguimiento público de cumplimiento.",
-        "tema": "Sanidad - Tiempos Máximos",
-        "contexto": "Se propone establecer objetivos medibles de tiempo de respuesta en varias capas del sistema sanitario y publicar su cumplimiento de forma transparente."
+        "pregunta": "La Junta debería priorizar la gestión sanitaria pública directa y limitar la derivación estructural a proveedores privados.",
+        "tema": "Sanidad - Gestión Pública",
+        "contexto": "Aquí se compara un modelo de mayor gestión pública directa frente a otro que mantiene o amplía la colaboración con centros privados para absorber demanda."
     },
     {
         "id": "EDU_1",
         "categoria": "Educación y Futuro",
-        "pregunta": "La Junta debería garantizar una red gratuita y suficiente de educación infantil de 0 a 3 años en todo el territorio.",
-        "tema": "Educación - Etapa 0-3",
-        "contexto": "La medida prioriza ampliar y consolidar una oferta pública y asequible de primer ciclo infantil para facilitar conciliación y reducir desigualdades territoriales."
+        "pregunta": "La Junta debería priorizar la red pública educativa frente a la concertada o diferenciada.",
+        "tema": "Educación - Modelo de Red Escolar",
+        "contexto": "Se contrasta un modelo que concentra recursos en educación pública con otro que da mayor peso a libertad de elección y protección de modalidades concertadas o diferenciadas."
     },
     {
         "id": "EDU_2",
         "categoria": "Educación y Futuro",
-        "pregunta": "La Junta debería garantizar que las escuelas rurales permanezcan abiertas con al menos 3 alumnos.",
-        "tema": "Educación - Escuelas Rurales",
-        "contexto": "La propuesta busca evitar cierres por baja ratio en pueblos pequeños para mantener servicios básicos y arraigo de familias."
+        "pregunta": "La Junta debería exigir autorización expresa de las familias para actividades escolares complementarias con contenido moral o ideológico.",
+        "tema": "Educación - Autorización Familiar",
+        "contexto": "Esta pregunta evalúa el llamado control parental sobre actividades complementarias, frente a modelos que dejan esa programación dentro de la autonomía educativa ordinaria."
     },
     {
         "id": "SOC_1",
         "categoria": "Servicios Sociales",
-        "pregunta": "La Junta debería priorizar residencias públicas y limitar la gestión privada con ánimo de lucro en los cuidados de larga duración.",
-        "tema": "Servicios Sociales - Modelo de Cuidados",
-        "contexto": "Aquí se contrapone un modelo con mayor peso de red pública y control directo frente a otro con más externalización de la gestión asistencial."
+        "pregunta": "La Junta debería priorizar una red de residencias públicas y limitar la gestión con ánimo de lucro en cuidados de larga duración.",
+        "tema": "Servicios Sociales - Modelo Residencial",
+        "contexto": "Se contrapone una política de expansión del sistema público de cuidados frente a modelos mixtos con mayor peso de operadores privados."
     },
     {
         "id": "SOC_2",
         "categoria": "Servicios Sociales",
-        "pregunta": "La Junta debería reducir con prioridad las listas de espera de dependencia y reforzar la ayuda a domicilio y las plazas públicas de cuidados.",
+        "pregunta": "La Junta debería reducir con prioridad las listas de espera de dependencia y reforzar ayuda a domicilio y plazas públicas de cuidados.",
         "tema": "Servicios Sociales - Dependencia",
-        "contexto": "La medida combina reducción de demoras administrativas con expansión de servicios de proximidad y recursos de cuidados para personas dependientes."
+        "contexto": "La propuesta combina agilización administrativa de la dependencia con más recursos de atención domiciliaria y centros de cuidados."
     },
     {
         "id": "RET_1",
         "categoria": "Reto Demográfico",
         "pregunta": "La Junta debería aplicar incentivos fiscales y económicos específicos para atraer y fijar población en el medio rural.",
         "tema": "Reto Demográfico - Incentivos",
-        "contexto": "Se plantea usar deducciones, ayudas y ventajas económicas para facilitar que familias y actividad económica se establezcan en zonas despobladas."
+        "contexto": "Evalúa si la política demográfica debe apoyarse en deducciones, ayudas y ventajas económicas para residencia y actividad en pueblos."
     },
     {
         "id": "RET_2",
         "categoria": "Reto Demográfico",
-        "pregunta": "La Junta debería desplegar una estrategia autonómica estable contra la despoblación, con financiación y estructura comarcal de gestión.",
-        "tema": "Reto Demográfico - Gobernanza Territorial",
-        "contexto": "La propuesta exige pasar de medidas aisladas a una política continuada, con órganos de ejecución, financiación estable y coordinación territorial."
+        "pregunta": "La Junta debería reforzar el bono nacimiento y las políticas familiares como eje central contra la despoblación.",
+        "tema": "Reto Demográfico - Natalidad y Familia",
+        "contexto": "La pregunta mide el peso que deben tener natalidad y apoyo familiar dentro de la estrategia demográfica autonómica."
     },
     {
         "id": "VIV_1",
         "categoria": "Vivienda",
         "pregunta": "La Junta debería limitar por ley el precio del alquiler en zonas tensionadas.",
         "tema": "Vivienda - Regulación del Alquiler",
-        "contexto": "La medida plantea intervenir en áreas con fuerte subida de rentas para contener precios y mejorar el acceso a vivienda habitual."
+        "contexto": "Se plantea intervenir en áreas con subidas intensas del alquiler para contener rentas y mejorar acceso a vivienda habitual."
     },
     {
         "id": "VIV_2",
         "categoria": "Vivienda",
         "pregunta": "La Junta debería priorizar los avales para compra de vivienda joven frente a ampliar el parque público de alquiler.",
         "tema": "Vivienda - Compra vs Alquiler Público",
-        "contexto": "Esta pregunta enfrenta dos enfoques: centrar recursos en facilitar hipotecas de jóvenes o destinarlos a aumentar vivienda pública en alquiler."
+        "contexto": "Contrasta dos enfoques: facilitar compra mediante avales e incentivos o concentrar recursos en aumentar alquiler público asequible."
     },
     {
         "id": "FIS_1",
         "categoria": "Economía y Fiscalidad",
-        "pregunta": "La Junta debería priorizar rebajas fiscales generalizadas como principal herramienta para dinamizar la economía.",
-        "tema": "Fiscalidad - Rebajas Generalizadas",
-        "contexto": "Se debate si la política fiscal autonómica debe centrarse en bajar impuestos de forma amplia para estimular consumo e inversión."
+        "pregunta": "La Junta debería priorizar rebajas fiscales generalizadas como herramienta principal para dinamizar la economía.",
+        "tema": "Fiscalidad - Rebaja General",
+        "contexto": "Evalúa si la política económica autonómica debe centrarse en bajar impuestos de forma amplia para estimular consumo, inversión y empleo."
     },
     {
         "id": "FIS_2",
         "categoria": "Economía y Fiscalidad",
         "pregunta": "La Junta debería crear una tributación autonómica específica para grandes fortunas y grandes empresas energéticas o extractivas.",
         "tema": "Fiscalidad - Grandes Fortunas",
-        "contexto": "La medida plantea aumentar progresividad fiscal con figuras dirigidas a grandes patrimonios y sectores con elevada capacidad económica."
+        "contexto": "Plantea aumentar progresividad fiscal con figuras dirigidas a patrimonios elevados y sectores con alta capacidad económica."
     },
     {
         "id": "AGR_1",
         "categoria": "Sector Primario",
         "pregunta": "La Junta debería priorizar la ganadería extensiva y el pastoreo frente a la intensiva para sostener el medio rural y prevenir incendios.",
         "tema": "Sector Primario - Modelo Ganadero",
-        "contexto": "Se contrasta el impulso del modelo extensivo, asociado a actividad territorial y gestión del monte, frente a modelos más intensivos."
+        "contexto": "Compara una apuesta por ganadería extensiva ligada a territorio y gestión del monte frente a un enfoque más favorable a intensificación productiva."
     },
     {
         "id": "AGR_2",
         "categoria": "Sector Primario",
         "pregunta": "Las ayudas de la PAC deberían priorizarse para agricultores y ganaderos profesionales.",
-        "tema": "Sector Primario - PAC Profesional",
-        "contexto": "La propuesta defiende orientar ayudas europeas a quienes viven principalmente de la actividad agraria y ganadera."
+        "tema": "Sector Primario - PAC",
+        "contexto": "La medida evalúa si las ayudas agrarias deben concentrarse en quienes viven principalmente de la actividad agraria y ganadera."
     },
     {
         "id": "AMB_1",
         "categoria": "Medio Ambiente y Energía",
         "pregunta": "La Junta debería paralizar nuevas macrogranjas y macroplantas de biogás.",
-        "tema": "Medio Ambiente - Macroproyectos Agroganaderos",
-        "contexto": "Se plantea una moratoria o freno a nuevas instalaciones de gran escala por su impacto ambiental, territorial y social."
+        "tema": "Medio Ambiente - Macroinstalaciones",
+        "contexto": "Pregunta por una moratoria o freno de nuevas instalaciones de gran escala por su impacto ambiental, territorial y social."
     },
     {
         "id": "AMB_2",
         "categoria": "Medio Ambiente y Energía",
-        "pregunta": "La Junta debería mantener un operativo de prevención y extinción de incendios forestales público y activo los 12 meses.",
-        "tema": "Medio Ambiente - Incendios Forestales",
-        "contexto": "La medida propone un dispositivo permanente todo el año, no solo estacional, para prevención, respuesta y gestión forestal continua."
+        "pregunta": "La Junta debería frenar macroparques renovables en suelos de alto valor productivo y endurecer su control territorial.",
+        "tema": "Energía - Implantación Renovable",
+        "contexto": "Evalúa si el despliegue renovable debe limitarse más en suelos agrícolas o paisajísticos sensibles mediante reglas de ordenación más estrictas."
     },
     {
         "id": "MOV_1",
         "categoria": "Movilidad e Internet",
-        "pregunta": "La Junta debería garantizar que cualquier persona pueda acceder a servicios esenciales en menos de 30 minutos.",
+        "pregunta": "La Junta debería garantizar que cualquier persona pueda acceder a servicios esenciales en un máximo de 30 minutos.",
         "tema": "Movilidad - Acceso a Servicios",
-        "contexto": "La pregunta evalúa el compromiso con estándares territoriales de acceso a sanidad, educación, trámites y otros servicios básicos."
+        "contexto": "Mide el compromiso con estándares territoriales de acceso rápido a sanidad, educación y servicios públicos en todo el territorio."
     },
     {
         "id": "MOV_2",
         "categoria": "Movilidad e Internet",
-        "pregunta": "La Junta debería asegurar internet de alta velocidad (al menos 100 Mbps simétricos) y cobertura móvil en todo el territorio.",
+        "pregunta": "La Junta debería garantizar internet de alta velocidad (al menos 100 Mbps simétricos) y cobertura móvil en todo el territorio.",
         "tema": "Conectividad - Brecha Digital",
-        "contexto": "Se plantea cerrar la brecha digital con conectividad robusta en municipios rurales y urbanos para garantizar igualdad de oportunidades."
+        "contexto": "Plantea cerrar la brecha digital rural-urbana asegurando conectividad robusta para trabajar, estudiar y acceder a servicios."
     },
     {
         "id": "TRA_1",
         "categoria": "Calidad Democrática",
-        "pregunta": "La Junta debería imponer periodos de incompatibilidad estrictos para evitar puertas giratorias.",
-        "tema": "Calidad Democrática - Puertas Giratorias",
-        "contexto": "La medida busca limitar que altos cargos pasen de forma inmediata a empresas vinculadas a su área de responsabilidad pública."
+        "pregunta": "La Junta debería imponer periodos de incompatibilidad más estrictos para prevenir puertas giratorias.",
+        "tema": "Calidad Democrática - Incompatibilidades",
+        "contexto": "Evalúa endurecer límites para que altos cargos no pasen de forma inmediata a empresas vinculadas a sus decisiones públicas."
     },
     {
         "id": "TRA_2",
         "categoria": "Calidad Democrática",
-        "pregunta": "La Junta debería publicar trazabilidad completa de expedientes y un ranking anual de cumplimiento institucional con consecuencias efectivas.",
+        "pregunta": "La Junta debería publicar trazabilidad completa de expedientes y auditorías periódicas de cumplimiento con consecuencias efectivas.",
         "tema": "Calidad Democrática - Rendición de Cuentas",
-        "contexto": "La propuesta exige transparencia verificable sobre la gestión pública y mecanismos de seguimiento para medir qué administraciones cumplen."
+        "contexto": "La medida combina transparencia operativa, control externo y seguimiento público de compromisos para reforzar la rendición de cuentas."
     },
     {
         "id": "CUL_1",
         "categoria": "Otros (Igualdad/Cultura)",
         "pregunta": "La Junta debería eliminar las subvenciones públicas a la tauromaquia.",
         "tema": "Cultura - Tauromaquia",
-        "contexto": "La pregunta contrasta mantener apoyo público a festejos taurinos frente a retirar esa financiación y reasignarla a otras políticas culturales."
+        "contexto": "Contrasta mantener apoyo público a festejos taurinos frente a retirar esa financiación y reasignarla a otras políticas culturales."
     },
     {
         "id": "CUL_2",
         "categoria": "Otros (Igualdad/Cultura)",
-        "pregunta": "La Junta debería priorizar una política activa de cultura rural y apoyo al patrimonio y a la creación cultural local.",
-        "tema": "Cultura - Rural y Patrimonio",
-        "contexto": "Se evalúa el grado de prioridad de una estrategia cultural con foco territorial, patrimonio de proximidad y tejido creativo local."
+        "pregunta": "La Junta debería impulsar memoria democrática en el currículo educativo y políticas públicas de reparación.",
+        "tema": "Cultura y Memoria - Memoria Democrática",
+        "contexto": "Evalúa si la política autonómica debe desarrollar activamente memoria democrática en educación y en programas institucionales de reconocimiento y reparación."
     }
 ]
