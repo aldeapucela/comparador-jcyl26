@@ -65,6 +65,13 @@ export const UI = {
             .replace(/'/g, '&#39;');
     },
 
+    formatCategoryShare(share = 0) {
+        if (!Number.isFinite(share) || share <= 0) return '0%';
+        const rounded = Math.round(share * 10) / 10;
+        if (Number.isInteger(rounded)) return `${rounded}%`;
+        return `${rounded.toFixed(1).replace('.', ',')}%`;
+    },
+
     normalizeTagSearchTerm(tag = '') {
         return String(tag)
             .replace(/^#+/, '')
@@ -984,6 +991,9 @@ export const UI = {
         comparisonIds.forEach((partyId, index) => {
             const partyInfo = PARTIES.find(p => p.id === partyId);
             const proposals = allData[partyId]?.propuestas || [];
+            const categoryProposalCount = proposals.filter(p => p.categoria === categoryName).length;
+            const categoryShare = proposals.length > 0 ? (categoryProposalCount / proposals.length) * 100 : 0;
+            const categoryShareLabel = this.formatCategoryShare(categoryShare);
 
             // Apply Topic Filter
             let filtered = proposals.filter(p => p.categoria === categoryName);
@@ -1002,6 +1012,18 @@ export const UI = {
             html += `
                 <div class="party-comparison-col" data-party-col="${partyId}" data-party-index="${index}" style="--party-color: ${partyInfo.color}">
                     <div class="space-y-6">
+                        <header class="bg-white rounded-2xl border border-slate-200 px-4 py-3 shadow-sm">
+                            <div class="flex items-center gap-2.5 mb-2">
+                                <span class="w-7 h-7 rounded-full bg-white border border-slate-200 overflow-hidden flex items-center justify-center shrink-0">
+                                    <img src="${this.escapeHtml(partyInfo.logo)}" alt="Logo ${this.escapeHtml(partyInfo.name)}" class="w-full h-full object-contain p-[2px]">
+                                </span>
+                                <p class="text-sm font-bold text-slate-800">${this.escapeHtml(partyInfo.name)}</p>
+                            </div>
+                            <p class="text-xs text-slate-600">
+                                <span class="font-semibold text-slate-800">${categoryShareLabel}</span> de sus propuestas están en esta categoría
+                                <span class="text-slate-400">(${categoryProposalCount}/${proposals.length})</span>
+                            </p>
+                        </header>
                         ${filtered.length > 0 ?
                     filtered.map(prop => this.createComparisonCardHTML(prop, partyInfo, { compact: isMobile, categoryName })).join('') :
                     `<div class="p-8 rounded-2xl bg-slate-50 text-slate-400 text-xs text-center border border-dashed border-slate-200">No hay medidas con estos filtros</div>`
