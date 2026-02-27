@@ -3067,6 +3067,196 @@
         "foco_rural": true
       },
       "pregunta_afinidad": "¿Cree que la Junta debería presionar más en Bruselas para que Europa envíe más dinero solo por el hecho de tener pocos habitantes?"
+    },
+    {
+      "id": 170,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler Juvenil",
+      "titulo_corto": "Más alquiler público juvenil con opción de compra",
+      "resumen": "Ampliar el parque de vivienda pública en alquiler para jóvenes e incorporar fórmulas de acceso progresivo a la compra a largo plazo.",
+      "cita_literal": "Ampliaremos el actual parque de viviendas públicas destinadas al alquiler juvenil y se facilitará el acceso a la opción de compra a largo plazo.",
+      "pagina": 39,
+      "tags": [
+        "#Vivienda",
+        "#Jovenes",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar la vivienda pública en alquiler para jóvenes con opción de compra a largo plazo?"
+    },
+    {
+      "id": 171,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Formación Profesional",
+      "titulo_corto": "Nuevo plan de FP adaptado al empleo real",
+      "resumen": "Actualizar la Formación Profesional con currículo orientado al mercado laboral y extender la FP dual en colaboración con empresas de la Comunidad.",
+      "cita_literal": "Pondremos en marcha un Nuevo Plan de Formación Profesional que incluirá actualización curricular para adaptarse a las demandas del mercado laboral, así como programas de formación dual en colaboración con empresas de nuestra región.",
+      "pagina": 39,
+      "tags": [
+        "#Educacion",
+        "#FP",
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con actualizar la FP y reforzar la FP dual conectada con el empleo real?"
+    },
+    {
+      "id": 172,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Universidad y Territorio",
+      "titulo_corto": "Campus comarcales virtuales con universidades públicas",
+      "resumen": "Acercar estudios superiores a zonas sin campus mediante oferta virtual y semipresencial coordinada con universidades públicas.",
+      "cita_literal": "Crearemos un programa de Campus Comarcales Virtuales y Semipresenciales, en colaboración con las universidades públicas de la Comunidad, para acercar los estudios superiores a las zonas donde no existe presencia universitaria.",
+      "pagina": 39,
+      "tags": [
+        "#Educacion",
+        "#Universidad",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con crear campus comarcales virtuales y semipresenciales para acercar la universidad a zonas sin oferta presencial?"
+    },
+    {
+      "id": 173,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Becas",
+      "titulo_corto": "Refuerzo de becas Erasmus y ayudas al estudio",
+      "resumen": "Mejorar los complementos autonómicos de becas Erasmus y ampliar las ayudas económicas para facilitar continuidad educativa.",
+      "cita_literal": "Mejoraremos el sistema de complementos autonómicos de becas Erasmus. Ampliaremos las becas y ayudas económicas.",
+      "pagina": 39,
+      "tags": [
+        "#Educacion",
+        "#Becas",
+        "#Erasmus"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforzar becas Erasmus y ampliar ayudas económicas para estudiar?"
+    },
+    {
+      "id": 174,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Salud Mental Juvenil",
+      "titulo_corto": "Plan integral de salud mental juvenil",
+      "resumen": "Desplegar un plan específico para jóvenes con unidades especializadas en centros de salud, prevención en centros educativos y formación temprana del profesorado.",
+      "cita_literal": "Pondremos en marcha un Plan Integral de Salud Mental Juvenil, con el objetivo de dotar a cada joven de Castilla y León de los recursos necesarios para enfrentar los retos emocionales.",
+      "pagina": 39,
+      "tags": [
+        "#SanidadPublica",
+        "#SaludMental",
+        "#Jovenes"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con implantar un plan integral de salud mental juvenil con prevención en centros educativos?"
+    },
+    {
+      "id": 175,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Adicciones",
+      "titulo_corto": "Límites a casas de apuestas por protección juvenil",
+      "resumen": "Regular de forma estricta la implantación de casas de apuestas, ampliar zonas de exclusión en entornos sensibles y reforzar campañas de prevención de ludopatía.",
+      "cita_literal": "Desarrollaremos una regulación estricta que limite la proliferación de casas de apuestas en el territorio de Castilla y León, especialmente en zonas sensibles.",
+      "pagina": 40,
+      "tags": [
+        "#SanidadPublica",
+        "#Adicciones",
+        "#Jovenes"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con limitar casas de apuestas y ampliar zonas de exclusión para prevenir ludopatía juvenil?"
+    },
+    {
+      "id": 176,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Participación Juvenil",
+      "titulo_corto": "Consejos de Juventud con financiación estable",
+      "resumen": "Fortalecer el Consejo de la Juventud autonómico, extender consejos locales y aumentar ayudas al asociacionismo juvenil para impulsar participación pública.",
+      "cita_literal": "Fortaleceremos el Consejo de la Juventud de Castilla y León con financiación estable y mayor autonomía para llevar a cabo proyectos.",
+      "pagina": 40,
+      "tags": [
+        "#Participacion",
+        "#Jovenes",
+        "#Democracia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforzar consejos de juventud y financiar más el asociacionismo juvenil?"
+    },
+    {
+      "id": 177,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Conectividad Aérea",
+      "titulo_corto": "Programa de conectividad aérea para la economía regional",
+      "resumen": "Dinamizar aeropuertos de Castilla y León con un plan de conectividad aérea orientado a internacionalización y competitividad empresarial.",
+      "cita_literal": "Dinamizaremos los aeropuertos de Castilla y León, desarrollando un programa de conectividad aérea que facilite la internacionalización de nuestra economía.",
+      "pagina": 101,
+      "tags": [
+        "#Movilidad",
+        "#Economia",
+        "#Infraestructuras"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con impulsar un programa de conectividad aérea para mejorar la internacionalización económica?"
+    },
+    {
+      "id": 178,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Gobernanza Local",
+      "titulo_corto": "Nuevo mapa de mancomunidades de interés general",
+      "resumen": "Reordenar mancomunidades sobre una base territorial consensuada para mejorar eficiencia de servicios y generar empleo en municipios asociados.",
+      "cita_literal": "Impulsaremos las Mancomunidades de interés general sobre una base territorial distinta de la actualmente vigente, cuya modificación consensuada promoveremos.",
+      "pagina": 110,
+      "tags": [
+        "#Despoblacion",
+        "#Municipios",
+        "#ServiciosPublicos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con rediseñar mancomunidades para mejorar servicios y empleo en municipios pequeños?"
+    },
+    {
+      "id": 179,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Administración Local",
+      "titulo_corto": "Modernización de diputaciones y apoyo técnico municipal",
+      "resumen": "Modernizar diputaciones para que presten mejor asistencia a ayuntamientos pequeños, incluida ayuda técnica en secretaría e intervención municipal.",
+      "cita_literal": "Apostamos por modernizar las diputaciones provinciales para que actúen como entes eficientes, participativos y orientados al servicio de los ayuntamientos, especialmente de los municipios más pequeños.",
+      "pagina": 112,
+      "tags": [
+        "#Transparencia",
+        "#Municipios",
+        "#AdministracionPublica"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con modernizar diputaciones y reforzar su apoyo técnico a ayuntamientos pequeños?"
     }
   ]
 }

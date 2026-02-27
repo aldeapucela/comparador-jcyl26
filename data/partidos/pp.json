@@ -1126,7 +1126,8 @@
       ],
       "analisis": {
         "competence": "Directa",
-        "foco_rural": true
+        "foco_rural": true,
+        "competencia": "Directa"
       },
       "pregunta_afinidad": "¿Apoya que los bomberos forestales trabajen y estén contratados por la Junta durante todo el año, incluso en invierno?"
     },
@@ -1145,7 +1146,8 @@
       ],
       "analisis": {
         "competence": "Directa",
-        "foco_rural": false
+        "foco_rural": false,
+        "competencia": "Directa"
       },
       "pregunta_afinidad": "¿Le parece necesaria una agencia independiente que vigile y castigue cualquier intento de corrupción en el gobierno regional?"
     },
@@ -1164,7 +1166,8 @@
       ],
       "analisis": {
         "competence": "Directa",
-        "foco_rural": true
+        "foco_rural": true,
+        "competencia": "Directa"
       },
       "pregunta_afinidad": "¿Daría subvenciones a los dueños de casas viejas en los pueblos para que las arreglen y las alquilen baratas?"
     },
@@ -1183,7 +1186,8 @@
       ],
       "analisis": {
         "competence": "Directa",
-        "foco_rural": false
+        "foco_rural": false,
+        "competencia": "Directa"
       },
       "pregunta_afinidad": "¿Apoya una ley que obligue a la Junta a consultar y escuchar a los ciudadanos antes de aprobar nuevas normas?"
     },
@@ -1202,7 +1206,8 @@
       ],
       "analisis": {
         "competence": "Directa",
-        "foco_rural": false
+        "foco_rural": false,
+        "competencia": "Directa"
       },
       "pregunta_afinidad": "¿Cree que la prioridad de la administración debería ser responder a cualquier solicitud en la mitad de tiempo que ahora?"
     },
@@ -1221,7 +1226,8 @@
       ],
       "analisis": {
         "competence": "Directa",
-        "foco_rural": false
+        "foco_rural": false,
+        "competencia": "Directa"
       },
       "pregunta_afinidad": "¿Está de acuerdo con dar ayudas solo a las empresas que utilicen materiales reciclados y no generen residuos?"
     },
@@ -1240,7 +1246,8 @@
       ],
       "analisis": {
         "competence": "Directa",
-        "foco_rural": false
+        "foco_rural": false,
+        "competencia": "Directa"
       },
       "pregunta_afinidad": "¿Debería el gobierno regional garantizar que nadie se quede atrás por no saber usar internet o no tener ordenador?"
     },
@@ -1259,7 +1266,8 @@
       ],
       "analisis": {
         "competence": "Petition",
-        "foco_rural": true
+        "foco_rural": true,
+        "competencia": "Petition"
       },
       "pregunta_afinidad": "¿Apoya que los ayuntamientos de pueblos muy pequeños tengan muchas menos normas y controles que las grandes ciudades?"
     },
@@ -1278,7 +1286,8 @@
       ],
       "analisis": {
         "competence": "Shared",
-        "foco_rural": true
+        "foco_rural": true,
+        "competencia": "Shared"
       },
       "pregunta_afinidad": "¿Cree prioritario que Castilla y León y Portugal se unan para dar vida a los pueblos abandonados de la frontera?"
     },
@@ -1297,7 +1306,8 @@
       ],
       "analisis": {
         "competence": "Directa",
-        "foco_rural": true
+        "foco_rural": true,
+        "competencia": "Directa"
       },
       "pregunta_afinidad": "¿Le parece bien que la Junta dedique fondos exclusivos para organizar conciertos o teatro en pueblos muy pequeños?"
     },
@@ -1316,7 +1326,8 @@
       ],
       "analisis": {
         "competence": "Directa",
-        "foco_rural": false
+        "foco_rural": false,
+        "competencia": "Directa"
       },
       "pregunta_afinidad": "¿Apoyaría que el dinero público se use para financiar escuelas donde se aprenda a ser torero?"
     },
@@ -1335,9 +1346,238 @@
       ],
       "analisis": {
         "competence": "Petition",
-        "foco_rural": false
+        "foco_rural": false,
+        "competencia": "Petition"
       },
       "pregunta_afinidad": "¿Está de acuerdo con que la Junta exija que vuelvan a Salamanca todos los documentos extraídos del archivo de la Guerra Civil?"
+    },
+    {
+      "id": 71,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Inserción Laboral",
+      "titulo_corto": "Complemento económico para inserción laboral estable",
+      "resumen": "Crear una ayuda directa para desempleados de larga duración que firmen contratos de más de seis meses y mejoren su estabilidad laboral.",
+      "cita_literal": "Estableceremos el Complemento de Inserción y Estabilidad Laboral, una ayuda económica directa para demandantes de empleo de larga duración que formalicen un contrato de trabajo superior a seis meses.",
+      "pagina": 22,
+      "tags": [
+        "#Empleo",
+        "#InsercionLaboral",
+        "#Estabilidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con crear una ayuda económica para parados de larga duración que consigan empleo estable?"
+    },
+    {
+      "id": 72,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Productividad",
+      "titulo_corto": "Plan de reducción del absentismo en pymes",
+      "resumen": "Impulsar ayudas y medidas de organización laboral para reducir absentismo no justificado y facilitar sustituciones en empresas pequeñas.",
+      "cita_literal": "Aprobaremos ayudas, para apoyar a nuestras empresas en la reducción del absentismo laboral, especialmente a las más pequeñas.",
+      "pagina": 22,
+      "tags": [
+        "#Empleo",
+        "#Pymes",
+        "#Productividad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con dar ayudas a pymes para reducir absentismo y mejorar la organización laboral?"
+    },
+    {
+      "id": 73,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Cooperativismo",
+      "titulo_corto": "Mesa autonómica y plan digital para cooperativas",
+      "resumen": "Constituir una mesa autonómica del cooperativismo y financiar digitalización, trazabilidad, comercio electrónico y logística cooperativa.",
+      "cita_literal": "Aprobaremos el “Plan Coopera Digital” con ayudas para digitalizar procesos, implantar trazabilidad, comercio electrónico y logística cooperativa.",
+      "pagina": 22,
+      "tags": [
+        "#Cooperativas",
+        "#Digitalizacion",
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con crear una mesa autonómica y ayudas digitales específicas para cooperativas?"
+    },
+    {
+      "id": 74,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Economía Social",
+      "titulo_corto": "Nueva ley autonómica de economía social inclusiva",
+      "resumen": "Aprobar una ley autonómica de economía social y un plan de empleo inclusivo para centros especiales de empleo y empresas de inserción.",
+      "cita_literal": "Aprobaremos una nueva ley autonómica de economía social armonizada y adaptada a las nuevas necesidades y los nuevos retos de la economía social en nuestra comunidad.",
+      "pagina": 23,
+      "tags": [
+        "#EconomiaSocial",
+        "#EmpleoInclusivo",
+        "#Insercion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con una nueva ley de economía social orientada a crear empleo inclusivo?"
+    },
+    {
+      "id": 75,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Emprendimiento Rural",
+      "titulo_corto": "Microcréditos y capital semilla para economía social rural",
+      "resumen": "Poner en marcha ayudas directas, microcréditos y capital semilla para nuevos proyectos de economía social en zonas rurales despobladas.",
+      "cita_literal": "Aprobaremos ayudas directas y microcréditos a nuevos proyectos de economía social en zonas rurales con riesgo de despoblación. Crearemos un fondo de capital semilla público destinado a startups de economía social.",
+      "pagina": 23,
+      "tags": [
+        "#EconomiaSocial",
+        "#MedioRural",
+        "#Microcreditos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con financiar proyectos de economía social rural con microcréditos y capital semilla público?"
+    },
+    {
+      "id": 76,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Comercio de Proximidad",
+      "titulo_corto": "Estrategia de comercio local con bonos y digitalización",
+      "resumen": "Desarrollar una estrategia de largo plazo para comercio de proximidad con ayudas a digitalización, modernización de locales y bonos de consumo.",
+      "cita_literal": "Desarrollaremos una Estrategia de Comercio a muy largo plazo que defina el modelo comercial y de ciudad y proteja al comercio de proximidad.",
+      "pagina": 24,
+      "tags": [
+        "#ComercioLocal",
+        "#Digitalizacion",
+        "#BonosConsumo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con una estrategia de comercio local que combine digitalización, modernización y bonos de consumo?"
+    },
+    {
+      "id": 77,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Comercio Rural",
+      "titulo_corto": "Plan Comercio Rural Vivo y cheque comercio",
+      "resumen": "Ampliar el cheque comercio rural con ayudas a apertura, reformas, comercio ambulante y diversificación de servicios en pueblos sin tiendas.",
+      "cita_literal": "Ampliaremos el “Cheque Comercio Rural” a través del Plan Comercio Rural Vivo.",
+      "pagina": 25,
+      "tags": [
+        "#MedioRural",
+        "#Comercio",
+        "#Despoblacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforzar el comercio rural con un plan específico y ayudas para pueblos sin tienda?"
+    },
+    {
+      "id": 78,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Turismo",
+      "titulo_corto": "Nueva ley de turismo y control de oferta ilegal",
+      "resumen": "Actualizar la normativa turística para mejorar calidad del sector y reforzar el control de actividad irregular, incluidos pisos turísticos.",
+      "cita_literal": "Impulsaremos un proyecto de ley de turismo de Castilla y León que se adapte a la realidad actual del sector.",
+      "pagina": 26,
+      "tags": [
+        "#Turismo",
+        "#Regulacion",
+        "#Calidad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con actualizar la ley de turismo y endurecer el control de la oferta turística ilegal?"
+    },
+    {
+      "id": 79,
+      "categoria": "Vivienda",
+      "subcategoria": "Hipoteca Joven",
+      "titulo_corto": "Aval hipotecario joven ampliado al 20%",
+      "resumen": "Elevar el aval público para jóvenes hasta el 20% del préstamo hipotecario para facilitar compra de primera vivienda en mercado libre.",
+      "cita_literal": "Ampliaremos los avales hasta un 20% frente al 17,5 % actual del crédito hipotecario a los jóvenes que acudan al mercado libre para adquirir una vivienda.",
+      "pagina": 27,
+      "tags": [
+        "#Vivienda",
+        "#Jovenes",
+        "#Hipoteca"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar al 20% el aval público para hipotecas de jóvenes?"
+    },
+    {
+      "id": 80,
+      "categoria": "Vivienda",
+      "subcategoria": "Oferta de Vivienda Protegida",
+      "titulo_corto": "Suelo para 5.000 viviendas protegidas nuevas",
+      "resumen": "Generar suelo urbanizado para construir al menos 5.000 viviendas protegidas y aumentar la oferta asequible en venta y alquiler.",
+      "cita_literal": "Generaremos suelo urbanizado para la construcción de al menos 5.000 nuevas viviendas protegidas, en venta y en alquiler.",
+      "pagina": 27,
+      "tags": [
+        "#Vivienda",
+        "#VPO",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con impulsar suelo para construir 5.000 nuevas viviendas protegidas?"
+    },
+    {
+      "id": 81,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Salud Mental Juvenil",
+      "titulo_corto": "Plan de salud mental infantojuvenil",
+      "resumen": "Desplegar un plan específico de salud mental para infancia y juventud con acceso rápido a profesionales y programas preventivos.",
+      "cita_literal": "Proponemos desarrollar un plan integral de salud mental infanto juvenil.",
+      "pagina": 67,
+      "tags": [
+        "#SanidadPublica",
+        "#SaludMental",
+        "#Jovenes"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con implantar un plan específico de salud mental para infancia y juventud?"
+    },
+    {
+      "id": 82,
+      "categoria": "Otros",
+      "subcategoria": "Juventud y Cultura",
+      "titulo_corto": "Programa Arte Joven y festival anual de juventud",
+      "resumen": "Reforzar apoyo a jóvenes creadores mediante becas, formación y difusión de obras, junto a un festival juvenil itinerante por provincias.",
+      "cita_literal": "Reforzaremos el Programa Arte Joven con el desarrollo de un Plan de Apoyo a Jóvenes Artistas.",
+      "pagina": 68,
+      "tags": [
+        "#Jovenes",
+        "#Cultura",
+        "#Participacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforzar el apoyo a creadores jóvenes y celebrar un festival anual de juventud en la Comunidad?"
     }
   ]
 }
