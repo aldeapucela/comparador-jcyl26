@@ -14,267 +14,840 @@
       "id": 1,
       "categoria": "Reto Demográfico y Despoblación",
       "subcategoria": "Gobernanza",
-      "titulo_corto": "Prueba Municipal obligatoria para leyes",
-      "resumen": "Ninguna norma autonómica podrá aprobarse sin evaluar su impacto real en pueblos y costes para ayuntamientos.",
-      "cita_literal": "Ninguna norma autonómica podrá aprobarse sin evaluar su impacto real en pueblos... con participación local.",
-      "pagina": 2,
+      "titulo_corto": "Garantía rural obligatoria en nuevas normas",
+      "resumen": "Exigir evaluación previa del impacto demográfico, económico y de servicios antes de aprobar normativa autonómica.",
+      "cita_literal": "Mecanismo de Garantía Rural : auditoría normativa obligatoria en fase de diseño (impacto demográfico, económico y de servicios).",
+      "pagina": 4,
       "tags": [
-        "#Pueblos",
-        "#Municipios",
-        "#Gobernanza"
+        "#Despoblacion",
+        "#MedioRural"
       ],
       "analisis": {
         "competencia": "Directa",
         "foco_rural": true
       },
-      "pregunta_afinidad": "¿Le parecería bien prohibir que la Junta apruebe leyes que perjudiquen o cuesten dinero a los ayuntamientos pequeños?"
+      "pregunta_afinidad": "¿Está de acuerdo con exigir evaluación previa del impacto demográfico, económico y de servicios antes de aprobar normativa autonómica?"
     },
     {
       "id": 2,
       "categoria": "Reto Demográfico y Despoblación",
-      "subcategoria": "Administración",
-      "titulo_corto": "Agencia de Desarrollo del Mundo Rural",
-      "resumen": "Crear un ente independiente con presupuesto real para proyectos de repoblación y emprendimiento local.",
-      "cita_literal": "Crear un ente independiente para ejecutar proyectos de repoblación, emprendimiento, servicios",
-      "pagina": 2,
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Prueba municipal con financiación obligatoria",
+      "resumen": "Cuando una ley autonómica imponga obligaciones a los ayuntamientos, deberá incorporar financiación específica y memoria económica.",
+      "cita_literal": "Prueba municipal : si una ley obliga a hacer algo al ayuntamiento, debe venir con financiación y memoria de coste.",
+      "pagina": 4,
       "tags": [
-        "#DesarrolloRural",
-        "#Repoblacion",
-        "#Emprendimiento"
+        "#Despoblacion",
+        "#MedioRural"
       ],
       "analisis": {
         "competencia": "Directa",
         "foco_rural": true
       },
-      "pregunta_afinidad": "¿Apoya crear una agencia autónoma con dinero propio dedicada exclusivamente a frenar la despoblación?"
+      "pregunta_afinidad": "¿Está de acuerdo con que toda obligación legal a los ayuntamientos incluya financiación y memoria de coste?"
     },
     {
       "id": 3,
-      "categoria": "Conectividad y Movilidad",
-      "subcategoria": "Zonas Blancas",
-      "titulo_corto": "Plan 100-30-30 de servicios e internet",
-      "resumen": "Garantizar 100 Mbps en todo el territorio, servicios esenciales a ≤30 min y alta capacidad a ≤30 km.",
-      "cita_literal": "100 Mbps simétricos en todo el territorio; servicios esenciales a ≤30 min; y acceso a alta capacidad a ≤30 km.",
-      "pagina": 2,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Coordinación local para diseñar políticas",
+      "resumen": "Coordinar Junta, ayuntamientos y agentes locales para diseñar políticas de salud, educación, transporte y digitalización con enfoque territorial.",
+      "cita_literal": "Codiseño con agentes locales y gobernanza transversal (salud, educación, transporte, digitalización).",
+      "pagina": 4,
       "tags": [
-        "#Internet",
-        "#Infraestructuras",
+        "#Despoblacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con coordinar Junta, ayuntamientos y agentes locales para diseñar políticas de salud, educación, transporte y digitalización con enfoque territorial?"
+    },
+    {
+      "id": 4,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Agencia Rural",
+      "titulo_corto": "Crear una agencia independiente (modelo highlands) con 60 M€",
+      "resumen": "Impulsa para ejecutar proyectos de repoblación, emprendimiento, servicios y red de técnicos/agentes comarcales.",
+      "cita_literal": "Crear una Agencia independiente (modelo Highlands) con 60 M€ para ejecutar proyectos de repoblación, emprendimiento, servicios y red de técnicos/agentes comarcales.",
+      "pagina": 4,
+      "tags": [
+        "#Despoblacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con Impulsa para ejecutar proyectos de repoblación, emprendimiento, servicios y red de técnicos/agentes comarcales?"
+    },
+    {
+      "id": 5,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Agencia Rural",
+      "titulo_corto": "Oficinas comarcales con proyectos evaluables",
+      "resumen": "Crear oficinas comarcales con una cartera anual de proyectos, calendario de ejecución y evaluación pública de resultados.",
+      "cita_literal": "Oficinas comarcales y cartera anual de proyectos con calendario y evaluación pública.",
+      "pagina": 4,
+      "tags": [
+        "#Despoblacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con crear oficinas comarcales con una cartera anual de proyectos, calendario de ejecución y evaluación pública de resultados?"
+    },
+    {
+      "id": 6,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Conectividad y Transporte",
+      "titulo_corto": "Cobertura de 100 Mbps simétricos en todo el territorio",
+      "resumen": "Garantizar conexión mínima de 100 Mbps simétricos tanto en zonas rurales como urbanas.",
+      "cita_literal": "100 Mbps simétricos en el 100% del territorio (rural y urbano).",
+      "pagina": 4,
+      "tags": [
+        "#Movilidad",
         "#MedioRural"
       ],
       "analisis": {
         "competencia": "Shared",
         "foco_rural": true
       },
-      "pregunta_afinidad": "¿Cree que la ley debería obligar a que cualquier médico u oficina de la Junta esté a menos de 30 minutos de su pueblo?"
-    },
-    {
-      "id": 4,
-      "categoria": "Sanidad Pública",
-      "subcategoria": "Atención Primaria",
-      "titulo_corto": "Plantillas sanitarias dimensionadas por dispersión",
-      "resumen": "Atención presencial real ajustada al envejecimiento y dispersión geográfica con incentivos de difícil cobertura.",
-      "cita_literal": "Atención presencial real, plantillas dimensionadas por dispersión y envejecimiento",
-      "pagina": 2,
-      "tags": [
-        "#SanidadRural",
-        "#Profesionales",
-        "#AtencionDirecta"
-      ],
-      "analisis": {
-        "competencia": "Directa",
-        "foco_rural": true
-      },
-      "pregunta_afinidad": "¿Debería la Junta contratar a más médicos solo por el hecho de que la gente viva muy repartida en pueblos?"
-    },
-    {
-      "id": 5,
-      "categoria": "Conectividad y Movilidad",
-      "subcategoria": "Emergencias",
-      "titulo_corto": "Tiempos de respuesta exigibles en ambulancias",
-      "resumen": "Estándares mínimos de respuesta por zonas con auditoría pública y penalizaciones por incumplimiento.",
-      "cita_literal": "Estándares mínimos, auditoría pública y penalizaciones si no se cumple.",
-      "pagina": 2,
-      "tags": [
-        "#Ambulancias",
-        "#Emergencias",
-        "#Auditoria"
-      ],
-      "analisis": {
-        "competencia": "Directa",
-        "foco_rural": false
-      },
-      "pregunta_afinidad": "¿Le parece bien multar a las empresas de ambulancias si tardan más tiempo del estipulado por ley en llegar a un aviso?"
-    },
-    {
-      "id": 6,
-      "categoria": "Servicios Sociales y Cuidados",
-      "subcategoria": "Dependencia",
-      "titulo_corto": "Modelo mixto domicilio-residencia",
-      "resumen": "Más ayuda a domicilio y centros de día de cercanía. Complemento regional a pensiones bajas hasta 730€.",
-      "cita_literal": "Modelo mixto domicilio–residencia... Ley de complementos para pensiones inferiores a 730€.",
-      "pagina": 2,
-      "tags": [
-        "#Dependencia",
-        "#Mayores",
-        "#Pensiones"
-      ],
-      "analisis": {
-        "competencia": "Directa",
-        "foco_rural": false
-      },
-      "pregunta_afinidad": "¿Apoyaría que la Junta pague un extra de dinero a los jubilados que cobran menos de 730 euros al mes?"
+      "pregunta_afinidad": "¿Está de acuerdo con garantizar 100 Mbps simétricos en todo el territorio, incluidos los pueblos?"
     },
     {
       "id": 7,
-      "categoria": "Calidad Democrática y Transparencia",
-      "subcategoria": "Corrupción",
-      "titulo_corto": "Transparencia con multas coercitivas",
-      "resumen": "Ranking mensual de cumplimiento y multas reales a responsables identificables cuando se desobedezcan resoluciones.",
-      "cita_literal": "Multas coercitivas/medidas reales cuando se desobedezcan resoluciones.",
-      "pagina": 2,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Conectividad y Transporte",
+      "titulo_corto": "Acceso a servicios esenciales en menos de 30 minutos",
+      "resumen": "Fijar como objetivo territorial que la población llegue en tiempo razonable a servicios sanitarios, educativos, sociales y culturales.",
+      "cita_literal": "≤ 30 minutos para acceder a servicios sanitarios, educativos, sociales y culturales.",
+      "pagina": 4,
       "tags": [
-        "#Transparencia",
-        "#Multas",
-        "#Sancion"
+        "#Movilidad",
+        "#MedioRural"
       ],
       "analisis": {
-        "competencia": "Directa",
-        "foco_rural": false
+        "competencia": "Shared",
+        "foco_rural": true
       },
-      "pregunta_afinidad": "¿Le gustaría que los políticos que oculten información pública tengan que pagar multas de su propio bolsillo?"
+      "pregunta_afinidad": "¿Está de acuerdo con fijar como objetivo territorial que la población llegue en tiempo razonable a servicios sanitarios, educativos, sociales y culturales?"
     },
     {
       "id": 8,
-      "categoria": "Economía, Empleo y Fiscalidad",
-      "subcategoria": "Industria Rural",
-      "titulo_corto": "Ventanilla única para autónomos y pymes",
-      "resumen": "Simplificación burocrática radical y oficina comercial para captar inversiones en agroindustria y logística.",
-      "cita_literal": "Ventanilla única y menos burocracia; teletrabajo y coworking para atraer talento",
-      "pagina": 2,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Conectividad y Transporte",
+      "titulo_corto": "Infraestructuras clave a menos de 30 km",
+      "resumen": "Reducir la distancia a autovías y ferrocarril, priorizando las infraestructuras pendientes en el territorio.",
+      "cita_literal": "≤ 30 km a vías de alta capacidad (autovías/ferrocarril), con prioridad a infraestructuras pendientes.",
+      "pagina": 4,
       "tags": [
-        "#Autonomos",
-        "#Pymes",
-        "#MenosPapeles"
-      ],
-      "analisis": {
-        "competencia": "Directa",
-        "foco_rural": false
-      },
-      "pregunta_afinidad": "¿Cree que abrir un negocio en la región debería poder hacerse a través de una sola oficina y sin trámites lentos?"
-    },
-    {
-      "id": 9,
-      "categoria": "Sector Primario (Agricultura y Ganadería)",
-      "subcategoria": "Precios",
-      "titulo_corto": "Precios mínimos agroganaderos sobre costes",
-      "resumen": "Mesa de negociación para fijar precios en origen mínimos y defensa de estándares ante importaciones.",
-      "cita_literal": "Mesa de negociación agroganadera para precios mínimos por encima de costes",
-      "pagina": 2,
-      "tags": [
-        "#SoberaniaAlimentaria",
-        "#PreciosJustos",
-        "#Campo"
+        "#Movilidad",
+        "#MedioRural"
       ],
       "analisis": {
         "competencia": "Petition",
         "foco_rural": true
       },
-      "pregunta_afinidad": "¿Está de acuerdo con prohibir que se vendan alimentos que se han pagado al agricultor por debajo de lo que le costó producirlos?"
+      "pregunta_afinidad": "¿Está de acuerdo con reducir la distancia a autovías y ferrocarril, priorizando las infraestructuras pendientes en el territorio?"
+    },
+    {
+      "id": 9,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Conectividad y Transporte",
+      "titulo_corto": "Autobús a la demanda con frecuencias útiles para estudiar, trabajar",
+      "resumen": "Y refuerzo del transporte del alfoz con Valladolid.",
+      "cita_literal": "Autobús a la demanda con frecuencias útiles para estudiar, trabajar y vida social; y refuerzo del transporte del alfoz con Valladolid.",
+      "pagina": 4,
+      "tags": [
+        "#Movilidad",
+        "#MedioRural",
+        "#Valladolid"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con Y refuerzo del transporte del alfoz con Valladolid?"
     },
     {
       "id": 10,
-      "categoria": "Economía, Empleo y Fiscalidad",
-      "subcategoria": "Fiscalidad Rural",
-      "titulo_corto": "Fiscalidad diferenciada para el arraigo",
-      "resumen": "Reducción de IRPF autonómico y deducciones por residencia o traslado a zonas rurales en riesgo.",
-      "cita_literal": "Deducciones y tipos reducidos para residir/trasladarse a zonas en riesgo",
-      "pagina": 2,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Conectividad y Transporte",
+      "titulo_corto": "Impulso a ejes ferroviarios estratégicos",
+      "resumen": "Reactivar corredores ferroviarios clave, como la Ruta de la Plata, para mejorar la vertebración territorial.",
+      "cita_literal": "Impulso a ejes ferroviarios estratégicos (p. ej. Ruta de la Plata ).",
+      "pagina": 5,
       "tags": [
-        "#Impuestos",
-        "#Arraigo",
+        "#Movilidad",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar corredores ferroviarios estratégicos como la Ruta de la Plata?"
+    },
+    {
+      "id": 11,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención y Emergencias",
+      "titulo_corto": "Atención sanitaria presencial en zonas envejecidas",
+      "resumen": "Priorizar la atención sanitaria presencial y reducir la dependencia de automatismos en zonas con población envejecida.",
+      "cita_literal": "Garantizar atención presencial y humana, evitando deshumanización por automatismos (especialmente en zonas envejecidas).",
+      "pagina": 5,
+      "tags": [
+        "#SanidadPublica",
         "#MedioRural"
       ],
       "analisis": {
         "competencia": "Directa",
         "foco_rural": true
       },
-      "pregunta_afinidad": "¿Le parece bien que quien se vaya a vivir a un pueblo abandonado pague muchísimos menos impuestos que quien vive en la capital?"
-    },
-    {
-      "id": 11,
-      "categoria": "Educación y Futuro",
-      "subcategoria": "FP Rural",
-      "titulo_corto": "FP rural a medida con transporte gratuito",
-      "resumen": "Ciclos ligados al empleo real en cabeceras de comarca y transporte a coste cero en educación no obligatoria.",
-      "cita_literal": "FP rural a medida en cabeceras de comarca... con transporte gratuito en educación no obligatoria/FP.",
-      "pagina": 6,
-      "tags": [
-        "#Educacion",
-        "#FP",
-        "#TransporteGratis"
-      ],
-      "analisis": {
-        "competencia": "Directa",
-        "foco_rural": true
-      },
-      "pregunta_afinidad": "¿Apoya que el autobús para ir a estudiar Formación Profesional sea gratis para todos los jóvenes rurales?"
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar la atención sanitaria presencial y reducir la dependencia de automatismos en zonas con población envejecida?"
     },
     {
       "id": 12,
-      "categoria": "Vivienda",
-      "subcategoria": "Vivienda Rural",
-      "titulo_corto": "Ampliación del Plan Rehabitare",
-      "resumen": "Subvenciones para rehabilitar vivienda privada rural para alquiler de 5 años con seguro para propietarios.",
-      "cita_literal": "Vivienda rural: ampliar Rehabitare para vivienda privada (alquiler durante 5 años) con garantías/seguro",
-      "pagina": 7,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención y Emergencias",
+      "titulo_corto": "Figura del sanitario rural",
+      "resumen": "Especialización e incentivos para cubrir zonas dispersas.",
+      "cita_literal": "Figura del sanitario rural : especialización e incentivos para cubrir zonas dispersas.",
+      "pagina": 5,
       "tags": [
-        "#Vivienda Rural",
-        "#Rehabilitacion",
-        "#Alquiler"
+        "#SanidadPublica",
+        "#MedioRural"
       ],
       "analisis": {
         "competencia": "Directa",
         "foco_rural": true
       },
-      "pregunta_afinidad": "¿Le parece bien que la Junta arregle casas privadas de pueblos a cambio de que el dueño las alquile baratas durante unos años?"
+      "pregunta_afinidad": "¿Está de acuerdo con Especialización e incentivos para cubrir zonas dispersas?"
     },
     {
       "id": 13,
-      "categoria": "Medio Ambiente y Energía",
-      "subcategoria": "Energía",
-      "titulo_corto": "Ley autonómica de renovables y moratoria Biogás",
-      "resumen": "Reglas claras para macroproyectos, moratoria inmediata de biogás y consultas locales vinculantes.",
-      "cita_literal": "Biogás: revisión/moratoria inmediata y nueva regulación con zonificación de exclusión y consultas locales vinculantes",
-      "pagina": 7,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención y Emergencias",
+      "titulo_corto": "Cobertura de bajas y refuerzo de urgencias",
+      "resumen": "Garantizar sustituciones, reforzar urgencias y desplegar prevención comunitaria para evitar vacíos asistenciales.",
+      "cita_literal": "Sustituciones garantizadas, refuerzo de urgencias y prevención comunitaria.",
+      "pagina": 5,
       "tags": [
-        "#Renovables",
-        "#Biogas",
-        "#ParticipacionLocas"
+        "#SanidadPublica",
+        "#MedioRural"
       ],
       "analisis": {
         "competencia": "Directa",
         "foco_rural": true
       },
-      "pregunta_afinidad": "¿Debería dejarse en manos de los vecinos del pueblo la decisión final de si se abre o no una planta de biogás en su término municipal?"
+      "pregunta_afinidad": "¿Está de acuerdo con garantizar sustituciones, reforzar urgencias y desplegar prevención comunitaria para evitar vacíos asistenciales?"
     },
     {
       "id": 14,
-      "categoria": "Medio Ambiente y Energía",
-      "subcategoria": "Gestión Forestal",
-      "titulo_corto": "Cuadrillas forestales de 12 meses",
-      "resumen": "Gestión forestal permanente con mantenimiento de cuadrillas durante todo el año para prevención.",
-      "cita_literal": "Gestión forestal permanente: cuadrillas 12 meses, prevención y restauración ecológica",
-      "pagina": 7,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención y Emergencias",
+      "titulo_corto": "Más primaria en barrios con saturación",
+      "resumen": "Reforzar Atención Primaria en los barrios de Valladolid con más presión asistencial y metas públicas de reducción de espera.",
+      "cita_literal": "En Valladolid capital: refuerzo de Primaria en barrios con más presión asistencial y objetivos públicos de reducción de espera.",
+      "pagina": 5,
       "tags": [
-        "#Incendios",
-        "#BomberosForestales",
-        "#EmpleoRural"
+        "#SanidadPublica",
+        "#MedioRural",
+        "#Valladolid"
       ],
       "analisis": {
         "competencia": "Directa",
         "foco_rural": true
       },
-      "pregunta_afinidad": "¿Considera necesario que las brigadas que limpian el monte trabajen todo el año y no solo cuando hay riesgo de fuego?"
+      "pregunta_afinidad": "¿Está de acuerdo con reforzar Atención Primaria en los barrios de Valladolid con más presión asistencial y metas públicas de reducción de espera?"
+    },
+    {
+      "id": 15,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención y Emergencias",
+      "titulo_corto": "Salud mental y fisioterapia de cercanía",
+      "resumen": "Crear unidades comarcales de salud mental y fisioterapia para acercar estos servicios al territorio.",
+      "cita_literal": "Unidades comarcales de salud mental y fisioterapia .",
+      "pagina": 5,
+      "tags": [
+        "#SanidadPublica",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con crear unidades comarcales de salud mental y fisioterapia para acercar estos servicios al territorio?"
+    },
+    {
+      "id": 16,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención y Emergencias",
+      "titulo_corto": "Tiempos máximos de respuesta en ambulancias",
+      "resumen": "Definir tiempos máximos de respuesta por zona de salud y publicar periódicamente los indicadores de cumplimiento.",
+      "cita_literal": "Estándares mínimos de tiempos de respuesta por zonas de salud y publicación de indicadores.",
+      "pagina": 5,
+      "tags": [
+        "#SanidadPublica",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con definir tiempos máximos de respuesta por zona de salud y publicar periódicamente los indicadores de cumplimiento?"
+    },
+    {
+      "id": 17,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención y Emergencias",
+      "titulo_corto": "Auditorías y sanciones por incumplimiento",
+      "resumen": "Realizar auditorías públicas del transporte sanitario y aplicar penalizaciones cuando no se cumplan los estándares.",
+      "cita_literal": "Auditorías públicas y penalizaciones en caso de incumplimiento.",
+      "pagina": 5,
+      "tags": [
+        "#SanidadPublica",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con realizar auditorías públicas del transporte sanitario y aplicar penalizaciones cuando no se cumplan los estándares?"
+    },
+    {
+      "id": 18,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención y Emergencias",
+      "titulo_corto": "Altas hospitalarias coordinadas con domicilio",
+      "resumen": "Mejorar la coordinación entre hospital y atención domiciliaria para evitar esperas largas tras el alta, sobre todo en mayores.",
+      "cita_literal": "Coordinación “hospital –domicilio” para altas sin esperas interminables (especialmente mayores).",
+      "pagina": 5,
+      "tags": [
+        "#SanidadPublica",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con mejorar la coordinación entre hospital y atención domiciliaria para evitar esperas largas tras el alta, sobre todo en mayores?"
+    },
+    {
+      "id": 19,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Cuidados y Dependencia",
+      "titulo_corto": "Modelo combinado de cuidados en casa y residencia",
+      "resumen": "Combinar servicios de cuidados a domicilio y recursos residenciales con atención centrada en la persona.",
+      "cita_literal": "Nuevo modelo de cuidados domicilio –residencia, con servicios asociados y enfoque de atención centrada en la persona.",
+      "pagina": 5,
+      "tags": [
+        "#Cuidados",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con combinar servicios de cuidados a domicilio y recursos residenciales con atención centrada en la persona?"
+    },
+    {
+      "id": 20,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Cuidados y Dependencia",
+      "titulo_corto": "Reducir listas de espera de dependencia, reforzar ayuda a domicilio",
+      "resumen": "Incluye y centros de día comarcales y de barrio.",
+      "cita_literal": "Reducir listas de espera de dependencia, reforzar ayuda a domicilio y centros de día comarcales y de barrio.",
+      "pagina": 5,
+      "tags": [
+        "#Cuidados",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con Incluye y centros de día comarcales y de barrio?"
+    },
+    {
+      "id": 21,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Cuidados y Dependencia",
+      "titulo_corto": "Empleo de cuidados con estabilidad laboral",
+      "resumen": "Profesionalizar el empleo de cuidados con ratios adecuadas y mayor estabilidad contractual.",
+      "cita_literal": "Empleo de cuidados con ratios y estabilidad (profesionalización).",
+      "pagina": 5,
+      "tags": [
+        "#Cuidados",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con profesionalizar el empleo de cuidados con ratios adecuadas y mayor estabilidad contractual?"
+    },
+    {
+      "id": 22,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Cuidados y Dependencia",
+      "titulo_corto": "Complemento autonómico para pensiones bajas",
+      "resumen": "Crear un complemento económico para pensiones por debajo de 730 euros y reforzar la protección de rentas bajas.",
+      "cita_literal": "Ley de complementos para pensiones inferiores a 730€ .",
+      "pagina": 5,
+      "tags": [
+        "#Cuidados",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con crear un complemento económico para pensiones por debajo de 730 euros y reforzar la protección de rentas bajas?"
+    },
+    {
+      "id": 23,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Transparencia",
+      "titulo_corto": "Responsabilidades por incumplir resoluciones",
+      "resumen": "Aplicar multas coercitivas y exigir responsabilidades cuando una administración desobedezca resoluciones.",
+      "cita_literal": "Multas coercitivas y responsabilidades cuando se desobedezcan resoluciones.",
+      "pagina": 5,
+      "tags": [
+        "#Transparencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aplicar multas coercitivas y exigir responsabilidades cuando una administración desobedezca resoluciones?"
+    },
+    {
+      "id": 24,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Transparencia",
+      "titulo_corto": "Trazabilidad total de expedientes administrativos",
+      "resumen": "Implantar control de plazos, responsables identificables y seguimiento público para evitar bloqueos y opacidad.",
+      "cita_literal": "Expediente trazable: plazos máximos, responsable identificable y cuadro de mando público.",
+      "pagina": 5,
+      "tags": [
+        "#Transparencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con implantar control de plazos, responsables identificables y seguimiento público para evitar bloqueos y opacidad?"
+    },
+    {
+      "id": 25,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Transparencia",
+      "titulo_corto": "Ranking público anual de cumplimiento institucional",
+      "resumen": "Publicar cada año un ranking de cumplimiento por administración para identificar de forma transparente quién ejecuta y quién no.",
+      "cita_literal": "Ranking anual de cumplimiento por administraciones (para que se vea quién cumple y quién no).",
+      "pagina": 6,
+      "tags": [
+        "#Transparencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con publicar un ranking anual de cumplimiento de todas las administraciones?"
+    },
+    {
+      "id": 26,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Industria y Empleo",
+      "titulo_corto": "Plan industrial provincial para captar inversión",
+      "resumen": "Impulsar una estrategia industrial por provincias y una oficina comercial para atraer inversión y actividad económica.",
+      "cita_literal": "Estrategia industrial provincial y oficina comercial para captar inversiones.",
+      "pagina": 6,
+      "tags": [
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con impulsar una estrategia industrial por provincias y una oficina comercial para atraer inversión y actividad económica?"
+    },
+    {
+      "id": 27,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Industria y Empleo",
+      "titulo_corto": "Ventanilla única y simplificación para pymes y autónomos",
+      "resumen": "Simplificar trámites para pymes y autónomos mediante ventanilla única, incluyendo medidas de apoyo al comercio de barrio en Valladolid.",
+      "cita_literal": "Ventanilla única y simplificación para pymes y autónomos; apoyo al comercio de barrio en Valladolid.",
+      "pagina": 6,
+      "tags": [
+        "#Empleo",
+        "#Valladolid"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con implantar ventanilla única para pymes y autónomos y reforzar el comercio de barrio?"
+    },
+    {
+      "id": 28,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Industria y Empleo",
+      "titulo_corto": "Logística y parques logísticos; extensión del modelo “parque científico”",
+      "resumen": "Extensión del modelo “parque científico” al alfoz y cabeceras de comarca.",
+      "cita_literal": "Logística y parques logísticos; extensión del modelo “parque científico” al alfoz y cabeceras de comarca.",
+      "pagina": 6,
+      "tags": [
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con Extensión del modelo “parque científico” al alfoz y cabeceras de comarca?"
+    },
+    {
+      "id": 29,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Industria y Empleo",
+      "titulo_corto": "Teletrabajo (fiscalidad + coworking), turismo de estancias largas y enseñanza",
+      "resumen": "Impulsa del castellano como industria ligada al territorio.",
+      "cita_literal": "Teletrabajo (fiscalidad + coworking), turismo de estancias largas y enseñanza del castellano como industria ligada al territorio.",
+      "pagina": 6,
+      "tags": [
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con Impulsa del castellano como industria ligada al territorio?"
+    },
+    {
+      "id": 30,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Campo y Soberanía Alimentaria",
+      "titulo_corto": "Mesa de negociación agroganadera para fijar precios mínimos en origen",
+      "resumen": "Incluye por encima de costes (complemento a la Cadena Alimentaria).",
+      "cita_literal": "Mesa de Negociación Agroganadera para fijar precios mínimos en origen por encima de costes (complemento a la Cadena Alimentaria).",
+      "pagina": 6,
+      "tags": [
+        "#SectorPrimario",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con Incluye por encima de costes (complemento a la Cadena Alimentaria)?"
+    },
+    {
+      "id": 31,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Campo y Soberanía Alimentaria",
+      "titulo_corto": "Reciprocidad comercial y control de importaciones",
+      "resumen": "Aplicar el principio de reciprocidad comercial, con etiquetado claro y medidas disuasorias frente a importaciones con sustancias prohibidas en la UE.",
+      "cita_literal": "Principio de reciprocidad: “lo que está prohibido producir, está prohibido vender” ; etiquetado claro y medidas disuasorias a importaciones con sustancias prohibidas por EFSA (propuesta de arancel).",
+      "pagina": 6,
+      "tags": [
+        "#SectorPrimario",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con exigir reciprocidad comercial y limitar importaciones con sustancias prohibidas en la UE?"
+    },
+    {
+      "id": 32,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Campo y Soberanía Alimentaria",
+      "titulo_corto": "Transformación agroalimentaria en origen",
+      "resumen": "Fomentar que la transformación agroalimentaria se haga en origen para generar más valor añadido y empleo local.",
+      "cita_literal": "Impulso a transformación agroindustrial en origen (valor añadido y empleo).",
+      "pagina": 6,
+      "tags": [
+        "#SectorPrimario",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con fomentar que la transformación agroalimentaria se haga en origen para generar más valor añadido y empleo local?"
+    },
+    {
+      "id": 33,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Fiscalidad",
+      "titulo_corto": "Fiscalidad reducida en zonas objetivo",
+      "resumen": "Reducir el tramo autonómico del IRPF y otros tributos en áreas priorizadas para facilitar arraigo y relevo generacional.",
+      "cita_literal": "Reducción del tramo autonómico del IRPF y tipos reducidos (Patrimonio, ITP/AJD, Sucesiones/Donaciones) para zonas objetivo.",
+      "pagina": 6,
+      "tags": [
+        "#Empleo",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reducir el tramo autonómico del IRPF y otros tributos en áreas priorizadas para facilitar arraigo y relevo generacional?"
+    },
+    {
+      "id": 34,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Fiscalidad",
+      "titulo_corto": "Deducciones por vivir o trasladarse al medio rural",
+      "resumen": "Aplicar deducciones fiscales a quienes residan o se trasladen a zonas rurales en riesgo de despoblación.",
+      "cita_literal": "Deducciones por residencia/traslado a zonas rurales en riesgo.",
+      "pagina": 6,
+      "tags": [
+        "#Empleo",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aplicar deducciones fiscales a quienes residan o se trasladen a zonas rurales en riesgo de despoblación?"
+    },
+    {
+      "id": 35,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Fiscalidad Agraria",
+      "titulo_corto": "Bonificaciones agrarias por unidad familiar",
+      "resumen": "Bonificar explotaciones agrarias teniendo en cuenta la unidad familiar y no solo la titularidad formal.",
+      "cita_literal": "Bonificaciones en explotaciones agrarias considerando unidad familiar (no solo titularidad).",
+      "pagina": 6,
+      "tags": [
+        "#SectorPrimario",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con bonificar explotaciones agrarias teniendo en cuenta la unidad familiar y no solo la titularidad formal?"
+    },
+    {
+      "id": 36,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación y Protección de la Infancia",
+      "titulo_corto": "FP rural a medida en cabeceras de comarca, reduciendo ratios",
+      "resumen": "Propone cuando haga falta y con transporte gratuito en educación no obligatoria/FP.",
+      "cita_literal": "FP rural a medida en cabeceras de comarca, reduciendo ratios cuando haga falta y con transporte gratuito en educación no obligatoria/FP .",
+      "pagina": 6,
+      "tags": [
+        "#Educacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con Propone cuando haga falta y con transporte gratuito en educación no obligatoria/FP?"
+    },
+    {
+      "id": 37,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación y Protección de la Infancia",
+      "titulo_corto": "FP dual conectada con empleo real",
+      "resumen": "Extender una FP dual efectiva con pymes y grandes empresas para mejorar inserción laboral.",
+      "cita_literal": "FP dual real con pymes y grandes empresas para empleabilidad.",
+      "pagina": 6,
+      "tags": [
+        "#Educacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con extender una FP dual efectiva con pymes y grandes empresas para mejorar inserción laboral?"
+    },
+    {
+      "id": 38,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación y Protección de la Infancia",
+      "titulo_corto": "Educación orientada al emprendimiento local",
+      "resumen": "Incorporar proyectos educativos que conecten formación y oportunidades de emprendimiento en el territorio.",
+      "cita_literal": "Proyectos educativos que pongan en valor oportunidades de emprendimiento en el territorio.",
+      "pagina": 7,
+      "tags": [
+        "#Educacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con incorporar proyectos educativos que conecten formación y oportunidades de emprendimiento en el territorio?"
+    },
+    {
+      "id": 39,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación y Protección de la Infancia",
+      "titulo_corto": "Educación infantil segura (0 –6)",
+      "resumen": "Coordinación de bienestar y protocolos en centros.",
+      "cita_literal": "Educación infantil segura (0 –6): coordinación de bienestar y protocolos en centros.",
+      "pagina": 7,
+      "tags": [
+        "#Educacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con Coordinación de bienestar y protocolos en centros?"
+    },
+    {
+      "id": 40,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación y Protección de la Infancia",
+      "titulo_corto": "Modelo Barnahus contra la revictimización infantil",
+      "resumen": "Implantar el modelo Barnahus para atender abusos infantiles sin revictimizar a niños y niñas durante el proceso.",
+      "cita_literal": "Implantación del modelo Barnahus (Casa de la Infancia) para evitar revictimización en abusos.",
+      "pagina": 7,
+      "tags": [
+        "#Educacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con implantar el modelo Barnahus para atender abusos infantiles sin revictimizar a niños y niñas durante el proceso?"
+    },
+    {
+      "id": 41,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación y Protección de la Infancia",
+      "titulo_corto": "Refuerzo de 0-3 y conciliación en Valladolid",
+      "resumen": "Refuerzo de 0 –3 y conciliación donde haya más demanda.",
+      "cita_literal": "En Valladolid capital: refuerzo de 0 –3 y conciliación donde haya más demanda.",
+      "pagina": 7,
+      "tags": [
+        "#Educacion",
+        "#Valladolid"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con Refuerzo de 0 –3 y conciliación donde haya más demanda?"
+    },
+    {
+      "id": 42,
+      "categoria": "Vivienda",
+      "subcategoria": "Vivienda y Rehabilitación",
+      "titulo_corto": "Rehabitare y oficinas de vivienda rural",
+      "resumen": "Ampliar Rehabitare para movilizar vivienda privada en alquiler y crear oficinas comarcales de vivienda y repoblación.",
+      "cita_literal": "Vivienda rural : ampliar Rehabitare para vivienda privada (alquiler durante 5 años) con garantías/seguro para propietarios; oficinas comarcales de repoblación y vivienda.",
+      "pagina": 7,
+      "tags": [
+        "#Vivienda",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar Rehabitare para movilizar vivienda privada en alquiler y crear oficinas comarcales de vivienda y repoblación?"
+    },
+    {
+      "id": 43,
+      "categoria": "Vivienda",
+      "subcategoria": "Vivienda y Rehabilitación",
+      "titulo_corto": "Parques públicos de vivienda (alquiler y opción a compra), apoyo",
+      "resumen": "Y rehabilitación de barrios en Valladolid (accesibilidad, eficiencia, ascensores).",
+      "cita_literal": "Parques públicos de vivienda (alquiler y opción a compra), apoyo a adquisición de solares y colaboración con SOMACYL donde proceda; y rehabilitación de barrios en Valladolid (accesibilidad, eficiencia, ascensores).",
+      "pagina": 7,
+      "tags": [
+        "#Vivienda",
+        "#MedioRural",
+        "#Valladolid"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con Y rehabilitación de barrios en Valladolid (accesibilidad, eficiencia, ascensores)?"
+    },
+    {
+      "id": 44,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Transición Ecológica",
+      "titulo_corto": "Renovables con reglas y retorno local",
+      "resumen": "Regular grandes proyectos renovables para compatibilizar impacto ambiental y social, con autoconsumo y retornos locales.",
+      "cita_literal": "Ley autonómica de renovables : impulso a autoconsumo y comunidades energéticas; reglas para grandes proyectos (compatibilidad ambiental/social, desmantelamiento, residuos, retornos locales).",
+      "pagina": 7,
+      "tags": [
+        "#MedioAmbiente",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con regular grandes proyectos renovables para compatibilizar impacto ambiental y social, con autoconsumo y retornos locales?"
+    },
+    {
+      "id": 45,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Transición Ecológica",
+      "titulo_corto": "Moratoria y nueva regulación del biogás",
+      "resumen": "Aplicar una revisión inmediata del biogás y aprobar una regulación con zonificación de exclusión y consultas vinculantes.",
+      "cita_literal": "Biogás : revisión/moratoria inmediata y nueva regulación con zonificación de exclusión y consultas locales vinculantes (según el planteamiento de España Vaciada).",
+      "pagina": 7,
+      "tags": [
+        "#MedioAmbiente",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aplicar una revisión inmediata del biogás y aprobar una regulación con zonificación de exclusión y consultas vinculantes?"
+    },
+    {
+      "id": 46,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Transición Ecológica",
+      "titulo_corto": "Gestión forestal anual con prevención activa",
+      "resumen": "Mantener cuadrillas todo el año para combinar prevención, restauración ecológica y protección de biodiversidad.",
+      "cita_literal": "Gestión forestal permanente : cuadrillas 12 meses, prevención y restauración ecológica; corredores ecológicos y protección de biodiversidad.",
+      "pagina": 7,
+      "tags": [
+        "#MedioAmbiente",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con mantener cuadrillas todo el año para combinar prevención, restauración ecológica y protección de biodiversidad?"
+    },
+    {
+      "id": 47,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Transición Ecológica",
+      "titulo_corto": "Plan hídrico y de suelo contra desertificación",
+      "resumen": "Desplegar medidas de eficiencia hídrica y protección del suelo, con sombra urbana y refugios climáticos en Valladolid.",
+      "cita_literal": "Agua y suelo : eficiencia hídrica y plan contra desertificación y degradación del suelo; en Valladolid capital, plan de sombra y refugios climáticos y más verde urbano.",
+      "pagina": 7,
+      "tags": [
+        "#MedioAmbiente",
+        "#MedioRural",
+        "#Valladolid"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con desplegar medidas de eficiencia hídrica y protección del suelo, con sombra urbana y refugios climáticos en Valladolid?"
     }
   ]
 }

@@ -13,398 +13,2045 @@
   "propuestas": [
     {
       "id": 1,
-      "categoria": "Reto Demográfico y Despoblación",
-      "subcategoria": "Talento",
-      "titulo_corto": "Plan integral de retorno del talento",
-      "resumen": "Ayudas al alquiler para jóvenes retornados y renta universal de 3 años para emancipación.",
-      "cita_literal": "Plan integral de retorno del talento al territorio de Castilla y León: ayudas al alquiler de viviendas públicas para personas jóvenes retornadas.",
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler",
+      "titulo_corto": "Plan integral de retorno del talento al territorio de Castilla y León",
+      "resumen": "Ayudas al alquiler de viviendas públicas para personas jóvenes retornadas.",
+      "cita_literal": "Plan integral de retorno del talento al territorio de Castilla y León: ayudas al alquiler de viviendas públicas para personas jóvenes retornadas. Programas mixtos de empleo/formación para la creación de cooperativas con personas jóvenes tituladas en nuevas tecnologías aplicadas al mundo rural.",
       "pagina": 2,
       "tags": [
-        "#Jovenes",
-        "#Retorno",
-        "#Vivienda"
+        "#Vivienda",
+        "#MedioRural",
+        "#Alquiler"
       ],
       "analisis": {
-        "competencia": "Shared",
-        "foco_rural": false
+        "competencia": "Directa",
+        "foco_rural": true
       },
-      "pregunta_afinidad": "¿Estaría a favor de dar ayudas directas al alquiler y una renta de 3 años a los jóvenes que vuelvan a la región?"
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: plan integral de retorno del talento al territorio de castilla y león: ayudas al alquiler de viviendas públicas para personas jóvenes retornadas?"
     },
     {
       "id": 2,
-      "categoria": "Reto Demográfico y Despoblación",
-      "subcategoria": "Empleo Rural",
-      "titulo_corto": "Cooperativas de jóvenes en nuevas tecnologías rurales",
-      "resumen": "Programas mixtos de empleo/formación para crear cooperativas tecnológicas en el mundo rural.",
-      "cita_literal": "creación de cooperativas con personas jóvenes tituladas en nuevas tecnologías aplicadas al mundo rural.",
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Dependencia",
+      "titulo_corto": "Desarrollar un modelo de atención a la dependencia que permita",
+      "resumen": "La permanencia de las personas mayores en su entorno el máximo tiempo posible.",
+      "cita_literal": "Desarrollar un modelo de atención a la dependencia que permita la permanencia de las personas mayores en su entorno el máximo tiempo posible. Refuerzo de la red pública de servicios para mayores: nuevas residencias asistidas con personal profesionalizado y ratios adecuados, y pisos compartidos.",
       "pagina": 2,
       "tags": [
-        "#Cooperativas",
-        "#Tecnologia",
+        "#Cuidados",
         "#MedioRural"
       ],
       "analisis": {
         "competencia": "Directa",
         "foco_rural": true
       },
-      "pregunta_afinidad": "¿Apoyaría que la Junta financie la creación de cooperativas de jóvenes expertos en tecnología para trabajar en los pueblos?"
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: desarrollar un modelo de atención a la dependencia que permita la permanencia de las personas mayores en su entorno el máximo tiempo posible?"
     },
     {
       "id": 3,
-      "categoria": "Servicios Sociales y Cuidados",
-      "subcategoria": "Dependencia",
-      "titulo_corto": "Modelo de atención a la dependencia en el entorno",
-      "resumen": "Refuerzo de residencias asistidas públicas y servicios geriátricos comarcales con transporte adaptado.",
-      "cita_literal": "Desarrollar un modelo de atención a la dependencia que permita la permanencia de las personas mayores en su entorno",
-      "pagina": 2,
-      "tags": [
-        "#Dependencia",
-        "#Mayores",
-        "#TransporteAdaptado"
-      ],
-      "analisis": {
-        "competencia": "Directa",
-        "foco_rural": true
-      },
-      "pregunta_afinidad": "¿Cree que se deberían abrir pequeñas residencias públicas en todas las comarcas para que los ancianos no tengan que dejar su entorno?"
-    },
-    {
-      "id": 4,
       "categoria": "Conectividad y Movilidad",
-      "subcategoria": "Ferrocarril",
-      "titulo_corto": "Recuperación de líneas de ferrocarril abandonadas",
-      "resumen": "Crear servicios de cercanías aprovechando trazados antiguos e implantar trenes de hidrógeno.",
-      "cita_literal": "Crear servicios de cercanías nuevos que aprovechen los trazados abandonados de las antiguas líneas provinciales",
+      "subcategoria": "Transporte",
+      "titulo_corto": "Mejorar las infraestructuras, racionalizar las líneas regulares de autobús y fomentar",
+      "resumen": "El transporte a demanda en el medio rural.",
+      "cita_literal": "Mejorar las infraestructuras, racionalizar las líneas regulares de autobús y fomentar el transporte a demanda en el medio rural. Crear servicios de cercanías nuevos que aprovechen los trazados abandonados de las antiguas líneas provinciales de ferrocarril.",
       "pagina": 2,
       "tags": [
-        "#Tren",
-        "#MovilidadSostenible",
-        "#Hidrogeno"
+        "#Movilidad",
+        "#MedioRural"
       ],
       "analisis": {
         "competencia": "Petition",
         "foco_rural": true
       },
-      "pregunta_afinidad": "¿Apoya reabrir las antiguas líneas de tren cerradas para crear una red de cercanías regional?"
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: mejorar las infraestructuras, racionalizar las líneas regulares de autobús y fomentar el transporte a demanda en el medio rural?"
+    },
+    {
+      "id": 4,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Conectividad",
+      "titulo_corto": "Cobertura universal de internet de alta velocidad y 4G/5G",
+      "resumen": "Garantizar conexión de alta velocidad (fibra óptica o equivalente) y cobertura móvil 4G/5G en todo el territorio.",
+      "cita_literal": "Asegurar la cobertura universal de internet de alta velocidad (fibra óptica o similar) y cobertura móvil 4G/5G en el 100% del territorio.",
+      "pagina": 2,
+      "tags": [
+        "#Movilidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: asegurar la cobertura universal de internet de alta velocidad (fibra óptica o similar) y cobertura móvil 4g/5g en el 100% del territorio?"
     },
     {
       "id": 5,
-      "categoria": "Conectividad y Movilidad",
-      "subcategoria": "Internet",
-      "titulo_corto": "Cobertura universal de internet 4G/5G al 100%",
-      "resumen": "Garantizar fibra óptica o similar y cobertura móvil en todo el territorio.",
-      "cita_literal": "Asegurar la cobertura universal de internet de alta velocidad... en el 100% del territorio.",
+      "categoria": "Educación y Futuro",
+      "subcategoria": "FP y Universidad",
+      "titulo_corto": "Programa de ayudas integrales a 8/10 años para aquellas personas",
+      "resumen": "Jóvenes tituladas de ciclos superiores de FP o universitarias, que decidan desarrollar su proyecto de vida en nuestro territorio.",
+      "cita_literal": "Programa de ayudas integrales a 8/10 años para aquellas personas jóvenes tituladas de ciclos superiores de FP o universitarias, que decidan desarrollar su proyecto de vida en nuestro territorio.",
       "pagina": 2,
       "tags": [
-        "#Internet",
-        "#BrechaDigital",
-        "#100PorCiento"
+        "#Educacion"
       ],
       "analisis": {
-        "competencia": "Shared",
-        "foco_rural": true
+        "competencia": "Directa",
+        "foco_rural": false
       },
-      "pregunta_afinidad": "¿Debe el gobierno regional garantizar por ley que llegue internet de alta velocidad a todos los pueblos, sin excepción?"
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: programa de ayudas integrales a 8/10 años para aquellas personas jóvenes tituladas de ciclos superiores de fp o universitarias, que decidan desarrollar su proyecto de?"
     },
     {
       "id": 6,
       "categoria": "Medio Ambiente y Energía",
-      "subcategoria": "Gobernanza",
-      "titulo_corto": "Ley de Ordenación Territorial sostenible",
-      "resumen": "Planificación equilibrada para una transición ecológica justa ante el cambio climático.",
-      "cita_literal": "Una Ley de Ordenación Territorial sostenible que nos lleve a una planificación equilibrada",
+      "subcategoria": "Energía y Clima",
+      "titulo_corto": "Una ley de ordenación territorial sostenible que nos lleve a una planificación",
+      "resumen": "Equilibrada, para una transición ecológica justa ante la amenaza del cambio climático y el desastre ecológico presente ya en nuestros ecosistemas.",
+      "cita_literal": "Una Ley de Ordenación Territorial sostenible que nos lleve a una planificación equilibrada, para una transición ecológica justa ante la amenaza del cambio climático y el desastre ecológico presente ya en nuestros ecosistemas.",
       "pagina": 3,
       "tags": [
-        "#Ordenacion",
-        "#Clima",
-        "#TransicionJusta"
+        "#MedioAmbiente"
       ],
       "analisis": {
         "competencia": "Directa",
         "foco_rural": false
       },
-      "pregunta_afinidad": "¿Apoyaría una ley estatal para obligar a que el crecimiento de la región respete siempre los límites ecológicos?"
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: una ley de ordenación territorial sostenible que nos lleve a una planificación equilibrada, para una transición ecológica justa ante la amenaza del cambio climático y el?"
     },
     {
       "id": 7,
-      "categoria": "Medio Ambiente y Energía",
-      "subcategoria": "Residuos",
-      "titulo_corto": "Agencia Autonómica de Residuos",
-      "resumen": "Centralizar el reciclaje y aplicar fiscalidad basada en 'quien contamina paga'.",
-      "cita_literal": "Una Agencia Autonómica de Residuos que... promueva una fiscalidad ambiental justa con el principio de 'quien contamina paga'.",
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Fiscalidad",
+      "titulo_corto": "Una agencia autonómica de residuos que actualice el plan integral",
+      "resumen": "De Residuos de Castilla y León (PIRCYL), centralice y mejore las tasas de reciclaje, que sea el interlocutor único ante operadores del sistema: Ecoembes, Ecovidrio etc.",
+      "cita_literal": "Una Agencia Autonómica de Residuos que actualice el Plan Integral de Residuos de Castilla y León (PIRCYL), centralice y mejore las tasas de reciclaje, que sea el interlocutor único ante operadores del sistema: Ecoembes, Ecovidrio etc.",
       "pagina": 3,
       "tags": [
-        "#Reciclaje",
-        "#FiscalidadVerde"
+        "#Empleo"
       ],
       "analisis": {
         "competencia": "Directa",
         "foco_rural": false
       },
-      "pregunta_afinidad": "¿Le parecería bien crear una agencia que multe severamente a las empresas que no reciclen correctamente sus residuos?"
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: una agencia autonómica de residuos que actualice el plan integral de residuos de castilla y león (pircyl), centralice y mejore las tasas de reciclaje, que sea el?"
     },
     {
       "id": 8,
       "categoria": "Medio Ambiente y Energía",
-      "subcategoria": "Ganadería",
-      "titulo_corto": "Paralización de macrogranjas",
-      "resumen": "Frenar proyectos de macrogranjas y ganadería intensiva por daño ecosistémico.",
-      "cita_literal": "Paralizar cualquier proyecto de macrogranjas y ganadería intensiva que dañan los ecosistemas",
+      "subcategoria": "Energía y Clima",
+      "titulo_corto": "Desarrollo de un plan energético autonómico rediseñando y reorientando el eren",
+      "resumen": "Que planifique las necesidades urbanas y rurales, apostando por las energías renovables, pero no a cualquier precio, para que dejen de ser el negocio de las élites y promoviendo.",
+      "cita_literal": "Desarrollo de un Plan Energético Autonómico rediseñando y reorientando el EREN, que planifique las necesidades urbanas y rurales, apostando por las energías renovables, pero no a cualquier precio, para que dejen de ser el negocio de las élites y promoviendo medidas participativas como las comunidades energéticas, etc.",
       "pagina": 3,
       "tags": [
-        "#Macrogranjas",
-        "#Ecosistemas",
-        "#Sostenibilidad"
+        "#MedioAmbiente",
+        "#MedioRural"
       ],
       "analisis": {
         "competencia": "Directa",
         "foco_rural": true
       },
-      "pregunta_afinidad": "¿Está usted de acuerdo con prohibir la apertura de nuevas macrogranjas en toda la Comunidad?"
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: desarrollo de un plan energético autonómico rediseñando y reorientando el eren, que planifique las necesidades urbanas y rurales, apostando por las energías renovables,?"
     },
     {
       "id": 9,
-      "categoria": "Sanidad Pública",
-      "subcategoria": "Aborto",
-      "titulo_corto": "Aborto libre y gratuito en centros públicos",
-      "resumen": "Garantizar el acceso efectivo al aborto voluntario en la red sanitaria pública regional.",
-      "cita_literal": "garantía de acceso al aborto voluntario, libre y gratuito en los centros sanitarios públicos de la comunidad.",
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Energía y Clima",
+      "titulo_corto": "Desde las cortes autonómicas crear una asamblea climática para desarrollar",
+      "resumen": "Una estrategia climática y dotar de máxima participación ciudadana e intergeneracional de las consecuencias del cambio climático.",
+      "cita_literal": "Desde las Cortes Autonómicas crear una Asamblea Climática para desarrollar una estrategia climática y dotar de máxima participación ciudadana e intergeneracional de las consecuencias del cambio climático.",
       "pagina": 3,
       "tags": [
-        "#Aborto",
-        "#SanidadPublica",
-        "#Derechos"
+        "#Empleo"
       ],
       "analisis": {
         "competencia": "Directa",
         "foco_rural": false
       },
-      "pregunta_afinidad": "¿Es partidario de que el aborto se realice siempre en los hospitales públicos de la región en lugar de clínicas privadas?"
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: desde las cortes autonómicas crear una asamblea climática para desarrollar una estrategia climática y dotar de máxima participación ciudadana e intergeneracional de las?"
     },
     {
       "id": 10,
-      "categoria": "Otros",
-      "subcategoria": "Igualdad LGTBI",
-      "titulo_corto": "Aprobación de la Ley LGBTIQA+ de CyL",
-      "resumen": "Marco legal para la igualdad integral y defensa de derechos del colectivo.",
-      "cita_literal": "Aprobación de la Ley LGBTIQA+ de Castilla y León.",
-      "pagina": 4,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Ganadería",
+      "titulo_corto": "Paralizar cualquier proyecto de macrogranjas y ganadería intensiva que dañan",
+      "resumen": "Los ecosistemas y el bienestar animal y humano.",
+      "cita_literal": "Paralizar cualquier proyecto de macrogranjas y ganadería intensiva que dañan los ecosistemas y el bienestar animal y humano.",
+      "pagina": 3,
       "tags": [
-        "#LGTBI",
-        "#Igualdad",
-        "#Ley"
+        "#SectorPrimario"
       ],
       "analisis": {
         "competencia": "Directa",
-        "foco_rural": false
+        "foco_rural": true
       },
-      "pregunta_afinidad": "¿Apoyaría una ley regional específica para proteger a las personas LGTBI del acoso y la discriminación?"
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: paralizar cualquier proyecto de macrogranjas y ganadería intensiva que dañan los ecosistemas y el bienestar animal y humano?"
     },
     {
       "id": 11,
-      "categoria": "Vivienda",
-      "subcategoria": "Gobernanza",
-      "titulo_corto": "Sociedad Pública de Vivienda de CyL",
-      "resumen": "Entidad para comprar, promover y gestionar 20.000 viviendas públicas de alquiler.",
-      "cita_literal": "Creación de la Sociedad Pública de Vivienda... objetivo de movilizar 20.000 viviendas en la legislatura.",
-      "pagina": 4,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Empleo",
+      "titulo_corto": "Gestión pública de las masas forestales evitando las subcontratas que precarizan",
+      "resumen": "El empleo del sector y la calidad del servicio.",
+      "cita_literal": "Gestión pública de las masas forestales evitando las subcontratas que precarizan el empleo del sector y la calidad del servicio. Plan ordenado de aprovechamiento forestal.",
+      "pagina": 3,
       "tags": [
-        "#ViviendaPublica",
-        "#Inversion",
-        "#AlquilerAsequible"
+        "#MedioAmbiente"
       ],
       "analisis": {
         "competencia": "Directa",
         "foco_rural": false
       },
-      "pregunta_afinidad": "¿Apoyaría crear una empresa pública regional que gestione hasta 20.000 pisos de alquiler barato?"
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: gestión pública de las masas forestales evitando las subcontratas que precarizan el empleo del sector y la calidad del servicio?"
     },
     {
       "id": 12,
-      "categoria": "Vivienda",
-      "subcategoria": "Alquiler",
-      "titulo_corto": "Tope del 30% de ingresos para alquiler público",
-      "resumen": "Garantizar por norma que ningún inquilino pague más del 30% de su sueldo al parque público.",
-      "cita_literal": "Garantía normativa de que ningún inquilino del parque público destine más del 30% de sus ingresos al pago del alquiler.",
-      "pagina": 4,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Cumplimiento de la ley y garantía de acceso al aborto",
+      "resumen": "Voluntario, libre y gratuito en los centros sanitarios públicos de la comunidad.",
+      "cita_literal": "Cumplimiento de la ley y garantía de acceso al aborto voluntario, libre y gratuito en los centros sanitarios públicos de la comunidad.",
+      "pagina": 3,
       "tags": [
-        "#Alquiler",
-        "#RentasBajas"
+        "#SanidadPublica"
       ],
       "analisis": {
         "competencia": "Directa",
         "foco_rural": false
       },
-      "pregunta_afinidad": "¿Le parece justo que el precio del alquiler público se adapte al sueldo de cada familia para que nunca supere el 30%?"
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: cumplimiento de la ley y garantía de acceso al aborto voluntario, libre y gratuito en los centros sanitarios públicos de la comunidad?"
     },
     {
       "id": 13,
-      "categoria": "Vivienda",
-      "subcategoria": "Mercado",
-      "titulo_corto": "Declaración inmediata de Zonas Tensionadas",
-      "resumen": "Aplicar la Ley estatal para congelar rentas y obligar a prórrogas de contratos.",
-      "cita_literal": "Aplicación inmediata de la Ley de Vivienda estatal para declarar zonas tensionadas",
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación Pública",
+      "titulo_corto": "Educación sexual y afectiva en centros educativos",
+      "resumen": "Implantar educación sexual y afectiva en los centros de la Comunidad y reforzar campañas formativas para prevenir violencia machista y mejorar la convivencia.",
+      "cita_literal": "Implementación de la educación sexual y afectiva en los centros educativos de la Comunidad. Educar para el respeto y la convivencia es el primer paso hacia la igualdad y la erradicación del machismo violento. Realización de campañas de formación e información en los ámbitos urbanos y rurales.",
       "pagina": 4,
       "tags": [
-        "#Alquiler",
-        "#ZonasTensionadas",
-        "#Precios"
+        "#Educacion",
+        "#MedioRural"
       ],
       "analisis": {
         "competencia": "Directa",
-        "foco_rural": false
+        "foco_rural": true
       },
-      "pregunta_afinidad": "¿Desea que la Junta declare 'zonas tensionadas' para congelar el precio de los alquileres en los barrios más caros?"
+      "pregunta_afinidad": "¿Está de acuerdo con implantar educación sexual y afectiva en los centros de la Comunidad y reforzar campañas formativas para prevenir violencia machista y mejorar la convivencia?"
     },
     {
       "id": 14,
-      "categoria": "Vivienda",
-      "subcategoria": "Especulación",
-      "titulo_corto": "Impuesto a viviendas vacías de grandes tenedores",
-      "resumen": "Recargo en IRPF regional y tasas propias para penalizar el desuso residencial.",
-      "cita_literal": "impuestos propios sobre viviendas vacías de grandes tenedores para penalizar la vivienda vacía",
-      "pagina": 5,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Igualdad",
+      "titulo_corto": "Dotación de medios materiales de apoyo a las víctimas de la violencia",
+      "resumen": "Machista y LGBTIfóbica, así como el incremento del número de plazas en centros de acogida.Es necesario dar respuesta institucional, pensada desde la interseccionalidad, para no.",
+      "cita_literal": "Dotación de medios materiales de apoyo a las víctimas de la violencia machista y LGBTIfóbica, así como el incremento del número de plazas en centros de acogida.Es necesario dar respuesta institucional, pensada desde la interseccionalidad, para no invisibilizar situaciones extremas como la del sinhogarismo.",
+      "pagina": 4,
       "tags": [
-        "#Impuestos",
-        "#GrandesTenedores",
-        "#Especulacion"
+        "#Cuidados"
       ],
       "analisis": {
         "competencia": "Directa",
         "foco_rural": false
       },
-      "pregunta_afinidad": "¿Estaría de acuerdo con cobrar un impuesto especial a los bancos o fondos que tengan pisos vacíos para obligarlos a alquilarlos?"
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: dotación de medios materiales de apoyo a las víctimas de la violencia machista y lgbtifóbica, así como el incremento del número de plazas en centros de acogida.es?"
     },
     {
       "id": 15,
-      "categoria": "Reto Demográfico y Despoblación",
-      "subcategoria": "Vivienda Rural",
-      "titulo_corto": "Cuota Rural del 25% en el plan público de vivienda",
-      "resumen": "Reserva obligatoria de 5.000 viviendas públicas destinadas a pueblos.",
-      "cita_literal": "Reserva obligatoria de que 5.000 viviendas del plan público... se destinen específicamente a los pueblos",
-      "pagina": 5,
+      "categoria": "Otros",
+      "subcategoria": "Igualdad",
+      "titulo_corto": "Aplicación efectiva de la Ley LGTBIQA+ en Castilla y León",
+      "resumen": "Desplegar protocolos autonómicos contra la discriminación y garantizar derechos de personas LGTBIQA+ y trans en servicios públicos.",
+      "cita_literal": "Aprobación de la Ley LGBTIQA+ de Castilla y León. Desarrollo de los protocolos exigidos por la ley general contra la discriminación y por la ley de igualdad real y efectiva de las personas trans y de garantía de los derechos de las personas LGBTIQA+.",
+      "pagina": 4,
       "tags": [
-        "#MedioRural",
-        "#Poblacion"
+        "#Otros"
       ],
       "analisis": {
         "competencia": "Directa",
-        "foco_rural": true
+        "foco_rural": false
       },
-      "pregunta_afinidad": "¿Apoyaría que uno de cada cuatro pisos públicos construidos por la Junta tenga que estar obligatoriamente en un pueblo?"
+      "pregunta_afinidad": "¿Está de acuerdo con desplegar protocolos autonómicos contra la discriminación y garantizar derechos de personas LGTBIQA+ y trans en servicios públicos?"
     },
     {
       "id": 16,
-      "categoria": "Reto Demográfico y Despoblación",
-      "subcategoria": "Gobernanza",
-      "titulo_corto": "Planes comarcales vinculantes con fuerza legal",
-      "resumen": "Obligar a ayuntamientos a coordinarse en consorcios para gestionar servicios y energía.",
-      "cita_literal": "Crear planes estratégicos con fuerza legal... que los ayuntamientos estén obligados a coordinarse",
-      "pagina": 5,
+      "categoria": "Otros",
+      "subcategoria": "Igualdad",
+      "titulo_corto": "Políticas activas contra segregación y delitos de odio",
+      "resumen": "Desarrollar políticas públicas de igualdad real, con medidas específicas contra la segregación escolar, el racismo y los delitos de odio.",
+      "cita_literal": "Implementación de las políticas públicas conducentes a la igualdad real y efectiva de todos los ciudadanos. Lucha contra la segregación escolar, el racismo y el creciente número de delitos de odio en la comunidad, que es la que manifiesta un mayor incremento de incidentes en los últimos dos años.",
+      "pagina": 4,
       "tags": [
-        "#Comarcas",
-        "#Gobernanza",
-        "#Pueblos"
+        "#Otros"
       ],
       "analisis": {
         "competencia": "Directa",
-        "foco_rural": true
+        "foco_rural": false
       },
-      "pregunta_afinidad": "¿Cree que los ayuntamientos pequeños deberían estar obligados por ley a trabajar juntos en comarcas para ahorrar costes?"
+      "pregunta_afinidad": "¿Está de acuerdo con desarrollar políticas públicas de igualdad real, con medidas específicas contra la segregación escolar, el racismo y los delitos de odio?"
     },
     {
       "id": 17,
-      "categoria": "Reto Demográfico y Despoblación",
-      "subcategoria": "Democracia Local",
-      "titulo_corto": "Recuperación de los Concechos y Comunales",
-      "resumen": "Gestión vecinal directa de pastos, montes y recursos públicos.",
-      "cita_literal": "Mecanismos de participación ciudadana como los tradicionales 'Comunales o Concechos'",
-      "pagina": 10,
+      "categoria": "Vivienda",
+      "subcategoria": "Vivienda Pública",
+      "titulo_corto": "Entidad pública para ampliar vivienda asequible",
+      "resumen": "Crear una sociedad pública autonómica para promover, comprar y gestionar alquiler asequible con el objetivo de ampliar de forma masiva el parque público de vivienda.",
+      "cita_literal": "Creación de la Sociedad Pública de Vivienda de Castilla y León: Una entidad autonómica con capacidad para promover, comprar y gestionar alquileres, con el objetivo de movilizar 20.000 viviendas en la legislatura.",
+      "pagina": 4,
       "tags": [
-        "#Participacion",
-        "#Tradicion",
-        "#GestionComunal"
+        "#Vivienda",
+        "#Alquiler"
       ],
       "analisis": {
         "competencia": "Directa",
-        "foco_rural": true
+        "foco_rural": false
       },
-      "pregunta_afinidad": "¿Le gustaría que los vecinos de los pueblos pudieran decidir directamente cómo usar los pastos y montes del municipio?"
+      "pregunta_afinidad": "¿Está de acuerdo con crear una sociedad pública autonómica para promover, comprar y gestionar alquiler asequible con el objetivo de ampliar de forma masiva el parque público de vivienda?"
     },
     {
       "id": 18,
-      "categoria": "Economía, Empleo y Fiscalidad",
-      "subcategoria": "Jornada Laboral",
-      "titulo_corto": "Reducción de jornada y Renta Básica Universal",
-      "resumen": "Incentivar la reducción de horas de trabajo y establecer una renta mínima para todos.",
-      "cita_literal": "incentivando medidas como la reducción de la jornada y la Renta Básica Universal.",
-      "pagina": 10,
+      "categoria": "Vivienda",
+      "subcategoria": "Vivienda Pública",
+      "titulo_corto": "Compra de vivienda vacía para ampliar parque público",
+      "resumen": "Incorporar miles de viviendas vacías procedentes de banca y SAREB para aumentar rápidamente la oferta pública de alquiler asequible.",
+      "cita_literal": "Movilización de Vivienda Vacía y de la SAREB: Adquisición de 4.000 viviendas procedentes de la banca y la SAREB para el parque público, una vía más rápida y barata que la construcción nueva.",
+      "pagina": 4,
       "tags": [
-        "#Sueldo",
-        "#DerechosLaborales",
-        "#RentaBasica"
+        "#Vivienda",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con incorporar miles de viviendas vacías procedentes de banca y SAREB para aumentar rápidamente la oferta pública de alquiler asequible?"
+    },
+    {
+      "id": 19,
+      "categoria": "Vivienda",
+      "subcategoria": "Vivienda Pública",
+      "titulo_corto": "Límite del 30% de ingresos en alquiler público",
+      "resumen": "Blindar que ningún hogar del parque público pague más del 30% de sus ingresos en renta mensual.",
+      "cita_literal": "Tope de precio en vivienda pública: Garantía normativa de que ningún inquilino del parque público destine más del 30% de sus ingresos al pago del alquiler.",
+      "pagina": 4,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con blindar que ningún hogar del parque público pague más del 30% de sus ingresos en renta mensual?"
+    },
+    {
+      "id": 20,
+      "categoria": "Vivienda",
+      "subcategoria": "Inversión Pública",
+      "titulo_corto": "Plan de 2.000 millones para vivienda y rehabilitación",
+      "resumen": "Movilizar una inversión plurianual de 2.000 millones para impulsar vivienda pública y rehabilitación, con impacto en empleo directo del sector.",
+      "cita_literal": "Inversión histórica de 2.000 millones de euros: Un plan financiero a cuatro años (fondos europeos, estatales y propios) que generará 15.000 empleos directos en construcción y rehabilitación.",
+      "pagina": 4,
+      "tags": [
+        "#Empleo"
       ],
       "analisis": {
         "competencia": "Shared",
         "foco_rural": false
       },
-      "pregunta_afinidad": "¿Estaría a favor de que el gobierno implantara una Renta Básica Universal para que nadie viva sin ingresos?"
-    },
-    {
-      "id": 19,
-      "categoria": "Calidad Democrática y Transparencia",
-      "subcategoria": "Corrupción",
-      "titulo_corto": "Agencia Antifraude de Castilla y León",
-      "resumen": "Fiscalización pública sistemática y auditorías externas para prevenir corrupción.",
-      "cita_literal": "creación de una Agencia Antifraude de Castilla y León.",
-      "pagina": 11,
-      "tags": [
-        "#Antifraude",
-        "#Transparencia",
-        "#Corrupcion"
-      ],
-      "analisis": {
-        "competencia": "Directa",
-        "foco_rural": false
-      },
-      "pregunta_afinidad": "¿Cree necesario crear un cuerpo independiente de auditores para vigilar cada euro que gasta la Junta?"
-    },
-    {
-      "id": 20,
-      "categoria": "Calidad Democrática y Transparencia",
-      "subcategoria": "Puertas Giratorias",
-      "titulo_corto": "Prohibición de puertas giratorias (10 años)",
-      "resumen": "Incompatibilidad de una década para ex altos cargos en empresas beneficiarias de concesiones.",
-      "cita_literal": "periodos de incompatibilidad de 10 años a ex altos cargos... en las empresas beneficiarias",
-      "pagina": 11,
-      "tags": [
-        "#PuertasGiratorias",
-        "#EticaPublica"
-      ],
-      "analisis": {
-        "competencia": "Directa",
-        "foco_rural": false
-      },
-      "pregunta_afinidad": "¿Apoyaría prohibir que un político trabaje para una eléctrica o constructora hasta que pasen 10 años desde que dejó el cargo?"
+      "pregunta_afinidad": "¿Está de acuerdo con movilizar una inversión plurianual de 2.000 millones para impulsar vivienda pública y rehabilitación, con impacto en empleo directo del sector?"
     },
     {
       "id": 21,
       "categoria": "Otros",
-      "subcategoria": "Tauromaquia",
-      "titulo_corto": "Eliminación de subvenciones a la tauromaquia",
-      "resumen": "Redefinir política cultural quitando fondos públicos a los toros.",
-      "cita_literal": "Redefinir la política cultural eliminando subvenciones a la tauromaquia",
-      "pagina": 12,
+      "subcategoria": "Vivienda Pública",
+      "titulo_corto": "Cesión de suelo",
+      "resumen": "Reserva de porcentajes superiores de suelo para VPO en los nuevos desarrollos urbanísticos.",
+      "cita_literal": "Cesión de suelo: reserva de porcentajes superiores de suelo para VPO en los nuevos desarrollos urbanísticos. Ejercicio del tanteo y retracto para aumentar el parque público.",
+      "pagina": 4,
       "tags": [
-        "#BienestarAnimal",
-        "#Toros",
-        "#Cultura"
+        "#Otros"
       ],
       "analisis": {
         "competencia": "Directa",
         "foco_rural": false
       },
-      "pregunta_afinidad": "¿Estaría de acuerdo con dejar de financiar corridas de toros con dinero público?"
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: cesión de suelo: reserva de porcentajes superiores de suelo para vpo en los nuevos desarrollos urbanísticos?"
+    },
+    {
+      "id": 22,
+      "categoria": "Vivienda",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Reforma integral de la ley del derecho a la vivienda",
+      "resumen": "De Castilla y León. Regulación del Mercado y Freno a la Especulación.",
+      "cita_literal": "Reforma integral de la Ley del Derecho a la Vivienda de Castilla y León. Regulación del Mercado y Freno a la Especulación.",
+      "pagina": 4,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: reforma integral de la ley del derecho a la vivienda de castilla y león. regulación del mercado y freno a la especulación?"
+    },
+    {
+      "id": 23,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler",
+      "titulo_corto": "Declaración de zonas tensionadas",
+      "resumen": "Aplicación inmediata de la Ley de Vivienda estatal para declarar zonas tensionadas, lo que activaría la congelación de rentas y prórrogas de contratos en áreas con subidas abusivas.",
+      "cita_literal": "Declaración de Zonas Tensionadas: Aplicación inmediata de la Ley de Vivienda estatal para declarar zonas tensionadas, lo que activaría la congelación de rentas y prórrogas de contratos en áreas con subidas abusivas. Clave para los 30.688 contratos que caducan en Castilla y León en 2026.",
+      "pagina": 4,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: declaración de zonas tensionadas: aplicación inmediata de la ley de vivienda estatal para declarar zonas tensionadas, lo que activaría la congelación de rentas y?"
+    },
+    {
+      "id": 24,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Índice autonómico para frenar subidas de alquiler",
+      "resumen": "Crear un índice regional de referencia para limitar incrementos abusivos en contratos nuevos y renovaciones.",
+      "cita_literal": "Índice de Referencia Autonómico: Creación de un índice propio para limitar las subidas anuales por encima del IPC y controlar los precios en los nuevos contratos.",
+      "pagina": 4,
+      "tags": [
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con crear un índice regional de referencia para limitar incrementos abusivos en contratos nuevos y renovaciones?"
+    },
+    {
+      "id": 25,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler",
+      "titulo_corto": "Bloquear la turistificación",
+      "resumen": "Un cuerpo de inspección autonómico para detectar alquileres turísticos ilegales, fraudes en alquileres de temporada y precios desmesurados.",
+      "cita_literal": "Bloquear la turistificación: Un cuerpo de inspección autonómico para detectar alquileres turísticos ilegales, fraudes en alquileres de temporada y precios desmesurados. Suspender la concesión de nuevas licencias de Vivienda de Uso Turístico (VUT) en zonas saturadas o exigir requisitos urbanísticos mucho más estrictos.",
+      "pagina": 4,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: bloquear la turistificación: un cuerpo de inspección autonómico para detectar alquileres turísticos ilegales, fraudes en alquileres de temporada y precios desmesurados?"
+    },
+    {
+      "id": 26,
+      "categoria": "Vivienda",
+      "subcategoria": "Fiscalidad",
+      "titulo_corto": "Fiscalidad a grandes tenedores",
+      "resumen": "Uso del tramo autonómico del IRPF y de impuestos propios sobre viviendas vacías de grandes tenedores para penalizar la vivienda vacía y desincentivar la acumulación de inmuebles en pocas manos.",
+      "cita_literal": "Fiscalidad a Grandes Tenedores: Uso del tramo autonómico del IRPF y de impuestos propios sobre viviendas vacías de grandes tenedores para penalizar la vivienda vacía y desincentivar la acumulación de inmuebles en pocas manos. 🚜 Reto Demográfico y Vivienda Rural.",
+      "pagina": 5,
+      "tags": [
+        "#Vivienda",
+        "#MedioRural",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: fiscalidad a grandes tenedores: uso del tramo autonómico del irpf y de impuestos propios sobre viviendas vacías de grandes tenedores para penalizar la vivienda vacía y?"
+    },
+    {
+      "id": 27,
+      "categoria": "Vivienda",
+      "subcategoria": "Despoblación",
+      "titulo_corto": "Reserva del 25% de vivienda pública en pueblos",
+      "resumen": "Obligar a que una de cada cuatro viviendas del plan público se destine a municipios rurales para fijar población.",
+      "cita_literal": "Cuota Rural del 25%: Reserva obligatoria de que 5.000 viviendas del plan público (una de cada cuatro) se destinen específicamente a los pueblos para fijar población.",
+      "pagina": 5,
+      "tags": [
+        "#Vivienda",
+        "#MedioRural",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con obligar a que una de cada cuatro viviendas del plan público se destine a municipios rurales para fijar población?"
+    },
+    {
+      "id": 28,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler",
+      "titulo_corto": "Bono de vivienda joven para zonas despobladas",
+      "resumen": "Dar ayudas directas al alquiler y a la compra a jóvenes que vivan o se trasladen a municipios con riesgo demográfico.",
+      "cita_literal": "Bono Vivienda Joven Rural: Ayudas directas al alquiler y compra para jóvenes, condicionadas al traslado o permanencia en municipios en riesgo de despoblación.",
+      "pagina": 5,
+      "tags": [
+        "#Vivienda",
+        "#MedioRural",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con dar ayudas directas al alquiler y a la compra a jóvenes que vivan o se trasladen a municipios con riesgo demográfico?"
+    },
+    {
+      "id": 29,
+      "categoria": "Vivienda",
+      "subcategoria": "Empleo",
+      "titulo_corto": "Rehabilitación de vivienda en pueblos",
+      "resumen": "Subvenciones específicas para recuperar casas en el medio rural, priorizando la eficiencia energética y la habitabilidad.",
+      "cita_literal": "Rehabilitación de Vivienda en Pueblos: Subvenciones específicas para recuperar casas en el medio rural, priorizando la eficiencia energética y la habitabilidad. Rehabilitación y Empleo Verde.",
+      "pagina": 5,
+      "tags": [
+        "#Vivienda",
+        "#MedioRural",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: rehabilitación de vivienda en pueblos: subvenciones específicas para recuperar casas en el medio rural, priorizando la eficiencia energética y la habitabilidad?"
+    },
+    {
+      "id": 30,
+      "categoria": "Otros",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Prioridad a la rehabilitación sobre construcción",
+      "resumen": "El plan prioriza recuperar lo existente frente a construir nuevo, reduciendo costes y huella ecológica.",
+      "cita_literal": "Prioridad a la rehabilitación sobre Construcción: El plan prioriza recuperar lo existente frente a construir nuevo, reduciendo costes y huella ecológica.",
+      "pagina": 5,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: prioridad a la rehabilitación sobre construcción: el plan prioriza recuperar lo existente frente a construir nuevo, reduciendo costes y huella ecológica?"
+    },
+    {
+      "id": 31,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Empleo",
+      "titulo_corto": "Empleo local y formación",
+      "resumen": "Programas que vinculan las ayudas de rehabilitación a la contratación de cooperativas locales y formación profesional (FP) en oficios de construcción sostenible.",
+      "cita_literal": "Empleo Local y Formación: Programas que vinculan las ayudas de rehabilitación a la contratación de cooperativas locales y formación profesional (FP) en oficios de construcción sostenible. Derechos Sociales y Cambio de Modelo.",
+      "pagina": 5,
+      "tags": [
+        "#Educacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: empleo local y formación: programas que vinculan las ayudas de rehabilitación a la contratación de cooperativas locales y formación profesional (fp) en oficios de?"
+    },
+    {
+      "id": 32,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler",
+      "titulo_corto": "Oficinas de vivienda digna en lugar de antiocupación",
+      "resumen": "Reconvertir recursos centrados en alarma social en oficinas que asesoren a inquilinos y faciliten acceso real a vivienda.",
+      "cita_literal": "Transformación de las \"Oficinas Anti-Ocupación\": Reconversión de estos recursos en Oficinas de Vivienda Digna, centradas en asesorar a inquilinos y facilitar el acceso a un hogar, no en generar alarma social.",
+      "pagina": 5,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reconvertir recursos centrados en alarma social en oficinas que asesoren a inquilinos y faciliten acceso real a vivienda?"
+    },
+    {
+      "id": 33,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler",
+      "titulo_corto": "Registro único de demanda y vivienda vacía",
+      "resumen": "Unificar en un registro público la demanda de alquiler social y el inventario de vivienda vacía para adjudicaciones transparentes.",
+      "cita_literal": "Registro de Demandantes y Viviendas Vacías: Creación de un inventario regional real de vivienda vacía y un registro público unificado para la adjudicación transparente del alquiler social.",
+      "pagina": 5,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con unificar en un registro público la demanda de alquiler social y el inventario de vivienda vacía para adjudicaciones transparentes?"
+    },
+    {
+      "id": 34,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Sinhogarismo",
+      "titulo_corto": "Modelo Housing First para personas sin hogar",
+      "resumen": "Extender el enfoque Housing First para priorizar vivienda estable y acompañamiento social a personas en situación de sinhogarismo.",
+      "cita_literal": "Impulsar el modelo “Housing First” en la atención social a personas sin hogar.",
+      "pagina": 5,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con extender el enfoque Housing First para priorizar vivienda estable y acompañamiento social a personas en situación de sinhogarismo?"
+    },
+    {
+      "id": 35,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Transporte",
+      "titulo_corto": "Movilidad rural para llegar a servicios básicos",
+      "resumen": "Reordenar la movilidad rural con rutas y transporte adaptado para asegurar acceso cercano a sanidad, educación y farmacia.",
+      "cita_literal": "Acceso a servicios esenciales en un tiempo razonable. Plan de movilidad rural que garantice los servicios sanitarios, educativos, farmacéuticos, y otros, en distancias cercanas o mediante vehículos adaptados que realicen rutas de asistencia.",
+      "pagina": 5,
+      "tags": [
+        "#Movilidad",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reordenar la movilidad rural con rutas y transporte adaptado para asegurar acceso cercano a sanidad, educación y farmacia?"
+    },
+    {
+      "id": 36,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Transporte",
+      "titulo_corto": "Planes comarcales integrales adaptados al territorio",
+      "resumen": "Crear planes estratégicos con fuerza legal, donde se definan usos del suelo, prioridades económicas y criterios ambientales.",
+      "cita_literal": "Planes comarcales integrales adaptados al territorio. Crear planes estratégicos con fuerza legal, donde se definan usos del suelo, prioridades económicas y criterios ambientales. La clave: que los ayuntamientos estén obligados a coordinarse, no a “sugerir cosas”.",
+      "pagina": 5,
+      "tags": [
+        "#MedioAmbiente",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: planes comarcales integrales adaptados al territorio. crear planes estratégicos con fuerza legal, donde se definan usos del suelo, prioridades económicas y criterios?"
+    },
+    {
+      "id": 37,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Participación",
+      "titulo_corto": "Participación vecinal en la planificación comarcal",
+      "resumen": "Incorporar a ciudadanía, ayuntamientos y órganos comarcales en el diseño y seguimiento de planes estratégicos del territorio.",
+      "cita_literal": "Participación de la sociedad civil en la programación estratégica mediante mecanismos comunitarios de gestión local. Estos planes deben diseñarse con la participación de los ayuntamientos y los órganos democráticos de ámbito comarcal (consorcios, mancomunidades, grupos de acción local, etc.).",
+      "pagina": 5,
+      "tags": [
+        "#Despoblacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con incorporar a ciudadanía, ayuntamientos y órganos comarcales en el diseño y seguimiento de planes estratégicos del territorio?"
+    },
+    {
+      "id": 38,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Agricultura",
+      "titulo_corto": "Impulsar la administración electrónica y la formación digital para facilitar",
+      "resumen": "El acceso a servicios y el teletrabajo.",
+      "cita_literal": "Impulsar la administración electrónica y la formación digital para facilitar el acceso a servicios y el teletrabajo. Apoyar la creación de nuevos negocios y actividades complementarias o alternativas a las tradicionales (turismo rural, servicios avanzados, economía verde).",
+      "pagina": 6,
+      "tags": [
+        "#Educacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: impulsar la administración electrónica y la formación digital para facilitar el acceso a servicios y el teletrabajo?"
+    },
+    {
+      "id": 39,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Creación de un observatorio científico del desarrollo del medio rural",
+      "resumen": "De carácter multidisciplinar, compuesto por investigadores, docentes, profesionales del sector y organizaciones del medio rural, que sea de consulta obligatoria en los planes y licencias que se.",
+      "cita_literal": "Creación de un Observatorio Científico del Desarrollo del Medio Rural, de carácter multidisciplinar, compuesto por investigadores, docentes, profesionales del sector y organizaciones del medio rural, que sea de consulta obligatoria en los planes y licencias que se tramiten, cuyos informes tendrán carácter público.",
+      "pagina": 6,
+      "tags": [
+        "#Despoblacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: creación de un observatorio científico del desarrollo del medio rural, de carácter multidisciplinar, compuesto por investigadores, docentes, profesionales del sector y?"
+    },
+    {
+      "id": 40,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Ganadería",
+      "titulo_corto": "Paralización inmediata de los proyectos en trámite de macroplantas de biogás",
+      "resumen": "En toda Castilla y León, así como la suspensión de nuevas autorizaciones de macrogranjas o ampliación de las existentes.",
+      "cita_literal": "Paralización inmediata de los proyectos en trámite de macroplantas de biogás en toda Castilla y León, así como la suspensión de nuevas autorizaciones de macrogranjas o ampliación de las existentes. Revisión de todas las licencias y evaluación de impacto.",
+      "pagina": 6,
+      "tags": [
+        "#SectorPrimario"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: paralización inmediata de los proyectos en trámite de macroplantas de biogás en toda castilla y león, así como la suspensión de nuevas autorizaciones de macrogranjas o?"
+    },
+    {
+      "id": 41,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Ganadería",
+      "titulo_corto": "Ampliación de las funciones y las plantillas de los servicios",
+      "resumen": "De bienestar animal, que intensificarán la vigilancia de las condiciones de vida de animales de producción y animales de trabajo.",
+      "cita_literal": "Ampliación de las funciones y las plantillas de los servicios de bienestar animal, que intensificarán la vigilancia de las condiciones de vida de animales de producción y animales de trabajo.",
+      "pagina": 6,
+      "tags": [
+        "#SectorPrimario"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: ampliación de las funciones y las plantillas de los servicios de bienestar animal, que intensificarán la vigilancia de las condiciones de vida de animales de producción?"
+    },
+    {
+      "id": 42,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Agricultura",
+      "titulo_corto": "Desarrollo organizado y profesionalizado de bancos de tierras de ámbito",
+      "resumen": "Comarcal, que faciliten el relevo generacional en el sector agrario con garantías para las personas y la administración, y propicien el arraigo de los jóvenes en el medio rural.",
+      "cita_literal": "Desarrollo organizado y profesionalizado de bancos de tierras de ámbito comarcal, que faciliten el relevo generacional en el sector agrario con garantías para las personas y la administración, y propicien el arraigo de los jóvenes en el medio rural.",
+      "pagina": 6,
+      "tags": [
+        "#SectorPrimario",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: desarrollo organizado y profesionalizado de bancos de tierras de ámbito comarcal, que faciliten el relevo generacional en el sector agrario con garantías para las?"
+    },
+    {
+      "id": 43,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo",
+      "titulo_corto": "Oferta pública de empleo estable y continuada",
+      "resumen": "Lanzar ofertas públicas de empleo de forma continuada para cubrir vacantes estructurales, reducir temporalidad y reforzar criterios de mérito y capacidad.",
+      "cita_literal": "OPE masiva y estable. Realizar ofertas públicas de empleo amplias, continuas y con especial atención a plazas vacantes reales, reduciendo la temporalidad y asegurando selección por mérito y capacidad.",
+      "pagina": 6,
+      "tags": [
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con lanzar ofertas públicas de empleo de forma continuada para cubrir vacantes estructurales, reducir temporalidad y reforzar criterios de mérito y capacidad?"
+    },
+    {
+      "id": 44,
+      "categoria": "Otros",
+      "subcategoria": "Dependencia",
+      "titulo_corto": "Prohibición de externalizaciones innecesarias",
+      "resumen": "Limitar las externalizaciones a casos estrictamente excepcionales, con controles rigurosos de eficacia y coste.",
+      "cita_literal": "Prohibición de externalizaciones innecesarias. Limitar las externalizaciones a casos estrictamente excepcionales, con controles rigurosos de eficacia y coste. Priorizar la gestión directa pública de servicios esenciales para evitar dependencias de intereses privados o partidistas.",
+      "pagina": 6,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: prohibición de externalizaciones innecesarias. limitar las externalizaciones a casos estrictamente excepcionales, con controles rigurosos de eficacia y coste?"
+    },
+    {
+      "id": 45,
+      "categoria": "Otros",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Revisión de cargos de libre designación",
+      "resumen": "La propuesta plantea reducir los cargos de libre designación y sustituirlos por plazas cubiertas por personal seleccionado por concurso y mérito.",
+      "cita_literal": "Revisión de cargos de libre designación. Reducir drásticamente los cargos de libre designación y las comisiones de servicio, sustituyéndolos por puestos ocupados por personal funcionario o laboral seleccionado por concurso, con criterios transparentes y objetivos.",
+      "pagina": 6,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: reducir los cargos de libre designación y cubrir más puestos públicos por concurso y mérito?"
+    },
+    {
+      "id": 46,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Empleo",
+      "titulo_corto": "Profesionalización de la administración",
+      "resumen": "Aprobar una Ley de Cuerpos y Escalas de Castilla y León para profesionalizar la administración y reforzar perfiles técnicos estratégicos.",
+      "cita_literal": "Profesionalización de la administración: es urgente promulgar una Ley de Cuerpos y Escalas de Castilla y León con figuras profesionales como el Cuerpo de Bomberos Forestales, la Escala de Agentes Medioambientales, de Técnicos en Orientación y Empleo, de Inspectores de Calidad y Fraude Alimentario, entre otras.",
+      "pagina": 7,
+      "tags": [
+        "#MedioAmbiente"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: aprobar una Ley de Cuerpos y Escalas para profesionalizar la administración autonómica?"
+    },
+    {
+      "id": 47,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Empleo",
+      "titulo_corto": "Contratación de personas y servicios adaptados al territorio",
+      "resumen": "Limitación y control de los contratos menores.",
+      "cita_literal": "Contratación de personas y servicios adaptados al territorio: Limitación y control de los contratos menores. Evaluación externa con indicadores públicos claros. Programas específicos para comarcas rurales y sus sectores estratégicos con una coordinación real entre empleo, industria, desarrollo rural.",
+      "pagina": 7,
+      "tags": [
+        "#Despoblacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: contratación de personas y servicios adaptados al territorio: limitación y control de los contratos menores?"
+    },
+    {
+      "id": 48,
+      "categoria": "Otros",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Contratación pública basada en criterios éticos, de proximidad, transparentes y con el compromiso",
+      "resumen": "De pago puntual a los proveedores más vulnerables.",
+      "cita_literal": "Contratación pública basada en criterios éticos, de proximidad, transparentes y con el compromiso de pago puntual a los proveedores más vulnerables.",
+      "pagina": 7,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: contratación pública basada en criterios éticos, de proximidad, transparentes y con el compromiso de pago puntual a los proveedores más vulnerables?"
+    },
+    {
+      "id": 49,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención Primaria",
+      "titulo_corto": "Más financiación pública",
+      "resumen": "Alcanzar la media europea de gasto sanitario (al menos el 8% del PIB).",
+      "cita_literal": "Más financiación pública: Alcanzar la media europea de gasto sanitario (al menos el 8% del PIB). Alcanzando progresivamente el 25% de gasto para Atención Primaria, sin contar los gastos en farmacia.",
+      "pagina": 7,
+      "tags": [
+        "#SanidadPublica"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: más financiación pública: alcanzar la media europea de gasto sanitario (al menos el 8% del pib)?"
+    },
+    {
+      "id": 50,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Dependencia",
+      "titulo_corto": "Acceso para las personas más vulnerables",
+      "resumen": "Garantizar empadronamiento y cobertura sanitaria gratuita a personas en situación irregular, flexibilizando documentación y eliminando trabas absurdas.",
+      "cita_literal": "Acceso para las personas más vulnerables: Garantizar empadronamiento y cobertura sanitaria gratuita a personas en situación irregular, flexibilizando documentación y eliminando trabas absurdas. Adaptar centros para permitir el acceso con mascotas, principal vínculo emocional de muchas personas sin hogar.",
+      "pagina": 7,
+      "tags": [
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: acceso para las personas más vulnerables: garantizar empadronamiento y cobertura sanitaria gratuita a personas en situación irregular, flexibilizando documentación y?"
+    },
+    {
+      "id": 51,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Refuerzo estructural de salud pública",
+      "resumen": "Aumentar recursos de prevención, cribados y vigilancia epidemiológica para mejorar la capacidad de respuesta ante crisis sanitarias.",
+      "cita_literal": "Reforzar la Salud Pública: Potenciar recursos propios para prevención, cribados, vigilancia epidemiológica, control de crisis y planificación a largo plazo teniendo en cuenta los determinantes ambientales y sociales de la salud.",
+      "pagina": 7,
+      "tags": [
+        "#SanidadPublica"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aumentar recursos de prevención, cribados y vigilancia epidemiológica para mejorar la capacidad de respuesta ante crisis sanitarias?"
+    },
+    {
+      "id": 52,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención Primaria",
+      "titulo_corto": "Atención primaria fuerte y con enfoque comunitario",
+      "resumen": "Más personal, más recursos y citas en menos de 48 horas.",
+      "cita_literal": "Atención Primaria fuerte y con enfoque comunitario: Más personal, más recursos y citas en menos de 48 horas. Potenciar el diagnóstico en el propio centro y mejorar el transporte a demanda en zonas rurales. Que el personal sanitario pueda dedicar tiempo a la Educación para la salud, sobre todo en centros escolares.",
+      "pagina": 7,
+      "tags": [
+        "#SanidadPublica",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: atención primaria fuerte y con enfoque comunitario: más personal, más recursos y citas en menos de 48 horas?"
+    },
+    {
+      "id": 53,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Salud Mental",
+      "titulo_corto": "Un psicólogo en cada centro de salud",
+      "resumen": "Nueva estrategia de salud mental que aborde los determinantes sociales, las nuevas adicciones, coordine los niveles asistenciales y priorice la prevención y promoción.",
+      "cita_literal": "Un psicólogo en cada centro de salud: Nueva estrategia de salud mental que aborde los determinantes sociales, las nuevas adicciones, coordine los niveles asistenciales y priorice la prevención y promoción.",
+      "pagina": 7,
+      "tags": [
+        "#SanidadPublica",
+        "#SaludMental"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: un psicólogo en cada centro de salud: nueva estrategia de salud mental que aborde los determinantes sociales, las nuevas adicciones, coordine los niveles asistenciales y?"
+    },
+    {
+      "id": 54,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Salud Mental",
+      "titulo_corto": "Reducción de listas de espera en hospitales públicos",
+      "resumen": "Aplicar medidas de gestión y transparencia para reducir demoras hospitalarias y evitar penalizaciones a quienes optan por centros públicos.",
+      "cita_literal": "Mejoras en los Hospitales: Reducir las listas de espera, garantizar transparencia y evitar penalizaciones a quienes eligen centros públicos (la lista de espera se ha triplicado para estos pacientes).",
+      "pagina": 7,
+      "tags": [
+        "#SanidadPublica",
+        "#MedioRural",
+        "#SaludMental"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aplicar medidas de gestión y transparencia para reducir demoras hospitalarias y evitar penalizaciones a quienes optan por centros públicos?"
+    },
+    {
+      "id": 55,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Hospitales",
+      "titulo_corto": "Blindar lo público",
+      "resumen": "Frenar y revertir privatizaciones y externalizaciones (tanto en atención hospitalaria, incluyendo las cocinas, ambulancias, como en primaria y en los cribados).",
+      "cita_literal": "Blindar lo público: Frenar y revertir privatizaciones y externalizaciones (tanto en atención hospitalaria, incluyendo las cocinas, ambulancias, como en primaria y en los cribados). Reforzar la exclusividad profesional en la sanidad pública. Plantear la centralización de la compra de medicamentos y productos.",
+      "pagina": 7,
+      "tags": [
+        "#SanidadPublica"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: blindar lo público: frenar y revertir privatizaciones y externalizaciones (tanto en atención hospitalaria, incluyendo las cocinas, ambulancias, como en primaria y en los?"
+    },
+    {
+      "id": 56,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Personal Sanitario",
+      "titulo_corto": "Mejora laboral para atraer y retener personal sanitario",
+      "resumen": "Mejorar condiciones laborales e incentivos en plazas de difícil cobertura para equilibrar la distribución de profesionales en toda la Comunidad.",
+      "cita_literal": "Dignificar las condiciones laborales: mejorando las condiciones de todo el personal, incluyendo incentivos para puestos de difícil cobertura y distribución equilibrada de los profesionales en toda la comunidad.",
+      "pagina": 8,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con mejorar condiciones laborales e incentivos en plazas de difícil cobertura para equilibrar la distribución de profesionales en toda la Comunidad?"
+    },
+    {
+      "id": 57,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Dependencia",
+      "titulo_corto": "Refuerzo de recursos sociosanitarios de media y larga estancia",
+      "resumen": "Aprovechar centros infrautilizados para ampliar plazas de geriatría, convalecencia y cuidados paliativos ante el envejecimiento poblacional.",
+      "cita_literal": "Recuperar e incrementar recursos sociosanitarios: Aprovechar centros infrautilizados y asegurar recursos de media y larga estancia, geriatría y cuidados paliativos para cubrir las necesidades previsibles.",
+      "pagina": 8,
+      "tags": [
+        "#SanidadPublica"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aprovechar centros infrautilizados para ampliar plazas de geriatría, convalecencia y cuidados paliativos ante el envejecimiento poblacional?"
+    },
+    {
+      "id": 58,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Participación",
+      "titulo_corto": "Participación vecinal en decisiones de sanidad pública",
+      "resumen": "Dar capacidad real a los Consejos de Salud para incorporar demandas ciudadanas en la planificación y evaluación del sistema sanitario.",
+      "cita_literal": "Participación ciudadana real: Facilitar la participación de la sociedad en el sistema sanitario de forma efectiva a través de los Consejos de Salud en todos sus niveles, atendiendo a las demandas y propuestas de las plataformas en defensa de la sanidad pública y de las asociaciones de pacientes.",
+      "pagina": 8,
+      "tags": [
+        "#SanidadPublica"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con dar capacidad real a los Consejos de Salud para incorporar demandas ciudadanas en la planificación y evaluación del sistema sanitario?"
+    },
+    {
+      "id": 59,
+      "categoria": "Otros",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Medidas efectivas que den respaldo a las dificultades estructurales, como son",
+      "resumen": "Las derivadas de un amplio territorio, centros rurales infradotados y con baja matrícula, junto a centros urbanos con ratios altas.",
+      "cita_literal": "Medidas efectivas que den respaldo a las dificultades estructurales, como son las derivadas de un amplio territorio, centros rurales infradotados y con baja matrícula, junto a centros urbanos con ratios altas.",
+      "pagina": 8,
+      "tags": [
+        "#Otros",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: medidas efectivas que den respaldo a las dificultades estructurales, como son las derivadas de un amplio territorio, centros rurales infradotados y con baja matrícula,?"
+    },
+    {
+      "id": 60,
+      "categoria": "Otros",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Financiar y potenciar la red de centros públicos, evitando el cierre",
+      "resumen": "De líneas y unidades en centros públicos y por contra, el cese de la ampliación de las unidades concertadas.",
+      "cita_literal": "Financiar y potenciar la red de centros públicos, evitando el cierre de líneas y unidades en centros públicos y por contra, el cese de la ampliación de las unidades concertadas.",
+      "pagina": 8,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: financiar y potenciar la red de centros públicos, evitando el cierre de líneas y unidades en centros públicos y por contra, el cese de la ampliación de las unidades?"
+    },
+    {
+      "id": 61,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación Pública",
+      "titulo_corto": "Apostar firmemente por la calidad y atención a la diversidad",
+      "resumen": "De la escuela pública, especialmente la rural.",
+      "cita_literal": "Apostar firmemente por la calidad y atención a la diversidad de la escuela pública, especialmente la rural.",
+      "pagina": 8,
+      "tags": [
+        "#Educacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: apostar firmemente por la calidad y atención a la diversidad de la escuela pública, especialmente la rural?"
+    },
+    {
+      "id": 62,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "FP y Universidad",
+      "titulo_corto": "Implementación crítica y eficaz de la nueva ley de formación profesional",
+      "resumen": "Plantea desplegar la nueva Ley de Formación Profesional con recursos y evaluación para mejorar su aplicación efectiva en el territorio.",
+      "cita_literal": "Implementación crítica y eficaz de la nueva Ley de Formación Profesional.",
+      "pagina": 8,
+      "tags": [
+        "#Educacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: implementación crítica y eficaz de la nueva ley de formación profesional?"
+    },
+    {
+      "id": 63,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Cultura",
+      "titulo_corto": "Dedicar recursos y atención suficientes a la alta diversidad, que afecta",
+      "resumen": "Al alumnado con necesidades de atención educativa (ACNEAE) donde encontramos numeroso alumnado con necesidades educativas derivadas de sus características personales, junto el.",
+      "cita_literal": "Dedicar recursos y atención suficientes a la alta diversidad, que afecta al alumnado con necesidades de atención educativa (ACNEAE) donde encontramos numeroso alumnado con necesidades educativas derivadas de sus características personales, junto el perteneciente a minorías y situaciones socioculturales complejas.",
+      "pagina": 8,
+      "tags": [
+        "#Educacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: dedicar recursos y atención suficientes a la alta diversidad, que afecta al alumnado con necesidades de atención educativa (acneae) donde encontramos numeroso alumnado?"
+    },
+    {
+      "id": 64,
+      "categoria": "Otros",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Gratuidad real de la enseñanza sin barreras económicas segregadoras",
+      "resumen": "Propone garantizar la gratuidad de la enseñanza eliminando barreras económicas que generan desigualdad entre el alumnado.",
+      "cita_literal": "Gratuidad real de la enseñanza sin barreras económicas segregadoras.",
+      "pagina": 8,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: gratuidad real de la enseñanza sin barreras económicas segregadoras?"
+    },
+    {
+      "id": 65,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación Pública",
+      "titulo_corto": "Incentivos docentes para arraigo en el medio rural",
+      "resumen": "Mejorar condiciones e incentivos del profesorado para favorecer estabilidad de plantillas y permanencia en centros rurales.",
+      "cita_literal": "Mejora de condiciones laborales del profesorado con incentivos específicos para el desempeño y arraigo en el medio rural. Estabilización de plantillas educativas.",
+      "pagina": 8,
+      "tags": [
+        "#Educacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con mejorar condiciones e incentivos del profesorado para favorecer estabilidad de plantillas y permanencia en centros rurales?"
+    },
+    {
+      "id": 66,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación Pública",
+      "titulo_corto": "Introducción en el currículo de la ESO y bachillerato la enseñanza",
+      "resumen": "Elemental de otras lenguas y culturas españolas, así como educación en memoria democrática, ciudadanía y consumo responsable.",
+      "cita_literal": "Introducción en el currículo de la ESO y bachillerato la enseñanza elemental de otras lenguas y culturas españolas, así como educación en memoria democrática, ciudadanía y consumo responsable.",
+      "pagina": 8,
+      "tags": [
+        "#Educacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: introducción en el currículo de la eso y bachillerato la enseñanza elemental de otras lenguas y culturas españolas, así como educación en memoria democrática, ciudadanía?"
+    },
+    {
+      "id": 67,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Transporte",
+      "titulo_corto": "Fortalecimiento de la formación profesional, con especial atención a las relacionadas",
+      "resumen": "Reforzar la Formación Profesional vinculada a las necesidades productivas y de servicios del territorio, incluida la dimensión sociosanitaria y tecnológica.",
+      "cita_literal": "Fortalecimiento de la Formación Profesional, con especial atención a las relacionadas con las necesidades del territorio (agraria, industria alimentaria, industrias extractivas, instalación y mantenimiento, inteligencia artificial y data, sanidad, seguridad y medio ambiente, servicios socioculturales y a la comunidad.",
+      "pagina": 8,
+      "tags": [
+        "#SanidadPublica"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: reforzar la FP orientada a las necesidades reales del territorio y del empleo local?"
+    },
+    {
+      "id": 68,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "FP y Universidad",
+      "titulo_corto": "Financiación justa y suficiente para las universidades públicas de castilla",
+      "resumen": "Y León, y paralización de las licencias para nuevas universidades privadas.",
+      "cita_literal": "Financiación justa y suficiente para las universidades públicas de Castilla y León, y paralización de las licencias para nuevas universidades privadas. Vigilancia exhaustiva de los estándares de calidad e investigación de las universidades privadas.",
+      "pagina": 8,
+      "tags": [
+        "#Educacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: financiación justa y suficiente para las universidades públicas de castilla y león, y paralización de las licencias para nuevas universidades privadas?"
+    },
+    {
+      "id": 69,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación Pública",
+      "titulo_corto": "Dotación de aulas de 0 a 3 años en todas",
+      "resumen": "Los centros públicos que imparten Educación Infantil de la Comunidad, con plantilla estable y medios suficientes.",
+      "cita_literal": "Dotación de aulas de 0 a 3 años en todas los centros públicos que imparten Educación Infantil de la Comunidad, con plantilla estable y medios suficientes.",
+      "pagina": 8,
+      "tags": [
+        "#Educacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: dotación de aulas de 0 a 3 años en todas los centros públicos que imparten educación infantil de la comunidad, con plantilla estable y medios suficientes?"
+    },
+    {
+      "id": 70,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Salud Mental",
+      "titulo_corto": "Refuerzo de plantillas en servicios sociales",
+      "resumen": "Ampliar equipos de educadores, psicólogos, trabajadores sociales y auxiliares de ayuda a domicilio para responder a la demanda asistencial.",
+      "cita_literal": "Ampliar plantillas de educadores, psicólogos, trabajadores sociales y auxiliares de ayuda a domicilio.",
+      "pagina": 9,
+      "tags": [
+        "#Cuidados",
+        "#SaludMental"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ampliar equipos de educadores, psicólogos, trabajadores sociales y auxiliares de ayuda a domicilio para responder a la demanda asistencial?"
+    },
+    {
+      "id": 71,
+      "categoria": "Otros",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Formación obligatoria y continua en infancia vulnerable, trauma, justicia juvenil y envejecimiento",
+      "resumen": "Establece formación continua y obligatoria del personal en infancia vulnerable, trauma, justicia juvenil y envejecimiento.",
+      "cita_literal": "Formación obligatoria y continua en infancia vulnerable, trauma, justicia juvenil y envejecimiento.",
+      "pagina": 9,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: formación obligatoria y continua en infancia vulnerable, trauma, justicia juvenil y envejecimiento?"
+    },
+    {
+      "id": 72,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Protección de Menores",
+      "titulo_corto": "Control externo de calidad en centros de menores",
+      "resumen": "Crear una supervisión independiente para detectar y prevenir violencia institucional en recursos de protección de menores.",
+      "cita_literal": "Crear una supervisión externa independiente para prevenir y detectar violencia institucional en centros de menores.",
+      "pagina": 9,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con crear una supervisión independiente para detectar y prevenir violencia institucional en recursos de protección de menores?"
+    },
+    {
+      "id": 73,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Dependencia",
+      "titulo_corto": "Aceleración de dependencia y aumento de plazas públicas",
+      "resumen": "Reducir tiempos de tramitación de dependencia y ampliar plazas públicas en residencias y centros de día.",
+      "cita_literal": "Plan urgente de Dependencia: reducción real de plazos, trámites simplificados y aumento de plazas públicas en residencias y centros de día.",
+      "pagina": 9,
+      "tags": [
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reducir tiempos de tramitación de dependencia y ampliar plazas públicas en residencias y centros de día?"
+    },
+    {
+      "id": 74,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Estrategia integral para personas mayores en el medio rural, con servicios",
+      "resumen": "De proximidad, acompañamiento y atención presencial suficiente.",
+      "cita_literal": "Estrategia integral para personas mayores en el medio rural, con servicios de proximidad, acompañamiento y atención presencial suficiente.",
+      "pagina": 9,
+      "tags": [
+        "#Cuidados",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: estrategia integral para personas mayores en el medio rural, con servicios de proximidad, acompañamiento y atención presencial suficiente?"
+    },
+    {
+      "id": 75,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Transporte",
+      "titulo_corto": "Transporte comarcal para acceder a servicios básicos",
+      "resumen": "Asegurar transporte público comarcal funcional que reduzca tiempos de acceso a servicios sociales y sanitarios.",
+      "cita_literal": "Transporte público comarcal funcional, que garantice acceso rápido a servicios sociales y sanitarios.",
+      "pagina": 9,
+      "tags": [
+        "#Despoblacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con asegurar transporte público comarcal funcional que reduzca tiempos de acceso a servicios sociales y sanitarios?"
+    },
+    {
+      "id": 76,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Coordinación Institucional",
+      "titulo_corto": "Coordinación interadministrativa en zonas rurales",
+      "resumen": "Mejorar la coordinación entre Junta, diputaciones y ayuntamientos para evitar solapamientos y cubrir vacíos de atención en el medio rural.",
+      "cita_literal": "Coordinación efectiva entre Junta, Diputaciones y Ayuntamientos para evitar duplicidades y cerrar vacíos en zonas rurales.",
+      "pagina": 9,
+      "tags": [
+        "#Otros",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con mejorar la coordinación entre Junta, diputaciones y ayuntamientos para evitar solapamientos y cubrir vacíos de atención en el medio rural?"
+    },
+    {
+      "id": 77,
+      "categoria": "Otros",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Programa normalizado de alivio y descanso de las familias con miembros",
+      "resumen": "Dependientes, con plantillas profesionales suficientes y dinámica flexible y simplificada.",
+      "cita_literal": "Programa normalizado de alivio y descanso de las familias con miembros dependientes, con plantillas profesionales suficientes y dinámica flexible y simplificada.",
+      "pagina": 9,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: programa normalizado de alivio y descanso de las familias con miembros dependientes, con plantillas profesionales suficientes y dinámica flexible y simplificada?"
+    },
+    {
+      "id": 78,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Dependencia",
+      "titulo_corto": "Dignificación de las personas trabajadoras en el sector de los cuidados",
+      "resumen": "Con la creación de un órgano de apoyo y seguimiento, atento a sus necesidades y que ofrezca formación y asesoramiento laboral.",
+      "cita_literal": "Dignificación de las personas trabajadoras en el sector de los cuidados, con la creación de un órgano de apoyo y seguimiento, atento a sus necesidades y que ofrezca formación y asesoramiento laboral.",
+      "pagina": 9,
+      "tags": [
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: dignificación de las personas trabajadoras en el sector de los cuidados, con la creación de un órgano de apoyo y seguimiento, atento a sus necesidades y que ofrezca?"
+    },
+    {
+      "id": 79,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Medidas de apoyo al bienestar de las personas mayores como la creación",
+      "resumen": "De un seguro público de asistencia veterinaria para mascotas, que estará bonificado para mayores de 70 años, o una ayuda directa para la adquisición de gafas progresivas.",
+      "cita_literal": "Medidas de apoyo al bienestar de las personas mayores como la creación de un seguro público de asistencia veterinaria para mascotas, que estará bonificado para mayores de 70 años, o una ayuda directa para la adquisición de gafas progresivas.",
+      "pagina": 9,
+      "tags": [
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: medidas de apoyo al bienestar de las personas mayores como la creación de un seguro público de asistencia veterinaria para mascotas, que estará bonificado para mayores?"
+    },
+    {
+      "id": 80,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Exclusión Social",
+      "titulo_corto": "Más cobertura social para situaciones de exclusión",
+      "resumen": "Incrementar financiación y cobertura de servicios sociales, reducir copagos y facilitar acceso a vivienda digna en contextos de exclusión severa.",
+      "cita_literal": "Aumentar la financiación y cobertura de los servicios sociales en general y para las personas en situación de extrema exclusión donde se anulen los copagos y se faciliten recursos de vivienda digna.",
+      "pagina": 9,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con incrementar financiación y cobertura de servicios sociales, reducir copagos y facilitar acceso a vivienda digna en contextos de exclusión severa?"
+    },
+    {
+      "id": 81,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Financiación estable a organizaciones sociales y comunitarias",
+      "resumen": "Un sistema plurianual para la realización de programas de intervención en el entorno rural, garantizando continuidad y presencia estable en municipios pequeños.",
+      "cita_literal": "Financiación estable a organizaciones sociales y comunitarias. Un sistema plurianual para la realización de programas de intervención en el entorno rural, garantizando continuidad y presencia estable en municipios pequeños.",
+      "pagina": 9,
+      "tags": [
+        "#Despoblacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: financiación estable a organizaciones sociales y comunitarias. un sistema plurianual para la realización de programas de intervención en el entorno rural, garantizando?"
+    },
+    {
+      "id": 82,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Participación",
+      "titulo_corto": "Consejos territoriales para diálogo social permanente",
+      "resumen": "Constituir espacios provinciales estables donde instituciones y sociedad civil acuerden respuestas a problemas del territorio.",
+      "cita_literal": "Espacios permanentes de diálogo con instituciones. Consejo Social de Territorio por provincia donde ONG, ayuntamientos, organizaciones agrarias y colectivos vecinales discutan problemas concretos.",
+      "pagina": 9,
+      "tags": [
+        "#SectorPrimario"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con constituir espacios provinciales estables donde instituciones y sociedad civil acuerden respuestas a problemas del territorio?"
+    },
+    {
+      "id": 83,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Participación",
+      "titulo_corto": "Gestión comunitaria de recursos locales tradicionales",
+      "resumen": "Recuperar fórmulas de participación vecinal como los concejos para decidir sobre pastos, montes y otros bienes comunales.",
+      "cita_literal": "Mecanismos de participación ciudadana como los tradicionales “Comunales o Concechos” encargados de la gestión por los vecinos de activos como pastos, campos, montes y recursos públicos.",
+      "pagina": 10,
+      "tags": [
+        "#Transparencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con recuperar fórmulas de participación vecinal como los concejos para decidir sobre pastos, montes y otros bienes comunales?"
+    },
+    {
+      "id": 84,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Transporte",
+      "titulo_corto": "Consultas vinculantes sobre servicios esenciales",
+      "resumen": "Impulsar presupuestos participativos y consultas vinculantes para decisiones relevantes sobre apertura o cierre de servicios básicos.",
+      "cita_literal": "Promoción de actuaciones participativas a nivel autonómico, llevando a cabo presupuestos participativos, consultas vinculantes sobre la apertura/cierre de servicios esenciales (centros de salud, transporte escolar, oficinas bancarias en zonas rurales), etc.",
+      "pagina": 10,
+      "tags": [
+        "#Transparencia",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con impulsar presupuestos participativos y consultas vinculantes para decisiones relevantes sobre apertura o cierre de servicios básicos?"
+    },
+    {
+      "id": 85,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Despoblación",
+      "titulo_corto": "Impulso a la profesionalización y coordinación del tercer sector",
+      "resumen": "Programas de formación financiados (gestión de proyectos, captación de fondos, evaluación de impacto).",
+      "cita_literal": "Impulso a la profesionalización y coordinación del tercer sector. Programas de formación financiados (gestión de proyectos, captación de fondos, evaluación de impacto). Plataformas comarcales que compartan recursos: asesoría jurídica común, redes de voluntariado.",
+      "pagina": 10,
+      "tags": [
+        "#Despoblacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: impulso a la profesionalización y coordinación del tercer sector. programas de formación financiados (gestión de proyectos, captación de fondos, evaluación de impacto)?"
+    },
+    {
+      "id": 86,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo",
+      "titulo_corto": "Regular, reubicar y reciclar los empleos afectados por la IA",
+      "resumen": "Estas medidas se aplicarán desde el ECyL, que debe recuperar su papel central en las políticas activas de empleo (orientación, formación, ayudas, programas mixtos…) reactivando los programas.",
+      "cita_literal": "Regular, reubicar y reciclar los empleos afectados por la IA. Estas medidas se aplicarán desde el ECyL, que debe recuperar su papel central en las políticas activas de empleo (orientación, formación, ayudas.",
+      "pagina": 10,
+      "tags": [
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: regular, reubicar y reciclar los empleos afectados por la ia. estas medidas se aplicarán desde el ecyl, que debe recuperar su papel central en las políticas activas de?"
+    },
+    {
+      "id": 87,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo",
+      "titulo_corto": "Blindar las competencias públicas de formación, orientación e intermediación en los servicios",
+      "resumen": "Públicos de empleo para evitar externalizaciones que utilicen los recursos públicos para convertir el ECyL en una ETT gratuita a su servicio.",
+      "cita_literal": "Blindar las competencias públicas de formación, orientación e intermediación en los servicios públicos de empleo para evitar externalizaciones que utilicen los recursos públicos para convertir el ECyL en una ETT gratuita a su servicio.",
+      "pagina": 10,
+      "tags": [
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: blindar las competencias públicas de formación, orientación e intermediación en los servicios públicos de empleo para evitar externalizaciones que utilicen los recursos?"
+    },
+    {
+      "id": 88,
+      "categoria": "Vivienda",
+      "subcategoria": "Empleo",
+      "titulo_corto": "Reducción de jornada y renta básica para empleo digno",
+      "resumen": "Proteger el derecho al trabajo incentivando medidas como la reducción de la jornada y la Renta Básica Universal.",
+      "cita_literal": "Proteger el derecho al trabajo incentivando medidas como la reducción de la jornada y la Renta Básica Universal. Asumir cláusulas laborales obligatorias en toda contratación pública: salarios dignos, reducción de temporalidad y auditorías de igualdad.",
+      "pagina": 10,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: proteger el derecho al trabajo incentivando medidas como la reducción de la jornada y la renta básica universal?"
+    },
+    {
+      "id": 89,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Fiscalidad",
+      "titulo_corto": "Polígonos cooperativos y microcréditos en zonas despobladas",
+      "resumen": "Fomentar cooperativas en áreas despobladas con asesoramiento, microcréditos y apoyo financiero local para facilitar relevo empresarial.",
+      "cita_literal": "Fomentar el cooperativismo creando polígonos cooperativos en zonas despobladas con asesoramiento, microcréditos y fiscalidad reducida. Programas específicos para convertir empresas familiares sin relevo en cooperativas de trabajadores. Refuerzo de las cajas rurales como motor financiero estable para proyectos locales.",
+      "pagina": 10,
+      "tags": [
+        "#SectorPrimario",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con fomentar cooperativas en áreas despobladas con asesoramiento, microcréditos y apoyo financiero local para facilitar relevo empresarial?"
+    },
+    {
+      "id": 90,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Ganadería",
+      "titulo_corto": "Impulsar iniciativas de gestión circular",
+      "resumen": "Con centros comarcales de valorización de residuos forestales para gestionar la biomasa local o mediante Incentivos para que industrias agroalimentarias reutilicen subproductos (piensos, biogás, fertilizantes.",
+      "cita_literal": "Impulsar iniciativas de gestión circular. Con centros comarcales de valorización de residuos forestales para gestionar la biomasa local o mediante Incentivos para que industrias agroalimentarias reutilicen subproductos (piensos, biogás, fertilizantes naturales).",
+      "pagina": 10,
+      "tags": [
+        "#SectorPrimario",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: impulsar iniciativas de gestión circular. con centros comarcales de valorización de residuos forestales para gestionar la biomasa local o mediante incentivos para que?"
+    },
+    {
+      "id": 91,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Fiscalidad",
+      "titulo_corto": "Desarrollar una ley específica de tributación de grandes fortunas y empresas",
+      "resumen": "Energéticas y/o extractivas que operen en Castilla y León.",
+      "cita_literal": "Desarrollar una Ley específica de tributación de grandes fortunas y empresas energéticas y/o extractivas que operen en Castilla y León .",
+      "pagina": 11,
+      "tags": [
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: desarrollar una ley específica de tributación de grandes fortunas y empresas energéticas y/o extractivas que operen en castilla y león?"
+    },
+    {
+      "id": 92,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Fiscalidad",
+      "titulo_corto": "Ventajas fiscales para iniciativas de tipo cooperativista y de autoconsumo",
+      "resumen": "Que generen energía limpia en comunidades energéticas comarcales, locales y otros ámbitos.",
+      "cita_literal": "Ventajas fiscales para iniciativas de tipo cooperativista y de autoconsumo que generen energía limpia en comunidades energéticas comarcales, locales y otros ámbitos.",
+      "pagina": 11,
+      "tags": [
+        "#Empleo",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: ventajas fiscales para iniciativas de tipo cooperativista y de autoconsumo que generen energía limpia en comunidades energéticas comarcales, locales y otros ámbitos?"
+    },
+    {
+      "id": 93,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Fiscalidad",
+      "titulo_corto": "Fin de ventajas fiscales al juego",
+      "resumen": "Eliminar tipos reducidos y beneficios fiscales autonómicos vinculados al juego para reforzar la recaudación y la coherencia fiscal.",
+      "cita_literal": "Eliminar las tarifas y tipos reducidos en los tributos autonómicos sobre el juego.",
+      "pagina": 11,
+      "tags": [
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con eliminar tipos reducidos y beneficios fiscales autonómicos vinculados al juego para reforzar la recaudación y la coherencia fiscal?"
+    },
+    {
+      "id": 94,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Fiscalidad",
+      "titulo_corto": "Eliminar las exenciones en tributos propios correspondientes a los parques eólicos",
+      "resumen": "Propone suprimir las exenciones autonómicas aplicadas a parques eólicos para reforzar la recaudación y el principio de equidad fiscal.",
+      "cita_literal": "Eliminar las exenciones en tributos propios correspondientes a los parques eólicos.",
+      "pagina": 11,
+      "tags": [
+        "#MedioAmbiente"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: eliminar las exenciones en tributos propios correspondientes a los parques eólicos?"
+    },
+    {
+      "id": 95,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Fiscalidad",
+      "titulo_corto": "Impulsar el establecimiento de tasas turísticas que puedan revertir en los municipios",
+      "resumen": "Con más afectación para que puedan compensarse los efectos negativos que conlleva el turismo.",
+      "cita_literal": "Impulsar el establecimiento de tasas turísticas que puedan revertir en los municipios con más afectación para que puedan compensarse los efectos negativos que conlleva el turismo.",
+      "pagina": 11,
+      "tags": [
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: impulsar el establecimiento de tasas turísticas que puedan revertir en los municipios con más afectación para que puedan compensarse los efectos negativos que conlleva?"
+    },
+    {
+      "id": 96,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Más recursos destinados a las entidades locales para fortalecer sus competencias",
+      "resumen": "Es imprescindible ampliar la capacidad de actuación de los ayuntamientos para que pueden afrontar con mayor solvencia su servicio a la ciudadanía.",
+      "cita_literal": "Más recursos destinados a las entidades locales para fortalecer sus competencias. Es imprescindible ampliar la capacidad de actuación de los ayuntamientos para que pueden afrontar con mayor solvencia su servicio a la ciudadanía.",
+      "pagina": 11,
+      "tags": [
+        "#SectorPrimario"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: más recursos destinados a las entidades locales para fortalecer sus competencias. es imprescindible ampliar la capacidad de actuación de los ayuntamientos para que?"
+    },
+    {
+      "id": 97,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Fiscalidad",
+      "titulo_corto": "Incentivos fiscales a explotaciones agropecuarias sostenibles",
+      "resumen": "Aplicar ventajas fiscales a explotaciones que adopten prácticas agropecuarias sostenibles y respetuosas con el entorno.",
+      "cita_literal": "Ventajas fiscales para explotaciones agropecuarias que apuesten por formatos sostenibles y respetuosos con el entorno.",
+      "pagina": 11,
+      "tags": [
+        "#SectorPrimario"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aplicar ventajas fiscales a explotaciones que adopten prácticas agropecuarias sostenibles y respetuosas con el entorno?"
+    },
+    {
+      "id": 98,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Fiscalidad",
+      "titulo_corto": "Transparencia y mayores consecuencias",
+      "resumen": "La propuesta plantea transparencia y mayores consecuencias: creación de una Agencia Antifraude de Castilla y León.",
+      "cita_literal": "Transparencia y mayores consecuencias: creación de una Agencia Antifraude de Castilla y León. Fiscalización pública y auditorías externas sistemáticas.",
+      "pagina": 11,
+      "tags": [
+        "#Transparencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: la propuesta plantea transparencia y mayores consecuencias: creación de una agencia antifraude de castilla y león?"
+    },
+    {
+      "id": 99,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Transparencia",
+      "titulo_corto": "Regulación de las “puertas giratorias” con periodos de incompatibilidad de 10",
+      "resumen": "Años a ex altos cargos de la administración autonómica en las empresas beneficiarias de concesiones durante su mandato.",
+      "cita_literal": "Regulación de las “Puertas Giratorias” con periodos de incompatibilidad de 10 años a ex altos cargos de la administración autonómica en las empresas beneficiarias de concesiones durante su mandato.",
+      "pagina": 11,
+      "tags": [
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: regulación de las “puertas giratorias” con periodos de incompatibilidad de 10 años a ex altos cargos de la administración autonómica en las empresas beneficiarias de?"
+    },
+    {
+      "id": 100,
+      "categoria": "Otros",
+      "subcategoria": "Acogida",
+      "titulo_corto": "Canales seguros de acogida y asistencia jurídica",
+      "resumen": "Desplegar un plan humanitario para personas refugiadas con itinerarios seguros, apoyo legal y acompañamiento especializado.",
+      "cita_literal": "Plan humanitario de acogida. Canales seguros, apoyo jurídico y acompañamiento especializado para personas refugiadas y solicitantes de asilo, reforzando la red de entidades sociales.",
+      "pagina": 11,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con desplegar un plan humanitario para personas refugiadas con itinerarios seguros, apoyo legal y acompañamiento especializado?"
+    },
+    {
+      "id": 101,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Salud Mental",
+      "titulo_corto": "Recursos de acogida para menores no acompañados",
+      "resumen": "Reforzar dispositivos de acogida, apoyo psicológico y transición a la vida adulta para reducir la vulnerabilidad de menores no acompañados.",
+      "cita_literal": "Atención a menores no acompañados. Recursos específicos: familias de acogida, educadores, apoyo psicológico y planes de transición a la vida adulta que eviten su vulnerabilidad y favorezcan su autonomía.",
+      "pagina": 11,
+      "tags": [
+        "#Cuidados",
+        "#SaludMental"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforzar dispositivos de acogida, apoyo psicológico y transición a la vida adulta para reducir la vulnerabilidad de menores no acompañados?"
+    },
+    {
+      "id": 102,
+      "categoria": "Otros",
+      "subcategoria": "Acogida",
+      "titulo_corto": "Municipios de acogida para rehacer proyectos de vida",
+      "resumen": "Facilitar que municipios pequeños actúen como entornos de acogida estables para personas migrantes y refugiadas.",
+      "cita_literal": "Comunidades de acogida. Facilitar que municipios pequeños se conviertan en entornos seguros donde estas personas puedan rehacer su vida con estabilidad.",
+      "pagina": 12,
+      "tags": [
+        "#Despoblacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con facilitar que municipios pequeños actúen como entornos de acogida estables para personas migrantes y refugiadas?"
+    },
+    {
+      "id": 103,
+      "categoria": "Otros",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Reconocimiento ágil de cualificaciones y formación práctica",
+      "resumen": "Para aprovechar talento y cubrir necesidades reales sin eternizar trámites.",
+      "cita_literal": "Reconocimiento ágil de cualificaciones y formación práctica. Para aprovechar talento y cubrir necesidades reales sin eternizar trámites.",
+      "pagina": 12,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: reconocimiento ágil de cualificaciones y formación práctica. para aprovechar talento y cubrir necesidades reales sin eternizar trámites?"
+    },
+    {
+      "id": 104,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler",
+      "titulo_corto": "Incentivos residenciales para fijar población rural",
+      "resumen": "Ofrecer ayudas de alquiler y apoyo municipal para facilitar arraigo de población en pueblos con riesgo demográfico.",
+      "cita_literal": "Incentivos para zonas rurales. Ayudas al alquiler de vivienda y apoyo municipal para fijar población en pueblos con riesgo demográfico.",
+      "pagina": 12,
+      "tags": [
+        "#Vivienda",
+        "#MedioRural",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ofrecer ayudas de alquiler y apoyo municipal para facilitar arraigo de población en pueblos con riesgo demográfico?"
+    },
+    {
+      "id": 105,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo",
+      "titulo_corto": "Contratación estable para integración laboral real",
+      "resumen": "Priorizar empleo estable y contratos duraderos para reducir precariedad y facilitar integración social y económica.",
+      "cita_literal": "Empleo estable y digno. Evitar precariedad y facilitar contratos duraderos que permitan integración real.",
+      "pagina": 12,
+      "tags": [
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar empleo estable y contratos duraderos para reducir precariedad y facilitar integración social y económica?"
+    },
+    {
+      "id": 106,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Transporte",
+      "titulo_corto": "Refuerzo de servicios públicos",
+      "resumen": "Salud, educación, transporte y servicios sociales adaptados al crecimiento poblacional.",
+      "cita_literal": "Refuerzo de servicios públicos. Salud, educación, transporte y servicios sociales adaptados al crecimiento poblacional.",
+      "pagina": 12,
+      "tags": [
+        "#Educacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: refuerzo de servicios públicos. salud, educación, transporte y servicios sociales adaptados al crecimiento poblacional?"
+    },
+    {
+      "id": 107,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler",
+      "titulo_corto": "Vivienda inclusiva. Acceso a alquiler asequible para evitar guetos y desigualdad",
+      "resumen": "Defiende facilitar alquiler asequible para evitar segregación residencial y mejorar la integración social en barrios y municipios.",
+      "cita_literal": "Vivienda inclusiva. Acceso a alquiler asequible para evitar guetos y desigualdad.",
+      "pagina": 12,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: vivienda inclusiva. acceso a alquiler asequible para evitar guetos y desigualdad?"
+    },
+    {
+      "id": 108,
+      "categoria": "Otros",
+      "subcategoria": "Participación",
+      "titulo_corto": "Campañas de convivencia y sensibilización comunitaria",
+      "resumen": "Promover actividades y campañas que visibilicen la aportación de nuevas familias y refuercen la cohesión social.",
+      "cita_literal": "Participación y sensibilización. Actividades comunitarias y campañas que muestren la aportación de estas nuevas familias y refuercen la imagen de Castilla y León como territorio de paz, acogida y futuro.",
+      "pagina": 12,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con promover actividades y campañas que visibilicen la aportación de nuevas familias y refuercen la cohesión social?"
+    },
+    {
+      "id": 109,
+      "categoria": "Otros",
+      "subcategoria": "Transparencia",
+      "titulo_corto": "Integración de la Fundación Siglo en la Junta",
+      "resumen": "Recuperar para la administración autonómica las competencias de la Fundación Siglo para reforzar control público y transparencia.",
+      "cita_literal": "Suprimir la Fundación Siglo: Recuperar todas sus competencias para la administración autonómica, garantizando control público, transparencia y supervisión democrática.",
+      "pagina": 12,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con recuperar para la administración autonómica las competencias de la Fundación Siglo para reforzar control público y transparencia?"
+    },
+    {
+      "id": 110,
+      "categoria": "Otros",
+      "subcategoria": "Gobernanza",
+      "titulo_corto": "Desarrollo de una ley autonómica de memoria democrática en colaboración",
+      "resumen": "Con asociaciones y cátedras universitarias de memoria.",
+      "cita_literal": "Desarrollo de una Ley autonómica de memoria democrática en colaboración con asociaciones y cátedras universitarias de memoria.",
+      "pagina": 12,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: desarrollo de una ley autonómica de memoria democrática en colaboración con asociaciones y cátedras universitarias de memoria?"
+    },
+    {
+      "id": 111,
+      "categoria": "Otros",
+      "subcategoria": "Cultura",
+      "titulo_corto": "Redefinir la política cultural eliminando subvenciones a la tauromaquia, es",
+      "resumen": "Decir, los recursos públicos se destinarán a actividades culturales basadas en valores sociales compartidos.",
+      "cita_literal": "Redefinir la política cultural eliminando subvenciones a la tauromaquia, es decir, los recursos públicos se destinarán a actividades culturales basadas en valores sociales compartidos.",
+      "pagina": 12,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: redefinir la política cultural eliminando subvenciones a la tauromaquia, es decir, los recursos públicos se destinarán a actividades culturales basadas en valores?"
+    },
+    {
+      "id": 112,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Cultura",
+      "titulo_corto": "Desarrollar un plan integral de cultura rural para garantizar el derecho",
+      "resumen": "A la cultura en el medio rural: Impulsar la conservación y revitalización de la cultura tradicional apoyando el folclore, etnografía,.",
+      "cita_literal": "Desarrollar un Plan Integral de Cultura Rural para garantizar el derecho a la cultura en el medio rural: Impulsar la conservación y revitalización de la cultura tradicional apoyando el folclore, etnografía.",
+      "pagina": 12,
+      "tags": [
+        "#Despoblacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: desarrollar un plan integral de cultura rural para garantizar el derecho a la cultura en el medio rural: impulsar la conservación y revitalización de la cultura?"
+    },
+    {
+      "id": 113,
+      "categoria": "Otros",
+      "subcategoria": "Cultura",
+      "titulo_corto": "Refuerzo del apoyo a artistas, creadoras y proyectos independientes",
+      "resumen": "Ayudas claras, accesibles y con criterios públicos; apoyo a colectivos emergentes y espacios culturales comunitarios.",
+      "cita_literal": "Refuerzo del apoyo a artistas, creadoras y proyectos independientes: ayudas claras, accesibles y con criterios públicos; apoyo a colectivos emergentes y espacios culturales comunitarios.",
+      "pagina": 13,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: refuerzo del apoyo a artistas, creadoras y proyectos independientes: ayudas claras, accesibles y con criterios públicos; apoyo a colectivos emergentes y espacios?"
+    },
+    {
+      "id": 114,
+      "categoria": "Otros",
+      "subcategoria": "Igualdad",
+      "titulo_corto": "Ayudas a memoria LGTBIQA+ y patrimonio local",
+      "resumen": "Financiar proyectos que recuperen memoria histórica LGTBIQA+, archivos municipales y patrimonio inmaterial de cada territorio.",
+      "cita_literal": "Memoria LGTBIQA+ y patrimonio histórico: Ayudas a proyectos que recuperen historias locales, archivos municipales, patrimonio inmaterial y espacios de memoria.",
+      "pagina": 13,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con financiar proyectos que recuperen memoria histórica LGTBIQA+, archivos municipales y patrimonio inmaterial de cada territorio?"
+    },
+    {
+      "id": 115,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Cultura",
+      "titulo_corto": "Plan de protección y reutilización del patrimonio industrial mediante un inventario",
+      "resumen": "Público autonómico del patrimonio industrial y un programa de reutilización cultural, museística y educativa.",
+      "cita_literal": "Plan de protección y reutilización del patrimonio industrial mediante un inventario público autonómico del patrimonio industrial y un programa de reutilización cultural, museística y educativa.",
+      "pagina": 13,
+      "tags": [
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: plan de protección y reutilización del patrimonio industrial mediante un inventario público autonómico del patrimonio industrial y un programa de reutilización cultural,?"
+    },
+    {
+      "id": 116,
+      "categoria": "Otros",
+      "subcategoria": "Cultura",
+      "titulo_corto": "Proyección internacional de la cultura hecha en la Comunidad",
+      "resumen": "Apoyar circuitos, muestras y exhibiciones que den visibilidad a artistas e iniciativas culturales con alcance internacional.",
+      "cita_literal": "Financiar y fomentar la divulgación y exhibición de actividades culturales de artistas, pensadores e iniciativas internacionales.",
+      "pagina": 13,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con apoyar circuitos, muestras y exhibiciones que den visibilidad a artistas e iniciativas culturales con alcance internacional?"
+    },
+    {
+      "id": 117,
+      "categoria": "Otros",
+      "subcategoria": "Cultura",
+      "titulo_corto": "Puesta en marcha de un canal de televisión autonómica pública",
+      "resumen": "Plantea crear una televisión autonómica pública como herramienta de servicio público e información de ámbito regional.",
+      "cita_literal": "Puesta en marcha de un canal de televisión autonómica pública.",
+      "pagina": 13,
+      "tags": [
+        "#Otros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con esta propuesta: puesta en marcha de un canal de televisión autonómica pública?"
     }
   ]
 }
