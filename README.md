@@ -15,7 +15,7 @@ La web ofrece tres vistas principales:
 Datos consumidos por la web:
 
 - `data/partidos/*.json`: propuestas por partido.
-- `data/master-questions.json`: preguntas del cuestionario.
+- `data/master-questions.json`: preguntas del cuestionario con `id`, `categoria`, `pregunta`, `tema` y `contexto`.
 - `data/party-scores.json`: matriz de puntuaciones para afinidad.
 
 ### 1.2 Estructura tecnica (resumen)
@@ -129,7 +129,14 @@ Con los JSON de partidos listos, usa `docs/QUESTIONS-GENERATOR-PROMPT.md` para g
 Salida esperada:
 
 - 22 preguntas clave (2 por cada competencia de la Junta) con contraste entre partidos.
+- Cada pregunta debe incluir tambien `tema` y `contexto` (texto para el panel "Saber mas").
 - Puntuaciones por partido en rango -2 a +2 para el calculo de afinidad.
+
+Regla de implementacion (obligatoria):
+
+- El frontend no debe hardcodear contextos de preguntas en JavaScript.
+- `js/afinidad.js` debe leer `tema/contexto` directamente desde `data/master-questions.json`.
+- Si falta `tema` o `contexto`, solo se acepta fallback temporal (`categoria`/`pregunta`) para compatibilidad.
 
 ## 3. Estructura del proyecto
 

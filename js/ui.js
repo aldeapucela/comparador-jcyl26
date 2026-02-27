@@ -22,6 +22,7 @@ export const UI = {
     searchTopScrollHandler: null,
     lastSearchResults: [],
     lastSearchTerm: '',
+    lastSearchPartyIds: [],
 
     // Selectors
     views: {
@@ -41,7 +42,8 @@ export const UI = {
         topicsGrid: document.getElementById('topics-grid'),
         comparisonResults: document.getElementById('comparison-results'),
         searchResults: document.getElementById('global-search-results'),
-        searchSummary: document.getElementById('global-search-summary')
+        searchSummary: document.getElementById('global-search-summary'),
+        searchPartyFilters: document.getElementById('global-search-party-filters')
     },
     elements: {
         categoryName: document.getElementById('current-category-name'),
@@ -106,15 +108,71 @@ export const UI = {
         `).join('');
     },
 
-    renderGlobalSearch(term, results) {
+    renderGlobalSearch(term, results, options = {}) {
+        const selectedPartyIds = Array.isArray(options.selectedPartyIds) ? options.selectedPartyIds : [];
+        const onTogglePartyFilter = typeof options.onTogglePartyFilter === 'function'
+            ? options.onTogglePartyFilter
+            : null;
+        const onClearPartyFilters = typeof options.onClearPartyFilters === 'function'
+            ? options.onClearPartyFilters
+            : null;
+
         this.setupSearchTopButton();
         this.lastSearchResults = results;
         this.lastSearchTerm = term || '';
+        this.lastSearchPartyIds = selectedPartyIds;
         const input = document.getElementById('global-search-input');
         if (input) input.value = term || '';
         const shareSearchBtn = document.getElementById('btn-share-search-query');
         if (shareSearchBtn) {
             shareSearchBtn.classList.toggle('hidden', !term);
+        }
+
+        if (this.containers.searchPartyFilters) {
+            const selectedLabels = PARTIES
+                .filter((party) => selectedPartyIds.includes(party.id))
+                .map((party) => party.name);
+
+            const clearButton = selectedPartyIds.length > 0 ? `
+                <button class="search-party-filter-clear px-3 py-1.5 rounded-full text-xs font-semibold border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 transition-colors">
+                    Quitar filtros
+                </button>
+            ` : '';
+
+            this.containers.searchPartyFilters.innerHTML = `
+                <p class="w-full text-xs text-slate-500 mb-1">Filtrar por partido</p>
+                ${PARTIES.map((party) => {
+                    const isActive = selectedPartyIds.includes(party.id);
+                    return `
+                        <button
+                            class="search-party-filter-btn px-2.5 py-1.5 rounded-full text-xs font-semibold border transition-colors inline-flex items-center gap-2 ${isActive ? 'text-white border-transparent' : 'bg-white text-slate-600 border-slate-300 hover:border-slate-400 hover:text-slate-800'}"
+                            style="${isActive ? `background-color: ${this.escapeHtml(party.color)};` : ''}"
+                            data-party-id="${party.id}">
+                            <span class="w-4 h-4 rounded-full bg-white border border-slate-200 overflow-hidden flex items-center justify-center shrink-0">
+                                <img src="${this.escapeHtml(party.logo)}" alt="Logo ${this.escapeHtml(party.name)}" class="w-full h-full object-contain p-[1px]">
+                            </span>
+                            <span>${this.escapeHtml(party.name)}</span>
+                        </button>
+                    `;
+                }).join('')}
+                ${clearButton}
+                ${selectedLabels.length > 0 ? `<p class="w-full text-xs text-slate-400 mt-1">Filtrando por: ${this.escapeHtml(selectedLabels.join(', '))}</p>` : ''}
+            `;
+
+            this.containers.searchPartyFilters.querySelectorAll('.search-party-filter-btn').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    if (!onTogglePartyFilter) return;
+                    onTogglePartyFilter(btn.dataset.partyId);
+                });
+            });
+
+            const clearBtn = this.containers.searchPartyFilters.querySelector('.search-party-filter-clear');
+            if (clearBtn) {
+                clearBtn.addEventListener('click', () => {
+                    if (!onClearPartyFilters) return;
+                    onClearPartyFilters();
+                });
+            }
         }
 
         if (!term) {
@@ -127,7 +185,8 @@ export const UI = {
             return;
         }
 
-        this.containers.searchSummary.textContent = `${results.length} resultado${results.length === 1 ? '' : 's'} para "${term}"`;
+        const withFiltersText = selectedPartyIds.length > 0 ? ' con filtros' : '';
+        this.containers.searchSummary.textContent = `${results.length} resultado${results.length === 1 ? '' : 's'} para "${term}"${withFiltersText}`;
 
         if (results.length === 0) {
             this.containers.searchResults.innerHTML = `
@@ -201,8 +260,13 @@ export const UI = {
         const term = this.lastSearchTerm;
         if (!term) return;
 
-        const url = `${window.location.origin}${window.location.pathname}#/s/${encodeURIComponent(term)}`;
-        const shareText = `Qué dice sobre "${term}" cada formación en las elecciones a las Cortes de CyL 2026:\n\n${url}`;
+        const selectedNames = PARTIES
+            .filter((party) => this.lastSearchPartyIds.includes(party.id))
+            .map((party) => party.name);
+
+        const url = `${window.location.origin}${window.location.pathname}${window.location.hash}`;
+        const scopeText = selectedNames.length > 0 ? ` (${selectedNames.join(', ')})` : '';
+        const shareText = `Qué dice sobre "${term}"${scopeText} en las elecciones a las Cortes de CyL 2026:\n\n${url}`;
         const fullMessage = shareText;
 
         if (navigator.share) {

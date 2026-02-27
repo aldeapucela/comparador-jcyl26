@@ -18,12 +18,17 @@ let appState = {
     mode: 'party', // 'party' or 'topic'
     allData: {},
     selectedParties: [], // Array of party IDs
+    searchTerm: '',
+    searchPartyFilters: [],
     filters: {
         rural: false,
         competition: false,
         query: ''
     }
 };
+
+const PARTY_ID_ORDER = PARTIES.map((party) => party.id);
+const PARTY_IDS = new Set(PARTY_ID_ORDER);
 
 function safeDecodeURIComponent(value = '') {
     try {
@@ -62,23 +67,58 @@ function getSearchTermFromParts(parts) {
     return sanitizeSearchTerm(safeDecodeURIComponent(raw));
 }
 
-function buildSearchHash(term) {
-    return term ? `#/s/${encodeURIComponent(term)}` : '#/s';
+function normalizeSearchPartyIds(partyIds = []) {
+    const seen = new Set();
+    return partyIds
+        .map((id) => (id || '').toString().trim().toLowerCase())
+        .filter((id) => PARTY_IDS.has(id) && !seen.has(id) && seen.add(id))
+        .sort((a, b) => PARTY_ID_ORDER.indexOf(a) - PARTY_ID_ORDER.indexOf(b));
 }
 
-function replaceSearchHash(term) {
-    const nextHash = buildSearchHash(term);
+function buildSearchHash(term, partyIds = []) {
+    const base = term ? `#/s/${encodeURIComponent(term)}` : '#/s';
+    const normalizedPartyIds = normalizeSearchPartyIds(partyIds);
+    if (normalizedPartyIds.length === 0) return base;
+
+    const params = new URLSearchParams();
+    params.set('parties', normalizedPartyIds.join(','));
+    return `${base}?${params.toString()}`;
+}
+
+function parseSearchRouteFromHash(hash) {
+    const raw = hash.startsWith('#/') ? hash.slice(2) : hash.replace(/^#/, '');
+    const [pathPart = '', queryPart = ''] = raw.split('?');
+    const pathSegments = pathPart.split('/').filter(Boolean);
+    if (pathSegments[0] !== 's') return null;
+
+    const term = getSearchTermFromParts(pathSegments);
+    const params = new URLSearchParams(queryPart);
+    const partyIds = normalizeSearchPartyIds((params.get('parties') || '').split(','));
+
+    return {
+        term,
+        partyIds,
+        canonicalHash: buildSearchHash(term, partyIds)
+    };
+}
+
+function replaceSearchHash(term, partyIds = []) {
+    const nextHash = buildSearchHash(term, partyIds);
     if (window.location.hash === nextHash) return;
     window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}${nextHash}`);
 }
 
-function searchAllProposals(term) {
+function searchAllProposals(term, partyIds = []) {
     if (!term) return [];
 
     const needle = foldSearchText(term);
+    const normalizedPartyIds = normalizeSearchPartyIds(partyIds);
+    const hasPartyFilter = normalizedPartyIds.length > 0;
+    const allowedParties = new Set(normalizedPartyIds);
     const results = [];
 
     Object.entries(appState.allData).forEach(([partyId, partyData]) => {
+        if (hasPartyFilter && !allowedParties.has(partyId)) return;
         const partyInfo = PARTIES.find(p => p.id === partyId);
         if (!partyInfo || !partyData?.propuestas) return;
 
@@ -122,6 +162,32 @@ function searchAllProposals(term) {
     return results
         .sort((a, b) => b.score - a.score)
         .slice(0, 100);
+}
+
+function renderSearchScreen(term) {
+    appState.searchTerm = term;
+    UI.renderGlobalSearch(
+        term,
+        searchAllProposals(term, appState.searchPartyFilters),
+        {
+            selectedPartyIds: appState.searchPartyFilters,
+            onTogglePartyFilter: (partyId) => {
+                const isActive = appState.searchPartyFilters.includes(partyId);
+                const nextPartyIds = isActive
+                    ? appState.searchPartyFilters.filter((id) => id !== partyId)
+                    : [...appState.searchPartyFilters, partyId];
+
+                appState.searchPartyFilters = normalizeSearchPartyIds(nextPartyIds);
+                replaceSearchHash(appState.searchTerm, appState.searchPartyFilters);
+                renderSearchScreen(appState.searchTerm);
+            },
+            onClearPartyFilters: () => {
+                appState.searchPartyFilters = [];
+                replaceSearchHash(appState.searchTerm, appState.searchPartyFilters);
+                renderSearchScreen(appState.searchTerm);
+            }
+        }
+    );
 }
 
 async function init() {
@@ -188,7 +254,7 @@ function setupEventListeners() {
             e.preventDefault();
             const input = document.getElementById('global-search-input');
             const term = sanitizeSearchTerm(input?.value || '');
-            UI.navigateHash(buildSearchHash(term));
+            UI.navigateHash(buildSearchHash(term, appState.searchPartyFilters));
         });
     }
 
@@ -200,8 +266,8 @@ function setupEventListeners() {
             clearTimeout(searchDebounceId);
             searchDebounceId = setTimeout(() => {
                 const term = sanitizeSearchTerm(e.target.value || '');
-                replaceSearchHash(term);
-                UI.renderGlobalSearch(term, searchAllProposals(term));
+                replaceSearchHash(term, appState.searchPartyFilters);
+                renderSearchScreen(term);
             }, 120);
         });
     }
@@ -292,7 +358,8 @@ function normalizePartyId(id) {
 
 // Helper function to generate page titles for Matomo
 function getPageTitle(hash) {
-    const parts = hash.split('/').filter(p => p && p !== '#');
+    const hashWithoutQuery = hash.split('?')[0];
+    const parts = hashWithoutQuery.split('/').filter(p => p && p !== '#');
     
     if (parts.length === 0) {
         return 'Comparador Programas Electorales CyL 2026';
@@ -306,7 +373,8 @@ function getPageTitle(hash) {
     }
     
     if (partyId === 's') {
-        const term = getSearchTermFromParts(parts);
+        const searchRoute = parseSearchRouteFromHash(hash);
+        const term = searchRoute?.term || '';
         return term
             ? `Buscar: ${term} - CyL 2026`
             : 'Buscar medidas - CyL 2026';
@@ -335,7 +403,8 @@ function trackSpaPageView(hash) {
 
 async function handleRouting() {
     const hash = window.location.hash || '#/';
-    const parts = hash.split('/').filter(p => p && p !== '#');
+    const hashWithoutQuery = hash.split('?')[0];
+    const parts = hashWithoutQuery.split('/').filter(p => p && p !== '#');
 
     if (hash !== appState.currentHash) {
         appState.previousHash = appState.currentHash;
@@ -372,16 +441,19 @@ async function handleRouting() {
     // Check if it's global search mode
     if (partyId === 's') {
         appState.mode = 'search';
-        const term = getSearchTermFromParts(parts);
-        const canonicalHash = buildSearchHash(term);
+        const searchRoute = parseSearchRouteFromHash(hash);
+        const term = searchRoute?.term || '';
+        const partyFilters = searchRoute?.partyIds || [];
+        const canonicalHash = searchRoute?.canonicalHash || buildSearchHash(term, partyFilters);
         if (hash !== canonicalHash) {
             UI.navigateHash(canonicalHash);
             return;
         }
 
+        appState.searchPartyFilters = partyFilters;
         trackSpaPageView(hash);
         UI.switchView('search');
-        UI.renderGlobalSearch(term, searchAllProposals(term));
+        renderSearchScreen(term);
         return;
     }
 
