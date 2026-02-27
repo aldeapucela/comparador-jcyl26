@@ -6,6 +6,9 @@ import { PARTIES, fetchPartyData, fetchAllPartiesData, getCategoriesFromProposal
 import { UI } from './ui.js';
 import { initAfinidad, renderQuestion, handleAnswer, toggleImportant, nextQuestion, prevQuestion, toggleContext, loadFromUrl, calculateAndShowResults, setSharedResults, startAfinidad } from './afinidad.js';
 
+const APP_VERSION = new URL(import.meta.url).searchParams.get('v') || '';
+window.__APP_VERSION__ = APP_VERSION;
+
 let appState = {
     selectedParty: null,
     currentData: null,

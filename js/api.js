@@ -2,6 +2,13 @@
  * API Module - Handles data loading for political parties
  */
 
+function withAppVersion(path) {
+    const version = window.__APP_VERSION__;
+    if (!version) return path;
+    const sep = path.includes('?') ? '&' : '?';
+    return `${path}${sep}v=${encodeURIComponent(version)}`;
+}
+
 export const PARTIES = [
     { id: 'psoe', name: 'PSOE', logo: 'img/psoe.png' },
     { id: 'pp', name: 'PP', logo: 'img/pp.png' },
@@ -26,7 +33,7 @@ export const CATEGORIES = [
 
 export async function fetchPartyData(partyId) {
     try {
-        const response = await fetch(`./data/partidos/${partyId}.json`);
+        const response = await fetch(withAppVersion(`./data/partidos/${partyId}.json`));
         if (!response.ok) throw new Error(`Could not load data for ${partyId}`);
         return await response.json();
     } catch (error) {

@@ -5,6 +5,13 @@
 
 import { PARTIES } from './api.js';
 
+function withAppVersion(path) {
+    const version = window.__APP_VERSION__;
+    if (!version) return path;
+    const sep = path.includes('?') ? '&' : '?';
+    return `${path}${sep}v=${encodeURIComponent(version)}`;
+}
+
 const LIKERT_OPTIONS = [
     { value: -2, label: 'Muy en desacuerdo', color: 'bg-red-100 border-red-300 text-red-800 hover:bg-red-200' },
     { value: -1, label: 'En desacuerdo', color: 'bg-orange-50 border-orange-200 text-orange-700 hover:bg-orange-100' },
@@ -46,8 +53,8 @@ function getStorageKey() {
 export async function initAfinidad() {
     // Load data
     return Promise.all([
-        fetch('./data/master-questions.json').then(r => r.json()),
-        fetch('./data/party-scores.json').then(r => r.json())
+        fetch(withAppVersion('./data/master-questions.json')).then(r => r.json()),
+        fetch(withAppVersion('./data/party-scores.json')).then(r => r.json())
     ]).then(([questions, partyScores]) => {
         afinidadState.questions = questions;
         afinidadState.partyScores = partyScores;
@@ -355,6 +362,16 @@ export function renderResults(results) {
         const el = document.getElementById(`matches-${id}`);
         if (el) el.classList.toggle('hidden');
     };
+    window.toggleMatchList = (partyId, listName) => {
+        const compactEl = document.getElementById(`${listName}-compact-${partyId}`);
+        const fullEl = document.getElementById(`${listName}-full-${partyId}`);
+        const btnEl = document.getElementById(`${listName}-btn-${partyId}`);
+        if (!compactEl || !fullEl || !btnEl) return;
+        const expanded = fullEl.classList.contains('hidden');
+        compactEl.classList.toggle('hidden', expanded);
+        fullEl.classList.toggle('hidden', !expanded);
+        btnEl.textContent = expanded ? 'Ver menos' : 'Ver todas';
+    };
 
     const getPosText = (val) => {
         const texts = { '2': 'Muy de acuerdo', '1': 'De acuerdo', '0': 'Neutral', '-1': 'En desacuerdo', '-2': 'Muy en desacuerdo' };
@@ -384,10 +401,21 @@ export function renderResults(results) {
                 silencios.push(q);
             } else {
                 const dist = Math.abs(uVal - pVal);
-                if (dist === 0) acuerdos.push({ q, txt: getPosText(pVal) });
-                else if (dist >= 3) desacuerdos.push({ q, uTxt: getPosText(uVal), pTxt: getPosText(pVal) });
+                if (dist === 0) acuerdos.push({ q, txt: getPosText(pVal), important: afinidadState.importantQuestions.has(qId) });
+                else if (dist >= 3) desacuerdos.push({ q, uTxt: getPosText(uVal), pTxt: getPosText(pVal), dist, important: afinidadState.importantQuestions.has(qId) });
             }
         });
+
+        acuerdos.sort((a, b) => Number(b.important) - Number(a.important));
+        desacuerdos.sort((a, b) => {
+            if (b.dist !== a.dist) return b.dist - a.dist;
+            return Number(b.important) - Number(a.important);
+        });
+
+        const acuerdosTop = acuerdos.slice(0, 3);
+        const hasMoreAcuerdos = acuerdos.length > 3;
+        const desacuerdosTop = desacuerdos.slice(0, 3);
+        const hasMoreDesacuerdos = desacuerdos.length > 3;
 
         return `
             <div class="mb-4">
@@ -413,13 +441,23 @@ export function renderResults(results) {
                                 <h5 class="font-bold text-green-700 text-[10px] uppercase mb-3 flex items-center tracking-wider">
                                     <i class="fa-solid fa-circle-check mr-2"></i> Coincidencias principales
                                 </h5>
-                                <div class="space-y-2">
-                                    ${acuerdos.slice(0, 3).map(m => `
+                                <div id="acuerdos-compact-${partyId}" class="space-y-2">
+                                    ${acuerdosTop.map(m => `
                                         <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
                                             <p class="font-bold text-slate-700 leading-tight">${m.q.pregunta}</p>
                                             <p class="text-green-600 mt-1 text-xs">Ambos estáis <strong>${m.txt}</strong></p>
                                         </div>`).join('')}
                                 </div>
+                                ${hasMoreAcuerdos ? `
+                                <div id="acuerdos-full-${partyId}" class="space-y-2 hidden">
+                                    ${acuerdos.map(m => `
+                                        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+                                            <p class="font-bold text-slate-700 leading-tight">${m.q.pregunta}</p>
+                                            <p class="text-green-600 mt-1 text-xs">Ambos estáis <strong>${m.txt}</strong></p>
+                                        </div>`).join('')}
+                                </div>
+                                <button id="acuerdos-btn-${partyId}" class="mt-2 text-xs font-semibold text-green-700 hover:text-green-800" onclick="event.stopPropagation(); toggleMatchList('${partyId}', 'acuerdos')">Ver todas</button>
+                                ` : ''}
                             </div>` : ''}
 
                         ${desacuerdos.length > 0 ? `
@@ -427,14 +465,25 @@ export function renderResults(results) {
                                 <h5 class="font-bold text-red-600 text-[10px] uppercase mb-3 flex items-center tracking-wider">
                                     <i class="fa-solid fa-circle-xmark mr-2"></i> Mayores desacuerdos
                                 </h5>
-                                <div class="space-y-2">
-                                    ${desacuerdos.slice(0, 2).map(m => `
+                                <div id="desacuerdos-compact-${partyId}" class="space-y-2">
+                                    ${desacuerdosTop.map(m => `
                                         <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-red-500">
                                             <p class="font-bold text-slate-700 leading-tight">${m.q.pregunta}</p>
                                             <p class="text-slate-500 mt-1 text-xs">Tú has dicho: <strong>${m.uTxt}</strong></p>
                                             <p class="text-red-500 mt-1 text-xs">El partido: <strong>${m.pTxt}</strong></p>
                                         </div>`).join('')}
                                 </div>
+                                ${hasMoreDesacuerdos ? `
+                                <div id="desacuerdos-full-${partyId}" class="space-y-2 hidden">
+                                    ${desacuerdos.map(m => `
+                                        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-red-500">
+                                            <p class="font-bold text-slate-700 leading-tight">${m.q.pregunta}</p>
+                                            <p class="text-slate-500 mt-1 text-xs">Tú has dicho: <strong>${m.uTxt}</strong></p>
+                                            <p class="text-red-500 mt-1 text-xs">El partido: <strong>${m.pTxt}</strong></p>
+                                        </div>`).join('')}
+                                </div>
+                                <button id="desacuerdos-btn-${partyId}" class="mt-2 text-xs font-semibold text-red-700 hover:text-red-800" onclick="event.stopPropagation(); toggleMatchList('${partyId}', 'desacuerdos')">Ver todas</button>
+                                ` : ''}
                             </div>` : ''}
 
                         ${silencios.length > 0 ? `
@@ -759,8 +808,8 @@ export async function loadFromUrl(encodedData) {
         // Fetch data if not already loaded
         if (!afinidadState.questions || !afinidadState.questions.length) {
             const [questionsRes, scoresRes] = await Promise.all([
-                fetch('./data/master-questions.json'),
-                fetch('./data/party-scores.json')
+                fetch(withAppVersion('./data/master-questions.json')),
+                fetch(withAppVersion('./data/party-scores.json'))
             ]);
             
             if (!questionsRes.ok || !scoresRes.ok) {
