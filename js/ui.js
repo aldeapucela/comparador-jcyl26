@@ -65,6 +65,31 @@ export const UI = {
             .replace(/'/g, '&#39;');
     },
 
+    normalizeTagSearchTerm(tag = '') {
+        return String(tag)
+            .replace(/^#+/, '')
+            .replace(/\s+/g, ' ')
+            .trim();
+    },
+
+    renderTagSearchLink(tag) {
+        const rawTag = String(tag || '').trim();
+        const searchTerm = this.normalizeTagSearchTerm(rawTag);
+
+        if (!searchTerm) {
+            return `<span class="px-2 py-1 bg-slate-100 text-slate-500 text-[10px] font-medium rounded">${this.escapeHtml(rawTag)}</span>`;
+        }
+
+        return `
+            <a href="#/s/${encodeURIComponent(searchTerm)}"
+               class="px-2 py-1 bg-slate-100 text-slate-500 text-[10px] font-medium rounded hover:bg-slate-200 hover:text-slate-700 transition-colors"
+               aria-label="Buscar por etiqueta ${this.escapeHtml(searchTerm)}"
+               title="Buscar ${this.escapeHtml(searchTerm)}">
+                ${this.escapeHtml(rawTag)}
+            </a>
+        `;
+    },
+
     ensureCandidatePhotoModal() {
         let modal = document.getElementById('candidate-photo-modal');
         if (modal) return modal;
@@ -542,7 +567,7 @@ export const UI = {
                             <div class="h-3 w-px bg-slate-200 mx-1 mobile-hidden"></div>
                             <div class="flex flex-wrap gap-2">
                                 ${prop.analisis?.foco_rural ? '<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-50 text-amber-600" title="Foco rural"><i class="fa-solid fa-tractor text-[10px]"></i><span class="sr-only">Foco rural</span></span>' : ''}
-                                ${prop.tags.map(tag => `<span class="px-2 py-1 bg-slate-100 text-slate-500 text-[10px] font-medium rounded">${tag}</span>`).join('')}
+                                ${prop.tags.map((tag) => this.renderTagSearchLink(tag)).join('')}
                             </div>
                         </div>
                         <div class="flex gap-3">
