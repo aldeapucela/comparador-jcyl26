@@ -47,6 +47,19 @@ export const UI = {
         partyLogo: document.getElementById('party-logo-detail')
     },
 
+    navigateHash(hash) {
+        if (!hash) return;
+
+        // Some mobile browsers can restore DOM/view state with a stale hash.
+        // If the target hash is already set, force router execution.
+        if (window.location.hash === hash) {
+            window.dispatchEvent(new Event('hashchange'));
+            return;
+        }
+
+        window.location.hash = hash;
+    },
+
     // Methods
     renderPartySelection() {
         // Create a copy and shuffle for fairness
@@ -626,12 +639,14 @@ export const UI = {
         });
 
         this.containers.comparisonResults.querySelectorAll('.btn-detail').forEach(btn => {
-            btn.addEventListener('click', () => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
                 const partyId = btn.dataset.party;
                 const propId = btn.dataset.id;
                 const category = btn.dataset.category || 'Todas';
                 if (!partyId || !propId) return;
-                window.location.hash = `#/${partyId}/${encodeURIComponent(category)}/${propId}`;
+                this.navigateHash(`#/${partyId}/${encodeURIComponent(category)}/${propId}`);
             });
         });
     },
@@ -744,7 +759,7 @@ export const UI = {
         overlay.querySelectorAll('.topic-dropdown-option').forEach(opt => {
             opt.addEventListener('click', () => {
                 closeOverlay();
-                window.location.hash = `#/comparar/${opt.dataset.topicId}`;
+                this.navigateHash(`#/comparar/${opt.dataset.topicId}`);
             });
         });
     },

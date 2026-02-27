@@ -237,10 +237,10 @@ async function handleRouting() {
     const propId = parts[2] || null;
 
     appState.mode = 'party';
-    // 1. Load Party if needed
-    if (appState.selectedParty?.id !== partyId) {
-        doPartySelect(partyId);
-    }
+    // 1. Always ensure detail view is mounted for party routes.
+    // In mobile back/forward flows, selectedParty can match while UI is still
+    // in topic view, which would update hash but not switch screen.
+    doPartySelect(partyId);
 
     // 2. Navigate to category if specified
     doCategorySelect(categoryName);
