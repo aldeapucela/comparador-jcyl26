@@ -110,6 +110,9 @@ export const UI = {
 
     renderGlobalSearch(term, results, options = {}) {
         const selectedPartyIds = Array.isArray(options.selectedPartyIds) ? options.selectedPartyIds : [];
+        const partyMatchCounts = options.partyMatchCounts && typeof options.partyMatchCounts === 'object'
+            ? options.partyMatchCounts
+            : {};
         const onTogglePartyFilter = typeof options.onTogglePartyFilter === 'function'
             ? options.onTogglePartyFilter
             : null;
@@ -143,6 +146,7 @@ export const UI = {
                 <p class="w-full text-xs text-slate-500 mb-1">Filtrar por partido</p>
                 ${PARTIES.map((party) => {
                     const isActive = selectedPartyIds.includes(party.id);
+                    const matchCount = Number.isFinite(partyMatchCounts[party.id]) ? partyMatchCounts[party.id] : 0;
                     return `
                         <button
                             class="search-party-filter-btn px-2.5 py-1.5 rounded-full text-xs font-semibold border transition-colors inline-flex items-center gap-2 ${isActive ? 'text-white border-transparent' : 'bg-white text-slate-600 border-slate-300 hover:border-slate-400 hover:text-slate-800'}"
@@ -151,7 +155,7 @@ export const UI = {
                             <span class="w-4 h-4 rounded-full bg-white border border-slate-200 overflow-hidden flex items-center justify-center shrink-0">
                                 <img src="${this.escapeHtml(party.logo)}" alt="Logo ${this.escapeHtml(party.name)}" class="w-full h-full object-contain p-[1px]">
                             </span>
-                            <span>${this.escapeHtml(party.name)}</span>
+                            <span>${this.escapeHtml(party.name)} (${this.escapeHtml(String(matchCount))})</span>
                         </button>
                     `;
                 }).join('')}

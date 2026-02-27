@@ -164,13 +164,51 @@ function searchAllProposals(term, partyIds = []) {
         .slice(0, 100);
 }
 
+function countMatchesByParty(term) {
+    const counts = PARTIES.reduce((acc, party) => {
+        acc[party.id] = 0;
+        return acc;
+    }, {});
+
+    if (!term) return counts;
+
+    const needle = foldSearchText(term);
+
+    Object.entries(appState.allData).forEach(([partyId, partyData]) => {
+        if (!Object.prototype.hasOwnProperty.call(counts, partyId)) return;
+        if (!partyData?.propuestas) return;
+
+        partyData.propuestas.forEach((prop) => {
+            const titleFolded = foldSearchText(prop.titulo_corto || '');
+            const summaryFolded = foldSearchText(prop.resumen || '');
+            const categoryFolded = foldSearchText(prop.categoria || '');
+            const tagsFolded = (Array.isArray(prop.tags) ? prop.tags : [])
+                .map((tag) => foldSearchText(tag))
+                .join(' ');
+
+            const matches = titleFolded.includes(needle)
+                || summaryFolded.includes(needle)
+                || categoryFolded.includes(needle)
+                || tagsFolded.includes(needle);
+
+            if (matches) counts[partyId] += 1;
+        });
+    });
+
+    return counts;
+}
+
 function renderSearchScreen(term) {
     appState.searchTerm = term;
+    const results = searchAllProposals(term, appState.searchPartyFilters);
+    const partyMatchCounts = countMatchesByParty(term);
+
     UI.renderGlobalSearch(
         term,
-        searchAllProposals(term, appState.searchPartyFilters),
+        results,
         {
             selectedPartyIds: appState.searchPartyFilters,
+            partyMatchCounts,
             onTogglePartyFilter: (partyId) => {
                 const isActive = appState.searchPartyFilters.includes(partyId);
                 const nextPartyIds = isActive
