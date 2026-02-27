@@ -6,11 +6,17 @@ Aplicacion web estatica para explorar y comparar propuestas de programas elector
 
 ### 1.1 Que hace
 
-La web ofrece tres vistas principales:
+La web sirve para ver y comparar, de forma sencilla, las propuestas electorales de Castilla y Leon 2026.
 
-- Exploracion por partido: navegar medidas por categorias.
-- Comparacion por tematica: ver una misma categoria entre varios partidos.
-- Cuestionario de afinidad: responder preguntas y obtener similitud por partido.
+Incluye estas funcionalidades principales:
+
+- Ver propuestas de cada partido por temas.
+- Comparar un mismo tema entre varios partidos.
+- Buscar propuestas con palabras clave.
+- Pulsar etiquetas para encontrar propuestas relacionadas.
+- Filtrar resultados por partido.
+- Ver la ficha de cada partido con informacion de sus candidatos.
+- Hacer un cuestionario para saber con que partido tienes mas afinidad.
 
 Datos consumidos por la web:
 
