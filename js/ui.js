@@ -230,7 +230,11 @@ export const UI = {
 
     async shareSearchResult(item, btn) {
         const url = `${window.location.origin}${window.location.pathname}#/${item.partyId}/${encodeURIComponent(item.category)}/${item.proposalId}`;
-        const shareText = `El ${item.partyName} en CyL propone "${item.title}"\n\n${url}`;
+        const header = `El ${item.partyName} en CyL propone "${item.title}"`;
+        const summary = (item.summary || '').trim();
+        const shareText = summary
+            ? `${header}\n\n${summary}\n\n${url}`
+            : `${header}\n\n${url}`;
         const fullMessage = shareText;
 
         if (navigator.share) {
@@ -710,8 +714,12 @@ export const UI = {
 
     async shareProposal(partyInfo, category, prop, btn) {
         const url = `${window.location.origin}${window.location.pathname}#/${partyInfo.id}/${encodeURIComponent(category)}/${prop.id}`;
-        const shareText = `${partyInfo.name} en Castilla y León propone: ${prop.resumen}`;
-        const fullMessage = `${shareText}\n\n${url}`;
+        const header = `${partyInfo.name} en Castilla y León propone "${prop.titulo_corto}"`;
+        const summary = (prop.resumen || '').trim();
+        const shareText = summary
+            ? `${header}\n\n${summary}\n\n${url}`
+            : `${header}\n\n${url}`;
+        const fullMessage = shareText;
 
         if (navigator.share) {
             try {
