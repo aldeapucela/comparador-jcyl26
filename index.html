@@ -347,16 +347,35 @@
 
                 <!-- Methodology Section -->
                 <div class="max-w-2xl mx-auto mt-8">
-                    <div class="bg-white rounded-xl border border-slate-200 p-6">
-                        <h3 class="text-lg font-semibold text-slate-800 mb-4">Metodología</h3>
+                    <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+                        <h3 class="text-lg font-semibold text-slate-800 mb-3 flex items-center">
+                            <i class="fa-solid fa-magnifying-glass-chart text-indigo-600 mr-2"></i>
+                            ¿Cómo hemos calculado tu resultado?
+                        </h3>
+                        
                         <p class="text-slate-600 mb-4 leading-relaxed">
-                            El cálculo mide tu afinidad con cada partido comparando tus respuestas. 
-                            Usamos una escala de 5 puntos y calculamos la distancia ideológica total.
+                            No hay trucos ni opiniones personales. Simplemente hemos cruzado tus respuestas con las promesas escritas en los <strong>documentos oficiales</strong> de los partidos:
                         </p>
+
+                        <ul class="text-slate-600 text-sm space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-arrow-trend-up text-green-500 mt-0.5 mr-3"></i>
+                                <span>Si pensáis igual en los temas que te importan, el porcentaje sube.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-arrow-trend-down text-red-400 mt-0.5 mr-3"></i>
+                                <span>Si chocáis en vuestras ideas, el porcentaje baja.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-comment-slash text-amber-500 mt-0.5 mr-3"></i>
+                                <span><strong>Cobertura del programa:</strong> Si un partido no se posiciona en un tema, ese punto no suma ni resta afinidad para ese partido y te lo mostramos aparte como cobertura.</span>
+                            </li>
+                        </ul>
+
                         <a href="./docs/metodologia.html" target="_blank" rel="noopener noreferrer" 
-                           class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium transition-colors">
+                           class="inline-flex items-center px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition-colors">
                             <i class="fa-solid fa-book-open mr-2"></i>
-                            Ver metodología completa
+                            Quiero ver las matemáticas detrás de esto
                         </a>
                     </div>
                 </div>

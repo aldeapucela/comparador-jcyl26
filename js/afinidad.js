@@ -1,6 +1,6 @@
 /**
  * Afinidad Module - Cuestionario de Afinidad Electoral
- * Implementa el algoritmo de distancia euclidiana según metodología
+ * Implementa el algoritmo de distancia de Manhattan según metodología
  */
 
 import { PARTIES } from './api.js';
@@ -252,66 +252,88 @@ function calculateAffinity() {
     const answers = afinidadState.answers;
     const partyScoresRaw = afinidadState.partyScores;
     const importantQuestions = afinidadState.importantQuestions;
-    const maxDistance = calculateMaxDistance();
-    
-    const partyScores = {};
-    for (const [key, value] of Object.entries(partyScoresRaw)) {
-        partyScores[normalizePartyId(key)] = value;
-    }
     
     const results = {};
     
-    for (const [partyId, scores] of Object.entries(partyScores)) {
+    // Iteramos por cada partido en los scores
+    for (const [rawPartyName, scores] of Object.entries(partyScoresRaw)) {
+        const partyId = normalizePartyId(rawPartyName);
         let totalDistance = 0;
         const categoryDistances = {};
+        const categoryCoverage = {};
+
+        let partyMaxPossibleDistance = 0;
+        let coveredCount = 0;
+        const totalAnsweredCount = Object.keys(answers).length;
+        const totalAnsweredByCategory = {};
         
         for (const [questionId, userValue] of Object.entries(answers)) {
             const partyValue = scores[questionId];
-            if (partyValue === undefined) continue;
-            
             const weight = importantQuestions.has(questionId) ? 2 : 1;
-            const distance = Math.abs(userValue - partyValue) * weight;
-            totalDistance += distance;
-            
             const question = afinidadState.questions.find(q => q.id === questionId);
+
             if (question) {
                 const cat = question.categoria;
-                if (!categoryDistances[cat]) categoryDistances[cat] = { distance: 0, count: 0 };
-                categoryDistances[cat].distance += distance;
-                categoryDistances[cat].count += weight;
+
+                if (!totalAnsweredByCategory[cat]) totalAnsweredByCategory[cat] = 0;
+                totalAnsweredByCategory[cat] += 1;
+
+                if (!categoryCoverage[cat]) categoryCoverage[cat] = { covered: 0, total: 0 };
+                categoryCoverage[cat].total += 1;
+            }
+
+            if (partyValue === undefined || partyValue === null) {
+                continue;
+            }
+
+            const distance = Math.abs(userValue - partyValue) * weight;
+            totalDistance += distance;
+            partyMaxPossibleDistance += weight * 4;
+            coveredCount += 1;
+
+            // Guardar por categorías para el desglose posterior
+            if (question) {
+                const cat = question.categoria;
+                if (!categoryDistances[cat]) categoryDistances[cat] = { dist: 0, max: 0 };
+                categoryDistances[cat].dist += distance;
+                categoryDistances[cat].max += weight * 4;
+
+                if (!categoryCoverage[cat]) categoryCoverage[cat] = { covered: 0, total: 0 };
+                categoryCoverage[cat].covered += 1;
             }
         }
         
-        const affinity = maxDistance > 0 ? Math.round((1 - totalDistance / maxDistance) * 100) : 0;
+        const affinity = partyMaxPossibleDistance > 0 ? Math.round((1 - totalDistance / partyMaxPossibleDistance) * 100) : 0;
+        const coverage = totalAnsweredCount > 0 ? Math.round((coveredCount / totalAnsweredCount) * 100) : 0;
         
         const categoryAffinities = {};
         for (const [cat, data] of Object.entries(categoryDistances)) {
-            const catMaxDistance = data.count * 4;
-            categoryAffinities[cat] = catMaxDistance > 0 ? Math.round((1 - data.distance / catMaxDistance) * 100) : 0;
+            categoryAffinities[cat] = data.max > 0 ? Math.round((1 - data.dist / data.max) * 100) : 0;
+        }
+
+        const categoryCoveragePct = {};
+        for (const [cat, data] of Object.entries(categoryCoverage)) {
+            categoryCoveragePct[cat] = data.total > 0 ? Math.round((data.covered / data.total) * 100) : 0;
         }
         
         results[partyId] = {
-            affinity,
+            affinity: Math.max(0, affinity),
             categoryAffinities,
-            totalDistance
+            totalDistance,
+            coverage,
+            categoryCoverage: categoryCoveragePct,
+            coveredCount,
+            totalAnsweredCount
         };
     }
-
     return results;
 }
-
-function calculateMaxDistance() {
-    const importantCount = afinidadState.importantQuestions.size;
-    const normalCount = Object.keys(afinidadState.answers).length - importantCount;
-    return (importantCount * 2 * 4) + (normalCount * 4);
-}
-
-function renderResults(results) {
+export function renderResults(results) {
     document.getElementById('afinidad-question-card').classList.add('hidden');
     document.getElementById('afinidad-progress').classList.add('hidden');
     document.getElementById('afinidad-results').classList.remove('hidden');
     
-    // Save completion state to session
+    // Guardar estado de completado
     const completionData = {
         answers: afinidadState.answers,
         importantQuestions: Array.from(afinidadState.importantQuestions),
@@ -322,125 +344,191 @@ function renderResults(results) {
     localStorage.setItem(getStorageKey(), JSON.stringify(completionData));
     
     const sorted = Object.entries(results).sort((a, b) => b[1].affinity - a[1].affinity);
-    
-    if (sorted.length === 0) {
-        document.getElementById('afinidad-winner').innerHTML = '<p class="text-center text-slate-500">No hay resultados disponibles</p>';
-        return;
-    }
+    if (sorted.length === 0) return;
     
     const winnerId = sorted[0][0];
     const winner = PARTIES.find(p => p.id === winnerId);
     
-    if (!winner) {
-        console.error('Winner not found:', winnerId, 'Available:', PARTIES.map(p => p.id));
-        document.getElementById('afinidad-winner').innerHTML = '<p class="text-center text-slate-500">Error al mostrar resultados</p>';
-        return;
-    }
-    
-    const winnerData = sorted[0][1];
-    
-    const winnerCard = document.getElementById('afinidad-winner');
-    winnerCard.innerHTML = `
+    // 1. Renderizar Ganador
+    document.getElementById('afinidad-winner').innerHTML = `
         <div class="bg-white rounded-2xl p-8 text-center border border-slate-200 shadow-sm">
             <p class="text-slate-500 text-sm font-medium mb-2">Tu partido más afín</p>
-            <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: ${winner.color}20">
-                <img src="${winner.logo}" alt="${winner.name}" class="w-14 h-14 object-contain">
+            <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: ${winner?.color || '#666'}20">
+                <img src="${winner?.logo || ''}" alt="${winner?.name || ''}" class="w-14 h-14 object-contain">
             </div>
-            <h2 class="text-3xl font-bold mb-2" style="color: ${winner.color}">${winner.name}</h2>
-            <p class="text-5xl font-black text-slate-800">${winnerData.affinity}%</p>
-            <p class="text-slate-400 mt-2">de afinidad</p>
+            <h2 class="text-3xl font-bold mb-2" style="color: ${winner?.color || '#334155'}">${winner?.name || winnerId}</h2>
+            <p class="text-5xl font-black text-slate-800">${sorted[0][1].affinity}%</p>
+            <p class="text-slate-400 mt-2">de afinidad global</p>
         </div>
     `;
     
-    const chart = document.getElementById('afinidad-chart');
-    chart.innerHTML = sorted.map(([partyId, data]) => {
+    // 2. Definir función de toggle global (para evitar el error ReferenceError)
+    window.togglePartyMatches = (id) => {
+        const el = document.getElementById(`matches-${id}`);
+        if (el) el.classList.toggle('hidden');
+    };
+
+    const getPosText = (val) => {
+        const texts = { '2': 'Muy de acuerdo', '1': 'De acuerdo', '0': 'Neutral', '-1': 'En desacuerdo', '-2': 'Muy en desacuerdo' };
+        return texts[val] || 'Sin postura';
+    };
+
+    // 3. Renderizar Lista de Partidos con sus desgloses internos
+    document.getElementById('afinidad-chart').innerHTML = sorted.map(([partyId, data]) => {
         const party = PARTIES.find(p => p.id === partyId);
+        const partyScoresRaw = afinidadState.partyScores;
+        const partyKeyInScores = Object.keys(partyScoresRaw).find(k => normalizePartyId(k) === partyId);
+        const scores = partyScoresRaw[partyKeyInScores];
+
+        const coverage = typeof data.coverage === 'number' ? data.coverage : 0;
+        const coveredCount = typeof data.coveredCount === 'number' ? data.coveredCount : 0;
+        const totalAnsweredCount = typeof data.totalAnsweredCount === 'number' ? data.totalAnsweredCount : 0;
+        
+        const acuerdos = [], desacuerdos = [], silencios = [];
+        
+        // Analizar cada respuesta para este partido
+        Object.entries(afinidadState.answers).forEach(([qId, uVal]) => {
+            const pVal = scores?.[qId];
+            const q = afinidadState.questions.find(q => q.id === qId);
+            if (!q) return;
+
+            if (pVal === undefined || pVal === null) {
+                silencios.push(q);
+            } else {
+                const dist = Math.abs(uVal - pVal);
+                if (dist === 0) acuerdos.push({ q, txt: getPosText(pVal) });
+                else if (dist >= 3) desacuerdos.push({ q, uTxt: getPosText(uVal), pTxt: getPosText(pVal) });
+            }
+        });
+
         return `
-            <div class="flex items-center gap-4 cursor-pointer hover:bg-slate-50 p-2 rounded-lg transition-colors" onclick="togglePartyMatches('${partyId}')">
-                <div class="w-20 text-right">
-                    <span class="font-semibold text-slate-700">${party.name}</span>
+            <div class="mb-4">
+                <div class="flex items-center gap-4 cursor-pointer hover:bg-slate-50 p-3 rounded-xl transition-all border border-transparent hover:border-slate-200" 
+                     onclick="togglePartyMatches('${partyId}')">
+                    <div class="w-20 text-right"><span class="font-semibold text-slate-700 text-sm">${party?.name || partyId}</span></div>
+                    <div class="flex-1 bg-slate-100 rounded-full h-5 overflow-hidden">
+                        <div class="h-full transition-all duration-700" style="width: ${data.affinity}%; background-color: ${party?.color || '#666'}"></div>
+                    </div>
+                    <div class="w-10 text-left font-bold text-slate-700 text-sm">${data.affinity}%</div>
+                    <i class="fa-solid fa-chevron-down text-slate-300 text-xs"></i>
                 </div>
-                <div class="flex-1 bg-slate-100 rounded-full h-6 overflow-hidden">
-                    <div class="h-full rounded-full transition-all duration-700 ease-out" 
-                         style="width: ${data.affinity}%; background-color: ${party.color}"></div>
+                
+                <!-- Desglose oculto por defecto -->
+                <div id="matches-${partyId}" class="hidden ml-0 md:ml-24 mt-2 space-y-4 animate-fade-in">
+                    <div class="p-5 bg-slate-50 border border-slate-200 rounded-2xl space-y-6 text-sm">
+                        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+                            <p class="font-bold text-slate-700 leading-tight">Cobertura del programa</p>
+                            <p class="text-slate-500 mt-1 text-xs">Este partido se moja en <strong>${coverage}%</strong> de los temas del cuestionario que has contestado (${coveredCount}/${totalAnsweredCount}).</p>
+                        </div>
+                        ${acuerdos.length > 0 ? `
+                            <div>
+                                <h5 class="font-bold text-green-700 text-[10px] uppercase mb-3 flex items-center tracking-wider">
+                                    <i class="fa-solid fa-circle-check mr-2"></i> Coincidencias principales
+                                </h5>
+                                <div class="space-y-2">
+                                    ${acuerdos.slice(0, 3).map(m => `
+                                        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+                                            <p class="font-bold text-slate-700 leading-tight">${m.q.pregunta}</p>
+                                            <p class="text-green-600 mt-1 text-xs">Ambos estáis <strong>${m.txt}</strong></p>
+                                        </div>`).join('')}
+                                </div>
+                            </div>` : ''}
+
+                        ${desacuerdos.length > 0 ? `
+                            <div>
+                                <h5 class="font-bold text-red-600 text-[10px] uppercase mb-3 flex items-center tracking-wider">
+                                    <i class="fa-solid fa-circle-xmark mr-2"></i> Mayores desacuerdos
+                                </h5>
+                                <div class="space-y-2">
+                                    ${desacuerdos.slice(0, 2).map(m => `
+                                        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-red-500">
+                                            <p class="font-bold text-slate-700 leading-tight">${m.q.pregunta}</p>
+                                            <p class="text-slate-500 mt-1 text-xs">Tú has dicho: <strong>${m.uTxt}</strong></p>
+                                            <p class="text-red-500 mt-1 text-xs">El partido: <strong>${m.pTxt}</strong></p>
+                                        </div>`).join('')}
+                                </div>
+                            </div>` : ''}
+
+                        ${silencios.length > 0 ? `
+                            <div>
+                                <h5 class="font-bold text-amber-600 text-[10px] uppercase mb-2 flex items-center tracking-wider">
+                                    <i class="fa-solid fa-comment-slash mr-2"></i> Temas no tratados
+                                </h5>
+                                <div class="flex flex-wrap gap-2">
+                                    ${silencios.map(q => `
+                                        <span class="bg-white border border-amber-200 text-amber-700 text-[10px] px-2.5 py-1.5 rounded-full shadow-sm font-semibold">
+                                            ${CONTEXT_TEXTS[q.id]?.tema.split(' - ')[1] || q.categoria}
+                                        </span>`).join('')}
+                                </div>
+                            </div>` : ''}
+                    </div>
                 </div>
-                <div class="w-12 text-left">
-                    <span class="font-bold text-slate-700">${data.affinity}%</span>
-                </div>
-                <button class="text-slate-400 hover:text-slate-600" onclick="event.stopPropagation(); togglePartyMatches('${partyId}')">
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
             </div>
-            <div id="matches-${partyId}" class="hidden ml-24 mb-4 text-sm text-slate-600"></div>
         `;
     }).join('');
     
-    // Add click handlers for showing matches
-    sorted.forEach(([partyId, data]) => {
-        const party = PARTIES.find(p => p.id === partyId);
-        const partyScores = {};
-        for (const [key, value] of Object.entries(afinidadState.partyScores)) {
-            partyScores[normalizePartyId(key)] = value;
-        }
-        const scores = partyScores[partyId];
-        const matches = [];
-        
-        for (const [questionId, userValue] of Object.entries(afinidadState.answers)) {
-            const partyValue = scores?.[questionId];
-            if (partyValue !== undefined && userValue === partyValue) {
-                const q = afinidadState.questions.find(q => q.id === questionId);
-                if (q) {
-                    const positionText = partyValue === 2 ? 'Muy de acuerdo' : 
-                                         partyValue === 1 ? 'De acuerdo' : 
-                                         partyValue === 0 ? 'Neutral' : 
-                                         partyValue === -1 ? 'En desacuerdo' : 'Muy en desacuerdo';
-                    matches.push({ question: q, partyValue, positionText });
-                }
-            }
-        }
-        
-        window[`togglePartyMatches_${partyId}`] = () => {
-            const el = document.getElementById(`matches-${partyId}`);
-            if (el.classList.contains('hidden')) {
-                el.classList.remove('hidden');
-                if (matches.length > 0) {
-                    el.innerHTML = `<strong>Coincidencias con ${party.name} (${matches.length}):</strong>
-                        <ul class="mt-2 space-y-2">${matches.map(m => `
-                            <li class="bg-slate-50 p-2 rounded">
-                                <p class="text-xs text-slate-500 mb-1">${m.question.categoria}</p>
-                                <p class="font-medium">${m.question.pregunta}</p>
-                                <p class="text-sm text-green-600 mt-1"><i class="fa-solid fa-check-circle mr-1"></i>${party.name} está "${m.positionText}"</p>
-                            </li>
-                        `).join('')}</ul>`;
-                } else {
-                    el.innerHTML = 'No hay coincidencias exactas';
-                }
-            } else {
-                el.classList.add('hidden');
-            }
-        };
-    });
-    
-    window.togglePartyMatches = (partyId) => window[`togglePartyMatches_${partyId}`]();
-    
-    renderCategoryBreakdown(sorted[0][1]);
+    renderCategoryBreakdown(results);
     setupShareLinks(results);
 }
 
-function renderCategoryBreakdown(winnerData) {
+function renderCategoryBreakdown(allResults) {
     const container = document.getElementById('afinidad-categories');
-    const categories = Object.entries(winnerData.categoryAffinities)
-        .sort((a, b) => b[1] - a[1]);
+    if (!container) return;
+
+    const categories = [...new Set(afinidadState.questions.map(q => q.categoria))];
     
+    const categoryWinners = categories.map(cat => {
+        const partyAffinities = Object.entries(allResults)
+            .map(([pId, data]) => ({ partyId: pId, affinity: data.categoryAffinities[cat] }))
+            .filter(item => item.affinity !== undefined);
+
+        if (partyAffinities.length === 0) {
+            return { category: cat, affinity: -1, isTie: false, winners: [] };
+        }
+
+        const maxAff = Math.max(...partyAffinities.map(item => item.affinity));
+        const winners = partyAffinities.filter(item => item.affinity === maxAff);
+
+        return {
+            category: cat,
+            affinity: maxAff,
+            isTie: winners.length > 1,
+            winners
+        };
+    });
+
     container.innerHTML = `
-        <h3 class="text-lg font-semibold text-slate-800 mb-4">Desglose por categorías</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-            ${categories.map(([cat, affinity]) => `
-                <div class="bg-white rounded-xl border border-slate-200 p-4">
-                    <p class="text-xs text-slate-500 mb-1">${cat}</p>
-                    <p class="text-2xl font-bold ${affinity >= 70 ? 'text-green-600' : affinity >= 40 ? 'text-amber-600' : 'text-red-500'}">${affinity}%</p>
-                </div>
-            `).join('')}
+        <div class="mt-12 pt-8 border-t border-slate-200 text-center">
+            <h3 class="text-xl font-bold text-slate-800">Tu partido ideal por temática</h3>
+            <p class="text-slate-500 text-xs mt-2 mb-8 italic">¿Quién te representa mejor en cada área?</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-left">
+                ${categoryWinners.map(cw => {
+                    if (cw.affinity < 20) return '';
+                    const firstWinner = cw.winners[0];
+                    const party = firstWinner ? PARTIES.find(p => p.id === firstWinner.partyId) : null;
+                    const tieNames = cw.winners
+                        .map(w => PARTIES.find(p => p.id === w.partyId)?.name)
+                        .filter(Boolean)
+                        .join(', ');
+                    const topBarColor = cw.isTie ? '#94a3b8' : (party?.color || '#94a3b8');
+                    if (!cw.isTie && !party) return '';
+                    return `
+                        <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm relative overflow-hidden group hover:border-slate-300 transition-colors">
+                            <div class="absolute top-0 left-0 w-full h-1" style="background-color: ${topBarColor}"></div>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-3 h-8 flex items-center">${cw.category}</span>
+                            <div class="flex items-center gap-3">
+                                ${cw.isTie
+                                    ? '<div class="w-8 h-8 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-500 text-[10px] font-bold">=</div>'
+                                    : `<img src="${party.logo}" class="w-8 h-8 object-contain opacity-90">`
+                                }
+                                <div>
+                                    <p class="text-[11px] font-bold text-slate-800 leading-tight">${cw.isTie ? 'Varios' : party.name}</p>
+                                    ${cw.isTie ? `<p class="text-[10px] text-slate-500 leading-tight mt-0.5">${tieNames}</p>` : ''}
+                                </div>
+                            </div>
+                        </div>`;
+                }).join('')}
+            </div>
         </div>
     `;
 }
