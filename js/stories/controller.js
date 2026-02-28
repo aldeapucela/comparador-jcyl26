@@ -412,12 +412,16 @@ export function createStoriesController(appState) {
     function bindExploraGestures() {
         const storyCard = document.getElementById('stories-card');
         if (!storyCard) return;
+        storyCard.style.touchAction = 'none';
 
         storyCard.onwheel = null;
         storyCard.onpointerdown = null;
         storyCard.onpointerup = null;
         storyCard.onpointercancel = null;
         storyCard.onpointerleave = null;
+        storyCard.ontouchstart = null;
+        storyCard.ontouchend = null;
+        storyCard.ontouchcancel = null;
 
         storyCard.onwheel = (event) => {
             if (appState.mode !== 'stories' || !appState.stories.started) return;
@@ -436,6 +440,8 @@ export function createStoriesController(appState) {
 
         const isInteractiveTarget = (target) => {
             if (!(target instanceof Element)) return false;
+            // Lateral nav zones should still allow swipe detection.
+            if (target.closest('.story-nav-zone')) return false;
             return Boolean(target.closest('button, a, input, select, textarea, label'));
         };
 
@@ -443,6 +449,13 @@ export function createStoriesController(appState) {
             if (appState.mode !== 'stories' || !appState.stories.started) return;
             if (isInteractiveTarget(event.target)) return;
             exploraTouchStart = { x: event.clientX, y: event.clientY };
+            if (typeof storyCard.setPointerCapture === 'function') {
+                try {
+                    storyCard.setPointerCapture(event.pointerId);
+                } catch {
+                    // Ignore capture failures.
+                }
+            }
             pausePlayback();
             exploraWasPausedByHold = true;
         };
@@ -473,6 +486,52 @@ export function createStoriesController(appState) {
         storyCard.onpointerup = releaseHold;
         storyCard.onpointercancel = releaseHold;
         storyCard.onpointerleave = releaseHold;
+
+        const getTouchPoint = (event) => {
+            const touch = event?.changedTouches?.[0] || event?.touches?.[0];
+            if (!touch) return null;
+            return { x: touch.clientX, y: touch.clientY };
+        };
+
+        storyCard.ontouchstart = (event) => {
+            if (appState.mode !== 'stories' || !appState.stories.started) return;
+            if (isInteractiveTarget(event.target)) return;
+            const point = getTouchPoint(event);
+            if (!point) return;
+            exploraTouchStart = point;
+            pausePlayback();
+            exploraWasPausedByHold = true;
+        };
+
+        storyCard.ontouchend = (event) => {
+            if (!exploraWasPausedByHold || !exploraTouchStart) return;
+            const point = getTouchPoint(event);
+            if (point) {
+                const deltaX = point.x - exploraTouchStart.x;
+                const deltaY = point.y - exploraTouchStart.y;
+                const isHorizontalSwipe = Math.abs(deltaX) > 46 && Math.abs(deltaX) > Math.abs(deltaY) * 1.15;
+                if (isHorizontalSwipe) {
+                    exploraTouchStart = null;
+                    exploraWasPausedByHold = false;
+                    if (deltaX > 0) {
+                        moveToPrevStory();
+                    } else {
+                        moveToNextStory();
+                    }
+                    return;
+                }
+            }
+            exploraTouchStart = null;
+            exploraWasPausedByHold = false;
+            resumePlayback();
+        };
+
+        storyCard.ontouchcancel = () => {
+            exploraTouchStart = null;
+            if (!exploraWasPausedByHold) return;
+            exploraWasPausedByHold = false;
+            resumePlayback();
+        };
     }
 
     function clearPlaybackTimers() {
