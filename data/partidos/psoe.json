@@ -9,7 +9,8 @@
     "foto_candidato": "img/candidatos/carlos-martinez.jpg",
     "color": "#e30613",
     "lema": "Castilla y León: cambiar el modelo para activar su futuro",
-    "anio": 2026
+    "anio": 2026,
+    "logo": "img/psoe.png"
   },
   "propuestas": [
     {

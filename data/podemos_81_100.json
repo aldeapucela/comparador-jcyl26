@@ -1,0 +1,160 @@
+{
+  "bloque_informacion": {
+    "rango_paginas": "81-100",
+    "estado": "finalizado"
+  },
+  "metadatos": "continúa",
+  "propuestas": [
+    {
+      "id": 140,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Potenciar fiestas con reconocimiento patrimonial y turístico",
+      "resumen": "Reforzar el apoyo a fiestas declaradas Patrimonio Inmaterial de la Humanidad o de interés turístico autonómico o nacional.",
+      "cita_literal": "Potenciaremos aquellas fiestas reconocidas como \"Patrimonio Inmaterial de la Humanidad\", de \"Interés turístico Nacional o Autonómico\".",
+      "pagina": 85,
+      "tags": [
+        "#Derechos",
+        "#Cultura"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos y ciudadanía?"
+    },
+    {
+      "id": 141,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Introducir fiscalidad con enfoque de género contra la brecha salarial",
+      "resumen": "Incorporar criterios de género en la fiscalidad para reforzar progresividad y corregir desigualdades económicas que afectan a las mujeres. Exigir estudios de impacto de género en toda reforma tributaria.",
+      "cita_literal": "Fiscalidad contra la brecha salarial. Introduciremos criterios de género en la fiscalidad para conseguir de manera eficaz la progresividad atendiendo a las desigualdades económicas y sociales que sufren las mujeres. Introduciremos la obligación de que cualquier proceso legislativo que afecte al sistema.",
+      "pagina": 85,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal",
+        "#Fiscalidad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 142,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Incentivar fiscalmente el empleo verde y las energías limpias",
+      "resumen": "Establecer incentivos fiscales para impulsar implantación y uso de energías renovables y no contaminantes. Orientar la política fiscal a creación de empleo verde.",
+      "cita_literal": "Fiscalidad por el empleo verde. Estableceremos incentivos fiscales a la puesta en marcha y uso de las energías renovables y no contaminantes.",
+      "pagina": 85,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal",
+        "#Fiscalidad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 143,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Transición ecológica y energía",
+      "titulo_corto": "Crear un impuesto ambiental sobre impactos de instalaciones renovables",
+      "resumen": "Aprobar un impuesto autonómico que grave impactos visuales y ambientales de infraestructuras de generación eléctrica. Reinvertir la recaudación en las zonas afectadas.",
+      "cita_literal": "Nuevo impuesto medioambiental a las instalaciones de energías renovables. Creación de un nuevo impuesto medioambiental autonómico que grave las afecciones e impactos visuales y medioambientales adversos sobre el medio natural y sobre el territorio a consecuencia de la instalación de infraestructuras afectas.",
+      "pagina": 85,
+      "tags": [
+        "#MedioAmbiente",
+        "#ProteccionAmbiental",
+        "#CambioClimatico"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de transición ecológica y energía?"
+    },
+    {
+      "id": 144,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso a vivienda digna",
+      "titulo_corto": "Crear un impuesto al patrimonio inmobiliario de personas jurídicas",
+      "resumen": "Gravar a fondos y entidades que especulan con vivienda mediante un impuesto autonómico específico. Destinar toda la recaudación a políticas de vivienda pública.",
+      "cita_literal": "Creación de un Impuesto sobre el Patrimonio Inmobiliario de las Personas Jurídicas para gravar a los fondos de inversión que especulan con la vivienda y dedicar lo recaudado a políticas de vivienda pública.",
+      "pagina": 85,
+      "tags": [
+        "#Vivienda",
+        "#ViviendaPublica",
+        "#AccesoVivienda"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de acceso a vivienda digna?"
+    },
+    {
+      "id": 145,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Ajustar impuestos y tasas según patrimonio e ingresos",
+      "resumen": "Aplicar criterios de capacidad económica en impuestos, tasas y precios públicos para ajustar mejor la contribución tributaria.",
+      "cita_literal": "Introducción de gravámenes en todos los impuestos, tasas y precios públicos que tengan en cuenta el patrimonio previo y el nivel de ingresos de las personas contribuyentes.",
+      "pagina": 85,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal",
+        "#Fiscalidad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 146,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Aplicar fiscalidad progresiva y eliminar privilegios fiscales a rentas altas",
+      "resumen": "Impulsar un sistema fiscal autonómico más progresivo para que paguen más quienes más tienen y aumentar recaudación estructural para servicios públicos. Suprimir beneficios fiscales considerados regresivos desde el inicio de legislatura.",
+      "cita_literal": "Impulso para todo el sistema fiscal de la Comunidad Autónoma sobre el que tiene competencias directas y capacidad de decisión, de una fiscalidad progresiva que haga pagar más a quienes más tienen, basada en criterios de justicia fiscal, que permita un aumento.",
+      "pagina": 85,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal",
+        "#Fiscalidad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 147,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Reducir IBI y circulación para favorecer empadronamiento rural",
+      "resumen": "Poner en marcha con ayuntamientos reducciones del IBI y del impuesto de circulación para fomentar empadronamiento en zonas rurales. Limitar la medida a vivienda y vehículo habituales.",
+      "cita_literal": "Pondremos en marcha, en colaboración con los Ayuntamientos, medidas de reducciones fiscales en los impuestos de Bienes Inmuebles (IBI) y del Impuesto de Circulación, para favorecer el empadronamiento en las zonas rurales exigiendo que sean la vivienda y vehículo habitual los afectados.",
+      "pagina": 86,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal",
+        "#Fiscalidad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    }
+  ]
+}

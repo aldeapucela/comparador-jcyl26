@@ -1,0 +1,2747 @@
+{
+  "bloque_informacion": {
+    "rango_paginas": "Completo",
+    "estado": "finalizado"
+  },
+  "metadatos": {
+    "partido": "Podemos Castilla y León",
+    "candidato": "Miguel Ángel Llamas",
+    "foto_candidato": "img/candidatos/miguelangel-llamas.jpg",
+    "logo": "img/podemos.png",
+    "color": "#6f2c91",
+    "lema": "La fuerza de la gente",
+    "anio": 2026
+  },
+  "propuestas": [
+    {
+      "id": 1,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler asequible",
+      "titulo_corto": "Aplicación autonómica de la Ley de Vivienda y control de alquileres",
+      "resumen": "Aplicar de forma inmediata la Ley estatal de Vivienda en toda Castilla y León, declarar zonas tensionadas y fijar un índice autonómico obligatorio de precios. Blindar al menos el 3% del presupuesto autonómico para políticas de vivienda.",
+      "cita_literal": "Pondremos en aplicación de manera inmediata para todo el territorio de la Comunidad Autónoma, y con carácter reforzado mediante legislación específica propia del ámbito competencial autonómico creada a tal efecto durante la legislatura, la Ley de Vivienda estatal (Ley 12/2023, por el derecho a la vivienda).",
+      "pagina": 4,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler",
+        "#AccesoVivienda"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 2,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso a vivienda digna",
+      "titulo_corto": "Derecho a la vivienda exigible ante la administración y la justicia",
+      "resumen": "Blindar el acceso a vivienda como derecho subjetivo exigible y crear un procedimiento preferente y urgente para reclamarlo. Garantizar respuesta efectiva frente a la inactividad administrativa.",
+      "cita_literal": "Blindaremos el derecho a la vivienda como un derecho subjetivo exigible ante las Administraciones públicas y la Justicia, estableciendo las garantías sustantivas y procedimentales necesarias para lograr su plena efectividad.",
+      "pagina": 4,
+      "tags": [
+        "#Vivienda",
+        "#ViviendaPublica",
+        "#AccesoVivienda"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 3,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler asequible",
+      "titulo_corto": "Tope del 30% de ingresos para vivienda y suministros",
+      "resumen": "Fijar que los hogares vulnerables no destinen más del 30% de su renta a vivienda y suministros en alquiler público. Aplicar ayudas progresivas para que el resto de familias tampoco supere ese umbral.",
+      "cita_literal": "Estableceremos un límite de renta para alquileres públicos para que las familias en situación de vulnerabilidad no destinen más del 30% de los ingresos de la unidad familiar al pago por la vivienda y suministros básicos, y de manera simultánea, para otro.",
+      "pagina": 4,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler",
+        "#AccesoVivienda"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 4,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso a vivienda digna",
+      "titulo_corto": "Creación del Servicio Público de Vivienda de Castilla y León",
+      "resumen": "Crear un organismo público específico para ordenar prestaciones y garantizar acceso a vivienda digna y asequible. Coordinar y asegurar el derecho a la vivienda en todo el territorio.",
+      "cita_literal": "Crearemos el Servicio Público de Vivienda de Castilla y León como estructura organizativa que pondrá en marcha un catálogo de prestaciones para asegurar el acceso a una vivienda digna y asequible.",
+      "pagina": 5,
+      "tags": [
+        "#Vivienda",
+        "#ViviendaPublica",
+        "#AccesoVivienda"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 5,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler asequible",
+      "titulo_corto": "Empresa pública de vivienda para ampliar alquiler social",
+      "resumen": "Crear una empresa pública para gestionar parque residencial, intermediar con propietarios y ofrecer alquileres asequibles. Elevar el parque público hasta el 20% durante la legislatura.",
+      "cita_literal": "Crearemos igualmente una Empresa Pública de Vivienda y gestión inmobiliaria que sirva para hacer frente al lobby inmobiliario mediante la gestión directa del parque público de vivienda existente, así como a través de mecanismos de intermediación entre personas propietarias particulares que decidan.",
+      "pagina": 5,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler",
+        "#AccesoVivienda"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 6,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler asequible",
+      "titulo_corto": "Licencia obligatoria para alquilar y sanciones por fraude",
+      "resumen": "Exigir licencia administrativa para alquilar viviendas, vinculada a habitabilidad, precio regulado y ausencia de fraude. Sancionar el alquiler sin licencia como infracción muy grave.",
+      "cita_literal": "Implantaremos una licencia administrativa obligatoria para el alquiler de viviendas, vinculada al cumplimiento de criterios de habitabilidad, precios regulados y ausencia de fraude. El alquiler sin licencia será considerado infracción muy grave y conllevará sanciones, así como la pérdida de cualquier beneficio.",
+      "pagina": 5,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler",
+        "#AccesoVivienda"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 7,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler asequible",
+      "titulo_corto": "Plan integral contra la especulación y pisos turísticos",
+      "resumen": "Incluir límites de compra para usos no habituales, medidas coercitivas sobre vivienda vacía, inspección específica y restricciones a pisos turísticos. Priorizar el uso social de la vivienda frente al uso especulativo.",
+      "cita_literal": "Aprobaremos un plan autonómico específico para acabar con la especulación inmobiliaria y garantizar así el derecho a la vivienda.",
+      "pagina": 5,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler",
+        "#AccesoVivienda"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 8,
+      "categoria": "Vivienda",
+      "subcategoria": "Vivienda vacía y uso residencial",
+      "titulo_corto": "Multas reforzadas a viviendas vacías en uso especulativo",
+      "resumen": "Establecer un régimen sancionador autonómico para vivienda desocupada con foco en grandes tenedores. Aplicar multas elevadas y coercitivas hasta su incorporación al uso residencial efectivo.",
+      "cita_literal": "Estableceremos un régimen sancionador autonómico específico contra la vivienda vacía, con multas económicas elevadas, para quienes mantengan viviendas fuera del mercado de forma especulativa, especialmente grandes tenedores, incluyendo multas coercitivas periódicas hasta la efectiva puesta del inmueble en uso residencial realmente disponible.",
+      "pagina": 6,
+      "tags": [
+        "#Vivienda",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 9,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Servicios sociales y cuidados",
+      "titulo_corto": "Ningún desahucio sin alternativa habitacional efectiva",
+      "resumen": "Garantizar alojamiento alternativo digno para personas y familias afectadas por desahucios cuando no se puedan paralizar. Reforzar protección en hogares con menores, discapacidad, personas mayores o vulnerabilidad económica.",
+      "cita_literal": "Ningún desahucio sin alternativa habitacional: • Garantizaremos una alternativa habitacional digna a las familias y personas que deban sufrir obligadamente un desahucio, si es que previamente no se ha logrado su paralización en virtud de la legalidad autonómica y estatal existente, así.",
+      "pagina": 6,
+      "tags": [
+        "#ServiciosSociales",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de servicios sociales y cuidados?"
+    },
+    {
+      "id": 10,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler asequible",
+      "titulo_corto": "Registro de vivienda deshabitada y plan de movilización",
+      "resumen": "Crear un registro autonómico para identificar vivienda vacía y activar su incorporación al alquiler social mediante incentivos y obligaciones. Definir de forma estricta qué se considera uso residencial efectivo.",
+      "cita_literal": "Crearemos un Registro de Vivienda Deshabitada. Es necesario conocer cuántas viviendas vacías existen en nuestra comunidad para diseñar planes que permitan su transformación en hogares para las familias que lo necesitan.",
+      "pagina": 6,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler",
+        "#AccesoVivienda"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 11,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso a vivienda digna",
+      "titulo_corto": "Plan para erradicar sinhogarismo, chabolismo e infravivienda",
+      "resumen": "Impulsar políticas integrales para que personas en situación de exclusión accedan a vivienda digna con acompañamiento social continuado. Desarrollar una estrategia específica para superar chabolismo e infravivienda con enfoque de derechos humanos.",
+      "cita_literal": "Impulsaremos políticas integrales orientadas a poner fin al sinhogarismo, garantizando a las personas en situación de vulnerabilidad el acceso efectivo a una vivienda digna y el acompañamiento social continuado, y reforzando la protección social para prevenir y evitar situaciones de desalojo. Se.",
+      "pagina": 7,
+      "tags": [
+        "#Vivienda",
+        "#ViviendaPublica",
+        "#AccesoVivienda"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 12,
+      "categoria": "Vivienda",
+      "subcategoria": "Urbanismo y vivienda habitual",
+      "titulo_corto": "Reforma urbanística para priorizar la vivienda habitual",
+      "resumen": "Modificar la legislación urbanística para vincular el uso residencial a su función habitacional real. Evitar usos desviados y consolidar la vivienda habitual como destino prioritario.",
+      "cita_literal": "Reformaremos la legislación urbanística, con carácter integral, para que el uso residencial quede vinculado jurídicamente a su función habitacional efectiva, configurándolo como un uso finalista orientado prioritariamente a vivienda habitual.",
+      "pagina": 7,
+      "tags": [
+        "#Vivienda",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 13,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso a vivienda digna",
+      "titulo_corto": "Plan de vivienda joven con soluciones estables",
+      "resumen": "Diseñar una política específica de vivienda joven para facilitar emancipación y proyectos de vida sostenibles. Sustituir soluciones transitorias por medidas estructurales de acceso.",
+      "cita_literal": "Realizaremos un Plan de Vivienda con perspectiva joven que asegure poder desarrollar y planificar sus vidas, no siendo soluciones transitorias.",
+      "pagina": 7,
+      "tags": [
+        "#Vivienda",
+        "#ViviendaPublica",
+        "#AccesoVivienda"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 14,
+      "categoria": "Vivienda",
+      "subcategoria": "Protección frente a desahucios",
+      "titulo_corto": "Tanteo y retracto para ampliar parque público asequible",
+      "resumen": "Ampliar derechos de compra preferente de la administración en operaciones con vivienda, especialmente ante fondos y grandes propietarios. Obligar a municipios a utilizar esas herramientas cuando sea posible.",
+      "cita_literal": "Para ampliar, de forma ágil, consistente y a bajo coste para la administración, el hasta ahora prácticamente inexistente parque público de vivienda bajo control directo de la Administración autonómica, regularemos y ampliaremos los derechos de tanteo y retracto para que dicha administración.",
+      "pagina": 7,
+      "tags": [
+        "#Vivienda",
+        "#ViviendaPublica",
+        "#AccesoVivienda"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 15,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso a vivienda digna",
+      "titulo_corto": "Prohibición de vender vivienda pública a fondos especulativos",
+      "resumen": "Impedir la venta de vivienda pública cuando reduzca el parque disponible para políticas sociales. Bloquear expresamente operaciones con fondos buitre y operadores especulativos.",
+      "cita_literal": "Prohibiremos toda venta de vivienda pública por parte de la administración que se realice con el objetivo de llevar a cabo una reducción de los parques públicos de vivienda existentes en disposición de la administración autonómica, y específicamente, aunque no exclusivamente, su.",
+      "pagina": 7,
+      "tags": [
+        "#Vivienda",
+        "#ViviendaPublica",
+        "#AccesoVivienda"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 16,
+      "categoria": "Vivienda",
+      "subcategoria": "Vivienda pública protegida",
+      "titulo_corto": "Blindaje permanente de la calificación de vivienda pública",
+      "resumen": "Establecer que la vivienda pública mantenga su carácter asequible y no pueda explotarse con fines lucrativos por empresas. Regular compraventa y herencia para mantener destino social.",
+      "cita_literal": "Garantizaremos igualmente que las viviendas de naturaleza pública no perderán en ningún momento la calificación de vivienda asequible, que no podrán cederse ni alquilarse a personas jurídicas o empresas privadas para su explotación lucrativa, y que en caso de venta por parte.",
+      "pagina": 8,
+      "tags": [
+        "#Vivienda",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 17,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso a vivienda digna",
+      "titulo_corto": "Protección de inquilinos e hipotecados como consumidores",
+      "resumen": "Incorporar contratos de alquiler y préstamos hipotecarios al marco de protección de consumo en Castilla y León. Reforzar garantías jurídicas frente a abusos contractuales.",
+      "cita_literal": "Impulsaremos la incorporación de los contratos de arrendamiento y de préstamo hipotecario bajo el paraguas de la protección jurídica de las personas consumidoras en Castilla y León.",
+      "pagina": 8,
+      "tags": [
+        "#Vivienda",
+        "#ViviendaPublica",
+        "#AccesoVivienda"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 18,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso a vivienda digna",
+      "titulo_corto": "Reserva obligatoria de suelo y 30% de VPO en promociones",
+      "resumen": "Obligar a reservar suelo para vivienda pública en planeamiento urbanístico y fijar una cuota mínima de VPO en nuevas promociones. Aumentar oferta protegida por vía normativa.",
+      "cita_literal": "En materia de urbanismo, obligaremos por Ley a que los Planes Generales de Ordenación Urbana contarán con reservas de suelo en los PGOU para construcción de viviendas públicas, así como, en coherencia y sintonía legal con la reciente sentencia del T ribunal.",
+      "pagina": 8,
+      "tags": [
+        "#Vivienda",
+        "#ViviendaPublica",
+        "#AccesoVivienda"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 19,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Medio rural y despoblación",
+      "titulo_corto": "Rehabilitación de vivienda y cascos urbanos con foco rural",
+      "resumen": "Impulsar un plan de rehabilitación de vivienda para frenar despoblación juvenil en pueblos, incorporando criterios de patrimonio y eficiencia energética. Alcanzar acuerdo con el Estado para recuperar vivienda vacía de la SAREB.",
+      "cita_literal": "Impulsaremos una estrategia de rehabilitación de vivienda y de cascos urbanos ambiciosa, especialmente en núcleos rurales, que ayude a poner freno al éxodo de jóvenes y que evite el vaciamiento de nuestros pueblos.",
+      "pagina": 8,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#Despoblacion"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de reto demográfico y despoblación?"
+    },
+    {
+      "id": 20,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Medio rural y despoblación",
+      "titulo_corto": "Vivienda pública rural para personal de servicios esenciales",
+      "resumen": "Crear un plan para facilitar alojamiento a profesionales de servicios públicos destinados al medio rural con bolsa de vivienda habitable. Añadir parque de alquiler asequible, ayudas a primera vivienda y movilización de inmuebles vacíos.",
+      "cita_literal": "Elaboraremos y ejecutaremos un Plan que facilite vivienda pública en el medio rural para los y las profesionales que trabajan en la prestación de servicios públicos en esos ámbitos territoriales. Entre otras medidas, se creará una Bolsa de Vivienda habitable de ámbito.",
+      "pagina": 9,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#Despoblacion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de reto demográfico y despoblación?"
+    },
+    {
+      "id": 21,
+      "categoria": "Otros",
+      "subcategoria": "Igualdad y derechos LGTBIQA+",
+      "titulo_corto": "Combatir la violencia digital y política contra mujeres y personas LGTBIQA+",
+      "resumen": "Prevenir, atender y sancionar el acoso, las amenazas y las campañas de odio en entornos digitales y en la esfera pública. Exigir a las plataformas retirar contenidos de odio y proteger derechos fundamentales.",
+      "cita_literal": "Reconocimiento y lucha contra la violencia digital y la violencia política contra las mujeres y las personas LGTBIQA+, impulsando medidas de prevención, atención y protección frente al acoso, las amenazas y las campañas de odio dirigidas a expulsar a las mujeres del espacio público.",
+      "pagina": 44,
+      "tags": [
+        "#Derechos",
+        "#Igualdad",
+        "#DerechosLGTBI"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 22,
+      "categoria": "Otros",
+      "subcategoria": "Igualdad y políticas feministas",
+      "titulo_corto": "Evaluar con datos públicos las políticas contra violencias machistas",
+      "resumen": "Crear sistemas de seguimiento con indicadores desagregados y rendición periódica de cuentas. Reforzar la coordinación entre administraciones y movimiento feminista para corregir carencias.",
+      "cita_literal": "Creación de sistemas de seguimiento, evaluación y transparencia de las políticas contra las violencias machistas con indicadores públicos, datos desagregados y rendición de cuentas periódica y refuerzo de la coordinación entre administraciones y con el movimiento feminista para detectar carencias a corregir.",
+      "pagina": 44,
+      "tags": [
+        "#Derechos",
+        "#Salud",
+        "#Hospitales"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 23,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Sistema sanitario público",
+      "titulo_corto": "Aplicar la Ley de salud sexual y reproductiva en toda la comunidad",
+      "resumen": "Implementar de forma integral la Ley Orgánica 1/2023 en Castilla y León. Garantizar planificación familiar y salud sexual pública con criterios de universalidad y equidad territorial.",
+      "cita_literal": "Implementación integral en Castilla y León de la Ley Orgánica 1/2023, de 28 de febrero, de salud sexual y reproductiva y de la interrupción voluntaria del embarazo, garantizando un sistema público de planificación familiar, salud sexual y reproductiva basado en la universalidad.",
+      "pagina": 44,
+      "tags": [
+        "#SanidadPublica",
+        "#Salud",
+        "#Hospitales"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de sanidad pública?"
+    },
+    {
+      "id": 24,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Sistema sanitario público",
+      "titulo_corto": "Garantizar aborto en hospital público cercano también en el medio rural",
+      "resumen": "Asegurar la interrupción voluntaria del embarazo en el centro público más próximo al domicilio. Reducir desigualdades territoriales y garantizar seguridad, dignidad y autonomía.",
+      "cita_literal": "Garantía del derecho al aborto en la sanidad pública de Castilla y León corrigiendo las desigualdades territoriales en el acceso al aborto que afectan especialmente a mujeres del medio rural, asegurando que la interrupción voluntaria del embarazo pueda realizarse en el centro.",
+      "pagina": 44,
+      "tags": [
+        "#SanidadPublica",
+        "#Salud",
+        "#Hospitales"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de sanidad pública?"
+    },
+    {
+      "id": 25,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Sistema sanitario público",
+      "titulo_corto": "Crear unidades de IVE en las nueve provincias",
+      "resumen": "Abrir unidades específicas en los hospitales de referencia provinciales para atender todo el proceso de IVE. Incorporar acompañamiento psicológico durante el procedimiento.",
+      "cita_literal": "Creación de Unidades de IVE en los hospitales de referencia de las nueve provincias, que ofrezcan atención integral durante todo el procedimiento y recursos de acompañamiento, en particular, de acompañamiento psicológico.",
+      "pagina": 44,
+      "tags": [
+        "#SanidadPublica",
+        "#Salud",
+        "#Hospitales"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de sanidad pública?"
+    },
+    {
+      "id": 26,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Publicar y controlar la objeción de conciencia en IVE",
+      "resumen": "Gestionar con transparencia los listados de objeción de conciencia del personal sanitario. Evitar que la objeción individual bloquee un derecho reconocido por ley.",
+      "cita_literal": "Gestión de forma transparente de los listados de objeción de conciencia, garantizando que el ejercicio de un derecho individual no pueda impedir el acceso a un derecho colectivo reconocido por ley.",
+      "pagina": 44,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 27,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Sistema sanitario público",
+      "titulo_corto": "Eliminar barreras al aborto para mujeres migrantes",
+      "resumen": "Suprimir obstáculos económicos y administrativos en el acceso a la IVE para mujeres migrantes. Reforzar información accesible y multilingüe sobre derechos sexuales y reproductivos.",
+      "cita_literal": "Eliminación de cualquier barrera económica o administrativa que limite el ejercicio del derecho al aborto de las mujeres migrantes en cumplimiento de la legislación estatal y de los principios de universalidad del sistema público de salud.",
+      "pagina": 44,
+      "tags": [
+        "#SanidadPublica",
+        "#Salud",
+        "#Hospitales"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de sanidad pública?"
+    },
+    {
+      "id": 28,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Ofrecer productos menstruales gratuitos en centros públicos",
+      "resumen": "Facilitar gratuitamente productos de gestión menstrual en centros educativos y de acción social. Reducir desigualdades económicas vinculadas a la salud menstrual.",
+      "cita_literal": "Acceso gratuito a productos de gestión menstrual en los centros educativos y en los centros de acción social.",
+      "pagina": 44,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 29,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Salud sexual y reproductiva",
+      "titulo_corto": "Garantizar acceso universal a anticonceptivos",
+      "resumen": "Asegurar acceso universal a métodos anticonceptivos, incluidos los de larga duración. Priorizar atención a jóvenes, personas con discapacidad y mujeres migrantes.",
+      "cita_literal": "Acceso universal a métodos anticonceptivos, incluida anticoncepción de larga duración, con atención específica a jóvenes, personas con discapacidad y mujeres migrantes.",
+      "pagina": 44,
+      "tags": [
+        "#SanidadPublica",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de sanidad pública?"
+    },
+    {
+      "id": 30,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Detectar y tratar de forma integral la endometriosis",
+      "resumen": "Implantar programas de detección temprana y atención integral para endometriosis y otras patologías infradiagnosticadas. Reducir retrasos diagnósticos y mejorar seguimiento clínico.",
+      "cita_literal": "Programas de detección temprana y atención integral de endometriosis y otras patologías invisibilizadas.",
+      "pagina": 45,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 31,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Sistema sanitario público",
+      "titulo_corto": "Reforzar cribado de cáncer de mama en la sanidad pública",
+      "resumen": "Aumentar recursos humanos y materiales para cribado y seguimiento del cáncer de mama. Reducir externalizaciones en hospitales y centros privados.",
+      "cita_literal": "Refuerzo del cribado y seguimiento del cáncer de mama en la sanidad pública mediante el aumento de la partida presupuestaria para dotar de recursos humanos y materiales suficientes para terminar con las externalizaciones de estos servicios en hospitales y centros privados.",
+      "pagina": 45,
+      "tags": [
+        "#SanidadPublica",
+        "#Salud",
+        "#Hospitales"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de sanidad pública?"
+    },
+    {
+      "id": 32,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Reconocer y prevenir la violencia obstétrica",
+      "resumen": "Reconocer la violencia obstétrica como violencia machista e implantar protocolos de atención respetuosa en embarazo, parto y posparto. Garantizar consentimiento informado y autonomía de las mujeres.",
+      "cita_literal": "Reconocimiento de la violencia obstétrica como una forma de violencia machista y garantía de una atención sanitaria respetuosa durante el embarazo, parto y posparto basada en el consentimiento informado, la autonomía de las mujeres y el respeto a sus decisiones.",
+      "pagina": 45,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 33,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Medio rural y despoblación",
+      "titulo_corto": "Formar al personal sanitario en salud sexual con enfoque feminista",
+      "resumen": "Capacitar al personal sanitario en salud sexual y reproductiva con perspectiva feminista y LGTBIQA+. Mejorar la atención a jóvenes y mujeres del medio rural.",
+      "cita_literal": "Formación del personal sanitario en salud sexual y reproductiva con perspectiva feminista y LGTBIQA+, especialmente dirigida a jóvenes y mujeres en el medio rural, como herramienta clave para prevenir desigualdades y garantizar una atención integral.",
+      "pagina": 45,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#Despoblacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de reto demográfico y despoblación?"
+    },
+    {
+      "id": 34,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación pública",
+      "titulo_corto": "Implantar educación sexual integral en todas las etapas",
+      "resumen": "Incorporar educación sexual feminista y basada en derechos en todas las etapas educativas, adaptada a la edad. Trabajar consentimiento, diversidad y prevención de violencias machistas y LGTBIQA+fóbicas.",
+      "cita_literal": "Educación sexual integral, feminista y basada en derechos en todas las etapas educativas, adaptada a la edad, que promueva el conocimiento del propio cuerpo, el consentimiento, el buen trato, la diversidad sexual y de género y la prevención de violencias machistas y LGTBIQA+fóbicas.",
+      "pagina": 45,
+      "tags": [
+        "#Educacion",
+        "#EscuelaPublica",
+        "#EquidadEducativa"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de educación y juventud?"
+    },
+    {
+      "id": 35,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Servicios sociales y cuidados",
+      "titulo_corto": "Crear un sistema público de cuidados con empleo digno",
+      "resumen": "Poner en marcha un sistema público de cuidados basado en corresponsabilidad social y gestión pública. Establecer contratos indefinidos y condiciones salariales dignas.",
+      "cita_literal": "Creación de un Sistema Público de Cuidados para propiciar el cambio de modelo y alcanzar la corresponsabilidad social en los cuidados. Con contratos indefinidos y unas condiciones salariales y laborales dignas para la plantilla trabajadora garantizado mediante la gestión pública.",
+      "pagina": 45,
+      "tags": [
+        "#ServiciosSociales",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de servicios sociales y cuidados?"
+    },
+    {
+      "id": 36,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Servicios sociales y cuidados",
+      "titulo_corto": "Ampliar ayuda a domicilio según la ley de dependencia",
+      "resumen": "Aumentar financiación para cumplir las horas mensuales de ayuda a domicilio previstas en la ley. Mejorar condiciones laborales y salariales de la plantilla.",
+      "cita_literal": "Aumento de la financiación del programa de Ayuda a Domicilio para cumplir con el número de horas de atención mensual establecido inicialmente por la ley de atención a la dependencia, garantizando unas condiciones salariales y laborales dignas para la plantilla trabajadora.",
+      "pagina": 45,
+      "tags": [
+        "#ServiciosSociales",
+        "#Cuidados",
+        "#Dependencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de servicios sociales y cuidados?"
+    },
+    {
+      "id": 37,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Servicios sociales y cuidados",
+      "titulo_corto": "Aumentar plazas públicas residenciales para personas mayores",
+      "resumen": "Incrementar la oferta pública residencial para asegurar cobertura suficiente y acceso en igualdad. Garantizar precios asequibles para familias y personas usuarias.",
+      "cita_literal": "Aumento del número de plazas públicas residenciales para personas mayores que garantice la cobertura suficiente para acceder en igualdad a plazas que sean asequibles para las familias y las personas usuarias.",
+      "pagina": 45,
+      "tags": [
+        "#ServiciosSociales",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de servicios sociales y cuidados?"
+    },
+    {
+      "id": 38,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Servicios sociales y cuidados",
+      "titulo_corto": "Reforzar transporte a la demanda para acceder a cuidados",
+      "resumen": "Dotar de más infraestructura, personal y medios al transporte a la demanda. Garantizar acceso efectivo a cuidados y servicios en toda Castilla y León.",
+      "cita_literal": "Dotación de más infraestructura, medios y personal para garantizar que el transporte a la demanda cubra las necesidades de acceso a cuidados y servicios de la ciudadanía de Castilla y León.",
+      "pagina": 45,
+      "tags": [
+        "#ServiciosSociales",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de servicios sociales y cuidados?"
+    },
+    {
+      "id": 39,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación pública",
+      "titulo_corto": "Ampliar plazas públicas de escuelas infantiles de 0 a 3",
+      "resumen": "Incrementar la oferta pública de escuelas infantiles de 0 a 3 años con recursos y personal suficiente. Aumentar presupuesto y empleo público para cubrir la demanda.",
+      "cita_literal": "Aumento del número de plazas públicas en escuelas infantiles para cubrir las necesidades educativas de los niños y niñas de 0 a 3 años, con recursos y personal suficiente, ampliando el presupuesto y la oferta de empleo público.",
+      "pagina": 45,
+      "tags": [
+        "#Educacion",
+        "#EscuelaPublica",
+        "#EquidadEducativa"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de educación y juventud?"
+    },
+    {
+      "id": 40,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Servicios sociales y cuidados",
+      "titulo_corto": "Incorporar perspectiva de género en servicios sociales y dependencia",
+      "resumen": "Analizar la situación inicial de los servicios sociales con enfoque de género y diseñar prestaciones que reduzcan impactos negativos sobre las mujeres. Integrar esta perspectiva de forma transversal en el sistema de dependencia.",
+      "cita_literal": "Analizar desde el inicio la perspectiva de género de la situación de partida de los servicios sociales para un posterior diseño de las prestaciones, planes y protocolos que disminuyan el impacto negativo para las mujeres atendiendo a parámetros como la situación socioeconómica.",
+      "pagina": 46,
+      "tags": [
+        "#ServiciosSociales",
+        "#Cuidados",
+        "#Dependencia"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de servicios sociales y cuidados?"
+    },
+    {
+      "id": 41,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación pública",
+      "titulo_corto": "Implantar igualdad y educación sexual en todo el sistema educativo",
+      "resumen": "Implantar contenidos evaluables de igualdad, prevención de violencias machistas y educación sexual integral en todas las etapas educativas. Formar de manera obligatoria al profesorado para aplicarlos correctamente.",
+      "cita_literal": "Implantación efectiva y evaluable de contenidos de igualdad, prevención de violencias machistas y educación sexual integral en todas las etapas educativas, con formación obligatoria del profesorado.",
+      "pagina": 46,
+      "tags": [
+        "#Educacion",
+        "#EscuelaPublica",
+        "#EquidadEducativa"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de educación y juventud?"
+    },
+    {
+      "id": 42,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Universidad pública",
+      "titulo_corto": "Incorporar feminismo y diversidad en grados universitarios públicos",
+      "resumen": "Firmar convenios con universidades públicas para incluir asignaturas sobre feminismo y diversidad sexual y de género en los grados. Priorizar su incorporación en ámbitos educativos, sociales y sanitarios.",
+      "cita_literal": "Convenios con universidades públicas para incorporar asignaturas específicas sobre feminismo y diversidad sexual y de género en los Grados, especialmente en ámbitos educativos, sociales y sanitarios.",
+      "pagina": 46,
+      "tags": [
+        "#Educacion",
+        "#Universidad",
+        "#EquidadEducativa"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de educación y juventud?"
+    },
+    {
+      "id": 43,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Garantizar plazas públicas en FP de Promoción de Igualdad de Género",
+      "resumen": "Asegurar oferta suficiente de plazas públicas en el ciclo superior de Promoción de Igualdad de Género. Evitar que la falta de plazas limite el acceso a esta formación especializada.",
+      "cita_literal": "Garantía de plazas públicas para el ciclo superior de Promoción de Igualdad de Género.",
+      "pagina": 46,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 44,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Universidad pública",
+      "titulo_corto": "Recuperar la memoria democrática de mujeres y personas LGTBIQA+",
+      "resumen": "Investigar y visibilizar el papel histórico de mujeres y personas LGTBIQA+ en la lucha democrática y social en Castilla y León. Crear programas de archivos orales y recuperación documental con universidades y entidades sociales.",
+      "cita_literal": "Recuperación y reconocimiento del papel histórico de las mujeres y personas LGTBIQA+ en la lucha por la democracia y los derechos sociales en Castilla y León y elaboración de una estrategia específica que incluya el desarrollo de programas de investigación, archivos orales.",
+      "pagina": 46,
+      "tags": [
+        "#Educacion",
+        "#Universidad",
+        "#EquidadEducativa"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de educación y juventud?"
+    },
+    {
+      "id": 45,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Integrar memoria feminista y LGTBIQA+ en educación y cultura",
+      "resumen": "Incorporar memoria democrática feminista y LGTBIQA+ en contenidos educativos, programas culturales y materiales pedagógicos. Garantizar su presencia estable en la enseñanza y en la acción cultural pública.",
+      "cita_literal": "Incorporación de la memoria democrática del movimiento feminista y LGTBIQA+ en los contenidos educativos, programas culturales y materiales pedagógicos.",
+      "pagina": 46,
+      "tags": [
+        "#Derechos",
+        "#Igualdad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 46,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Apoyar proyectos culturales sobre genealogías feministas y LGTBIQA+",
+      "resumen": "Financiar y acompañar proyectos artísticos y culturales que recuperen genealogías feministas y LGTBIQA+ en Castilla y León. Reforzar su difusión pública para ampliar reconocimiento social.",
+      "cita_literal": "Apoyo a proyectos culturales y artísticos que recuperen genealogías feministas y LGTBIQA+ en Castilla y León.",
+      "pagina": 46,
+      "tags": [
+        "#Derechos",
+        "#Igualdad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 47,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Medio rural y despoblación",
+      "titulo_corto": "Crear rutas y espacios de memoria feminista y LGTBIQA+",
+      "resumen": "Incorporar rutas, señalética y espacios de memoria democrática feminista y LGTBIQA+ en el territorio. Priorizar también su despliegue en municipios rurales.",
+      "cita_literal": "Incorporación de rutas, señalética y espacios de memoria democrática feminista y LGTBIQA+ en el territorio, con especial atención al medio rural.",
+      "pagina": 46,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#Despoblacion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de reto demográfico y despoblación?"
+    },
+    {
+      "id": 48,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Medio rural y despoblación",
+      "titulo_corto": "Impulsar verdad, justicia y reparación para víctimas del franquismo",
+      "resumen": "Coordinar con el Estado medidas de verdad, justicia, reparación y no repetición para víctimas feministas y LGTBIQA+ del franquismo. Asegurar reconocimiento institucional y reparación efectiva.",
+      "cita_literal": "Impulso, en coordinación con el Estado, de las medidas de verdad, justicia, reparación y garantía de no repetición para las víctimas feministas y LGTBIQA+ del franquismo. Feminismos rurales para luchar contra la despoblación.",
+      "pagina": 46,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#Despoblacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de reto demográfico y despoblación?"
+    },
+    {
+      "id": 49,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Medio rural y despoblación",
+      "titulo_corto": "Reconocer el trabajo de las mujeres rurales con derechos y recursos",
+      "resumen": "Reconocer de forma efectiva el trabajo de las mujeres rurales mediante derechos laborales y protección social. Dotar recursos para apoyar emprendimiento femenino en el medio rural.",
+      "cita_literal": "Reconocimiento efectivo del trabajo de las mujeres rurales mediante derechos laborales, protección social y dotación de recursos para la línea de apoyo a mujeres emprendedoras en el medio rural.",
+      "pagina": 46,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#Despoblacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de reto demográfico y despoblación?"
+    },
+    {
+      "id": 50,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Medio rural y despoblación",
+      "titulo_corto": "Apoyar economía feminista rural y titularidad compartida",
+      "resumen": "Impulsar programas específicos para proyectos económicos feministas y redes comunitarias en el medio rural. Promover la titularidad compartida para reforzar autonomía económica de las mujeres.",
+      "cita_literal": "Programas específicos de apoyo a proyectos económicos feministas, redes comunitarias en el medio rural y promoción de la titularidad compartida.",
+      "pagina": 46,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#Despoblacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de reto demográfico y despoblación?"
+    },
+    {
+      "id": 51,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Aplicar la Ley trans y LGTBIQA+ con desarrollo autonómico",
+      "resumen": "Implementar de forma integral en Castilla y León la Ley 4/2023 mediante desarrollo normativo autonómico y presupuesto suficiente. Coordinar su aplicación en sanidad, educación, servicios sociales y empleo.",
+      "cita_literal": "Implementación integral en Castilla y León de la Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBIQA+ mediante el desarrollo normativo autonómico necesario, la dotación presupuestaria suficiente y la coordinación entre las áreas sanitaria, educativa, social y laboral.",
+      "pagina": 47,
+      "tags": [
+        "#Derechos",
+        "#Igualdad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 52,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Aprobar una ley autonómica integral de derechos LGTBIQA+",
+      "resumen": "Aprobar una ley autonómica de igualdad y diversidad sexual y de género para prevenir y sancionar la discriminación. Dar cobertura estable a políticas públicas LGTBIQA+ en toda la comunidad.",
+      "cita_literal": "Aprobación de una ley LGTBIQA+ autonómica, apoyando la Proposición de Ley de Igualdad Social de la Diversidad Sexual y de Género, y de Políticas Públicas contra la discriminación por orientación sexual e identidad de género de la Comunidad de Castilla y León.",
+      "pagina": 47,
+      "tags": [
+        "#Derechos",
+        "#Igualdad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 53,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Crear una Dirección General de Derechos LGTBIQA+",
+      "resumen": "Constituir una dirección general específica dentro de la consejería competente para coordinar políticas LGTBIQA+. Centralizar planificación, seguimiento y evaluación de medidas públicas.",
+      "cita_literal": "Creación de la Dirección General de Derechos LGTBIQA+ dependiente de la Consejería de Igualdad, Diversidad y contra las Violencias Machistas.",
+      "pagina": 47,
+      "tags": [
+        "#Derechos",
+        "#Igualdad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 54,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Medio rural y despoblación",
+      "titulo_corto": "Financiar de forma estable al tejido asociativo LGTBIQA+ rural",
+      "resumen": "Establecer líneas estables de financiación pública para asociaciones LGTBIQA+, con prioridad en el medio rural. Sostener proyectos de acompañamiento, cultura diversa, memoria y lucha contra la LGTBIfobia.",
+      "cita_literal": "Impulso de líneas estables de financiación pública para fortalecer el tejido asociativo LGTBIQA+, especialmente en el medio rural, apoyando proyectos de acompañamiento comunitario, cultura diversa, memoria democrática y lucha contra la lgtbifobia. Un mundo rural seguro para acabar con el sexilio.",
+      "pagina": 47,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#Despoblacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de reto demográfico y despoblación?"
+    },
+    {
+      "id": 55,
+      "categoria": "Otros",
+      "subcategoria": "Derechos LGTBIQA+ en el medio rural",
+      "titulo_corto": "Crear una red de Puntos Arcoíris en municipios rurales",
+      "resumen": "Habilitar una red de espacios rurales seguros y libres de violencias LGTBIQA+fóbicas en equipamientos comunitarios. Garantizar personal formado, información útil y acceso a recursos de apoyo.",
+      "cita_literal": "Creación de una Red de Puntos Arcoíris Rurales (centros culturales, bibliotecas, casas jóvenes, espacios comunitarios, etc.) libres de violencias LGTBIQA+fóbicas, con personal formado en diversidad y acceso a información, acompañamiento y recursos autonómicos.",
+      "pagina": 47,
+      "tags": [
+        "#Derechos",
+        "#MedioRural",
+        "#Despoblacion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 56,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Medio rural y despoblación",
+      "titulo_corto": "Lanzar programas comunitarios contra el sexilio rural",
+      "resumen": "Desarrollar medidas de arraigo para frenar el sexilio, incluyendo mentoría intergeneracional y encuentros itinerantes. Respaldar a colectivos locales pequeños aunque no tengan estructura formal.",
+      "cita_literal": "Desarrollo de programas de fomento comunitario y arraigo contra el sexilio, con medidas como una red de mentoría intergeneracional entre personas LGTBIQA+ rurales y urbanas, encuentros itinerantes por provincias y apoyo a colectivos locales pequeños que no tienen estructura formal.",
+      "pagina": 47,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#Despoblacion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de reto demográfico y despoblación?"
+    },
+    {
+      "id": 57,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Medio rural y despoblación",
+      "titulo_corto": "Desplegar equipos itinerantes de atención LGTBIQA+ en pueblos",
+      "resumen": "Crear un dispositivo móvil que recorra municipios para ofrecer asesoría jurídica y psicológica, talleres y formación. Acercar servicios especializados a zonas sin recursos permanentes.",
+      "cita_literal": "Desarrollo de un dispositivo itinerante LGTBIQA+ rural, con equipos móviles que recorran municipios ofreciendo asesoría jurídica y psicológica, talleres educativos, formación a ayuntamientos y asociaciones.",
+      "pagina": 47,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#Despoblacion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de reto demográfico y despoblación?"
+    },
+    {
+      "id": 58,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Arraigo y retorno en el medio rural",
+      "titulo_corto": "Activar un programa Volver al pueblo para personas LGTBIQA+",
+      "resumen": "Impulsar ayudas al retorno rural para personas LGTBIQA+ jóvenes y mayores. Priorizar acceso a vivienda pública en municipios despoblados y apoyar proyectos comunitarios de acogida.",
+      "cita_literal": "Desarrollo de un Programa “Volver al pueblo”, con ayudas al retorno rural para personas LGTBIQA+ jóvenes o mayores, acceso prioritario a vivienda pública en municipios que pierden población y apoyo a proyectos comunitarios.",
+      "pagina": 47,
+      "tags": [
+        "#RetoDemografico",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de reto demográfico y despoblación?"
+    },
+    {
+      "id": 59,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Garantizar alojamiento urgente por expulsión LGTBIfóbica del hogar",
+      "resumen": "Ofrecer alternativa habitacional inmediata a personas expulsadas de su hogar por orientación sexual o identidad de género. Acompañar la respuesta con atención integral social y jurídica.",
+      "cita_literal": "Garantía de alternativa habitacional para las personas que sean expulsadas de sus hogares por su identidad de género u orientación sexual a través de programas específicos, asegurando una respuesta inmediata y un acompañamiento integral.",
+      "pagina": 47,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 60,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Servicios sociales y cuidados",
+      "titulo_corto": "Adaptar residencias para mayores LGTBIQA+ sin discriminación",
+      "resumen": "Incorporar atención específica a la diversidad de personas mayores LGTBIQA+ en centros residenciales. Garantizar envejecimiento digno y libre de discriminación en su propio territorio.",
+      "cita_literal": "Atención a la diversidad de las personas mayores LGTBIQA+ en los centros residenciales para que puedan vivir sus vidas libres de discriminación y garantizar su derecho a permanecer y envejecer siendo en el territorio. Atención sanitaria inclusiva y no discriminatoria.",
+      "pagina": 48,
+      "tags": [
+        "#ServiciosSociales",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de servicios sociales y cuidados?"
+    },
+    {
+      "id": 61,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Garantizar reproducción asistida sin discriminación en la sanidad pública",
+      "resumen": "Asegurar acceso a técnicas de reproducción asistida para mujeres lesbianas, bisexuales y solas dentro del sistema sanitario público. Eliminar discriminaciones por orientación sexual, identidad de género o estado civil.",
+      "cita_literal": "Garantía de acceso dentro del sistema sanitario público a las técnicas de reproducción asistida para mujeres lesbianas, bisexuales y solas, sin discriminación por orientación sexual, identidad de género o estado civil.",
+      "pagina": 48,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 62,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Asegurar atención trans y no binaria sin patologización",
+      "resumen": "Prestar atención sanitaria integral a personas trans y no binarias con enfoque feminista, de autonomía y no patologizante. Descentralizar protocolos, formar al personal y reducir listas de espera injustificadas.",
+      "cita_literal": "Atención sanitaria integral, feminista, no patologizante y basada en la autonomía para las personas trans y no binarias, con protocolos específicos que aseguren la descentralización territorial, la formación del personal sanitario y la eliminación de listas de espera injustificadas.",
+      "pagina": 48,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 63,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Sistema sanitario público",
+      "titulo_corto": "Garantizar acceso público a hormonación y cirugías de afirmación",
+      "resumen": "Ofrecer tratamientos hormonales, atención endocrina y cirugías de afirmación de género en hospitales públicos de referencia. Evitar derivaciones forzadas y desigualdades de acceso.",
+      "cita_literal": "Acceso a tratamientos hormonales, atención endocrina y cirugías de afirmación de género en los hospitales públicos de referencia.",
+      "pagina": 48,
+      "tags": [
+        "#SanidadPublica",
+        "#Salud",
+        "#Hospitales"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de sanidad pública?"
+    },
+    {
+      "id": 64,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Proteger los derechos de personas intersex y su autonomía corporal",
+      "resumen": "Prohibir intervenciones irreversibles en variaciones intersexuales sin necesidad clínica urgente y sin consentimiento informado. Garantizar acompañamiento sanitario y psicosocial a familias desde un enfoque de derechos.",
+      "cita_literal": "Despatologización de las variaciones intersexuales asegurando la prohibición de las intervenciones quirúrgicas o tratamientos médicos irreversibles que no respondan a una necesidad clínica urgente y que no cuenten con el consentimiento informado, así como garantizando el derecho a la autonomía corporal y a la identidad de las personas intersexuales, incluidas las menores de edad.",
+      "pagina": 48,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 65,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Prevención del VIH y las ITS",
+      "titulo_corto": "Reforzar prevención y atención integral del VIH y otras ITS",
+      "resumen": "Impulsar políticas públicas de prevención, diagnóstico precoz y atención integral del VIH y otras ITS. Garantizar acceso universal, gratuito y confidencial en todo el territorio.",
+      "cita_literal": "Refuerzo de las políticas públicas de prevención, diagnóstico precoz y atención integral del VIH y otras ITS, garantizando el acceso universal, gratuito y confidencial en todo el territorio castellano y leonés.",
+      "pagina": 48,
+      "tags": [
+        "#SanidadPublica",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de sanidad pública?"
+    },
+    {
+      "id": 66,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Acceso equitativo a tratamientos",
+      "titulo_corto": "Extender PrEP y antirretrovirales con equidad territorial",
+      "resumen": "Asegurar acceso a PrEP y tratamientos antirretrovirales en condiciones homogéneas en toda la comunidad. Corregir brechas entre zonas urbanas y rurales.",
+      "cita_literal": "Acceso a la profilaxis preexposición (PrEP) y a los tratamientos antirretrovirales en condiciones de equidad territorial, evitando desigualdades entre zonas urbanas y rurales.",
+      "pagina": 48,
+      "tags": [
+        "#SanidadPublica",
+        "#MedioRural",
+        "#Despoblacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de sanidad pública?"
+    },
+    {
+      "id": 67,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación pública",
+      "titulo_corto": "Impulsar campañas públicas contra la serofobia",
+      "resumen": "Desarrollar campañas basadas en evidencia científica y derechos humanos para combatir serofobia. Reducir estigma y discriminación hacia personas con VIH.",
+      "cita_literal": "Impulso de campañas públicas de lucha contra la serofobia, basadas en la evidencia científica y en el enfoque de derechos humanos, combatiendo el estigma y la discriminación hacia las personas con VIH. Educación pública en diversidad.",
+      "pagina": 48,
+      "tags": [
+        "#Educacion",
+        "#EscuelaPublica",
+        "#EquidadEducativa"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de educación y juventud?"
+    },
+    {
+      "id": 68,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Implantar protocolos contra acoso escolar LGTBIQA+fóbico",
+      "resumen": "Crear protocolos de prevención, detección y actuación frente al acoso LGTBIQA+fóbico en todos los centros educativos. Garantizar respuestas rápidas y eficaces.",
+      "cita_literal": "Creación de protocolos de prevención, detección y actuación frente al acoso escolar LGTBIQA+fóbico, garantizando una respuesta rápida y eficaz en todos los centros educativos.",
+      "pagina": 48,
+      "tags": [
+        "#Derechos",
+        "#Igualdad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 69,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Incorporar diversidad sexual y de género en todo el currículo",
+      "resumen": "Integrar de forma transversal y obligatoria contenidos sobre diversidad sexual, familiar y de género en todas las etapas educativas. Aplicar la medida en todos los centros.",
+      "cita_literal": "Incorporación transversal y obligatoria de contenidos sobre respeto a la diversidad sexual, familiar y de género en todas las etapas educativas y en todos los centros educativos.",
+      "pagina": 48,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 70,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Universidad pública",
+      "titulo_corto": "Convertir universidades en espacios libres de LGTBIQA+fobia",
+      "resumen": "Promover iniciativas universitarias para prevenir LGTBIQA+fobia y visibilizar referentes LGTBIQA+ en el ámbito académico, científico y cultural. Consolidar entornos seguros y respetuosos.",
+      "cita_literal": "Impulso para que las universidades de Castilla y León sean espacios libres de LGTBIQA+fobia, con iniciativas que visibilicen referentes LGTBIQA+ presentes y pasados en el ámbito académico, científico y cultural. Derechos laborales LGTBIQA+ para trabajar sin miedo.",
+      "pagina": 49,
+      "tags": [
+        "#Educacion",
+        "#Universidad",
+        "#EquidadEducativa"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de educación y juventud?"
+    },
+    {
+      "id": 71,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Garantizar igualdad laboral LGTBIQA+ en sector público y privado",
+      "resumen": "Asegurar igualdad de trato y no discriminación de personas LGTBIQA+ en acceso, permanencia y promoción laboral. Aplicar la garantía en empleo público y privado.",
+      "cita_literal": "Garantía del derecho a la igualdad de trato y no discriminación de las personas LGTBIQA+ en el acceso, mantenimiento y promoción en el empleo, tanto en el sector público como en el privado.",
+      "pagina": 49,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 72,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Implantar planes LGTBIQA+ en empresas y contratación pública",
+      "resumen": "Exigir aplicación efectiva de planes LGTBIQA+ en empresas, con foco en contratación pública. Ofrecer formación especializada desde la Dirección General de Derechos LGTBIQA+.",
+      "cita_literal": "Implementación efectiva de planes LGTBIQA+ en las empresas, con especial atención a la contratación pública, ofreciendo formación en materia de diversidad sexual y de género desde la Dirección General de Derechos LGTBIQA+ para las empresas que cumplan con ello.",
+      "pagina": 49,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 73,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Reforzar Inspección de Trabajo contra discriminación LGTBIQA+",
+      "resumen": "Incrementar la capacidad inspectora para detectar y sancionar prácticas discriminatorias por orientación sexual, identidad o expresión de género. Mejorar protección en el ámbito laboral.",
+      "cita_literal": "Refuerzo de la Inspección de Trabajo para detectar y sancionar prácticas discriminatorias por orientación sexual, identidad o expresión de género.",
+      "pagina": 49,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 74,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Crear programas de empleo para personas trans y no binarias",
+      "resumen": "Desarrollar medidas específicas de inserción laboral y formación para personas trans y no binarias. Priorizar a quienes se encuentren en situación de vulnerabilidad o exclusión social.",
+      "cita_literal": "Desarrollo de programas específicos y medidas de acción positiva de inserción laboral y formación para personas trans y no binarias, especialmente para aquellas en situación de vulnerabilidad o exclusión social.",
+      "pagina": 49,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 75,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Introducir cláusulas LGTBIQA+ en la contratación pública",
+      "resumen": "Incorporar cláusulas sociales y de diversidad LGTBIQA+ en contratos públicos. Priorizar empresas con buenas prácticas acreditadas en igualdad y no discriminación.",
+      "cita_literal": "Incorporación de cláusulas sociales y de diversidad LGTBIQA+ en la contratación pública, priorizando a las empresas que acrediten buenas prácticas en igualdad y no discriminación. Respuesta frente a la LGTBIQA+fobia y los delitos de odio.",
+      "pagina": 49,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 76,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Servicios sociales y cuidados",
+      "titulo_corto": "Atender integralmente a víctimas de delitos de odio LGTBIQA+fóbicos",
+      "resumen": "Garantizar acompañamiento social, jurídico y psicológico desde servicios sociales públicos para víctimas de delitos de odio LGTBIQA+fóbicos. Asegurar una ruta de atención estable.",
+      "cita_literal": "Garantía de una atención integral a las víctimas de delitos de odio LGTBIQAfóbicos, que incluya acompañamiento social, jurídico y psicológico desde los servicios sociales públicos.",
+      "pagina": 49,
+      "tags": [
+        "#ServiciosSociales",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de servicios sociales y cuidados?"
+    },
+    {
+      "id": 77,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Registrar y seguir delitos de odio LGTBIQA+fóbicos",
+      "resumen": "Crear sistemas autonómicos de registro y seguimiento de delitos de odio LGTBIQA+fóbicos. Usar datos para dimensionar el problema y orientar políticas públicas.",
+      "cita_literal": "Desarrollo de sistemas de registro y seguimiento de los delitos de odio LGTBIQA+fóbicos en Castilla y León, que permitan dimensionar el problema y orientar las políticas públicas.",
+      "pagina": 49,
+      "tags": [
+        "#Derechos",
+        "#Igualdad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 78,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Desplegar recursos frente a la violencia intragénero",
+      "resumen": "Crear recursos específicos de atención integral ante violencia intragénero con apoyo social, jurídico y psicológico. Incorporar alternativas habitacionales seguras para víctimas.",
+      "cita_literal": "Desarrollo de recursos específicos de atención integral frente a la violencia intragénero, que incluyan acompañamiento social, asesoramiento jurídico, atención psicológica y alternativas habitacionales seguras.",
+      "pagina": 49,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 79,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Servicios sociales y cuidados",
+      "titulo_corto": "Formar servicios sociales en violencia intragénero y delitos de odio",
+      "resumen": "Capacitar al personal de servicios sociales para prevenir, detectar y atender violencia intragénero y delitos de odio por orientación sexual, identidad o expresión de género. Mejorar la respuesta profesional en primera línea.",
+      "cita_literal": "Garantía de formación especializada del personal de servicios sociales en prevención, detección y atención de la violencia intragénero y de los delitos de odio por motivos de orientación sexual, identidad o expresión de género.",
+      "pagina": 49,
+      "tags": [
+        "#ServiciosSociales",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de servicios sociales y cuidados?"
+    },
+    {
+      "id": 80,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Erradicar discursos de odio LGTBIQA+fóbicos en el espacio público",
+      "resumen": "Impulsar políticas para prevenir y eliminar discursos de odio LGTBIQA+fóbicos. Exigir a medios públicos evitar contenidos discriminatorios y promover representación plural y diversa.",
+      "cita_literal": "Impulso de políticas públicas para la prevención, detección y erradicación de los discursos de odio LGTBIQA+fóbicos, garantizando que los medios de comunicación de titularidad pública cumplan con su obligación de evitar la difusión de contenidos discriminatorios, eliminar estereotipos y promover una representación.",
+      "pagina": 49,
+      "tags": [
+        "#Derechos",
+        "#Igualdad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 81,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Reforzar apoyo a víctimas de violencia digital y mediática LGTBIQA+",
+      "resumen": "Fortalecer la respuesta pública frente a la violencia digital y mediática contra personas LGTBIQA+, con apoyo jurídico y psicológico especializado.",
+      "cita_literal": "Reforzaremos los mecanismos de protección, denuncia y acompañamiento jurídico y psicológico a las víctimas de violencia digital y mediática por motivos de orientación sexual, identidad o expresión de género.",
+      "pagina": 50,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 82,
+      "categoria": "Otros",
+      "subcategoria": "Derechos LGTBIQA+",
+      "titulo_corto": "Lanzar campañas públicas contra LGTBIQA+fobia y desinformación",
+      "resumen": "Impulsar campañas de sensibilización junto a entidades LGTBIQA+ para combatir LGTBIQA+fobia, bulos y desinformación. Priorizar protección de jóvenes y personas vulnerables.",
+      "cita_literal": "Impulso en colaboración con las entidades LGTBIQA+ de campañas públicas de sensibilización contra la LGTBIQA+fobia, los bulos y la desinformación, con especial atención al impacto en jóvenes y personas vulnerables.",
+      "pagina": 50,
+      "tags": [
+        "#Derechos",
+        "#DerechosLGTBI",
+        "#NoDiscriminacion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 83,
+      "categoria": "Otros",
+      "subcategoria": "Migración y derechos",
+      "titulo_corto": "Defender la derogación de la Ley de Extranjería",
+      "resumen": "Promover la derogación de la Ley de Extranjería por sus efectos de exclusión, irregularidad y explotación. Reducir mientras tanto su impacto desde competencias autonómicas y garantizar acceso a derechos básicos.",
+      "cita_literal": "Defenderemos la derogación de la actual Ley de Extranjería, por ser una norma estructuralmente racista que genera irregularidad administrativa, explotación laboral y exclusión social. Mientras siga vigente, trabajaremos para reducir al máximo sus efectos lesivos desde las competencias autonómicas, garantizando el acceso.",
+      "pagina": 50,
+      "tags": [
+        "#Derechos",
+        "#Migracion",
+        "#Antirracismo",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 84,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Servicios sociales y cuidados",
+      "titulo_corto": "Garantizar una Castilla y León antirracista con igualdad real",
+      "resumen": "Asegurar igualdad real de derechos con independencia del origen, color de piel o situación administrativa. Combatir el racismo estructural en instituciones, políticas públicas y acceso a servicios.",
+      "cita_literal": "Defenderemos una Castilla y León antirracista, garantizando la igualdad real de derechos con independencia del origen, el color de la piel o la situación administrativa, y combatiendo el racismo estructural presente en las instituciones, las políticas públicas y el acceso a derechos.",
+      "pagina": 50,
+      "tags": [
+        "#ServiciosSociales",
+        "#Cuidados",
+        "#Dependencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de servicios sociales y cuidados?"
+    },
+    {
+      "id": 85,
+      "categoria": "Otros",
+      "subcategoria": "Antirracismo y derechos civiles",
+      "titulo_corto": "Aprobar una ley autonómica antirracista y de igualdad de trato",
+      "resumen": "Impulsar una ley autonómica antirracista con mecanismos de prevención, sanción y reparación frente a racismo y xenofobia. Prohibir subvenciones y contratos públicos a entidades que promuevan odio o discriminación.",
+      "cita_literal": "Impulsaremos una Ley de Castilla y León Antirracista y de Igualdad de Trato, en coherencia con la Ley estatal 15/2022, que incorpore mecanismos efectivos de prevención, sanción y reparación frente al racismo y la xenofobia. Esta normativa incluirá la prohibición de conceder.",
+      "pagina": 50,
+      "tags": [
+        "#Derechos",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 86,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Reglamento parlamentario y sanciones",
+      "titulo_corto": "Sancionar discursos racistas y xenófobos en las Cortes",
+      "resumen": "Modificar el Reglamento de las Cortes de Castilla y León para introducir sanciones disciplinarias frente a discursos racistas o xenófobos. Evitar impunidad institucional del odio.",
+      "cita_literal": "Promoveremos la modificación del Reglamento de las Cortes de Castilla y León para establecer sanciones disciplinarias ante discursos racistas o xenófobos pronunciados en sede parlamentaria, garantizando que el odio no tenga impunidad institucional.",
+      "pagina": 50,
+      "tags": [
+        "#Transparencia",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de calidad democrática y transparencia?"
+    },
+    {
+      "id": 87,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Protocolos públicos antidiscriminación",
+      "titulo_corto": "Implantar protocolos antirracistas en todas las administraciones",
+      "resumen": "Aplicar protocolos antirracistas en administraciones públicas para garantizar acceso no discriminatorio a vivienda, empleo, educación, sanidad y servicios públicos.",
+      "cita_literal": "Impulsaremos protocolos antirracistas en todas las administraciones públicas de Castilla y León, asegurando una actuación no discriminatoria en el acceso a servicios públicos, vivienda, empleo, educación y sanidad.",
+      "pagina": 50,
+      "tags": [
+        "#Transparencia",
+        "#Salud",
+        "#Hospitales"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de calidad democrática y transparencia?"
+    },
+    {
+      "id": 88,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación pública",
+      "titulo_corto": "Formar al personal público en prevención del racismo",
+      "resumen": "Desarrollar planes de formación antirracista para personal de atención al público en educación, sanidad, justicia, administración y fuerzas de seguridad.",
+      "cita_literal": "Impulsaremos planes de formación antirracista dirigidos a los trabajadores y trabajadoras de la Administración que trabajan de cara al público, especialmente, personal docente, sanitario, judicial, administrativo y de las fuerzas de seguridad..",
+      "pagina": 51,
+      "tags": [
+        "#Educacion",
+        "#EscuelaPublica",
+        "#EquidadEducativa"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de educación y juventud?"
+    },
+    {
+      "id": 89,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Garantizar mediación lingüística y cultural en servicios públicos",
+      "resumen": "Dotar recursos para atender a personas con dificultades en el conocimiento del español mediante mediación lingüística y cultural. Mejorar acceso efectivo a servicios públicos.",
+      "cita_literal": "Dotaremos a los servicios públicos de los recursos necesarios para atender adecuadamente a las personas con dificultades en el conocimiento del español, mediante servicios de mediación lingüística y cultural.",
+      "pagina": 51,
+      "tags": [
+        "#Derechos",
+        "#Cultura"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 90,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Gestionar la diversidad cultural con enfoque intercultural",
+      "resumen": "Desarrollar políticas de gestión de diversidad cultural desde una perspectiva intercultural. Aumentar de forma sostenida el presupuesto destinado a su ejecución.",
+      "cita_literal": "Desarrollaremos políticas de gestión de la diversidad cultural desde una óptica intercultural y aumentaremos de manera decidida las partidas presupuestarias destinadas a desarrollarlas.",
+      "pagina": 51,
+      "tags": [
+        "#Derechos",
+        "#Cultura"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 91,
+      "categoria": "Otros",
+      "subcategoria": "Inclusión del pueblo gitano",
+      "titulo_corto": "Poner en marcha una estrategia de inclusión del pueblo gitano",
+      "resumen": "Crear y financiar una estrategia autonómica de inclusión del pueblo gitano. Garantizar diseño, implementación y evaluación con participación directa del propio pueblo gitano.",
+      "cita_literal": "Pondremos en marcha y dotaremos de presupuesto suficiente una Estrategia autonómica de Inclusión del Pueblo Gitano, garantizando su diseño, implementación y evaluación con la participación directa del pueblo gitano. TODOS LOS DERECHOS PARA TODAS LAS PERSONAS.",
+      "pagina": 51,
+      "tags": [
+        "#Derechos",
+        "#Antirracismo",
+        "#PuebloGitano"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 92,
+      "categoria": "Otros",
+      "subcategoria": "Regularización y derechos",
+      "titulo_corto": "Apoyar la regularización extraordinaria de personas migrantes",
+      "resumen": "Respaldar la regularización extraordinaria y exigir al Gobierno de España procedimientos ágiles, accesibles y con garantías jurídicas. Colaborar desde la comunidad para acreditar arraigo y evitar exclusiones burocráticas.",
+      "cita_literal": "Apoyaremos activamente la regularización extraordinaria de personas migrantes como una medida de justicia social, dignidad y garantía de derechos fundamentales.",
+      "pagina": 51,
+      "tags": [
+        "#Derechos",
+        "#Migracion",
+        "#Regularizacion",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 93,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Servicios sociales y cuidados",
+      "titulo_corto": "Garantizar empadronamiento sin requisitos abusivos",
+      "resumen": "Reconocer el empadronamiento como derecho con independencia de la situación administrativa o habitacional. Impulsar con ayuntamientos protocolos de padrón sin domicilio fijo para asegurar acceso a derechos básicos.",
+      "cita_literal": "Defenderemos el empadronamiento como un derecho, sin requisitos abusivos ni discriminatorios, con independencia de la situación administrativa o habitacional de las personas.",
+      "pagina": 51,
+      "tags": [
+        "#ServiciosSociales",
+        "#Cuidados",
+        "#Dependencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de servicios sociales y cuidados?"
+    },
+    {
+      "id": 94,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso a vivienda digna",
+      "titulo_corto": "Eliminar barreras a la vivienda pública para población extranjera",
+      "resumen": "Suprimir trabas administrativas que excluyen a población extranjera y racializada del acceso a vivienda pública. Garantizar igualdad de condiciones sin discriminación por situación administrativa.",
+      "cita_literal": "Eliminaremos las trabas administrativas que dificultan el acceso a la vivienda pública para la población extranjera y/o racializada, garantizando la igualdad de condiciones sin que la situación administrativa sea un factor excluyente.",
+      "pagina": 52,
+      "tags": [
+        "#Vivienda",
+        "#ViviendaPublica",
+        "#AccesoVivienda"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 95,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Sistema sanitario público",
+      "titulo_corto": "Garantizar sanidad pública universal sin facturación excluyente",
+      "resumen": "Asegurar atención sanitaria sin condicionarla a pagos o compromisos económicos, especialmente en grupos vulnerables. Facilitar acceso a personas extranjeras excluidas del sistema con criterios de igualdad y requisitos accesibles.",
+      "cita_literal": "Garantizaremos el acceso efectivo a la sanidad pública universal, asegurando que ninguna atención sanitaria sea facturada ni condicionada a la firma de compromisos de pago, especialmente en el caso de menores, mujeres embarazadas, solicitantes de asilo, víctimas de trata y personas en situación de especial vulnerabilidad.",
+      "pagina": 52,
+      "tags": [
+        "#SanidadPublica",
+        "#Salud",
+        "#Hospitales"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de sanidad pública?"
+    },
+    {
+      "id": 96,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Asegurar escolarización equilibrada del alumnado de origen extranjero",
+      "resumen": "Garantizar una escolarización no segregadora del alumnado de origen extranjero en todos los centros sostenidos con fondos públicos. Reforzar programas de inclusión e interculturalidad con recursos suficientes.",
+      "cita_literal": "Garantizaremos una escolarización equilibrada y no segregadora del alumnado de origen extranjero en todos los centros sostenidos con fondos públicos. Reforzaremos los programas de inclusión, diversidad e interculturalidad en los centros educativos, dotándolos de recursos humanos y materiales.",
+      "pagina": 52,
+      "tags": [
+        "#Derechos",
+        "#Cultura"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 97,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Garantizar becas escolares sin discriminación administrativa",
+      "resumen": "Asegurar acceso a becas de comedor y material escolar para todos los niños y niñas, sin discriminar por situación laboral o administrativa de sus progenitores.",
+      "cita_literal": "Garantizaremos el acceso a becas de comedor y material escolar para todos los niños y niñas, evitando que la situación laboral o administrativa de sus progenitores sea causa de discriminación. CONTRA LAS VIOLENCIAS RACISTAS Y XENÓFOBAS.",
+      "pagina": 52,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 98,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Observatorio y evaluación pública",
+      "titulo_corto": "Crear un observatorio autonómico contra racismo y xenofobia",
+      "resumen": "Poner en marcha un observatorio de Castilla y León contra racismo y xenofobia para recopilar datos, elaborar informes públicos y evaluar políticas antirracistas.",
+      "cita_literal": "Crearemos un Observatorio de Castilla y León contra el Racismo y la Xenofobia, encargado de la recogida de datos, la elaboración de informes públicos y el seguimiento de las políticas antirracistas.",
+      "pagina": 52,
+      "tags": [
+        "#Transparencia",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de calidad democrática y transparencia?"
+    },
+    {
+      "id": 99,
+      "categoria": "Otros",
+      "subcategoria": "Igualdad y no discriminación",
+      "titulo_corto": "Abrir un espacio público de atención para igualdad y no discriminación",
+      "resumen": "Desarrollar un espacio de atención para prevenir, detectar y acompañar casos de discriminación. Incorporar mecanismos de sensibilización y justicia restaurativa.",
+      "cita_literal": "Impulsaremos el Espacio de Atención para la Igualdad y la No Discriminación, estableciendo cauces de prevención, sensibilización, detección y acompañamiento a las víctimas, así como mecanismos de justicia restaurativa.",
+      "pagina": 52,
+      "tags": [
+        "#Derechos",
+        "#NoDiscriminacion",
+        "#Antirracismo"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 100,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Transparencia institucional",
+      "titulo_corto": "Erradicar redadas racistas y perfilamiento racial",
+      "resumen": "Impulsar protocolos antirracistas en actuación policial para eliminar redadas racistas y perfilamiento racial. Implantar formación obligatoria y mecanismos de control y rendición de cuentas.",
+      "cita_literal": "Impulsaremos medidas para erradicar las redadas racistas y el perfilamiento racial, promoviendo protocolos antirracistas en la actuación policial, formación obligatoria en igualdad de trato y mecanismos de control y rendición de cuentas frente a prácticas discriminatorias.",
+      "pagina": 52,
+      "tags": [
+        "#Transparencia",
+        "#Participacion",
+        "#TransparenciaPublica"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de calidad democrática y transparencia?"
+    },
+    {
+      "id": 101,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Combatir explotación laboral y racismo en el empleo",
+      "resumen": "Reforzar inspección y protección de derechos para frenar explotación laboral, discriminación en contratación y racismo en el acceso al mercado de trabajo.",
+      "cita_literal": "Lucharemos contra la explotación laboral, la discriminación en el empleo y el racismo en el acceso al mercado laboral, reforzando los mecanismos de inspección y protección de derechos.",
+      "pagina": 53,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 102,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Servicios sociales y cuidados",
+      "titulo_corto": "Combatir la trata y proteger a las víctimas con alternativas reales",
+      "resumen": "Impulsar políticas de detección, identificación, protección y reparación frente a la trata en todas sus formas. Actuar de forma específica en sectores precarizados y feminizados como trabajo doméstico y de cuidados.",
+      "cita_literal": "Combatiremos la trata de personas en todas sus formas, promoviendo políticas de detección, identificación, protección, reparación y alternativas reales para las víctimas. Desarrollaremos medidas específicas frente a la discriminación que sufren las personas migrantes y racializadas en sectores especialmente precarizados y feminizados.",
+      "pagina": 53,
+      "tags": [
+        "#ServiciosSociales",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de servicios sociales y cuidados?"
+    },
+    {
+      "id": 103,
+      "categoria": "Otros",
+      "subcategoria": "Derechos de infancia migrante",
+      "titulo_corto": "Sancionar discursos que criminalizan a menores migrantes",
+      "resumen": "Rechazar y sancionar el uso de términos criminalizadores como “MENAS” en el espacio público. Garantizar atención digna, individualizada y basada en el interés superior del menor.",
+      "cita_literal": "Rechazaremos e impulsaremos el establecimiento de sanciones contra el uso del término “MENAS” y cualquier otro discurso en el espacio público criminalizador hacia niños, niñas y adolescentes migrantes, garantizando una atención digna, individualizada y basada en derechos. Aseguraremos que todas las intervenciones.",
+      "pagina": 53,
+      "tags": [
+        "#Derechos",
+        "#Infancia",
+        "#Migracion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 104,
+      "categoria": "Otros",
+      "subcategoria": "Antirracismo en medios y redes",
+      "titulo_corto": "Combatir racismo y xenofobia en medios y redes sociales",
+      "resumen": "Promover códigos deontológicos, canales de denuncia y sanciones frente a discursos de odio. Fomentar representación pública digna y no estigmatizante de personas migrantes y racializadas.",
+      "cita_literal": "Combatiremos el racismo y la xenofobia en los medios de comunicación y en las redes sociales, promoviendo códigos deontológicos, mecanismos de denuncia y sanción frente a discursos de odio, así como políticas públicas que fomenten una representación digna, diversa y no estigmatizante.",
+      "pagina": 53,
+      "tags": [
+        "#Derechos",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 105,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Combatir el antigitanismo con políticas públicas específicas",
+      "resumen": "Desarrollar políticas para prevenir y sancionar el antigitanismo. Reconocer historia, cultura y derechos del pueblo gitano como parte de Castilla y León.",
+      "cita_literal": "Combatiremos de manera específica el antigitanismo, promoviendo políticas públicas que reconozcan la historia, la cultura y los derechos del pueblo gitano como parte de la Comunidad Autónoma.",
+      "pagina": 53,
+      "tags": [
+        "#Derechos",
+        "#Cultura"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 106,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Infancia y adolescencia",
+      "titulo_corto": "Aplicar perspectiva de infancia y adolescencia en todas las políticas",
+      "resumen": "Incorporar de forma transversal el enfoque de infancia y adolescencia en diseño, ejecución y evaluación de políticas públicas. Analizar sistemáticamente impactos sobre derechos, bienestar y desarrollo.",
+      "cita_literal": "Incorporaremos de forma transversal la perspectiva de infancia y adolescencia en la formulación, implementación y evaluación de todas las políticas públicas, mediante mecanismos sistemáticos de análisis de impacto en los derechos, el bienestar y el desarrollo de niños, niñas y adolescentes.",
+      "pagina": 53,
+      "tags": [
+        "#ServiciosSociales",
+        "#Infancia",
+        "#ProteccionInfantil"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de servicios sociales y cuidados?"
+    },
+    {
+      "id": 107,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Protección integral de la infancia",
+      "titulo_corto": "Aprobar una ley autonómica de protección integral a la infancia",
+      "resumen": "Elaborar una ley de protección integral de infancia y adolescencia alineada con la normativa estatal y recomendaciones internacionales. Priorizar buen trato, participación activa de menores y prevención de violencias.",
+      "cita_literal": "Elaboraremos una Ley de Protección Integral a la Infancia desde la perspectiva de los derechos de la infancia y la adolescencia, acorde con el marco jurídico vigente y las recomendaciones del Comité de Derechos de la Infancia.",
+      "pagina": 53,
+      "tags": [
+        "#ServiciosSociales",
+        "#Infancia",
+        "#ProteccionInfantil"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de servicios sociales y cuidados?"
+    },
+    {
+      "id": 108,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Mejorar la atención a menores bajo tutela autonómica",
+      "resumen": "Reforzar la calidad de la atención y del acompañamiento a menores tutelados por la administración autonómica. Corregir carencias del sistema de protección.",
+      "cita_literal": "Trabajaremos para mejorar la atención a los y las menores bajo tutela del Gobierno autonómico.",
+      "pagina": 54,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 109,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Servicios sociales y cuidados",
+      "titulo_corto": "Ampliar el Plan Corresponsables para cuidados a domicilio",
+      "resumen": "Extender el Plan Corresponsables para cubrir necesidades de cuidado de menores en todo el territorio. Organizar la prestación mediante bolsa pública de empleo.",
+      "cita_literal": "Seguiremos avanzando para que el Plan Corresponsables cubra las necesidades de cuidados a menores a domicilio en todo el territorio a través de una bolsa pública de empleo.",
+      "pagina": 54,
+      "tags": [
+        "#ServiciosSociales",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de servicios sociales y cuidados?"
+    },
+    {
+      "id": 110,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación pública",
+      "titulo_corto": "Blindar derechos de la infancia en familias vulnerables",
+      "resumen": "Proteger derechos de niños y niñas en situación de vulnerabilidad mediante refuerzo de servicios sociales y educativos. Priorizar apoyo a familias monomarentales, acceso a vivienda y entornos seguros frente a violencia y acoso.",
+      "cita_literal": "Protegeremos los derechos de la infancia, especialmente de aquellos niños y niñas en situación de vulnerabilidad, con el blindaje a las familias en el sistema de servicios sociales y educativos.",
+      "pagina": 54,
+      "tags": [
+        "#Educacion",
+        "#EscuelaPublica",
+        "#EquidadEducativa"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de educación y juventud?"
+    },
+    {
+      "id": 111,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Juventud",
+      "titulo_corto": "Reforzar Casas de la Juventud con recursos y participación",
+      "resumen": "Impulsar las Casas de la Juventud con más recursos, renovación de instalaciones y procesos participativos. Adaptar espacios y actividades a necesidades reales de la juventud.",
+      "cita_literal": "Impulsaremos las Casas de la Juventud, dotándolas de recursos, renovando las instalaciones y abriendo procesos participativos para el diseño de los espacios y de la oferta de actividades.",
+      "pagina": 54,
+      "tags": [
+        "#Educacion",
+        "#Juventud",
+        "#ParticipacionJuvenil"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de educación y juventud?"
+    },
+    {
+      "id": 112,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Crear un plan integral de empleo joven con relevo rural",
+      "resumen": "Aprobar un plan de empleo joven para impulsar trabajo estable y de calidad, con incentivos a contratación y mantenimiento del empleo. Vincularlo al relevo generacional en el campo.",
+      "cita_literal": "Aprobaremos un Plan Integral de Empleo Joven que garantice el relevo generacional en el campo que integre todas las políticas de fomento del empleo estable y de calidad y cuente con una línea adecuada de incentivos económicos para la contratación y mantenimiento.",
+      "pagina": 54,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 113,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación pública",
+      "titulo_corto": "Ampliar la Escuela de Formación Juvenil y abrir nuevas sedes",
+      "resumen": "Incrementar la oferta formativa de la Escuela de Formación Juvenil en ocio, tiempo libre y nuevas disciplinas. Crear dos sedes adicionales además de la actual.",
+      "cita_literal": "Ampliaremos la oferta formativa de la Escuela de formación juvenil de Castilla y León, creando más formación con respecto al ocio y tiempo libre y creando nuevas disciplinas formativas. Proponemos crear 2 sedes físicas a mayores de la actual en Palencia.",
+      "pagina": 55,
+      "tags": [
+        "#Educacion",
+        "#EscuelaPublica",
+        "#EquidadEducativa"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de educación y juventud?"
+    },
+    {
+      "id": 114,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Juventud",
+      "titulo_corto": "Dar más capacidad vinculante al Consejo de la Juventud",
+      "resumen": "Reforzar el papel del Consejo de la Juventud en la toma de decisiones con mayor capacidad de gestión y recursos. Impulsar la participación juvenil en su funcionamiento.",
+      "cita_literal": "Dotaremos al Consejo de la Juventud de un mayor carácter vinculante en la toma de decisiones, promoviendo la participación en su seno y dotándolo de mayor capacidad de gestión y recursos.",
+      "pagina": 55,
+      "tags": [
+        "#Educacion",
+        "#Juventud",
+        "#ParticipacionJuvenil"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de educación y juventud?"
+    },
+    {
+      "id": 115,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Juventud",
+      "titulo_corto": "Fomentar asociacionismo juvenil con foco en mujeres jóvenes",
+      "resumen": "Promover la participación social y el asociacionismo juvenil en distintos ámbitos de la vida pública. Reforzar especialmente la implicación y liderazgo de mujeres jóvenes.",
+      "cita_literal": "Fomentaremos la participación y el asociacionismo entre las personas jóvenes con especial incidencia en las mujeres jóvenes, estableciendo herramientas para fomentar la toma de decisiones y la participación en la vida social y pública.",
+      "pagina": 55,
+      "tags": [
+        "#Educacion",
+        "#Juventud",
+        "#ParticipacionJuvenil"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de educación y juventud?"
+    },
+    {
+      "id": 116,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Sistema sanitario público",
+      "titulo_corto": "Promover hábitos de vida saludable entre jóvenes",
+      "resumen": "Desarrollar campañas específicas para fomentar estilos de vida saludables en población joven. Priorizar prevención y educación para la salud.",
+      "cita_literal": "Promoveremos hábitos de vida saludables entre las personas jóvenes con campañas específicas para tales efectos.",
+      "pagina": 55,
+      "tags": [
+        "#SanidadPublica",
+        "#Salud",
+        "#Hospitales"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de sanidad pública?"
+    },
+    {
+      "id": 117,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Eliminar ayudas públicas a espectáculos con violencia animal",
+      "resumen": "Suprimir subvenciones y ayudas públicas destinadas a espectáculos que impliquen violencia contra animales. Reorientar el gasto a políticas de bienestar animal.",
+      "cita_literal": "Eliminaremos todas las subvenciones y ayudas públicas para espectáculos en los que se ejerza violencia contra los animales.",
+      "pagina": 55,
+      "tags": [
+        "#Derechos",
+        "#Cultura"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 118,
+      "categoria": "Otros",
+      "subcategoria": "Cultura y bienestar animal",
+      "titulo_corto": "Excluir la tauromaquia del patrimonio cultural y retirar ayudas",
+      "resumen": "Sacar la tauromaquia del catálogo de patrimonio cultural y avanzar hacia su abolición. Redirigir ayudas a políticas sociales, culturales y de bienestar animal, incluyendo eliminación de apoyo a escuelas taurinas.",
+      "cita_literal": "Excluiremos la T auromaquia del catálogo de Patrimonio Cultural con el horizonte puesto en su abolición. Redirigiremos todas las ayudas que se destinan a la tauromaquia, hacia políticas sociales, culturales y de bienestar animal que beneficien a la ciudadanía. Además, eliminaremos todas.",
+      "pagina": 55,
+      "tags": [
+        "#Derechos",
+        "#EscuelaPublica",
+        "#EquidadEducativa"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 119,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Sistema sanitario público",
+      "titulo_corto": "Impulsar adopción, esterilización y control ético de colonias felinas",
+      "resumen": "Promover políticas públicas de esterilización y adopción con base técnica y sanitaria. Mejorar el control ético de colonias felinas mediante personal especializado.",
+      "cita_literal": "Promoveremos políticas encaminadas a fomentar la importancia de la esterilización y la adopción, así como del control de las colonias felinas, por personas expertas en sanidad y bienestar animal para realizar una gestión ética de estos animales.",
+      "pagina": 55,
+      "tags": [
+        "#SanidadPublica",
+        "#Salud",
+        "#Hospitales"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de sanidad pública?"
+    },
+    {
+      "id": 120,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Garantizar financiación estable a asociaciones de protección animal",
+      "resumen": "Asignar partidas presupuestarias estables y suficientes a asociaciones de protección animal activas en Castilla y León. Sostener su labor de cuidado y rescate.",
+      "cita_literal": "Destinaremos partidas presupuestarias anuales estables y suficientes destinadas a Asociaciones de Protección Animal que tengan su actividad en Castilla y León.",
+      "pagina": 55,
+      "tags": [
+        "#Derechos",
+        "#Cultura"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 121,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Aplicar la Ley de Bienestar Animal y actualizar la normativa autonómica",
+      "resumen": "Garantizar el cumplimiento de la Ley estatal 7/2023 y adaptar la ley autonómica de protección animal para reforzar derechos y bienestar de los animales en Castilla y León.",
+      "cita_literal": "Garantizaremos el cumplimiento de la Ley Estatal 7/2023 de Bienestar Animal. Actualizaremos la normativa autonómica de protección animal, específicamente la Ley 5/1997, para adaptarse, complementar y mejorar lo establecido por la normativa estatal.",
+      "pagina": 56,
+      "tags": [
+        "#Derechos",
+        "#Cultura"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 122,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Transición ecológica y energía",
+      "titulo_corto": "Crear CRAS en todas las provincias y plan ante catástrofes",
+      "resumen": "Aumentar financiación para centros de recuperación de fauna salvaje en cada provincia. Desarrollar un plan de prevención y actuación para proteger fauna silvestre y doméstica en incendios, inundaciones y otras emergencias.",
+      "cita_literal": "Incrementaremos la financiación destinada a la creación de Centros de Recuperación de Animales Salvajes (CRAS) en cada una de las provincias de Castilla y León. Además, elaboraremos un plan de actuación para la protección y la salvaguarda de fauna silvestre y doméstica.",
+      "pagina": 56,
+      "tags": [
+        "#MedioAmbiente",
+        "#ProteccionAmbiental",
+        "#CambioClimatico"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de medio ambiente y energía?"
+    },
+    {
+      "id": 123,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Dignificar condiciones laborales del personal de los CRAS",
+      "resumen": "Garantizar condiciones laborales y salariales dignas para profesionales que trabajan en los centros de recuperación de animales salvajes.",
+      "cita_literal": "Garantizaremos condiciones laborales y económicas dignas para el personal profesional que trabaja en los citados CRAS.",
+      "pagina": 56,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 124,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Proteger al lobo ibérico y promover ecoturismo responsable",
+      "resumen": "Aprobar una normativa estricta de protección del lobo ibérico frente a su caza en toda la comunidad. Impulsar ecoturismo de observación con mínima interferencia y creación de empleo local.",
+      "cita_literal": "Aprobaremos normativa estricta para la protección integral del lobo ibérico frente a su caza en toda la Comunidad Autónoma. Impulsaremos además, el ecoturismo responsable y profesional ligado a la observación del lobo en su hábitat, interfiriendo lo mínimo posible en su naturaleza.",
+      "pagina": 56,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 125,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Regular el bienestar de los animales de trabajo",
+      "resumen": "Establecer normas para garantizar necesidades físicas, ambientales, conductuales y psicológicas de los animales de trabajo. Definir directrices de control para asegurar condiciones óptimas.",
+      "cita_literal": "Regularemos normativas para que los “animales de trabajo” tengan cubiertas sus necesidades comportamentales, ambientales físicas y psicológicas, con las debidas directrices laborales para que dichos animales tengan garantizadas unas condiciones óptimas de existencia.",
+      "pagina": 56,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 126,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Agricultura y ganadería",
+      "titulo_corto": "Instalar cámaras de vigilancia en espacios de sacrificio animal",
+      "resumen": "Apoyar la instalación de cámaras en mataderos y espacios de sacrificio para mejorar control y cumplimiento de bienestar animal durante todo el proceso.",
+      "cita_literal": "Apoyaremos la instalación de cámaras de vigilancia en espacios de sacrificio de animales de consumo para controlar el máximo respeto posible durante todo el proceso del sacrificio.",
+      "pagina": 56,
+      "tags": [
+        "#SectorPrimario",
+        "#Agricultura",
+        "#Ganaderia"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de agricultura y ganadería?"
+    },
+    {
+      "id": 127,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Agricultura y ganadería",
+      "titulo_corto": "Ampliar controles e inspección de bienestar animal en mataderos",
+      "resumen": "Reforzar puestos de control e inspección en espacios de sacrificio con apoyo de agentes medioambientales. Mejorar supervisión y cumplimiento de la normativa.",
+      "cita_literal": "Ampliaremos los puestos de control e inspección de bienestar animal en espacios de sacrificio, en colaboración con el cuerpo de Agentes Medioambientales de la Comunidad.",
+      "pagina": 56,
+      "tags": [
+        "#SectorPrimario",
+        "#Agricultura",
+        "#Ganaderia"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de agricultura y ganadería?"
+    },
+    {
+      "id": 128,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Sistema sanitario público",
+      "titulo_corto": "Crear centros públicos de bienestar animal con sacrificio cero",
+      "resumen": "Construir centros de bienestar animal de ámbito provincial para recogida y atención de animales abandonados. Garantizar gestión pública profesional, recursos suficientes y objetivo obligatorio de sacrificio cero.",
+      "cita_literal": "Colaboraremos con las Diputaciones Provinciales para la construcción de Centros de Bienestar Animal en diferentes puntos de la Comunidad Autónoma para que den servicio de recogida de animales abandonados a los diferentes municipios de su área de influencia. Estos centros estarán gestionados.",
+      "pagina": 56,
+      "tags": [
+        "#SanidadPublica",
+        "#Salud",
+        "#Hospitales"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de sanidad pública?"
+    },
+    {
+      "id": 129,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y bienestar animal",
+      "titulo_corto": "Permitir acceso de animales de compañía a más espacios públicos",
+      "resumen": "Facilitar acceso de animales de compañía a hospitales, residencias, casas de acogida y otros espacios permitidos por la normativa sanitaria.",
+      "cita_literal": "Posibilitaremos el acceso de animales de compañía a hospitales, casas de acogida para mujeres víctimas de violencias machistas, residencias para personas mayores, así como a otros espacios públicos en los que la normativa sanitaria lo permita.",
+      "pagina": 57,
+      "tags": [
+        "#Derechos",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 130,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Formar a la infancia en respeto y bienestar animal",
+      "resumen": "Desarrollar un plan educativo para sensibilizar a la población infantil sobre respeto a los animales y prevención del maltrato.",
+      "cita_literal": "Elaboraremos un plan de formación para la población infantil de respeto a los animales y sensibilización con su sufrimiento.",
+      "pagina": 57,
+      "tags": [
+        "#Derechos",
+        "#Cultura"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 131,
+      "categoria": "Otros",
+      "subcategoria": "Cultura",
+      "titulo_corto": "Avanzar hacia gratuidad de museos y espacios culturales",
+      "resumen": "Aplicar progresivamente gratuidad en museos y espacios culturales de titularidad autonómica o con fondos públicos para residentes en Castilla y León. Aumentar presupuesto autonómico en cultura.",
+      "cita_literal": "Avanzaremos progresivamente hacia la gratuidad, para las personas residentes en Castilla y León, de los museos y los espacios culturales de titularidad autonómica o que reciban fondos públicos, a fin de potenciar el acceso a la cultura.",
+      "pagina": 57,
+      "tags": [
+        "#Derechos",
+        "#Cultura",
+        "#AccesoCultura"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 132,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Garantizar acceso gratuito al patrimonio cultural autonómico",
+      "resumen": "Asegurar gratuidad de acceso al patrimonio cultural de titularidad o gestión autonómica para residentes, reforzando su función social.",
+      "cita_literal": "Garantizaremos el acceso gratuito al patrimonio cultural de titularidad o gestión autonómica para las personas residentes en Castilla y León, reforzando su función social y el derecho de acceso a la cultura.",
+      "pagina": 57,
+      "tags": [
+        "#Derechos",
+        "#Cultura"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 133,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación pública",
+      "titulo_corto": "Garantizar igualdad en el acceso a formación musical no reglada",
+      "resumen": "Reconocer la formación musical no reglada, incluido aprendizaje instrumental, como parte del derecho efectivo a la cultura. Corregir desigualdades socioeconómicas de acceso.",
+      "cita_literal": "Reconoceremos y promoveremos el acceso en condiciones de igualdad a la formación musical no reglada, incluido el aprendizaje instrumental, como parte del derecho efectivo a la cultura y la educación artística del conjunto de la ciudadanía.",
+      "pagina": 57,
+      "tags": [
+        "#Educacion",
+        "#EscuelaPublica",
+        "#EquidadEducativa"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de educación y juventud?"
+    },
+    {
+      "id": 134,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Medio rural y despoblación",
+      "titulo_corto": "Crear una red pública de bibliobares en el medio rural",
+      "resumen": "Implantar una red pública de bibliobares rurales con programación cultural estable y dotación de recursos bibliográficos.",
+      "cita_literal": "Crearemos una red pública de bibliobares en el medio rural de Castilla y León, promoviendo una programación estable de actividades culturales y de dotación de recursos bibliográficos.",
+      "pagina": 58,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#Despoblacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de reto demográfico y despoblación?"
+    },
+    {
+      "id": 135,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Revisar el decreto regulador del sector artesano",
+      "resumen": "Actualizar categorías, tipologías y requisitos de acceso al registro para modernizar la regulación del sector artesano.",
+      "cita_literal": "Revisaremos el decreto regulador del sector artesano: nuevas definiciones de categorías o tipologías, revisión del proceso de acceso al registro, etc.",
+      "pagina": 58,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 136,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación pública",
+      "titulo_corto": "Promover formación artesanal en Escuelas de Arte y Diseño",
+      "resumen": "Impulsar programas educativos que dignifiquen los oficios artesanos y refuercen la formación de régimen especial en las Escuelas de Arte y Diseño.",
+      "cita_literal": "Fomentaremos la promoción educativa de la actividad artesanal y de los estudios de Régimen Especial en las Escuelas de Arte y diseño.",
+      "pagina": 58,
+      "tags": [
+        "#Educacion",
+        "#EscuelaPublica",
+        "#EquidadEducativa"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de educación y juventud?"
+    },
+    {
+      "id": 137,
+      "categoria": "Otros",
+      "subcategoria": "Cultura",
+      "titulo_corto": "Aprobar una ley de derechos culturales participada",
+      "resumen": "Desarrollar una ley de derechos culturales con participación activa de los sectores implicados para garantizar acceso y protección cultural.",
+      "cita_literal": "Aprobaremos y desarrollaremos una ley de Derechos Culturales con la participación de los diversos sectores implicados.",
+      "pagina": 58,
+      "tags": [
+        "#Derechos",
+        "#Cultura",
+        "#DerechosCulturales"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 138,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Exigir planes estratégicos de cultura en ciudades de más de 20.000 habitantes",
+      "resumen": "Establecer obligación de redactar planes estratégicos de cultura en municipios de más de 20.000 habitantes para ordenar políticas culturales locales.",
+      "cita_literal": "Estableceremos la obligatoriedad de redacción de Planes Estratégicos de cultura para todas las ciudades con más de 20.000 habitantes.",
+      "pagina": 58,
+      "tags": [
+        "#Derechos",
+        "#Cultura"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 139,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Servicios sociales y cuidados",
+      "titulo_corto": "Apoyar salas alternativas y crear red pública de enseñanza artística",
+      "resumen": "Respaldar institucional y financieramente salas alternativas, residencias artísticas y espacios asociativos. Crear una red pública territorial de enseñanza y apoyo a la creación artística de proximidad.",
+      "cita_literal": "Apoyaremos institucional y financieramente a las redes de salas alternativas, residencias artísticas y espacios asociativos existentes en la Comunidad. 140.Crearemos una red estable y pública, distribuida territorialmente, de centros de enseñanza artística y prestación de apoyo institucional y financiero a la creación.",
+      "pagina": 58,
+      "tags": [
+        "#ServiciosSociales",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de servicios sociales y cuidados?"
+    },
+    {
+      "id": 140,
+      "categoria": "Otros",
+      "subcategoria": "Derechos y ciudadanía",
+      "titulo_corto": "Potenciar fiestas con reconocimiento patrimonial y turístico",
+      "resumen": "Reforzar el apoyo a fiestas declaradas Patrimonio Inmaterial de la Humanidad o de interés turístico autonómico o nacional.",
+      "cita_literal": "Potenciaremos aquellas fiestas reconocidas como \"Patrimonio Inmaterial de la Humanidad\", de \"Interés turístico Nacional o Autonómico\".",
+      "pagina": 85,
+      "tags": [
+        "#Derechos",
+        "#Cultura"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de derechos, igualdad y cultura?"
+    },
+    {
+      "id": 141,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Introducir fiscalidad con enfoque de género contra la brecha salarial",
+      "resumen": "Incorporar criterios de género en la fiscalidad para reforzar progresividad y corregir desigualdades económicas que afectan a las mujeres. Exigir estudios de impacto de género en toda reforma tributaria.",
+      "cita_literal": "Fiscalidad contra la brecha salarial. Introduciremos criterios de género en la fiscalidad para conseguir de manera eficaz la progresividad atendiendo a las desigualdades económicas y sociales que sufren las mujeres. Introduciremos la obligación de que cualquier proceso legislativo que afecte al sistema.",
+      "pagina": 85,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal",
+        "#Fiscalidad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 142,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Incentivar fiscalmente el empleo verde y las energías limpias",
+      "resumen": "Establecer incentivos fiscales para impulsar implantación y uso de energías renovables y no contaminantes. Orientar la política fiscal a creación de empleo verde.",
+      "cita_literal": "Fiscalidad por el empleo verde. Estableceremos incentivos fiscales a la puesta en marcha y uso de las energías renovables y no contaminantes.",
+      "pagina": 85,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal",
+        "#Fiscalidad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 143,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Transición ecológica y energía",
+      "titulo_corto": "Crear un impuesto ambiental sobre impactos de instalaciones renovables",
+      "resumen": "Aprobar un impuesto autonómico que grave impactos visuales y ambientales de infraestructuras de generación eléctrica. Reinvertir la recaudación en las zonas afectadas.",
+      "cita_literal": "Nuevo impuesto medioambiental a las instalaciones de energías renovables. Creación de un nuevo impuesto medioambiental autonómico que grave las afecciones e impactos visuales y medioambientales adversos sobre el medio natural y sobre el territorio a consecuencia de la instalación de infraestructuras afectas.",
+      "pagina": 85,
+      "tags": [
+        "#MedioAmbiente",
+        "#ProteccionAmbiental",
+        "#CambioClimatico"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de medio ambiente y energía?"
+    },
+    {
+      "id": 144,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso a vivienda digna",
+      "titulo_corto": "Crear un impuesto al patrimonio inmobiliario de personas jurídicas",
+      "resumen": "Gravar a fondos y entidades que especulan con vivienda mediante un impuesto autonómico específico. Destinar toda la recaudación a políticas de vivienda pública.",
+      "cita_literal": "Creación de un Impuesto sobre el Patrimonio Inmobiliario de las Personas Jurídicas para gravar a los fondos de inversión que especulan con la vivienda y dedicar lo recaudado a políticas de vivienda pública.",
+      "pagina": 85,
+      "tags": [
+        "#Vivienda",
+        "#ViviendaPublica",
+        "#AccesoVivienda"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de vivienda?"
+    },
+    {
+      "id": 145,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Ajustar impuestos y tasas según patrimonio e ingresos",
+      "resumen": "Aplicar criterios de capacidad económica en impuestos, tasas y precios públicos para ajustar mejor la contribución tributaria.",
+      "cita_literal": "Introducción de gravámenes en todos los impuestos, tasas y precios públicos que tengan en cuenta el patrimonio previo y el nivel de ingresos de las personas contribuyentes.",
+      "pagina": 85,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal",
+        "#Fiscalidad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 146,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Aplicar fiscalidad progresiva y eliminar privilegios fiscales a rentas altas",
+      "resumen": "Impulsar un sistema fiscal autonómico más progresivo para que paguen más quienes más tienen y aumentar recaudación estructural para servicios públicos. Suprimir beneficios fiscales considerados regresivos desde el inicio de legislatura.",
+      "cita_literal": "Impulso para todo el sistema fiscal de la Comunidad Autónoma sobre el que tiene competencias directas y capacidad de decisión, de una fiscalidad progresiva que haga pagar más a quienes más tienen, basada en criterios de justicia fiscal, que permita un aumento.",
+      "pagina": 85,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal",
+        "#Fiscalidad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 147,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Reducir IBI y circulación para favorecer empadronamiento rural",
+      "resumen": "Poner en marcha con ayuntamientos reducciones del IBI y del impuesto de circulación para fomentar empadronamiento en zonas rurales. Limitar la medida a vivienda y vehículo habituales.",
+      "cita_literal": "Pondremos en marcha, en colaboración con los Ayuntamientos, medidas de reducciones fiscales en los impuestos de Bienes Inmuebles (IBI) y del Impuesto de Circulación, para favorecer el empadronamiento en las zonas rurales exigiendo que sean la vivienda y vehículo habitual los afectados.",
+      "pagina": 86,
+      "tags": [
+        "#Empleo",
+        "#EconomiaLocal",
+        "#Fiscalidad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    }
+  ]
+}

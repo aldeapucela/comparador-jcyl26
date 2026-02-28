@@ -9,7 +9,8 @@
     "foto_candidato": "img/candidatos/carlos-pollan.jpg",
     "color": "#63be21",
     "lema": "Un programa con sentido común",
-    "anio": 2026
+    "anio": 2026,
+    "logo": "img/vox.svg"
   },
   "propuestas": [
     {
@@ -22,8 +23,8 @@
       "pagina": 9,
       "tags": [
         "#Transparencia",
-        "#Corrupcion",
         "#Antifraude",
+        "#Corrupcion",
         "#Gobernanza"
       ],
       "analisis": {
@@ -347,8 +348,8 @@
       "pagina": 20,
       "tags": [
         "#Transparencia",
-        "#Gobernanza",
         "#Corrupcion",
+        "#Gobernanza",
         "#SinBurocracia"
       ],
       "analisis": {
@@ -367,9 +368,9 @@
       "pagina": 20,
       "tags": [
         "#ServiciosSociales",
-        "#Inmigracion",
         "#ViviendaPublica",
-        "#Transparencia"
+        "#Transparencia",
+        "#Inmigracion"
       ],
       "analisis": {
         "competencia": "Petition",
@@ -1396,10 +1397,10 @@
       "cita_literal": "En VOX consideramos un deber la defensa de nuestro rico patrimonio como herencia recibida de nuestros mayores, que ha de ser transmitida a las futuras generaciones.",
       "pagina": 63,
       "tags": [
+        "#Turismo",
+        "#Derechos",
         "#Cultura",
-        "#Patrimonio",
-        "#Tradiciones",
-        "#Turismo"
+        "#Patrimonio"
       ],
       "analisis": {
         "competencia": "Shared",
@@ -1416,10 +1417,10 @@
       "cita_literal": "Continuaremos defendiendo los festejos taurinos e impulsaremos nuestras escuelas taurinas para garantizar la presencia de este legado cultural inmemorial en nuestra región.",
       "pagina": 63,
       "tags": [
+        "#Turismo",
+        "#Derechos",
         "#Cultura",
-        "#Tauromaquia",
-        "#Tradiciones",
-        "#Turismo"
+        "#Tauromaquia"
       ],
       "analisis": {
         "competencia": "Directa",

@@ -10,7 +10,8 @@
     "color": "#bb112a",
     "coalicion": "Izquierda Unida, Movimiento Sumar, Verdes Equo",
     "lema": "El camino hacia el bienestar de todas las personas",
-    "anio": 2026
+    "anio": 2026,
+    "logo": "img/encomun.svg"
   },
   "propuestas": [
     {
