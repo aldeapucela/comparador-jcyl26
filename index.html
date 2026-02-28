@@ -33,7 +33,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20260228125417">
+    <link rel="stylesheet" href="css/style.css?v=20260228131948">
     <link rel="stylesheet" href="css/stories.css?v=20260228183000">
     </head>
 
@@ -77,8 +77,8 @@
         <section id="view-party-selection" class="fade-in">
             <div class="max-w-5xl mx-auto mb-16 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                 <div>
-                    <button id="btn-goto-afinidad"
-                        class="group relative w-full bg-gradient-to-br from-indigo-50 to-white text-indigo-700 border border-indigo-200/60 p-6 rounded-2xl font-semibold text-lg shadow-sm hover:shadow-lg hover:border-indigo-300/80 transition-all duration-300 active:scale-[0.98] overflow-hidden">
+                    <a id="btn-goto-afinidad" href="#/afinidad"
+                        class="group block relative w-full bg-gradient-to-br from-indigo-50 to-white text-indigo-700 border border-indigo-200/60 p-6 rounded-2xl font-semibold text-lg shadow-sm hover:shadow-lg hover:border-indigo-300/80 transition-all duration-300 active:scale-[0.98] overflow-hidden">
                         <div class="relative z-10 flex items-center justify-center gap-4">
                             <div class="w-10 h-10 rounded-xl bg-indigo-100/50 flex items-center justify-center group-hover:bg-indigo-200/50 transition-colors">
                                 <i class="fa-solid fa-heart-pulse text-indigo-600"></i>
@@ -87,13 +87,13 @@
                         </div>
                         <div class="absolute inset-0 bg-gradient-to-r from-indigo-100/40 via-transparent to-sky-100/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-200 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    </button>
+                    </a>
                     <p class="text-slate-400 mt-4 text-sm font-light">Descubre en 3 minutos tu afinidad con los partidos</p>
                 </div>
 
                 <div>
-                    <button id="btn-goto-explora"
-                        class="group relative w-full bg-gradient-to-br from-orange-50 to-white text-orange-700 border border-orange-200/70 p-6 rounded-2xl font-semibold text-lg shadow-sm hover:shadow-lg hover:border-orange-300/90 transition-all duration-300 active:scale-[0.98] overflow-hidden">
+                    <a id="btn-goto-explora" href="#/explora"
+                        class="group block relative w-full bg-gradient-to-br from-orange-50 to-white text-orange-700 border border-orange-200/70 p-6 rounded-2xl font-semibold text-lg shadow-sm hover:shadow-lg hover:border-orange-300/90 transition-all duration-300 active:scale-[0.98] overflow-hidden">
                         <div class="relative z-10">
                             <div class="flex items-center justify-center gap-4">
                                 <div class="w-10 h-10 rounded-xl bg-orange-100/70 flex items-center justify-center group-hover:bg-orange-200/80 transition-colors">
@@ -105,13 +105,13 @@
                         </div>
                         <div class="absolute inset-0 bg-gradient-to-r from-orange-100/40 via-transparent to-amber-100/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-300/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    </button>
+                    </a>
                     <p class="text-slate-400 mt-4 text-sm font-light">Historias rápidas para leer fácilmente</p>
                 </div>
 
                 <div>
-                    <button id="btn-goto-topics"
-                        class="group relative w-full bg-gradient-to-br from-slate-50 to-white text-slate-700 border border-slate-200/60 p-6 rounded-2xl font-semibold text-lg shadow-sm hover:shadow-lg hover:border-slate-300/80 transition-all duration-300 active:scale-[0.98] overflow-hidden">
+                    <a id="btn-goto-topics" href="#/comparar"
+                        class="group block relative w-full bg-gradient-to-br from-slate-50 to-white text-slate-700 border border-slate-200/60 p-6 rounded-2xl font-semibold text-lg shadow-sm hover:shadow-lg hover:border-slate-300/80 transition-all duration-300 active:scale-[0.98] overflow-hidden">
                         <div class="relative z-10 flex items-center justify-center gap-4">
                             <div class="w-10 h-10 rounded-xl bg-slate-100/50 flex items-center justify-center group-hover:bg-slate-200/50 transition-colors">
                                 <i class="fa-solid fa-scale-balanced text-slate-600"></i>
@@ -120,7 +120,7 @@
                         </div>
                         <div class="absolute inset-0 bg-gradient-to-r from-blue-50/30 via-transparent to-indigo-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    </button>
+                    </a>
                     <p class="text-slate-400 mt-4 text-sm font-light">Sanidad, Vivienda, Empleo...</p>
                 </div>
             </div>
@@ -133,12 +133,22 @@
             </div>
 
             <div id="home-share-panel" class="max-w-2xl mx-auto mt-10 text-center">
-                <p class="home-share-pill">Ayuda a que otros vecinos estén informados</p>
                 <button id="btn-share-home" class="home-share-btn" type="button" aria-label="Compartir esta portada con tus vecinos">
                     <i class="fa-solid fa-share-nodes text-sm" aria-hidden="true"></i>
-                    <span>Compartir esta guía</span>
+                    <span>Comparte esta web</span>
                 </button>
+                <p class="home-share-caption">Ayuda a que otros vecinos estén informados</p>
             </div>
+
+            <a href="https://aldeapucela.org" target="_blank" rel="noopener noreferrer" class="home-aldea-card mt-12">
+                <p class="home-aldea-title">
+                    <span class="home-aldea-favicon-wrap">
+                        <img src="./img/favicon.png" alt="" class="home-aldea-favicon" aria-hidden="true">
+                    </span>
+                    <span>Descubre Aldea Pucela</span>
+                </p>
+                <p class="home-aldea-subtitle">La mayor comunidad vecinal online de Valladolid</p>
+            </a>
             
             <div class="max-w-2xl mx-auto mt-12 text-left">
                 <p class="text-slate-500 text-sm font-light leading-relaxed">
@@ -584,8 +594,8 @@
         </div>
     </footer>
 
-    <script src="js/analytics.js?v=20260228125417"></script>
-    <script type="module" src="js/main.js?v=20260228125417"></script>
+    <script src="js/analytics.js?v=20260228131948"></script>
+    <script type="module" src="js/main.js?v=20260228131948"></script>
 </body>
 
 </html>

@@ -255,6 +255,36 @@ function renderSearchScreen(term) {
     );
 }
 
+async function shareHomePage(btn) {
+    const url = `${window.location.origin}${window.location.pathname}`;
+    const shareBody = 'Descubre el comparador de programas de las elecciones a las Cortes de Castilla y León y descubre a qué partido eres más afín con el cuestionario exclusivo';
+    const shareText = `${shareBody}\n\n${url}`;
+
+    if (navigator.share) {
+        try {
+            await navigator.share({
+                title: 'Comparador Electoral CyL 2026',
+                text: shareBody,
+                url
+            });
+            return;
+        } catch (err) {
+            if (err.name === 'AbortError') return;
+        }
+    }
+
+    try {
+        await navigator.clipboard.writeText(shareText);
+        if (btn) {
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-check text-emerald-300"></i><span>Copiado</span>';
+            setTimeout(() => { btn.innerHTML = originalText; }, 2200);
+        }
+    } catch (err) {
+        console.error('Failed to share home page: ', err);
+    }
+}
+
 async function init() {
     await loadPartiesCatalog();
 
@@ -343,6 +373,13 @@ function setupEventListeners() {
     if (shareSearchQueryBtn) {
         shareSearchQueryBtn.addEventListener('click', () => {
             UI.shareSearchTerm(shareSearchQueryBtn);
+        });
+    }
+
+    const shareHomeBtn = document.getElementById('btn-share-home');
+    if (shareHomeBtn) {
+        shareHomeBtn.addEventListener('click', () => {
+            shareHomePage(shareHomeBtn);
         });
     }
 

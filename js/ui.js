@@ -203,14 +203,14 @@ export const UI = {
         }
 
         this.containers.parties.innerHTML = shuffledParties.map(party => `
-            <div class="party-card bg-white p-6 rounded-2xl border border-slate-100 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl group flex flex-col items-center justify-center text-center" 
-                 data-party-id="${party.id}">
+            <a href="#/${party.id}" class="party-card bg-white p-6 rounded-2xl border border-slate-100 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl group flex flex-col items-center justify-center text-center" 
+               data-party-id="${party.id}" aria-label="Ver programa de ${this.escapeHtml(party.name)}">
                 <div class="w-16 h-16 md:w-24 md:h-24 rounded-2xl flex items-center justify-center mb-4 transition-transform group-hover:scale-105 overflow-hidden shadow-sm border border-slate-50" 
                      style="background-color: white">
                     <img src="${party.logo}" alt="Logo ${party.name}" class="w-full h-full object-contain p-2">
                 </div>
                 <h3 class="text-lg md:text-xl font-bold text-slate-800">${party.name}</h3>
-            </div>
+            </a>
         `).join('');
     },
 
