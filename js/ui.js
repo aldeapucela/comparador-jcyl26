@@ -194,6 +194,13 @@ export const UI = {
     renderPartySelection() {
         // Create a copy and shuffle for fairness
         const shuffledParties = [...PARTIES].sort(() => Math.random() - 0.5);
+        const storiesPreview = document.getElementById('explora-stories-preview');
+        if (storiesPreview) {
+            const previewParties = shuffledParties.slice(0, 5);
+            storiesPreview.innerHTML = previewParties.map((party) => `
+                <span class="story-ring-icon"><img src="${this.escapeHtml(party.logo)}" alt=""></span>
+            `).join('');
+        }
 
         this.containers.parties.innerHTML = shuffledParties.map(party => `
             <div class="party-card bg-white p-6 rounded-2xl border border-slate-100 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl group flex flex-col items-center justify-center text-center" 
@@ -837,7 +844,18 @@ export const UI = {
         }
     },
 
-    async shareProposal(partyInfo, category, prop, btn) {
+    trackStoryShareEvent(partyInfo, category, prop, method) {
+        if (typeof _paq === 'undefined') return;
+        const partyId = String(partyInfo?.id || 'unknown');
+        const proposalId = String(prop?.id || 'unknown');
+        const categoryName = String(category || 'General');
+        const shareMethod = String(method || 'unknown');
+        const label = `${partyId}|${proposalId}|${categoryName}|${shareMethod}`;
+        _paq.push(['trackEvent', 'Explora Stories', 'Compartir', label, 1]);
+    },
+
+    async shareProposal(partyInfo, category, prop, btn, options = {}) {
+        const surface = String(options?.surface || '');
         const url = `${window.location.origin}${window.location.pathname}#/${partyInfo.id}/${encodeURIComponent(category)}/${prop.id}`;
         const header = `${partyInfo.name} en Castilla y León propone "${prop.titulo_corto}"`;
         const summary = (prop.resumen || '').trim();
@@ -856,6 +874,9 @@ export const UI = {
                     text: shareText,
                     url: url
                 });
+                if (surface === 'stories') {
+                    this.trackStoryShareEvent(partyInfo, category, prop, 'web_share');
+                }
             } catch (err) {
                 if (err.name !== 'AbortError') console.error('Error sharing:', err);
             }
@@ -863,6 +884,9 @@ export const UI = {
             // Fallback to clipboard
             try {
                 await navigator.clipboard.writeText(fullMessage);
+                if (surface === 'stories') {
+                    this.trackStoryShareEvent(partyInfo, category, prop, 'clipboard');
+                }
                 const originalText = btn.innerHTML;
                 btn.innerHTML = '<i class="fa-solid fa-check text-emerald-500"></i> <span class="text-emerald-600">Copiado</span>';
                 setTimeout(() => { btn.innerHTML = originalText; }, 2000);

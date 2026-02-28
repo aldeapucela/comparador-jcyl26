@@ -380,7 +380,7 @@ export function createStoriesController(appState) {
         const shareBtn = document.getElementById('btn-story-share-inline');
         if (shareBtn) {
             shareBtn.addEventListener('click', () => {
-                UI.shareProposal(story.party, story.categoryName, story.proposal, shareBtn);
+                UI.shareProposal(story.party, story.categoryName, story.proposal, shareBtn, { surface: 'stories' });
             });
         }
 
