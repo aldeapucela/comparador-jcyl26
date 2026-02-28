@@ -5,6 +5,7 @@ import { StoriesView } from './view.js';
 const EXPLORA_CAPTION_STEP_MS = 850;
 const EXPLORA_AFTER_LAST_BLOCK_MS = 6500;
 const EXPLORA_MIN_STORY_DURATION_MS = 7000;
+const EXPLORA_SEEN_STORIES_STORAGE_KEY = 'explora_seen_stories_v1';
 
 export function createStoriesController(appState) {
     let exploraTouchStart = null;
@@ -24,6 +25,42 @@ export function createStoriesController(appState) {
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#39;');
+
+    function readSeenStoryIds() {
+        try {
+            const raw = localStorage.getItem(EXPLORA_SEEN_STORIES_STORAGE_KEY);
+            if (!raw) return new Set();
+            const parsed = JSON.parse(raw);
+            if (!Array.isArray(parsed)) return new Set();
+            return new Set(parsed.map((id) => String(id || '')).filter(Boolean));
+        } catch {
+            return new Set();
+        }
+    }
+
+    function writeSeenStoryIds(idsSet = new Set()) {
+        try {
+            localStorage.setItem(EXPLORA_SEEN_STORIES_STORAGE_KEY, JSON.stringify(Array.from(idsSet)));
+        } catch {
+            // Ignore storage quota/privacy failures.
+        }
+    }
+
+    function getStoryUniqueId(story) {
+        const partyId = story?.party?.id || '';
+        const proposalId = story?.proposal?.id || '';
+        if (!partyId || !proposalId) return '';
+        return `${partyId}:${proposalId}`;
+    }
+
+    function markStoryAsSeen(story) {
+        const storyId = getStoryUniqueId(story);
+        if (!storyId) return;
+        const seen = readSeenStoryIds();
+        if (seen.has(storyId)) return;
+        seen.add(storyId);
+        writeSeenStoryIds(seen);
+    }
 
     function getSelectedPartyIds() {
         const raw = Array.isArray(appState.stories.selectedPartyIds)
@@ -187,6 +224,11 @@ export function createStoriesController(appState) {
             filtered = filtered.filter((item) => item.categoryName === selectedTopic);
         }
 
+        if (appState.stories.hideSeenStories) {
+            const seen = readSeenStoryIds();
+            filtered = filtered.filter((item) => !seen.has(getStoryUniqueId(item)));
+        }
+
         if (source === 'party') {
             return buildVariedRandomStoriesFeed(filtered, { maxConsecutiveSameParty: 1 });
         }
@@ -299,7 +341,32 @@ export function createStoriesController(appState) {
             btn.classList.toggle('active', isActive);
         });
 
+        const hideSeenCheckbox = document.getElementById('explora-hide-seen');
+        if (hideSeenCheckbox) {
+            hideSeenCheckbox.checked = Boolean(appState.stories.hideSeenStories);
+        }
+
         syncExploraStartButtonState();
+    }
+
+    function bindSeenToggle() {
+        const hideSeenCheckbox = document.getElementById('explora-hide-seen');
+        if (!hideSeenCheckbox || hideSeenCheckbox.dataset.bound === 'true') return;
+
+        hideSeenCheckbox.dataset.bound = 'true';
+        hideSeenCheckbox.addEventListener('change', () => {
+            appState.stories.hideSeenStories = Boolean(hideSeenCheckbox.checked);
+        });
+    }
+
+    function bindSetupCloseButton() {
+        const closeBtn = document.getElementById('explora-setup-close');
+        if (!closeBtn || closeBtn.dataset.bound === 'true') return;
+
+        closeBtn.dataset.bound = 'true';
+        closeBtn.addEventListener('click', () => {
+            UI.navigateHash('#/');
+        });
     }
 
     function getStoryDurationMs(story) {
@@ -379,13 +446,16 @@ export function createStoriesController(appState) {
             stopStoryCaptionSequence();
             UI.containers.storiesCard.innerHTML = `
                 <div class="bg-white border border-slate-200 rounded-2xl p-8 text-center text-slate-500">
-                    No hay propuestas para esta selección. Prueba otro partido o temática.
+                    ${appState.stories.hideSeenStories
+                        ? 'No quedan historias nuevas para esta selección. Desmarca "No mostrar historias ya vistas" para volver a verlas.'
+                        : 'No hay propuestas para esta selección. Prueba otro partido o temática.'}
                 </div>
             `;
             return;
         }
 
         const story = appState.stories.feed[appState.stories.currentIndex % appState.stories.feed.length];
+        markStoryAsSeen(story);
         appState.stories.currentStory = story;
         appState.stories.currentDurationMs = getStoryDurationMs(story);
 
@@ -734,6 +804,8 @@ export function createStoriesController(appState) {
 
     function renderPrototype() {
         populateExploraFilters();
+        bindSeenToggle();
+        bindSetupCloseButton();
         syncExploraSetupUI();
         syncExploraStartButtonState();
 

@@ -34,6 +34,7 @@ let appState = {
         selectedPartyId: '',
         selectedPartyIds: [],
         selectedTopic: '',
+        hideSeenStories: true,
         feed: [],
         currentIndex: 0,
         currentStory: null,

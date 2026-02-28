@@ -33,7 +33,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20260228155738">
+    <link rel="stylesheet" href="css/style.css?v=20260228162817">
     <link rel="stylesheet" href="css/stories.css?v=20260228190000">
     </head>
 
@@ -163,8 +163,16 @@
         <section id="view-explora" class="hidden fade-in">
             <div class="explora-stage">
                 <div id="explora-setup" class="explora-setup-card">
+                    <button
+                        id="explora-setup-close"
+                        type="button"
+                        class="explora-setup-close-btn"
+                        aria-label="Cerrar explorador de historias"
+                        title="Cerrar">
+                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                    </button>
                     <p class="explora-kicker">Explora propuestas</p>
-                    <h2 class="explora-setup-title">¿Cómo quieres empezar?</h2>
+                    <h2 class="explora-setup-title">¿Qué quieres ver?</h2>
 
                     <div class="explora-choice-grid" role="radiogroup" aria-label="Modo de exploración">
                         <button type="button" class="explora-choice active" data-explora-choice="random">
@@ -189,6 +197,13 @@
                     <div id="explora-topic-picker" class="explora-picker hidden">
                         <label for="explora-topic-select">Temática</label>
                         <select id="explora-topic-select"></select>
+                    </div>
+
+                    <div class="explora-toggle-row">
+                        <label class="explora-checkbox">
+                            <input id="explora-hide-seen" type="checkbox" checked>
+                            <span>Ocultar historias vistas</span>
+                        </label>
                     </div>
 
                     <button id="btn-explora-start" class="explora-start-btn">
@@ -608,8 +623,8 @@
         </div>
     </footer>
 
-    <script src="js/analytics.js?v=20260228155738"></script>
-    <script type="module" src="js/main.js?v=20260228155738"></script>
+    <script src="js/analytics.js?v=20260228162817"></script>
+    <script type="module" src="js/main.js?v=20260228162817"></script>
 </body>
 
 </html>
