@@ -24,7 +24,6 @@ export const UI = {
     lastSearchResults: [],
     lastSearchTerm: '',
     lastSearchPartyIds: [],
-    storyCaptionTimer: null,
 
     // Selectors
     views: {
@@ -965,122 +964,6 @@ export const UI = {
             requestAnimationFrame(updateAfinidadViewportOffset);
         }
     },
-
-
-
-    buildStoryCaptionChunks(summary = '', wordsPerChunk = 3) {
-        const normalized = String(summary || '').replace(/\s+/g, ' ').trim();
-        if (!normalized) return [];
-
-        const words = normalized.split(' ');
-        const chunks = [];
-        for (let i = 0; i < words.length; i += wordsPerChunk) {
-            chunks.push(words.slice(i, i + wordsPerChunk).join(' '));
-        }
-        return chunks;
-    },
-
-    playStoryCaptionSequence() {
-        if (this.storyCaptionTimer) {
-            clearInterval(this.storyCaptionTimer);
-            this.storyCaptionTimer = null;
-        }
-
-        const chunkEls = this.containers.storiesCard?.querySelectorAll('.story-caption-chunk');
-        if (!chunkEls || chunkEls.length === 0) return;
-
-        chunkEls.forEach((el, index) => {
-            el.classList.toggle('is-visible', index === 0);
-        });
-
-        if (chunkEls.length === 1 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-        let current = 0;
-        this.storyCaptionTimer = setInterval(() => {
-            chunkEls[current]?.classList.remove('is-visible');
-            current = (current + 1) % chunkEls.length;
-            chunkEls[current]?.classList.add('is-visible');
-        }, 1500);
-    },
-
-    getStoryCategoryAccent(categoryName = '') {
-        const key = String(categoryName || '').toLowerCase();
-        if (key.includes('sanidad')) return '#22c55e';
-        if (key.includes('vivienda')) return '#f97316';
-        if (key.includes('educación') || key.includes('educacion')) return '#eab308';
-        if (key.includes('econom')) return '#38bdf8';
-        if (key.includes('medio')) return '#10b981';
-        if (key.includes('conectividad') || key.includes('movilidad')) return '#6366f1';
-        if (key.includes('servicios sociales') || key.includes('cuidados')) return '#ec4899';
-        if (key.includes('democr')) return '#a855f7';
-        return '#8b5cf6';
-    },
-    renderStoriesCard(storyData) {
-        if (!this.containers.storiesCard || !storyData) return;
-
-        const {
-            party,
-            proposal,
-            categoryName,
-            mode,
-            progress,
-            total,
-            similarCount
-        } = storyData;
-
-        const summary = proposal?.resumen || 'Sin resumen disponible.';
-        const clippedSummary = summary.length > 260
-            ? `${summary.slice(0, 257)}...`
-            : summary;
-        const summaryChunks = this.buildStoryCaptionChunks(clippedSummary, 3);
-
-        const categoryAccent = this.getStoryCategoryAccent(categoryName);
-
-        this.containers.storiesCard.innerHTML = `
-            <article class="story-screen" style="--party-color: ${this.escapeHtml(party.color || '#334155')}; --story-accent: ${this.escapeHtml(categoryAccent)}">
-                <div class="story-screen-overlay"></div>
-
-                <header class="story-top">
-                    <div class="story-progress-track" aria-hidden="true">
-                        <span class="story-progress-fill" style="width: ${Math.min(100, Math.max(8, (progress / Math.max(total, 1)) * 100))}%"></span>
-                    </div>
-                    <div class="story-meta-row">
-                        <span class="story-chip">${this.escapeHtml(categoryName)}</span>
-                        <span class="story-counter">${progress}/${total}</span>
-                    </div>
-                    <div class="story-party-row">
-                        <span class="story-party-logo-wrap">
-                            <img src="${this.escapeHtml(party.logo)}" alt="Logo ${this.escapeHtml(party.name)}" class="story-party-logo">
-                        </span>
-                        <div>
-                            <p class="story-party-name">${this.escapeHtml(party.name)}</p>
-                            <p class="story-party-mode">${mode === 'topic' ? 'Modo: temática seleccionada' : mode === 'party' ? 'Modo: partido seleccionado' : 'Modo: random de todo'}</p>
-                        </div>
-                    </div>
-                </header>
-
-                <section class="story-body">
-                    <h3 class="story-title">${this.escapeHtml(proposal?.titulo_corto || 'Propuesta sin título')}</h3>
-                    <div class="story-summary story-summary-caption" aria-live="polite">
-                        ${summaryChunks.map((chunk, idx) => `<span class="story-caption-chunk${idx === 0 ? ' is-visible' : ''}">${this.escapeHtml(chunk)}</span>`).join('')}
-                    </div>
-                </section>
-
-                <footer class="story-actions story-actions-icons">
-                    <button class="story-action-btn btn-detail" data-party="${this.escapeHtml(party.id)}" data-id="${this.escapeHtml(proposal.id)}" aria-label="Ver detalle" title="Ver detalle">
-                        <i class="fa-solid fa-up-right-from-square"></i>
-                    </button>
-                    <button class="story-action-btn" id="btn-story-compare-inline" aria-label="Comparar tema" title="Comparar tema (${similarCount})">
-                        <i class="fa-solid fa-scale-balanced"></i>
-                    </button>
-                    <button class="story-action-btn" id="btn-story-share-inline" aria-label="Compartir propuesta" title="Compartir propuesta">
-                        <i class="fa-solid fa-share-nodes"></i>
-                    </button>
-                </footer>
-            </article>
-        `;
-    },
-
     // --- Comparison Specific Methods ---
 
     renderComparison(allData, selectedIds, currentCategory, filters, allCategories) {

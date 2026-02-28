@@ -5,6 +5,7 @@
 import { PARTIES, fetchPartyData, fetchAllPartiesData, getCategoriesFromProposals, CATEGORIES } from './api.js';
 import { UI } from './ui.js';
 import { initAfinidad, renderQuestion, handleAnswer, toggleImportant, nextQuestion, prevQuestion, toggleContext, loadFromUrl, calculateAndShowResults, setSharedResults, startAfinidad } from './afinidad.js';
+import { createStoriesController } from './stories/controller.js';
 
 const APP_VERSION = new URL(import.meta.url).searchParams.get('v') || '';
 window.__APP_VERSION__ = APP_VERSION;
@@ -31,19 +32,20 @@ let appState = {
     stories: {
         source: 'random',
         selectedPartyId: '',
+        selectedPartyIds: [],
         selectedTopic: '',
         feed: [],
         currentIndex: 0,
         currentStory: null,
+        currentDurationMs: 7000,
+        transitionDirection: 'next',
         started: false
     }
 };
 
 const PARTY_ID_ORDER = PARTIES.map((party) => party.id);
 const PARTY_IDS = new Set(PARTY_ID_ORDER);
-
-let exploraTouchStartY = null;
-let exploraWheelLocked = false;
+const storiesController = createStoriesController(appState);
 
 
 function safeDecodeURIComponent(value = '') {
@@ -253,195 +255,6 @@ function renderSearchScreen(term) {
     );
 }
 
-function buildStoriesFeed() {
-    const allItems = [];
-
-    Object.entries(appState.allData).forEach(([partyId, partyData]) => {
-        const partyInfo = PARTIES.find((party) => party.id === partyId);
-        if (!partyInfo || !Array.isArray(partyData?.propuestas)) return;
-
-        partyData.propuestas.forEach((proposal) => {
-            allItems.push({
-                party: partyInfo,
-                proposal,
-                categoryName: proposal.categoria || 'General'
-            });
-        });
-    });
-
-    const { source, selectedPartyId, selectedTopic } = appState.stories;
-    let filtered = allItems;
-
-    if (source === 'party' && selectedPartyId) {
-        filtered = filtered.filter((item) => item.party.id === selectedPartyId);
-    }
-
-    if (source === 'topic' && selectedTopic) {
-        filtered = filtered.filter((item) => item.categoryName === selectedTopic);
-    }
-
-    return filtered.sort(() => Math.random() - 0.5);
-}
-
-function populateExploraFilters() {
-    const partySelect = document.getElementById('explora-party-select');
-    const topicSelect = document.getElementById('explora-topic-select');
-
-    if (partySelect && partySelect.options.length === 0) {
-        partySelect.innerHTML = PARTIES
-            .map((party) => `<option value="${party.id}">${party.name}</option>`)
-            .join('');
-    }
-
-    if (topicSelect && topicSelect.options.length === 0) {
-        const topicNames = CATEGORIES.map((category) => category.name);
-        topicSelect.innerHTML = topicNames
-            .map((topic) => `<option value="${topic}">${topic}</option>`)
-            .join('');
-    }
-}
-
-function syncExploraSetupUI() {
-    const setup = document.getElementById('explora-setup');
-    const player = document.getElementById('explora-player');
-    const partyPicker = document.getElementById('explora-party-picker');
-    const topicPicker = document.getElementById('explora-topic-picker');
-
-    if (!setup || !player || !partyPicker || !topicPicker) return;
-
-    setup.classList.toggle('hidden', appState.stories.started);
-    player.classList.toggle('hidden', !appState.stories.started);
-
-    partyPicker.classList.toggle('hidden', appState.stories.source !== 'party');
-    topicPicker.classList.toggle('hidden', appState.stories.source !== 'topic');
-
-    document.querySelectorAll('.explora-choice').forEach((btn) => {
-        const isActive = btn.dataset.exploraChoice === appState.stories.source;
-        btn.classList.toggle('active', isActive);
-    });
-}
-
-function getComparableCount(categoryName, excludedPartyId) {
-    return PARTIES.reduce((count, party) => {
-        if (party.id === excludedPartyId) return count;
-        const proposals = appState.allData[party.id]?.propuestas || [];
-        if (proposals.some((proposal) => proposal.categoria === categoryName)) {
-            return count + 1;
-        }
-        return count;
-    }, 0);
-}
-
-function renderCurrentStoryCard() {
-    if (!appState.stories.feed.length) {
-        UI.containers.storiesCard.innerHTML = `
-            <div class="bg-white border border-slate-200 rounded-2xl p-8 text-center text-slate-500">
-                No hay propuestas para esta selección. Prueba otro partido o temática.
-            </div>
-        `;
-        return;
-    }
-
-    const story = appState.stories.feed[appState.stories.currentIndex % appState.stories.feed.length];
-    appState.stories.currentStory = story;
-
-    UI.renderStoriesCard({
-        ...story,
-        mode: appState.stories.source,
-        progress: (appState.stories.currentIndex % appState.stories.feed.length) + 1,
-        total: appState.stories.feed.length,
-        similarCount: getComparableCount(story.categoryName, story.party.id)
-    });
-    UI.playStoryCaptionSequence();
-
-    document.getElementById('btn-story-compare-inline')?.addEventListener('click', () => {
-        UI.navigateHash(`#/comparar/${encodeURIComponent(story.categoryName)}`);
-    });
-
-    const shareBtn = document.getElementById('btn-story-share-inline');
-    if (shareBtn) {
-        shareBtn.addEventListener('click', () => {
-            UI.shareProposal(story.party, story.categoryName, story.proposal, shareBtn);
-        });
-    }
-
-    bindExploraGestures();
-
-    UI.containers.storiesCard.querySelectorAll('.btn-detail').forEach((btn) => {
-        btn.addEventListener('click', () => {
-            UI.navigateHash(`#/${story.party.id}/${encodeURIComponent(story.categoryName)}/${story.proposal.id}`);
-        });
-    });
-}
-
-function bindExploraGestures() {
-    const storyCard = document.getElementById('stories-card');
-    if (!storyCard) return;
-
-    storyCard.onwheel = null;
-    storyCard.ontouchstart = null;
-    storyCard.ontouchend = null;
-
-    storyCard.onwheel = (event) => {
-        if (appState.mode !== 'stories' || !appState.stories.started) return;
-        if (Math.abs(event.deltaY) < 22) return;
-        if (exploraWheelLocked) return;
-        exploraWheelLocked = true;
-        if (event.deltaY > 0) moveToNextStory();
-        setTimeout(() => { exploraWheelLocked = false; }, 260);
-    };
-
-    storyCard.ontouchstart = (event) => {
-        if (appState.mode !== 'stories' || !appState.stories.started) return;
-        exploraTouchStartY = event.changedTouches?.[0]?.clientY ?? null;
-    };
-
-    storyCard.ontouchend = (event) => {
-        if (appState.mode !== 'stories' || !appState.stories.started) return;
-        const endY = event.changedTouches?.[0]?.clientY ?? null;
-        if (exploraTouchStartY === null || endY === null) return;
-        const deltaY = exploraTouchStartY - endY;
-        if (Math.abs(deltaY) > 42) {
-            moveToNextStory();
-        }
-        exploraTouchStartY = null;
-    };
-}
-
-function moveToNextStory() {
-    if (!appState.stories.feed.length) return;
-    appState.stories.currentIndex = (appState.stories.currentIndex + 1) % appState.stories.feed.length;
-    renderCurrentStoryCard();
-}
-
-function startExploraFeed() {
-    const partySelect = document.getElementById('explora-party-select');
-    const topicSelect = document.getElementById('explora-topic-select');
-
-    appState.stories.selectedPartyId = partySelect?.value || PARTIES[0]?.id || '';
-    appState.stories.selectedTopic = topicSelect?.value || CATEGORIES[0]?.name || '';
-    appState.stories.feed = buildStoriesFeed();
-    appState.stories.currentIndex = 0;
-    appState.stories.started = true;
-
-    syncExploraSetupUI();
-    renderCurrentStoryCard();
-    bindExploraGestures();
-}
-
-function renderStoriesPrototype() {
-    populateExploraFilters();
-    syncExploraSetupUI();
-
-    if (appState.stories.started) {
-        if (!appState.stories.feed.length) {
-            appState.stories.feed = buildStoriesFeed();
-            appState.stories.currentIndex = 0;
-        }
-        renderCurrentStoryCard();
-    }
-}
-
 async function init() {
     // 1. Bulk Load all data at start (including afinidad data)
     appState.allData = await fetchAllPartiesData();
@@ -584,19 +397,16 @@ function setupEventListeners() {
 
     document.querySelectorAll('.explora-choice').forEach((btn) => {
         btn.addEventListener('click', () => {
-            appState.stories.source = btn.dataset.exploraChoice || 'random';
-            syncExploraSetupUI();
+            storiesController.setSource(btn.dataset.exploraChoice || 'random');
         });
     });
 
-    document.getElementById('btn-explora-start')?.addEventListener('click', startExploraFeed);
+    document.getElementById('btn-explora-start')?.addEventListener('click', () => {
+        UI.navigateHash('#/explora/play');
+    });
 
     document.addEventListener('keydown', (event) => {
-        if (appState.mode !== 'stories') return;
-        if (event.key === 'ArrowDown' || event.key === 'PageDown' || event.key === ' ') {
-            event.preventDefault();
-            moveToNextStory();
-        }
+        storiesController.handleKeydown(event);
     });
 
     // Comparison Mode: Party selection
@@ -685,6 +495,11 @@ async function handleRouting() {
     const hash = window.location.hash || '#/';
     const hashWithoutQuery = hash.split('?')[0];
     const parts = hashWithoutQuery.split('/').filter(p => p && p !== '#');
+    const isExploraRoute = parts[0] === 'explora';
+
+    if (!isExploraRoute) {
+        storiesController.teardownForRouteLeave();
+    }
 
     if (hash !== appState.currentHash) {
         appState.previousHash = appState.currentHash;
@@ -702,13 +517,21 @@ async function handleRouting() {
     const partyId = parts[0];
 
     if (partyId === 'explora') {
+        const exploraSubroute = parts[1] || '';
         appState.mode = 'stories';
-        appState.stories.started = false;
-        appState.stories.feed = [];
-        appState.stories.currentIndex = 0;
         trackSpaPageView(hash);
         UI.switchView('stories');
-        renderStoriesPrototype();
+        if (exploraSubroute === 'play') {
+            if (!appState.stories.started) {
+                storiesController.startFeed();
+            } else {
+                storiesController.renderPrototype();
+            }
+            return;
+        }
+
+        storiesController.resetForRouteEnter();
+        storiesController.renderPrototype();
         return;
     }
 
