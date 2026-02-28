@@ -187,6 +187,10 @@ export function createStoriesController(appState) {
             filtered = filtered.filter((item) => item.categoryName === selectedTopic);
         }
 
+        if (source === 'party') {
+            return buildVariedRandomStoriesFeed(filtered, { maxConsecutiveSameParty: 1 });
+        }
+
         if (source !== 'random') {
             return filtered.sort(() => Math.random() - 0.5);
         }
@@ -194,7 +198,7 @@ export function createStoriesController(appState) {
         return buildVariedRandomStoriesFeed(filtered);
     }
 
-    function buildVariedRandomStoriesFeed(items = []) {
+    function buildVariedRandomStoriesFeed(items = [], { maxConsecutiveSameParty = 2 } = {}) {
         if (!Array.isArray(items) || items.length <= 2) {
             return [...items];
         }
@@ -213,7 +217,7 @@ export function createStoriesController(appState) {
         const result = [];
         let lastPartyId = null;
         let consecutiveCount = 0;
-        const MAX_CONSECUTIVE_SAME_PARTY = 2;
+        const MAX_CONSECUTIVE_SAME_PARTY = Math.max(1, Number(maxConsecutiveSameParty) || 2);
 
         const pickWeightedPartyId = (candidates) => {
             const weighted = candidates.map((partyId) => {
