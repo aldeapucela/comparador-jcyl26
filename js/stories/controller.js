@@ -410,6 +410,41 @@ export function createStoriesController(appState) {
         });
     }
 
+    function closeStoriesToHome() {
+        if (appState.mode !== 'stories' || !appState.stories.started) return;
+        clearPlaybackTimers();
+        stopStoryCaptionSequence();
+        exploraPlaybackElapsedMs = 0;
+        exploraIsPaused = false;
+        exploraWasPausedByHold = false;
+        document.body.classList.remove('explora-paused');
+
+        const storyScreen = UI.containers.storiesCard?.querySelector('.story-screen');
+        if (storyScreen) {
+            const rect = storyScreen.getBoundingClientRect();
+            const ghost = storyScreen.cloneNode(true);
+            ghost.classList.remove('story-screen--enter-next', 'story-screen--enter-prev');
+            ghost.classList.add('story-screen-closing-ghost');
+            ghost.style.top = `${rect.top}px`;
+            ghost.style.left = `${rect.left}px`;
+            ghost.style.width = `${rect.width}px`;
+            ghost.style.height = `${rect.height}px`;
+            document.body.appendChild(ghost);
+
+            UI.navigateHash('#/');
+
+            requestAnimationFrame(() => {
+                ghost.classList.add('story-screen--closing');
+            });
+            window.setTimeout(() => {
+                ghost.remove();
+            }, 320);
+            return;
+        }
+
+        UI.navigateHash('#/');
+    }
+
     function bindExploraGestures() {
         const storyCard = document.getElementById('stories-card');
         if (!storyCard) return;
@@ -465,6 +500,13 @@ export function createStoriesController(appState) {
             if (exploraWasPausedByHold && event && exploraTouchStart) {
                 const deltaX = event.clientX - exploraTouchStart.x;
                 const deltaY = event.clientY - exploraTouchStart.y;
+                const isDownSwipeToClose = deltaY > 90 && Math.abs(deltaY) > Math.abs(deltaX) * 1.15;
+                if (isDownSwipeToClose) {
+                    exploraTouchStart = null;
+                    exploraWasPausedByHold = false;
+                    closeStoriesToHome();
+                    return;
+                }
                 const isHorizontalSwipe = Math.abs(deltaX) > 46 && Math.abs(deltaX) > Math.abs(deltaY) * 1.15;
                 if (isHorizontalSwipe) {
                     exploraTouchStart = null;
@@ -510,6 +552,13 @@ export function createStoriesController(appState) {
             if (point) {
                 const deltaX = point.x - exploraTouchStart.x;
                 const deltaY = point.y - exploraTouchStart.y;
+                const isDownSwipeToClose = deltaY > 90 && Math.abs(deltaY) > Math.abs(deltaX) * 1.15;
+                if (isDownSwipeToClose) {
+                    exploraTouchStart = null;
+                    exploraWasPausedByHold = false;
+                    closeStoriesToHome();
+                    return;
+                }
                 const isHorizontalSwipe = Math.abs(deltaX) > 46 && Math.abs(deltaX) > Math.abs(deltaY) * 1.15;
                 if (isHorizontalSwipe) {
                     exploraTouchStart = null;
