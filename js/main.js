@@ -352,6 +352,7 @@ function renderCurrentStoryCard() {
         total: appState.stories.feed.length,
         similarCount: getComparableCount(story.categoryName, story.party.id)
     });
+    UI.playStoryCaptionSequence();
 
     document.getElementById('btn-story-compare-inline')?.addEventListener('click', () => {
         UI.navigateHash(`#/comparar/${encodeURIComponent(story.categoryName)}`);
@@ -364,13 +365,47 @@ function renderCurrentStoryCard() {
         });
     }
 
-    document.getElementById('btn-story-next-inline')?.addEventListener('click', moveToNextStory);
+    bindExploraGestures();
 
     UI.containers.storiesCard.querySelectorAll('.btn-detail').forEach((btn) => {
         btn.addEventListener('click', () => {
             UI.navigateHash(`#/${story.party.id}/${encodeURIComponent(story.categoryName)}/${story.proposal.id}`);
         });
     });
+}
+
+function bindExploraGestures() {
+    const storyCard = document.getElementById('stories-card');
+    if (!storyCard) return;
+
+    storyCard.onwheel = null;
+    storyCard.ontouchstart = null;
+    storyCard.ontouchend = null;
+
+    storyCard.onwheel = (event) => {
+        if (appState.mode !== 'stories' || !appState.stories.started) return;
+        if (Math.abs(event.deltaY) < 22) return;
+        if (exploraWheelLocked) return;
+        exploraWheelLocked = true;
+        if (event.deltaY > 0) moveToNextStory();
+        setTimeout(() => { exploraWheelLocked = false; }, 260);
+    };
+
+    storyCard.ontouchstart = (event) => {
+        if (appState.mode !== 'stories' || !appState.stories.started) return;
+        exploraTouchStartY = event.changedTouches?.[0]?.clientY ?? null;
+    };
+
+    storyCard.ontouchend = (event) => {
+        if (appState.mode !== 'stories' || !appState.stories.started) return;
+        const endY = event.changedTouches?.[0]?.clientY ?? null;
+        if (exploraTouchStartY === null || endY === null) return;
+        const deltaY = exploraTouchStartY - endY;
+        if (Math.abs(deltaY) > 42) {
+            moveToNextStory();
+        }
+        exploraTouchStartY = null;
+    };
 }
 
 function moveToNextStory() {
@@ -391,6 +426,7 @@ function startExploraFeed() {
 
     syncExploraSetupUI();
     renderCurrentStoryCard();
+    bindExploraGestures();
 }
 
 function renderStoriesPrototype() {
