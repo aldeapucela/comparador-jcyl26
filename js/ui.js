@@ -31,6 +31,7 @@ export const UI = {
         search: document.getElementById('view-search'),
         detail: document.getElementById('view-party-detail'),
         topic: document.getElementById('view-topic-first'),
+        stories: document.getElementById('view-explora'),
         afinidad: document.getElementById('view-afinidad')
     },
     containers: {
@@ -42,6 +43,7 @@ export const UI = {
         duelParties: document.getElementById('duel-parties-list'),
         topicsGrid: document.getElementById('topics-grid'),
         comparisonResults: document.getElementById('comparison-results'),
+        storiesCard: document.getElementById('stories-card'),
         searchResults: document.getElementById('global-search-results'),
         searchSummary: document.getElementById('global-search-summary'),
         searchPartyFilters: document.getElementById('global-search-party-filters')
@@ -870,6 +872,7 @@ export const UI = {
     switchView(viewName) {
         document.body.classList.remove('afinidad-layout');
         document.body.classList.remove('home-view');
+        document.body.classList.remove('explora-layout');
         const globalSearchBtn = document.getElementById('btn-global-search');
         if (globalSearchBtn) {
             globalSearchBtn.classList.toggle('hidden', viewName === 'search');
@@ -945,6 +948,12 @@ export const UI = {
             this.elements.btnBack.classList.remove('hidden');
             if (mobileFilter) mobileFilter.classList.add('hidden');
             window.scrollTo(0, 0);
+        } else if (viewName === 'stories') {
+            this.views.stories.classList.remove('hidden');
+            this.elements.btnBack.classList.remove('hidden');
+            if (mobileFilter) mobileFilter.classList.add('hidden');
+            document.body.classList.add('explora-layout');
+            window.scrollTo(0, 0);
         } else if (viewName === 'afinidad') {
             this.views.afinidad.classList.remove('hidden');
             this.elements.btnBack.classList.remove('hidden');
@@ -954,6 +963,95 @@ export const UI = {
             window.scrollTo(0, 0);
             requestAnimationFrame(updateAfinidadViewportOffset);
         }
+    },
+
+
+    getStoryCategoryAccent(categoryName = '') {
+        const key = String(categoryName || '').toLowerCase();
+        if (key.includes('sanidad')) return '#22c55e';
+        if (key.includes('vivienda')) return '#f97316';
+        if (key.includes('educación') || key.includes('educacion')) return '#eab308';
+        if (key.includes('econom')) return '#38bdf8';
+        if (key.includes('medio')) return '#10b981';
+        if (key.includes('conectividad') || key.includes('movilidad')) return '#6366f1';
+        if (key.includes('servicios sociales') || key.includes('cuidados')) return '#ec4899';
+        if (key.includes('democr')) return '#a855f7';
+        return '#8b5cf6';
+    },
+    renderStoriesCard(storyData) {
+        if (!this.containers.storiesCard || !storyData) return;
+
+        const {
+            party,
+            proposal,
+            categoryName,
+            mode,
+            progress,
+            total,
+            similarCount
+        } = storyData;
+
+        const summary = proposal?.resumen || 'Sin resumen disponible.';
+        const clippedSummary = summary.length > 260
+            ? `${summary.slice(0, 257)}...`
+            : summary;
+
+        const sourceQuote = proposal?.cita_textual
+            ? this.escapeHtml(proposal.cita_textual)
+            : 'Consulta el detalle para leer el texto completo de la propuesta.';
+
+        const categoryAccent = this.getStoryCategoryAccent(categoryName);
+
+        this.containers.storiesCard.innerHTML = `
+            <article class="story-screen" style="--party-color: ${this.escapeHtml(party.color || '#334155')}; --story-accent: ${this.escapeHtml(categoryAccent)}">
+                <div class="story-screen-overlay"></div>
+
+                <header class="story-top">
+                    <div class="story-progress-track" aria-hidden="true">
+                        <span class="story-progress-fill" style="width: ${Math.min(100, Math.max(8, (progress / Math.max(total, 1)) * 100))}%"></span>
+                    </div>
+                    <div class="story-meta-row">
+                        <span class="story-chip">${this.escapeHtml(categoryName)}</span>
+                        <span class="story-counter">${progress}/${total}</span>
+                    </div>
+                    <div class="story-party-row">
+                        <span class="story-party-logo-wrap">
+                            <img src="${this.escapeHtml(party.logo)}" alt="Logo ${this.escapeHtml(party.name)}" class="story-party-logo">
+                        </span>
+                        <div>
+                            <p class="story-party-name">${this.escapeHtml(party.name)}</p>
+                            <p class="story-party-mode">${mode === 'topic' ? 'Modo: temática seleccionada' : mode === 'party' ? 'Modo: partido seleccionado' : 'Modo: random de todo'}</p>
+                        </div>
+                    </div>
+                </header>
+
+                <section class="story-body">
+                    <h3 class="story-title">${this.escapeHtml(proposal?.titulo_corto || 'Propuesta sin título')}</h3>
+                    <p class="story-summary">${this.escapeHtml(clippedSummary)}</p>
+                    <p class="story-source-label">Texto base</p>
+                    <p class="story-source">${sourceQuote}</p>
+                </section>
+
+                <footer class="story-actions">
+                    <button class="story-action-btn btn-detail" data-party="${this.escapeHtml(party.id)}" data-id="${this.escapeHtml(proposal.id)}">
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                        <span>Ver detalle</span>
+                    </button>
+                    <button class="story-action-btn" id="btn-story-compare-inline">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <span>Comparar tema (${similarCount})</span>
+                    </button>
+                    <button class="story-action-btn" id="btn-story-share-inline">
+                        <i class="fa-solid fa-share-nodes"></i>
+                        <span>Compartir</span>
+                    </button>
+                    <button class="story-action-btn story-next-btn" id="btn-story-next-inline">
+                        <i class="fa-solid fa-arrow-down"></i>
+                        <span>Siguiente</span>
+                    </button>
+                </footer>
+            </article>
+        `;
     },
 
     // --- Comparison Specific Methods ---
