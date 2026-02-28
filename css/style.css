@@ -281,6 +281,23 @@ body {
     scrollbar-width: none;
 }
 
+/* Normalize visual size of party logos inside circular bubbles. */
+.party-logo-bubble {
+    --logo-scale: 0.74;
+}
+
+.party-logo-bubble.is-pill {
+    --logo-scale: 0.62;
+}
+
+.party-logo-bubble-img {
+    width: calc(100% * var(--logo-scale));
+    height: calc(100% * var(--logo-scale));
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
 /* Comparison View Styles */
 .contrast-grid {
     display: block;

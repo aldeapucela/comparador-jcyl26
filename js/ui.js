@@ -258,8 +258,8 @@ export const UI = {
                             class="search-party-filter-btn px-2.5 py-1.5 rounded-full text-xs font-semibold border transition-colors inline-flex items-center gap-2 ${isActive ? 'text-white border-transparent' : 'bg-white text-slate-600 border-slate-300 hover:border-slate-400 hover:text-slate-800'}"
                             style="${isActive ? `background-color: ${this.escapeHtml(party.color)};` : ''}"
                             data-party-id="${party.id}">
-                            <span class="w-4 h-4 rounded-full bg-white border border-slate-200 overflow-hidden flex items-center justify-center shrink-0">
-                                <img src="${this.escapeHtml(party.logo)}" alt="Logo ${this.escapeHtml(party.name)}" class="w-full h-full object-contain p-[1px]">
+                            <span class="party-logo-bubble w-4 h-4 rounded-full bg-white border border-slate-200 overflow-hidden flex items-center justify-center shrink-0">
+                                <img src="${this.escapeHtml(party.logo)}" alt="Logo ${this.escapeHtml(party.name)}" class="party-logo-bubble-img">
                             </span>
                             <span>${this.escapeHtml(party.name)} (${this.escapeHtml(String(matchCount))})</span>
                         </button>
@@ -1051,8 +1051,8 @@ export const UI = {
                     <div class="space-y-6">
                         <header class="bg-white rounded-2xl border border-slate-200 px-4 py-3 shadow-sm">
                             <div class="flex items-center gap-2.5 mb-2">
-                                <span class="w-7 h-7 rounded-full bg-white border border-slate-200 overflow-hidden flex items-center justify-center shrink-0">
-                                    <img src="${this.escapeHtml(partyInfo.logo)}" alt="Logo ${this.escapeHtml(partyInfo.name)}" class="w-full h-full object-contain p-[2px]">
+                                <span class="party-logo-bubble w-7 h-7 rounded-full bg-white border border-slate-200 overflow-hidden flex items-center justify-center shrink-0">
+                                    <img src="${this.escapeHtml(partyInfo.logo)}" alt="Logo ${this.escapeHtml(partyInfo.name)}" class="party-logo-bubble-img">
                                 </span>
                                 <p class="text-sm font-bold text-slate-800">${this.escapeHtml(partyInfo.name)}</p>
                             </div>
@@ -1136,7 +1136,9 @@ export const UI = {
             return `
                 <button class="party-pill px-4 py-2 rounded-full border transition-all flex items-center gap-2 ${active ? 'bg-white border-slate-900 ring-2 ring-slate-900/5 active' : 'bg-slate-100 border-transparent text-slate-500 hover:bg-white hover:border-slate-200'}"
                         data-party-id="${party.id}" style="--shadow-color: ${party.color}20">
-                    <img src="${party.logo}" alt="${party.name}" class="h-4 object-contain ${active ? '' : 'grayscale opacity-70'}">
+                    <span class="party-logo-bubble is-pill w-6 h-6 rounded-full bg-white border border-slate-200 overflow-hidden flex items-center justify-center shrink-0">
+                        <img src="${party.logo}" alt="${party.name}" class="party-logo-bubble-img ${active ? '' : 'grayscale opacity-70'}">
+                    </span>
                     <span class="text-sm font-bold">${party.name}</span>
                     ${active ? `<i class="fa-solid fa-circle-check text-slate-900 text-[10px]"></i>` : ''}
                 </button>
