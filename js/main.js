@@ -4,7 +4,7 @@
 
 import { PARTIES, fetchAllPartiesData, getCategoriesFromProposals, CATEGORIES, loadPartiesCatalog } from './api.js';
 import { UI } from './ui.js';
-import { initAfinidad, handleAnswer, toggleImportant, nextQuestion, prevQuestion, toggleContext, loadFromUrl, calculateAndShowResults, setSharedResults, startAfinidad, showAfinidadIntro, restoreSavedAfinidadResults } from './afinidad.js';
+import { initAfinidad, handleAnswer, toggleImportant, nextQuestion, prevQuestion, toggleContext, loadFromUrl, calculateAndShowResults, setSharedResults, startAfinidad, showAfinidadIntro } from './afinidad.js';
 import { createStoriesController } from './stories/controller.js';
 
 const APP_VERSION = new URL(import.meta.url).searchParams.get('v') || '';
@@ -638,10 +638,22 @@ async function handleRouting() {
                 window.location.hash = '#/afinidad';
             }
         } else {
-            // If questionnaire is already completed, show stored results directly
-            const hasStoredResults = restoreSavedAfinidadResults();
-            if (!hasStoredResults) {
-                // Otherwise, show intro screen before questionnaire
+            // Avoid cross-module cache mismatch: inspect storage here without extra imports.
+            // If completed, start flow directly; renderQuestion will restore and show results.
+            let hasStoredCompletedResults = false;
+            try {
+                const saved = localStorage.getItem('afinidad_answers_latest');
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    hasStoredCompletedResults = Boolean(parsed?.completed && parsed?.results);
+                }
+            } catch (err) {
+                console.error('Error reading saved afinidad state:', err);
+            }
+
+            if (hasStoredCompletedResults) {
+                startAfinidad();
+            } else {
                 showAfinidadIntro();
             }
         }
