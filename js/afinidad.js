@@ -435,6 +435,14 @@ export function renderResults(results) {
                         <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
                             <p class="font-bold text-slate-700 leading-tight">Cobertura del programa</p>
                             <p class="text-slate-500 mt-1 text-xs">Este partido se moja en <strong>${coverage}%</strong> de los temas del cuestionario que has contestado (${coveredCount}/${totalAnsweredCount}).</p>
+                            <a
+                                href="#/${partyId}"
+                                class="inline-flex items-center gap-2 mt-3 text-xs font-semibold text-indigo-700 hover:text-indigo-800"
+                                onclick="event.stopPropagation()"
+                            >
+                                Ver todas sus propuestas
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
                         </div>
                         ${acuerdos.length > 0 ? `
                             <div>
