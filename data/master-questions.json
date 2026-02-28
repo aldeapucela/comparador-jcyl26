@@ -1,156 +1,156 @@
 [
-    {
-        "id": "SAN_1",
-        "categoria": "Sanidad Pública",
-        "pregunta": "La Junta debería blindar por ley que al menos el 25% del presupuesto sanitario se destine a Atención Primaria.",
-        "tema": "Sanidad - Atención Primaria",
-        "contexto": "La propuesta plantea reservar por ley una parte fija del gasto sanitario para reforzar centros de salud, plantillas y capacidad resolutiva de la Primaria."
-    },
-    {
-        "id": "SAN_2",
-        "categoria": "Sanidad Pública",
-        "pregunta": "La Junta debería priorizar la gestión sanitaria pública directa y limitar la derivación estructural a proveedores privados.",
-        "tema": "Sanidad - Gestión Pública",
-        "contexto": "Aquí se compara un modelo de mayor gestión pública directa frente a otro que mantiene o amplía la colaboración con centros privados para absorber demanda."
-    },
-    {
-        "id": "EDU_1",
-        "categoria": "Educación y Futuro",
-        "pregunta": "La Junta debería priorizar la red pública educativa frente a la concertada o diferenciada.",
-        "tema": "Educación - Modelo de Red Escolar",
-        "contexto": "Se contrasta un modelo que concentra recursos en educación pública con otro que da mayor peso a libertad de elección y protección de modalidades concertadas o diferenciadas."
-    },
-    {
-        "id": "EDU_2",
-        "categoria": "Educación y Futuro",
-        "pregunta": "La Junta debería exigir autorización expresa de las familias para actividades escolares complementarias con contenido moral o ideológico.",
-        "tema": "Educación - Autorización Familiar",
-        "contexto": "Esta pregunta evalúa el llamado control parental sobre actividades complementarias, frente a modelos que dejan esa programación dentro de la autonomía educativa ordinaria."
-    },
-    {
-        "id": "SOC_1",
-        "categoria": "Servicios Sociales",
-        "pregunta": "La Junta debería priorizar una red de residencias públicas y limitar la gestión con ánimo de lucro en cuidados de larga duración.",
-        "tema": "Servicios Sociales - Modelo Residencial",
-        "contexto": "Se contrapone una política de expansión del sistema público de cuidados frente a modelos mixtos con mayor peso de operadores privados."
-    },
-    {
-        "id": "SOC_2",
-        "categoria": "Servicios Sociales",
-        "pregunta": "La Junta debería reducir con prioridad las listas de espera de dependencia y reforzar ayuda a domicilio y plazas públicas de cuidados.",
-        "tema": "Servicios Sociales - Dependencia",
-        "contexto": "La propuesta combina agilización administrativa de la dependencia con más recursos de atención domiciliaria y centros de cuidados."
-    },
-    {
-        "id": "RET_1",
-        "categoria": "Reto Demográfico",
-        "pregunta": "La Junta debería aplicar incentivos fiscales y económicos específicos para atraer y fijar población en el medio rural.",
-        "tema": "Reto Demográfico - Incentivos",
-        "contexto": "Evalúa si la política demográfica debe apoyarse en deducciones, ayudas y ventajas económicas para residencia y actividad en pueblos."
-    },
-    {
-        "id": "RET_2",
-        "categoria": "Reto Demográfico",
-        "pregunta": "La Junta debería reforzar el bono nacimiento y las políticas familiares como eje central contra la despoblación.",
-        "tema": "Reto Demográfico - Natalidad y Familia",
-        "contexto": "La pregunta mide el peso que deben tener natalidad y apoyo familiar dentro de la estrategia demográfica autonómica."
-    },
-    {
-        "id": "VIV_1",
-        "categoria": "Vivienda",
-        "pregunta": "La Junta debería limitar por ley el precio del alquiler en zonas tensionadas.",
-        "tema": "Vivienda - Regulación del Alquiler",
-        "contexto": "Se plantea intervenir en áreas con subidas intensas del alquiler para contener rentas y mejorar acceso a vivienda habitual."
-    },
-    {
-        "id": "VIV_2",
-        "categoria": "Vivienda",
-        "pregunta": "La Junta debería priorizar los avales para compra de vivienda joven frente a ampliar el parque público de alquiler.",
-        "tema": "Vivienda - Compra vs Alquiler Público",
-        "contexto": "Contrasta dos enfoques: facilitar compra mediante avales e incentivos o concentrar recursos en aumentar alquiler público asequible."
-    },
-    {
-        "id": "FIS_1",
-        "categoria": "Economía y Fiscalidad",
-        "pregunta": "La Junta debería priorizar rebajas fiscales generalizadas como herramienta principal para dinamizar la economía.",
-        "tema": "Fiscalidad - Rebaja General",
-        "contexto": "Evalúa si la política económica autonómica debe centrarse en bajar impuestos de forma amplia para estimular consumo, inversión y empleo."
-    },
-    {
-        "id": "FIS_2",
-        "categoria": "Economía y Fiscalidad",
-        "pregunta": "La Junta debería crear una tributación autonómica específica para grandes fortunas y grandes empresas energéticas o extractivas.",
-        "tema": "Fiscalidad - Grandes Fortunas",
-        "contexto": "Plantea aumentar progresividad fiscal con figuras dirigidas a patrimonios elevados y sectores con alta capacidad económica."
-    },
-    {
-        "id": "AGR_1",
-        "categoria": "Sector Primario",
-        "pregunta": "La Junta debería priorizar la ganadería extensiva y el pastoreo frente a la intensiva para sostener el medio rural y prevenir incendios.",
-        "tema": "Sector Primario - Modelo Ganadero",
-        "contexto": "Compara una apuesta por ganadería extensiva ligada a territorio y gestión del monte frente a un enfoque más favorable a intensificación productiva."
-    },
-    {
-        "id": "AGR_2",
-        "categoria": "Sector Primario",
-        "pregunta": "Las ayudas de la PAC deberían priorizarse para agricultores y ganaderos profesionales.",
-        "tema": "Sector Primario - PAC",
-        "contexto": "La medida evalúa si las ayudas agrarias deben concentrarse en quienes viven principalmente de la actividad agraria y ganadera."
-    },
-    {
-        "id": "AMB_1",
-        "categoria": "Medio Ambiente y Energía",
-        "pregunta": "La Junta debería paralizar nuevas macrogranjas y macroplantas de biogás.",
-        "tema": "Medio Ambiente - Macroinstalaciones",
-        "contexto": "Pregunta por una moratoria o freno de nuevas instalaciones de gran escala por su impacto ambiental, territorial y social."
-    },
-    {
-        "id": "AMB_2",
-        "categoria": "Medio Ambiente y Energía",
-        "pregunta": "La Junta debería frenar macroparques renovables en suelos de alto valor productivo y endurecer su control territorial.",
-        "tema": "Energía - Implantación Renovable",
-        "contexto": "Evalúa si el despliegue renovable debe limitarse más en suelos agrícolas o paisajísticos sensibles mediante reglas de ordenación más estrictas."
-    },
-    {
-        "id": "MOV_1",
-        "categoria": "Movilidad e Internet",
-        "pregunta": "La Junta debería garantizar que cualquier persona pueda acceder a servicios esenciales en un máximo de 30 minutos.",
-        "tema": "Movilidad - Acceso a Servicios",
-        "contexto": "Mide el compromiso con estándares territoriales de acceso rápido a sanidad, educación y servicios públicos en todo el territorio."
-    },
-    {
-        "id": "MOV_2",
-        "categoria": "Movilidad e Internet",
-        "pregunta": "La Junta debería garantizar internet de alta velocidad (al menos 100 Mbps simétricos) y cobertura móvil en todo el territorio.",
-        "tema": "Conectividad - Brecha Digital",
-        "contexto": "Plantea cerrar la brecha digital rural-urbana asegurando conectividad robusta para trabajar, estudiar y acceder a servicios."
-    },
-    {
-        "id": "TRA_1",
-        "categoria": "Calidad Democrática",
-        "pregunta": "La Junta debería imponer periodos de incompatibilidad más estrictos para prevenir puertas giratorias.",
-        "tema": "Calidad Democrática - Incompatibilidades",
-        "contexto": "Evalúa endurecer límites para que altos cargos no pasen de forma inmediata a empresas vinculadas a sus decisiones públicas."
-    },
-    {
-        "id": "TRA_2",
-        "categoria": "Calidad Democrática",
-        "pregunta": "La Junta debería publicar trazabilidad completa de expedientes y auditorías periódicas de cumplimiento con consecuencias efectivas.",
-        "tema": "Calidad Democrática - Rendición de Cuentas",
-        "contexto": "La medida combina transparencia operativa, control externo y seguimiento público de compromisos para reforzar la rendición de cuentas."
-    },
-    {
-        "id": "CUL_1",
-        "categoria": "Otros (Igualdad/Cultura)",
-        "pregunta": "La Junta debería eliminar las subvenciones públicas a la tauromaquia.",
-        "tema": "Cultura - Tauromaquia",
-        "contexto": "Contrasta mantener apoyo público a festejos taurinos frente a retirar esa financiación y reasignarla a otras políticas culturales."
-    },
-    {
-        "id": "CUL_2",
-        "categoria": "Otros (Igualdad/Cultura)",
-        "pregunta": "La Junta debería impulsar memoria democrática en el currículo educativo y políticas públicas de reparación.",
-        "tema": "Cultura y Memoria - Memoria Democrática",
-        "contexto": "Evalúa si la política autonómica debe desarrollar activamente memoria democrática en educación y en programas institucionales de reconocimiento y reparación."
-    }
+  {
+    "id": "SAN_1",
+    "categoria": "Sanidad Pública",
+    "pregunta": "¿Estás de acuerdo en que, por ley, al menos 1 de cada 4 euros de Sanidad vaya a los centros de salud y médicos de familia?",
+    "tema": "Sanidad - Atención Primaria",
+    "contexto": "La propuesta plantea reservar por ley una parte fija del gasto sanitario para reforzar centros de salud, plantillas y capacidad resolutiva de la Primaria."
+  },
+  {
+    "id": "SAN_2",
+    "categoria": "Sanidad Pública",
+    "pregunta": "¿Prefieres que la sanidad la gestione sobre todo lo público y que se recurra menos a empresas privadas?",
+    "tema": "Sanidad - Gestión Pública",
+    "contexto": "Aquí se compara un modelo de mayor gestión pública directa frente a otro que mantiene o amplía la colaboración con centros privados para absorber demanda."
+  },
+  {
+    "id": "EDU_1",
+    "categoria": "Educación y Futuro",
+    "pregunta": "¿Crees que la Junta debe dar prioridad a la escuela pública frente a la concertada o separada por sexo?",
+    "tema": "Educación - Modelo de Red Escolar",
+    "contexto": "Se contrasta un modelo que concentra recursos en educación pública con otro que da mayor peso a libertad de elección y protección de modalidades concertadas o diferenciadas."
+  },
+  {
+    "id": "EDU_2",
+    "categoria": "Educación y Futuro",
+    "pregunta": "¿Debe ser obligatorio pedir permiso a las familias antes de actividades escolares con temas morales, sexuales o ideológicos?",
+    "tema": "Educación - Autorización Familiar",
+    "contexto": "Esta pregunta evalúa el llamado control parental sobre actividades complementarias, frente a modelos que dejan esa programación dentro de la autonomía educativa ordinaria."
+  },
+  {
+    "id": "SOC_1",
+    "categoria": "Servicios Sociales",
+    "pregunta": "¿Estás a favor de más residencias públicas y de limitar que las residencias con ánimo de lucro gestionen cuidados de larga duración?",
+    "tema": "Servicios Sociales - Modelo Residencial",
+    "contexto": "Se contrapone una política de expansión del sistema público de cuidados frente a modelos mixtos con mayor peso de operadores privados."
+  },
+  {
+    "id": "SOC_2",
+    "categoria": "Servicios Sociales",
+    "pregunta": "¿Crees que la prioridad debe ser reducir las listas de espera de dependencia y aumentar ayuda a domicilio y plazas públicas?",
+    "tema": "Servicios Sociales - Dependencia",
+    "contexto": "La propuesta combina agilización administrativa de la dependencia con más recursos de atención domiciliaria y centros de cuidados."
+  },
+  {
+    "id": "RET_1",
+    "categoria": "Reto Demográfico",
+    "pregunta": "¿Estás de acuerdo con dar ventajas fiscales y ayudas económicas para que la gente vaya a vivir y se quede en pueblos?",
+    "tema": "Reto Demográfico - Incentivos",
+    "contexto": "Evalúa si la política demográfica debe apoyarse en deducciones, ayudas y ventajas económicas para residencia y actividad en pueblos."
+  },
+  {
+    "id": "RET_2",
+    "categoria": "Reto Demográfico",
+    "pregunta": "¿Crees que el cheque bebé y las políticas de apoyo a familias deben ser la medida principal contra la despoblación?",
+    "tema": "Reto Demográfico - Natalidad y Familia",
+    "contexto": "La pregunta mide el peso que deben tener natalidad y apoyo familiar dentro de la estrategia demográfica autonómica."
+  },
+  {
+    "id": "VIV_1",
+    "categoria": "Vivienda",
+    "pregunta": "¿Estás a favor de poner un tope legal al precio del alquiler en zonas donde esté disparado?",
+    "tema": "Vivienda - Regulación del Alquiler",
+    "contexto": "Se plantea intervenir en áreas con subidas intensas del alquiler para contener rentas y mejorar acceso a vivienda habitual."
+  },
+  {
+    "id": "VIV_2",
+    "categoria": "Vivienda",
+    "pregunta": "Para ayudar a jóvenes, ¿prefieres priorizar avales para comprar vivienda antes que construir o ampliar alquiler público?",
+    "tema": "Vivienda - Compra vs Alquiler Público",
+    "contexto": "Contrasta dos enfoques: facilitar compra mediante avales e incentivos o concentrar recursos en aumentar alquiler público asequible."
+  },
+  {
+    "id": "FIS_1",
+    "categoria": "Economía y Fiscalidad",
+    "pregunta": "¿Crees que bajar impuestos de forma general debe ser la medida principal para mover la economía?",
+    "tema": "Fiscalidad - Rebaja General",
+    "contexto": "Evalúa si la política económica autonómica debe centrarse en bajar impuestos de forma amplia para estimular consumo, inversión y empleo."
+  },
+  {
+    "id": "FIS_2",
+    "categoria": "Economía y Fiscalidad",
+    "pregunta": "¿Estás de acuerdo con crear impuestos autonómicos específicos para grandes fortunas y grandes empresas energéticas o extractivas?",
+    "tema": "Fiscalidad - Grandes Fortunas",
+    "contexto": "Plantea aumentar progresividad fiscal con figuras dirigidas a patrimonios elevados y sectores con alta capacidad económica."
+  },
+  {
+    "id": "AGR_1",
+    "categoria": "Sector Primario",
+    "pregunta": "¿Prefieres apoyar más la ganadería extensiva (al aire libre) que la intensiva (grandes explotaciones cerradas)?",
+    "tema": "Sector Primario - Modelo Ganadero",
+    "contexto": "Compara una apuesta por ganadería extensiva ligada a territorio y gestión del monte frente a un enfoque más favorable a intensificación productiva."
+  },
+  {
+    "id": "AGR_2",
+    "categoria": "Sector Primario",
+    "pregunta": "¿Crees que las ayudas europeas del campo (PAC) deben ir primero a agricultores y ganaderos que viven principalmente de ello?",
+    "tema": "Sector Primario - PAC",
+    "contexto": "La medida evalúa si las ayudas agrarias deben concentrarse en quienes viven principalmente de la actividad agraria y ganadera."
+  },
+  {
+    "id": "AMB_1",
+    "categoria": "Medio Ambiente y Energía",
+    "pregunta": "¿Estás a favor de parar nuevas macrogranjas y grandes plantas de biogás?",
+    "tema": "Medio Ambiente - Macroinstalaciones",
+    "contexto": "Pregunta por una moratoria o freno de nuevas instalaciones de gran escala por su impacto ambiental, territorial y social."
+  },
+  {
+    "id": "AMB_2",
+    "categoria": "Medio Ambiente y Energía",
+    "pregunta": "¿Crees que hay que frenar grandes parques renovables en suelos muy valiosos para agricultura o ganadería y controlar mejor dónde se instalan?",
+    "tema": "Energía - Implantación Renovable",
+    "contexto": "Evalúa si el despliegue renovable debe limitarse más en suelos agrícolas o paisajísticos sensibles mediante reglas de ordenación más estrictas."
+  },
+  {
+    "id": "MOV_1",
+    "categoria": "Movilidad e Internet",
+    "pregunta": "¿Debe garantizar la Junta que cualquier persona llegue a servicios básicos (salud, educación o trámites) en menos de 30 minutos?",
+    "tema": "Movilidad - Acceso a Servicios",
+    "contexto": "Mide el compromiso con estándares territoriales de acceso rápido a sanidad, educación y servicios públicos en todo el territorio."
+  },
+  {
+    "id": "MOV_2",
+    "categoria": "Movilidad e Internet",
+    "pregunta": "¿Debe garantizarse internet rápido (al menos 100 Mbps) y buena cobertura móvil en todo Castilla y León, también en pueblos pequeños?",
+    "tema": "Conectividad - Brecha Digital",
+    "contexto": "Plantea cerrar la brecha digital rural-urbana asegurando conectividad robusta para trabajar, estudiar y acceder a servicios."
+  },
+  {
+    "id": "TRA_1",
+    "categoria": "Calidad Democrática",
+    "pregunta": "¿Estás de acuerdo con endurecer las normas para que un ex cargo público no pase enseguida a trabajar en empresas relacionadas?",
+    "tema": "Calidad Democrática - Incompatibilidades",
+    "contexto": "Evalúa endurecer límites para que altos cargos no pasen de forma inmediata a empresas vinculadas a sus decisiones públicas."
+  },
+  {
+    "id": "TRA_2",
+    "categoria": "Calidad Democrática",
+    "pregunta": "¿Debe publicarse el seguimiento completo de expedientes públicos y hacer auditorías periódicas con sanciones reales si no se cumple?",
+    "tema": "Calidad Democrática - Rendición de Cuentas",
+    "contexto": "La medida combina transparencia operativa, control externo y seguimiento público de compromisos para reforzar la rendición de cuentas."
+  },
+  {
+    "id": "CUL_1",
+    "categoria": "Otros (Igualdad/Cultura)",
+    "pregunta": "¿Estás de acuerdo con quitar las subvenciones públicas a la tauromaquia?",
+    "tema": "Cultura - Tauromaquia",
+    "contexto": "Contrasta mantener apoyo público a festejos taurinos frente a retirar esa financiación y reasignarla a otras políticas culturales."
+  },
+  {
+    "id": "CUL_2",
+    "categoria": "Otros (Igualdad/Cultura)",
+    "pregunta": "¿Crees que los colegios deben enseñar memoria democrática y que haya políticas públicas para reparar a las víctimas?",
+    "tema": "Cultura y Memoria - Memoria Democrática",
+    "contexto": "Evalúa si la política autonómica debe desarrollar activamente memoria democrática en educación y en programas institucionales de reconocimiento y reparación."
+  }
 ]
