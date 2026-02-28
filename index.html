@@ -33,7 +33,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20260227201602">
+    <link rel="stylesheet" href="css/style.css?v=20260228030500">
     </head>
 
 <body class="bg-slate-50 text-slate-900 min-h-screen">
@@ -89,6 +89,21 @@
                 <p class="text-slate-400 mt-4 text-sm font-light">Sanidad, Vivienda, Empleo...</p>
             </div>
 
+            <div class="max-w-md mx-auto mb-16 text-center hidden">
+                <button id="btn-goto-explora"
+                    class="group relative w-full bg-gradient-to-br from-violet-50 to-white text-violet-700 border border-violet-200/70 p-6 rounded-2xl font-semibold text-lg shadow-sm hover:shadow-lg hover:border-violet-300/90 transition-all duration-300 active:scale-[0.98] overflow-hidden">
+                    <div class="relative z-10 flex items-center justify-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-violet-100/70 flex items-center justify-center group-hover:bg-violet-200/80 transition-colors">
+                            <i class="fa-solid fa-layer-group text-violet-600"></i>
+                        </div>
+                        <span>Explora en vertical (beta)</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-violet-100/40 via-transparent to-fuchsia-100/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-300/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </button>
+                <p class="text-slate-400 mt-4 text-sm font-light">Historias a pantalla completa para descubrir propuestas</p>
+            </div>
+
             <div class="max-w-md mx-auto mb-16 text-center">
                 <!-- Temporarily hidden button - uncomment to show
                 <button id="btn-goto-afinidad"
@@ -120,6 +135,50 @@
                 <p class="text-slate-500 text-sm font-light leading-relaxed mt-2">
                     ¿Falta alguno? Envíanoslo en <a href="mailto:contacto@aldeapucela.org" class="text-slate-600 hover:text-slate-800 underline underline-offset-2 transition-colors font-medium">un correo</a>.
                 </p>
+            </div>
+        </section>
+
+        <section id="view-explora" class="hidden fade-in">
+            <div class="explora-stage">
+                <div id="explora-setup" class="explora-setup-card">
+                    <p class="explora-kicker">Explora propuestas</p>
+                    <h2 class="explora-setup-title">¿Cómo quieres empezar?</h2>
+                    <p class="explora-setup-subtitle">Elige un modo y lanzamos un feed vertical tipo story.</p>
+
+                    <div class="explora-choice-grid" role="radiogroup" aria-label="Modo de exploración">
+                        <button type="button" class="explora-choice active" data-explora-choice="random">
+                            <i class="fa-solid fa-shuffle"></i>
+                            <span>Random de todo</span>
+                        </button>
+                        <button type="button" class="explora-choice" data-explora-choice="party">
+                            <i class="fa-solid fa-flag"></i>
+                            <span>Un partido</span>
+                        </button>
+                        <button type="button" class="explora-choice" data-explora-choice="topic">
+                            <i class="fa-solid fa-tags"></i>
+                            <span>Una temática</span>
+                        </button>
+                    </div>
+
+                    <div id="explora-party-picker" class="explora-picker hidden">
+                        <label for="explora-party-select">Partido</label>
+                        <select id="explora-party-select"></select>
+                    </div>
+
+                    <div id="explora-topic-picker" class="explora-picker hidden">
+                        <label for="explora-topic-select">Temática</label>
+                        <select id="explora-topic-select"></select>
+                    </div>
+
+                    <button id="btn-explora-start" class="explora-start-btn">
+                        <i class="fa-solid fa-play"></i>
+                        <span>Empezar a explorar</span>
+                    </button>
+                </div>
+
+                <div id="explora-player" class="hidden">
+                    <div id="stories-card" class="stories-card"></div>
+                </div>
             </div>
         </section>
 
@@ -485,7 +544,7 @@
     </footer>
 
     <script src="js/analytics.js?v=20260227201602"></script>
-    <script type="module" src="js/main.js?v=20260227201602"></script>
+    <script type="module" src="js/main.js?v=20260228030500"></script>
 </body>
 
 </html>
