@@ -967,42 +967,6 @@ export const UI = {
     },
 
 
-
-    buildStoryCaptionChunks(summary = '', wordsPerChunk = 3) {
-        const normalized = String(summary || '').replace(/\s+/g, ' ').trim();
-        if (!normalized) return [];
-
-        const words = normalized.split(' ');
-        const chunks = [];
-        for (let i = 0; i < words.length; i += wordsPerChunk) {
-            chunks.push(words.slice(i, i + wordsPerChunk).join(' '));
-        }
-        return chunks;
-    },
-
-    playStoryCaptionSequence() {
-        if (this.storyCaptionTimer) {
-            clearInterval(this.storyCaptionTimer);
-            this.storyCaptionTimer = null;
-        }
-
-        const chunkEls = this.containers.storiesCard?.querySelectorAll('.story-caption-chunk');
-        if (!chunkEls || chunkEls.length === 0) return;
-
-        chunkEls.forEach((el, index) => {
-            el.classList.toggle('is-visible', index === 0);
-        });
-
-        if (chunkEls.length === 1 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-        let current = 0;
-        this.storyCaptionTimer = setInterval(() => {
-            chunkEls[current]?.classList.remove('is-visible');
-            current = (current + 1) % chunkEls.length;
-            chunkEls[current]?.classList.add('is-visible');
-        }, 1500);
-    },
-
     getStoryCategoryAccent(categoryName = '') {
         const key = String(categoryName || '').toLowerCase();
         if (key.includes('sanidad')) return '#22c55e';
@@ -1032,7 +996,10 @@ export const UI = {
         const clippedSummary = summary.length > 260
             ? `${summary.slice(0, 257)}...`
             : summary;
-        const summaryChunks = this.buildStoryCaptionChunks(clippedSummary, 3);
+
+        const sourceQuote = proposal?.cita_textual
+            ? this.escapeHtml(proposal.cita_textual)
+            : 'Consulta el detalle para leer el texto completo de la propuesta.';
 
         const categoryAccent = this.getStoryCategoryAccent(categoryName);
 
@@ -1061,20 +1028,27 @@ export const UI = {
 
                 <section class="story-body">
                     <h3 class="story-title">${this.escapeHtml(proposal?.titulo_corto || 'Propuesta sin título')}</h3>
-                    <div class="story-summary story-summary-caption" aria-live="polite">
-                        ${summaryChunks.map((chunk, idx) => `<span class="story-caption-chunk${idx === 0 ? ' is-visible' : ''}">${this.escapeHtml(chunk)}</span>`).join('')}
-                    </div>
+                    <p class="story-summary">${this.escapeHtml(clippedSummary)}</p>
+                    <p class="story-source-label">Texto base</p>
+                    <p class="story-source">${sourceQuote}</p>
                 </section>
 
-                <footer class="story-actions story-actions-icons">
-                    <button class="story-action-btn btn-detail" data-party="${this.escapeHtml(party.id)}" data-id="${this.escapeHtml(proposal.id)}" aria-label="Ver detalle" title="Ver detalle">
+                <footer class="story-actions">
+                    <button class="story-action-btn btn-detail" data-party="${this.escapeHtml(party.id)}" data-id="${this.escapeHtml(proposal.id)}">
                         <i class="fa-solid fa-up-right-from-square"></i>
+                        <span>Ver detalle</span>
                     </button>
-                    <button class="story-action-btn" id="btn-story-compare-inline" aria-label="Comparar tema" title="Comparar tema (${similarCount})">
+                    <button class="story-action-btn" id="btn-story-compare-inline">
                         <i class="fa-solid fa-scale-balanced"></i>
+                        <span>Comparar tema (${similarCount})</span>
                     </button>
-                    <button class="story-action-btn" id="btn-story-share-inline" aria-label="Compartir propuesta" title="Compartir propuesta">
+                    <button class="story-action-btn" id="btn-story-share-inline">
                         <i class="fa-solid fa-share-nodes"></i>
+                        <span>Compartir</span>
+                    </button>
+                    <button class="story-action-btn story-next-btn" id="btn-story-next-inline">
+                        <i class="fa-solid fa-arrow-down"></i>
+                        <span>Siguiente</span>
                     </button>
                 </footer>
             </article>
