@@ -42,6 +42,10 @@ let appState = {
 const PARTY_ID_ORDER = PARTIES.map((party) => party.id);
 const PARTY_IDS = new Set(PARTY_ID_ORDER);
 
+let exploraTouchStartY = null;
+let exploraWheelLocked = false;
+
+
 function safeDecodeURIComponent(value = '') {
     try {
         return decodeURIComponent(value);

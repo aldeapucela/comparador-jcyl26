@@ -624,7 +624,8 @@ body {
 /* Swipe hint animation */
 .swipe-hint {
     position: relative;
-    overflow: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
 }
 
 .swipe-hint::after {

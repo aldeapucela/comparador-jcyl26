@@ -24,6 +24,7 @@ export const UI = {
     lastSearchResults: [],
     lastSearchTerm: '',
     lastSearchPartyIds: [],
+    storyCaptionTimer: null,
 
     // Selectors
     views: {
