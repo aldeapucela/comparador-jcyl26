@@ -841,10 +841,13 @@ export const UI = {
         const url = `${window.location.origin}${window.location.pathname}#/${partyInfo.id}/${encodeURIComponent(category)}/${prop.id}`;
         const header = `${partyInfo.name} en Castilla y León propone "${prop.titulo_corto}"`;
         const summary = (prop.resumen || '').trim();
-        const shareText = summary
+        const shareTextWithUrl = summary
             ? `${header}\n\n${summary}\n\n${url}`
             : `${header}\n\n${url}`;
-        const fullMessage = shareText;
+        const shareText = summary
+            ? `${header}\n\n${summary}`
+            : header;
+        const fullMessage = shareTextWithUrl;
 
         if (navigator.share) {
             try {

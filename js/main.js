@@ -2,7 +2,7 @@
  * Main module - Application entry point and state management
  */
 
-import { PARTIES, fetchPartyData, fetchAllPartiesData, getCategoriesFromProposals, CATEGORIES } from './api.js';
+import { PARTIES, fetchAllPartiesData, getCategoriesFromProposals, CATEGORIES, loadPartiesCatalog } from './api.js';
 import { UI } from './ui.js';
 import { initAfinidad, renderQuestion, handleAnswer, toggleImportant, nextQuestion, prevQuestion, toggleContext, loadFromUrl, calculateAndShowResults, setSharedResults, startAfinidad } from './afinidad.js';
 import { createStoriesController } from './stories/controller.js';
@@ -43,8 +43,6 @@ let appState = {
     }
 };
 
-const PARTY_ID_ORDER = PARTIES.map((party) => party.id);
-const PARTY_IDS = new Set(PARTY_ID_ORDER);
 const storiesController = createStoriesController(appState);
 
 
@@ -103,11 +101,13 @@ function getSearchTermFromParts(parts) {
 }
 
 function normalizeSearchPartyIds(partyIds = []) {
+    const partyIdOrder = PARTIES.map((party) => party.id);
+    const partyIdsSet = new Set(partyIdOrder);
     const seen = new Set();
     return partyIds
         .map((id) => (id || '').toString().trim().toLowerCase())
-        .filter((id) => PARTY_IDS.has(id) && !seen.has(id) && seen.add(id))
-        .sort((a, b) => PARTY_ID_ORDER.indexOf(a) - PARTY_ID_ORDER.indexOf(b));
+        .filter((id) => partyIdsSet.has(id) && !seen.has(id) && seen.add(id))
+        .sort((a, b) => partyIdOrder.indexOf(a) - partyIdOrder.indexOf(b));
 }
 
 function buildSearchHash(term, partyIds = []) {
@@ -256,6 +256,8 @@ function renderSearchScreen(term) {
 }
 
 async function init() {
+    await loadPartiesCatalog();
+
     // 1. Bulk Load all data at start (including afinidad data)
     appState.allData = await fetchAllPartiesData();
     
@@ -543,7 +545,7 @@ async function handleRouting() {
 
         // Default selection if empty
         if (appState.selectedParties.length === 0) {
-            appState.selectedParties = ['pp', 'psoe'];
+            appState.selectedParties = PARTIES.slice(0, 2).map((party) => party.id);
         }
 
         trackSpaPageView(hash);

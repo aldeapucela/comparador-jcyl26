@@ -10,12 +10,61 @@ function withAppVersion(path) {
 }
 
 export const PARTIES = [
-    { id: 'psoe', name: 'PSOE', logo: 'img/psoe.png' },
-    { id: 'pp', name: 'PP', logo: 'img/pp.png' },
-    { id: 'vox', name: 'VOX', logo: 'img/vox.svg' },
-    { id: 'mev', name: 'España Vaciada', logo: 'img/mev.png' },
-    { id: 'en-comun', name: 'En Común', logo: 'img/encomun.svg' }
 ];
+
+let partiesCatalogPromise = null;
+
+function normalizePartyName(metadataName = '', partyId = '') {
+    const name = (metadataName || '').trim();
+    if (!name) return partyId.toUpperCase();
+
+    return name
+        .replace(/\s+castilla\s+y\s+le[oó]n$/i, '')
+        .replace(/\s*-\s*castilla\s+y\s+le[oó]n$/i, '')
+        .replace(/\s*–\s*castilla\s+y\s+le[oó]n$/i, '')
+        .trim();
+}
+
+function resolvePartyLogo(metadataLogo = '', partyId = '') {
+    const cleanLogo = (metadataLogo || '').trim();
+    if (cleanLogo) return cleanLogo;
+    return `img/${partyId}.png`;
+}
+
+export async function loadPartiesCatalog() {
+    if (partiesCatalogPromise) return partiesCatalogPromise;
+
+    partiesCatalogPromise = (async () => {
+        const response = await fetch(withAppVersion('./data/partidos/index.json'));
+        if (!response.ok) throw new Error('Could not load party index');
+        const indexData = await response.json();
+        const partyIds = Array.isArray(indexData?.parties) ? indexData.parties : [];
+
+        const loadedParties = await Promise.all(
+            partyIds.map(async (partyId) => {
+                const id = String(partyId || '').trim();
+                if (!id) return null;
+
+                const partyData = await fetchPartyData(id);
+                if (!partyData) return null;
+
+                const metadata = partyData.metadatos || {};
+                return {
+                    id,
+                    name: normalizePartyName(metadata.partido, id),
+                    logo: resolvePartyLogo(metadata.logo, id),
+                    color: metadata.color || '#64748b',
+                    candidatePhoto: metadata.foto_candidato || null
+                };
+            })
+        );
+
+        PARTIES.splice(0, PARTIES.length, ...loadedParties.filter(Boolean));
+        return PARTIES;
+    })();
+
+    return partiesCatalogPromise;
+}
 
 export const CATEGORIES = [
     { id: 'demografia', name: 'Reto Demográfico y Despoblación', icon: 'fa-people-group' },
@@ -43,6 +92,7 @@ export async function fetchPartyData(partyId) {
 }
 
 export async function fetchAllPartiesData() {
+    await loadPartiesCatalog();
     const data = {};
     const promises = PARTIES.map(async (party) => {
         const partyData = await fetchPartyData(party.id);
