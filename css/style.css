@@ -160,6 +160,24 @@ body {
     font-weight: 500;
 }
 
+@media (min-width: 768px) {
+    .home-feature-link {
+        min-height: 11rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home-feature-link > .relative.z-10 {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 .proposal-card {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

@@ -99,6 +99,7 @@ export function createStoriesController(appState) {
 
     async function requestExploraFullscreen() {
         if (typeof document === 'undefined') return;
+        if (typeof window !== 'undefined' && !window.matchMedia('(max-width: 1023px)').matches) return;
         if (document.fullscreenElement) return;
 
         const target = document.getElementById('explora-player') || document.documentElement;
