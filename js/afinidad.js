@@ -155,6 +155,10 @@ export function showAfinidadIntro() {
     if (resultsEl) resultsEl.classList.add('hidden');
 }
 
+export function restoreSavedAfinidadResults() {
+    return loadFromSession(true);
+}
+
 export function restartAfinidadFromIntro() {
     resetAfinidadState();
     showAfinidadIntro();

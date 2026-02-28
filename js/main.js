@@ -4,7 +4,7 @@
 
 import { PARTIES, fetchAllPartiesData, getCategoriesFromProposals, CATEGORIES, loadPartiesCatalog } from './api.js';
 import { UI } from './ui.js';
-import { initAfinidad, handleAnswer, toggleImportant, nextQuestion, prevQuestion, toggleContext, loadFromUrl, calculateAndShowResults, setSharedResults, startAfinidad, showAfinidadIntro } from './afinidad.js';
+import { initAfinidad, handleAnswer, toggleImportant, nextQuestion, prevQuestion, toggleContext, loadFromUrl, calculateAndShowResults, setSharedResults, startAfinidad, showAfinidadIntro, restoreSavedAfinidadResults } from './afinidad.js';
 import { createStoriesController } from './stories/controller.js';
 
 const APP_VERSION = new URL(import.meta.url).searchParams.get('v') || '';
@@ -414,6 +414,12 @@ function setupEventListeners() {
             return;
         }
 
+        const closeIntroBtn = e.target.closest('#afinidad-intro-close');
+        if (closeIntroBtn) {
+            window.location.hash = '#/';
+            return;
+        }
+
         const option = e.target.closest('.afinidad-option');
         if (option) {
             handleAnswer(option.dataset.question, parseInt(option.dataset.value));
@@ -621,6 +627,7 @@ async function handleRouting() {
         const sharedData = parts[1] || null;
         appState.mode = 'afinidad';
         trackSpaPageView(hash);
+        UI.switchView('afinidad');
         
         if (sharedData) {
             // Load from shared URL - show results directly
@@ -631,9 +638,12 @@ async function handleRouting() {
                 window.location.hash = '#/afinidad';
             }
         } else {
-            // Show intro screen before questionnaire
-            UI.switchView('afinidad');
-            showAfinidadIntro();
+            // If questionnaire is already completed, show stored results directly
+            const hasStoredResults = restoreSavedAfinidadResults();
+            if (!hasStoredResults) {
+                // Otherwise, show intro screen before questionnaire
+                showAfinidadIntro();
+            }
         }
         return;
     }
