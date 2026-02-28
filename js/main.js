@@ -27,6 +27,15 @@ let appState = {
         rural: false,
         competition: false,
         query: ''
+    },
+    stories: {
+        source: 'random',
+        selectedPartyId: '',
+        selectedTopic: '',
+        feed: [],
+        currentIndex: 0,
+        currentStory: null,
+        started: false
     }
 };
 
@@ -240,6 +249,159 @@ function renderSearchScreen(term) {
     );
 }
 
+function buildStoriesFeed() {
+    const allItems = [];
+
+    Object.entries(appState.allData).forEach(([partyId, partyData]) => {
+        const partyInfo = PARTIES.find((party) => party.id === partyId);
+        if (!partyInfo || !Array.isArray(partyData?.propuestas)) return;
+
+        partyData.propuestas.forEach((proposal) => {
+            allItems.push({
+                party: partyInfo,
+                proposal,
+                categoryName: proposal.categoria || 'General'
+            });
+        });
+    });
+
+    const { source, selectedPartyId, selectedTopic } = appState.stories;
+    let filtered = allItems;
+
+    if (source === 'party' && selectedPartyId) {
+        filtered = filtered.filter((item) => item.party.id === selectedPartyId);
+    }
+
+    if (source === 'topic' && selectedTopic) {
+        filtered = filtered.filter((item) => item.categoryName === selectedTopic);
+    }
+
+    return filtered.sort(() => Math.random() - 0.5);
+}
+
+function populateExploraFilters() {
+    const partySelect = document.getElementById('explora-party-select');
+    const topicSelect = document.getElementById('explora-topic-select');
+
+    if (partySelect && partySelect.options.length === 0) {
+        partySelect.innerHTML = PARTIES
+            .map((party) => `<option value="${party.id}">${party.name}</option>`)
+            .join('');
+    }
+
+    if (topicSelect && topicSelect.options.length === 0) {
+        const topicNames = CATEGORIES.map((category) => category.name);
+        topicSelect.innerHTML = topicNames
+            .map((topic) => `<option value="${topic}">${topic}</option>`)
+            .join('');
+    }
+}
+
+function syncExploraSetupUI() {
+    const setup = document.getElementById('explora-setup');
+    const player = document.getElementById('explora-player');
+    const partyPicker = document.getElementById('explora-party-picker');
+    const topicPicker = document.getElementById('explora-topic-picker');
+
+    if (!setup || !player || !partyPicker || !topicPicker) return;
+
+    setup.classList.toggle('hidden', appState.stories.started);
+    player.classList.toggle('hidden', !appState.stories.started);
+
+    partyPicker.classList.toggle('hidden', appState.stories.source !== 'party');
+    topicPicker.classList.toggle('hidden', appState.stories.source !== 'topic');
+
+    document.querySelectorAll('.explora-choice').forEach((btn) => {
+        const isActive = btn.dataset.exploraChoice === appState.stories.source;
+        btn.classList.toggle('active', isActive);
+    });
+}
+
+function getComparableCount(categoryName, excludedPartyId) {
+    return PARTIES.reduce((count, party) => {
+        if (party.id === excludedPartyId) return count;
+        const proposals = appState.allData[party.id]?.propuestas || [];
+        if (proposals.some((proposal) => proposal.categoria === categoryName)) {
+            return count + 1;
+        }
+        return count;
+    }, 0);
+}
+
+function renderCurrentStoryCard() {
+    if (!appState.stories.feed.length) {
+        UI.containers.storiesCard.innerHTML = `
+            <div class="bg-white border border-slate-200 rounded-2xl p-8 text-center text-slate-500">
+                No hay propuestas para esta selección. Prueba otro partido o temática.
+            </div>
+        `;
+        return;
+    }
+
+    const story = appState.stories.feed[appState.stories.currentIndex % appState.stories.feed.length];
+    appState.stories.currentStory = story;
+
+    UI.renderStoriesCard({
+        ...story,
+        mode: appState.stories.source,
+        progress: (appState.stories.currentIndex % appState.stories.feed.length) + 1,
+        total: appState.stories.feed.length,
+        similarCount: getComparableCount(story.categoryName, story.party.id)
+    });
+
+    document.getElementById('btn-story-compare-inline')?.addEventListener('click', () => {
+        UI.navigateHash(`#/comparar/${encodeURIComponent(story.categoryName)}`);
+    });
+
+    const shareBtn = document.getElementById('btn-story-share-inline');
+    if (shareBtn) {
+        shareBtn.addEventListener('click', () => {
+            UI.shareProposal(story.party, story.categoryName, story.proposal, shareBtn);
+        });
+    }
+
+    document.getElementById('btn-story-next-inline')?.addEventListener('click', moveToNextStory);
+
+    UI.containers.storiesCard.querySelectorAll('.btn-detail').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            UI.navigateHash(`#/${story.party.id}/${encodeURIComponent(story.categoryName)}/${story.proposal.id}`);
+        });
+    });
+}
+
+function moveToNextStory() {
+    if (!appState.stories.feed.length) return;
+    appState.stories.currentIndex = (appState.stories.currentIndex + 1) % appState.stories.feed.length;
+    renderCurrentStoryCard();
+}
+
+function startExploraFeed() {
+    const partySelect = document.getElementById('explora-party-select');
+    const topicSelect = document.getElementById('explora-topic-select');
+
+    appState.stories.selectedPartyId = partySelect?.value || PARTIES[0]?.id || '';
+    appState.stories.selectedTopic = topicSelect?.value || CATEGORIES[0]?.name || '';
+    appState.stories.feed = buildStoriesFeed();
+    appState.stories.currentIndex = 0;
+    appState.stories.started = true;
+
+    syncExploraSetupUI();
+    renderCurrentStoryCard();
+}
+
+function renderStoriesPrototype() {
+    populateExploraFilters();
+    syncExploraSetupUI();
+
+    if (appState.stories.started) {
+        if (!appState.stories.feed.length) {
+            appState.stories.feed = buildStoriesFeed();
+            appState.stories.currentIndex = 0;
+        }
+        renderCurrentStoryCard();
+    }
+}
+
 async function init() {
     // 1. Bulk Load all data at start (including afinidad data)
     appState.allData = await fetchAllPartiesData();
@@ -272,7 +434,7 @@ function setupEventListeners() {
             .filter(p => p && p !== '#')[0] || '';
         const isPartyRoute = PARTIES.some(p => p.id === route);
 
-        if (route === 'comparar' || isPartyRoute) {
+        if (route === 'comparar' || route === 'explora' || isPartyRoute) {
             UI.navigateHash('#/');
             return;
         }
@@ -337,6 +499,13 @@ function setupEventListeners() {
         });
     }
 
+    const btnExplora = document.getElementById('btn-goto-explora');
+    if (btnExplora) {
+        btnExplora.addEventListener('click', () => {
+            window.location.hash = '#/explora';
+        });
+    }
+
     // Goto Afinidad
     const btnAfinidad = document.getElementById('btn-goto-afinidad');
     if (btnAfinidad) {
@@ -370,6 +539,23 @@ function setupEventListeners() {
         const contextBtn = e.target.closest('#afinidad-context-btn');
         if (contextBtn) {
             toggleContext();
+        }
+    });
+
+    document.querySelectorAll('.explora-choice').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            appState.stories.source = btn.dataset.exploraChoice || 'random';
+            syncExploraSetupUI();
+        });
+    });
+
+    document.getElementById('btn-explora-start')?.addEventListener('click', startExploraFeed);
+
+    document.addEventListener('keydown', (event) => {
+        if (appState.mode !== 'stories') return;
+        if (event.key === 'ArrowDown' || event.key === 'PageDown' || event.key === ' ') {
+            event.preventDefault();
+            moveToNextStory();
         }
     });
 
@@ -433,6 +619,10 @@ function getPageTitle(hash) {
     if (partyId === 'afinidad') {
         return 'Cuestionario de Afinidad - CyL 2026';
     }
+
+    if (partyId === 'explora') {
+        return 'Explora propuestas - CyL 2026';
+    }
     
     // Find party name
     const party = appState.allData[partyId] || appState.allData[normalizePartyId(partyId)];
@@ -470,6 +660,17 @@ async function handleRouting() {
     }
 
     const partyId = parts[0];
+
+    if (partyId === 'explora') {
+        appState.mode = 'stories';
+        appState.stories.started = false;
+        appState.stories.feed = [];
+        appState.stories.currentIndex = 0;
+        trackSpaPageView(hash);
+        UI.switchView('stories');
+        renderStoriesPrototype();
+        return;
+    }
 
     // Check if it's comparison mode
     if (partyId === 'comparar') {
