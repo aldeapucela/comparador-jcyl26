@@ -128,9 +128,37 @@ function saveToSession() {
 }
 
 export function startAfinidad() {
-    // Reset state for fresh start when user begins questionnaire
-    resetAfinidadState();
+    const introEl = document.getElementById('afinidad-intro');
+    const questionCardEl = document.getElementById('afinidad-question-card');
+    const progressEl = document.getElementById('afinidad-progress');
+    const resultsEl = document.getElementById('afinidad-results');
+
+    if (introEl) introEl.classList.add('hidden');
+    if (questionCardEl) questionCardEl.classList.remove('hidden');
+    if (progressEl) progressEl.classList.remove('hidden');
+    if (resultsEl) resultsEl.classList.add('hidden');
+
     renderQuestion();
+}
+
+export function showAfinidadIntro() {
+    afinidadState.restored = false;
+
+    const introEl = document.getElementById('afinidad-intro');
+    const questionCardEl = document.getElementById('afinidad-question-card');
+    const progressEl = document.getElementById('afinidad-progress');
+    const resultsEl = document.getElementById('afinidad-results');
+
+    if (introEl) introEl.classList.remove('hidden');
+    if (questionCardEl) questionCardEl.classList.add('hidden');
+    if (progressEl) progressEl.classList.add('hidden');
+    if (resultsEl) resultsEl.classList.add('hidden');
+}
+
+export function restartAfinidadFromIntro() {
+    resetAfinidadState();
+    showAfinidadIntro();
+    window.scrollTo(0, 0);
 }
 
 export function renderQuestion() {
@@ -688,18 +716,7 @@ function setupShareLinks(results) {
     const restartBtn = document.getElementById('afinidad-restart');
     if (restartBtn) {
         restartBtn.onclick = () => {
-            resetAfinidadState();
-
-            const resultsEl = document.getElementById('afinidad-results');
-            const questionCardEl = document.getElementById('afinidad-question-card');
-            const progressEl = document.getElementById('afinidad-progress');
-
-            if (resultsEl) resultsEl.classList.add('hidden');
-            if (questionCardEl) questionCardEl.classList.remove('hidden');
-            if (progressEl) progressEl.classList.remove('hidden');
-
-            window.scrollTo(0, 0);
-            renderQuestion();
+            restartAfinidadFromIntro();
         };
     }
 }
@@ -837,6 +854,7 @@ export async function loadFromUrl(encodedData) {
 
 function renderSharedResults(results) {
     UI.switchView('afinidad');
+    document.getElementById('afinidad-intro').classList.add('hidden');
     document.getElementById('afinidad-question-card').classList.add('hidden');
     document.getElementById('afinidad-progress').classList.add('hidden');
     document.getElementById('afinidad-results').classList.remove('hidden');

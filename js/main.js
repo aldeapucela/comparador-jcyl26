@@ -4,7 +4,7 @@
 
 import { PARTIES, fetchAllPartiesData, getCategoriesFromProposals, CATEGORIES, loadPartiesCatalog } from './api.js';
 import { UI } from './ui.js';
-import { initAfinidad, renderQuestion, handleAnswer, toggleImportant, nextQuestion, prevQuestion, toggleContext, loadFromUrl, calculateAndShowResults, setSharedResults, startAfinidad } from './afinidad.js';
+import { initAfinidad, handleAnswer, toggleImportant, nextQuestion, prevQuestion, toggleContext, loadFromUrl, calculateAndShowResults, setSharedResults, startAfinidad, showAfinidadIntro } from './afinidad.js';
 import { createStoriesController } from './stories/controller.js';
 
 const APP_VERSION = new URL(import.meta.url).searchParams.get('v') || '';
@@ -371,6 +371,12 @@ function setupEventListeners() {
 
     // Afinidad event listeners
     document.addEventListener('click', (e) => {
+        const startBtn = e.target.closest('#afinidad-start-btn');
+        if (startBtn) {
+            startAfinidad();
+            return;
+        }
+
         const option = e.target.closest('.afinidad-option');
         if (option) {
             handleAnswer(option.dataset.question, parseInt(option.dataset.value));
@@ -588,9 +594,9 @@ async function handleRouting() {
                 window.location.hash = '#/afinidad';
             }
         } else {
-            // Show cuestionario (will restore session state if available)
+            // Show intro screen before questionnaire
             UI.switchView('afinidad');
-            renderQuestion();
+            showAfinidadIntro();
         }
         return;
     }
