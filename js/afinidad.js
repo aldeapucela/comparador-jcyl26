@@ -267,6 +267,16 @@ function normalizePartyId(id) {
         .replace(/^-|-$/g, '');
 }
 
+const LOGO_SCALE_BY_PARTY = {
+    'en-comun': 0.62,
+    'podemos': 0.66
+};
+
+function getWinnerLogoScale(partyId) {
+    if (!partyId) return 0.74;
+    return LOGO_SCALE_BY_PARTY[partyId] || 0.74;
+}
+
 export function calculateAndShowResults() {
     const results = calculateAffinity();
     renderResults(results);
@@ -375,13 +385,14 @@ export function renderResults(results) {
     
     const winnerId = sorted[0][0];
     const winner = PARTIES.find(p => p.id === winnerId);
+    const winnerLogoScale = getWinnerLogoScale(winner?.id);
     
     // 1. Renderizar Ganador
     document.getElementById('afinidad-winner').innerHTML = `
         <div class="bg-white rounded-2xl p-8 text-center border border-slate-200 shadow-sm">
             <p class="text-slate-500 text-sm font-medium mb-2">Tu partido más afín</p>
-            <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: ${winner?.color || '#666'}20">
-                <img src="${winner?.logo || ''}" alt="${winner?.name || ''}" class="w-14 h-14 object-contain">
+            <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center overflow-hidden" style="background-color: ${winner?.color || '#666'}20">
+                <img src="${winner?.logo || ''}" alt="${winner?.name || ''}" class="w-full h-full object-contain" style="transform: scale(${winnerLogoScale}); transform-origin: center;">
             </div>
             <h2 class="text-3xl font-bold mb-2" style="color: ${winner?.color || '#334155'}">${winner?.name || winnerId}</h2>
             <p class="text-5xl font-black text-slate-800">${sorted[0][1].affinity}%</p>
@@ -641,6 +652,7 @@ function setupShareLinks(results) {
         const btn = document.getElementById('afinidad-share-image');
         const originalText = btn.innerHTML;
         btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Generando...';
+        const winnerLogoScale = getWinnerLogoScale(winner?.id);
         
         try {
             // Create a container for the image
@@ -654,8 +666,8 @@ function setupShareLinks(results) {
                 </div>
                 <div style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 16px; padding: 32px 24px; text-align: center; margin-bottom: 32px; box-shadow: 0 8px 24px rgba(0,0,0,0.08);">
                     <p style="color: #64748b; font-size: 16px; margin: 0 0 16px 0; line-height: 1.4; font-weight: 500; letter-spacing: 0.01em;">Tu partido más afín</p>
-                    <div style="width: 88px; height: 88px; margin: 0 auto 20px; background: #f8fafc; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #e2e8f0;">
-                        <img src="${window.location.origin}/${winner.logo}" style="width: 52px; height: 52px; object-fit: contain;" onerror="this.style.display='none'">
+                    <div style="width: 88px; height: 88px; margin: 0 auto 20px; background: #f8fafc; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #e2e8f0; overflow: hidden;">
+                        <img src="${window.location.origin}/${winner.logo}" style="width: 100%; height: 100%; object-fit: contain; object-position: center; transform: scale(${winnerLogoScale}); transform-origin: center;" onerror="this.style.display='none'">
                     </div>
                     <h2 style="font-size: 36px; margin: 0 0 12px 0; line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; color: ${winner.color};">${winner.name}</h2>
                     <p style="font-size: 64px; font-weight: 800; margin: 0; line-height: 1.1; letter-spacing: -0.03em; color: ${winner.color}; text-shadow: 0 2px 4px rgba(0,0,0,0.05);">${sorted[0][1].affinity}%</p>
@@ -873,6 +885,7 @@ function renderSharedResults(results) {
     const winnerId = sorted[0][0];
     const winner = PARTIES.find(p => p.id === winnerId);
     const winnerData = sorted[0][1];
+    const winnerLogoScale = getWinnerLogoScale(winner?.id);
     
     if (!winner) {
         document.getElementById('afinidad-winner').innerHTML = '<p class="text-center text-slate-500">Error al mostrar resultados</p>';
@@ -883,8 +896,8 @@ function renderSharedResults(results) {
     document.getElementById('afinidad-winner').innerHTML = `
         <div class="bg-white rounded-2xl p-8 text-center border border-slate-200 shadow-sm">
             <p class="text-slate-500 text-sm font-medium mb-2">Tu partido más afín</p>
-            <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: ${winner.color}20">
-                <img src="${winner.logo}" alt="${winner.name}" class="w-14 h-14 object-contain">
+            <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center overflow-hidden" style="background-color: ${winner.color}20">
+                <img src="${winner.logo}" alt="${winner.name}" class="w-full h-full object-contain" style="transform: scale(${winnerLogoScale}); transform-origin: center;">
             </div>
             <h2 class="text-3xl font-bold mb-2" style="color: ${winner.color}">${winner.name}</h2>
             <p class="text-5xl font-black text-slate-800">${winnerData.affinity}%</p>
