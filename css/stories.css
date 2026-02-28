@@ -585,6 +585,12 @@ body.explora-layout #explora-player .story-screen {
     gap: 0.5rem;
 }
 
+.explora-start-btn:disabled,
+.explora-start-btn[aria-disabled="true"] {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
 #explora-player {
     width: 100%;
     height: 100vh;

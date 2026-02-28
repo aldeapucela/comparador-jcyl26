@@ -41,7 +41,7 @@ export function createStoriesController(appState) {
         return unique;
     }
 
-    function setSelectedPartyIds(ids = [], { ensureOne = true } = {}) {
+    function setSelectedPartyIds(ids = [], { ensureOne = false } = {}) {
         const allowed = new Set(PARTIES.map((party) => party.id));
         const unique = [];
         (Array.isArray(ids) ? ids : []).forEach((id) => {
@@ -85,16 +85,30 @@ export function createStoriesController(appState) {
                 let next = current;
 
                 if (isSelected) {
-                    if (current.length <= 1) return;
                     next = current.filter((id) => id !== partyId);
                 } else {
                     next = [...current, partyId];
                 }
 
-                setSelectedPartyIds(next, { ensureOne: true });
+                setSelectedPartyIds(next, { ensureOne: false });
                 renderPartyPills();
+                syncExploraStartButtonState();
             });
         });
+    }
+
+    function canStartExplora() {
+        if (appState.stories.source !== 'party') return true;
+        return getSelectedPartyIds().length > 0;
+    }
+
+    function syncExploraStartButtonState() {
+        const startBtn = document.getElementById('btn-explora-start');
+        if (!startBtn) return;
+        const canStart = canStartExplora();
+        startBtn.disabled = !canStart;
+        startBtn.setAttribute('aria-disabled', canStart ? 'false' : 'true');
+        startBtn.title = canStart ? '' : 'Selecciona al menos un partido para empezar';
     }
 
     async function requestExploraFullscreen() {
@@ -251,7 +265,7 @@ export function createStoriesController(appState) {
     function populateExploraFilters() {
         const topicSelect = document.getElementById('explora-topic-select');
 
-        setSelectedPartyIds(getSelectedPartyIds(), { ensureOne: true });
+        setSelectedPartyIds(getSelectedPartyIds(), { ensureOne: false });
         renderPartyPills();
 
         if (topicSelect && topicSelect.options.length === 0) {
@@ -280,6 +294,8 @@ export function createStoriesController(appState) {
             const isActive = btn.dataset.exploraChoice === appState.stories.source;
             btn.classList.toggle('active', isActive);
         });
+
+        syncExploraStartButtonState();
     }
 
     function getStoryDurationMs(story) {
@@ -688,7 +704,12 @@ export function createStoriesController(appState) {
     function startFeed() {
         const topicSelect = document.getElementById('explora-topic-select');
 
-        setSelectedPartyIds(getSelectedPartyIds(), { ensureOne: true });
+        setSelectedPartyIds(getSelectedPartyIds(), { ensureOne: false });
+        if (!canStartExplora()) {
+            syncExploraStartButtonState();
+            UI.navigateHash('#/explora');
+            return;
+        }
         appState.stories.selectedTopic = topicSelect?.value || CATEGORIES[0]?.name || '';
         appState.stories.feed = buildStoriesFeed();
         appState.stories.currentIndex = 0;
@@ -710,6 +731,7 @@ export function createStoriesController(appState) {
     function renderPrototype() {
         populateExploraFilters();
         syncExploraSetupUI();
+        syncExploraStartButtonState();
 
         if (appState.stories.started) {
             if (!appState.stories.feed.length) {
@@ -723,10 +745,11 @@ export function createStoriesController(appState) {
     function setSource(source) {
         appState.stories.source = source || 'random';
         if (appState.stories.source === 'party') {
-            setSelectedPartyIds(getSelectedPartyIds(), { ensureOne: true });
+            setSelectedPartyIds([], { ensureOne: false });
             renderPartyPills();
         }
         syncExploraSetupUI();
+        syncExploraStartButtonState();
     }
 
     function handleKeydown(event) {
