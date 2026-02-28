@@ -648,8 +648,78 @@ body {
     padding-left: 1.25rem;
 }
 
+.stories-preview {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.story-ring-icon {
+    position: relative;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    padding: 2px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(from 210deg, #f59e0b, #ef4444, #f59e0b);
+    animation: storyRingGlow 2.4s ease-in-out infinite;
+}
+
+.story-ring-icon::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 999px;
+    background: #fff;
+}
+
+.story-ring-icon img {
+    position: relative;
+    z-index: 1;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 999px;
+    object-fit: contain;
+}
+
+@keyframes storyRingGlow {
+    0%, 100% {
+        transform: scale(1);
+        filter: saturate(1);
+    }
+    50% {
+        transform: scale(1.06);
+        filter: saturate(1.15);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .story-ring-icon {
+        animation: none;
+    }
+}
+
 /* Afinidad: full mobile viewport layout */
 @media (max-width: 768px) {
+    .stories-preview {
+        gap: 0.35rem;
+    }
+
+    .story-ring-icon {
+        width: 2.45rem;
+        height: 2.45rem;
+    }
+
+    .story-ring-icon img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
     body.afinidad-layout main {
         padding-bottom: 0.75rem;
     }

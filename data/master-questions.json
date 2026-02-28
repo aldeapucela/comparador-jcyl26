@@ -2,154 +2,154 @@
   {
     "id": "SAN_1",
     "categoria": "Sanidad Pública",
-    "pregunta": "¿Estás de acuerdo en que, por ley, al menos 1 de cada 4 euros de Sanidad vaya a los centros de salud y médicos de familia?",
-    "tema": "Sanidad - Atención Primaria",
-    "contexto": "La propuesta plantea reservar por ley una parte fija del gasto sanitario para reforzar centros de salud, plantillas y capacidad resolutiva de la Primaria."
+    "pregunta": "La interrupción voluntaria del embarazo debería garantizarse en hospitales públicos de todas las provincias, también en zonas rurales.",
+    "tema": "Sanidad - IVE en red pública",
+    "contexto": "Se compara un modelo que asegura la IVE en hospitales públicos de todo el territorio, incluidas provincias y áreas rurales, frente a enfoques menos concretos o sin propuesta específica."
   },
   {
     "id": "SAN_2",
     "categoria": "Sanidad Pública",
-    "pregunta": "¿Prefieres que la sanidad la gestione sobre todo lo público y que se recurra menos a empresas privadas?",
+    "pregunta": "La sanidad debería gestionarse principalmente desde lo público, reduciendo el recurso a empresas privadas.",
     "tema": "Sanidad - Gestión Pública",
     "contexto": "Aquí se compara un modelo de mayor gestión pública directa frente a otro que mantiene o amplía la colaboración con centros privados para absorber demanda."
   },
   {
     "id": "EDU_1",
     "categoria": "Educación y Futuro",
-    "pregunta": "¿Crees que la Junta debe dar prioridad a la escuela pública frente a la concertada o separada por sexo?",
+    "pregunta": "La Junta debería priorizar la escuela pública frente a la concertada o separada por sexo.",
     "tema": "Educación - Modelo de Red Escolar",
     "contexto": "Se contrasta un modelo que concentra recursos en educación pública con otro que da mayor peso a libertad de elección y protección de modalidades concertadas o diferenciadas."
   },
   {
     "id": "EDU_2",
     "categoria": "Educación y Futuro",
-    "pregunta": "¿Debe ser obligatorio pedir permiso a las familias antes de actividades escolares con temas morales, sexuales o ideológicos?",
+    "pregunta": "Los colegios deberían pedir permiso a las familias antes de dar charlas sobre sexualidad, igualdad o temas de valores.",
     "tema": "Educación - Autorización Familiar",
     "contexto": "Esta pregunta evalúa el llamado control parental sobre actividades complementarias, frente a modelos que dejan esa programación dentro de la autonomía educativa ordinaria."
   },
   {
     "id": "SOC_1",
     "categoria": "Servicios Sociales",
-    "pregunta": "¿Estás a favor de más residencias públicas y de limitar que las residencias con ánimo de lucro gestionen cuidados de larga duración?",
+    "pregunta": "La Junta debería ampliar residencias públicas y limitar que residencias con ánimo de lucro gestionen cuidados de larga duración.",
     "tema": "Servicios Sociales - Modelo Residencial",
     "contexto": "Se contrapone una política de expansión del sistema público de cuidados frente a modelos mixtos con mayor peso de operadores privados."
   },
   {
     "id": "SOC_2",
     "categoria": "Servicios Sociales",
-    "pregunta": "¿Crees que la prioridad debe ser reducir las listas de espera de dependencia y aumentar ayuda a domicilio y plazas públicas?",
-    "tema": "Servicios Sociales - Dependencia",
-    "contexto": "La propuesta combina agilización administrativa de la dependencia con más recursos de atención domiciliaria y centros de cuidados."
+    "pregunta": "El empadronamiento debería facilitarse sin requisitos abusivos para asegurar el acceso a servicios sociales y derechos básicos.",
+    "tema": "Servicios Sociales - Empadronamiento y acceso",
+    "contexto": "Evalúa si el padrón debe tratarse como puerta de acceso efectiva a derechos y servicios, reduciendo trabas administrativas para población vulnerable."
   },
   {
     "id": "RET_1",
     "categoria": "Reto Demográfico",
-    "pregunta": "¿Estás de acuerdo con dar ventajas fiscales y ayudas económicas para que la gente vaya a vivir y se quede en pueblos?",
+    "pregunta": "La Junta debería aplicar ventajas fiscales y ayudas económicas para favorecer que la población viva y se mantenga en los pueblos.",
     "tema": "Reto Demográfico - Incentivos",
     "contexto": "Evalúa si la política demográfica debe apoyarse en deducciones, ayudas y ventajas económicas para residencia y actividad en pueblos."
   },
   {
     "id": "RET_2",
     "categoria": "Reto Demográfico",
-    "pregunta": "¿Crees que el cheque bebé y las políticas de apoyo a familias deben ser la medida principal contra la despoblación?",
+    "pregunta": "El cheque bebé y las políticas de apoyo a familias deberían ser la medida principal contra la despoblación.",
     "tema": "Reto Demográfico - Natalidad y Familia",
     "contexto": "La pregunta mide el peso que deben tener natalidad y apoyo familiar dentro de la estrategia demográfica autonómica."
   },
   {
     "id": "VIV_1",
     "categoria": "Vivienda",
-    "pregunta": "¿Estás a favor de poner un tope legal al precio del alquiler en zonas donde esté disparado?",
+    "pregunta": "La Junta debería aplicar topes legales al precio del alquiler en zonas tensionadas.",
     "tema": "Vivienda - Regulación del Alquiler",
     "contexto": "Se plantea intervenir en áreas con subidas intensas del alquiler para contener rentas y mejorar acceso a vivienda habitual."
   },
   {
     "id": "VIV_2",
     "categoria": "Vivienda",
-    "pregunta": "Para ayudar a jóvenes, ¿prefieres priorizar avales para comprar vivienda antes que construir o ampliar alquiler público?",
+    "pregunta": "Para ayudar a la gente joven, la prioridad debería ser dar avales para comprar vivienda antes que crear más vivienda pública de alquiler asequible.",
     "tema": "Vivienda - Compra vs Alquiler Público",
     "contexto": "Contrasta dos enfoques: facilitar compra mediante avales e incentivos o concentrar recursos en aumentar alquiler público asequible."
   },
   {
     "id": "FIS_1",
     "categoria": "Economía y Fiscalidad",
-    "pregunta": "¿Crees que bajar impuestos de forma general debe ser la medida principal para mover la economía?",
+    "pregunta": "La bajada general de impuestos debería ser la medida principal para impulsar la economía.",
     "tema": "Fiscalidad - Rebaja General",
     "contexto": "Evalúa si la política económica autonómica debe centrarse en bajar impuestos de forma amplia para estimular consumo, inversión y empleo."
   },
   {
     "id": "FIS_2",
     "categoria": "Economía y Fiscalidad",
-    "pregunta": "¿Estás de acuerdo con crear impuestos autonómicos específicos para grandes fortunas y grandes empresas energéticas o extractivas?",
+    "pregunta": "La Junta debería crear impuestos autonómicos específicos para grandes fortunas y grandes empresas energéticas o extractivas.",
     "tema": "Fiscalidad - Grandes Fortunas",
     "contexto": "Plantea aumentar progresividad fiscal con figuras dirigidas a patrimonios elevados y sectores con alta capacidad económica."
   },
   {
     "id": "AGR_1",
     "categoria": "Sector Primario",
-    "pregunta": "¿Prefieres apoyar más la ganadería extensiva (al aire libre) que la intensiva (grandes explotaciones cerradas)?",
+    "pregunta": "La Junta debería apoyar más la ganadería de pasto y al aire libre que las grandes granjas de producción intensiva en naves.",
     "tema": "Sector Primario - Modelo Ganadero",
     "contexto": "Compara una apuesta por ganadería extensiva ligada a territorio y gestión del monte frente a un enfoque más favorable a intensificación productiva."
   },
   {
     "id": "AGR_2",
     "categoria": "Sector Primario",
-    "pregunta": "¿Crees que las ayudas europeas del campo (PAC) deben ir primero a agricultores y ganaderos que viven principalmente de ello?",
-    "tema": "Sector Primario - PAC",
-    "contexto": "La medida evalúa si las ayudas agrarias deben concentrarse en quienes viven principalmente de la actividad agraria y ganadera."
+    "pregunta": "La autorización de nuevas macrogranjas y macroplantas de biogás debería paralizarse hasta reforzar la evaluación ambiental y territorial.",
+    "tema": "Sector Primario - Macroinstalaciones",
+    "contexto": "Contrasta un modelo de moratoria y revisión estricta de impactos frente a otro que prioriza continuidad o expansión de estas instalaciones."
   },
   {
     "id": "AMB_1",
     "categoria": "Medio Ambiente y Energía",
-    "pregunta": "¿Estás a favor de parar nuevas macrogranjas y grandes plantas de biogás?",
-    "tema": "Medio Ambiente - Macroinstalaciones",
-    "contexto": "Pregunta por una moratoria o freno de nuevas instalaciones de gran escala por su impacto ambiental, territorial y social."
+    "pregunta": "Las grandes empresas de energía (eólica, solar, etc.) deberían pagar más impuestos cuando tengan beneficios muy altos o generen impactos en el territorio.",
+    "tema": "Energía - Fiscalidad de instalaciones",
+    "contexto": "Contrasta un enfoque que grava plusvalías e impactos asociados a grandes instalaciones energéticas frente a modelos que priorizan rebajas fiscales o no plantean esta vía."
   },
   {
     "id": "AMB_2",
     "categoria": "Medio Ambiente y Energía",
-    "pregunta": "¿Crees que hay que frenar grandes parques renovables en suelos muy valiosos para agricultura o ganadería y controlar mejor dónde se instalan?",
+    "pregunta": "La Junta debería poner límites a dónde se instalan los parques eólicos y solares para no ocupar tierras buenas para cultivar o criar ganado.",
     "tema": "Energía - Implantación Renovable",
     "contexto": "Evalúa si el despliegue renovable debe limitarse más en suelos agrícolas o paisajísticos sensibles mediante reglas de ordenación más estrictas."
   },
   {
     "id": "MOV_1",
     "categoria": "Movilidad e Internet",
-    "pregunta": "¿Debe garantizar la Junta que cualquier persona llegue a servicios básicos (salud, educación o trámites) en menos de 30 minutos?",
+    "pregunta": "La Junta debería garantizar que cualquier persona llegue a servicios básicos en menos de 30 minutos.",
     "tema": "Movilidad - Acceso a Servicios",
     "contexto": "Mide el compromiso con estándares territoriales de acceso rápido a sanidad, educación y servicios públicos en todo el territorio."
   },
   {
     "id": "MOV_2",
     "categoria": "Movilidad e Internet",
-    "pregunta": "¿Debe garantizarse internet rápido (al menos 100 Mbps) y buena cobertura móvil en todo Castilla y León, también en pueblos pequeños?",
+    "pregunta": "Castilla y León debería garantizar internet rápido, al menos 100 Mbps, y buena cobertura móvil también en pueblos pequeños.",
     "tema": "Conectividad - Brecha Digital",
     "contexto": "Plantea cerrar la brecha digital rural-urbana asegurando conectividad robusta para trabajar, estudiar y acceder a servicios."
   },
   {
     "id": "TRA_1",
     "categoria": "Calidad Democrática",
-    "pregunta": "¿Estás de acuerdo con endurecer las normas para que un ex cargo público no pase enseguida a trabajar en empresas relacionadas?",
+    "pregunta": "La Junta debería endurecer las normas para impedir que un ex cargo público pase de inmediato a empresas relacionadas.",
     "tema": "Calidad Democrática - Incompatibilidades",
     "contexto": "Evalúa endurecer límites para que altos cargos no pasen de forma inmediata a empresas vinculadas a sus decisiones públicas."
   },
   {
     "id": "TRA_2",
     "categoria": "Calidad Democrática",
-    "pregunta": "¿Debe publicarse el seguimiento completo de expedientes públicos y hacer auditorías periódicas con sanciones reales si no se cumple?",
-    "tema": "Calidad Democrática - Rendición de Cuentas",
-    "contexto": "La medida combina transparencia operativa, control externo y seguimiento público de compromisos para reforzar la rendición de cuentas."
+    "pregunta": "Castilla y León debería crear una Agencia Antifraude autonómica independiente con capacidad de investigación y control.",
+    "tema": "Calidad Democrática - Agencia Antifraude",
+    "contexto": "Plantea si conviene dotar a la comunidad de un órgano independiente y estable para prevenir corrupción, investigar irregularidades y reforzar la fiscalización pública."
   },
   {
     "id": "CUL_1",
     "categoria": "Otros (Igualdad/Cultura)",
-    "pregunta": "¿Estás de acuerdo con quitar las subvenciones públicas a la tauromaquia?",
+    "pregunta": "La Junta debería retirar las subvenciones públicas a la tauromaquia.",
     "tema": "Cultura - Tauromaquia",
     "contexto": "Contrasta mantener apoyo público a festejos taurinos frente a retirar esa financiación y reasignarla a otras políticas culturales."
   },
   {
     "id": "CUL_2",
     "categoria": "Otros (Igualdad/Cultura)",
-    "pregunta": "¿Crees que los colegios deben enseñar memoria democrática y que haya políticas públicas para reparar a las víctimas?",
+    "pregunta": "En los colegios debería enseñarse lo que pasó durante la dictadura y la Junta debería ayudar a reparar a las víctimas y a sus familias.",
     "tema": "Cultura y Memoria - Memoria Democrática",
     "contexto": "Evalúa si la política autonómica debe desarrollar activamente memoria democrática en educación y en programas institucionales de reconocimiento y reparación."
   }

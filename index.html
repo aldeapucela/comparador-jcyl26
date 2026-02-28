@@ -33,7 +33,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20260228115039">
+    <link rel="stylesheet" href="css/style.css?v=20260228122630">
     <link rel="stylesheet" href="css/stories.css?v=20260228181000">
     </head>
 
@@ -75,51 +75,60 @@
     <main class="max-w-6xl mx-auto px-4 pb-20">
         <!-- View: Party Selection -->
         <section id="view-party-selection" class="fade-in">
-            <div class="max-w-md mx-auto mb-16 text-center">
-                <button id="btn-goto-topics"
-                    class="group relative w-full bg-gradient-to-br from-slate-50 to-white text-slate-700 border border-slate-200/60 p-6 rounded-2xl font-semibold text-lg shadow-sm hover:shadow-lg hover:border-slate-300/80 transition-all duration-300 active:scale-[0.98] overflow-hidden">
-                    <div class="relative z-10 flex items-center justify-center gap-4">
-                        <div class="w-10 h-10 rounded-xl bg-slate-100/50 flex items-center justify-center group-hover:bg-slate-200/50 transition-colors">
-                            <i class="fa-solid fa-scale-balanced text-slate-600"></i>
+            <div class="max-w-5xl mx-auto mb-16 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                <div>
+                    <button id="btn-goto-afinidad"
+                        class="group relative w-full bg-gradient-to-br from-indigo-50 to-white text-indigo-700 border border-indigo-200/60 p-6 rounded-2xl font-semibold text-lg shadow-sm hover:shadow-lg hover:border-indigo-300/80 transition-all duration-300 active:scale-[0.98] overflow-hidden">
+                        <div class="relative z-10 flex items-center justify-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-100/50 flex items-center justify-center group-hover:bg-indigo-200/50 transition-colors">
+                                <i class="fa-solid fa-heart-pulse text-indigo-600"></i>
+                            </div>
+                            <span>Cuestionario de afinidad</span>
                         </div>
-                        <span>Comparar por temática</span>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-r from-blue-50/30 via-transparent to-indigo-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </button>
-                <p class="text-slate-400 mt-4 text-sm font-light">Sanidad, Vivienda, Empleo...</p>
-            </div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-indigo-100/40 via-transparent to-sky-100/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-200 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </button>
+                    <p class="text-slate-400 mt-4 text-sm font-light">Descubre en 2 minutos tu afinidad con los partidos</p>
+                </div>
 
-            <div class="max-w-md mx-auto mb-16 text-center hidden">
-                <button id="btn-goto-explora"
-                    class="group relative w-full bg-gradient-to-br from-violet-50 to-white text-violet-700 border border-violet-200/70 p-6 rounded-2xl font-semibold text-lg shadow-sm hover:shadow-lg hover:border-violet-300/90 transition-all duration-300 active:scale-[0.98] overflow-hidden">
-                    <div class="relative z-10 flex items-center justify-center gap-4">
-                        <div class="w-10 h-10 rounded-xl bg-violet-100/70 flex items-center justify-center group-hover:bg-violet-200/80 transition-colors">
-                            <i class="fa-solid fa-layer-group text-violet-600"></i>
+                <div>
+                    <button id="btn-goto-explora"
+                        class="group relative w-full bg-gradient-to-br from-orange-50 to-white text-orange-700 border border-orange-200/70 p-6 rounded-2xl font-semibold text-lg shadow-sm hover:shadow-lg hover:border-orange-300/90 transition-all duration-300 active:scale-[0.98] overflow-hidden">
+                        <div class="relative z-10">
+                            <div class="flex items-center justify-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-orange-100/70 flex items-center justify-center group-hover:bg-orange-200/80 transition-colors">
+                                    <i class="fa-solid fa-layer-group text-orange-600"></i>
+                                </div>
+                                <span>Explorar propuestas</span>
+                            </div>
+                            <div class="stories-preview" aria-hidden="true">
+                                <span class="story-ring-icon"><img src="img/pp.png" alt=""></span>
+                                <span class="story-ring-icon"><img src="img/psoe.png" alt=""></span>
+                                <span class="story-ring-icon"><img src="img/vox.svg" alt=""></span>
+                                <span class="story-ring-icon"><img src="img/podemos.png" alt=""></span>
+                                <span class="story-ring-icon"><img src="img/encomun.svg" alt=""></span>
+                            </div>
                         </div>
-                        <span>Explora en vertical (beta)</span>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-r from-violet-100/40 via-transparent to-fuchsia-100/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-300/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </button>
-                <p class="text-slate-400 mt-4 text-sm font-light">Historias a pantalla completa para descubrir propuestas</p>
-            </div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-orange-100/40 via-transparent to-amber-100/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-300/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </button>
+                    <p class="text-slate-400 mt-4 text-sm font-light">Historias rápidas para leer fácilmente</p>
+                </div>
 
-            <div class="max-w-md mx-auto mb-16 text-center">
-                <!-- Temporarily hidden button - uncomment to show
-                <button id="btn-goto-afinidad"
-                    class="group relative w-full bg-gradient-to-br from-indigo-50 to-white text-indigo-700 border border-indigo-200/60 p-6 rounded-2xl font-semibold text-lg shadow-sm hover:shadow-lg hover:border-indigo-300/80 transition-all duration-300 active:scale-[0.98] overflow-hidden">
-                    <div class="relative z-10 flex items-center justify-center gap-4">
-                        <div class="w-10 h-10 rounded-xl bg-indigo-100/50 flex items-center justify-center group-hover:bg-indigo-200/50 transition-colors">
-                            <i class="fa-solid fa-heart-pulse text-indigo-600"></i>
+                <div>
+                    <button id="btn-goto-topics"
+                        class="group relative w-full bg-gradient-to-br from-slate-50 to-white text-slate-700 border border-slate-200/60 p-6 rounded-2xl font-semibold text-lg shadow-sm hover:shadow-lg hover:border-slate-300/80 transition-all duration-300 active:scale-[0.98] overflow-hidden">
+                        <div class="relative z-10 flex items-center justify-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-slate-100/50 flex items-center justify-center group-hover:bg-slate-200/50 transition-colors">
+                                <i class="fa-solid fa-scale-balanced text-slate-600"></i>
+                            </div>
+                            <span>Comparar por temática</span>
                         </div>
-                        <span>Cuestionario de Afinidad</span>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-r from-purple-50/30 via-transparent to-pink-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-200 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </button>
-                <p class="text-slate-400 mt-4 text-sm font-light">Descubre qué partido se parece más a ti</p>
-                -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-50/30 via-transparent to-indigo-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </button>
+                    <p class="text-slate-400 mt-4 text-sm font-light">Sanidad, Vivienda, Empleo...</p>
+                </div>
             </div>
 
             <h2 class="text-2xl font-light text-center mb-12 text-slate-700">O elige una formación para explorar su
@@ -134,7 +143,7 @@
                     Información basada en las principales formaciones que se presentan por la provincia de Valladolid y que han publicado oficialmente un programa electoral. 
                 </p>
                 <p class="text-slate-500 text-sm font-light leading-relaxed mt-2">
-                    ¿Falta alguno? Envíanoslo en <a href="mailto:contacto@aldeapucela.org" class="text-slate-600 hover:text-slate-800 underline underline-offset-2 transition-colors font-medium">un correo</a>.
+                    ¿Falta algo? Envíanos <a href="mailto:contacto@aldeapucela.org" class="text-slate-600 hover:text-slate-800 underline underline-offset-2 transition-colors font-medium">un correo</a>.
                 </p>
             </div>
         </section>
@@ -161,7 +170,7 @@
                     </div>
 
                     <div id="explora-party-picker" class="explora-picker hidden">
-                        <label>Partidos</label>
+                        <label>Elige uno o más partidos</label>
                         <div id="explora-party-pills" class="explora-party-pill-grid" role="group" aria-label="Selecciona uno o varios partidos"></div>
                     </div>
 
@@ -543,8 +552,8 @@
         </div>
     </footer>
 
-    <script src="js/analytics.js?v=20260228115039"></script>
-    <script type="module" src="js/main.js?v=20260228115039"></script>
+    <script src="js/analytics.js?v=20260228122630"></script>
+    <script type="module" src="js/main.js?v=20260228122630"></script>
 </body>
 
 </html>
