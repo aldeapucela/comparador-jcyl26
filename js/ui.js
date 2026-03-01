@@ -3,7 +3,7 @@
  */
 
 import { PARTIES } from './api.js';
-import { isStorySaved, toggleSavedStory } from './stories/saved.js';
+import { isStorySaved, toggleSavedStory, toggleSavedStorySafe } from './stories/saved.js';
 
 function updateAfinidadViewportOffset() {
     const section = document.getElementById('view-afinidad');
@@ -343,7 +343,11 @@ export const UI = {
                     <h3 class="text-lg font-semibold text-slate-800 mb-1">${this.escapeHtml(item.title)}</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">${this.escapeHtml(item.summary)}</p>
                 </a>
-                <div class="mt-3 pt-3 border-t border-slate-100 flex justify-end">
+                <div class="mt-3 pt-3 border-t border-slate-100 flex justify-end gap-2">
+                    <button class="btn-save-search w-8 h-8 rounded-full text-slate-500 hover:text-slate-800 transition-colors flex items-center justify-center${isStorySaved(item.partyId, item.proposalId) ? ' is-saved' : ''}"
+                        data-result-index="${index}" aria-label="Guardar resultado de búsqueda" title="Guardar resultado">
+                        <i class="${isStorySaved(item.partyId, item.proposalId) ? 'fa-solid' : 'fa-regular'} fa-bookmark text-xs"></i>
+                    </button>
                     <button class="btn-share-search w-8 h-8 rounded-full text-slate-500 hover:text-slate-800 transition-colors flex items-center justify-center"
                         data-result-index="${index}" aria-label="Compartir resultado de búsqueda" title="Compartir resultado">
                         <i class="fa-solid fa-share-nodes text-xs"></i>
@@ -352,6 +356,36 @@ export const UI = {
             </div>
         `).join('');
 
+
+        this.containers.searchResults.querySelectorAll('.btn-save-search').forEach((btn) => {
+            btn.addEventListener('click', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                const index = Number(btn.dataset.resultIndex);
+                const item = this.lastSearchResults[index];
+                if (!item) return;
+
+                const toggleResult = toggleSavedStorySafe(item.partyId, item.proposalId);
+                if (!toggleResult.ok) {
+                    this.showSaveFeedbackToast('No se pudo guardar. Revisa permisos del navegador.');
+                    return;
+                }
+
+                btn.classList.toggle('is-saved', toggleResult.saved);
+                const icon = btn.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-solid', toggleResult.saved);
+                    icon.classList.toggle('fa-regular', !toggleResult.saved);
+                }
+
+                const partyInfo = PARTIES.find((party) => party.id === item.partyId);
+                const fakeProp = { id: item.proposalId, categoria: item.category };
+                if (toggleResult.saved) {
+                    this.trackProposalSaveEvent(partyInfo, item.category, fakeProp, 'search');
+                }
+                this.showSaveFeedbackToast(toggleResult.saved ? 'Propuesta guardada' : 'Propuesta eliminada');
+            });
+        });
         this.containers.searchResults.querySelectorAll('.btn-share-search').forEach((btn) => {
             btn.addEventListener('click', () => {
                 const index = Number(btn.dataset.resultIndex);
