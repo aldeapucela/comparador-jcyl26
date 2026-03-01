@@ -923,13 +923,17 @@ body.mobile-menu-open {
     }
 
     .header-action-btn {
-        width: 2.25rem;
-        height: 2.25rem;
+        width: 2.75rem;
+        height: 2.75rem;
         padding: 0;
         border-radius: 999px;
         border-color: transparent;
         background: transparent;
         gap: 0;
+    }
+
+    .header-action-btn i {
+        font-size: 1.05rem;
     }
 
     .header-action-btn span {
