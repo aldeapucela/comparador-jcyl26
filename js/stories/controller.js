@@ -6,7 +6,9 @@ import { isStorySaved, toggleSavedStory } from './saved.js';
 const EXPLORA_CAPTION_STEP_MS = 850;
 const EXPLORA_AFTER_LAST_BLOCK_MS = 6500;
 const EXPLORA_MIN_STORY_DURATION_MS = 7000;
+const EXPLORA_ENGAGEMENT_DURATION_MS = 12000;
 const EXPLORA_SEEN_STORIES_STORAGE_KEY = 'explora_seen_stories_v1';
+const EXPLORA_SHARE_ENGAGEMENT_STORAGE_KEY = 'explora_share_engagement_v1';
 const SAVE_TOAST_ID = 'story-save-toast';
 
 export function createStoriesController(appState) {
@@ -21,12 +23,124 @@ export function createStoriesController(appState) {
     let storyCaptionChunks = [];
     let storyCaptionCurrentIndex = 0;
     let storyCaptionStepMs = EXPLORA_CAPTION_STEP_MS;
+    let isEngagementCardActive = false;
+    let engagementSessionViewedCount = 0;
+    let engagementSessionNextPromptAt = 10;
     const escapeHtml = (value = '') => String(value)
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#39;');
+    const SHARE_PROMPT_FIRST_THRESHOLD = 10;
+    const SHARE_PROMPT_REPEAT_INTERVAL = 15;
+
+    function readShareEngagementState() {
+        try {
+            const raw = localStorage.getItem(EXPLORA_SHARE_ENGAGEMENT_STORAGE_KEY);
+            if (!raw) {
+                return {
+                    shared: false,
+                    optOut: false
+                };
+            }
+            const parsed = JSON.parse(raw);
+            return {
+                shared: Boolean(parsed?.shared),
+                optOut: Boolean(parsed?.optOut)
+            };
+        } catch {
+            return {
+                shared: false,
+                optOut: false
+            };
+        }
+    }
+
+    function writeShareEngagementState(state = {}) {
+        try {
+            localStorage.setItem(EXPLORA_SHARE_ENGAGEMENT_STORAGE_KEY, JSON.stringify({
+                shared: Boolean(state.shared),
+                optOut: Boolean(state.optOut)
+            }));
+        } catch {
+            // Ignore storage quota/privacy failures.
+        }
+    }
+
+    function incrementViewedStoriesCount() {
+        engagementSessionViewedCount += 1;
+        return engagementSessionViewedCount;
+    }
+
+    function markEngagementShared() {
+        const current = readShareEngagementState();
+        writeShareEngagementState({
+            ...current,
+            shared: true
+        });
+    }
+
+    function markEngagementOptOut() {
+        const current = readShareEngagementState();
+        writeShareEngagementState({
+            ...current,
+            optOut: true
+        });
+    }
+
+    function shouldShowShareEngagementCard() {
+        const state = readShareEngagementState();
+        if (state.shared || state.optOut) return false;
+        return engagementSessionViewedCount >= engagementSessionNextPromptAt;
+    }
+
+    function consumeShareEngagementPrompt() {
+        engagementSessionNextPromptAt = Math.max(
+            SHARE_PROMPT_FIRST_THRESHOLD,
+            engagementSessionNextPromptAt + SHARE_PROMPT_REPEAT_INTERVAL
+        );
+        return engagementSessionNextPromptAt;
+    }
+
+    async function shareCurrentWebsite(btn) {
+        const url = `${window.location.origin}${window.location.pathname}`;
+        const shareBody = 'Descubre el comparador de programas de las elecciones a las Cortes de Castilla y León y a qué partido eres más afín';
+        const fullMessage = `${shareBody}\n\n${url}`;
+
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: 'Elecciones Castilla y León 2026',
+                    text: shareBody,
+                    url
+                });
+                const currentStory = appState.stories.currentStory;
+                if (currentStory) {
+                    UI.trackStoryShareEvent(currentStory.party, currentStory.categoryName, currentStory.proposal, 'engagement_web_share');
+                }
+                return { success: true, method: 'web_share' };
+            } catch (err) {
+                if (err.name !== 'AbortError') console.error('Error sharing engagement prompt:', err);
+                return { success: false, method: 'web_share' };
+            }
+        }
+
+        try {
+            await navigator.clipboard.writeText(fullMessage);
+            if (btn) {
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check"></i><span>Copiado</span>';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                }, 1800);
+            }
+            return { success: true, method: 'clipboard' };
+        } catch (err) {
+            console.error('Failed to copy engagement share:', err);
+            return { success: false, method: 'clipboard' };
+        }
+    }
 
     function readSeenStoryIds() {
         try {
@@ -476,8 +590,49 @@ export function createStoriesController(appState) {
             return;
         }
 
+        if (isEngagementCardActive) {
+            clearPlaybackTimers();
+            stopStoryCaptionSequence();
+            StoriesView.renderEngagementShareCard(UI.containers.storiesCard, {
+                transitionDirection: appState.stories.transitionDirection
+            });
+            appState.stories.currentDurationMs = EXPLORA_ENGAGEMENT_DURATION_MS;
+
+            const engagementShareBtn = document.getElementById('btn-story-engagement-share');
+            if (engagementShareBtn) {
+                const stopTapPropagation = (event) => event.stopPropagation();
+                engagementShareBtn.addEventListener('pointerdown', stopTapPropagation);
+                engagementShareBtn.addEventListener('touchstart', stopTapPropagation, { passive: true });
+                engagementShareBtn.addEventListener('click', async () => {
+                    const result = await shareCurrentWebsite(engagementShareBtn);
+                    if (!result?.success) return;
+                    markEngagementShared();
+                    if (result.method !== 'web_share') return;
+                    isEngagementCardActive = false;
+                    moveToNextStory();
+                });
+            }
+
+            const engagementOptOutBtn = document.getElementById('btn-story-engagement-optout');
+            if (engagementOptOutBtn) {
+                const stopTapPropagation = (event) => event.stopPropagation();
+                engagementOptOutBtn.addEventListener('pointerdown', stopTapPropagation);
+                engagementOptOutBtn.addEventListener('touchstart', stopTapPropagation, { passive: true });
+                engagementOptOutBtn.addEventListener('click', () => {
+                    markEngagementOptOut();
+                    isEngagementCardActive = false;
+                    moveToNextStory();
+                });
+            }
+
+            bindExploraGestures();
+            scheduleAutoAdvance();
+            return;
+        }
+
         const story = appState.stories.feed[appState.stories.currentIndex % appState.stories.feed.length];
         markStoryAsSeen(story);
+        incrementViewedStoriesCount();
         appState.stories.currentStory = story;
         appState.stories.currentDurationMs = getStoryDurationMs(story);
 
@@ -818,6 +973,22 @@ export function createStoriesController(appState) {
 
     function moveToNextStory() {
         if (!appState.stories.feed.length) return;
+        if (!isEngagementCardActive && shouldShowShareEngagementCard()) {
+            appState.stories.transitionDirection = 'next';
+            exploraPlaybackElapsedMs = 0;
+            exploraIsPaused = false;
+            exploraWasPausedByHold = false;
+            document.body.classList.remove('explora-paused');
+            clearPlaybackTimers();
+            consumeShareEngagementPrompt();
+            isEngagementCardActive = true;
+            renderCurrentStoryCard();
+            return;
+        }
+
+        if (isEngagementCardActive) {
+            isEngagementCardActive = false;
+        }
         appState.stories.transitionDirection = 'next';
         exploraPlaybackElapsedMs = 0;
         exploraIsPaused = false;
@@ -830,6 +1001,17 @@ export function createStoriesController(appState) {
 
     function moveToPrevStory() {
         if (!appState.stories.feed.length) return;
+        if (isEngagementCardActive) {
+            isEngagementCardActive = false;
+            appState.stories.transitionDirection = 'prev';
+            exploraPlaybackElapsedMs = 0;
+            exploraIsPaused = false;
+            exploraWasPausedByHold = false;
+            document.body.classList.remove('explora-paused');
+            clearPlaybackTimers();
+            renderCurrentStoryCard();
+            return;
+        }
         appState.stories.transitionDirection = 'prev';
         exploraPlaybackElapsedMs = 0;
         exploraIsPaused = false;
@@ -856,6 +1038,9 @@ export function createStoriesController(appState) {
         appState.stories.currentDurationMs = EXPLORA_MIN_STORY_DURATION_MS;
         appState.stories.transitionDirection = 'next';
         appState.stories.started = true;
+        isEngagementCardActive = false;
+        engagementSessionViewedCount = 0;
+        engagementSessionNextPromptAt = SHARE_PROMPT_FIRST_THRESHOLD;
         exploraPlaybackElapsedMs = 0;
         exploraIsPaused = false;
         exploraWasPausedByHold = false;
@@ -930,6 +1115,9 @@ export function createStoriesController(appState) {
         appState.stories.currentIndex = 0;
         appState.stories.currentDurationMs = EXPLORA_MIN_STORY_DURATION_MS;
         appState.stories.transitionDirection = 'next';
+        isEngagementCardActive = false;
+        engagementSessionViewedCount = 0;
+        engagementSessionNextPromptAt = SHARE_PROMPT_FIRST_THRESHOLD;
         exploraPlaybackElapsedMs = 0;
         exploraIsPaused = false;
         exploraWasPausedByHold = false;
@@ -943,6 +1131,9 @@ export function createStoriesController(appState) {
         exploraPlaybackElapsedMs = 0;
         exploraIsPaused = false;
         exploraWasPausedByHold = false;
+        isEngagementCardActive = false;
+        engagementSessionViewedCount = 0;
+        engagementSessionNextPromptAt = SHARE_PROMPT_FIRST_THRESHOLD;
         document.body.classList.remove('explora-paused');
         exitExploraFullscreenIfActive();
     }

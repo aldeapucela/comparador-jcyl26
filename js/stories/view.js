@@ -125,7 +125,52 @@ function renderStoriesCard(container, storyData) {
     `;
 }
 
+function renderEngagementShareCard(container, data = {}) {
+    if (!container) return;
+
+    const {
+        transitionDirection = 'next'
+    } = data;
+
+    const transitionClass = transitionDirection === 'prev'
+        ? 'story-screen--enter-prev'
+        : 'story-screen--enter-next';
+
+    container.innerHTML = `
+        <article class="story-screen story-screen--engagement ${transitionClass}" style="--party-color: #334155; --story-accent: #22c55e;">
+            <div class="story-screen-overlay"></div>
+
+            <header class="story-top">
+                <div class="story-progress-track" aria-hidden="true">
+                    <span id="story-progress-fill-live" class="story-progress-fill" style="width: 0%"></span>
+                </div>
+                <div class="story-meta-row">
+                    <span class="story-counter">Sugerencia</span>
+                </div>
+            </header>
+
+            <section class="story-body story-body--engagement">
+                <h3 class="story-title">¿Te está gustando esta web?</h3>
+                <div class="story-summary">
+                    <p>Compártela con amigos y familiares en redes y grupos. Ayudas a que más vecinos decidan informados.</p>
+                </div>
+                <button class="stories-cta-primary stories-cta-primary--share" id="btn-story-engagement-share" type="button" aria-label="Compartir esta web">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    <span>Compartir esta web</span>
+                </button>
+            </section>
+
+            <footer class="story-actions story-actions--engagement">
+                <button class="story-engagement-optout" id="btn-story-engagement-optout" type="button">
+                    No volver a preguntar
+                </button>
+            </footer>
+        </article>
+    `;
+}
+
 export const StoriesView = {
     buildStoryCaptionChunks,
-    renderStoriesCard
+    renderStoriesCard,
+    renderEngagementShareCard
 };
