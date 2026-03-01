@@ -375,14 +375,21 @@ function setupMobileMenu() {
 
     if (!overlay || !drawer) return;
 
-    if (programsContainer) {
-        programsContainer.innerHTML = PARTIES.map((party) => `
+    const renderProgramsMenu = () => {
+        if (!programsContainer) return;
+        const shuffledParties = [...PARTIES];
+        for (let i = shuffledParties.length - 1; i > 0; i -= 1) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledParties[i], shuffledParties[j]] = [shuffledParties[j], shuffledParties[i]];
+        }
+
+        programsContainer.innerHTML = shuffledParties.map((party) => `
             <a class="mobile-menu-program-link mobile-menu-link" href="#/${party.id}" aria-label="Ver programa de ${UI.escapeHtml(party.name)}">
                 <img src="${UI.escapeHtml(party.logo)}" alt="" aria-hidden="true">
                 <span>${UI.escapeHtml(party.name)}</span>
             </a>
         `).join('');
-    }
+    };
 
     const renderPendingStories = () => {
         if (!pendingStoriesContainer) return;
@@ -522,6 +529,7 @@ function setupMobileMenu() {
     };
 
     const openMenu = () => {
+        renderProgramsMenu();
         renderPendingStories();
         overlay.classList.remove('hidden');
         overlay.setAttribute('aria-hidden', 'false');
