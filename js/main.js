@@ -35,6 +35,7 @@ let appState = {
         selectedPartyId: '',
         selectedPartyIds: [],
         selectedTopic: '',
+        returnHash: '#/',
         hideSeenStories: true,
         feed: [],
         currentIndex: 0,
@@ -615,7 +616,13 @@ function setupEventListeners() {
             .filter(p => p && p !== '#')[0] || '';
         const isPartyRoute = PARTIES.some(p => p.id === route);
 
-        if (route === 'comparar' || route === 'explora' || route === 'guardadas' || isPartyRoute) {
+        if (route === 'explora') {
+            const storiesReturnHash = appState.stories?.returnHash || '#/';
+            UI.navigateHash(storiesReturnHash);
+            return;
+        }
+
+        if (route === 'comparar' || route === 'guardadas' || isPartyRoute) {
             UI.navigateHash('#/');
             return;
         }
@@ -696,6 +703,7 @@ function setupEventListeners() {
     const btnExplora = document.getElementById('btn-goto-explora');
     if (btnExplora) {
         btnExplora.addEventListener('click', () => {
+            appState.stories.returnHash = '#/';
             window.location.hash = '#/explora';
         });
     }
@@ -882,6 +890,9 @@ async function handleRouting() {
 
     if (partyId === 'explora') {
         const exploraSubroute = parts[1] || '';
+        if (!appState.stories.returnHash) {
+            appState.stories.returnHash = '#/';
+        }
         appState.mode = 'stories';
         trackSpaPageView(hash);
         UI.switchView('stories');
@@ -1018,6 +1029,9 @@ async function doPartySelect(partyId) {
         UI.renderPartyHeader(data.metadatos, partyInfo, {
             showStoryRing: unseenCount > 0,
             onStoryClick: () => {
+                const fallbackPartyHash = `#/${partyInfo.id}`;
+                const currentHash = window.location.hash || fallbackPartyHash;
+                appState.stories.returnHash = currentHash.startsWith(fallbackPartyHash) ? currentHash : fallbackPartyHash;
                 storiesController.focusOnParty(partyInfo.id);
                 UI.navigateHash('#/explora/play');
             }

@@ -567,6 +567,7 @@ export function createStoriesController(appState) {
 
     function closeStoriesToHome() {
         if (appState.mode !== 'stories' || !appState.stories.started) return;
+        const returnHash = appState.stories?.returnHash || '#/';
         clearPlaybackTimers();
         stopStoryCaptionSequence();
         exploraPlaybackElapsedMs = 0;
@@ -586,7 +587,7 @@ export function createStoriesController(appState) {
             ghost.style.height = `${rect.height}px`;
             document.body.appendChild(ghost);
 
-            UI.navigateHash('#/');
+            UI.navigateHash(returnHash);
 
             requestAnimationFrame(() => {
                 ghost.classList.add('story-screen--closing');
@@ -597,7 +598,7 @@ export function createStoriesController(appState) {
             return;
         }
 
-        UI.navigateHash('#/');
+        UI.navigateHash(returnHash);
     }
 
     function bindExploraGestures() {
