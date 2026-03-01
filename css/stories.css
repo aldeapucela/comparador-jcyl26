@@ -326,7 +326,7 @@ body.explora-paused .story-progress-fill {
 }
 
 .story-actions-icons {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.7rem;
 }
 
@@ -349,6 +349,41 @@ body.explora-paused .story-progress-fill {
 .story-action-btn:hover {
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.5);
+}
+
+.story-action-btn.is-saved {
+    background: rgba(253, 224, 71, 0.2);
+    border-color: rgba(253, 224, 71, 0.8);
+    color: #fde047;
+}
+
+.story-save-toast {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.97);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 180;
+    background: rgba(15, 23, 42, 0.9);
+    color: #fff;
+    padding: 0.55rem 0.95rem;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.story-save-toast.is-visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+}
+
+.story-save-toast .save-toast-link {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
 .stories-footer-actions {

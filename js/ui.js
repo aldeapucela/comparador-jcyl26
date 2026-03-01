@@ -3,6 +3,7 @@
  */
 
 import { PARTIES } from './api.js';
+import { isStorySaved, toggleSavedStory } from './stories/saved.js';
 
 function updateAfinidadViewportOffset() {
     const section = document.getElementById('view-afinidad');
@@ -24,6 +25,8 @@ export const UI = {
     lastSearchResults: [],
     lastSearchTerm: '',
     lastSearchPartyIds: [],
+    savedTopicsExpanded: false,
+    savedPartyFilters: new Set(),
 
     // Selectors
     views: {
@@ -32,7 +35,8 @@ export const UI = {
         detail: document.getElementById('view-party-detail'),
         topic: document.getElementById('view-topic-first'),
         stories: document.getElementById('view-explora'),
-        afinidad: document.getElementById('view-afinidad')
+        afinidad: document.getElementById('view-afinidad'),
+        saved: document.getElementById('view-saved')
     },
     containers: {
         parties: document.getElementById('parties-container'),
@@ -97,6 +101,26 @@ export const UI = {
                 ${this.escapeHtml(rawTag)}
             </a>
         `;
+    },
+
+    showSaveFeedbackToast(message = 'Propuesta guardada') {
+        let toast = document.getElementById('ui-save-toast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'ui-save-toast';
+            toast.className = 'ui-save-toast';
+            document.body.appendChild(toast);
+        }
+        if (message === 'Propuesta guardada') {
+            toast.innerHTML = `Propuesta <a href="#/guardadas" class="save-toast-link">guardada</a>`;
+        } else {
+            toast.textContent = message;
+        }
+        toast.classList.add('is-visible');
+        clearTimeout(this._saveToastTimerId);
+        this._saveToastTimerId = window.setTimeout(() => {
+            toast.classList.remove('is-visible');
+        }, 2200);
     },
 
     ensureCandidatePhotoModal() {
@@ -338,6 +362,185 @@ export const UI = {
         });
     },
 
+    renderSavedProposals(groupedByParty = new Map(), stats = {}) {
+        const container = document.getElementById('saved-proposals-list');
+        const statsContainer = document.getElementById('saved-proposals-stats');
+        if (!container) return;
+        const hasSavedGroups = groupedByParty instanceof Map && groupedByParty.size > 0;
+
+        const formatPercent = (value) => {
+            if (!Number.isFinite(value) || value <= 0) return '0%';
+            const rounded = Math.round(value * 10) / 10;
+            return Number.isInteger(rounded) ? `${rounded}%` : `${rounded.toFixed(1).replace('.', ',')}%`;
+        };
+
+        if (!hasSavedGroups) {
+            if (statsContainer) {
+                statsContainer.innerHTML = '';
+                statsContainer.classList.add('hidden');
+            }
+            container.innerHTML = `
+                <div class="saved-empty-state">
+                    <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+                    <p>Aún no tienes propuestas guardadas.</p>
+                    <a href="#/explora" class="saved-empty-cta">Explorar propuestas</a>
+                </div>
+            `;
+            return;
+        }
+
+        if (statsContainer) {
+            statsContainer.classList.remove('hidden');
+            const partyRows = (Array.isArray(stats.partyStats) ? stats.partyStats : [])
+                .filter((row) => Number.isFinite(row.percent) && row.percent > 0)
+                .sort((a, b) => b.percent - a.percent);
+            const categoryRows = (Array.isArray(stats.categoryStats) ? stats.categoryStats : [])
+                .filter((row) => Number.isFinite(row.percent) && row.percent > 0)
+                .sort((a, b) => b.percent - a.percent);
+
+            const availablePartyIds = new Set(partyRows.map((row) => row.partyId));
+            this.savedPartyFilters = new Set(Array.from(this.savedPartyFilters).filter((id) => availablePartyIds.has(id)));
+            const activeFilterCount = this.savedPartyFilters.size;
+            const showAll = activeFilterCount === 0 || activeFilterCount === partyRows.length;
+
+            const partyPills = partyRows.map((row) => `
+                <button type="button" class="saved-party-pill${this.savedPartyFilters.has(row.partyId) ? ' is-active' : ''}" data-party-id="${row.partyId}" title="${this.escapeHtml(row.partyName)}: ${formatPercent(row.percent)}" aria-pressed="${this.savedPartyFilters.has(row.partyId) ? 'true' : 'false'}">
+                    <span class="saved-party-pill-logo-wrap">
+                        <img src="${this.escapeHtml(row.partyLogo || '')}" alt="Logo ${this.escapeHtml(row.partyName)}" class="saved-party-pill-logo">
+                    </span>
+                    <span class="saved-party-pill-value">${formatPercent(row.percent)}</span>
+                </button>
+            `).join('');
+
+            const categoryRowsHtml = categoryRows
+                .slice(0, 10)
+                .map((row) => `<div class="saved-stats-row"><span class="saved-stats-name">${this.escapeHtml(row.name)}</span><span class="saved-stats-value">${formatPercent(row.percent)}</span></div>`)
+                .join('');
+
+            statsContainer.innerHTML = `
+                <div class="saved-stats-block">
+                    <p class="saved-stats-title">Por partido</p>
+                    <div class="saved-party-pills-row">
+                        ${partyPills || '<span class="saved-stats-empty-inline">Sin porcentajes guardados</span>'}
+                    </div>
+                    <div class="saved-party-filters-row">
+                        <button type="button" id="saved-clear-filters" class="saved-clear-filters-btn${showAll ? ' hidden' : ''}">
+                            Borrar filtros
+                        </button>
+                    </div>
+                </div>
+                <div class="saved-stats-block">
+                    <button type="button" class="saved-topics-toggle" id="saved-topics-toggle" aria-expanded="${this.savedTopicsExpanded ? 'true' : 'false'}">
+                        <span>Por temática</span>
+                        <i class="fa-solid ${this.savedTopicsExpanded ? 'fa-chevron-up' : 'fa-chevron-down'}"></i>
+                    </button>
+                    <div id="saved-topics-panel" class="saved-topics-panel${this.savedTopicsExpanded ? ' is-open' : ''}">
+                        ${categoryRowsHtml || '<div class="saved-stats-empty-inline">Sin porcentajes guardados</div>'}
+                    </div>
+                </div>
+            `;
+
+            const topicsToggleBtn = document.getElementById('saved-topics-toggle');
+            const topicsPanel = document.getElementById('saved-topics-panel');
+            const clearFiltersBtn = document.getElementById('saved-clear-filters');
+            statsContainer.querySelectorAll('.saved-party-pill').forEach((pill) => {
+                pill.addEventListener('click', () => {
+                    const partyId = pill.dataset.partyId;
+                    if (!partyId) return;
+                    if (this.savedPartyFilters.has(partyId)) {
+                        this.savedPartyFilters.delete(partyId);
+                    } else {
+                        this.savedPartyFilters.add(partyId);
+                    }
+                    this.renderSavedProposals(groupedByParty, stats);
+                });
+            });
+
+            if (clearFiltersBtn) {
+                clearFiltersBtn.addEventListener('click', () => {
+                    this.savedPartyFilters.clear();
+                    this.renderSavedProposals(groupedByParty, stats);
+                });
+            }
+
+            if (topicsToggleBtn && topicsPanel) {
+                topicsToggleBtn.addEventListener('click', () => {
+                    this.savedTopicsExpanded = !this.savedTopicsExpanded;
+                    topicsToggleBtn.setAttribute('aria-expanded', this.savedTopicsExpanded ? 'true' : 'false');
+                    topicsPanel.classList.toggle('is-open', this.savedTopicsExpanded);
+                    const icon = topicsToggleBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-chevron-up', this.savedTopicsExpanded);
+                        icon.classList.toggle('fa-chevron-down', !this.savedTopicsExpanded);
+                    }
+                });
+            }
+        }
+
+        const sortedGroups = Array.from(groupedByParty.values())
+            .sort((a, b) => (b.proposals?.length || 0) - (a.proposals?.length || 0));
+        const selectedPartyIds = Array.from(this.savedPartyFilters);
+        const shouldFilter = selectedPartyIds.length > 0 && selectedPartyIds.length < sortedGroups.length;
+        const visibleGroups = shouldFilter
+            ? sortedGroups.filter((group) => this.savedPartyFilters.has(group.party.id))
+            : sortedGroups;
+
+        container.innerHTML = visibleGroups.map((group) => {
+            return `
+                <section class="saved-party-group">
+                    <header class="saved-party-header">
+                        <a href="#/${group.party.id}" class="saved-party-logo-wrap" aria-label="Ir al programa de ${this.escapeHtml(group.party.name)}">
+                            <img src="${this.escapeHtml(group.party.logo)}" alt="Logo ${this.escapeHtml(group.party.name)}" class="saved-party-logo">
+                        </a>
+                        <div>
+                            <h3 class="saved-party-name">${this.escapeHtml(group.party.name)}</h3>
+                            <p class="saved-party-count">${group.proposals.length} propuesta${group.proposals.length === 1 ? '' : 's'} guardada${group.proposals.length === 1 ? '' : 's'}</p>
+                        </div>
+                    </header>
+                    <div class="saved-proposals-grid">
+                        ${group.proposals.map((proposal) => `
+                            <article class="saved-proposal-card">
+                                <a href="#/${group.party.id}/${encodeURIComponent(proposal.categoria || 'Todas')}/${proposal.id}" class="saved-proposal-link">
+                                    <p class="saved-proposal-category">${this.escapeHtml(proposal.categoria || 'General')}</p>
+                                    <h4 class="saved-proposal-title">${this.escapeHtml(proposal.titulo_corto || 'Propuesta sin título')}</h4>
+                                    <p class="saved-proposal-summary">${this.escapeHtml(proposal.resumen || 'Sin resumen disponible')}</p>
+                                </a>
+                                <div class="saved-proposal-actions">
+                                    <button class="saved-share-btn" data-party="${group.party.id}" data-id="${proposal.id}" aria-label="Compartir propuesta" title="Compartir propuesta">
+                                        <i class="fa-solid fa-share-nodes"></i>
+                                    </button>
+                                    <button class="saved-remove-btn" data-party="${group.party.id}" data-id="${proposal.id}" aria-label="Quitar de guardadas" title="Quitar de guardadas">
+                                        <i class="fa-solid fa-bookmark"></i>
+                                    </button>
+                                </div>
+                            </article>
+                        `).join('')}
+                    </div>
+                </section>
+            `;
+        }).join('');
+
+        container.querySelectorAll('.saved-share-btn').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const partyId = btn.dataset.party;
+                const proposalId = btn.dataset.id;
+                const group = groupedByParty.get(partyId);
+                const proposal = group?.proposals?.find((item) => String(item.id) === String(proposalId));
+                if (!group?.party || !proposal) return;
+                this.shareProposal(group.party, proposal.categoria || 'Todas', proposal, btn);
+            });
+        });
+
+        container.querySelectorAll('.saved-remove-btn').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const partyId = btn.dataset.party;
+                const proposalId = btn.dataset.id;
+                const nowSaved = toggleSavedStory(partyId, proposalId);
+                this.showSaveFeedbackToast(nowSaved ? 'Propuesta guardada' : 'Propuesta eliminada');
+            });
+        });
+    },
+
     async shareSearchResult(item, btn) {
         const url = `${window.location.origin}${window.location.pathname}#/${item.partyId}/${encodeURIComponent(item.category)}/${item.proposalId}`;
         const header = `El ${item.partyName} en CyL propone "${item.title}"`;
@@ -569,6 +772,27 @@ export const UI = {
             btn.addEventListener('click', () => this.toggleQuote(btn.dataset.id, btn));
         });
 
+        this.containers.proposals.querySelectorAll('.btn-save-proposal').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const partyId = btn.dataset.party;
+                const propId = btn.dataset.id;
+                const prop = filtered.find((p) => String(p.id) === String(propId));
+                const nowSaved = toggleSavedStory(partyId, propId);
+                if (nowSaved) {
+                    this.trackProposalSaveEvent(partyInfo, category || prop?.categoria || 'Todas', prop, 'proposal_card');
+                }
+                btn.classList.toggle('is-saved', nowSaved);
+                const icon = btn.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-solid', nowSaved);
+                    icon.classList.toggle('fa-regular', !nowSaved);
+                }
+                const text = btn.querySelector('span');
+                if (text) text.textContent = nowSaved ? 'Guardada' : 'Guardar';
+                this.showSaveFeedbackToast(nowSaved ? 'Propuesta guardada' : 'Propuesta eliminada');
+            });
+        });
+
         this.containers.proposals.querySelectorAll('.btn-share').forEach(btn => {
             const propId = btn.dataset.id;
             const prop = filtered.find(p => p.id == propId);
@@ -581,6 +805,7 @@ export const UI = {
     },
 
     createProposalHTML(prop, partyInfo) {
+        const saved = isStorySaved(partyInfo.id, prop.id);
         return `
             <article class="proposal-card bg-white p-8 rounded-2xl border border-slate-100 fade-in shadow-sm hover:shadow-md" id="prop-${prop.id}">
                 <div class="mb-6">
@@ -613,6 +838,10 @@ export const UI = {
                             <button class="btn-toggle-quote text-slate-400 hover:text-slate-800 text-xs font-semibold flex items-center gap-2 transition-colors" data-id="${prop.id}">
                                 <i class="fa-solid fa-quote-left text-[10px]"></i>
                                 <span>Ver</span>
+                            </button>
+                            <button class="btn-save-proposal text-slate-400 hover:text-slate-800 text-xs font-semibold flex items-center gap-2 transition-colors${saved ? ' is-saved' : ''}" data-id="${prop.id}" data-party="${partyInfo.id}">
+                                <i class="${saved ? 'fa-solid' : 'fa-regular'} fa-bookmark text-[10px]"></i>
+                                <span>${saved ? 'Guardada' : 'Guardar'}</span>
                             </button>
                             <button class="btn-share text-slate-400 hover:text-slate-800 text-xs font-semibold flex items-center gap-2 transition-colors" data-id="${prop.id}">
                                 <i class="fa-solid fa-share-nodes text-[10px]"></i>
@@ -770,7 +999,9 @@ export const UI = {
         bar.innerHTML = `
             <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
                 <div class="flex items-center gap-4">
-                    <img src="${partyInfo.logo}" alt="Logo ${partyInfo.name}" class="h-10 object-contain">
+                    <span class="party-logo-bubble w-10 h-10 rounded-full bg-white border border-slate-200 overflow-hidden flex items-center justify-center shrink-0">
+                        <img src="${partyInfo.logo}" alt="Logo ${partyInfo.name}" class="party-logo-bubble-img">
+                    </span>
                     <span class="font-bold text-slate-800">${partyInfo.name}</span>
                 </div>
                 <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-xs text-slate-400 hover:text-slate-800 font-medium"> Subir al inicio </button>
@@ -875,6 +1106,16 @@ export const UI = {
         const shareMethod = String(method || 'unknown');
         const label = `${partyId}|${proposalId}|${categoryName}|${shareMethod}`;
         _paq.push(['trackEvent', 'Explora Stories', 'Compartir', label, 1]);
+    },
+
+    trackProposalSaveEvent(partyInfo, category, prop, source = 'unknown') {
+        if (typeof _paq === 'undefined') return;
+        const partyId = String(partyInfo?.id || 'unknown');
+        const proposalId = String(prop?.id || 'unknown');
+        const categoryName = String(category || prop?.categoria || 'General');
+        const actionSource = String(source || 'unknown');
+        const label = `${partyId}|${proposalId}|${categoryName}|${actionSource}`;
+        _paq.push(['trackEvent', 'Propuestas', 'Guardar', label, 1]);
     },
 
     async shareProposal(partyInfo, category, prop, btn, options = {}) {
@@ -1012,6 +1253,11 @@ export const UI = {
 
             window.scrollTo(0, 0);
             requestAnimationFrame(updateAfinidadViewportOffset);
+        } else if (viewName === 'saved') {
+            this.views.saved.classList.remove('hidden');
+            this.elements.btnBack.classList.remove('hidden');
+            if (mobileFilter) mobileFilter.classList.add('hidden');
+            window.scrollTo(0, 0);
         }
     },
     // --- Comparison Specific Methods ---
@@ -1108,6 +1354,28 @@ export const UI = {
             const propId = btn.dataset.id;
             const prop = allData[partyId]?.propuestas?.find(p => p.id == propId);
             btn.addEventListener('click', () => this.shareProposal(partyInfo, currentCategory?.name || 'Comparación', prop, btn));
+        });
+
+        this.containers.comparisonResults.querySelectorAll('.btn-save-comparison').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const partyId = btn.dataset.party;
+                const propId = btn.dataset.id;
+                const partyInfo = PARTIES.find((p) => p.id === partyId);
+                const prop = allData[partyId]?.propuestas?.find((p) => String(p.id) === String(propId));
+                const nowSaved = toggleSavedStory(partyId, propId);
+                if (nowSaved) {
+                    this.trackProposalSaveEvent(partyInfo, currentCategory?.name || prop?.categoria || 'Comparación', prop, 'comparison');
+                }
+                btn.classList.toggle('is-saved', nowSaved);
+                const icon = btn.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-solid', nowSaved);
+                    icon.classList.toggle('fa-regular', !nowSaved);
+                }
+                const text = btn.querySelector('span');
+                if (text) text.textContent = nowSaved ? 'Guardada' : 'Guardar';
+                this.showSaveFeedbackToast(nowSaved ? 'Propuesta guardada' : 'Propuesta eliminada');
+            });
         });
 
         this.containers.comparisonResults.querySelectorAll('.btn-detail').forEach(btn => {
@@ -1248,6 +1516,7 @@ export const UI = {
 
     createComparisonCardHTML(prop, partyInfo, options = {}) {
         const quoteKey = `${partyInfo.id}-${prop.id}`;
+        const isSaved = isStorySaved(partyInfo.id, prop.id);
 
         if (options.compact) {
             return `
@@ -1257,14 +1526,18 @@ export const UI = {
                     <div class="party-indicator" style="background-color: ${partyInfo.color}"></div>
                     <p class="text-slate-700 text-sm leading-relaxed">${prop.resumen}</p>
                     <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
-                        <button class="btn-share w-8 h-8 rounded-md text-slate-400 hover:text-slate-800 transition-colors flex items-center justify-center"
-                                data-id="${prop.id}" data-party="${partyInfo.id}" aria-label="Compartir propuesta" title="Compartir">
-                            <i class="fa-solid fa-share-nodes text-xs"></i>
-                        </button>
                         <button class="btn-detail w-8 h-8 rounded-md text-slate-400 hover:text-slate-800 transition-colors flex items-center justify-center"
                                 data-id="${prop.id}" data-party="${partyInfo.id}" data-category="${options.categoryName || 'Todas'}"
                                 aria-label="Ver detalle de propuesta" title="Ver detalle">
                             <i class="fa-solid fa-eye text-xs"></i>
+                        </button>
+                        <button class="btn-save-comparison w-8 h-8 rounded-md text-slate-400 hover:text-slate-800 transition-colors flex items-center justify-center${isSaved ? ' is-saved' : ''}"
+                                data-id="${prop.id}" data-party="${partyInfo.id}" aria-label="Guardar propuesta" title="Guardar propuesta">
+                            <i class="${isSaved ? 'fa-solid' : 'fa-regular'} fa-bookmark text-xs"></i>
+                        </button>
+                        <button class="btn-share w-8 h-8 rounded-md text-slate-400 hover:text-slate-800 transition-colors flex items-center justify-center"
+                                data-id="${prop.id}" data-party="${partyInfo.id}" aria-label="Compartir propuesta" title="Compartir">
+                            <i class="fa-solid fa-share-nodes text-xs"></i>
                         </button>
                     </div>
                 </article>
@@ -1302,6 +1575,10 @@ export const UI = {
                         <button class="btn-share text-xs font-semibold text-slate-400 hover:text-slate-800 flex items-center gap-2 transition-colors" data-id="${prop.id}" data-party="${partyInfo.id}">
                             <i class="fa-solid fa-share-nodes text-[10px]"></i>
                             <span>Compartir</span>
+                        </button>
+                        <button class="btn-save-comparison text-xs font-semibold text-slate-400 hover:text-slate-800 flex items-center gap-2 transition-colors${isSaved ? ' is-saved' : ''}" data-id="${prop.id}" data-party="${partyInfo.id}">
+                            <i class="${isSaved ? 'fa-solid' : 'fa-regular'} fa-bookmark text-[10px]"></i>
+                            <span>${isSaved ? 'Guardada' : 'Guardar'}</span>
                         </button>
                         <button class="btn-toggle-quote text-xs font-semibold text-slate-400 hover:text-slate-800 flex items-center gap-2 transition-colors" data-id="${prop.id}" data-quote-id="${quoteKey}">
                             <i class="fa-solid fa-quote-left text-[10px]"></i>

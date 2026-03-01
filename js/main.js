@@ -6,6 +6,7 @@ import { PARTIES, fetchAllPartiesData, getCategoriesFromProposals, CATEGORIES, l
 import { UI } from './ui.js';
 import { initAfinidad, handleAnswer, toggleImportant, nextQuestion, prevQuestion, toggleContext, loadFromUrl, calculateAndShowResults, setSharedResults, startAfinidad, showAfinidadIntro } from './afinidad.js';
 import { createStoriesController } from './stories/controller.js';
+import { readSavedStoryIds, getStoryUniqueIdByParts } from './stories/saved.js';
 
 const APP_VERSION = new URL(import.meta.url).searchParams.get('v') || '';
 window.__APP_VERSION__ = APP_VERSION;
@@ -256,6 +257,87 @@ function renderSearchScreen(term) {
     );
 }
 
+function getSavedProposalsGroupedByParty() {
+    const savedIds = readSavedStoryIds();
+    const grouped = new Map();
+
+    PARTIES.forEach((party) => {
+        const partyData = appState.allData[party.id];
+        const proposals = Array.isArray(partyData?.propuestas) ? partyData.propuestas : [];
+        const savedProposals = proposals.filter((proposal) => savedIds.has(getStoryUniqueIdByParts(party.id, proposal.id)));
+        if (savedProposals.length > 0) {
+            grouped.set(party.id, {
+                party,
+                proposals: savedProposals
+            });
+        }
+    });
+
+    return grouped;
+}
+
+function getSavedProposalsStats() {
+    const savedIds = readSavedStoryIds();
+    const partyStats = [];
+    const categorySavedMap = new Map();
+    const totalSavedCount = savedIds.size;
+
+    PARTIES.forEach((party) => {
+        const proposals = Array.isArray(appState.allData[party.id]?.propuestas)
+            ? appState.allData[party.id].propuestas
+            : [];
+        let savedCount = 0;
+
+        proposals.forEach((proposal) => {
+            const category = proposal?.categoria || 'General';
+            const storyId = getStoryUniqueIdByParts(party.id, proposal.id);
+            const isSaved = savedIds.has(storyId);
+            if (isSaved) savedCount += 1;
+            if (isSaved) categorySavedMap.set(category, (categorySavedMap.get(category) || 0) + 1);
+        });
+
+        if (savedCount > 0) {
+            partyStats.push({
+                partyId: party.id,
+                partyName: party.name,
+                partyLogo: party.logo,
+                savedCount,
+                totalCount: totalSavedCount,
+                percent: totalSavedCount > 0 ? (savedCount / totalSavedCount) * 100 : 0
+            });
+        }
+    });
+
+    const categoryStats = Array.from(categorySavedMap.entries())
+        .map(([name, savedCount]) => {
+            return {
+                name,
+                savedCount,
+                totalCount: totalSavedCount,
+                percent: totalSavedCount > 0 ? (savedCount / totalSavedCount) * 100 : 0
+            };
+        });
+
+    return { partyStats, categoryStats };
+}
+
+function renderSavedProposalsScreen() {
+    const grouped = getSavedProposalsGroupedByParty();
+    const stats = getSavedProposalsStats();
+    UI.renderSavedProposals(grouped, stats);
+}
+
+function syncHomeSavedEntryVisibility() {
+    const homeSavedEntry = document.getElementById('home-saved-entry');
+    const homeFeatureGrid = document.getElementById('home-feature-grid');
+    if (!homeSavedEntry) return;
+    const hasSaved = readSavedStoryIds().size > 0;
+    homeSavedEntry.classList.toggle('hidden', !hasSaved);
+    if (homeFeatureGrid) {
+        homeFeatureGrid.style.setProperty('--home-feature-cols', hasSaved ? '4' : '3');
+    }
+}
+
 async function shareHomePage(btn) {
     const url = `${window.location.origin}${window.location.pathname}`;
     const shareBody = 'Descubre el comparador de programas de las elecciones a las Cortes de Castilla y León y descubre a qué partido eres más afín con el cuestionario exclusivo';
@@ -296,6 +378,7 @@ async function init() {
     await initAfinidad();
 
     UI.renderPartySelection();
+    syncHomeSavedEntryVisibility();
     setupEventListeners();
     
     handleRouting();
@@ -304,6 +387,12 @@ async function init() {
 function setupEventListeners() {
     // Hash change router
     window.addEventListener('hashchange', handleRouting);
+    window.addEventListener('saved-proposals-changed', () => {
+        syncHomeSavedEntryVisibility();
+        if ((window.location.hash || '#/').startsWith('#/guardadas')) {
+            renderSavedProposalsScreen();
+        }
+    });
 
     // Party Selection click
     UI.containers.parties.addEventListener('click', (e) => {
@@ -320,7 +409,7 @@ function setupEventListeners() {
             .filter(p => p && p !== '#')[0] || '';
         const isPartyRoute = PARTIES.some(p => p.id === route);
 
-        if (route === 'comparar' || route === 'explora' || isPartyRoute) {
+        if (route === 'comparar' || route === 'explora' || route === 'guardadas' || isPartyRoute) {
             UI.navigateHash('#/');
             return;
         }
@@ -396,6 +485,12 @@ function setupEventListeners() {
     if (btnExplora) {
         btnExplora.addEventListener('click', () => {
             window.location.hash = '#/explora';
+        });
+    }
+    const btnSaved = document.getElementById('btn-goto-saved');
+    if (btnSaved) {
+        btnSaved.addEventListener('click', () => {
+            window.location.hash = '#/guardadas';
         });
     }
 
@@ -525,6 +620,10 @@ function getPageTitle(hash) {
     if (partyId === 'explora') {
         return 'Explora propuestas - CyL 2026';
     }
+
+    if (partyId === 'guardadas') {
+        return 'Propuestas guardadas - CyL 2026';
+    }
     
     // Find party name
     const party = appState.allData[partyId] || appState.allData[normalizePartyId(partyId)];
@@ -561,6 +660,7 @@ async function handleRouting() {
     if (parts.length === 0) {
         trackSpaPageView(hash);
         UI.switchView('selection');
+        syncHomeSavedEntryVisibility();
         appState.selectedParty = null;
         appState.currentCategory = null;
         return;
@@ -584,6 +684,14 @@ async function handleRouting() {
 
         storiesController.resetForRouteEnter();
         storiesController.renderPrototype();
+        return;
+    }
+
+    if (partyId === 'guardadas') {
+        appState.mode = 'saved';
+        trackSpaPageView(hash);
+        UI.switchView('saved');
+        renderSavedProposalsScreen();
         return;
     }
 

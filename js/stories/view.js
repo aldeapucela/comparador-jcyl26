@@ -54,7 +54,8 @@ function renderStoriesCard(container, storyData) {
         progress,
         total,
         storyDurationMs,
-        transitionDirection
+        transitionDirection,
+        isSaved
     } = storyData;
 
     const summary = proposal?.resumen || 'Sin resumen disponible.';
@@ -112,6 +113,9 @@ function renderStoriesCard(container, storyData) {
             <footer class="story-actions story-actions-icons">
                 <button class="story-action-btn btn-detail" data-party="${escapeHtml(party.id)}" data-id="${escapeHtml(proposal.id)}" aria-label="Ver detalle" title="Ver detalle">
                     <i class="fa-solid fa-up-right-from-square"></i>
+                </button>
+                <button class="story-action-btn btn-story-save${isSaved ? ' is-saved' : ''}" data-party="${escapeHtml(party.id)}" data-id="${escapeHtml(proposal.id)}" aria-label="Guardar propuesta" title="Guardar propuesta">
+                    <i class="${isSaved ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
                 </button>
                 <button class="story-action-btn" id="btn-story-share-inline" aria-label="Compartir propuesta" title="Compartir propuesta">
                     <i class="fa-solid fa-share-nodes"></i>

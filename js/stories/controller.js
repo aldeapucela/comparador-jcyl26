@@ -1,11 +1,13 @@
 import { PARTIES, CATEGORIES } from '../api.js';
 import { UI } from '../ui.js';
 import { StoriesView } from './view.js';
+import { isStorySaved, toggleSavedStory } from './saved.js';
 
 const EXPLORA_CAPTION_STEP_MS = 850;
 const EXPLORA_AFTER_LAST_BLOCK_MS = 6500;
 const EXPLORA_MIN_STORY_DURATION_MS = 7000;
 const EXPLORA_SEEN_STORIES_STORAGE_KEY = 'explora_seen_stories_v1';
+const SAVE_TOAST_ID = 'story-save-toast';
 
 export function createStoriesController(appState) {
     let exploraTouchStart = null;
@@ -484,9 +486,27 @@ export function createStoriesController(appState) {
             progress: (appState.stories.currentIndex % appState.stories.feed.length) + 1,
             total: appState.stories.feed.length,
             storyDurationMs: appState.stories.currentDurationMs,
-            transitionDirection: appState.stories.transitionDirection
+            transitionDirection: appState.stories.transitionDirection,
+            isSaved: isStorySaved(story.party.id, story.proposal.id)
         });
         playStoryCaptionSequence(appState.stories.currentDurationMs, EXPLORA_CAPTION_STEP_MS);
+
+        const saveBtn = UI.containers.storiesCard.querySelector('.btn-story-save');
+        if (saveBtn) {
+            saveBtn.addEventListener('click', () => {
+                const nowSaved = toggleSavedStory(story.party.id, story.proposal.id);
+                if (nowSaved) {
+                    UI.trackProposalSaveEvent(story.party, story.categoryName, story.proposal, 'story');
+                }
+                saveBtn.classList.toggle('is-saved', nowSaved);
+                const icon = saveBtn.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-solid', nowSaved);
+                    icon.classList.toggle('fa-regular', !nowSaved);
+                }
+                showSaveToast(nowSaved ? 'Propuesta guardada' : 'Propuesta eliminada');
+            });
+        }
 
         const shareBtn = document.getElementById('btn-story-share-inline');
         if (shareBtn) {
@@ -518,6 +538,31 @@ export function createStoriesController(appState) {
                 UI.navigateHash(`#/${story.party.id}/${encodeURIComponent(story.categoryName)}/${story.proposal.id}`);
             });
         });
+    }
+
+    function showSaveToast(message) {
+        if (!message) return;
+        let toast = document.getElementById(SAVE_TOAST_ID);
+        const toastHost = document.fullscreenElement || document.body;
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = SAVE_TOAST_ID;
+            toast.className = 'story-save-toast';
+            toastHost.appendChild(toast);
+        } else if (toast.parentElement !== toastHost) {
+            toastHost.appendChild(toast);
+        }
+
+        if (message === 'Propuesta guardada') {
+            toast.innerHTML = `Propuesta <a href="#/guardadas" class="save-toast-link">guardada</a>`;
+        } else {
+            toast.textContent = message;
+        }
+        toast.classList.add('is-visible');
+        clearTimeout(showSaveToast._timerId);
+        showSaveToast._timerId = window.setTimeout(() => {
+            toast.classList.remove('is-visible');
+        }, 2200);
     }
 
     function closeStoriesToHome() {
