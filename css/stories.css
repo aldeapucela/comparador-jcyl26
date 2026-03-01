@@ -57,6 +57,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
 }
 
 .story-screen--enter-next {
