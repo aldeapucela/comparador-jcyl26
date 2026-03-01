@@ -65,6 +65,26 @@ export async function initAfinidad() {
     });
 }
 
+function initDiscourseEmbed() {
+    const container = document.getElementById('discourse-comments');
+    if (!container) return;
+    if (window.__DISCOURSE_EMBED_LOADED__) return;
+
+    window.DiscourseEmbed = {
+        discourseUrl: 'https://foro.aldeapucela.org/',
+        topicId: 951
+    };
+
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = window.DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+
+    const head = document.getElementsByTagName('head')[0];
+    if (head) head.appendChild(script);
+    window.__DISCOURSE_EMBED_LOADED__ = true;
+}
+
 // Reset afinidad state to start fresh
 function resetAfinidadState() {
     afinidadState.currentIndex = 0;
@@ -74,6 +94,20 @@ function resetAfinidadState() {
     
     // Clear persisted storage
     localStorage.removeItem(getStorageKey());
+}
+
+function bindCommentsLink() {
+    const link = document.getElementById('afinidad-comments-link');
+    const target = document.getElementById('afinidad-comments');
+    if (!link || !target) return;
+    if (link.__boundCommentsScroll) return;
+
+    link.addEventListener('click', (event) => {
+        event.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    link.__boundCommentsScroll = true;
 }
 
 function loadFromSession(autoComplete = true) {
@@ -128,6 +162,13 @@ function saveToSession() {
 }
 
 export function startAfinidad() {
+    afinidadState.restored = false;
+
+    const resultsLoaded = loadFromSession(true);
+    if (resultsLoaded) {
+        return;
+    }
+
     const introEl = document.getElementById('afinidad-intro');
     const questionCardEl = document.getElementById('afinidad-question-card');
     const progressEl = document.getElementById('afinidad-progress');
@@ -366,6 +407,9 @@ function calculateAffinity() {
     return results;
 }
 export function renderResults(results) {
+    const introEl = document.getElementById('afinidad-intro');
+    if (introEl) introEl.classList.add('hidden');
+
     document.getElementById('afinidad-question-card').classList.add('hidden');
     document.getElementById('afinidad-progress').classList.add('hidden');
     document.getElementById('afinidad-results').classList.remove('hidden');
@@ -557,6 +601,8 @@ export function renderResults(results) {
     
     renderCategoryBreakdown(results);
     setupShareLinks(results);
+    initDiscourseEmbed();
+    bindCommentsLink();
 }
 
 function renderCategoryBreakdown(allResults) {
