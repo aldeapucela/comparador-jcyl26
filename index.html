@@ -33,7 +33,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20260301164112">
+    <link rel="stylesheet" href="css/style.css?v=20260301165735">
     <link rel="stylesheet" href="css/stories.css?v=20260301193000">
     </head>
 
@@ -56,6 +56,12 @@
                 </div>
             </div>
             <div id="header-actions" class="flex items-center gap-2">
+                <button id="btn-mobile-menu"
+                    class="header-action-btn lg:hidden"
+                    aria-label="Abrir menú de secciones" title="Menú">
+                    <i class="fa-solid fa-bars text-sm"></i>
+                    <span>Menú</span>
+                </button>
                 <button id="btn-global-search"
                     class="header-action-btn"
                     aria-label="Abrir búsqueda global" title="Buscar medidas">
@@ -71,6 +77,72 @@
             </div>
         </div>
     </header>
+
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay hidden" aria-hidden="true">
+        <div id="mobile-menu-drawer" class="mobile-menu-drawer" aria-label="Menú principal móvil">
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-pending">
+                    <div id="mobile-menu-pending-stories" class="mobile-menu-pending-list" aria-label="Partidos con stories pendientes"></div>
+                </div>
+                <button id="btn-mobile-menu-close" type="button" class="mobile-menu-close-btn" aria-label="Cerrar menú">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <nav class="mobile-menu-section" aria-label="Secciones principales">
+                <a class="mobile-menu-link" href="#/">
+                    <i class="fa-solid fa-house" aria-hidden="true"></i>
+                    <span>Portada</span>
+                </a>
+                <a class="mobile-menu-link" href="#/s">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    <span>Buscar</span>
+                </a>
+                <a class="mobile-menu-link" href="#/afinidad">
+                    <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+                    <span>Cuestionario de afinidad</span>
+                </a>
+                <a class="mobile-menu-link" href="#/explora">
+                    <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                    <span>Explorar propuestas</span>
+                </a>
+                <a class="mobile-menu-link" href="#/guardadas">
+                    <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+                    <span>Propuestas guardadas</span>
+                </a>
+                <a class="mobile-menu-link" href="#/comparar">
+                    <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
+                    <span>Comparar por temática</span>
+                </a>
+            </nav>
+
+            <div class="mobile-menu-section">
+                <p class="mobile-menu-section-title">Programas de partidos</p>
+                <div id="mobile-menu-programs" class="mobile-menu-programs"></div>
+            </div>
+
+            <div class="mobile-menu-section">
+                <p class="mobile-menu-section-title">Comunidad</p>
+                <div class="mobile-menu-programs">
+                    <a class="mobile-menu-link" href="https://aldeapucela.org" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-house-user" aria-hidden="true"></i>
+                        <span>Aldea Pucela</span>
+                    </a>
+                    <a class="mobile-menu-link" href="https://t.me/aldeapucela/115494" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+                        <span>Chat</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mobile-menu-footer">
+                <button id="btn-share-home-mobile" class="home-share-btn" type="button" aria-label="Compartir esta portada con tus vecinos">
+                    <i class="fa-solid fa-share-nodes text-sm" aria-hidden="true"></i>
+                    <span>Comparte esta web</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <main class="max-w-6xl mx-auto px-4 pb-20">
         <!-- View: Party Selection -->
@@ -657,8 +729,8 @@
         </div>
     </footer>
 
-    <script src="js/analytics.js?v=20260301164112"></script>
-    <script type="module" src="js/main.js?v=20260301164112"></script>
+    <script src="js/analytics.js?v=20260301165735"></script>
+    <script type="module" src="js/main.js?v=20260301165735"></script>
 </body>
 
 </html>

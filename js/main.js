@@ -368,6 +368,207 @@ async function shareHomePage(btn) {
     }
 }
 
+function setupMobileMenu() {
+    const openBtn = document.getElementById('btn-mobile-menu');
+    const closeBtn = document.getElementById('btn-mobile-menu-close');
+    const overlay = document.getElementById('mobile-menu-overlay');
+    const drawer = document.getElementById('mobile-menu-drawer');
+    const programsContainer = document.getElementById('mobile-menu-programs');
+    const pendingStoriesContainer = document.getElementById('mobile-menu-pending-stories');
+    let skipPendingStoryClick = false;
+
+    if (!overlay || !drawer) return;
+
+    if (programsContainer) {
+        programsContainer.innerHTML = PARTIES.map((party) => `
+            <a class="mobile-menu-program-link mobile-menu-link" href="#/${party.id}" aria-label="Ver programa de ${UI.escapeHtml(party.name)}">
+                <img src="${UI.escapeHtml(party.logo)}" alt="" aria-hidden="true">
+                <span>${UI.escapeHtml(party.name)}</span>
+            </a>
+        `).join('');
+    }
+
+    const renderPendingStories = () => {
+        if (!pendingStoriesContainer) return;
+        const pendingParties = PARTIES
+            .map((party) => {
+                const proposals = appState.allData?.[party.id]?.propuestas || [];
+                const unseenCount = storiesController.countUnseenStoriesForParty(party.id, proposals);
+                return { party, unseenCount };
+            })
+            .filter((entry) => entry.unseenCount > 0);
+
+        if (pendingParties.length === 0) {
+            pendingStoriesContainer.innerHTML = '<span class="mobile-menu-pending-empty">No hay stories pendientes</span>';
+            return;
+        }
+
+        // Fisher-Yates shuffle to avoid any fixed or priority order between parties.
+        const shuffledPendingParties = [...pendingParties];
+        for (let i = shuffledPendingParties.length - 1; i > 0; i -= 1) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledPendingParties[i], shuffledPendingParties[j]] = [shuffledPendingParties[j], shuffledPendingParties[i]];
+        }
+
+        pendingStoriesContainer.innerHTML = shuffledPendingParties.map(({ party, unseenCount }) => `
+            <button class="mobile-menu-pending-pill" type="button" data-party-id="${UI.escapeHtml(party.id)}" aria-label="Ver stories pendientes de ${UI.escapeHtml(party.name)} (${unseenCount})" title="${UI.escapeHtml(party.name)} · ${unseenCount} pendientes">
+                <span class="story-ring-icon">
+                    <img src="${UI.escapeHtml(party.logo)}" alt="">
+                </span>
+            </button>
+        `).join('');
+    };
+
+    const bindPendingStoriesDragScroll = () => {
+        if (!pendingStoriesContainer || pendingStoriesContainer.dataset.dragBound === 'true') return;
+        pendingStoriesContainer.dataset.dragBound = 'true';
+
+        let isDragging = false;
+        let startX = 0;
+        let startScrollLeft = 0;
+        let dragged = false;
+
+        pendingStoriesContainer.addEventListener('pointerdown', (event) => {
+            isDragging = true;
+            dragged = false;
+            startX = event.clientX;
+            startScrollLeft = pendingStoriesContainer.scrollLeft;
+        });
+
+        pendingStoriesContainer.addEventListener('pointermove', (event) => {
+            if (!isDragging) return;
+            const deltaX = event.clientX - startX;
+            if (Math.abs(deltaX) > 4) {
+                dragged = true;
+                pendingStoriesContainer.scrollLeft = startScrollLeft - deltaX;
+            }
+        });
+
+        const endDrag = () => {
+            if (!isDragging) return;
+            isDragging = false;
+            if (dragged) {
+                skipPendingStoryClick = true;
+                window.setTimeout(() => {
+                    skipPendingStoryClick = false;
+                }, 60);
+            }
+        };
+
+        pendingStoriesContainer.addEventListener('pointerup', endDrag);
+        pendingStoriesContainer.addEventListener('pointercancel', endDrag);
+        pendingStoriesContainer.addEventListener('pointerleave', endDrag);
+
+        let isTouchDragging = false;
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchStartScrollLeft = 0;
+        let touchDragged = false;
+        let touchIntentLocked = false;
+        let touchIntentHorizontal = false;
+
+        pendingStoriesContainer.addEventListener('touchstart', (event) => {
+            const touch = event.touches?.[0];
+            if (!touch) return;
+            isTouchDragging = true;
+            touchDragged = false;
+            touchIntentLocked = false;
+            touchIntentHorizontal = false;
+            touchStartX = touch.clientX;
+            touchStartY = touch.clientY;
+            touchStartScrollLeft = pendingStoriesContainer.scrollLeft;
+        }, { passive: true });
+
+        pendingStoriesContainer.addEventListener('touchmove', (event) => {
+            if (!isTouchDragging) return;
+            const touch = event.touches?.[0];
+            if (!touch) return;
+
+            const deltaX = touch.clientX - touchStartX;
+            const deltaY = touch.clientY - touchStartY;
+
+            if (!touchIntentLocked && (Math.abs(deltaX) > 3 || Math.abs(deltaY) > 3)) {
+                touchIntentHorizontal = Math.abs(deltaX) >= Math.abs(deltaY);
+                touchIntentLocked = true;
+            }
+
+            if (touchIntentHorizontal) {
+                touchDragged = true;
+                pendingStoriesContainer.scrollLeft = touchStartScrollLeft - deltaX;
+                event.preventDefault();
+            }
+        }, { passive: false });
+
+        pendingStoriesContainer.addEventListener('touchend', () => {
+            if (!isTouchDragging) return;
+            isTouchDragging = false;
+            if (touchDragged) {
+                skipPendingStoryClick = true;
+                window.setTimeout(() => {
+                    skipPendingStoryClick = false;
+                }, 150);
+            }
+        }, { passive: true });
+
+        pendingStoriesContainer.addEventListener('touchcancel', () => {
+            isTouchDragging = false;
+            touchDragged = false;
+            touchIntentLocked = false;
+            touchIntentHorizontal = false;
+        }, { passive: true });
+    };
+
+    const closeMenu = () => {
+        overlay.classList.remove('is-open');
+        overlay.classList.add('hidden');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('mobile-menu-open');
+    };
+
+    const openMenu = () => {
+        renderPendingStories();
+        overlay.classList.remove('hidden');
+        overlay.setAttribute('aria-hidden', 'false');
+        requestAnimationFrame(() => {
+            overlay.classList.add('is-open');
+        });
+        document.body.classList.add('mobile-menu-open');
+    };
+
+    if (openBtn) openBtn.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    bindPendingStoriesDragScroll();
+
+    overlay.addEventListener('click', (event) => {
+        if (!event.target.closest('#mobile-menu-drawer')) {
+            closeMenu();
+        }
+    });
+
+    drawer.addEventListener('click', (event) => {
+        const navLink = event.target.closest('a.mobile-menu-link');
+        if (navLink) {
+            closeMenu();
+            return;
+        }
+
+        const pendingPartyBtn = event.target.closest('.mobile-menu-pending-pill');
+        if (pendingPartyBtn?.dataset.partyId) {
+            if (skipPendingStoryClick) return;
+            closeMenu();
+            storiesController.focusOnParty(pendingPartyBtn.dataset.partyId);
+            UI.navigateHash('#/explora/play');
+        }
+    });
+
+    window.addEventListener('hashchange', closeMenu);
+    window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && overlay.classList.contains('is-open')) {
+            closeMenu();
+        }
+    });
+}
+
 async function init() {
     await loadPartiesCatalog();
 
@@ -379,6 +580,7 @@ async function init() {
 
     UI.renderPartySelection();
     syncHomeSavedEntryVisibility();
+    setupMobileMenu();
     setupEventListeners();
     
     handleRouting();
@@ -470,6 +672,12 @@ function setupEventListeners() {
     if (shareHomeBtn) {
         shareHomeBtn.addEventListener('click', () => {
             shareHomePage(shareHomeBtn);
+        });
+    }
+    const shareHomeMobileBtn = document.getElementById('btn-share-home-mobile');
+    if (shareHomeMobileBtn) {
+        shareHomeMobileBtn.addEventListener('click', () => {
+            shareHomePage(shareHomeMobileBtn);
         });
     }
 
