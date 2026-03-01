@@ -4,7 +4,7 @@
 
 import { PARTIES, fetchAllPartiesData, getCategoriesFromProposals, CATEGORIES, loadPartiesCatalog } from './api.js';
 import { UI } from './ui.js';
-import { initAfinidad, handleAnswer, toggleImportant, nextQuestion, prevQuestion, toggleContext, loadFromUrl, calculateAndShowResults, setSharedResults, startAfinidad, showAfinidadIntro } from './afinidad.js';
+import { initAfinidad, handleAnswer, toggleImportant, nextQuestion, prevQuestion, toggleContext, calculateAndShowResults, startAfinidad, showAfinidadIntro } from './afinidad.js';
 import { createStoriesController } from './stories/controller.js';
 import { readSavedStoryIds, getStoryUniqueIdByParts } from './stories/saved.js';
 
@@ -956,19 +956,14 @@ async function handleRouting() {
 
     // Check if it's afinidad mode
     if (partyId === 'afinidad') {
-        const sharedData = parts[1] || null;
+        const hasLegacySharedData = Boolean(parts[1]);
         appState.mode = 'afinidad';
         trackSpaPageView(hash);
         UI.switchView('afinidad');
-        
-        if (sharedData) {
-            // Load from shared URL - show results directly
-            try {
-                await loadFromUrl(sharedData);
-            } catch (err) {
-                console.error('Error loading shared URL:', err);
-                window.location.hash = '#/afinidad';
-            }
+
+        if (hasLegacySharedData) {
+            window.location.hash = '#/afinidad';
+            return;
         } else {
             // Avoid cross-module cache mismatch: inspect storage here without extra imports.
             // If completed, start flow directly; renderQuestion will restore and show results.
