@@ -329,13 +329,9 @@ function renderSavedProposalsScreen() {
 
 function syncHomeSavedEntryVisibility() {
     const homeSavedEntry = document.getElementById('home-saved-entry');
-    const homeFeatureGrid = document.getElementById('home-feature-grid');
     if (!homeSavedEntry) return;
     const hasSaved = readSavedStoryIds().size > 0;
     homeSavedEntry.classList.toggle('hidden', !hasSaved);
-    if (homeFeatureGrid) {
-        homeFeatureGrid.style.setProperty('--home-feature-cols', hasSaved ? '4' : '3');
-    }
 }
 
 async function shareHomePage(btn) {
