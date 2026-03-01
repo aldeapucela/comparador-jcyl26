@@ -694,7 +694,14 @@ async function doPartySelect(partyId) {
         appState.currentData = data;
         const categories = getCategoriesFromProposals(data.propuestas);
         UI.switchView('detail');
-        UI.renderPartyHeader(data.metadatos, partyInfo);
+        const unseenCount = storiesController.countUnseenStoriesForParty(partyInfo.id, data.propuestas);
+        UI.renderPartyHeader(data.metadatos, partyInfo, {
+            showStoryRing: unseenCount > 0,
+            onStoryClick: () => {
+                storiesController.focusOnParty(partyInfo.id);
+                UI.navigateHash('#/explora/play');
+            }
+        });
         renderNavigation(categories);
     }
 }

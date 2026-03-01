@@ -438,7 +438,8 @@ export const UI = {
         this.searchTopScrollHandler();
     },
 
-    renderPartyHeader(metadata, partyInfo) {
+    renderPartyHeader(metadata, partyInfo, options = {}) {
+        const { showStoryRing = false, onStoryClick = null } = options;
         this.elements.partyTitle.textContent = partyInfo.name;
         const partyColor = partyInfo.color || metadata.color || '#334155';
         this.elements.partyTitle.style.color = partyColor;
@@ -472,9 +473,31 @@ export const UI = {
         this.elements.partySlogan.textContent = metadata.lema ? `"${metadata.lema}"` : '';
 
         this.elements.partyLogo.innerHTML = `<img src="${partyInfo.logo}" alt="Logo ${partyInfo.name}" class="w-full h-full object-contain p-2">`;
-        this.elements.partyLogo.style.backgroundColor = 'white';
-        this.elements.partyLogo.style.border = `2px solid ${partyColor}20`;
-        this.elements.partyLogo.classList.add('overflow-hidden', 'rounded-xl');
+        this.elements.partyLogo.style.backgroundColor = showStoryRing ? 'transparent' : 'white';
+        this.elements.partyLogo.style.border = showStoryRing ? 'none' : `2px solid ${partyColor}20`;
+        this.elements.partyLogo.classList.add('overflow-hidden');
+        this.elements.partyLogo.classList.toggle('party-story-ring', showStoryRing);
+
+        this.elements.partyLogo.onclick = null;
+        this.elements.partyLogo.onkeydown = null;
+        if (typeof onStoryClick === 'function') {
+            this.elements.partyLogo.classList.add('cursor-pointer');
+            this.elements.partyLogo.setAttribute('role', 'button');
+            this.elements.partyLogo.setAttribute('tabindex', '0');
+            this.elements.partyLogo.setAttribute('aria-label', `Ver stories de ${partyInfo.name}`);
+            this.elements.partyLogo.onclick = () => onStoryClick();
+            this.elements.partyLogo.onkeydown = (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    onStoryClick();
+                }
+            };
+        } else {
+            this.elements.partyLogo.classList.remove('cursor-pointer');
+            this.elements.partyLogo.removeAttribute('role');
+            this.elements.partyLogo.removeAttribute('tabindex');
+            this.elements.partyLogo.removeAttribute('aria-label');
+        }
 
         // Add link to complete program
         const programLinkContainer = document.getElementById('party-program-link');

@@ -53,6 +53,13 @@ export function createStoriesController(appState) {
         return `${partyId}:${proposalId}`;
     }
 
+    function getStoryUniqueIdByParts(partyId, proposalId) {
+        const cleanPartyId = String(partyId || '').trim();
+        const cleanProposalId = String(proposalId || '').trim();
+        if (!cleanPartyId || !cleanProposalId) return '';
+        return `${cleanPartyId}:${cleanProposalId}`;
+    }
+
     function markStoryAsSeen(story) {
         const storyId = getStoryUniqueId(story);
         if (!storyId) return;
@@ -60,6 +67,19 @@ export function createStoriesController(appState) {
         if (seen.has(storyId)) return;
         seen.add(storyId);
         writeSeenStoryIds(seen);
+    }
+
+    function countUnseenStoriesForParty(partyId, proposals = []) {
+        if (!partyId || !Array.isArray(proposals) || proposals.length === 0) return 0;
+        const seen = readSeenStoryIds();
+        let unseenCount = 0;
+        proposals.forEach((proposal) => {
+            const proposalId = proposal?.id;
+            const storyId = getStoryUniqueIdByParts(partyId, proposalId);
+            if (!storyId) return;
+            if (!seen.has(storyId)) unseenCount += 1;
+        });
+        return unseenCount;
     }
 
     function getSelectedPartyIds() {
@@ -828,6 +848,19 @@ export function createStoriesController(appState) {
         syncExploraStartButtonState();
     }
 
+    function focusOnParty(partyId) {
+        if (!partyId) return;
+        setSource('party');
+        setSelectedPartyIds([partyId], { ensureOne: true });
+        // Force a fresh feed on next /explora/play entry so it doesn't reuse
+        // a previously started party feed.
+        appState.stories.started = false;
+        appState.stories.feed = [];
+        appState.stories.currentIndex = 0;
+        renderPartyPills();
+        syncExploraStartButtonState();
+    }
+
     function handleKeydown(event) {
         if (appState.mode !== 'stories') return false;
         if (event.key === 'ArrowDown' || event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') {
@@ -870,6 +903,8 @@ export function createStoriesController(appState) {
 
     return {
         setSource,
+        focusOnParty,
+        countUnseenStoriesForParty,
         startFeed,
         renderPrototype,
         handleKeydown,

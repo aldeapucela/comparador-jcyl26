@@ -820,6 +820,27 @@ body {
     object-fit: contain;
 }
 
+.party-story-ring {
+    position: relative;
+    padding: 3px;
+    border-radius: 999px;
+    background: conic-gradient(from 210deg, #f59e0b, #ef4444, #f59e0b);
+    animation: storyRingGlow 2.4s ease-in-out infinite;
+}
+
+.party-story-ring::before {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 999px;
+    background: #fff;
+}
+
+.party-story-ring img {
+    position: relative;
+    z-index: 1;
+}
+
 @keyframes storyRingGlow {
     0%, 100% {
         transform: scale(1);
@@ -833,6 +854,10 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
     .story-ring-icon {
+        animation: none;
+    }
+
+    .party-story-ring {
         animation: none;
     }
 }
