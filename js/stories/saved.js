@@ -42,21 +42,45 @@ export function isStorySaved(partyId, proposalId) {
 }
 
 export function toggleSavedStory(partyId, proposalId) {
-    const storyId = getStoryUniqueIdByParts(partyId, proposalId);
-    if (!storyId) return false;
+    const result = toggleSavedStorySafe(partyId, proposalId);
+    return result.saved;
+}
 
-    const saved = readSavedStoryIds();
-    if (saved.has(storyId)) {
-        saved.delete(storyId);
-        writeSavedStoryIds(saved);
-        notifySavedStoriesChanged();
-        return false;
+export function toggleSavedStorySafe(partyId, proposalId) {
+    const storyId = getStoryUniqueIdByParts(partyId, proposalId);
+    if (!storyId) {
+        return {
+            ok: false,
+            saved: false,
+            changed: false,
+            reason: 'invalid-id'
+        };
     }
 
-    saved.add(storyId);
+    const saved = readSavedStoryIds();
+    const shouldSave = !saved.has(storyId);
+    if (shouldSave) {
+        saved.add(storyId);
+    } else {
+        saved.delete(storyId);
+    }
+
     writeSavedStoryIds(saved);
-    notifySavedStoriesChanged();
-    return true;
+
+    const persistedSaved = readSavedStoryIds();
+    const persistedState = persistedSaved.has(storyId);
+    const writeOk = persistedState === shouldSave;
+
+    if (writeOk) {
+        notifySavedStoriesChanged();
+    }
+
+    return {
+        ok: writeOk,
+        saved: persistedState,
+        changed: writeOk,
+        reason: writeOk ? 'ok' : 'storage-unavailable'
+    };
 }
 
 function notifySavedStoriesChanged() {

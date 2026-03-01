@@ -492,7 +492,8 @@ body {
 }
 
 .btn-save-proposal.is-saved,
-.btn-save-comparison.is-saved {
+.btn-save-comparison.is-saved,
+.btn-save-search.is-saved {
     color: #ca8a04 !important;
 }
 
