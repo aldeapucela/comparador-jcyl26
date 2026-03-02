@@ -858,7 +858,7 @@ function getPageTitle(hash) {
     }
     
     // Find party name
-    const party = appState.allData[partyId] || appState.allData[normalizePartyId(partyId)];
+    const party = PARTIES.find(p => p.id === partyId) || PARTIES.find(p => p.id === normalizePartyId(partyId));
     if (party) {
         return `${party.name} - Programa Electoral CyL 2026`;
     }
