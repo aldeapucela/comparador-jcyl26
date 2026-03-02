@@ -720,121 +720,258 @@ function renderCategoryBreakdown(allResults) {
     `;
 }
 
+function urlToImageDataUrl(url, {
+  fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+  fontWeight = 800,
+  fontSize = 24,
+  color = '#0f172a',
+  paddingX = 0,
+  paddingY = 0,
+  dpr = 2
+} = {}) {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+
+  // Font (canvas no soporta bien ligaduras/kerning raros; perfecto)
+  ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
+  const metrics = ctx.measureText(url);
+  const textWidth = Math.ceil(metrics.width);
+
+  // Altura: aproximación fiable
+  const textHeight = Math.ceil(fontSize * 1.25);
+
+  canvas.width = (textWidth + paddingX * 2) * dpr;
+  canvas.height = (textHeight + paddingY * 2) * dpr;
+
+  ctx.scale(dpr, dpr);
+  ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
+  ctx.fillStyle = color;
+  ctx.textBaseline = 'top';
+
+  // Dibuja
+  ctx.fillText(url, paddingX, paddingY);
+
+  return canvas.toDataURL('image/png');
+}
+
 function setupShareLinks(results) {
-    const sorted = Object.entries(results).sort((a, b) => b[1].affinity - a[1].affinity);
-    const winner = PARTIES.find(p => p.id === sorted[0][0]);
-    const basePath = window.location.pathname.replace(/\/+$/, '');
-    const shareUrlForImage = `${window.location.host}${basePath}`;
-    const shareUrl = `${window.location.origin}${basePath}`;
-    const shareText = `Mi resultado en el Cuestionario de Afinidad CyL 2026: ${sorted[0][1].affinity}% afín a ${winner.name}\n\nDescubre la tuya:\n${shareUrl}`;
-    
-    // Share button - copy text result
-    document.getElementById('afinidad-share-copy').onclick = async () => {
-        if (navigator.share) {
-            try {
-                await navigator.share({
-                    title: 'Mi resultado - Cuestionario de Afinidad CyL 2026',
-                    text: shareText
-                });
-            } catch (e) {
-                await navigator.clipboard.writeText(shareText);
-                showCopiedMessage();
-            }
-        } else {
-            await navigator.clipboard.writeText(shareText);
-            showCopiedMessage();
-        }
-    };
-    
-    // Share image button
-    document.getElementById('afinidad-share-image').onclick = async () => {
-        const btn = document.getElementById('afinidad-share-image');
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Generando...';
-        const winnerLogoScale = getWinnerLogoScale(winner?.id);
-        const winnerLogoSizePct = Math.round(winnerLogoScale * 100);
-        
-        try {
-            // Create a container for the image
-            const container = document.createElement('div');
-            container.style.cssText = 'background: #f8fafc; padding: 32px; width: 600px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #000000;';
-            
-            container.innerHTML = `
-                <div style="text-align: center; margin-bottom: 32px;">
-                    <h1 style="color: #1e293b; font-size: 28px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 600; letter-spacing: -0.01em;">Cuestionario de Afinidad CyL 2026</h1>
-                    <p style="color: #64748b; margin: 0; line-height: 1.5; font-size: 18px; font-weight: 400; letter-spacing: 0.01em;">Mi resultado</p>
-                </div>
-                <div style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 16px; padding: 32px 24px; text-align: center; margin-bottom: 32px; box-shadow: 0 8px 24px rgba(0,0,0,0.08);">
-                    <p style="color: #64748b; font-size: 16px; margin: 0 0 16px 0; line-height: 1.4; font-weight: 500; letter-spacing: 0.01em;">Tu partido más afín</p>
-                    <div style="width: 88px; height: 88px; margin: 0 auto 20px; background: #f8fafc; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #e2e8f0; overflow: hidden;">
-                        <img src="${window.location.origin}/${winner.logo}" style="width: ${winnerLogoSizePct}%; height: ${winnerLogoSizePct}%; object-fit: contain; object-position: center; display: block;" onerror="this.style.display='none'">
-                    </div>
-                    <h2 style="font-size: 36px; margin: 0 0 12px 0; line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; color: ${winner.color};">${winner.name}</h2>
-                    <p style="font-size: 64px; font-weight: 800; margin: 0; line-height: 1.1; letter-spacing: -0.03em; color: ${winner.color}; text-shadow: 0 2px 4px rgba(0,0,0,0.05);">${sorted[0][1].affinity}%</p>
-                    <p style="color: #64748b; font-size: 18px; margin: 12px 0 0 0; line-height: 1.4; font-weight: 400; letter-spacing: 0.01em;">de afinidad</p>
-                </div>
-                <div style="background: #f8fafc; border-radius: 12px; padding: 24px; margin-bottom: 24px;">
-                    ${sorted.map(([partyId, data]) => {
-                        const p = PARTIES.find(part => part.id === partyId);
-                        return `
-                            <div style="display: flex; align-items: center; margin-bottom: 16px; padding: 10px 0;">
-                                <div style="width: 100px; text-align: right; font-weight: 600; color: #334155; font-size: 15px; line-height: 1.3; margin-right: 20px; letter-spacing: 0.01em;">${p?.name || partyId}</div>
-                                <div style="flex: 1; background: #e2e8f0; border-radius: 12px; height: 32px; overflow: hidden; margin-right: 20px;">
-                                    <div style="height: 100%; width: ${data.affinity}%; background: ${p?.color || '#666'}; border-radius: 12px;"></div>
-                                </div>
-                                <div style="width: 55px; text-align: left; font-weight: 700; color: #334155; line-height: 1.3; font-size: 15px; letter-spacing: 0.01em;">${data.affinity}%</div>
-                            </div>
-                        `;
-                    }).join('')}
-                </div>
-                <div style="text-align: center; padding: 18px; background: #ffffff; border-radius: 12px; margin-top: 12px; border: 1px solid #e2e8f0;">
-                    <p style="color: #334155; font-size: 20px; margin: 0; line-height: 1; font-weight: 500; letter-spacing: -0.01em;">Descubre la tuya</p>
-                    <p style="color: #0f172a; font-size: 24px; margin: 0 0 8px 0; line-height: 1.5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; word-break: keep-all; font-weight: 700;">${shareUrlForImage}</p>
-                </div>
-            `;
-            
-            document.body.appendChild(container);
-            
-            const canvas = await html2canvas(container, {
-                backgroundColor: '#ffffff',
-                scale: 2
-            });
-            
-            document.body.removeChild(container);
-            
-            const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
-            const file = new File([blob], 'resultado-afinidad.png', { type: 'image/png' });
-            
-            if (navigator.share && navigator.canShare?.({ files: [file] })) {
-                await navigator.share({
-                    title: 'Mi resultado - Cuestionario de Afinidad CyL 2026',
-                    text: shareText,
-                    files: [file]
-                });
-            } else {
-                // Fallback: download image
-                const link = document.createElement('a');
-                link.download = 'resultado-afinidad.png';
-                link.href = canvas.toDataURL('image/png');
-                link.click();
-                showCopiedMessage();
-            }
-        } catch (e) {
-            console.error('Error generating image:', e);
-            await navigator.clipboard.writeText(shareText);
-            showCopiedMessage();
-        }
-        
-        btn.innerHTML = originalText;
-    };
-    
-    // Restart button
-    const restartBtn = document.getElementById('afinidad-restart');
-    if (restartBtn) {
-        restartBtn.onclick = () => {
-            restartAfinidadFromIntro();
-        };
+  const sorted = Object.entries(results).sort((a, b) => b[1].affinity - a[1].affinity);
+  const winner = PARTIES.find(p => p.id === sorted[0][0]);
+
+  const basePath = window.location.pathname.replace(/\/+$/, '');
+  const isDevelopment =
+    window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1' ||
+    window.location.hostname.includes('localhost');
+
+  const shareUrlForImage = `${window.location.hostname}${basePath}`;
+
+  const shareUrl = `${window.location.origin}${basePath}`;
+  const shareText =
+    `Mi resultado en el Cuestionario de Afinidad CyL 2026: ${sorted[0][1].affinity}% afín a ${winner.name}\n\n` +
+    `Descubre la tuya:\n${shareUrl}`;
+
+  // --- helpers (robustos para html2canvas) ---
+
+  // Separador con "narrow no-break spaces" alrededor del punto:
+  // evita que el siguiente carácter se monte encima del "."
+  // y NO permite salto de línea.
+  function buildUrlHTML(url) {
+    const i = url.indexOf('.');
+    if (i <= 0) return escapeHtml(url);
+
+    const left = escapeHtml(url.slice(0, i));
+    const right = escapeHtml(url.slice(i + 1));
+
+    // &#8239; = narrow no-break space (NNBSP)
+    return (
+      `<span style="letter-spacing:0; font-variant-ligatures:none; font-feature-settings:'liga' 0,'clig' 0;">${left}</span>` +
+      `<span aria-hidden="true" style="display:inline-block; letter-spacing:0; font-weight:800; ` +
+        `transform:translateY(-0.02em); ` +
+        `font-variant-ligatures:none; font-feature-settings:'liga' 0,'clig' 0;">&#8239;.</span>` +
+      `<span aria-hidden="true" style="display:inline-block; width:0; letter-spacing:0;">&#8239;</span>` +
+      `<span style="letter-spacing:0; font-variant-ligatures:none; font-feature-settings:'liga' 0,'clig' 0;">${right}</span>`
+    );
+  }
+
+  function escapeHtml(str) {
+    return String(str)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+  }
+
+  function fitTextToParent(el, maxPx = 24, minPx = 16) {
+    if (!el || !el.parentElement) return;
+    const parent = el.parentElement;
+
+    let size = maxPx;
+    el.style.fontSize = size + 'px';
+
+    // Forzar layout
+    void el.offsetWidth;
+
+    // Medimos contra el ancho del padre (más fiable que clientWidth del propio <p>)
+    const available = parent.clientWidth - 8; // margen de seguridad
+    while (size > minPx && el.scrollWidth > available) {
+      size -= 1;
+      el.style.fontSize = size + 'px';
     }
+  }
+
+  // --- Share copy button ---
+  document.getElementById('afinidad-share-copy').onclick = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Mi resultado - Cuestionario de Afinidad CyL 2026',
+          text: shareText
+        });
+      } catch (e) {
+        await navigator.clipboard.writeText(shareText);
+        showCopiedMessage();
+      }
+    } else {
+      await navigator.clipboard.writeText(shareText);
+      showCopiedMessage();
+    }
+  };
+
+  // --- Share image button ---
+  document.getElementById('afinidad-share-image').onclick = async () => {
+    const btn = document.getElementById('afinidad-share-image');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Generando...';
+
+    const winnerLogoScale = getWinnerLogoScale(winner?.id);
+    const winnerLogoSizePct = Math.round(winnerLogoScale * 100);
+
+    try {
+      const urlPng = urlToImageDataUrl(shareUrlForImage, {
+  fontSize: 24,
+  fontWeight: 800,
+  color: '#0f172a',
+  dpr: 3 // mejor en móvil
+});
+
+      const container = document.createElement('div');
+      container.style.cssText = `
+        background:#f8fafc;
+        padding:32px;
+        width:600px;
+        box-sizing:border-box;
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+        color:#0f172a;
+      `;
+
+      const urlHtml = buildUrlHTML(shareUrlForImage);
+
+      container.innerHTML = `
+        <div style="text-align:center; margin-bottom:32px;">
+          <h1 style="color:#1e293b; font-size:28px; margin:0 0 12px 0; line-height:1.3; font-weight:600; letter-spacing:-0.01em;">
+            Cuestionario de Afinidad CyL 2026
+          </h1>
+        </div>
+
+        <div style="background:#fff; border:2px solid #e2e8f0; border-radius:16px; padding:32px 24px; text-align:center; margin-bottom:32px; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+          <p style="color:#64748b; font-size:16px; margin:0 0 16px 0; line-height:1.4; font-weight:500; letter-spacing:0.01em;">
+            Tu partido más afín
+          </p>
+          <div style="width:88px; height:88px; margin:0 auto 20px; background:#f8fafc; border-radius:50%; display:flex; align-items:center; justify-content:center; border:2px solid #e2e8f0; overflow:hidden;">
+            <img src="${window.location.origin}/${winner.logo}" style="width:${winnerLogoSizePct}%; height:${winnerLogoSizePct}%; object-fit:contain; object-position:center; display:block;" onerror="this.style.display='none'">
+          </div>
+          <h2 style="font-size:36px; margin:0 0 12px 0; line-height:1.2; font-weight:700; letter-spacing:-0.02em; color:${winner.color};">
+            ${winner.name}
+          </h2>
+          <p style="font-size:64px; font-weight:800; margin:0; line-height:1.1; letter-spacing:-0.03em; color:#000000; text-shadow:0 2px 4px rgba(0,0,0,0.05);">
+            ${sorted[0][1].affinity}%
+          </p>
+          <p style="color:#64748b; font-size:18px; margin:12px 0 0 0; line-height:1.4; font-weight:400; letter-spacing:0.01em;">
+            de afinidad global
+          </p>
+        </div>
+
+        <div style="background:#fff; border:2px solid #e2e8f0; border-radius:16px; padding:32px 24px; margin-bottom:32px; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+          <div style="border-radius:12px; padding:24px;">
+            ${sorted.map(([partyId, data]) => {
+              const p = PARTIES.find(part => part.id === partyId);
+              return `
+                <div style="display:flex; align-items:center; margin-bottom:16px; padding:10px 0;">
+                  <div style="width:100px; text-align:right; font-weight:600; color:#334155; font-size:15px; line-height:1.3; margin-right:20px; letter-spacing:0.01em;">
+                    ${p?.name || partyId}
+                  </div>
+                  <div style="flex:1; background:#e2e8f0; border-radius:12px; height:32px; overflow:hidden; margin-right:20px;">
+                    <div style="height:100%; width:${data.affinity}%; background:${p?.color || '#666'}; border-radius:12px;"></div>
+                  </div>
+                  <div style="width:55px; text-align:left; font-weight:700; color:#334155; line-height:1.3; font-size:15px; letter-spacing:0.01em;">
+                    ${data.affinity}%
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+
+        <div style="background:#fff; border:2px solid #e2e8f0; border-radius:16px; padding:32px 24px; text-align:center; margin-top:32px; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+          <p style="color:#64748b; font-size:16px; margin:0 0 20px 0; line-height:1.4; font-weight:500; letter-spacing:0.01em;">
+            Descubre la tuya
+          </p>
+
+          <img
+            src="${urlPng}"
+            alt="${shareUrlForImage}"
+            style="
+              display:block;
+              margin:0 auto;
+              height:30px;
+              width:auto;
+            "
+          />
+        </div>
+      `;
+
+      document.body.appendChild(container);
+
+      const canvas = await html2canvas(container, {
+        backgroundColor: '#ffffff',
+        scale: 2,
+        useCORS: true
+      });
+
+      document.body.removeChild(container);
+
+      const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+      const file = new File([blob], 'resultado-afinidad.png', { type: 'image/png' });
+
+      if (navigator.share && navigator.canShare?.({ files: [file] })) {
+        await navigator.share({
+          title: 'Mi resultado - Cuestionario de Afinidad CyL 2026',
+          text: shareText,
+          files: [file]
+        });
+      } else {
+        const link = document.createElement('a');
+        link.download = 'resultado-afinidad.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        showCopiedMessage();
+      }
+    } catch (e) {
+      console.error('Error generating image:', e);
+      await navigator.clipboard.writeText(shareText);
+      showCopiedMessage();
+    }
+
+    btn.innerHTML = originalText;
+  };
+
+  // Restart button
+  const restartBtn = document.getElementById('afinidad-restart');
+  if (restartBtn) {
+    restartBtn.onclick = () => restartAfinidadFromIntro();
+  }
 }
 
 // Track anonymous affinity result with Matomo
