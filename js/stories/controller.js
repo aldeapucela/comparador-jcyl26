@@ -9,7 +9,10 @@ const EXPLORA_MIN_STORY_DURATION_MS = 7000;
 const EXPLORA_ENGAGEMENT_DURATION_MS = 12000;
 const EXPLORA_SEEN_STORIES_STORAGE_KEY = 'explora_seen_stories_v1';
 const EXPLORA_SHARE_ENGAGEMENT_STORAGE_KEY = 'explora_share_engagement_v1';
+const EXPLORA_TELEGRAM_INTERSTITIAL_STORAGE_KEY = 'explora_telegram_interstitial_v1';
 const SAVE_TOAST_ID = 'story-save-toast';
+const TELEGRAM_STORY_POSITION = 6;
+const TELEGRAM_CHAT_URL = 'https://t.me/aldeapucela/115494';
 
 export function createStoriesController(appState) {
     let exploraTouchStart = null;
@@ -24,8 +27,10 @@ export function createStoriesController(appState) {
     let storyCaptionCurrentIndex = 0;
     let storyCaptionStepMs = EXPLORA_CAPTION_STEP_MS;
     let isEngagementCardActive = false;
+    let isTelegramCardActive = false;
     let engagementSessionViewedCount = 0;
     let engagementSessionNextPromptAt = 10;
+    let telegramInterstitialShownInSession = false;
     const escapeHtml = (value = '') => String(value)
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
@@ -93,6 +98,38 @@ export function createStoriesController(appState) {
         const state = readShareEngagementState();
         if (state.shared || state.optOut) return false;
         return engagementSessionViewedCount >= engagementSessionNextPromptAt;
+    }
+
+    function hasTelegramInterstitialBeenConverted() {
+        try {
+            const raw = localStorage.getItem(EXPLORA_TELEGRAM_INTERSTITIAL_STORAGE_KEY);
+            if (!raw) return false;
+            const parsed = JSON.parse(raw);
+            return Boolean(parsed?.converted);
+        } catch {
+            return false;
+        }
+    }
+
+    function markTelegramInterstitialConverted() {
+        try {
+            localStorage.setItem(EXPLORA_TELEGRAM_INTERSTITIAL_STORAGE_KEY, JSON.stringify({
+                converted: true,
+                convertedAt: Date.now()
+            }));
+        } catch {
+            // Ignore storage quota/privacy failures.
+        }
+    }
+
+    function shouldShowTelegramInterstitial() {
+        if (telegramInterstitialShownInSession) return false;
+        if (hasTelegramInterstitialBeenConverted()) return false;
+        if (!appState.stories.feed.length) return false;
+
+        const nextIndex = (appState.stories.currentIndex + 1) % appState.stories.feed.length;
+        const nextPosition = nextIndex + 1;
+        return nextPosition === TELEGRAM_STORY_POSITION;
     }
 
     function consumeShareEngagementPrompt() {
@@ -591,6 +628,36 @@ export function createStoriesController(appState) {
             return;
         }
 
+        if (isTelegramCardActive) {
+            clearPlaybackTimers();
+            stopStoryCaptionSequence();
+            StoriesView.renderTelegramInterstitialCard(UI.containers.storiesCard, {
+                transitionDirection: appState.stories.transitionDirection
+            });
+            appState.stories.currentDurationMs = EXPLORA_ENGAGEMENT_DURATION_MS;
+
+            const telegramBtn = document.getElementById('btn-story-telegram-join');
+            if (telegramBtn) {
+                const stopTapPropagation = (event) => event.stopPropagation();
+                telegramBtn.addEventListener('pointerdown', stopTapPropagation);
+                telegramBtn.addEventListener('touchstart', stopTapPropagation, { passive: true });
+                telegramBtn.addEventListener('click', () => {
+                    if (typeof _paq !== 'undefined') {
+                        _paq.push(['trackEvent', 'Conversion', 'TelegramStory', 'Posicion_6']);
+                    }
+                    markTelegramInterstitialConverted();
+                    telegramInterstitialShownInSession = true;
+                    window.open(TELEGRAM_CHAT_URL, '_blank', 'noopener,noreferrer');
+                    isTelegramCardActive = false;
+                    moveToNextStory();
+                });
+            }
+
+            bindExploraGestures();
+            scheduleAutoAdvance();
+            return;
+        }
+
         if (isEngagementCardActive) {
             clearPlaybackTimers();
             stopStoryCaptionSequence();
@@ -974,7 +1041,20 @@ export function createStoriesController(appState) {
 
     function moveToNextStory() {
         if (!appState.stories.feed.length) return;
-        if (!isEngagementCardActive && shouldShowShareEngagementCard()) {
+        if (!isTelegramCardActive && !isEngagementCardActive && shouldShowTelegramInterstitial()) {
+            appState.stories.transitionDirection = 'next';
+            exploraPlaybackElapsedMs = 0;
+            exploraIsPaused = false;
+            exploraWasPausedByHold = false;
+            document.body.classList.remove('explora-paused');
+            clearPlaybackTimers();
+            telegramInterstitialShownInSession = true;
+            isTelegramCardActive = true;
+            renderCurrentStoryCard();
+            return;
+        }
+
+        if (!isTelegramCardActive && !isEngagementCardActive && shouldShowShareEngagementCard()) {
             appState.stories.transitionDirection = 'next';
             exploraPlaybackElapsedMs = 0;
             exploraIsPaused = false;
@@ -987,6 +1067,9 @@ export function createStoriesController(appState) {
             return;
         }
 
+        if (isTelegramCardActive) {
+            isTelegramCardActive = false;
+        }
         if (isEngagementCardActive) {
             isEngagementCardActive = false;
         }
@@ -1002,7 +1085,8 @@ export function createStoriesController(appState) {
 
     function moveToPrevStory() {
         if (!appState.stories.feed.length) return;
-        if (isEngagementCardActive) {
+        if (isTelegramCardActive || isEngagementCardActive) {
+            isTelegramCardActive = false;
             isEngagementCardActive = false;
             appState.stories.transitionDirection = 'prev';
             exploraPlaybackElapsedMs = 0;
@@ -1039,7 +1123,9 @@ export function createStoriesController(appState) {
         appState.stories.currentDurationMs = EXPLORA_MIN_STORY_DURATION_MS;
         appState.stories.transitionDirection = 'next';
         appState.stories.started = true;
+        isTelegramCardActive = false;
         isEngagementCardActive = false;
+        telegramInterstitialShownInSession = false;
         engagementSessionViewedCount = 0;
         engagementSessionNextPromptAt = SHARE_PROMPT_FIRST_THRESHOLD;
         exploraPlaybackElapsedMs = 0;
@@ -1116,7 +1202,9 @@ export function createStoriesController(appState) {
         appState.stories.currentIndex = 0;
         appState.stories.currentDurationMs = EXPLORA_MIN_STORY_DURATION_MS;
         appState.stories.transitionDirection = 'next';
+        isTelegramCardActive = false;
         isEngagementCardActive = false;
+        telegramInterstitialShownInSession = false;
         engagementSessionViewedCount = 0;
         engagementSessionNextPromptAt = SHARE_PROMPT_FIRST_THRESHOLD;
         exploraPlaybackElapsedMs = 0;
@@ -1132,7 +1220,9 @@ export function createStoriesController(appState) {
         exploraPlaybackElapsedMs = 0;
         exploraIsPaused = false;
         exploraWasPausedByHold = false;
+        isTelegramCardActive = false;
         isEngagementCardActive = false;
+        telegramInterstitialShownInSession = false;
         engagementSessionViewedCount = 0;
         engagementSessionNextPromptAt = SHARE_PROMPT_FIRST_THRESHOLD;
         document.body.classList.remove('explora-paused');
