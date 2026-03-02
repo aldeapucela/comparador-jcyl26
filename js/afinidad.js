@@ -789,7 +789,7 @@ function setupShareLinks(results) {
                 </div>
                 <div style="text-align: center; padding: 18px; background: #ffffff; border-radius: 12px; margin-top: 12px; border: 1px solid #e2e8f0;">
                     <p style="color: #334155; font-size: 20px; margin: 0; line-height: 1; font-weight: 500; letter-spacing: -0.01em;">Descubre la tuya</p>
-                    <p style="color: #0f172a; font-size: 24px; margin: 0 0 8px 0; line-height: 1.5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; word-break: break-word; font-weight: 700;">${shareUrlForImage}</p>
+                    <p style="color: #0f172a; font-size: 24px; margin: 0 0 8px 0; line-height: 1.5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; word-break: keep-all; font-weight: 700;">${shareUrlForImage}</p>
                 </div>
             `;
             
