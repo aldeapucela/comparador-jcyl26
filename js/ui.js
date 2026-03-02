@@ -588,7 +588,8 @@ export const UI = {
     },
 
     async shareSearchResult(item, btn) {
-        const url = `${window.location.origin}${window.location.pathname}#/${item.partyId}/${encodeURIComponent(item.category)}/${item.proposalId}`;
+        const baseUrl = `${window.location.origin}${window.location.pathname}#/${item.partyId}/${encodeURIComponent(item.category)}/${item.proposalId}`;
+        const url = `${baseUrl}?utm_source=share`;
         const header = `El ${item.partyName} en CyL propone "${item.title}"`;
         const summary = (item.summary || '').trim();
         const shareText = summary
@@ -627,7 +628,8 @@ export const UI = {
             .filter((party) => this.lastSearchPartyIds.includes(party.id))
             .map((party) => party.name);
 
-        const url = `${window.location.origin}${window.location.pathname}${window.location.hash}`;
+        const baseUrl = `${window.location.origin}${window.location.pathname}#/s/${encodeURIComponent(term)}`;
+        const url = `${baseUrl}?utm_source=share`;
         const scopeText = selectedNames.length > 0 ? ` (${selectedNames.join(', ')})` : '';
         const shareText = `Qué dicen sobre "${term}"${scopeText} en las elecciones a las Cortes de CyL 2026:\n\n${url}`;
         const fullMessage = shareText;
@@ -660,7 +662,8 @@ export const UI = {
     },
 
     async sharePartyProgram(partyInfo, btn) {
-        const url = `${window.location.origin}${window.location.pathname}#/${partyInfo.id}`;
+        const baseUrl = `${window.location.origin}${window.location.pathname}#/${partyInfo.id}`;
+        const url = `${baseUrl}?utm_source=share`;
         const shareText = `Mira las propuestas de ${partyInfo.name} para las elecciones en Castilla y León.\n\n${url}`;
         const fullMessage = shareText;
 
@@ -1228,7 +1231,9 @@ export const UI = {
 
     async shareProposal(partyInfo, category, prop, btn, options = {}) {
         const surface = String(options?.surface || 'propuestas-individuales');
-        const url = `${window.location.origin}${window.location.pathname}#/${partyInfo.id}/${encodeURIComponent(category)}/${prop.id}`;
+        const baseUrl = `${window.location.origin}${window.location.pathname}#/${partyInfo.id}/${encodeURIComponent(category)}/${prop.id}`;
+        const utmSource = surface === 'stories' ? 'share-story' : 'share';
+        const url = `${baseUrl}?utm_source=${utmSource}`;
         const header = `${partyInfo.name} en Castilla y León propone "${prop.titulo_corto}"`;
         const summary = (prop.resumen || '').trim();
         const shareTextWithUrl = summary

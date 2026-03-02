@@ -340,7 +340,8 @@ function syncHomeSavedEntryVisibility() {
 }
 
 async function shareHomePage(btn, origin = 'home-desktop') {
-    const url = `${window.location.origin}${window.location.pathname}`;
+    const baseUrl = `${window.location.origin}${window.location.pathname}`;
+    const url = `${baseUrl}?utm_source=share`;
     const shareBody = 'Descubre el comparador de programas de las elecciones a las Cortes de Castilla y León y descubre a qué partido eres más afín con el cuestionario exclusivo';
     const shareText = `${shareBody}\n\n${url}`;
 

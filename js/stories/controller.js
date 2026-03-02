@@ -104,7 +104,8 @@ export function createStoriesController(appState) {
     }
 
     async function shareCurrentWebsite(btn) {
-        const url = `${window.location.origin}${window.location.pathname}`;
+        const baseUrl = `${window.location.origin}${window.location.pathname}`;
+        const url = `${baseUrl}?utm_source=share-story`;
         const shareBody = 'Descubre el comparador de programas de las elecciones a las Cortes de Castilla y León y a qué partido eres más afín';
         const fullMessage = `${shareBody}\n\n${url}`;
 

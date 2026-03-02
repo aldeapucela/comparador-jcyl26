@@ -766,7 +766,7 @@ function setupShareLinks(results) {
 
   const shareUrlForImage = `${window.location.hostname}${basePath}`;
 
-  const shareUrl = `${window.location.origin}${basePath}`;
+  const shareUrl = `${window.location.origin}${basePath}?utm_source=share`;
   const shareText =
     `Mi resultado en el Cuestionario de Afinidad CyL 2026: ${sorted[0][1].affinity}% afín a ${winner.name}\n\n` +
     `Descubre la tuya:\n${shareUrl}`;
