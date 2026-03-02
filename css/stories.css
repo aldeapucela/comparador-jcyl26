@@ -129,6 +129,13 @@
         linear-gradient(180deg, rgba(15, 23, 42, 0.22), rgba(2, 6, 23, 0.7));
 }
 
+.story-screen--telegram .story-screen-overlay {
+    background:
+        radial-gradient(circle at 14% 16%, rgba(255, 255, 255, 0.2) 0%, transparent 44%),
+        radial-gradient(circle at 82% 82%, rgba(142, 216, 255, 0.24) 0%, transparent 46%),
+        linear-gradient(180deg, rgba(10, 37, 64, 0.26), rgba(3, 21, 38, 0.66));
+}
+
 .story-top,
 .story-body,
 .story-actions {
@@ -363,6 +370,23 @@ body.explora-paused .story-progress-fill {
 
 .stories-cta-primary--share:hover {
     background: rgba(15, 23, 42, 0.74);
+}
+
+.story-body--telegram {
+    gap: 1.25rem;
+}
+
+.stories-cta-primary--telegram {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    touch-action: manipulation;
+    margin-top: 0;
+    box-shadow: 0 10px 30px rgba(3, 21, 38, 0.3);
+}
+
+.stories-cta-primary--telegram:hover {
+    background: rgba(255, 255, 255, 0.32);
 }
 
 .story-engagement-optout {
