@@ -86,6 +86,26 @@ body {
     flex-shrink: 0; /* evita que el icono se encoja */
 }
 
+.impact-option-btn-neutral {
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.impact-option-btn-neutral:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.impact-option-btn-neutral:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.impact-option-btn-neutral i {
+    color: #94a3b8; /* gris más claro para iconos neutrales */
+    flex-shrink: 0;
+}
+
 /* Methodology Accordion Styles */
 .methodology-accordion {
     transition: all 0.2s ease;

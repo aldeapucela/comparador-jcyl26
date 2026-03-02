@@ -810,7 +810,7 @@ function setupEventListeners() {
         }
 
         // Vote Impact Survey
-        const impactOptionBtn = e.target.closest('.impact-option-btn');
+        const impactOptionBtn = e.target.closest('.impact-option-btn, .impact-option-btn-neutral');
         if (impactOptionBtn) {
             handleVoteImpactSurvey(impactOptionBtn.dataset.option);
         }
@@ -829,7 +829,7 @@ function handleVoteImpactSurvey(option) {
     // Show thanks message and hide buttons
     const surveyContainer = document.getElementById('vote-impact-survey');
     const thanksMessage = document.getElementById('survey-thanks');
-    const buttons = surveyContainer.querySelectorAll('.impact-option-btn');
+    const buttons = surveyContainer.querySelectorAll('.impact-option-btn, .impact-option-btn-neutral');
     
     buttons.forEach(btn => btn.style.display = 'none');
     thanksMessage.classList.remove('hidden');
