@@ -435,10 +435,12 @@ export function renderResults(results) {
     document.getElementById('afinidad-winner').innerHTML = `
         <div class="bg-white rounded-2xl p-8 text-center border border-slate-200 shadow-sm">
             <p class="text-slate-500 text-sm font-medium mb-2">Tu partido más afín</p>
-            <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center overflow-hidden" style="background-color: ${winner?.color || '#666'}20">
-                <img src="${winner?.logo || ''}" alt="${winner?.name || ''}" class="w-full h-full object-contain" style="transform: scale(${winnerLogoScale}); transform-origin: center;">
-            </div>
-            <h2 class="text-3xl font-bold mb-2" style="color: ${winner?.color || '#334155'}">${winner?.name || winnerId}</h2>
+            <a href="#/${winnerId}" class="block group">
+                <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-105" style="background-color: ${winner?.color || '#666'}20">
+                    <img src="${winner?.logo || ''}" alt="${winner?.name || ''}" class="w-full h-full object-contain" style="transform: scale(${winnerLogoScale}); transform-origin: center;">
+                </div>
+                <h2 class="text-3xl font-bold mb-2 transition-colors duration-200 group-hover:text-indigo-600" style="color: ${winner?.color || '#334155'}">${winner?.name || winnerId}</h2>
+            </a>
             <p class="text-5xl font-black text-slate-800">${sorted[0][1].affinity}%</p>
             <p class="text-slate-400 mt-2">de afinidad global</p>
         </div>
@@ -466,7 +468,9 @@ export function renderResults(results) {
     };
 
     // 3. Renderizar Lista de Partidos con sus desgloses internos
-    document.getElementById('afinidad-chart').innerHTML = sorted.map(([partyId, data]) => {
+    document.getElementById('afinidad-chart').innerHTML = `
+        <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm">
+            ${sorted.map(([partyId, data]) => {
         const party = PARTIES.find(p => p.id === partyId);
         const partyScoresRaw = afinidadState.partyScores;
         const partyKeyInScores = Object.keys(partyScoresRaw).find(k => normalizePartyId(k) === partyId);
@@ -597,7 +601,10 @@ export function renderResults(results) {
                 </div>
             </div>
         `;
-    }).join('');
+    }).join('')}
+            <p class="text-slate-400 text-xs text-center mt-4">Clic en cada partido para detalles</p>
+        </div>
+    `;
     
     renderCategoryBreakdown(results);
     setupShareLinks(results);
