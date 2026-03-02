@@ -48,6 +48,25 @@ body {
     background: #f1f5f9;
 }
 
+/* Party Share Button Styles */
+.party-share-btn {
+    opacity: 0.7;
+    transition: all 0.2s ease;
+}
+
+.party-share-btn:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+.party-share-btn i {
+    transition: transform 0.2s ease;
+}
+
+.party-share-btn:hover i {
+    transform: scale(1.1);
+}
+
 ::-webkit-scrollbar-thumb {
     background: #cbd5e1;
     border-radius: 10px;

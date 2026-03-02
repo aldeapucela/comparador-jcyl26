@@ -659,6 +659,38 @@ export const UI = {
         }
     },
 
+    async sharePartyProgram(partyInfo, btn) {
+        const url = `${window.location.origin}${window.location.pathname}#/${partyInfo.id}`;
+        const shareText = `Mira las propuestas de ${partyInfo.name} para las elecciones en Castilla y León.\n\n${url}`;
+        const fullMessage = shareText;
+
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: `${partyInfo.name} - Programa Electoral CyL 2026`,
+                    text: shareText,
+                    url
+                });
+                this.trackShareEvent('web', 'partido', 'web_share');
+            } catch (err) {
+                if (err.name !== 'AbortError') console.error('Error sharing party program:', err);
+            }
+            return;
+        }
+
+        try {
+            await navigator.clipboard.writeText(fullMessage);
+            this.trackShareEvent('web', 'partido', 'clipboard');
+            if (btn) {
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check text-emerald-500"></i> <span class="text-emerald-600">Copiado</span>';
+                setTimeout(() => { btn.innerHTML = originalText; }, 2000);
+            }
+        } catch (err) {
+            console.error('Failed to copy party program: ', err);
+        }
+    },
+
     setupSearchTopButton() {
         let btn = document.getElementById('floating-search-top-btn');
         if (!btn) {
@@ -754,12 +786,28 @@ export const UI = {
         const programLinkContainer = document.getElementById('party-program-link');
         if (programLinkContainer) {
             programLinkContainer.innerHTML = `
-                <a href="programas/${partyInfo.id}.pdf" target="_blank" 
-                   class="inline-flex items-center gap-2 px-3 py-1.5 text-slate-500 hover:text-slate-700 text-sm font-medium border border-slate-200 rounded-lg hover:border-slate-300 transition-colors">
-                    <i class="fa-solid fa-file-pdf"></i>
-                    Programa en PDF
-                </a>
+                <div class="flex items-center justify-center gap-2">
+                    <a href="programas/${partyInfo.id}.pdf" target="_blank" 
+                       class="inline-flex items-center gap-2 px-3 py-1.5 text-slate-500 hover:text-slate-700 text-sm font-medium border border-slate-200 rounded-lg hover:border-slate-300 transition-colors">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        Programa en PDF
+                    </a>
+                    <button id="party-share-btn" 
+                        class="party-share-btn inline-flex items-center justify-center w-8 h-8 text-slate-400 hover:text-slate-600 text-sm font-medium border border-slate-100 rounded-lg hover:border-slate-200 transition-colors"
+                        aria-label="Compartir programa de ${this.escapeHtml(partyInfo.name)}"
+                        title="Compartir programa">
+                        <i class="fa-solid fa-share-nodes text-xs"></i>
+                    </button>
+                </div>
             `;
+            
+            // Add click handler for share button
+            const shareBtn = document.getElementById('party-share-btn');
+            if (shareBtn) {
+                shareBtn.addEventListener('click', () => {
+                    this.sharePartyProgram(partyInfo, shareBtn);
+                });
+            }
         }
     },
 
