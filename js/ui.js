@@ -554,6 +554,18 @@ export const UI = {
             `;
         }).join('');
 
+        this.containers.searchResults.querySelectorAll('.btn-share-search').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const index = Number(btn.dataset.resultIndex);
+                const item = this.lastSearchResults[index];
+                if (!item) return;
+                const group = groupedByParty.get(item.partyId);
+                const proposal = group?.proposals?.find((item) => String(item.id) === String(item.proposalId));
+                if (!group?.party || !proposal) return;
+                this.shareProposal(group.party, proposal.categoria || 'Todas', proposal, btn, { surface: 'busqueda' });
+            });
+        });
+
         container.querySelectorAll('.saved-share-btn').forEach((btn) => {
             btn.addEventListener('click', () => {
                 const partyId = btn.dataset.party;
@@ -561,7 +573,7 @@ export const UI = {
                 const group = groupedByParty.get(partyId);
                 const proposal = group?.proposals?.find((item) => String(item.id) === String(proposalId));
                 if (!group?.party || !proposal) return;
-                this.shareProposal(group.party, proposal.categoria || 'Todas', proposal, btn);
+                this.shareProposal(group.party, proposal.categoria || 'Todas', proposal, btn, { surface: 'guardados' });
             });
         });
 
@@ -627,6 +639,7 @@ export const UI = {
                     text: shareText,
                     url
                 });
+                this.trackShareEvent('web', 'busqueda', 'web_share');
             } catch (err) {
                 if (err.name !== 'AbortError') console.error('Error sharing search query:', err);
             }
@@ -635,6 +648,7 @@ export const UI = {
 
         try {
             await navigator.clipboard.writeText(fullMessage);
+            this.trackShareEvent('web', 'busqueda', 'clipboard');
             if (btn) {
                 const originalText = btn.innerHTML;
                 btn.innerHTML = '<i class="fa-solid fa-check text-emerald-500"></i> <span class="text-emerald-600">Copiado</span>';
@@ -830,7 +844,7 @@ export const UI = {
         this.containers.proposals.querySelectorAll('.btn-share').forEach(btn => {
             const propId = btn.dataset.id;
             const prop = filtered.find(p => p.id == propId);
-            btn.addEventListener('click', () => this.shareProposal(partyInfo, category || 'Todas', prop, btn));
+            btn.addEventListener('click', () => this.shareProposal(partyInfo, category || 'Todas', prop, btn, { surface: 'propuestas-individuales' }));
         });
 
         this.renderStickyIdentity(partyInfo);
@@ -1132,14 +1146,26 @@ export const UI = {
         }
     },
 
-    trackStoryShareEvent(partyInfo, category, prop, method) {
+    trackShareEvent(type, origin, method, additionalData = {}) {
         if (typeof _paq === 'undefined') return;
-        const partyId = String(partyInfo?.id || 'unknown');
-        const proposalId = String(prop?.id || 'unknown');
-        const categoryName = String(category || 'General');
-        const shareMethod = String(method || 'unknown');
-        const label = `${partyId}|${proposalId}|${categoryName}|${shareMethod}`;
-        _paq.push(['trackEvent', 'Explora Stories', 'Compartir', label, 1]);
+        
+        const label = type === 'web' 
+            ? `Web|${origin}|${method}`
+            : `Propuesta|${additionalData.partyId || 'unknown'}|${additionalData.proposalId || 'unknown'}|${additionalData.category || 'unknown'}|${origin}|${method}`;
+        
+        const category = type === 'web' ? 'Web General' : 'Propuestas';
+        const action = 'Compartir';
+        
+        _paq.push(['trackEvent', category, action, label, 1]);
+    },
+
+    trackStoryShareEvent(partyInfo, category, prop, method) {
+        // Legacy method - now uses generic trackShareEvent
+        this.trackShareEvent('proposal', 'stories', method, {
+            partyId: partyInfo?.id,
+            proposalId: prop?.id,
+            category: category
+        });
     },
 
     trackProposalSaveEvent(partyInfo, category, prop, source = 'unknown') {
@@ -1153,7 +1179,7 @@ export const UI = {
     },
 
     async shareProposal(partyInfo, category, prop, btn, options = {}) {
-        const surface = String(options?.surface || '');
+        const surface = String(options?.surface || 'propuestas-individuales');
         const url = `${window.location.origin}${window.location.pathname}#/${partyInfo.id}/${encodeURIComponent(category)}/${prop.id}`;
         const header = `${partyInfo.name} en Castilla y León propone "${prop.titulo_corto}"`;
         const summary = (prop.resumen || '').trim();
@@ -1172,9 +1198,11 @@ export const UI = {
                     text: shareText,
                     url: url
                 });
-                if (surface === 'stories') {
-                    this.trackStoryShareEvent(partyInfo, category, prop, 'web_share');
-                }
+                this.trackShareEvent('proposal', surface, 'web_share', {
+                    partyId: partyInfo.id,
+                    proposalId: prop.id,
+                    category: category
+                });
             } catch (err) {
                 if (err.name !== 'AbortError') console.error('Error sharing:', err);
             }
@@ -1182,9 +1210,11 @@ export const UI = {
             // Fallback to clipboard
             try {
                 await navigator.clipboard.writeText(fullMessage);
-                if (surface === 'stories') {
-                    this.trackStoryShareEvent(partyInfo, category, prop, 'clipboard');
-                }
+                this.trackShareEvent('proposal', surface, 'clipboard', {
+                    partyId: partyInfo.id,
+                    proposalId: prop.id,
+                    category: category
+                });
                 const originalText = btn.innerHTML;
                 btn.innerHTML = '<i class="fa-solid fa-check text-emerald-500"></i> <span class="text-emerald-600">Copiado</span>';
                 setTimeout(() => { btn.innerHTML = originalText; }, 2000);
@@ -1387,7 +1417,7 @@ export const UI = {
             const partyInfo = PARTIES.find(p => p.id === partyId);
             const propId = btn.dataset.id;
             const prop = allData[partyId]?.propuestas?.find(p => p.id == propId);
-            btn.addEventListener('click', () => this.shareProposal(partyInfo, currentCategory?.name || 'Comparación', prop, btn));
+            btn.addEventListener('click', () => this.shareProposal(partyInfo, currentCategory?.name || 'Comparación', prop, btn, { surface: 'comparacion' }));
         });
 
         this.containers.comparisonResults.querySelectorAll('.btn-save-comparison').forEach((btn) => {

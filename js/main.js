@@ -339,7 +339,7 @@ function syncHomeSavedEntryVisibility() {
     homeSavedEntry.classList.toggle('hidden', !hasSaved);
 }
 
-async function shareHomePage(btn) {
+async function shareHomePage(btn, origin = 'home-desktop') {
     const url = `${window.location.origin}${window.location.pathname}`;
     const shareBody = 'Descubre el comparador de programas de las elecciones a las Cortes de Castilla y León y descubre a qué partido eres más afín con el cuestionario exclusivo';
     const shareText = `${shareBody}\n\n${url}`;
@@ -351,6 +351,10 @@ async function shareHomePage(btn) {
                 text: shareBody,
                 url
             });
+            // Track the share
+            if (typeof UI !== 'undefined' && UI.trackShareEvent) {
+                UI.trackShareEvent('web', origin, 'web_share');
+            }
             return;
         } catch (err) {
             if (err.name === 'AbortError') return;
@@ -359,6 +363,10 @@ async function shareHomePage(btn) {
 
     try {
         await navigator.clipboard.writeText(shareText);
+        // Track the clipboard copy
+        if (typeof UI !== 'undefined' && UI.trackShareEvent) {
+            UI.trackShareEvent('web', origin, 'clipboard');
+        }
         if (btn) {
             const originalText = btn.innerHTML;
             btn.innerHTML = '<i class="fa-solid fa-check text-emerald-300"></i><span>Copiado</span>';
@@ -686,13 +694,13 @@ function setupEventListeners() {
     const shareHomeBtn = document.getElementById('btn-share-home');
     if (shareHomeBtn) {
         shareHomeBtn.addEventListener('click', () => {
-            shareHomePage(shareHomeBtn);
+            shareHomePage(shareHomeBtn, 'home-desktop');
         });
     }
     const shareHomeMobileBtn = document.getElementById('btn-share-home-mobile');
     if (shareHomeMobileBtn) {
         shareHomeMobileBtn.addEventListener('click', () => {
-            shareHomePage(shareHomeMobileBtn);
+            shareHomePage(shareHomeMobileBtn, 'home-mobile');
         });
     }
 

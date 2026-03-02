@@ -829,13 +829,25 @@ function setupShareLinks(results) {
           title: 'Mi resultado - Cuestionario de Afinidad CyL 2026',
           text: shareText
         });
+        // Track the share
+        if (typeof UI !== 'undefined' && UI.trackShareEvent) {
+          UI.trackShareEvent('web', 'cuestionario-afinidad', 'web_share');
+        }
       } catch (e) {
         await navigator.clipboard.writeText(shareText);
         showCopiedMessage();
+        // Track the clipboard copy
+        if (typeof UI !== 'undefined' && UI.trackShareEvent) {
+          UI.trackShareEvent('web', 'cuestionario-afinidad', 'clipboard');
+        }
       }
     } else {
       await navigator.clipboard.writeText(shareText);
       showCopiedMessage();
+      // Track the clipboard copy
+      if (typeof UI !== 'undefined' && UI.trackShareEvent) {
+        UI.trackShareEvent('web', 'cuestionario-afinidad', 'clipboard');
+      }
     }
   };
 
@@ -951,17 +963,29 @@ function setupShareLinks(results) {
           text: shareText,
           files: [file]
         });
+        // Track the image share
+        if (typeof UI !== 'undefined' && UI.trackShareEvent) {
+          UI.trackShareEvent('web', 'resultado-afinidad', 'web_share');
+        }
       } else {
         const link = document.createElement('a');
         link.download = 'resultado-afinidad.png';
         link.href = canvas.toDataURL('image/png');
         link.click();
         showCopiedMessage();
+        // Track the download/fallback
+        if (typeof UI !== 'undefined' && UI.trackShareEvent) {
+          UI.trackShareEvent('web', 'resultado-afinidad', 'download');
+        }
       }
     } catch (e) {
       console.error('Error generating image:', e);
       await navigator.clipboard.writeText(shareText);
       showCopiedMessage();
+      // Track the fallback clipboard copy
+      if (typeof UI !== 'undefined' && UI.trackShareEvent) {
+        UI.trackShareEvent('web', 'resultado-afinidad', 'clipboard');
+      }
     }
 
     btn.innerHTML = originalText;
