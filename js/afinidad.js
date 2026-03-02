@@ -4,6 +4,21 @@
  */
 
 import { PARTIES } from './api.js';
+import { UI } from './ui.js';
+
+// Importar el controlador de historias para contar historias pendientes
+let storiesController = null;
+let appState = null;
+
+// Función para obtener el controlador de historias (inyectado desde main.js)
+export function setStoriesController(controller) {
+    storiesController = controller;
+}
+
+// Función para establecer el estado de la aplicación (inyectado desde main.js)
+export function setAppState(state) {
+    appState = state;
+}
 
 function withAppVersion(path) {
     const version = window.__APP_VERSION__;
@@ -431,16 +446,25 @@ export function renderResults(results) {
     const winner = PARTIES.find(p => p.id === winnerId);
     const winnerLogoScale = getWinnerLogoScale(winner?.id);
     
+    // Verificar si hay historias pendientes para el partido ganador
+    const unseenCount = storiesController ? 
+        storiesController.countUnseenStoriesForParty(winnerId, Object.values(appState?.allData?.[winnerId]?.propuestas || [])) : 0;
+    const hasPendingStories = unseenCount > 0;
+    
     // 1. Renderizar Ganador
     document.getElementById('afinidad-winner').innerHTML = `
         <div class="bg-white rounded-2xl p-8 text-center border border-slate-200 shadow-sm">
             <p class="text-slate-500 text-sm font-medium mb-2">Tu partido más afín</p>
-            <a href="#/${winnerId}" class="block group">
-                <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-105" style="background-color: ${winner?.color || '#666'}20">
-                    <img src="${winner?.logo || ''}" alt="${winner?.name || ''}" class="w-full h-full object-contain" style="transform: scale(${winnerLogoScale}); transform-origin: center;">
-                </div>
-                <h2 class="text-3xl font-bold mb-2 transition-colors duration-200 group-hover:text-indigo-600" style="color: ${winner?.color || '#334155'}">${winner?.name || winnerId}</h2>
-            </a>
+            <div class="group">
+                <button class="block w-full cursor-pointer mb-4" onclick="handleWinnerLogoClick('${winnerId}')" aria-label="Ver ${hasPendingStories ? 'historias de' : 'programa de'} ${winner?.name || winnerId}">
+                    <div class="w-20 h-20 mx-auto rounded-full flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-105 ${hasPendingStories ? 'party-story-ring' : ''}" style="background-color: ${winner?.color || '#666'}20">
+                        <img src="${winner?.logo || ''}" alt="${winner?.name || ''}" class="w-full h-full object-contain" style="transform: scale(${winnerLogoScale}); transform-origin: center;">
+                    </div>
+                </button>
+                <a href="#/${winnerId}" class="block group">
+                    <h2 class="text-3xl font-bold mb-2 transition-colors duration-200 group-hover:text-indigo-600" style="color: ${winner?.color || '#334155'}">${winner?.name || winnerId}</h2>
+                </a>
+            </div>
             <p class="text-5xl font-black text-slate-800">${sorted[0][1].affinity}%</p>
             <p class="text-slate-400 mt-2">de afinidad global</p>
         </div>
@@ -450,6 +474,28 @@ export function renderResults(results) {
     window.togglePartyMatches = (id) => {
         const el = document.getElementById(`matches-${id}`);
         if (el) el.classList.toggle('hidden');
+    };
+    
+    // 3. Definir función para manejar el clic en el logo del ganador
+    window.handleWinnerLogoClick = (partyId) => {
+        const party = PARTIES.find(p => p.id === partyId);
+        if (!party) return;
+        
+        // Reutilizar el cálculo de historias pendientes ya hecho en renderResults
+        const proposals = Object.values(appState?.allData?.[partyId]?.propuestas || []);
+        const unseenCount = storiesController ? storiesController.countUnseenStoriesForParty(partyId, proposals) : 0;
+        
+        if (unseenCount > 0 && storiesController) {
+            // Usar la misma lógica que en la vista de detalle del partido
+            const fallbackPartyHash = `#/${partyId}`;
+            const currentHash = window.location.hash || fallbackPartyHash;
+            appState.stories.returnHash = currentHash.startsWith(fallbackPartyHash) ? currentHash : fallbackPartyHash;
+            storiesController.focusOnParty(partyId);
+            UI.navigateHash('#/explora/play');
+        } else {
+            // Ir al programa del partido
+            window.location.hash = `#/${partyId}`;
+        }
     };
     window.toggleMatchList = (partyId, listName) => {
         const compactEl = document.getElementById(`${listName}-compact-${partyId}`);

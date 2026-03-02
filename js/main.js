@@ -4,7 +4,7 @@
 
 import { PARTIES, fetchAllPartiesData, getCategoriesFromProposals, CATEGORIES, loadPartiesCatalog } from './api.js';
 import { UI } from './ui.js';
-import { initAfinidad, handleAnswer, toggleImportant, nextQuestion, prevQuestion, toggleContext, calculateAndShowResults, startAfinidad, showAfinidadIntro } from './afinidad.js';
+import { initAfinidad, handleAnswer, toggleImportant, nextQuestion, prevQuestion, toggleContext, calculateAndShowResults, startAfinidad, showAfinidadIntro, setStoriesController, setAppState } from './afinidad.js';
 import { createStoriesController } from './stories/controller.js';
 import { readSavedStoryIds, getStoryUniqueIdByParts } from './stories/saved.js';
 
@@ -47,6 +47,10 @@ let appState = {
 };
 
 const storiesController = createStoriesController(appState);
+
+// Inyectar el controlador de historias y el estado de la aplicación en el módulo de afinidad
+setStoriesController(storiesController);
+setAppState(appState);
 
 
 function safeDecodeURIComponent(value = '') {
