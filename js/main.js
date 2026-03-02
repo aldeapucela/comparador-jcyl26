@@ -809,9 +809,71 @@ function setupEventListeners() {
             toggleFilter(filterId);
         }
 
+        // Vote Impact Survey
+        const impactOptionBtn = e.target.closest('.impact-option-btn');
+        if (impactOptionBtn) {
+            handleVoteImpactSurvey(impactOptionBtn.dataset.option);
+        }
+
     });
 
 }
+
+// Vote Impact Survey Functions
+function handleVoteImpactSurvey(option) {
+    // Track with Matomo
+    if (typeof _paq !== 'undefined') {
+        _paq.push(['trackEvent', 'EncuestaVoto', 'Impacto', option]);
+    }
+
+    // Show thanks message and hide buttons
+    const surveyContainer = document.getElementById('vote-impact-survey');
+    const thanksMessage = document.getElementById('survey-thanks');
+    const buttons = surveyContainer.querySelectorAll('.impact-option-btn');
+    
+    buttons.forEach(btn => btn.style.display = 'none');
+    thanksMessage.classList.remove('hidden');
+    
+    // Store completion in localStorage
+    localStorage.setItem('voteImpactSurveyCompleted', Date.now().toString());
+    
+    // Hide survey after showing thanks
+    setTimeout(() => {
+        surveyContainer.classList.add('hidden');
+    }, 3000);
+}
+
+function showVoteImpactSurveyIfNeeded() {
+    const surveyContainer = document.getElementById('vote-impact-survey');
+    if (!surveyContainer) {
+        // Retry if DOM not ready
+        setTimeout(showVoteImpactSurveyIfNeeded, 100);
+        return;
+    }
+    
+    // Check if user already completed survey
+    const completedTime = localStorage.getItem('voteImpactSurveyCompleted');
+    if (completedTime) {
+        const completed = parseInt(completedTime);
+        const now = Date.now();
+        const hoursSinceCompletion = (now - completed) / (1000 * 60 * 60);
+        
+        // Don't show if completed less than 24 hours ago
+        if (hoursSinceCompletion < 24) {
+            return;
+        }
+    }
+    
+    // Show survey with animation
+    surveyContainer.classList.remove('hidden');
+    requestAnimationFrame(() => {
+        surveyContainer.style.opacity = '1';
+        surveyContainer.style.transform = 'translateY(0)';
+    });
+}
+
+// Make function globally available
+window.showVoteImpactSurveyIfNeeded = showVoteImpactSurveyIfNeeded;
 
 // Helper function to normalize party ID (same as in afinidad.js)
 function normalizePartyId(id) {
@@ -993,6 +1055,12 @@ async function handleRouting() {
 
             if (hasStoredCompletedResults) {
                 startAfinidad();
+                // Show survey when displaying saved results
+                setTimeout(() => {
+                    if (typeof window.showVoteImpactSurveyIfNeeded === 'function') {
+                        window.showVoteImpactSurveyIfNeeded();
+                    }
+                }, 1000);
             } else {
                 showAfinidadIntro();
             }

@@ -339,6 +339,11 @@ export function calculateAndShowResults() {
     
     // Track anonymous affinity result
     trackAffinityResult(results);
+    
+    // Show vote impact survey if needed
+    if (typeof window.showVoteImpactSurveyIfNeeded === 'function') {
+        window.showVoteImpactSurveyIfNeeded();
+    }
 }
 
 function calculateAffinity() {

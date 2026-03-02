@@ -48,6 +48,91 @@ body {
     background: #f1f5f9;
 }
 
+/* Vote Impact Survey Styles */
+.vote-impact-survey {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease-out;
+}
+
+.vote-impact-survey:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.impact-option-btn {
+    transition: all 0.2s ease;
+    border-width: 1px;
+    border-color: #e2e8f0; /* gris claro */
+    background-color: #ffffff;
+    color: #475569; /* gris oscuro */
+    text-align: left;
+}
+
+.impact-option-btn:hover {
+    background-color: #f8fafc; /* gris muy claro */
+    border-color: #cbd5e1; /* gris medio */
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.impact-option-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.impact-option-btn i {
+    color: #64748b; /* gris medio para iconos */
+    flex-shrink: 0; /* evita que el icono se encoja */
+}
+
+/* Methodology Accordion Styles */
+.methodology-accordion {
+    transition: all 0.2s ease;
+}
+
+.methodology-summary {
+    user-select: none;
+    outline: none;
+}
+
+.methodology-summary:hover {
+    background-color: #f8fafc;
+}
+
+.methodology-summary:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: -2px;
+}
+
+.methodology-accordion[open] .methodology-chevron {
+    transform: rotate(180deg);
+}
+
+.methodology-content {
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Remove default details marker */
+.methodology-summary::-webkit-details-marker {
+    display: none;
+}
+
+.methodology-summary::marker {
+    display: none;
+}
+
 /* Party Share Button Styles */
 .party-share-btn {
     opacity: 0.7;
