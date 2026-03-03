@@ -1024,11 +1024,12 @@ function trackAffinityResult(results) {
     const sorted = Object.entries(results).sort((a, b) => b[1].affinity - a[1].affinity);
     const winnerId = sorted[0][0];
     const winnerAffinity = sorted[0][1].affinity;
+    const selectedZone = String(appState?.selectedZone || 'desconocida').trim() || 'desconocida';
     
-    // Generate daily hash to prevent spam (based on date + user agent)
+    // Generate daily hash to prevent spam (based on date + user agent + selected zone)
     const today = new Date().toDateString();
     const userAgent = navigator.userAgent;
-    const hash = btoa(today + userAgent).substring(0, 16);
+    const hash = btoa(today + userAgent + selectedZone).substring(0, 16);
     
     // Check if already tracked today
     const storageKey = 'afinidad_tracked_' + hash;
@@ -1042,6 +1043,7 @@ function trackAffinityResult(results) {
         
         // Also track without value for compatibility
         _paq.push(['trackEvent', 'Afinidad', 'Partido', winnerId]);
+        _paq.push(['trackEvent', 'Afinidad', 'Provincia', selectedZone]);
         
         // Mark as tracked today
         localStorage.setItem(storageKey, 'true');

@@ -1,7 +1,9 @@
 {
   "defaultZone": "Valladolid",
   "afinidadAvailableZones": [
-    "Valladolid"
+    "Valladolid",
+    "Palencia",
+    "Segovia"
   ],
   "zones": [
     "Ávila",
