@@ -169,8 +169,47 @@ function renderEngagementShareCard(container, data = {}) {
     `;
 }
 
+function renderTelegramInterstitialCard(container, data = {}) {
+    if (!container) return;
+
+    const {
+        transitionDirection = 'next'
+    } = data;
+
+    const transitionClass = transitionDirection === 'prev'
+        ? 'story-screen--enter-prev'
+        : 'story-screen--enter-next';
+
+    container.innerHTML = `
+        <article class="story-screen story-screen--engagement story-screen--telegram ${transitionClass}" style="--party-color: #229ed9; --story-accent: #8ed8ff;">
+            <div class="story-screen-overlay"></div>
+
+            <header class="story-top">
+                <div class="story-progress-track" aria-hidden="true">
+                    <span id="story-progress-fill-live" class="story-progress-fill" style="width: 0%"></span>
+                </div>
+                <div class="story-meta-row">
+                    <span class="story-counter">Sugerencia</span>
+                </div>
+            </header>
+
+            <section class="story-body story-body--engagement story-body--telegram">
+                <h3 class="story-title">Tus vecinos están opinando en directo 💬</h3>
+                <div class="story-summary">
+                    <p>¿Qué te parecen estas propuestas? Únete al chat vecinal de Aldea Pucela para debatir de forma libre y sin ruido</p>
+                </div>
+                <button class="stories-cta-primary stories-cta-primary--telegram" id="btn-story-telegram-join" type="button" aria-label="Entrar al chat vecinal de Telegram">
+                    <i class="fa-brands fa-telegram"></i>
+                    <span>Entrar al chat vecinal ➔</span>
+                </button>
+            </section>
+        </article>
+    `;
+}
+
 export const StoriesView = {
     buildStoryCaptionChunks,
     renderStoriesCard,
-    renderEngagementShareCard
+    renderEngagementShareCard,
+    renderTelegramInterstitialCard
 };
