@@ -244,6 +244,14 @@ function renderCandidateVideoCard(container, data = {}) {
                 </div>
                 <div class="story-meta-row">
                     <span class="story-counter">Vídeo</span>
+                    <button type="button"
+                        id="btn-story-video-audio-toggle"
+                        class="story-video-audio-btn"
+                        aria-label="Silenciar vídeo"
+                        aria-pressed="false"
+                        title="Silenciar vídeo">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                    </button>
                 </div>
                 <div class="story-party-row">
                     <button type="button" class="story-party-link btn-story-party" data-party="${escapeHtml(party.id)}" aria-label="Ir al programa de ${escapeHtml(party.name)}">

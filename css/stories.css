@@ -179,8 +179,9 @@ body.explora-paused .story-progress-fill {
 
 .story-meta-row {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
+    gap: 0.75rem;
     margin-top: 0.75rem;
 }
 
@@ -197,6 +198,29 @@ body.explora-paused .story-progress-fill {
 .story-counter {
     font-size: 0.82rem;
     opacity: 0.85;
+}
+
+.story-video-audio-btn {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(2, 6, 23, 0.35);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.86rem;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.story-video-audio-btn:hover {
+    background: rgba(2, 6, 23, 0.55);
+    border-color: rgba(255, 255, 255, 0.55);
+}
+
+.story-video-audio-btn:active {
+    transform: scale(0.97);
 }
 
 .story-party-row {

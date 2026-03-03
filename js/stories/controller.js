@@ -11,6 +11,7 @@ const EXPLORA_SEEN_STORIES_STORAGE_KEY = 'explora_seen_stories_v1';
 const EXPLORA_SHARE_ENGAGEMENT_STORAGE_KEY = 'explora_share_engagement_v1';
 const EXPLORA_TELEGRAM_INTERSTITIAL_STORAGE_KEY = 'explora_telegram_interstitial_v1';
 const EXPLORA_CANDIDATE_VIDEO_SEEN_STORAGE_KEY = 'explora_candidate_video_seen_v1';
+const EXPLORA_CANDIDATE_VIDEO_MUTED_STORAGE_KEY = 'explora_candidate_video_muted_v1';
 const SAVE_TOAST_ID = 'story-save-toast';
 const TELEGRAM_CHAT_URL = 'https://t.me/aldeapucela/115494';
 const INTERSTITIAL_POSITION_TELEGRAM = 6;
@@ -33,6 +34,7 @@ export function createStoriesController(appState) {
     const interstitialShownInSession = new Set();
     const partyVideoShownInSession = new Set();
     const candidateVideoByAnchorIndex = new Map();
+    let candidateVideoMutedPreference = readCandidateVideoMutedPreference();
     const escapeHtml = (value = '') => String(value)
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
@@ -116,9 +118,23 @@ export function createStoriesController(appState) {
 
                 const videoEl = document.getElementById('story-candidate-video-player');
                 if (!videoEl) return;
+                const audioToggleBtn = document.getElementById('btn-story-video-audio-toggle');
+
+                if (audioToggleBtn) {
+                    const stopTapPropagation = (event) => event.stopPropagation();
+                    audioToggleBtn.addEventListener('pointerdown', stopTapPropagation);
+                    audioToggleBtn.addEventListener('touchstart', stopTapPropagation, { passive: true });
+                    audioToggleBtn.addEventListener('click', () => {
+                        videoEl.muted = !videoEl.muted;
+                        candidateVideoMutedPreference = Boolean(videoEl.muted);
+                        writeCandidateVideoMutedPreference(candidateVideoMutedPreference);
+                        syncCandidateVideoAudioToggleUI(videoEl);
+                    });
+                }
 
                 const tryAutoplay = () => {
-                    videoEl.muted = false;
+                    videoEl.muted = Boolean(candidateVideoMutedPreference);
+                    syncCandidateVideoAudioToggleUI(videoEl);
                     videoEl.volume = 1;
                     const playPromise = videoEl.play();
                     if (playPromise?.catch) {
@@ -321,6 +337,48 @@ export function createStoriesController(appState) {
             return new Set(parsed.map((id) => String(id || '').trim()).filter(Boolean));
         } catch {
             return new Set();
+        }
+    }
+
+    function readCandidateVideoMutedPreference() {
+        try {
+            return localStorage.getItem(EXPLORA_CANDIDATE_VIDEO_MUTED_STORAGE_KEY) === '1';
+        } catch {
+            return false;
+        }
+    }
+
+    function writeCandidateVideoMutedPreference(isMuted = false) {
+        try {
+            localStorage.setItem(EXPLORA_CANDIDATE_VIDEO_MUTED_STORAGE_KEY, isMuted ? '1' : '0');
+        } catch {
+            // Ignore storage failures.
+        }
+    }
+
+    function syncCandidateVideoAudioToggleUI(videoEl = null) {
+        const audioToggleBtn = document.getElementById('btn-story-video-audio-toggle');
+        if (!audioToggleBtn || !videoEl) return;
+        const muted = Boolean(videoEl.muted);
+        const icon = audioToggleBtn.querySelector('i');
+        audioToggleBtn.setAttribute('aria-pressed', muted ? 'true' : 'false');
+        audioToggleBtn.setAttribute('aria-label', muted ? 'Activar sonido' : 'Silenciar vídeo');
+        audioToggleBtn.title = muted ? 'Activar sonido' : 'Silenciar vídeo';
+        if (icon) {
+            icon.classList.toggle('fa-volume-high', !muted);
+            icon.classList.toggle('fa-volume-xmark', muted);
+        }
+    }
+
+    function resumeActiveVideoPlayback(videoEl = null) {
+        if (!videoEl) return;
+        videoEl.muted = Boolean(candidateVideoMutedPreference);
+        syncCandidateVideoAudioToggleUI(videoEl);
+        const playPromise = videoEl.play();
+        if (playPromise?.catch) {
+            playPromise.catch(() => {
+                // Ignore play errors if browser blocks resume.
+            });
         }
     }
 
@@ -1191,16 +1249,7 @@ export function createStoriesController(appState) {
             if (!exploraWasPausedByHold) return;
             exploraWasPausedByHold = false;
             resumePlayback();
-            const videoEl = getActiveVideoEl();
-            if (videoEl) {
-                videoEl.muted = false;
-                const playPromise = videoEl.play();
-                if (playPromise?.catch) {
-                    playPromise.catch(() => {
-                        // Ignore play errors if browser blocks resume.
-                    });
-                }
-            }
+            resumeActiveVideoPlayback(getActiveVideoEl());
         };
 
         storyCard.onpointerup = releaseHold;
@@ -1252,16 +1301,7 @@ export function createStoriesController(appState) {
             exploraTouchStart = null;
             exploraWasPausedByHold = false;
             resumePlayback();
-            const videoEl = getActiveVideoEl();
-            if (videoEl) {
-                videoEl.muted = false;
-                const playPromise = videoEl.play();
-                if (playPromise?.catch) {
-                    playPromise.catch(() => {
-                        // Ignore play errors if browser blocks resume.
-                    });
-                }
-            }
+            resumeActiveVideoPlayback(getActiveVideoEl());
         };
 
         storyCard.ontouchcancel = () => {
@@ -1269,17 +1309,16 @@ export function createStoriesController(appState) {
             if (!exploraWasPausedByHold) return;
             exploraWasPausedByHold = false;
             resumePlayback();
-            const videoEl = getActiveVideoEl();
-            if (videoEl) {
-                videoEl.muted = false;
-                const playPromise = videoEl.play();
-                if (playPromise?.catch) {
-                    playPromise.catch(() => {
-                        // Ignore play errors if browser blocks resume.
-                    });
-                }
-            }
+            resumeActiveVideoPlayback(getActiveVideoEl());
         };
+    }
+
+    function resetPlaybackInteractionState() {
+        exploraPlaybackElapsedMs = 0;
+        exploraIsPaused = false;
+        exploraWasPausedByHold = false;
+        document.body.classList.remove('explora-paused');
+        clearPlaybackTimers();
     }
 
     function clearPlaybackTimers() {
@@ -1363,11 +1402,7 @@ export function createStoriesController(appState) {
         const replayAnchorInterstitial = candidateVideoByAnchorIndex.get(appState.stories.currentIndex);
         if (!activeInterstitial?.id && replayAnchorInterstitial) {
             appState.stories.transitionDirection = 'next';
-            exploraPlaybackElapsedMs = 0;
-            exploraIsPaused = false;
-            exploraWasPausedByHold = false;
-            document.body.classList.remove('explora-paused');
-            clearPlaybackTimers();
+            resetPlaybackInteractionState();
             activeInterstitial = replayAnchorInterstitial;
             renderCurrentStoryCard();
             return;
@@ -1377,11 +1412,7 @@ export function createStoriesController(appState) {
             const nextInterstitial = getNextInterstitialToShow();
             if (nextInterstitial) {
                 appState.stories.transitionDirection = 'next';
-                exploraPlaybackElapsedMs = 0;
-                exploraIsPaused = false;
-                exploraWasPausedByHold = false;
-                document.body.classList.remove('explora-paused');
-                clearPlaybackTimers();
+                resetPlaybackInteractionState();
                 const definition = getInterstitialById(nextInterstitial.id);
                 activeInterstitial = nextInterstitial;
                 definition?.onShow?.(nextInterstitial.context || {});
@@ -1392,11 +1423,7 @@ export function createStoriesController(appState) {
             activeInterstitial = null;
         }
         appState.stories.transitionDirection = 'next';
-        exploraPlaybackElapsedMs = 0;
-        exploraIsPaused = false;
-        exploraWasPausedByHold = false;
-        document.body.classList.remove('explora-paused');
-        clearPlaybackTimers();
+        resetPlaybackInteractionState();
         appState.stories.currentIndex = (appState.stories.currentIndex + 1) % appState.stories.feed.length;
         renderCurrentStoryCard();
     }
@@ -1406,20 +1433,12 @@ export function createStoriesController(appState) {
         if (activeInterstitial?.id) {
             activeInterstitial = null;
             appState.stories.transitionDirection = 'prev';
-            exploraPlaybackElapsedMs = 0;
-            exploraIsPaused = false;
-            exploraWasPausedByHold = false;
-            document.body.classList.remove('explora-paused');
-            clearPlaybackTimers();
+            resetPlaybackInteractionState();
             renderCurrentStoryCard();
             return;
         }
         appState.stories.transitionDirection = 'prev';
-        exploraPlaybackElapsedMs = 0;
-        exploraIsPaused = false;
-        exploraWasPausedByHold = false;
-        document.body.classList.remove('explora-paused');
-        clearPlaybackTimers();
+        resetPlaybackInteractionState();
         const total = appState.stories.feed.length;
         appState.stories.currentIndex = (appState.stories.currentIndex - 1 + total) % total;
         const previousAnchorInterstitial = candidateVideoByAnchorIndex.get(appState.stories.currentIndex);
