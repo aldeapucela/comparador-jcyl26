@@ -870,7 +870,7 @@ body.explora-layout #explora-player .story-screen {
 }
 
 @media (min-width: 900px) {
-    body.explora-layout #explora-player {
+    body.explora-layout #explora-player:not(.hidden) {
         display: flex;
         justify-content: center;
         align-items: center;
