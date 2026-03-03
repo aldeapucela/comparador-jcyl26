@@ -79,14 +79,21 @@ async function loadAvailableZonesConfig() {
         const response = await fetch(withAppVersion('./data/zones.json'));
         if (!response.ok) throw new Error('Could not load zones config');
         const data = await response.json();
+
         const zones = Array.isArray(data?.zones)
             ? data.zones.map(normalizeZoneName).filter(Boolean)
             : [];
-        const safeZones = zones.length > 0 ? zones : [...FALLBACK_ZONES];
-        defaultZone = normalizeZoneName(data?.defaultZone) || safeZones[0] || DEFAULT_FALLBACK_ZONE;
-        if (!safeZones.includes(defaultZone)) {
-            defaultZone = safeZones[0] || DEFAULT_FALLBACK_ZONE;
-        }
+
+        const configuredDefault = normalizeZoneName(data?.defaultZone);
+        const nextDefault = configuredDefault || zones[0] || DEFAULT_FALLBACK_ZONE;
+        defaultZone = nextDefault;
+
+        const safeZones = Array.from(new Set([
+            ...zones,
+            nextDefault,
+            DEFAULT_FALLBACK_ZONE
+        ].filter(Boolean)));
+
         const afinidadRaw = Array.isArray(data?.afinidadAvailableZones)
             ? data.afinidadAvailableZones.map(normalizeZoneName).filter(Boolean)
             : [];
@@ -179,6 +186,10 @@ function getSavedZone() {
     } catch (error) {
         console.error('Error reading saved zone:', error);
     }
+    return null;
+}
+
+function getFallbackZone() {
     return availableZones.includes(defaultZone)
         ? defaultZone
         : (availableZones[0] || defaultZone);
@@ -190,6 +201,39 @@ function persistZone(zone) {
     } catch (error) {
         console.error('Error persisting selected zone:', error);
     }
+}
+
+
+function hideZoneOnboardingModal() {
+    const overlay = document.getElementById('zone-onboarding-modal');
+    if (!overlay) return;
+    overlay.classList.add('hidden');
+    overlay.setAttribute('aria-hidden', 'true');
+}
+
+function showZoneOnboardingModal() {
+    const overlay = document.getElementById('zone-onboarding-modal');
+    const optionsContainer = document.getElementById('zone-onboarding-options');
+    if (!overlay || !optionsContainer) return;
+
+    const sortedZones = availableZones
+        .slice()
+        .sort((a, b) => {
+            if (a === defaultZone) return -1;
+            if (b === defaultZone) return 1;
+            return a.localeCompare(b, 'es', { sensitivity: 'base' });
+        });
+
+    optionsContainer.innerHTML = sortedZones
+        .map((zoneName) => `
+            <button type="button" class="zone-onboarding-option" data-zone-onboarding-option="${zoneName}">
+                ${zoneName}
+            </button>
+        `)
+        .join('');
+
+    overlay.classList.remove('hidden');
+    overlay.setAttribute('aria-hidden', 'false');
 }
 
 function renderZoneSelector() {
@@ -241,9 +285,7 @@ function refreshAfinidadAvailabilityUI() {
 }
 
 function applyZoneSelection(zone, { persist = true } = {}) {
-    const fallbackZone = availableZones.includes(defaultZone)
-        ? defaultZone
-        : (availableZones[0] || defaultZone);
+    const fallbackZone = getFallbackZone();
     const nextZone = availableZones.includes(zone) ? zone : fallbackZone;
     appState.selectedZone = nextZone;
     if (persist) persistZone(nextZone);
@@ -851,8 +893,11 @@ async function init() {
     // Also pre-load afinidad data
     await initAfinidad();
 
-    applyZoneSelection(getSavedZone(), { persist: false });
+    const savedZone = getSavedZone();
+    const initialZone = savedZone || getFallbackZone();
+    applyZoneSelection(initialZone, { persist: false });
     renderZoneSelector();
+    if (!savedZone) showZoneOnboardingModal();
 
     UI.renderPartySelection();
     syncHomeSavedEntryVisibility();
@@ -874,6 +919,22 @@ function setupEventListeners() {
 
     const zoneSelect = document.getElementById('zone-select');
     if (zoneSelect) zoneSelect.addEventListener('change', onZoneChange);
+
+    const zoneOnboardingOptions = document.getElementById('zone-onboarding-options');
+    if (zoneOnboardingOptions) {
+        zoneOnboardingOptions.addEventListener('click', (event) => {
+            const zoneBtn = event.target.closest('[data-zone-onboarding-option]');
+            if (!zoneBtn) return;
+            const selectedZone = normalizeZoneName(zoneBtn.dataset.zoneOnboardingOption);
+            if (!selectedZone) return;
+            applyZoneSelection(selectedZone);
+            syncZoneSelectors();
+            UI.renderPartySelection();
+            syncHomeSavedEntryVisibility();
+            rerenderAfterZoneChange();
+            hideZoneOnboardingModal();
+        });
+    }
 
     const exploraZoneSelect = document.getElementById('explora-zone-select');
     if (exploraZoneSelect) exploraZoneSelect.addEventListener('change', onZoneChange);
