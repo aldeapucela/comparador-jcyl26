@@ -1534,6 +1534,29 @@ body.mobile-menu-open {
     z-index: 1;
 }
 
+.party-story-play-badge {
+    position: absolute;
+    right: -4px;
+    bottom: -2px;
+    width: 1.65rem;
+    height: 1.65rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #c9892f;
+    color: #fff;
+    border: 2px solid #fff;
+    z-index: 2;
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.38);
+    pointer-events: none;
+}
+
+.party-story-play-badge i {
+    font-size: 0.58rem;
+    transform: translateX(1px);
+}
+
 @keyframes storyRingGlow {
     0%, 100% {
         transform: scale(1);
@@ -1569,6 +1592,17 @@ body.mobile-menu-open {
     .story-ring-icon img {
         width: 1.5rem;
         height: 1.5rem;
+    }
+
+    .party-story-play-badge {
+        width: 1.5rem;
+        height: 1.5rem;
+        right: -3px;
+        bottom: -1px;
+    }
+
+    .party-story-play-badge i {
+        font-size: 0.52rem;
     }
 
     body.afinidad-layout main {

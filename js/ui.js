@@ -764,10 +764,20 @@ export const UI = {
         
         this.elements.partySlogan.textContent = metadata.lema ? `"${metadata.lema}"` : '';
 
-        this.elements.partyLogo.innerHTML = `<img src="${partyInfo.logo}" alt="Logo ${partyInfo.name}" class="w-full h-full object-contain p-2">`;
+        const storyBadgeHtml = showStoryRing
+            ? `
+                <span class="party-story-play-badge" aria-hidden="true">
+                    <i class="fa-solid fa-play"></i>
+                </span>
+            `
+            : '';
+        this.elements.partyLogo.innerHTML = `
+            <img src="${partyInfo.logo}" alt="Logo ${partyInfo.name}" class="w-full h-full object-contain p-2">
+            ${storyBadgeHtml}
+        `;
         this.elements.partyLogo.style.backgroundColor = showStoryRing ? 'transparent' : 'white';
         this.elements.partyLogo.style.border = showStoryRing ? 'none' : `2px solid ${partyColor}20`;
-        this.elements.partyLogo.classList.add('overflow-hidden');
+        this.elements.partyLogo.style.overflow = showStoryRing ? 'visible' : 'hidden';
         this.elements.partyLogo.classList.toggle('party-story-ring', showStoryRing);
 
         this.elements.partyLogo.onclick = null;

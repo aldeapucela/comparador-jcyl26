@@ -414,6 +414,42 @@ body.explora-paused .story-progress-fill {
     background: #020617;
 }
 
+.story-video-loading {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    color: rgba(255, 255, 255, 0.96);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    background: linear-gradient(180deg, rgba(2, 6, 23, 0.35), rgba(2, 6, 23, 0.55));
+    transition: opacity 0.25s ease;
+}
+
+.story-video-loading.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.story-video-loading-spinner {
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 999px;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-top-color: rgba(255, 255, 255, 0.95);
+    animation: storyVideoSpin 0.9s linear infinite;
+}
+
+@keyframes storyVideoSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .story-screen--party-video .story-top,
 .story-screen--party-video .story-body,
 .story-screen--party-video .story-actions {
