@@ -60,7 +60,7 @@
                         </li>
                         <li class="flex items-start">
                             <i class="fa-solid fa-3 text-indigo-400 mt-1 mr-3"></i>
-                            <span><strong>Cobertura del programa:</strong> Si un partido no se posiciona en una pregunta, esa pregunta no suma ni resta afinidad para ese partido y se refleja aparte como cobertura.</span>
+                            <span><strong>Cobertura del programa:</strong> Si un partido no se posiciona en una pregunta, esa pregunta no suma ni resta distancia, pero su cobertura ajusta la afinidad final para evitar sobre-premiar el silencio.</span>
                         </li>
                     </ul>
                     <p class="mt-4 font-medium text-indigo-800">Es 100% neutral y anónimo. Puedes pulsar en "Saber más" en cada pregunta para leer el contexto.</p>
@@ -125,7 +125,7 @@
                                 Silencios y cobertura
                             </h4>
                             <p class="text-slate-700 text-sm">
-                                Cuando un partido no tiene postura en una pregunta (<strong>N/A</strong>), esa pregunta se excluye del cálculo para ese partido: no suma distancia ni distancia máxima posible. Por transparencia, mostramos ese dato aparte como cobertura del programa.
+                                Cuando un partido no tiene postura en una pregunta (<strong>N/A</strong>), esa pregunta se excluye del cálculo para ese partido: no suma distancia ni distancia máxima posible. Después aplicamos un ajuste por cobertura para que los silencios programáticos reduzcan proporcionalmente la afinidad final.
                             </p>
                         </div>
                         
@@ -147,10 +147,26 @@
                             <p>1. <strong>Distancia Normal:</strong> | Respuesta Usuario - Respuesta Partido | × Peso</p>
                             <p>2. <strong>Si el partido es N/A:</strong> la pregunta no computa en afinidad</p>
                             <hr class="my-3 border-slate-200">
-                            <p class="text-indigo-700 font-bold">Afinidad (%) = [ 1 - ( ∑ Distancias / ∑ Distancia Máxima de preguntas con postura ) ] × 100</p>
+                            <p><strong>3. Afinidad Bruta:</strong> [ 1 - ( ∑ Distancias / ∑ Distancia Máxima de preguntas con postura ) ] × 100</p>
+                            <p><strong>4. Cobertura:</strong> Preguntas con postura / Total de preguntas contestadas</p>
+                            <p class="text-indigo-700 font-bold">Afinidad Final (%) = Afinidad_Bruta × (1 - (0.5 × (1 - Cobertura)))</p>
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <section class="bg-white rounded-xl border border-slate-200 p-8">
+                <h2 class="text-xl font-semibold text-slate-800 mb-4 flex items-center">
+                    <i class="fa-solid fa-balance-scale text-indigo-600 mr-3"></i>
+                    Equilibrio por Representatividad Programática
+                </h2>
+                <p class="text-slate-700 leading-relaxed">
+                    El sistema aplica un factor corrector para evitar que partidos que no se posicionan en temas clave aparezcan como mejores matches que partidos con programas completos.
+                    Esta penalización es proporcional al nivel de cobertura y garantiza que el resultado de <strong>Match</strong> refleje un compromiso real en el conjunto de áreas competenciales de la Junta.
+                </p>
+                <p class="text-slate-700 leading-relaxed mt-3">
+                    Importante: los valores <strong>N/A</strong> no se convierten en <strong>0</strong> ideológico. Se mantienen como ausencia de datos, y su efecto se incorpora únicamente mediante el multiplicador de cobertura.
+                </p>
             </section>
             <!-- Tabla de calibracion por pregunta -->
             <section class="bg-white rounded-xl border border-slate-200 p-8">

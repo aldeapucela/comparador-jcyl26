@@ -328,6 +328,9 @@ const LOGO_SCALE_BY_PARTY = {
     'podemos': 0.66
 };
 
+const COVERAGE_PENALTY_WEIGHT = 0.5;
+const LOW_COVERAGE_THRESHOLD = 40;
+
 function getWinnerLogoScale(partyId) {
     if (!partyId) return 0.74;
     return LOGO_SCALE_BY_PARTY[partyId] || 0.74;
@@ -401,8 +404,11 @@ function calculateAffinity() {
             }
         }
         
-        const affinity = partyMaxPossibleDistance > 0 ? Math.round((1 - totalDistance / partyMaxPossibleDistance) * 100) : 0;
-        const coverage = totalAnsweredCount > 0 ? Math.round((coveredCount / totalAnsweredCount) * 100) : 0;
+        const coverageRatio = totalAnsweredCount > 0 ? (coveredCount / totalAnsweredCount) : 0;
+        const affinityRaw = partyMaxPossibleDistance > 0 ? ((1 - totalDistance / partyMaxPossibleDistance) * 100) : 0;
+        const affinityPenaltyFactor = 1 - (COVERAGE_PENALTY_WEIGHT * (1 - coverageRatio));
+        const affinity = Math.round(affinityRaw * affinityPenaltyFactor);
+        const coverage = Math.round(coverageRatio * 100);
         
         const categoryAffinities = {};
         for (const [cat, data] of Object.entries(categoryDistances)) {
@@ -416,6 +422,8 @@ function calculateAffinity() {
         
         results[partyId] = {
             affinity: Math.max(0, affinity),
+            affinityRaw: Math.max(0, Math.round(affinityRaw)),
+            affinityPenaltyFactor,
             categoryAffinities,
             totalDistance,
             coverage,
@@ -530,6 +538,7 @@ export function renderResults(results) {
         const coverage = typeof data.coverage === 'number' ? data.coverage : 0;
         const coveredCount = typeof data.coveredCount === 'number' ? data.coveredCount : 0;
         const totalAnsweredCount = typeof data.totalAnsweredCount === 'number' ? data.totalAnsweredCount : 0;
+        const hasLimitedProgram = coverage < LOW_COVERAGE_THRESHOLD;
         
         const acuerdos = [], desacuerdos = [], silencios = [];
         
@@ -577,6 +586,12 @@ export function renderResults(results) {
                         <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
                             <p class="font-bold text-slate-700 leading-tight">Cobertura del programa</p>
                             <p class="text-slate-500 mt-1 text-xs">Este partido se moja en <strong>${coverage}%</strong> de los temas del cuestionario que has contestado (${coveredCount}/${totalAnsweredCount}).</p>
+                            ${hasLimitedProgram ? `
+                                <p class="mt-2 inline-flex items-center gap-2 rounded-lg border border-amber-300 bg-amber-50 px-2 py-1 text-[11px] font-semibold text-amber-800">
+                                    <i class="fa-solid fa-triangle-exclamation"></i>
+                                    Programa Limitado: Este partido no se posiciona en la mayoría de temas del test
+                                </p>
+                            ` : ''}
                             <a
                                 href="#/${partyId}"
                                 class="inline-flex items-center gap-2 mt-3 text-xs font-semibold text-indigo-700 hover:text-indigo-800"

@@ -8,7 +8,7 @@ Es una "brújula electoral" diseñada para ayudarte a saber qué partido políti
 **¿Cómo funciona?**
 1. **Tú opinas:** Te haremos 22 preguntas sobre temas que afectan a nuestra tierra (médicos en los pueblos, impuestos, macrogranjas...). 
 2. **Nosotros comparamos:** El sistema cruza tus respuestas con las propuestas exactas de cada partido.
-3. **Cobertura del programa:** Si un partido no se posiciona en una pregunta, esa pregunta no suma ni resta afinidad para ese partido. Mostramos ese dato aparte como "cobertura".
+3. **Cobertura del programa:** Si un partido no se posiciona en una pregunta, esa pregunta no suma ni resta distancia para ese partido, pero la cobertura sí corrige su afinidad final.
 4. **Tu resultado:** Al final, verás un porcentaje (ej: "Eres un 85% afín al Partido X"). 
 
 **¿Es neutral?**
@@ -47,10 +47,19 @@ Si el partido no tiene postura en una pregunta (`N/A`), esa pregunta se excluye 
 #### C. Factor de importancia (el multiplicador)
 Si el usuario marca una pregunta como "Este tema me importa mucho", la distancia resultante **se multiplica por 2**.
 
-#### D. Normalización (el porcentaje final)
-La afinidad final se obtiene restando la suma de distancias respecto a la distancia máxima de las preguntas en las que el partido sí tiene postura:
+#### D. Normalización (afinidad bruta)
+Primero se obtiene una afinidad bruta restando la suma de distancias respecto a la distancia máxima de las preguntas en las que el partido sí tiene postura:
 
-`Afinidad % = [ 1 - ( ∑ Distancias / Distancia Máxima Posible ) ] × 100`
+`Afinidad_Bruta % = [ 1 - ( ∑ Distancias / Distancia Máxima Posible ) ] × 100`
+
+#### E. Equilibrio por Representatividad Programática
+Para evitar que partidos con muchos silencios programáticos aparezcan artificialmente como mejores matches, se aplica una penalización por completitud basada en estándares VAA:
+
+*   `Cobertura = Preguntas con postura / Total de preguntas contestadas por el usuario`
+*   `W (Penalty Weight) = 0.5`
+*   `Afinidad_Final = Afinidad_Bruta × (1 - (W × (1 - Cobertura)))`
+
+Así, los `null` **no se tratan como 0 ideológico**: siguen siendo ausencia de dato. El ajuste actúa únicamente como factor corrector proporcional al silencio programático para que el match refleje un compromiso real en todas las áreas competenciales de la Junta.
 
 ### 3. Transparencia y trazabilidad de datos
 La base de datos se alimenta de extracciones estructuradas en formato JSON directamente desde los PDFs oficiales. Todo el código, la lógica de cálculo y la atribución de `scores` se realiza en el navegador del usuario (Client-side), garantizando un **anonimato total** y permitiendo la auditoría pública (Open Source) del proceso.
