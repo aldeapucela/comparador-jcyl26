@@ -76,8 +76,8 @@
       "id": 4,
       "categoria": "Reto Demográfico y Despoblación",
       "subcategoria": "Agencia Rural",
-      "titulo_corto": "Crear una agencia independiente (modelo highlands) con 60 M€",
-      "resumen": "Impulsa para ejecutar proyectos de repoblación, emprendimiento, servicios y red de técnicos/agentes comarcales.",
+      "titulo_corto": "Crear una agencia independiente con 60 M€",
+      "resumen": "Impulsar una Agencia de Desarrollo del Mundo Rural para ejecutar proyectos de repoblación, emprendimiento y servicios.",
       "cita_literal": "Crear una Agencia independiente (modelo Highlands) con 60 M€ para ejecutar proyectos de repoblación, emprendimiento, servicios y red de técnicos/agentes comarcales.",
       "pagina": 4,
       "tags": [
@@ -89,7 +89,7 @@
         "competencia": "Directa",
         "foco_rural": true
       },
-      "pregunta_afinidad": "¿Está de acuerdo con Impulsa para ejecutar proyectos de repoblación, emprendimiento, servicios y red de técnicos/agentes comarcales?"
+      "pregunta_afinidad": "¿Está de acuerdo con crear un organismo independiente dotado de 60 millones de euros para gestionar la repoblación de los pueblos?"
     },
     {
       "id": 5,
@@ -171,22 +171,22 @@
     {
       "id": 9,
       "categoria": "Conectividad y Movilidad",
-      "subcategoria": "Conectividad y Transporte",
-      "titulo_corto": "Autobús a la demanda con frecuencias útiles para estudiar, trabajar",
-      "resumen": "Y refuerzo del transporte del alfoz con Valladolid.",
+      "subcategoria": "Transporte Público",
+      "titulo_corto": "Autobús a la demanda con frecuencias útiles",
+      "resumen": "Garantizar horarios de autobús útiles para estudiar o trabajar y reforzar el transporte entre el alfoz y Valladolid capital.",
       "cita_literal": "Autobús a la demanda con frecuencias útiles para estudiar, trabajar y vida social; y refuerzo del transporte del alfoz con Valladolid.",
       "pagina": 4,
       "tags": [
         "#Movilidad",
         "#TransportePublico",
         "#TransporteADemanda",
-        "#Digitalizacion"
+        "#MedioRural"
       ],
       "analisis": {
         "competencia": "Shared",
         "foco_rural": true
       },
-      "pregunta_afinidad": "¿Está de acuerdo con Y refuerzo del transporte del alfoz con Valladolid?"
+      "pregunta_afinidad": "¿Está de acuerdo con garantizar autobuses a la demanda con horarios realmente útiles para ir a trabajar o estudiar?"
     },
     {
       "id": 10,
@@ -244,7 +244,7 @@
         "competencia": "Directa",
         "foco_rural": true
       },
-      "pregunta_afinidad": "¿Está de acuerdo con Especialización e incentivos para cubrir zonas dispersas?"
+      "pregunta_afinidad": "¿Apoya ofrecer incentivos económicos y especialización a los sanitarios para que cubran las zonas más despobladas?"
     },
     {
       "id": 13,
@@ -388,21 +388,21 @@
       "id": 20,
       "categoria": "Servicios Sociales y Cuidados",
       "subcategoria": "Cuidados y Dependencia",
-      "titulo_corto": "Reducir listas de espera de dependencia, reforzar ayuda a domicilio",
-      "resumen": "Incluye y centros de día comarcales y de barrio.",
+      "titulo_corto": "Reducción de listas de espera en dependencia",
+      "resumen": "Reforzar la ayuda a domicilio y crear nuevos centros de día comarcales y de barrio para agilizar la atención.",
       "cita_literal": "Reducir listas de espera de dependencia, reforzar ayuda a domicilio y centros de día comarcales y de barrio.",
       "pagina": 5,
       "tags": [
         "#ServiciosSociales",
         "#Cuidados",
         "#Dependencia",
-        "#MedioRural"
+        "#Mayores"
       ],
       "analisis": {
         "competencia": "Directa",
         "foco_rural": true
       },
-      "pregunta_afinidad": "¿Está de acuerdo con Incluye y centros de día comarcales y de barrio?"
+      "pregunta_afinidad": "¿Apoya la apertura de pequeños centros de día en comarcas y barrios para reducir las listas de espera de la dependencia?"
     },
     {
       "id": 21,
@@ -543,57 +543,61 @@
       "id": 28,
       "categoria": "Economía, Empleo y Fiscalidad",
       "subcategoria": "Industria y Empleo",
-      "titulo_corto": "Logística y parques logísticos; extensión del modelo “parque científico”",
-      "resumen": "Extensión del modelo “parque científico” al alfoz y cabeceras de comarca.",
+      "titulo_corto": "Extensión del modelo de parque científico",
+      "resumen": "Impulsar la logística y llevar el modelo de parques científicos tecnológicos al alfoz y a las cabeceras de comarca.",
       "cita_literal": "Logística y parques logísticos; extensión del modelo “parque científico” al alfoz y cabeceras de comarca.",
       "pagina": 6,
       "tags": [
         "#Empleo",
-        "#Industria"
+        "#Industria",
+        "#Innovacion",
+        "#MedioRural"
       ],
       "analisis": {
         "competencia": "Shared",
-        "foco_rural": false
+        "foco_rural": true
       },
-      "pregunta_afinidad": "¿Está de acuerdo con Extensión del modelo “parque científico” al alfoz y cabeceras de comarca?"
+      "pregunta_afinidad": "¿Le parece bien construir parques científicos y tecnológicos en las cabeceras de comarca de los pueblos?"
     },
     {
       "id": 29,
       "categoria": "Economía, Empleo y Fiscalidad",
-      "subcategoria": "Industria y Empleo",
-      "titulo_corto": "Teletrabajo (fiscalidad + coworking), turismo de estancias largas y enseñanza",
-      "resumen": "Impulsa del castellano como industria ligada al territorio.",
+      "subcategoria": "Nuevos motores económicos",
+      "titulo_corto": "Atracción de teletrabajo y enseñanza del español",
+      "resumen": "Fomentar el teletrabajo rural mediante fiscalidad y coworking, impulsar el turismo de estancias largas y la industria del castellano.",
       "cita_literal": "Teletrabajo (fiscalidad + coworking), turismo de estancias largas y enseñanza del castellano como industria ligada al territorio.",
       "pagina": 6,
       "tags": [
         "#Empleo",
-        "#Fiscalidad",
-        "#Industria"
+        "#Teletrabajo",
+        "#Cultura",
+        "#Turismo"
       ],
       "analisis": {
         "competencia": "Shared",
         "foco_rural": false
       },
-      "pregunta_afinidad": "¿Está de acuerdo con Impulsa del castellano como industria ligada al territorio?"
+      "pregunta_afinidad": "¿Apoya dar incentivos fiscales y crear centros de coworking para atraer a teletrabajadores a nuestra región?"
     },
     {
       "id": 30,
       "categoria": "Sector Primario (Agricultura y Ganadería)",
       "subcategoria": "Campo y Soberanía Alimentaria",
-      "titulo_corto": "Mesa de negociación agroganadera para fijar precios mínimos en origen",
-      "resumen": "Incluye por encima de costes (complemento a la Cadena Alimentaria).",
+      "titulo_corto": "Mesa agroganadera para fijar precios mínimos",
+      "resumen": "Crear un espacio de negociación para asegurar que los precios pagados en origen cubran los costes de producción.",
       "cita_literal": "Mesa de Negociación Agroganadera para fijar precios mínimos en origen por encima de costes (complemento a la Cadena Alimentaria).",
       "pagina": 6,
       "tags": [
         "#MedioRural",
         "#SectorPrimario",
+        "#Agricultura",
         "#Ganaderia"
       ],
       "analisis": {
         "competencia": "Shared",
         "foco_rural": true
       },
-      "pregunta_afinidad": "¿Está de acuerdo con Incluye por encima de costes (complemento a la Cadena Alimentaria)?"
+      "pregunta_afinidad": "¿Cree que la Junta debe intervenir para obligar a que se fijen precios mínimos que cubran los costes de los agricultores?"
     },
     {
       "id": 31,
@@ -696,21 +700,21 @@
       "id": 36,
       "categoria": "Educación y Futuro",
       "subcategoria": "Educación y Protección de la Infancia",
-      "titulo_corto": "FP rural a medida en cabeceras de comarca, reduciendo ratios",
-      "resumen": "Propone cuando haga falta y con transporte gratuito en educación no obligatoria/FP.",
-      "cita_literal": "FP rural a medida en cabeceras de comarca, reduciendo ratios cuando haga falta y con transporte gratuito en educación no obligatoria/FP .",
+      "titulo_corto": "FP rural a medida en cabeceras de comarca",
+      "resumen": "Adaptar la FP reduciendo el número mínimo de alumnos por clase y garantizando transporte gratuito en la educación no obligatoria.",
+      "cita_literal": "FP rural a medida en cabeceras de comarca, reduciendo ratios cuando haga falta y con transporte gratuito en educación no obligatoria/FP.",
       "pagina": 6,
       "tags": [
         "#Educacion",
-        "#FormacionProfesional",
+        "#FP",
         "#MedioRural",
-        "#FP"
+        "#Transporte"
       ],
       "analisis": {
         "competencia": "Directa",
-        "foco_rural": false
+        "foco_rural": true
       },
-      "pregunta_afinidad": "¿Está de acuerdo con Propone cuando haga falta y con transporte gratuito en educación no obligatoria/FP?"
+      "pregunta_afinidad": "¿Está de acuerdo con mantener clases de FP en pueblos aunque haya muy pocos alumnos y pagarles el transporte gratis?"
     },
     {
       "id": 37,
@@ -753,19 +757,20 @@
       "id": 39,
       "categoria": "Educación y Futuro",
       "subcategoria": "Educación y Protección de la Infancia",
-      "titulo_corto": "Educación infantil segura (0 –6)",
-      "resumen": "Coordinación de bienestar y protocolos en centros.",
-      "cita_literal": "Educación infantil segura (0 –6): coordinación de bienestar y protocolos en centros.",
+      "titulo_corto": "Entornos seguros en Educación Infantil (0-6 años)",
+      "resumen": "Asegurar que los centros educativos cuenten con un referente de bienestar y protocolos específicos de seguridad y prevención.",
+      "cita_literal": "Educación infantil segura (0–6): coordinación de bienestar y protocolos en centros.",
       "pagina": 7,
       "tags": [
         "#Educacion",
-        "#Formacion"
+        "#Infancia",
+        "#Prevencion"
       ],
       "analisis": {
         "competencia": "Directa",
         "foco_rural": false
       },
-      "pregunta_afinidad": "¿Está de acuerdo con Coordinación de bienestar y protocolos en centros?"
+      "pregunta_afinidad": "¿Apoya implantar protocolos de bienestar y seguridad infantil estrictos en todas las guarderías y colegios de 0 a 6 años?"
     },
     {
       "id": 40,
@@ -789,19 +794,21 @@
       "id": 41,
       "categoria": "Educación y Futuro",
       "subcategoria": "Educación y Protección de la Infancia",
-      "titulo_corto": "Refuerzo de 0-3 y conciliación en Valladolid",
-      "resumen": "Refuerzo de 0 –3 y conciliación donde haya más demanda.",
-      "cita_literal": "En Valladolid capital: refuerzo de 0 –3 y conciliación donde haya más demanda.",
+      "titulo_corto": "Refuerzo de plazas 0-3 y conciliación urbana",
+      "resumen": "Ampliar los recursos y plazas para educación infantil y conciliación en los barrios de Valladolid con mayor demanda ciudadana.",
+      "cita_literal": "En Valladolid capital: refuerzo de 0–3 y conciliación donde haya más demanda.",
       "pagina": 7,
       "tags": [
         "#Educacion",
-        "#Valladolid"
+        "#Conciliacion",
+        "#Valladolid",
+        "#Infancia"
       ],
       "analisis": {
         "competencia": "Directa",
         "foco_rural": false
       },
-      "pregunta_afinidad": "¿Está de acuerdo con Refuerzo de 0 –3 y conciliación donde haya más demanda?"
+      "pregunta_afinidad": "¿Considera prioritario abrir más plazas públicas de guardería (0-3 años) en los barrios urbanos que están saturados?"
     },
     {
       "id": 42,
@@ -827,21 +834,21 @@
       "id": 43,
       "categoria": "Vivienda",
       "subcategoria": "Vivienda y Rehabilitación",
-      "titulo_corto": "Parques públicos de vivienda (alquiler y opción a compra), apoyo",
-      "resumen": "Y rehabilitación de barrios en Valladolid (accesibilidad, eficiencia, ascensores).",
+      "titulo_corto": "Parques públicos de vivienda y rehabilitación",
+      "resumen": "Crear parque de vivienda pública de alquiler con opción a compra y promover la rehabilitación energética y de ascensores en barrios.",
       "cita_literal": "Parques públicos de vivienda (alquiler y opción a compra), apoyo a adquisición de solares y colaboración con SOMACYL donde proceda; y rehabilitación de barrios en Valladolid (accesibilidad, eficiencia, ascensores).",
       "pagina": 7,
       "tags": [
         "#Vivienda",
         "#Alquiler",
-        "#ViviendaAsequible",
-        "#Rehabilitacion"
+        "#Rehabilitacion",
+        "#ViviendaAsequible"
       ],
       "analisis": {
         "competencia": "Directa",
-        "foco_rural": true
+        "foco_rural": false
       },
-      "pregunta_afinidad": "¿Está de acuerdo con Y rehabilitación de barrios en Valladolid (accesibilidad, eficiencia, ascensores)?"
+      "pregunta_afinidad": "¿Está de acuerdo con construir parques públicos de vivienda destinados al alquiler con opción a compra para las familias?"
     },
     {
       "id": 44,
