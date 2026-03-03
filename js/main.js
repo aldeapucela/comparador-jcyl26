@@ -127,6 +127,9 @@ function buildSearchHash(term, partyIds = []) {
     return `${base}?${params.toString()}`;
 }
 
+// Make buildSearchHash available globally for UI module
+window.buildSearchHash = buildSearchHash;
+
 function parseSearchRouteFromHash(hash) {
     const raw = hash.startsWith('#/') ? hash.slice(2) : hash.replace(/^#/, '');
     const [pathPart = '', queryPart = ''] = raw.split('?');

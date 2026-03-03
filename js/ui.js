@@ -628,10 +628,16 @@ export const UI = {
             .filter((party) => this.lastSearchPartyIds.includes(party.id))
             .map((party) => party.name);
 
-        const baseUrl = `${window.location.origin}${window.location.pathname}#/s/${encodeURIComponent(term)}`;
-        const url = `${baseUrl}?utm_source=share`;
+        const searchHash = buildSearchHash(term, this.lastSearchPartyIds);
+        const [pathWithoutQuery, existingQuery] = searchHash.split('?');
+        
+        // Combinar parámetros existentes con utm_source
+        const params = new URLSearchParams(existingQuery || '');
+        params.set('utm_source', 'share');
+        
+        const finalUrl = `${window.location.origin}${window.location.pathname}${pathWithoutQuery}?${params.toString()}`;
         const scopeText = selectedNames.length > 0 ? ` (${selectedNames.join(', ')})` : '';
-        const shareText = `Qué dicen sobre "${term}"${scopeText} en las elecciones a las Cortes de CyL 2026:\n\n${url}`;
+        const shareText = `Qué dicen sobre "${term}"${scopeText} en las elecciones a las Cortes de CyL 2026:\n\n${finalUrl}`;
         const fullMessage = shareText;
 
         if (navigator.share) {
@@ -639,7 +645,7 @@ export const UI = {
                 await navigator.share({
                     title: `Búsqueda: ${term} | CyL 2026`,
                     text: shareText,
-                    url
+                    url: finalUrl
                 });
                 this.trackShareEvent('web', 'busqueda', 'web_share');
             } catch (err) {
