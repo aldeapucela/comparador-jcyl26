@@ -211,7 +211,7 @@ function refreshZoneLabel() {
     const zone = appState.selectedZone || defaultZone || DEFAULT_FALLBACK_ZONE;
     const disclaimer = document.getElementById('home-zone-disclaimer');
     if (disclaimer) {
-        disclaimer.textContent = `Información basada en las principales formaciones que se presentan por la zona de ${zone} y que han publicado oficialmente un programa electoral.`;
+        disclaimer.textContent = `Información basada en las principales formaciones que se presentan por ${zone} y que han publicado oficialmente un programa electoral.`;
     }
 }
 
