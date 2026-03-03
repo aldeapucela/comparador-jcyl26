@@ -34,6 +34,7 @@ export function createStoriesController(appState) {
     const interstitialShownInSession = new Set();
     const partyVideoShownInSession = new Set();
     const candidateVideoByAnchorIndex = new Map();
+    const warmedCandidateVideoPaths = new Set();
     let candidateVideoMutedPreference = readCandidateVideoMutedPreference();
     const escapeHtml = (value = '') => String(value)
         .replace(/&/g, '&amp;')
@@ -119,6 +120,11 @@ export function createStoriesController(appState) {
                 const videoEl = document.getElementById('story-candidate-video-player');
                 if (!videoEl) return;
                 const audioToggleBtn = document.getElementById('btn-story-video-audio-toggle');
+                const loadingEl = document.getElementById('story-candidate-video-loading');
+                const showVideoLoading = () => loadingEl?.classList.remove('is-hidden');
+                const hideVideoLoading = () => loadingEl?.classList.add('is-hidden');
+
+                showVideoLoading();
 
                 if (audioToggleBtn) {
                     const stopTapPropagation = (event) => event.stopPropagation();
@@ -152,6 +158,12 @@ export function createStoriesController(appState) {
                         scheduleAutoAdvance();
                     }
                 });
+                videoEl.addEventListener('loadeddata', hideVideoLoading);
+                videoEl.addEventListener('canplay', hideVideoLoading);
+                videoEl.addEventListener('playing', hideVideoLoading);
+                videoEl.addEventListener('waiting', showVideoLoading);
+                videoEl.addEventListener('stalled', showVideoLoading);
+                videoEl.addEventListener('error', showVideoLoading);
 
                 videoEl.addEventListener('ended', () => {
                     clearActiveInterstitialAndContinue();
@@ -469,6 +481,34 @@ export function createStoriesController(appState) {
         if (!activeInterstitial) return;
         activeInterstitial = null;
         moveToNextStory();
+    }
+
+    function warmCandidateVideo(videoPath = '') {
+        const path = String(videoPath || '').trim();
+        if (!path || warmedCandidateVideoPaths.has(path)) return;
+        warmedCandidateVideoPaths.add(path);
+
+        try {
+            const preloadLink = document.createElement('link');
+            preloadLink.rel = 'preload';
+            preloadLink.as = 'video';
+            preloadLink.href = path;
+            preloadLink.crossOrigin = 'anonymous';
+            document.head.appendChild(preloadLink);
+        } catch {
+            // Ignore preload link failures.
+        }
+
+        try {
+            const warmupVideo = document.createElement('video');
+            warmupVideo.preload = 'auto';
+            warmupVideo.muted = true;
+            warmupVideo.playsInline = true;
+            warmupVideo.src = path;
+            warmupVideo.load();
+        } catch {
+            // Ignore warmup failures.
+        }
     }
 
     async function shareCurrentWebsite(btn) {
@@ -1043,6 +1083,7 @@ export function createStoriesController(appState) {
         }
 
         const story = appState.stories.feed[appState.stories.currentIndex % appState.stories.feed.length];
+        warmCandidateVideo(story?.party?.storyVideo?.path);
         markStoryAsSeen(story);
         incrementViewedStoriesCount();
         appState.stories.currentStory = story;

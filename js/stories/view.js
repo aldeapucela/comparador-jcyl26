@@ -225,6 +225,9 @@ function renderCandidateVideoCard(container, data = {}) {
     const logoWrapClass = (needsLightLogoAvatar(party.logo) || forceLightBgLogo)
         ? 'story-party-logo-wrap is-light-bg'
         : 'story-party-logo-wrap';
+    const candidateLabel = String(party?.candidateName || '').trim()
+        ? `${String(party.candidateName).trim()} (candidato)`
+        : '';
 
     container.innerHTML = `
         <article class="story-screen story-screen--engagement story-screen--party-video ${transitionClass}" style="--party-color: ${escapeHtml(party.color || '#334155')}; --story-accent: ${escapeHtml(party.color || '#334155')};">
@@ -237,6 +240,10 @@ function renderCandidateVideoCard(container, data = {}) {
                 webkit-playsinline
                 preload="auto"
                 aria-label="Vídeo del candidato de ${escapeHtml(party.name)}"></video>
+            <div id="story-candidate-video-loading" class="story-video-loading" role="status" aria-live="polite">
+                <span class="story-video-loading-spinner" aria-hidden="true"></span>
+                <span>Cargando vídeo…</span>
+            </div>
             <div class="story-screen-overlay"></div>
             <header class="story-top">
                 <div class="story-progress-track" aria-hidden="true">
@@ -261,7 +268,7 @@ function renderCandidateVideoCard(container, data = {}) {
                     </button>
                     <button type="button" class="story-party-text-link btn-story-party" data-party="${escapeHtml(party.id)}" aria-label="Ir al programa de ${escapeHtml(party.name)}">
                         <p class="story-party-name">${escapeHtml(party.name)}</p>
-                        <p class="story-party-mode">Candidato</p>
+                        ${candidateLabel ? `<p class="story-party-mode">${escapeHtml(candidateLabel)}</p>` : ''}
                     </button>
                 </div>
             </header>

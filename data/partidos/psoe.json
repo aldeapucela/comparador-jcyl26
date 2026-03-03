@@ -10,7 +10,11 @@
     "color": "#e30613",
     "lema": "Castilla y León: cambiar el modelo para activar su futuro",
     "anio": 2026,
-    "logo": "img/psoe.png"
+    "logo": "img/psoe.png",
+    "story_video": {
+      "enabled": true,
+      "path": "video/psoe.mp4"
+    }
   },
   "propuestas": [
     {
