@@ -203,11 +203,16 @@ function renderZoneSelector() {
     if (headerSelect) headerSelect.innerHTML = zoneOptionsHtml;
     if (exploraSelect) exploraSelect.innerHTML = zoneOptionsHtml;
     syncZoneSelectors();
+    refreshZoneLabel();
     syncExploraZoneSelectWidth();
 }
 
 function refreshZoneLabel() {
-    // Zone is communicated through the selector value in the header.
+    const zone = appState.selectedZone || defaultZone || DEFAULT_FALLBACK_ZONE;
+    const disclaimer = document.getElementById('home-zone-disclaimer');
+    if (disclaimer) {
+        disclaimer.textContent = `Información basada en las principales formaciones que se presentan por la zona de ${zone} y que han publicado oficialmente un programa electoral.`;
+    }
 }
 
 function refreshAfinidadAvailabilityUI() {

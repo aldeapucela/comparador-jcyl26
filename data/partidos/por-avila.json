@@ -1,0 +1,191 @@
+{
+  "bloque_informacion": {
+    "rango_paginas": "Completo",
+    "estado": "finalizado"
+  },
+  "metadatos": {
+    "partido": "Por Ávila",
+    "candidato": "Pedro Pascual",
+    "foto_candidato": "img/candidatos/pedro-pascual.jpg",
+    "color": "#f7d70e",
+    "lema": "",
+    "anio": 2026,
+    "logo": "img/por-avila.png",
+    "zonas": [
+      "Ávila"
+    ]
+  },
+  "propuestas": [
+    {
+      "id": 1,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Especialidades y Servicios",
+      "titulo_corto": "Incremento de especialidades médicas y servicios sanitarios en Ávila",
+      "resumen": "Garantizar una sanidad pública de calidad aumentando el catálogo de especialidades médicas y los servicios prestados en toda la provincia.",
+      "cita_literal": "Por una sanidad pública digna y de calidad para todos, con más especialidades y servicios en la provincia.",
+      "pagina": 2,
+      "tags": [
+        "#SanidadPública",
+        "#Especialidades",
+        "#Ávila"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Crees que Ávila necesita aumentar el número de especialidades médicas disponibles en sus centros sanitarios?"
+    },
+    {
+      "id": 2,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Recursos Educativos",
+      "titulo_corto": "Mejora de la oferta educativa con más medios humanos",
+      "resumen": "Aumento de la inversión en educación para dotar a los centros de mayores recursos materiales y personal docente, ampliando la oferta académica.",
+      "cita_literal": "Por una educación de calidad con más medios humanos y materiales y con mayor oferta para los estudiantes.",
+      "pagina": 2,
+      "tags": [
+        "#Educación",
+        "#Docentes",
+        "#Ávila"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyas aumentar la inversión en personal y medios materiales para los centros educativos de la provincia?"
+    },
+    {
+      "id": 3,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Transporte e Infraestructuras",
+      "titulo_corto": "Mejora de comunicaciones y eliminación de peajes en Ávila",
+      "resumen": "Impulso a las comunicaciones por carretera y ferrocarril, creación de una red provincial de transporte público y supresión de los peajes actuales.",
+      "cita_literal": "Por tener mejores comunicaciones por carretera y ferrocarril, la creación de una red de transporte público para la provincia y la eliminación de los peajes.",
+      "pagina": 2,
+      "tags": [
+        "#Infraestructuras",
+        "#TransportePúblico",
+        "#Peajes"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Consideras prioritario eliminar los peajes y mejorar las conexiones de tren y carretera en la provincia?"
+    },
+    {
+      "id": 4,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Mundo Rural",
+      "titulo_corto": "Desarrollo de medidas efectivas contra la despoblación rural",
+      "resumen": "Implementación de políticas específicas y concretas diseñadas para frenar la pérdida de habitantes en los municipios del medio rural abulense.",
+      "cita_literal": "Por el desarrollo de medidas concretas y efectivas para frenar la despoblación en nuestro medio rural.",
+      "pagina": 2,
+      "tags": [
+        "#RetoDemográfico",
+        "#Despoblación",
+        "#MundoRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debe la administración autonómica priorizar medidas de choque contra la despoblación en los pueblos de Ávila?"
+    },
+    {
+      "id": 5,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Apoyo al Sector",
+      "titulo_corto": "Garantía de futuro para agricultores y ganaderos provinciales",
+      "resumen": "Desarrollo de políticas que aseguren la viabilidad económica y el relevo generacional de las explotaciones agrícolas y ganaderas de la provincia.",
+      "cita_literal": "Por un presente y futuro para los agricultores y ganaderos de nuestra provincia.",
+      "pagina": 2,
+      "tags": [
+        "#SectorPrimario",
+        "#Agricultura",
+        "#Ganadería"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyas que se aumenten las ayudas y protecciones para los agricultores y ganaderos de la provincia?"
+    },
+    {
+      "id": 6,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y Juventud",
+      "titulo_corto": "Creación de oportunidades laborales para retener el talento joven",
+      "resumen": "Fomento de la creación de empleo en la provincia para evitar la emigración de los jóvenes y permitir que desarrollen su proyecto vital en su tierra.",
+      "cita_literal": "Por más oportunidades para que nuestros jóvenes puedan tener la opción de quedarse en nuestra tierra.",
+      "pagina": 2,
+      "tags": [
+        "#EmpleoJoven",
+        "#Talento",
+        "#Economía"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Es necesario crear planes de empleo específicos para que los jóvenes no tengan que irse de Ávila?"
+    },
+    {
+      "id": 7,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Industria",
+      "titulo_corto": "Fomento del asentamiento de industrias en los municipios",
+      "resumen": "Facilitar medidas que atraigan el crecimiento industrial y la creación de empresas en los municipios para generar riqueza local.",
+      "cita_literal": "Por facilitar medidas efectivas que impulsen el crecimiento y asentamiento de industrias y empresas que generen empleo y riqueza en nuestros municipios.",
+      "pagina": 2,
+      "tags": [
+        "#Industrialización",
+        "#Empresas",
+        "#DesarrolloLocal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería incentivarse fiscalmente a las empresas para que se instalen en los municipios abulenses?"
+    },
+    {
+      "id": 8,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Incendios Forestales",
+      "titulo_corto": "Refuerzo de la prevención y extinción de incendios forestales",
+      "resumen": "Aumento de las medidas preventivas durante todo el año y mejora de los medios técnicos para evitar la pérdida de masa forestal por incendios.",
+      "cita_literal": "Por más medidas preventivas y medios de extinción para evitar que los incendios forestales arrasen cada verano nuestros montes.",
+      "pagina": 2,
+      "tags": [
+        "#MedioAmbiente",
+        "#Incendios",
+        "#Montes"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Crees que se deberían destinar más recursos a la limpieza de montes y medios de extinción de incendios?"
+    },
+    {
+      "id": 9,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Reivindicación Provincial",
+      "titulo_corto": "Reclamación del pago de la deuda histórica de la Junta con Ávila",
+      "resumen": "Ejercer una voz reivindicativa en las Cortes de Castilla y León para exigir que se salden los compromisos financieros y de inversión pendientes con la provincia.",
+      "cita_literal": "Para seguir siendo la voz reivindicativa de Ávila en Valladolid para reclamar a la Junta de Castilla y León que salde la deuda histórica que tiene con nuestra provincia.",
+      "pagina": 2,
+      "tags": [
+        "#Transparencia",
+        "#InversiónPública",
+        "#Ávila"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Estás de acuerdo con que Ávila reciba una inversión extraordinaria para compensar la falta de inversiones de años anteriores?"
+    }
+  ]
+}
