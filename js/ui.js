@@ -842,7 +842,7 @@ export const UI = {
         if (programLinkContainer) {
             const programLinkMeta = this.getProgramLinkMeta(partyInfo, metadata);
             programLinkContainer.innerHTML = `
-                <div class="flex items-center justify-center gap-2">
+                <div class="flex items-center justify-center md:justify-start gap-2">
                     <a href="${this.escapeHtml(programLinkMeta.href)}" target="_blank" rel="noopener noreferrer"
                        class="inline-flex items-center gap-2 px-3 py-1.5 text-slate-500 hover:text-slate-700 text-sm font-medium border border-slate-200 rounded-lg hover:border-slate-300 transition-colors">
                         <i class="fa-solid ${programLinkMeta.icon}"></i>
