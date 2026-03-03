@@ -1,0 +1,744 @@
+{
+  "bloque_informacion": {
+    "rango_paginas": "Completo",
+    "estado": "finalizado"
+  },
+  "metadatos": {
+    "partido": "UPL",
+    "candidato": "Alicia Gallego González",
+    "foto_candidato": "img/candidatos/alicia-gallego.jpg",
+    "color": "#e5228a",
+    "lema": "Defender lo nuestro",
+    "anio": 2026,
+    "logo": "img/upl.png",
+    "zonas": [
+      "León",
+      "Salamanca",
+      "Zamora"
+    ]
+  },
+  "propuestas": [
+    {
+      "id": 1,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Autonomía Leonesa",
+      "titulo_corto": "Creación de la comunidad autónoma de la Región Leonesa",
+      "resumen": "Promover la creación de una autonomía propia para León, Zamora y Salamanca mediante una consulta ciudadana amparada por la Constitución.",
+      "cita_literal": "desde UPL insistimos en la necesidad de que la Región Leonesa forme su propia comunidad autónoma. Porque es nuestro derecho constitucional como región, y así nos lo reconocen implícitamente los artículos 2 y 143 de la Constitución",
+      "pagina": 16,
+      "tags": [
+        "#Autonomía",
+        "#Constitución",
+        "#RegiónLeonesa"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Crees que León, Zamora y Salamanca deberían formar una comunidad autónoma propia?"
+    },
+    {
+      "id": 2,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Fondos Europeos",
+      "titulo_corto": "Reconocimiento de la Región Leonesa como entidad NUTS-2",
+      "resumen": "Solicitar a la Unión Europea el estatus de región estadística NUTS-2 para acceder de forma directa a fondos de cohesión específicos por su baja renta.",
+      "cita_literal": "la falta de una autonomía propia para la Región Leonesa nos está impidiendo estar reconocida por la UE como NUTS-2 para acceder a fondos de cohesión europeos a los que sí tendríamos derecho",
+      "pagina": 15,
+      "tags": [
+        "#FondosEuropeos",
+        "#NUTS2",
+        "#DesarrolloEconómico"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Debería la Región Leonesa tener un estatus estadístico propio en la UE para recibir más ayudas?"
+    },
+    {
+      "id": 3,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Infraestructura Sanitaria",
+      "titulo_corto": "Construcción y reforma de centros de salud en el medio rural",
+      "resumen": "Ejecutar la construcción de centros de salud pendientes en Villalpando, Sahagún o Villaquilambre y reformar integralmente los de Cistierna y Pola de Gordón.",
+      "cita_literal": "impulsar la construcción de los prometidos pero no ejecutados centros de salud de Villalpando, El Zurguén, Villaquilambre y Ponferrada I, acometer la reforma integral de los de La Pola de Gordón y Cistierna",
+      "pagina": 7,
+      "tags": [
+        "#AtenciónPrimaria",
+        "#MedioRural",
+        "#Infraestructura"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Es prioritario priorizar la inversión en la construcción de nuevos centros de salud en zonas rurales?"
+    },
+    {
+      "id": 4,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Especialidades Médicas",
+      "titulo_corto": "Ampliación de Unidades de Ictus y Radioterapia",
+      "resumen": "Dotar de Unidades de Ictus a los hospitales de Zamora y El Bierzo, y agilizar la Unidad de Radioterapia satélite en Ponferrada.",
+      "cita_literal": "dotación de Unidades de Ictus a los hospitales de Zamora y El Bierzo, agilizándose asimismo la construcción del de Prosperidad, en Salamanca. [...] agilizar la dotación de una Unidad de Radioterapia al Hospital El Bierzo",
+      "pagina": 7,
+      "tags": [
+        "#Radioterapia",
+        "#Ictus",
+        "#Hospitales"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyas que se descentralicen servicios oncológicos y neurológicos a hospitales comarcales?"
+    },
+    {
+      "id": 5,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Urgencias y Emergencias",
+      "titulo_corto": "Refuerzo de ambulancias de Soporte Vital en zonas aisladas",
+      "resumen": "Garantizar ambulancias de Soporte Vital Básico y Avanzado en municipios como Villablino, Toro, Sahagún y Carbajales de Alba.",
+      "cita_literal": "dotación de ambulancias de Soporte Vital Básico a Santa María del Páramo, Villablino y Carbajales de Alba [...] o dotar de ambulancias de Soporte Vital Avanzado a Toro, Sahagún y Villablino.",
+      "pagina": 7,
+      "tags": [
+        "#Ambulancias",
+        "#Emergencias",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debe garantizarse por ley la presencia de ambulancias de soporte vital en las comarcas más alejadas?"
+    },
+    {
+      "id": 6,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Infraestructura Ferroviaria",
+      "titulo_corto": "Recuperación del corredor ferroviario de la Ruta de la Plata",
+      "resumen": "Exigir la reapertura y modernización del tren que conecta de norte a sur la región para transporte de pasajeros y mercancías.",
+      "cita_literal": "seguiremos exigiendo la recuperación del corredor ferroviario de la Ruta de la Plata, que resulta vital e imprescindible para vertebrar nuestra tierra",
+      "pagina": 45,
+      "tags": [
+        "#Tren",
+        "#RutaDeLaPlata",
+        "#Transporte"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Consideras urgente la reapertura de la línea de tren de la Ruta de la Plata?"
+    },
+    {
+      "id": 7,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Peajes y Carreteras",
+      "titulo_corto": "Supresión del peaje del Huerna en la autopista AP-66",
+      "resumen": "Eliminar el peaje que une León y Asturias debido a la ilegalidad de su prórroga detectada por la Comisión Europea.",
+      "cita_literal": "que suprima el peaje de la autopista AP-66 que une León y Asturias, atendiendo a la ilegalidad de la prórroga de la última concesión comunicada por la Comisión Europea",
+      "pagina": 8,
+      "tags": [
+        "#Peajes",
+        "#AP66",
+        "#LeónAsturias"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Estás a favor de eliminar definitivamente el peaje de la autopista entre León y Asturias?"
+    },
+    {
+      "id": 8,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Infraestructura Ferroviaria",
+      "titulo_corto": "Integración total del tren FEVE en la ciudad de León",
+      "resumen": "Recuperar la llegada del tren de vía estrecha (FEVE) hasta la estación central de Matallana sin necesidad de transbordos.",
+      "cita_literal": "que se recupere el tren FEVE hasta la estación de Matallana de la ciudad de León, de modo que vuelva a ser punto de salida y llegada de trenes, sin trasbordos de ningún tipo hacia autobuses.",
+      "pagina": 8,
+      "tags": [
+        "#FEVE",
+        "#León",
+        "#Tren"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería el tren de FEVE volver a entrar directamente en el centro de la ciudad de León?"
+    },
+    {
+      "id": 9,
+      "categoria": "Otros",
+      "subcategoria": "Cultura",
+      "titulo_corto": "Protección y restauración de monumentos en peligro (BIC)",
+      "resumen": "Intervención subsidiaria en monumentos Bien de Interés Cultural degradados, como la muralla de Monleón o castillos mineros.",
+      "cita_literal": "se logró evitar el desplome de una parte de la muralla de Monleón que estaba colapsando [...] Plan de restauración y puesta en valor de monumentos, con especial atención a los declarados Bien de Interés Cultural (BIC)",
+      "pagina": 9,
+      "tags": [
+        "#Patrimonio",
+        "#Cultura",
+        "#BIC"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debe la administración intervenir obligatoriamente para salvar monumentos en riesgo de ruina?"
+    },
+    {
+      "id": 10,
+      "categoria": "Otros",
+      "subcategoria": "Identidad",
+      "titulo_corto": "Fin de la financiación pública a fundaciones de identidad autonómica",
+      "resumen": "Eliminar el uso de fondos públicos para fundaciones que promueven una identidad única 'castellano-leonesa'.",
+      "cita_literal": "que la Fundación para la Promoción de los Valores y la Identidad de Castilla y León no se nutra de fondos públicos de la comunidad autónoma para sus actividades y fines",
+      "pagina": 10,
+      "tags": [
+        "#Identidad",
+        "#Transparencia",
+        "#GastoPúblico"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Debería la Junta dejar de financiar con dinero público la promoción de una identidad conjunta de Castilla y León?"
+    },
+    {
+      "id": 11,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Descentralización Hospitalaria",
+      "titulo_corto": "Creación y conversión de hospitales comarcales",
+      "resumen": "Promover nuevos hospitales comarcales en Astorga y Ciudad Rodrigo, y convertir el hospital de Béjar en un centro pluricomarcal con más especialidades.",
+      "cita_literal": "promoveremos la creación de hospitales comarcales en Astorga y Ciudad Rodrigo, la conversión del infrautilizado Hospital de Béjar en Hospital pluricomarcal",
+      "pagina": 21,
+      "tags": [
+        "#HospitalesComarcales",
+        "#EquidadSanitaria",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Deberían construirse más hospitales en cabeceras de comarca para evitar desplazamientos a las capitales?"
+    },
+    {
+      "id": 12,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Urgencias y Emergencias",
+      "titulo_corto": "Gestión provincial de los centros de emergencias 112",
+      "resumen": "Descentralizar el servicio de llamadas del 112, actualmente en Valladolid, para crear centros propios en León, Zamora y Salamanca que conozcan mejor el terreno.",
+      "cita_literal": "reclamaremos Centros 112 propios en León, Zamora y Salamanca para que las decisiones operativas se tomen de forma más eficiente",
+      "pagina": 24,
+      "tags": [
+        "#Emergencias",
+        "#112",
+        "#GestiónProvincial"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Crees que los servicios de emergencias 112 se gestionarían mejor desde cada provincia que de forma centralizada?"
+    },
+    {
+      "id": 13,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Escuela Rural",
+      "titulo_corto": "Complemento de estabilidad para docentes en centros rurales",
+      "resumen": "Crear un incentivo económico para profesores que trabajen en Centros Rurales Agrupados (CRA) y municipios de menos de 5.000 habitantes.",
+      "cita_literal": "impulsaremos un complemento de estabilidad para docentes que trabajen en Centros Rurales Agrupados (CRA), CEIP e IES de municipios de menos de 5.000 habitantes",
+      "pagina": 29,
+      "tags": [
+        "#EducaciónRural",
+        "#Docentes",
+        "#RetoDemográfico"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyas que los profesores rurales cobren un plus salarial para incentivar su permanencia en los pueblos?"
+    },
+    {
+      "id": 14,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Formación Profesional",
+      "titulo_corto": "Plan de FP de conexión industrial y centros de excelencia",
+      "resumen": "Vincular la oferta de Formación Profesional con sectores estratégicos como energías renovables, ciberseguridad y logística en comarcas desindustrializadas.",
+      "cita_literal": "Plan de FP de Conexión Industrial, en que se cree una red de Centros de Excelencia de FP en las comarcas más castigadas por la desindustrialización",
+      "pagina": 32,
+      "tags": [
+        "#FP",
+        "#Industria",
+        "#EmpleoJoven"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería la Formación Profesional adaptarse estrictamente a las necesidades industriales de cada comarca?"
+    },
+    {
+      "id": 15,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Becas y Ayudas",
+      "titulo_corto": "Estatuto del Estudiante Rural y beca de residencia",
+      "resumen": "Eliminar barreras económicas para que jóvenes de pueblos de menos de 2.000 habitantes puedan acceder a la Universidad o FP con ayudas de transporte y alquiler.",
+      "cita_literal": "Estatuto del Estudiante Rural para eliminar las barreras económicas que impiden que los jóvenes de los pueblos accedan a la Universidad o a la FP, mediante una Beca de Residencia y Movilidad",
+      "pagina": 32,
+      "tags": [
+        "#Becas",
+        "#EstudianteRural",
+        "#Universidad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Deben los estudiantes de pueblos pequeños tener becas específicas de residencia para estudiar en la ciudad?"
+    },
+    {
+      "id": 16,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Acceso a la Universidad",
+      "titulo_corto": "Implantación de una EBAU única en toda España",
+      "resumen": "Exigir un modelo de acceso a la universidad homogéneo en todo el país para garantizar que los alumnos compitan en igualdad de condiciones.",
+      "cita_literal": "conseguir una EBAU única, para que los conocimientos adquiridos por los alumnos sean los que primen en dicha prueba, evitando diferencias territoriales",
+      "pagina": 34,
+      "tags": [
+        "#EBAU",
+        "#Universidad",
+        "#Educación"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Estás a favor de que exista un único examen de acceso a la universidad (EBAU) para toda España?"
+    },
+    {
+      "id": 17,
+      "categoria": "Otros",
+      "subcategoria": "Patrimonio Lingüístico",
+      "titulo_corto": "Protección y promoción del leonés y el gallego",
+      "resumen": "Cumplir con el Estatuto de Autonomía para conservar el patrimonio lingüístico leonés y gallego en las zonas donde se mantienen vivos.",
+      "cita_literal": "exigiremos el cumplimiento del artículo 5 del Estatuto, que vela por la promoción y puesta en valor del patrimonio lingüístico de la Región Leonesa, esto es, del leonés y el gallego",
+      "pagina": 35,
+      "tags": [
+        "#LenguaLeonesa",
+        "#Cultura",
+        "#Gallego"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería la administración invertir más en la enseñanza y protección de las lenguas tradicionales como el leonés?"
+    },
+    {
+      "id": 18,
+      "categoria": "Otros",
+      "subcategoria": "Cultura e Historia",
+      "titulo_corto": "Institucionalización del 18 de abril como festivo regional",
+      "resumen": "Declarar festivo el 18 de abril en conmemoración de las Cortes de León de 1188, reconocidas por la UNESCO como cuna del parlamentarismo.",
+      "cita_literal": "promoveremos que se acometa la institucionalización del 18 de abril como día festivo en la Región Leonesa, siendo esta la fecha [...] como inicio de dichas Cortes",
+      "pagina": 43,
+      "tags": [
+        "#CunaParlamentarismo",
+        "#HistoriaLeonesa",
+        "#Festivos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyas que el 18 de abril sea festivo oficial para conmemorar el origen del parlamentarismo en León?"
+    },
+    {
+      "id": 19,
+      "categoria": "Otros",
+      "subcategoria": "Artesanía y Oficios",
+      "titulo_corto": "Planes de relevo generacional en el sector artesano",
+      "resumen": "Fomentar la conservación de oficios tradicionales como la alfarería, los bordados o la filigrana charra mediante ayudas al aprendizaje juvenil.",
+      "cita_literal": "necesario y esencial que haya un relevo generacional en el sector artesano para garantizar su futuro, suponiendo además un pilar esencial de nuestra riqueza etnográfica",
+      "pagina": 37,
+      "tags": [
+        "#Artesanía",
+        "#Tradiciones",
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Crees que la Junta debería subvencionar el aprendizaje de oficios artesanos tradicionales para que no desaparezcan?"
+    },
+    {
+      "id": 20,
+      "categoria": "Otros",
+      "subcategoria": "Arqueología",
+      "titulo_corto": "Impulso a la excavación y puesta en valor de castros",
+      "resumen": "Plan de investigación y musealización de asentamientos astures y vetones para potenciar el turismo cultural en zonas despobladas.",
+      "cita_literal": "Plan para la excavación y puesta en valor de castros, que permitan conocer mejor el pasado astur, vetón, vacceo y cántabro de las diversas zonas de la Región Leonesa",
+      "pagina": 38,
+      "tags": [
+        "#Arqueología",
+        "#TurismoCultural",
+        "#Castros"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería invertirse más en la excavación de yacimientos arqueológicos para atraer turismo a los pueblos?"
+    },
+    {
+      "id": 21,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Carreteras",
+      "titulo_corto": "Finalización de las autovías A-11, A-60 y A-76",
+      "resumen": "Exigir la terminación urgente de las autovías pendientes: el Duero (A-11), León-Valladolid (A-60) y Ponferrada-Ourense (A-76).",
+      "cita_literal": "seguiremos insistiendo en que se ejecuten las autovías A-11 entre Zamora y Portugal, la León Bragança, la Ponferrada-Ourense (A-76) o la A-60 (León-Valladolid)",
+      "pagina": 48,
+      "tags": [
+        "#Autovías",
+        "#Infraestructuras",
+        "#Movilidad"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Debe ser prioritaria la finalización de las autovías que conectan las capitales leonesas entre sí y con el exterior?"
+    },
+    {
+      "id": 22,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Logística",
+      "titulo_corto": "Desarrollo de la plataforma intermodal de Torneros",
+      "resumen": "Impulsar la ejecución del centro logístico de Torneros-Grulleros como eje estratégico para el transporte de mercancías en el noroeste.",
+      "cita_literal": "seguiremos reivindicando la ejecución de la plataforma intermodal de Torneros-Grulleros, dada su enorme importancia para la logística de la provincia de León",
+      "pagina": 46,
+      "tags": [
+        "#Logística",
+        "#Torneros",
+        "#Mercancías"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyas la creación de grandes centros logísticos de transporte de mercancías para atraer empresas a la región?"
+    },
+    {
+      "id": 23,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Energía",
+      "titulo_corto": "Canon energético y descuentos en la factura de la luz",
+      "resumen": "Implementar un impuesto a la exportación de energía y bonificaciones en el recibo de la luz para hogares y empresas al ser una región gran productora.",
+      "cita_literal": "consideramos de justicia la implantación de un canon energético que beneficie a la Región Leonesa [...] proponemos que se instauren descuentos en la factura eléctrica",
+      "pagina": 55,
+      "tags": [
+        "#Energía",
+        "#CanonEnergético",
+        "#FacturaLuz"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Deberían los ciudadanos de regiones que producen mucha electricidad pagar menos en su factura de la luz?"
+    },
+    {
+      "id": 24,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Autónomos",
+      "titulo_corto": "Exención de cuota de autónomos por debajo del SMI",
+      "resumen": "Ajustar la cuota de autónomos a los ingresos reales, eliminando el pago para aquellos cuyos beneficios no alcancen el salario mínimo.",
+      "cita_literal": "instaremos a que la cuota de autónomos se ajuste a los ingresos, quedando exentos del pago de dicha cuota quienes no lleguen al salario mínimo",
+      "pagina": 56,
+      "tags": [
+        "#Autónomos",
+        "#PYMES",
+        "#Empleo"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Crees que los autónomos que ganan menos del salario mínimo no deberían pagar cuota mensual?"
+    },
+    {
+      "id": 25,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Inversión I+D+i",
+      "titulo_corto": "Fortalecimiento de la investigación contra el cáncer en Salamanca",
+      "resumen": "Aumentar la financiación pública del CIC y el IBSAL para consolidarlos como referentes mundiales en biomedicina.",
+      "cita_literal": "aumentando la financiación del Centro de Investigación del Cáncer (CIC) de Salamanca y el Instituto de Investigación Biomédica de Salamanca (IBSAL)",
+      "pagina": 58,
+      "tags": [
+        "#Investigación",
+        "#Salud",
+        "#Salamanca"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Debe aumentarse la inversión pública en centros de investigación biomédica de la región?"
+    },
+    {
+      "id": 26,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Marca de Calidad",
+      "titulo_corto": "Creación del sello distintivo 'Producto Leonés'",
+      "resumen": "Lanzar una marca complementaria de calidad para identificar y promocionar los productos agroalimentarios de León, Zamora y Salamanca.",
+      "cita_literal": "seguiremos promoviendo una mayor promoción para nuestros productos agroganaderos [...] planteando la creación del sello complementario ‘Producto Leonés’",
+      "pagina": 60,
+      "tags": [
+        "#ProductoLeonés",
+        "#Agroalimentación",
+        "#Calidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyas la creación de una marca única para promocionar fuera los alimentos producidos en León, Zamora y Salamanca?"
+    },
+    {
+      "id": 27,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Precios y Costes",
+      "titulo_corto": "Inclusión de costes de producción en el Observatorio de Precios",
+      "resumen": "Ampliar los datos del Observatorio de Precios Agrícolas para que reflejen los costes reales de los agricultores (pienso, gasoil, abono) y no solo el precio final de venta.",
+      "cita_literal": "creemos que es básico incluir, dentro de los datos recogidos en el Observatorio de Precios Agrícolas, la evolución de los costes de producción de los agricultores y ganaderos",
+      "pagina": 61,
+      "tags": [
+        "#PreciosJustos",
+        "#Agricultura",
+        "#Ganadería"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería la administración obligar a que los precios de los alimentos cubran siempre los costes de producción de los agricultores?"
+    },
+    {
+      "id": 28,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Gestión de Fauna",
+      "titulo_corto": "Indemnizaciones totales por ataques de fauna salvaje",
+      "resumen": "Garantizar que los pagos por ataques de lobos, buitres u osos compensen el valor real de la pérdida y establecer medidas preventivas efectivas.",
+      "cita_literal": "las indemnizaciones por ataque de fauna salvaje deben compensar realmente a nuestros ganaderos, y debemos establecer medidas efectivas para evitar que se sigan repitiendo",
+      "pagina": 63,
+      "tags": [
+        "#Lobo",
+        "#GanaderíaExtensiva",
+        "#FaunaSalvaje"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Deben los ganaderos recibir compensaciones económicas rápidas y completas por los ataques de lobos u otros animales?"
+    },
+    {
+      "id": 29,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Prevención de Incendios",
+      "titulo_corto": "Operativo público de incendios durante todo el año",
+      "resumen": "Ampliación del servicio de extinción de incendios a los 12 meses, garantizando la estabilidad del personal y realizando labores de prevención en invierno.",
+      "cita_literal": "insistiremos en la ampliación del operativo antiincendios a los 12 meses del año [...] buscando además el paso hacia un operativo que sea totalmente público cuanto antes",
+      "pagina": 69,
+      "tags": [
+        "#IncendiosForestales",
+        "#BomberosForestales",
+        "#Prevención"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería el servicio de bomberos forestales trabajar todo el año y no solo durante los meses de verano?"
+    },
+    {
+      "id": 30,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Protección del Paisaje",
+      "titulo_corto": "Moratoria y control de macroplantas de biogás",
+      "resumen": "Impedir la instalación de plantas de biogás agresivas cerca de núcleos urbanos (mínimo 3 km) y limitar su uso a instalaciones de autoconsumo familiar.",
+      "cita_literal": "debe haber una moratoria para que no se autoricen más proyectos mientras no haya una planificación específica [...] con una distancia mínima de 3 kilómetros a cualquier casco urbano",
+      "pagina": 74,
+      "tags": [
+        "#Biogás",
+        "#Macrogranjas",
+        "#OrdenaciónTerritorial"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyas que se prohíba la instalación de grandes plantas de biogás a menos de 3 kilómetros de los pueblos?"
+    },
+    {
+      "id": 31,
+      "categoria": "Vivienda",
+      "subcategoria": "Medio Rural",
+      "titulo_corto": "Ayudas a la reforma de viviendas en pequeños municipios",
+      "resumen": "Incentivos fiscales y subvenciones directas para rehabilitar casas en pueblos, con bonificaciones especiales para menores de 36 años.",
+      "cita_literal": "dotación de una línea específica de ayudas para acometer la reforma de viviendas en mal estado, con mayores incentivos para la reforma de aquellas situadas en pequeñas localidades",
+      "pagina": 78,
+      "tags": [
+        "#Rehabilitación",
+        "#ViviendaRural",
+        "#Jóvenes"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debe la Junta dar más ayudas para reformar casas viejas en los pueblos que para comprar pisos en las ciudades?"
+    },
+    {
+      "id": 32,
+      "categoria": "Vivienda",
+      "subcategoria": "Impuestos",
+      "titulo_corto": "Rebajas fiscales en el ITP para vivienda rural",
+      "resumen": "Reducir el Impuesto de Transmisiones Patrimoniales (ITP) para facilitar la compra de casas en el medio rural o por parte de familias numerosas.",
+      "cita_literal": "propondremos la aplicación de rebajas fiscales en el Impuesto de Transmisiones Patrimoniales (ITP) para la compra de vivienda en el medio rural",
+      "pagina": 80,
+      "tags": [
+        "#Impuestos",
+        "#Vivienda",
+        "#AhorroFiscal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería pagarse menos impuestos al comprar una vivienda en un pueblo que en una capital?"
+    },
+    {
+      "id": 33,
+      "categoria": "Otros",
+      "subcategoria": "Igualdad",
+      "titulo_corto": "Red de recursos de emergencia para mujeres en zonas rurales",
+      "resumen": "Garantizar que las víctimas de violencia machista en comarcas despobladas tengan acceso cercano a servicios psicológicos, jurídicos y de acogida.",
+      "cita_literal": "ampliaremos la red de recursos de emergencia y acogida (asegurando su presencia y accesibilidad también en el mundo rural y en las zonas más despobladas)",
+      "pagina": 83,
+      "tags": [
+        "#Igualdad",
+        "#ViolenciaGénero",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Deben reforzarse los servicios de protección a mujeres víctimas de violencia en las zonas rurales más aisladas?"
+    },
+    {
+      "id": 34,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Mayores",
+      "titulo_corto": "Creación de residencias y centros de día en los pueblos",
+      "resumen": "Dotar de plazas residenciales a comarcas aisladas como Babia, Luna o municipios como Villamanín y Valdefresno para que los mayores no dejen su entorno.",
+      "cita_literal": "impulsaremos la creación de residencias de ancianos y centros de día en nuestros pueblos [...] de modo que se facilite que nuestros mayores puedan seguir residiendo en sus municipios",
+      "pagina": 86,
+      "tags": [
+        "#Mayores",
+        "#Residencias",
+        "#Dependencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyas que se construyan pequeñas residencias en los pueblos para que los ancianos no tengan que irse a vivir a la ciudad?"
+    },
+    {
+      "id": 35,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Fiscalidad Diferenciada",
+      "titulo_corto": "Discriminación fiscal positiva con rebajas en el IRPF",
+      "resumen": "Implementar una fiscalidad especial para residentes en zonas rurales con reducciones significativas en el tramo autonómico del IRPF.",
+      "cita_literal": "insistiremos en que se dote de una fiscalidad diferenciada a nuestras comarcas rurales [...] con rebajas en el IRPF y ayudas directas a empresas y autónomos",
+      "pagina": 89,
+      "tags": [
+        "#IRPF",
+        "#FiscalidadRural",
+        "#Despoblación"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Deberían los habitantes de pueblos con mucha despoblación pagar menos IRPF que los de las ciudades?"
+    },
+    {
+      "id": 36,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Servicios Financieros",
+      "titulo_corto": "Cajeros y oficinas bancarias itinerantes en el medio rural",
+      "resumen": "Luchar contra la exclusión financiera mediante la instalación obligatoria de cajeros y el fomento de oficinas bancarias móviles en municipios sin sucursal.",
+      "cita_literal": "medidas como la instalación de cajeros en municipios sin sucursales bancarias, así como oficinas itinerantes que ayuden a suplir este problema",
+      "pagina": 93,
+      "tags": [
+        "#BancaRural",
+        "#ExclusiónFinanciera",
+        "#ServiciosBásicos"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería sancionarse a los bancos que cierran sucursales en los pueblos sin ofrecer una alternativa como cajeros u oficinas móviles?"
+    },
+    {
+      "id": 37,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Emprendimiento",
+      "titulo_corto": "Oficinas para el Emprendimiento Rural y asesoría legal",
+      "resumen": "Crear una red de oficinas que ayuden a emprendedores y pymes rurales a gestionar trámites burocráticos y desarrollar inversiones en sus comarcas.",
+      "cita_literal": "promoveremos la creación de Oficinas para el Emprendimiento Rural, que asesoren a quienes quieran desarrollar inversiones en nuestras áreas rurales",
+      "pagina": 91,
+      "tags": [
+        "#Emprendimiento",
+        "#PYMES",
+        "#EmpleoRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Consideras necesario que los emprendedores rurales tengan oficinas de asesoramiento gratuito en sus propias comarcas?"
+    },
+    {
+      "id": 38,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Retorno de Emigrados",
+      "titulo_corto": "Plan de retorno para leoneses emigrados",
+      "resumen": "Incentivar el regreso de personas que marcharon por trabajo mediante ayudas al asentamiento y proyectos económicos para quienes tienen arraigo familiar.",
+      "cita_literal": "propondremos la creación de un plan de retorno a León, Zamora y Salamanca de los leoneses emigrados, que incentive el acceso al mercado laboral",
+      "pagina": 95,
+      "tags": [
+        "#Retorno",
+        "#Emigración",
+        "#Talento"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Debería la Junta ofrecer ayudas económicas específicas para facilitar que los emigrados de la región vuelvan a su tierra?"
+    }
+  ]
+}
