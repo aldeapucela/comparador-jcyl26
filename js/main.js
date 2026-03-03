@@ -20,6 +20,7 @@ let availableZones = [...FALLBACK_ZONES];
 let defaultZone = DEFAULT_FALLBACK_ZONE;
 let afinidadAvailableZones = [DEFAULT_FALLBACK_ZONE];
 let partyZonesMap = {};
+let hasTrackedOnboardingZoneSelection = false;
 
 let appState = {
     selectedParty: null,
@@ -927,6 +928,7 @@ function setupEventListeners() {
             if (!zoneBtn) return;
             const selectedZone = normalizeZoneName(zoneBtn.dataset.zoneOnboardingOption);
             if (!selectedZone) return;
+            trackOnboardingZoneSelection(selectedZone);
             applyZoneSelection(selectedZone);
             syncZoneSelectors();
             UI.renderPartySelection();
@@ -1282,6 +1284,13 @@ function trackSpaPageView(hash) {
     _paq.push(['setCustomUrl', window.location.href]);
     _paq.push(['setDocumentTitle', getPageTitle(hash)]);
     _paq.push(['trackPageView']);
+}
+
+function trackOnboardingZoneSelection(zone) {
+    if (hasTrackedOnboardingZoneSelection || typeof _paq === 'undefined') return;
+
+    _paq.push(['trackEvent', 'Provincia', 'Seleccion onboarding', zone, 1]);
+    hasTrackedOnboardingZoneSelection = true;
 }
 
 async function handleRouting() {
