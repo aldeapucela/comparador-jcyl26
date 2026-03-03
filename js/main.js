@@ -514,8 +514,9 @@ function renderSearchScreen(term) {
 function getSavedProposalsGroupedByParty() {
     const savedIds = readSavedStoryIds();
     const grouped = new Map();
+    const partiesSource = allPartiesCatalog.length > 0 ? allPartiesCatalog : PARTIES;
 
-    PARTIES.forEach((party) => {
+    partiesSource.forEach((party) => {
         const partyData = appState.allData[party.id];
         const proposals = Array.isArray(partyData?.propuestas) ? partyData.propuestas : [];
         const savedProposals = proposals.filter((proposal) => savedIds.has(getStoryUniqueIdByParts(party.id, proposal.id)));
@@ -535,8 +536,9 @@ function getSavedProposalsStats() {
     const partyStats = [];
     const categorySavedMap = new Map();
     const totalSavedCount = savedIds.size;
+    const partiesSource = allPartiesCatalog.length > 0 ? allPartiesCatalog : PARTIES;
 
-    PARTIES.forEach((party) => {
+    partiesSource.forEach((party) => {
         const proposals = Array.isArray(appState.allData[party.id]?.propuestas)
             ? appState.allData[party.id].propuestas
             : [];
