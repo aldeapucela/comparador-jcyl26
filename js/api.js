@@ -31,6 +31,21 @@ function resolvePartyLogo(metadataLogo = '', partyId = '') {
     return `img/${partyId}.png`;
 }
 
+function resolveStoryVideo(metadataStoryVideo = null) {
+    if (!metadataStoryVideo) return null;
+    if (typeof metadataStoryVideo === 'string') {
+        const path = metadataStoryVideo.trim();
+        return path ? { path, enabled: true } : null;
+    }
+    if (typeof metadataStoryVideo !== 'object') return null;
+    const path = String(metadataStoryVideo.path || '').trim();
+    if (!path) return null;
+    return {
+        path,
+        enabled: metadataStoryVideo.enabled !== false
+    };
+}
+
 export async function loadPartiesCatalog() {
     if (partiesCatalogPromise) return partiesCatalogPromise;
 
@@ -54,7 +69,8 @@ export async function loadPartiesCatalog() {
                     name: normalizePartyName(metadata.partido, id),
                     logo: resolvePartyLogo(metadata.logo, id),
                     color: metadata.color || '#64748b',
-                    candidatePhoto: metadata.foto_candidato || null
+                    candidatePhoto: metadata.foto_candidato || null,
+                    storyVideo: resolveStoryVideo(metadata.story_video)
                 };
             })
         );
@@ -100,6 +116,7 @@ export async function fetchAllPartiesData() {
             const metadata = partyData.metadatos || {};
             party.color = metadata.color || party.color || '#64748b';
             if (metadata.foto_candidato) party.candidatePhoto = metadata.foto_candidato;
+            party.storyVideo = resolveStoryVideo(metadata.story_video);
             data[party.id] = partyData;
         }
     });

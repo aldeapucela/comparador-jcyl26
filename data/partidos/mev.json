@@ -9,7 +9,11 @@
     "color": "#cf211b",
     "lema": "Derechos iguales vivas en un pueblo o en un barrio",
     "anio": 2026,
-    "logo": "img/mev.png"
+    "logo": "img/mev.png",
+    "story_video": {
+      "enabled": true,
+      "path": "video/mev.mp4"
+    }
   },
   "propuestas": [
     {

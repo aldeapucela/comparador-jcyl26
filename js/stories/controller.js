@@ -10,6 +10,7 @@ const EXPLORA_ENGAGEMENT_DURATION_MS = 12000;
 const EXPLORA_SEEN_STORIES_STORAGE_KEY = 'explora_seen_stories_v1';
 const EXPLORA_SHARE_ENGAGEMENT_STORAGE_KEY = 'explora_share_engagement_v1';
 const EXPLORA_TELEGRAM_INTERSTITIAL_STORAGE_KEY = 'explora_telegram_interstitial_v1';
+const EXPLORA_CANDIDATE_VIDEO_SEEN_STORAGE_KEY = 'explora_candidate_video_seen_v1';
 const SAVE_TOAST_ID = 'story-save-toast';
 const TELEGRAM_CHAT_URL = 'https://t.me/aldeapucela/115494';
 const INTERSTITIAL_POSITION_TELEGRAM = 6;
@@ -26,10 +27,12 @@ export function createStoriesController(appState) {
     let storyCaptionChunks = [];
     let storyCaptionCurrentIndex = 0;
     let storyCaptionStepMs = EXPLORA_CAPTION_STEP_MS;
-    let activeInterstitialId = null;
+    let activeInterstitial = null;
     let engagementSessionViewedCount = 0;
     let engagementSessionNextPromptAt = 10;
     const interstitialShownInSession = new Set();
+    const partyVideoShownInSession = new Set();
+    const candidateVideoByAnchorIndex = new Map();
     const escapeHtml = (value = '') => String(value)
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
@@ -40,6 +43,107 @@ export function createStoriesController(appState) {
     const SHARE_PROMPT_REPEAT_INTERVAL = 15;
 
     const INTERSTITIAL_STORIES = [
+        {
+            id: 'party-candidate-video',
+            placement: {
+                type: 'dynamic'
+            },
+            durationMs: EXPLORA_ENGAGEMENT_DURATION_MS,
+            shouldShow(context = {}) {
+                const party = context.story?.party;
+                const partyId = party?.id || '';
+                const videoPath = party?.storyVideo?.path || '';
+                if (!partyId || !videoPath || party?.storyVideo?.enabled === false) return false;
+                if (partyVideoShownInSession.has(partyId)) return false;
+                if (hasCandidateVideoBeenSeen(partyId)) return false;
+
+                if (appState.stories.source === 'party') {
+                    const selectedPartyIds = getSelectedPartyIds();
+                    if (selectedPartyIds.length !== 1 || selectedPartyIds[0] !== partyId) return false;
+                    const nextIndex = (appState.stories.currentIndex + 1) % appState.stories.feed.length;
+                    const nextPosition = nextIndex + 1;
+                    return nextPosition === 2;
+                }
+
+                if (appState.stories.source === 'random' || appState.stories.source === 'topic') return true;
+
+                return false;
+            },
+            onShow(context = {}) {
+                const partyId = context.story?.party?.id;
+                if (partyId) partyVideoShownInSession.add(partyId);
+                if (partyId) markCandidateVideoAsSeen(partyId);
+                const anchorIndex = Number(context.anchorIndex);
+                if (Number.isInteger(anchorIndex)) {
+                    candidateVideoByAnchorIndex.set(anchorIndex, {
+                        id: 'party-candidate-video',
+                        context: {
+                            ...context,
+                            anchorIndex
+                        }
+                    });
+                }
+            },
+            render(context = {}) {
+                const story = context.story;
+                if (!story?.party?.storyVideo?.path) return;
+                StoriesView.renderCandidateVideoCard(UI.containers.storiesCard, {
+                    transitionDirection: appState.stories.transitionDirection,
+                    party: story.party,
+                    videoPath: story.party.storyVideo.path
+                });
+            },
+            bindActions(context = {}) {
+                const partyId = context.story?.party?.id;
+                const partyName = context.story?.party?.name || 'Candidato';
+                const videoPath = context.story?.party?.storyVideo?.path || '';
+                UI.containers.storiesCard.querySelectorAll('.btn-story-party').forEach((btn) => {
+                    btn.addEventListener('click', () => {
+                        if (!partyId) return;
+                        UI.navigateHash(`#/${partyId}`);
+                    });
+                });
+
+                const shareBtn = document.getElementById('btn-story-video-share');
+                if (shareBtn) {
+                    const stopTapPropagation = (event) => event.stopPropagation();
+                    shareBtn.addEventListener('pointerdown', stopTapPropagation);
+                    shareBtn.addEventListener('touchstart', stopTapPropagation, { passive: true });
+                    shareBtn.addEventListener('click', async () => {
+                        await shareCandidateVideoFile(videoPath, partyName, partyId, shareBtn);
+                    });
+                }
+
+                const videoEl = document.getElementById('story-candidate-video-player');
+                if (!videoEl) return;
+
+                const tryAutoplay = () => {
+                    videoEl.muted = false;
+                    videoEl.volume = 1;
+                    const playPromise = videoEl.play();
+                    if (playPromise?.catch) {
+                        playPromise.catch(() => {
+                            // Autoplay may be blocked by browser policies.
+                        });
+                    }
+                };
+
+                videoEl.addEventListener('loadedmetadata', () => {
+                    const durationMs = Math.round((Number(videoEl.duration) || 0) * 1000);
+                    if (durationMs > 0) {
+                        appState.stories.currentDurationMs = Math.max(EXPLORA_MIN_STORY_DURATION_MS, durationMs);
+                        exploraPlaybackElapsedMs = 0;
+                        scheduleAutoAdvance();
+                    }
+                });
+
+                videoEl.addEventListener('ended', () => {
+                    clearActiveInterstitialAndContinue();
+                });
+
+                tryAutoplay();
+            }
+        },
         {
             id: 'telegram-promo',
             placement: {
@@ -208,8 +312,49 @@ export function createStoriesController(appState) {
         return engagementSessionNextPromptAt;
     }
 
+    function readSeenCandidateVideoPartyIds() {
+        try {
+            const raw = localStorage.getItem(EXPLORA_CANDIDATE_VIDEO_SEEN_STORAGE_KEY);
+            if (!raw) return new Set();
+            const parsed = JSON.parse(raw);
+            if (!Array.isArray(parsed)) return new Set();
+            return new Set(parsed.map((id) => String(id || '').trim()).filter(Boolean));
+        } catch {
+            return new Set();
+        }
+    }
+
+    function writeSeenCandidateVideoPartyIds(idsSet = new Set()) {
+        try {
+            localStorage.setItem(EXPLORA_CANDIDATE_VIDEO_SEEN_STORAGE_KEY, JSON.stringify(Array.from(idsSet)));
+        } catch {
+            // Ignore storage failures.
+        }
+    }
+
+    function hasCandidateVideoBeenSeen(partyId = '') {
+        const id = String(partyId || '').trim();
+        if (!id) return false;
+        return readSeenCandidateVideoPartyIds().has(id);
+    }
+
+    function markCandidateVideoAsSeen(partyId = '') {
+        const id = String(partyId || '').trim();
+        if (!id) return;
+        const seen = readSeenCandidateVideoPartyIds();
+        if (seen.has(id)) return;
+        seen.add(id);
+        writeSeenCandidateVideoPartyIds(seen);
+    }
+
     function getInterstitialById(id) {
         return INTERSTITIAL_STORIES.find((item) => item.id === id) || null;
+    }
+
+    function getCurrentStory() {
+        if (!appState.stories.feed.length) return null;
+        const index = appState.stories.currentIndex % appState.stories.feed.length;
+        return appState.stories.feed[index] || null;
     }
 
     function matchesInterstitialPlacement(definition) {
@@ -224,6 +369,10 @@ export function createStoriesController(appState) {
             return positions.includes(nextPosition);
         }
 
+        if (placement.type === 'dynamic') {
+            return Boolean(getCurrentStory()?.party?.id);
+        }
+
         if (placement.type === 'viewed-count') {
             const firstAt = Number(placement.firstAt) || SHARE_PROMPT_FIRST_THRESHOLD;
             return engagementSessionViewedCount >= Math.max(1, firstAt);
@@ -232,28 +381,35 @@ export function createStoriesController(appState) {
         return false;
     }
 
-    function shouldShowInterstitial(definition) {
+    function shouldShowInterstitial(definition, context = {}) {
         if (!definition) return false;
         if (interstitialShownInSession.has(definition.id) && definition.placement?.type === 'position') {
             return false;
         }
         if (!matchesInterstitialPlacement(definition)) return false;
-        return definition.shouldShow ? definition.shouldShow() : true;
+        return definition.shouldShow ? definition.shouldShow(context) : true;
     }
 
     function getNextInterstitialToShow() {
         if (!appState.stories.feed.length) return null;
+        const context = {
+            story: getCurrentStory(),
+            anchorIndex: appState.stories.currentIndex
+        };
         for (const definition of INTERSTITIAL_STORIES) {
-            if (shouldShowInterstitial(definition)) {
-                return definition;
+            if (shouldShowInterstitial(definition, context)) {
+                return {
+                    id: definition.id,
+                    context
+                };
             }
         }
         return null;
     }
 
     function clearActiveInterstitialAndContinue() {
-        if (!activeInterstitialId) return;
-        activeInterstitialId = null;
+        if (!activeInterstitial) return;
+        activeInterstitial = null;
         moveToNextStory();
     }
 
@@ -294,6 +450,71 @@ export function createStoriesController(appState) {
         } catch (err) {
             console.error('Failed to copy engagement share:', err);
             return { success: false, method: 'clipboard' };
+        }
+    }
+
+    function sanitizeFilename(value = '') {
+        return String(value || '')
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, '') || 'candidato';
+    }
+
+    function trackCandidateVideoShare(partyId = '', method = '', outcome = 'success') {
+        if (typeof _paq === 'undefined') return;
+        _paq.push([
+            'trackEvent',
+            'Compartir',
+            'VideoCandidato',
+            `${partyId || 'unknown'}:${method || 'unknown'}:${outcome}`
+        ]);
+    }
+
+    async function shareCandidateVideoFile(videoPath = '', partyName = '', partyId = '', btn = null) {
+        if (!videoPath) return { success: false, method: 'none' };
+        try {
+            const response = await fetch(videoPath, { cache: 'force-cache' });
+            if (!response.ok) throw new Error(`video-fetch-failed-${response.status}`);
+            const blob = await response.blob();
+            const filename = `video-candidato-${sanitizeFilename(partyName)}.mp4`;
+            const file = new File([blob], filename, { type: blob.type || 'video/mp4' });
+
+            if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+                await navigator.share({
+                    title: `Vídeo de ${partyName}`,
+                    text: `Vídeo de ${partyName}`,
+                    files: [file]
+                });
+                trackCandidateVideoShare(partyId, 'web_share_files', 'success');
+                return { success: true, method: 'web_share_files' };
+            }
+
+            const objectUrl = URL.createObjectURL(file);
+            const a = document.createElement('a');
+            a.href = objectUrl;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            window.setTimeout(() => URL.revokeObjectURL(objectUrl), 3000);
+
+            if (btn) {
+                const original = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+                window.setTimeout(() => { btn.innerHTML = original; }, 1400);
+            }
+            trackCandidateVideoShare(partyId, 'download_fallback', 'success');
+            return { success: true, method: 'download_fallback' };
+        } catch (error) {
+            if (error?.name === 'AbortError') {
+                trackCandidateVideoShare(partyId, 'web_share_files', 'cancel');
+            } else {
+                trackCandidateVideoShare(partyId, 'share_video', 'error');
+                console.error('Failed to share candidate video:', error);
+            }
+            return { success: false, method: 'error' };
         }
     }
 
@@ -745,18 +966,18 @@ export function createStoriesController(appState) {
             return;
         }
 
-        if (activeInterstitialId) {
-            const activeInterstitial = getInterstitialById(activeInterstitialId);
-            if (!activeInterstitial) {
-                activeInterstitialId = null;
+        if (activeInterstitial?.id) {
+            const definition = getInterstitialById(activeInterstitial.id);
+            if (!definition) {
+                activeInterstitial = null;
                 renderCurrentStoryCard();
                 return;
             }
             clearPlaybackTimers();
             stopStoryCaptionSequence();
-            activeInterstitial.render();
-            appState.stories.currentDurationMs = Number(activeInterstitial.durationMs) || EXPLORA_ENGAGEMENT_DURATION_MS;
-            activeInterstitial.bindActions?.();
+            definition.render(activeInterstitial.context || {});
+            appState.stories.currentDurationMs = Number(definition.durationMs) || EXPLORA_ENGAGEMENT_DURATION_MS;
+            definition.bindActions?.(activeInterstitial.context || {});
 
             bindExploraGestures();
             scheduleAutoAdvance();
@@ -893,6 +1114,7 @@ export function createStoriesController(appState) {
         const storyCard = document.getElementById('stories-card');
         if (!storyCard) return;
         storyCard.style.touchAction = 'none';
+        const getActiveVideoEl = () => document.getElementById('story-candidate-video-player');
 
         storyCard.onwheel = null;
         storyCard.onpointerdown = null;
@@ -937,6 +1159,7 @@ export function createStoriesController(appState) {
                 }
             }
             pausePlayback();
+            getActiveVideoEl()?.pause();
             exploraWasPausedByHold = true;
         };
 
@@ -968,6 +1191,16 @@ export function createStoriesController(appState) {
             if (!exploraWasPausedByHold) return;
             exploraWasPausedByHold = false;
             resumePlayback();
+            const videoEl = getActiveVideoEl();
+            if (videoEl) {
+                videoEl.muted = false;
+                const playPromise = videoEl.play();
+                if (playPromise?.catch) {
+                    playPromise.catch(() => {
+                        // Ignore play errors if browser blocks resume.
+                    });
+                }
+            }
         };
 
         storyCard.onpointerup = releaseHold;
@@ -987,6 +1220,7 @@ export function createStoriesController(appState) {
             if (!point) return;
             exploraTouchStart = point;
             pausePlayback();
+            getActiveVideoEl()?.pause();
             exploraWasPausedByHold = true;
         };
 
@@ -1018,6 +1252,16 @@ export function createStoriesController(appState) {
             exploraTouchStart = null;
             exploraWasPausedByHold = false;
             resumePlayback();
+            const videoEl = getActiveVideoEl();
+            if (videoEl) {
+                videoEl.muted = false;
+                const playPromise = videoEl.play();
+                if (playPromise?.catch) {
+                    playPromise.catch(() => {
+                        // Ignore play errors if browser blocks resume.
+                    });
+                }
+            }
         };
 
         storyCard.ontouchcancel = () => {
@@ -1025,6 +1269,16 @@ export function createStoriesController(appState) {
             if (!exploraWasPausedByHold) return;
             exploraWasPausedByHold = false;
             resumePlayback();
+            const videoEl = getActiveVideoEl();
+            if (videoEl) {
+                videoEl.muted = false;
+                const playPromise = videoEl.play();
+                if (playPromise?.catch) {
+                    playPromise.catch(() => {
+                        // Ignore play errors if browser blocks resume.
+                    });
+                }
+            }
         };
     }
 
@@ -1106,7 +1360,20 @@ export function createStoriesController(appState) {
 
     function moveToNextStory() {
         if (!appState.stories.feed.length) return;
-        if (!activeInterstitialId) {
+        const replayAnchorInterstitial = candidateVideoByAnchorIndex.get(appState.stories.currentIndex);
+        if (!activeInterstitial?.id && replayAnchorInterstitial) {
+            appState.stories.transitionDirection = 'next';
+            exploraPlaybackElapsedMs = 0;
+            exploraIsPaused = false;
+            exploraWasPausedByHold = false;
+            document.body.classList.remove('explora-paused');
+            clearPlaybackTimers();
+            activeInterstitial = replayAnchorInterstitial;
+            renderCurrentStoryCard();
+            return;
+        }
+
+        if (!activeInterstitial?.id) {
             const nextInterstitial = getNextInterstitialToShow();
             if (nextInterstitial) {
                 appState.stories.transitionDirection = 'next';
@@ -1115,13 +1382,14 @@ export function createStoriesController(appState) {
                 exploraWasPausedByHold = false;
                 document.body.classList.remove('explora-paused');
                 clearPlaybackTimers();
-                activeInterstitialId = nextInterstitial.id;
-                nextInterstitial.onShow?.();
+                const definition = getInterstitialById(nextInterstitial.id);
+                activeInterstitial = nextInterstitial;
+                definition?.onShow?.(nextInterstitial.context || {});
                 renderCurrentStoryCard();
                 return;
             }
         } else {
-            activeInterstitialId = null;
+            activeInterstitial = null;
         }
         appState.stories.transitionDirection = 'next';
         exploraPlaybackElapsedMs = 0;
@@ -1135,8 +1403,8 @@ export function createStoriesController(appState) {
 
     function moveToPrevStory() {
         if (!appState.stories.feed.length) return;
-        if (activeInterstitialId) {
-            activeInterstitialId = null;
+        if (activeInterstitial?.id) {
+            activeInterstitial = null;
             appState.stories.transitionDirection = 'prev';
             exploraPlaybackElapsedMs = 0;
             exploraIsPaused = false;
@@ -1154,6 +1422,12 @@ export function createStoriesController(appState) {
         clearPlaybackTimers();
         const total = appState.stories.feed.length;
         appState.stories.currentIndex = (appState.stories.currentIndex - 1 + total) % total;
+        const previousAnchorInterstitial = candidateVideoByAnchorIndex.get(appState.stories.currentIndex);
+        if (previousAnchorInterstitial) {
+            activeInterstitial = previousAnchorInterstitial;
+            renderCurrentStoryCard();
+            return;
+        }
         renderCurrentStoryCard();
     }
 
@@ -1172,8 +1446,10 @@ export function createStoriesController(appState) {
         appState.stories.currentDurationMs = EXPLORA_MIN_STORY_DURATION_MS;
         appState.stories.transitionDirection = 'next';
         appState.stories.started = true;
-        activeInterstitialId = null;
+        activeInterstitial = null;
         interstitialShownInSession.clear();
+        partyVideoShownInSession.clear();
+        candidateVideoByAnchorIndex.clear();
         engagementSessionViewedCount = 0;
         engagementSessionNextPromptAt = SHARE_PROMPT_FIRST_THRESHOLD;
         exploraPlaybackElapsedMs = 0;
@@ -1250,8 +1526,10 @@ export function createStoriesController(appState) {
         appState.stories.currentIndex = 0;
         appState.stories.currentDurationMs = EXPLORA_MIN_STORY_DURATION_MS;
         appState.stories.transitionDirection = 'next';
-        activeInterstitialId = null;
+        activeInterstitial = null;
         interstitialShownInSession.clear();
+        partyVideoShownInSession.clear();
+        candidateVideoByAnchorIndex.clear();
         engagementSessionViewedCount = 0;
         engagementSessionNextPromptAt = SHARE_PROMPT_FIRST_THRESHOLD;
         exploraPlaybackElapsedMs = 0;
@@ -1267,8 +1545,10 @@ export function createStoriesController(appState) {
         exploraPlaybackElapsedMs = 0;
         exploraIsPaused = false;
         exploraWasPausedByHold = false;
-        activeInterstitialId = null;
+        activeInterstitial = null;
         interstitialShownInSession.clear();
+        partyVideoShownInSession.clear();
+        candidateVideoByAnchorIndex.clear();
         engagementSessionViewedCount = 0;
         engagementSessionNextPromptAt = SHARE_PROMPT_FIRST_THRESHOLD;
         document.body.classList.remove('explora-paused');

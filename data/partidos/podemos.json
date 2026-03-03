@@ -10,7 +10,11 @@
     "logo": "img/podemos.png",
     "color": "#6f2c91",
     "lema": "La fuerza de la gente",
-    "anio": 2026
+    "anio": 2026,
+    "story_video": {
+      "enabled": true,
+      "path": "video/podemos.mp4"
+    }
   },
   "propuestas": [
     {

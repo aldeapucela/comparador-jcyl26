@@ -73,7 +73,8 @@ function renderStoriesCard(container, storyData) {
     const transitionClass = transitionDirection === 'prev'
         ? 'story-screen--enter-prev'
         : 'story-screen--enter-next';
-    const logoWrapClass = needsLightLogoAvatar(party.logo)
+    const forceLightBgLogo = String(party?.id || '').toLowerCase() === 'podemos';
+    const logoWrapClass = (needsLightLogoAvatar(party.logo) || forceLightBgLogo)
         ? 'story-party-logo-wrap is-light-bg'
         : 'story-party-logo-wrap';
 
@@ -207,9 +208,69 @@ function renderTelegramInterstitialCard(container, data = {}) {
     `;
 }
 
+function renderCandidateVideoCard(container, data = {}) {
+    if (!container) return;
+
+    const {
+        transitionDirection = 'next',
+        party = null,
+        videoPath = ''
+    } = data;
+    if (!party || !videoPath) return;
+
+    const transitionClass = transitionDirection === 'prev'
+        ? 'story-screen--enter-prev'
+        : 'story-screen--enter-next';
+    const forceLightBgLogo = String(party?.id || '').toLowerCase() === 'podemos';
+    const logoWrapClass = (needsLightLogoAvatar(party.logo) || forceLightBgLogo)
+        ? 'story-party-logo-wrap is-light-bg'
+        : 'story-party-logo-wrap';
+
+    container.innerHTML = `
+        <article class="story-screen story-screen--engagement story-screen--party-video ${transitionClass}" style="--party-color: ${escapeHtml(party.color || '#334155')}; --story-accent: ${escapeHtml(party.color || '#334155')};">
+            <video
+                id="story-candidate-video-player"
+                class="story-candidate-video-bg"
+                src="${escapeHtml(videoPath)}"
+                autoplay
+                playsinline
+                webkit-playsinline
+                preload="auto"
+                aria-label="Vídeo del candidato de ${escapeHtml(party.name)}"></video>
+            <div class="story-screen-overlay"></div>
+            <header class="story-top">
+                <div class="story-progress-track" aria-hidden="true">
+                    <span id="story-progress-fill-live" class="story-progress-fill" style="width: 0%"></span>
+                </div>
+                <div class="story-meta-row">
+                    <span class="story-counter">Vídeo</span>
+                </div>
+                <div class="story-party-row">
+                    <button type="button" class="story-party-link btn-story-party" data-party="${escapeHtml(party.id)}" aria-label="Ir al programa de ${escapeHtml(party.name)}">
+                        <span class="${logoWrapClass}">
+                            <img src="${escapeHtml(party.logo)}" alt="Logo ${escapeHtml(party.name)}" class="story-party-logo">
+                        </span>
+                    </button>
+                    <button type="button" class="story-party-text-link btn-story-party" data-party="${escapeHtml(party.id)}" aria-label="Ir al programa de ${escapeHtml(party.name)}">
+                        <p class="story-party-name">${escapeHtml(party.name)}</p>
+                        <p class="story-party-mode">Candidato</p>
+                    </button>
+                </div>
+            </header>
+            <section class="story-body story-body--engagement"></section>
+            <footer class="story-actions story-actions-icons story-actions--single">
+                <button class="story-action-btn" id="btn-story-video-share" aria-label="Compartir vídeo del candidato" title="Compartir vídeo del candidato">
+                    <i class="fa-solid fa-share-nodes"></i>
+                </button>
+            </footer>
+        </article>
+    `;
+}
+
 export const StoriesView = {
     buildStoryCaptionChunks,
     renderStoriesCard,
     renderEngagementShareCard,
-    renderTelegramInterstitialCard
+    renderTelegramInterstitialCard,
+    renderCandidateVideoCard
 };

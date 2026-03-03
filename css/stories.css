@@ -376,6 +376,32 @@ body.explora-paused .story-progress-fill {
     gap: 1.25rem;
 }
 
+.story-screen--party-video .story-screen-overlay {
+    background:
+        linear-gradient(180deg, rgba(2, 6, 23, 0.38) 0%, rgba(2, 6, 23, 0.2) 30%, rgba(2, 6, 23, 0.46) 100%);
+}
+
+.story-candidate-video-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #020617;
+}
+
+.story-screen--party-video .story-top,
+.story-screen--party-video .story-body,
+.story-screen--party-video .story-actions {
+    position: relative;
+    z-index: 2;
+}
+
+.story-screen--party-video .story-body--engagement {
+    padding: 0;
+    gap: 0;
+}
+
 .stories-cta-primary--telegram {
     border: 1px solid rgba(255, 255, 255, 0.4);
     background: rgba(255, 255, 255, 0.2);
@@ -416,6 +442,11 @@ body.explora-paused .story-progress-fill {
 .story-actions-icons {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.7rem;
+}
+
+.story-actions--single {
+    grid-template-columns: 1fr;
+    justify-items: center;
 }
 
 .story-action-btn {
