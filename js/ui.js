@@ -200,6 +200,31 @@ export const UI = {
         window.location.hash = hash;
     },
 
+    getProgramLinkMeta(partyInfo, metadata = {}, page = null) {
+        const programUrl = String(metadata.programa_url || partyInfo.programUrl || '').trim();
+        if (programUrl) {
+            return {
+                href: programUrl,
+                label: 'Ver programa web',
+                ctaLabel: 'Programa en la web',
+                icon: 'fa-link'
+            };
+        }
+
+        const pageNumber = String(page ?? '').trim();
+        const pageIsNumber = /^\d+$/.test(pageNumber);
+        const href = pageIsNumber
+            ? `programas/${partyInfo.id}.pdf#page=${pageNumber}`
+            : `programas/${partyInfo.id}.pdf`;
+
+        return {
+            href,
+            label: pageIsNumber ? `Ver PDF (Pág. ${pageNumber})` : 'Ver PDF',
+            ctaLabel: 'Programa en PDF',
+            icon: 'fa-file-pdf'
+        };
+    },
+
     scrollToCategoryHeader(behavior = 'smooth') {
         const header = document.getElementById('category-header');
         if (!header) return;
@@ -815,12 +840,13 @@ export const UI = {
         // Add link to complete program
         const programLinkContainer = document.getElementById('party-program-link');
         if (programLinkContainer) {
+            const programLinkMeta = this.getProgramLinkMeta(partyInfo, metadata);
             programLinkContainer.innerHTML = `
                 <div class="flex items-center justify-center gap-2">
-                    <a href="programas/${partyInfo.id}.pdf" target="_blank" 
+                    <a href="${this.escapeHtml(programLinkMeta.href)}" target="_blank" rel="noopener noreferrer"
                        class="inline-flex items-center gap-2 px-3 py-1.5 text-slate-500 hover:text-slate-700 text-sm font-medium border border-slate-200 rounded-lg hover:border-slate-300 transition-colors">
-                        <i class="fa-solid fa-file-pdf"></i>
-                        Programa en PDF
+                        <i class="fa-solid ${programLinkMeta.icon}"></i>
+                        ${programLinkMeta.ctaLabel}
                     </a>
                     <button id="party-share-btn" 
                         class="party-share-btn inline-flex items-center justify-center w-8 h-8 text-slate-400 hover:text-slate-600 text-sm font-medium border border-slate-100 rounded-lg hover:border-slate-200 transition-colors"
@@ -932,6 +958,7 @@ export const UI = {
 
     createProposalHTML(prop, partyInfo) {
         const saved = isStorySaved(partyInfo.id, prop.id);
+        const sourceLink = this.getProgramLinkMeta(partyInfo, {}, prop.pagina);
         return `
             <article class="proposal-card bg-white p-8 rounded-2xl border border-slate-100 fade-in shadow-sm hover:shadow-md" id="prop-${prop.id}">
                 <div class="mb-6">
@@ -944,9 +971,9 @@ export const UI = {
                             <p class="text-sm italic text-slate-500 mb-4 leading-relaxed font-serif">"${prop.cita_literal}"</p>
                             <div class="flex justify-between items-center text-xs">
                                 <span class="text-slate-400">Fuente: Programa Electoral 2026</span>
-                                <a href="programas/${partyInfo.id}.pdf#page=${prop.pagina}" target="_blank" 
+                                <a href="${this.escapeHtml(sourceLink.href)}" target="_blank" rel="noopener noreferrer"
                                    class="font-bold px-2 py-1 bg-white border border-slate-200 rounded text-blue-600 hover:bg-blue-50 transition-colors">
-                                    Ver PDF (Pág. ${prop.pagina}) <i class="fa-solid fa-up-right-from-square ml-1 text-[10px]"></i>
+                                    ${sourceLink.label} <i class="fa-solid fa-up-right-from-square ml-1 text-[10px]"></i>
                                 </a>
                             </div>
                         </div>
@@ -1661,6 +1688,7 @@ export const UI = {
     createComparisonCardHTML(prop, partyInfo, options = {}) {
         const quoteKey = `${partyInfo.id}-${prop.id}`;
         const isSaved = isStorySaved(partyInfo.id, prop.id);
+        const sourceLink = this.getProgramLinkMeta(partyInfo, {}, prop.pagina);
 
         if (options.compact) {
             return `
@@ -1703,9 +1731,9 @@ export const UI = {
                         <p class="text-sm italic text-slate-500 mb-4 leading-relaxed font-serif">"${prop.cita_literal}"</p>
                         <div class="flex justify-between items-center text-xs">
                             <span class="text-slate-400">Fuente: Programa Electoral 2026</span>
-                            <a href="programas/${partyInfo.id}.pdf#page=${prop.pagina}" target="_blank"
+                            <a href="${this.escapeHtml(sourceLink.href)}" target="_blank" rel="noopener noreferrer"
                                class="font-bold px-2 py-1 bg-white border border-slate-200 rounded text-blue-600 hover:bg-blue-50 transition-colors">
-                                Ver PDF (Pág. ${prop.pagina}) <i class="fa-solid fa-up-right-from-square ml-1 text-[10px]"></i>
+                                ${sourceLink.label} <i class="fa-solid fa-up-right-from-square ml-1 text-[10px]"></i>
                             </a>
                         </div>
                     </div>

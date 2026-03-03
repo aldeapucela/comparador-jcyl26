@@ -1,0 +1,705 @@
+{
+  "bloque_informacion": {
+    "rango_paginas": "Web",
+    "estado": "finalizado"
+  },
+  "metadatos": {
+    "partido": "Soria Ya",
+    "candidato": "Ángel Ceña",
+    "foto_candidato": "img/candidatos/angel-cena.jpg",
+    "color": "#000000",
+    "lema": "",
+    "anio": 2026,
+    "logo": "img/soria-ya.png",
+    "zonas": [
+      "Soria"
+    ],
+    "programa_url": "https://soriaya.org/elecciones-cyl-2026/"
+  },
+  "propuestas": [
+    {
+      "id": 1,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Campus Universitario",
+      "titulo_corto": "Ampliación del campus y nuevas titulaciones universitarias",
+      "resumen": "Impulsar Soria como ciudad universitaria mediante la implantación de estudios como Medicina, Inteligencia Artificial y Terapia Ocupacional, junto a una nueva residencia.",
+      "cita_literal": "Que en Soria se implanten estudios universitarios diferenciadores y distintos a los existentes en el resto de provincias [...] la vuelta de los tres primeros cursos de medicina; doble Grado de Ciencia e Ingeniería de Datos",
+      "pagina": "web",
+      "tags": [
+        "#Universidad",
+        "#Jóvenes",
+        "#Descentralización"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyas que se descentralicen los grados universitarios implantando carreras exclusivas en provincias como Soria?"
+    },
+    {
+      "id": 2,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Formación Profesional",
+      "titulo_corto": "Subvención salarial para empresas que contraten alumnos de FP Dual",
+      "resumen": "Financiar el 50% de los costes salariales durante el primer año a las empresas sorianas que ofrezcan contratos indefinidos a estudiantes en prácticas de FP.",
+      "cita_literal": "Impulsar un programa específico para que la Junta de Castilla y León subvencione el 50% de los costes salariales durante el primer año a las empresas de la provincia de Soria que contraten de forma indefinida al alumnado de FP Dual",
+      "pagina": "web",
+      "tags": [
+        "#FPDual",
+        "#EmpleoJoven",
+        "#Empresas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Crees que la Junta debería pagar la mitad del sueldo a las empresas que contraten a jóvenes recién titulados de Formación Profesional?"
+    },
+    {
+      "id": 3,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Personal Docente",
+      "titulo_corto": "Incentivos de vivienda y económicos para docentes rurales",
+      "resumen": "Reducir la alta interinidad facilitando vivienda gratuita o de alquiler simbólico y pluses económicos para fidelizar al profesorado en los pueblos.",
+      "cita_literal": "recuperación y ampliación de viviendas docentes rurales, facilitando la cesión gratuita o el alquiler simbólico. Inclusión de incentivos económicos a los docentes no universitarios por permanecer en el mundo rural.",
+      "pagina": "web",
+      "tags": [
+        "#EducaciónRural",
+        "#Docentes",
+        "#Vivienda"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Estás de acuerdo con ofrecer vivienda gratis a los profesores para evitar que las escuelas rurales cambien de maestro cada año?"
+    },
+    {
+      "id": 4,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Sanidad Escolar",
+      "titulo_corto": "Incorporación estable de profesionales de enfermería en colegios",
+      "resumen": "Garantizar la presencia diaria de enfermeras en los centros educativos para atender emergencias, prevención y educación para la salud del alumnado.",
+      "cita_literal": "Impulsar la incorporación efectiva y estable de la enfermería escolar en los centros educativos, garantizando atención sanitaria diaria, prevención, educación para la salud",
+      "pagina": "web",
+      "tags": [
+        "#EnfermeríaEscolar",
+        "#SaludInfantil",
+        "#Educación"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Consideras necesario que haya un enfermero o enfermera fijo en todos los colegios e institutos?"
+    },
+    {
+      "id": 5,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Autónomos",
+      "titulo_corto": "Ampliación de la tarifa plana para nuevos autónomos rurales",
+      "resumen": "Extender la bonificación del 100% de la cuota de la Seguridad Social hasta tres años para emprendedores en municipios de muy baja densidad de población.",
+      "cita_literal": "Ampliar la duración de esta bonificación un año más a nuevos trabajadores por cuenta propia que residan en municipios de Castilla y León con una densidad de población igual o menor a los 12,5 habitantes por kilómetro cuadrado.",
+      "pagina": "web",
+      "tags": [
+        "#Autónomos",
+        "#Emprendimiento",
+        "#FiscalidadRural"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Crees que los nuevos autónomos en zonas muy despobladas no deberían pagar cuota a la Seguridad Social durante sus primeros tres años?"
+    },
+    {
+      "id": 6,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Industria",
+      "titulo_corto": "Creación de suelo industrial público a precios competitivos",
+      "resumen": "Finalizar polígonos industriales bloqueados, como la Ciudad del Medio Ambiente o Valcorba, y garantizar suelo equipado en todas las cabeceras comarcales.",
+      "cita_literal": "Solucionar el déficit histórico de suelo industrial público disponible de forma inmediata. Finalización de todas las cúpulas en la Ciudad del Medio Ambiente [...] Dotación de suelo industrial a precio competitivo en todas las cabeceras de comarca",
+      "pagina": "web",
+      "tags": [
+        "#Industria",
+        "#SueloPúblico",
+        "#EconomíaLocal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería la administración priorizar la construcción de polígonos industriales listos para usar en todas las cabeceras de comarca?"
+    },
+    {
+      "id": 7,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Comercio Local",
+      "titulo_corto": "Red de Comercios Emblemáticos y ayudas al pequeño comercio",
+      "resumen": "Proteger las tiendas rurales e históricas mediante subvenciones directas para evitar su cierre, planes de digitalización y oficinas técnicas de asesoramiento.",
+      "cita_literal": "Puesta en marcha una línea de ayudas, con el fin de evitar el cierre de tiendas y pequeños comercios que se está produciendo en el mundo rural. [...] Crear una Red de Comercios Emblemáticos",
+      "pagina": "web",
+      "tags": [
+        "#ComercioLocal",
+        "#MundoRural",
+        "#PYMES"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyas que se den ayudas directas a las tiendas de pueblo para evitar que tengan que cerrar sus puertas?"
+    },
+    {
+      "id": 8,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Energías Renovables",
+      "titulo_corto": "Creación de una empresa pública de energías renovables",
+      "resumen": "Impulsar una empresa de capital público en Castilla y León para liderar el desarrollo energético y fomentar comunidades energéticas en el medio rural.",
+      "cita_literal": "Impulsar la creación de una empresa pública o semipública de energía renovable en Castilla y León, con el objetivo de liderar el desarrollo de energías renovables de titularidad pública",
+      "pagina": "web",
+      "tags": [
+        "#EnergíaPública",
+        "#Renovables",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería existir una empresa pública autonómica que gestione proyectos de energía renovable y reparta sus beneficios en los pueblos?"
+    },
+    {
+      "id": 9,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Telecomunicaciones",
+      "titulo_corto": "Garantía de conexión universal mínima de 100 Mbps",
+      "resumen": "Asegurar internet de alta velocidad en toda la provincia mediante un plan mixto que subvencione tecnología satelital o inalámbrica donde no llegue la fibra.",
+      "cita_literal": "Garantizar conectividad mínima universal con 100 Mbps reales en todos los núcleos de población de la provincia de Soria, independientemente de la tecnología (fibra, conexiones inalámbricas fijas o satélite).",
+      "pagina": "web",
+      "tags": [
+        "#InternetRural",
+        "#Conectividad",
+        "#BrechaDigital"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Consideras que tener internet de alta velocidad en cualquier pueblo es un derecho básico equiparable a la electricidad?"
+    },
+    {
+      "id": 10,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Carreteras",
+      "titulo_corto": "Construcción de carreteras de tres carriles (Modelo 2+1)",
+      "resumen": "Acondicionar vías estratégicas de la provincia, como la CL-101 y la CL-116, al formato 2+1 para permitir adelantamientos seguros y reducir la siniestralidad.",
+      "cita_literal": "Redacción y ejecución de un proyecto de carretera 2 + 1 (dos carriles en un sentido y uno en el contrario alternándose por tramos) en la carretera autonómica CL-101 (Ágreda – Almazán) y en la CL-116",
+      "pagina": "web",
+      "tags": [
+        "#Carreteras",
+        "#SeguridadVial",
+        "#Infraestructuras"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Estás a favor de transformar las carreteras nacionales peligrosas en vías de tres carriles para poder adelantar camiones de forma segura?"
+    },
+    {
+      "id": 11,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Fauna y Seguridad Vial",
+      "titulo_corto": "Sistemas de alerta con inteligencia artificial por fauna salvaje",
+      "resumen": "Instalar sensores térmicos e IA en los tramos autonómicos con más accidentes con animales para avisar a los conductores en tiempo real.",
+      "cita_literal": "Instalar señalización basada en inteligencia artificial y sensores térmicos en los tramos con más índice de accidentes con fauna silvestre para alertar en tiempo real a los conductores",
+      "pagina": "web",
+      "tags": [
+        "#SeguridadVial",
+        "#FaunaSalvaje",
+        "#IA"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería invertirse en tecnología de detección de animales para evitar los accidentes de tráfico en zonas rurales?"
+    },
+    {
+      "id": 12,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Logística",
+      "titulo_corto": "Desarrollo de puerto seco logístico en el Valle del Alto Jalón",
+      "resumen": "Aprovechar la posición estratégica entre Arcos de Jalón y Medinaceli para crear una plataforma logística ligada a la futura autopista ferroviaria Algeciras-Zaragoza.",
+      "cita_literal": "estudio y desarrollo de un polo logístico / plataforma logística (puerto seco) en el Valle del Alto Jalón (Arcos de Jalón – Medinaceli), aprovechando su posición estratégica",
+      "pagina": "web",
+      "tags": [
+        "#Logística",
+        "#Transporte",
+        "#DesarrolloEconómico"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyas la construcción de polígonos logísticos para el transporte de mercancías aprovechando la conexión de la provincia con Zaragoza y Madrid?"
+    },
+    {
+      "id": 13,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Transporte Público",
+      "titulo_corto": "Creación del 'Búho Rural' para el ocio juvenil",
+      "resumen": "Implementar autobuses nocturnos los fines de semana para conectar las comarcas con la capital, mejorando la seguridad vial de los jóvenes.",
+      "cita_literal": "Poner en marcha un sistema piloto de transporte público de viajeros “Búho Rural” para atender los desplazamientos de ocio de los fines de semana, conectando las cabeceras de comarca con la capital",
+      "pagina": "web",
+      "tags": [
+        "#TransportePúblico",
+        "#Juventud",
+        "#SeguridadVial"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Ves necesario crear líneas de autobús nocturnas para que los jóvenes de los pueblos puedan salir de fiesta sin coger el coche?"
+    },
+    {
+      "id": 14,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Descentralización",
+      "titulo_corto": "Traslado de organismos de la Junta a Soria",
+      "resumen": "Instalar en Soria sedes públicas como el Organismo Autonómico del Reto Demográfico, el Centro de Gestión Forestal o el Centro de Procesamiento de Datos autonómico.",
+      "cita_literal": "La creación en Soria de un Organismo Autonómico del Reto Demográfico y Desarrollo Rural [...] La creación en Soria de un Centro Autonómico de Gestión Forestal [...] Implantación en Soria del Centro de Procesamiento de Datos",
+      "pagina": "web",
+      "tags": [
+        "#Descentralización",
+        "#EmpleoPúblico",
+        "#Soria"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Deberían trasladarse agencias y oficinas del gobierno autonómico desde la capital hacia provincias castigadas por la despoblación?"
+    },
+    {
+      "id": 15,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Empleo Público",
+      "titulo_corto": "Agilización burocrática para cubrir bajas de funcionarios en pueblos",
+      "resumen": "Declarar al personal público de zonas rurales como 'personal esencial' para garantizar la sustitución inmediata de bajas sin retrasos administrativos.",
+      "cita_literal": "Considerar al personal que trabaja en las zonas rurales despobladas como personal esencial, por que lo son, de forma que así se logre agilizar la ágil cobertura de las bajas laborales",
+      "pagina": "web",
+      "tags": [
+        "#Funcionarios",
+        "#ServiciosPúblicos",
+        "#MundoRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyas cambiar la ley para que las bajas de médicos o maestros en los pueblos se cubran más rápido que en las ciudades?"
+    },
+    {
+      "id": 16,
+      "categoria": "Vivienda",
+      "subcategoria": "Medio Rural",
+      "titulo_corto": "Ayudas a jóvenes para compra de casa en pueblos pequeños",
+      "resumen": "Establecer subvenciones directas a menores de 36 años para la adquisición de su vivienda habitual en núcleos de menos de 500 habitantes.",
+      "cita_literal": "Poner en marcha una línea de subvenciones destinadas a menores de 36 años para la adquisición de vivienda habitual y permanente en municipios o núcleos de población de pequeño tamaño.",
+      "pagina": "web",
+      "tags": [
+        "#ViviendaJoven",
+        "#MundoRural",
+        "#Emancipación"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería darse dinero a fondo perdido a los jóvenes que se comprometan a comprar y vivir en una casa en un pueblo pequeño?"
+    },
+    {
+      "id": 17,
+      "categoria": "Vivienda",
+      "subcategoria": "Ruina y Rehabilitación",
+      "titulo_corto": "Inventario autonómico de ruinas y subvenciones condicionadas",
+      "resumen": "Catalogar las edificaciones en ruina y dar ayudas de rehabilitación con la condición de que la vivienda se use todo el año o se destine a alquiler social durante 5 años.",
+      "cita_literal": "Elaborar y ejecutar un plan para catalogación e inventario pormenorizado de las edificaciones en ruinas [...] ayudas destinadas a la rehabilitación [...] con la condición de que dichas viviendas se destinen a residencia habitual al menos durante 6 meses al año o [...] programa de alquiler",
+      "pagina": "web",
+      "tags": [
+        "#Rehabilitación",
+        "#AlquilerRural",
+        "#Ruinas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyas dar ayudas públicas para reformar casas vacías a cambio de que los dueños las pongan en alquiler social obligatorio durante cinco años?"
+    },
+    {
+      "id": 18,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Agua Potable",
+      "titulo_corto": "Inversión urgente contra la contaminación por nitratos",
+      "resumen": "Instalar plantas de desnitrificación y sustituir redes de fibrocemento y plomo en las más de treinta localidades sorianas con agua no apta para consumo.",
+      "cita_literal": "Aprobar, de forma inmediata un Plan Autonómico de Inversiones destinado a nuevas captaciones o plantas de desnitrificación en todas las localidades que han presentando [...] concentraciones de nitratos",
+      "pagina": "web",
+      "tags": [
+        "#AguaPotable",
+        "#SaludPública",
+        "#Infraestructuras"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debe financiarse con carácter de urgencia la limpieza de acuíferos y mejora de las tuberías en los pueblos donde el agua del grifo está contaminada?"
+    },
+    {
+      "id": 19,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Incendios Forestales",
+      "titulo_corto": "Operativo contra incendios público, profesional y de 12 meses",
+      "resumen": "Integrar el dispositivo forestal en la administración, reduciendo la precariedad y creando el Consorcio Provincial de Extinción de Incendios en Soria.",
+      "cita_literal": "Un cambio radical en la política de lucha contra incendios forestales, profesionalizando el operativo e integrándolo como parte de la administración autonómica [...] Impulsar la creación del Consorcio Provincial de Extinción",
+      "pagina": "web",
+      "tags": [
+        "#IncendiosForestales",
+        "#Bomberos",
+        "#Prevención"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Consideras que los bomberos forestales deben ser empleados públicos fijos que trabajen en prevención durante todo el invierno?"
+    },
+    {
+      "id": 20,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Gestión Forestal",
+      "titulo_corto": "Creación de bonos de carbono por gestión forestal",
+      "resumen": "Diseñar un sistema de certificación autonómico para que los montes públicos y privados de Soria generen ingresos vendiendo sus derechos de absorción de CO2.",
+      "cita_literal": "Realizar un estudio para la creación de una herramienta de certificación que posibilite la emisión de los bonos de carbono derivada de la gestión forestal, para que sean una fuente de ingreso",
+      "pagina": "web",
+      "tags": [
+        "#BonosCarbono",
+        "#Montes",
+        "#EconomíaCircular"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Deberían los ayuntamientos y dueños de montes cobrar a las industrias contaminantes por el CO2 que absorben sus bosques?"
+    },
+    {
+      "id": 21,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Espacios Naturales",
+      "titulo_corto": "Declaración de nuevos Parques Naturales: Moncayo y Cebollera",
+      "resumen": "Aprobar la figura de protección para el Moncayo (homologándolo con la vertiente aragonesa) y estudiar la creación del Parque Natural de Sierra de Cebollera.",
+      "cita_literal": "Declaración del Parque Natural del Moncayo, y agilización de trámites para que sea una realidad inmediata [...] Estudio para la creación del Parque Natural de Sierra de Cebollera",
+      "pagina": "web",
+      "tags": [
+        "#ParquesNaturales",
+        "#MedioAmbiente",
+        "#Biodiversidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Ves positivo declarar nuevas zonas como Parques Naturales para proteger la biodiversidad y fomentar el turismo rural?"
+    },
+    {
+      "id": 22,
+      "categoria": "Otros",
+      "subcategoria": "Deporte",
+      "titulo_corto": "Deducción del 30% en IRPF por gastos deportivos",
+      "resumen": "Permitir desgravar hasta 300 euros anuales en el tramo autonómico por el pago de gimnasios, cuotas deportivas o licencias federativas.",
+      "cita_literal": "Establecer una deducción en el tramo autonómico del Impuesto sobre la Renta de las Personas Físicas del 30% de los gastos relacionados con ejercicio físico y práctica deportiva [...] con un límite máximo de 300 €",
+      "pagina": "web",
+      "tags": [
+        "#Deporte",
+        "#IRPF",
+        "#Salud"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Estás de acuerdo con que la cuota del gimnasio o las actividades deportivas de los hijos desgraven en la declaración de la renta?"
+    },
+    {
+      "id": 23,
+      "categoria": "Otros",
+      "subcategoria": "Infraestructuras Deportivas",
+      "titulo_corto": "Construcción de pista cubierta de atletismo y mejora de Santa Inés",
+      "resumen": "Convertir el centro CAEP en Alto Rendimiento, crear una pista indoor para grandes campeonatos e invertir en el Punto de Nieve de Santa Inés.",
+      "cita_literal": "Impulsar la construcción de una pista cubierta de atletismo en Soria que pueda albergar competiciones [...] Invertir directamente en la mejora y ampliación del Punto de Nieve de Santa Inés",
+      "pagina": "web",
+      "tags": [
+        "#InstalacionesDeportivas",
+        "#Atletismo",
+        "#TurismoDeportivo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debe la Junta financiar la ampliación de pequeñas estaciones de esquí como motor económico de las zonas de montaña?"
+    },
+    {
+      "id": 24,
+      "categoria": "Otros",
+      "subcategoria": "Patrimonio Cultural",
+      "titulo_corto": "Plan de choque Soria Románica 2.0 y rescate de iglesias",
+      "resumen": "Dotar de presupuesto de emergencia para evitar el hundimiento de iglesias y castillos abandonados, integrando tecnología en su visita turística.",
+      "cita_literal": "Poner en marcha un plan “Soria Románica 2.0” con presupuesto propio [...] Actuar de forma urgente para evitar el colapso de las iglesias de Aldealcardo, La Cuesta, Cabreriza, Castellanos, Alconeza y Tartajo.",
+      "pagina": "web",
+      "tags": [
+        "#Patrimonio",
+        "#Románico",
+        "#Turismo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Consideras prioritario destinar fondos públicos para evitar que las iglesias abandonadas de los pueblos acaben derrumbándose?"
+    },
+    {
+      "id": 25,
+      "categoria": "Otros",
+      "subcategoria": "Museos e Historia",
+      "titulo_corto": "Construcción de centros de interpretación en yacimientos clave",
+      "resumen": "Crear un gran centro de recepción en Numancia, un Museo Paleontológico en Ambrona y reactivar el centro de huellas de dinosaurio (icnitas) en Villar del Río.",
+      "cita_literal": "Construcción en Numancia de un centro de recepción de visitantes [...] Creación de un Museo Paleontológico en Ambrona. [...] Desbloqueo del Centro de interpretación de las Icnitas en Villar del Río.",
+      "pagina": "web",
+      "tags": [
+        "#Arqueología",
+        "#Numancia",
+        "#Dinosaurios"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería invertirse masivamente en musealizar los grandes yacimientos arqueológicos de la provincia para atraer turismo nacional?"
+    },
+    {
+      "id": 26,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Mayores",
+      "titulo_corto": "Fomento del envejecimiento activo y cuidados en casa",
+      "resumen": "Impulsar el cohousing rural, los cuidados paliativos en el hogar (Plan INTECUM) y la comida a domicilio itinerante para evitar la institucionalización forzosa de los ancianos.",
+      "cita_literal": "Puesta en marcha de un programa “envejecer en casa y en el pueblo”, mediante viviendas colaborativas senior (cohousing rural) [...] servicio público itinerante de comida a domicilio para personas mayores",
+      "pagina": "web",
+      "tags": [
+        "#Mayores",
+        "#CuidadosDomésticos",
+        "#Dependencia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Crees que el objetivo principal de servicios sociales debe ser que los mayores pasen sus últimos años en sus casas y no en residencias?"
+    },
+    {
+      "id": 27,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Residencias",
+      "titulo_corto": "Nuevas ratios de personal y obligación de profesionales sanitarios",
+      "resumen": "Desarrollar la Ley de Residencias exigiendo plantillas acordes a las necesidades de los usuarios y presencia obligatoria de enfermeras y fisioterapeutas.",
+      "cita_literal": "establezcan ratios de personal ajustadas a las necesidades reales [...] Fijar reglamentariamente [...] la presencia obligatoria de profesionales sanitarios titulados como enfermeras o fisioterapeutas.",
+      "pagina": "web",
+      "tags": [
+        "#Residencias",
+        "#Sanidad",
+        "#Cuidados"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyas obligar por ley a las residencias de ancianos a tener siempre contratadas enfermeras y fisioterapeutas en su plantilla?"
+    },
+    {
+      "id": 28,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Infancia",
+      "titulo_corto": "Nuevo modelo autonómico de protección al menor y residencia pública",
+      "resumen": "Implantar el protocolo Barnahus contra el abuso infantil y construir en Soria una residencia autonómica pública de acogida inmediata para menores vulnerables.",
+      "cita_literal": "Aplicar el modelo Barnahus [...] y crear recursos propios como una residencia autonómica de acogida por edades para atender de forma inmediata a cualquier menor en situación de desprotección",
+      "pagina": "web",
+      "tags": [
+        "#Infancia",
+        "#ProtecciónMenores",
+        "#Abusos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Ves necesario centralizar la evaluación y acogida de menores víctimas de violencia en un único centro de protección regional?"
+    },
+    {
+      "id": 29,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Relevo Generacional",
+      "titulo_corto": "Ayudas directas para comprar tierras agrícolas abandonadas",
+      "resumen": "Subvencionar la adquisición de fincas cuyos dueños ya no ejercen, cediéndolas a agricultores activos para evitar la pérdida de suelo productivo.",
+      "cita_literal": "sistema de ayudas para la compra de tierras agrarias, facilitando que los titulares de explotaciones en activo puedan adquirir parcelas procedentes de titulares que ya abandonaron hace mucho tiempo su explotación",
+      "pagina": "web",
+      "tags": [
+        "#TierraAgrícola",
+        "#JóvenesAgricultores",
+        "#RelevoGeneracional"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyas que se dé dinero público a los jóvenes agricultores para que compren las parcelas que han sido abandonadas por sus dueños?"
+    },
+    {
+      "id": 30,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Administración y PAC",
+      "titulo_corto": "Prioridad en las ayudas para agricultores a título principal",
+      "resumen": "Modificar el sistema de la PAC para que quienes viven exclusivamente del campo cobren más ayudas que quienes lo tienen como actividad económica secundaria.",
+      "cita_literal": "mecanismos necesarios para que las ayudas de la PAC se dirijan prioritariamente a quienes se dedican exclusivamente a la agricultura y la ganadería, de forma que estos reciban más apoyo que quienes mantienen la actividad agraria como secundaria",
+      "pagina": "web",
+      "tags": [
+        "#PAC",
+        "#AgricultorProfesional",
+        "#Ayudas"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Estás de acuerdo con quitar o reducir las ayudas agrícolas a aquellos propietarios que tienen otro trabajo principal fuera del campo?"
+    },
+    {
+      "id": 31,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Promoción de Producto",
+      "titulo_corto": "Marca colectiva y compra pública prioritaria de productos locales",
+      "resumen": "Obligar a que los contratos públicos de comedores adquieran alimentos sorianos (carne, leche, setas) y potenciar marcas de garantía como la Trufa de Soria.",
+      "cita_literal": "Plan de promoción de circuitos cortos y compras públicas locales: contratos públicos que prioricen producto soriano (carne, leche, cereal, setas) [...] Fomentar el desarrollo de la trufa de Soria",
+      "pagina": "web",
+      "tags": [
+        "#ProductoLocal",
+        "#KilómetroCero",
+        "#Alimentación"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoyas obligar a los hospitales y colegios públicos a comprar la carne y la verdura preferentemente a agricultores locales, aunque sea más caro?"
+    },
+    {
+      "id": 32,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Fauna y Pastos",
+      "titulo_corto": "Revisión de penalizaciones por pastoreo en matorral y pago por daños de fauna",
+      "resumen": "Ajustar las penalizaciones de la PAC a las zonas arboladas de Soria donde pasta el ganado y exigir indemnizaciones rápidas por ataque de lobos y buitres.",
+      "cita_literal": "Revisión de los coeficientes de pastos en Soria para adaptarlos a la realidad del pastoreo extensivo soriano, donde el ganado aprovecha zonas con arbolado [...] Controlar de forma más efectiva la fauna salvaje (lobo, buitres, jabalíes",
+      "pagina": "web",
+      "tags": [
+        "#GanaderíaExtensiva",
+        "#Lobo",
+        "#PAC"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Deben flexibilizarse las normas europeas para permitir que el ganado paste libremente dentro de zonas de bosque protegido?"
+    },
+    {
+      "id": 33,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Reparto de Fondos",
+      "titulo_corto": "Fondo mínimo de inversión ajeno a la población real",
+      "resumen": "Prohibir que el dinero de la Junta se reparta solo en base a los habitantes, exigiendo un presupuesto base mínimo obligatorio para provincias como Soria.",
+      "cita_literal": "En fondos públicos cuyo reparto provincializado se hace atendiendo a criterios de población, para el caso de provincias despobladas como Soria, partir siempre de un presupuesto mínimo, con independencia de que no sea el que correspondería por número",
+      "pagina": "web",
+      "tags": [
+        "#FinanciaciónJusta",
+        "#Despoblación",
+        "#InversiónPública"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Crees que provincias muy vacías como Soria deben recibir más dinero del que les tocaría matemáticamente por el número de vecinos que tienen?"
+    },
+    {
+      "id": 34,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Innovación Administrativa",
+      "titulo_corto": "Zonificación de Soria como territorio piloto sin burocracia",
+      "resumen": "Aprovechar el tamaño de Soria como laboratorio real para probar la eliminación de licencias de vivienda o la gratuidad universitaria total.",
+      "cita_literal": "Reconocer la provincia de Soria como lugar en el que se pongan en marcha proyectos piloto autonómicos. [...] grados universitarios piloto, únicos, para ver si funcionan , universidad gratuita, reducir plazos en autorizaciones de licencias",
+      "pagina": "web",
+      "tags": [
+        "#ProyectosPiloto",
+        "#InnovaciónLegal",
+        "#Burocracia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyas que se utilice a tu provincia como 'laboratorio de pruebas' para ver si leyes experimentales como la gratuidad universitaria total funcionan?"
+    },
+    {
+      "id": 35,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Servicios Básicos",
+      "titulo_corto": "Oficinas móviles administrativas para días de mercadillo",
+      "resumen": "Llevar furgonetas con personal de la Junta a las cabeceras de comarca durante los días de mercado para que los ancianos y vecinos no tengan que viajar a la capital a hacer papeles.",
+      "cita_literal": "Establecer, con la dotación presupuestaria y de medios acorde a la dispersión demográfica, una serie de oficinas móviles de servicios que actualmente sólo se dan en la capital de provincia, para que puedan ofrecerse en las cabeceras de comarca coincidiendo con los días de mercado.",
+      "pagina": "web",
+      "tags": [
+        "#BurocraciaRural",
+        "#ServiciosPúblicos",
+        "#Accesibilidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Consideras útil habilitar 'oficinas móviles' de la administración en furgonetas para atender papeleo en las plazas de los pueblos el día de mercado?"
+    },
+    {
+      "id": 36,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Ordenación Territorial",
+      "titulo_corto": "Garantía legal de servicios básicos a menos de 30 minutos",
+      "resumen": "Aprobar una Ley de Ordenación Territorial que estructure la comunidad en comarcas reales, garantizando colegios y consultorios a menos de media hora en coche.",
+      "cita_literal": "Creación de comarcas administrativas reales, no solo mapas teóricos, basadas en la movilidad real de la población [...] en la accesibilidad a servicios (máximo 30 minutos), con cabeceras comarcales reforzadas",
+      "pagina": "web",
+      "tags": [
+        "#OrdenaciónTerritorial",
+        "#Equidad",
+        "#ServiciosBásicos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería garantizarse por ley que todos los ciudadanos tengan un centro de salud o colegio a menos de 30 minutos en coche, cueste lo que cueste?"
+    }
+  ]
+}

@@ -79,7 +79,8 @@ export async function loadPartiesCatalog() {
                     color: metadata.color || '#64748b',
                     candidateName: normalizeCandidateName(metadata.candidato),
                     candidatePhoto: metadata.foto_candidato || null,
-                    storyVideo: resolveStoryVideo(metadata.story_video)
+                    storyVideo: resolveStoryVideo(metadata.story_video),
+                    programUrl: metadata.programa_url || null
                 };
             })
         );
@@ -127,6 +128,7 @@ export async function fetchAllPartiesData() {
             party.candidateName = normalizeCandidateName(metadata.candidato) || party.candidateName || null;
             if (metadata.foto_candidato) party.candidatePhoto = metadata.foto_candidato;
             party.storyVideo = resolveStoryVideo(metadata.story_video);
+            party.programUrl = metadata.programa_url || party.programUrl || null;
             data[party.id] = partyData;
         }
     });
