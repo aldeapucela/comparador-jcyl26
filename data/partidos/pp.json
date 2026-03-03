@@ -1646,6 +1646,618 @@
         "foco_rural": false
       },
       "pregunta_afinidad": "¿Está de acuerdo con reforzar el apoyo a creadores jóvenes y celebrar un festival anual de juventud en la Comunidad?"
+    },
+    {
+      "id": 83,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Universidad",
+      "titulo_corto": "Gratuidad de matrícula en el primer curso universitario",
+      "resumen": "Eliminar el coste de la primera matrícula en el primer año de las universidades públicas para alumnos empadronados en la Comunidad.",
+      "cita_literal": "Estableceremos la gratuidad de la primera matrícula en el primer curso en las universidades públicas de Castilla y León para los estudiantes empadronados en la comunidad.",
+      "pagina": 63,
+      "tags": [
+        "#Educacion",
+        "#Universidad",
+        "#Gratuidad",
+        "#Jovenes"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con que el primer año de universidad pública sea totalmente gratis para los alumnos residentes en la Comunidad?"
+    },
+    {
+      "id": 84,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Transporte Público",
+      "titulo_corto": "Gratuidad del transporte autonómico para empadronados",
+      "resumen": "Mantener el transporte público en autobús de titularidad autonómica totalmente gratuito para todos los residentes.",
+      "cita_literal": "Mantendremos la gratuidad del transporte autonómico para todas las personas empadronadas en nuestra Comunidad, con el firme propósito de facilitar el acceso a otros servicios públicos y la calidad de vida de los ciudadanos.",
+      "pagina": 91,
+      "tags": [
+        "#Movilidad",
+        "#TransportePublico",
+        "#Gratuidad",
+        "#ServiciosPublicos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya que viajar en los autobuses interurbanos de la Junta siga siendo gratis para todos los vecinos empadronados en la región?"
+    },
+    {
+      "id": 85,
+      "categoria": "Vivienda",
+      "subcategoria": "Jóvenes",
+      "titulo_corto": "Ampliación de ayudas de vivienda hasta los 40 años",
+      "resumen": "Elevar la edad límite hasta los 40 años para que más familias jóvenes puedan beneficiarse de las ayudas públicas al alquiler y la compra.",
+      "cita_literal": "Ampliaremos hasta los 40 años, la edad de las familias beneficiarias de todas nuestras políticas de vivienda para jóvenes.",
+      "pagina": 53,
+      "tags": [
+        "#Vivienda",
+        "#Jovenes",
+        "#Ayudas",
+        "#Emancipacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien subir de los 35 a los 40 años la edad tope para poder pedir las ayudas públicas de vivienda para jóvenes?"
+    },
+    {
+      "id": 86,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Ayudas al estudio",
+      "titulo_corto": "Libros de texto gratuitos mediante el programa Releo Plus",
+      "resumen": "Ampliar el banco de libros de texto gratuitos para abarcar progresivamente a un mayor número de familias con hijos en edad escolar.",
+      "cita_literal": "Continuaremos adaptando el programa “Releo Plus” a la evolución del sistema educativo, mediante la incorporación de materiales y libros en multiformato e incrementando progresivamente el número de familias beneficiarias del mismo.",
+      "pagina": 57,
+      "tags": [
+        "#Educacion",
+        "#Familias",
+        "#LibrosGratis",
+        "#Igualdad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que la Junta debe aumentar los fondos para asegurar que a más familias les salgan gratis los libros de texto del colegio?"
+    },
+    {
+      "id": 87,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Listas de espera",
+      "titulo_corto": "Garantía de tiempos máximos de demora sanitaria",
+      "resumen": "Establecer y ampliar los tiempos máximos legales garantizados en los que un paciente debe ser atendido para cirugías, consultas externas y pruebas diagnósticas.",
+      "cita_literal": "Estableceremos tiempos máximos de demora para algunos procedimientos, ampliando los recogidos en la normativa estatal. Seguiremos mejorando la lista de espera y tiempos de demora en consultas externas y pruebas diagnósticas.",
+      "pagina": 69,
+      "tags": [
+        "#SanidadPublica",
+        "#ListasDeEspera",
+        "#Pacientes",
+        "#Garantia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya establecer por ley un número de días máximo de espera para que a un paciente le operen o le hagan pruebas médicas?"
+    },
+    {
+      "id": 88,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Mayores",
+      "titulo_corto": "Nuevas ventajas y viajes para el Club de los 60",
+      "resumen": "Ampliar las plazas de los viajes para mayores e incorporar nuevos beneficios al Carné 60, como asesoramiento legal antifraude y talleres.",
+      "cita_literal": "Ampliaremos las plazas de Viajes del Club 60 en aquellos destinos con mayor demanda. Se añadirán a las ventajas del Carné 60, dos nuevos beneficios consistentes en un servicio gratuito de asesoramiento y protección frente a fraudes y malas prácticas y la oferta de talleres y cursos gratuitos o con descuento.",
+      "pagina": 79,
+      "tags": [
+        "#ServiciosSociales",
+        "#Mayores",
+        "#EnvejecimientoActivo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Desea que se oferten más viajes para jubilados y que se den cursos gratuitos a los mayores para evitar que caigan en estafas?"
+    },
+    {
+      "id": 89,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Ciclo del Agua",
+      "titulo_corto": "Depuración de aguas residuales en municipios pequeños",
+      "resumen": "Construir depuradoras en los núcleos rurales que aún vierten aguas sin tratar, avanzando hacia el vertido cero en la Comunidad.",
+      "cita_literal": "Seguiremos avanzando en la depuración de todas las aguas residuales urbanas en Castilla y León con la construcción de depuradoras en aquellos puntos de vertido aún sin infraestructura efectiva.",
+      "pagina": 109,
+      "tags": [
+        "#MedioAmbiente",
+        "#Agua",
+        "#MedioRural",
+        "#Sostenibilidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parece prioritario gastar fondos públicos en construir depuradoras en los pueblos pequeños para no contaminar los ríos?"
+    },
+    {
+      "id": 90,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Peajes",
+      "titulo_corto": "Bonificación de peajes en autopistas (AP-6, AP-51, AP-61)",
+      "resumen": "Destinar 10 millones de euros anuales de la Junta para bonificar los peajes a los usuarios frecuentes mientras el Gobierno central no actúe.",
+      "cita_literal": "La aplicación por el Gobierno de España de la bonificación de los peajes vigentes, en las mismas condiciones que la AP-9, en la AP-51, AP-6, AP-61, AP-66 y AP-71, que le demandaremos; destinando desde Castilla y León 10 millones de euros anuales para sufragar la bonificación mientras persista la inacción del Gobierno nacional.",
+      "pagina": 87,
+      "tags": [
+        "#Movilidad",
+        "#Peajes",
+        "#Autopistas",
+        "#Transporte"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien que la Junta use dinero autonómico para rebajar el coste de los peajes de las autopistas a los conductores frecuentes?"
+    },
+    {
+      "id": 91,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Ingreso Mínimo Vital",
+      "titulo_corto": "Traspaso de la gestión del Ingreso Mínimo Vital",
+      "resumen": "Reclamar al Estado la transferencia del IMV para gestionarlo de forma conjunta con la Renta Garantizada de Ciudadanía autonómica y mejorar la inserción.",
+      "cita_literal": "Reiteraremos nuestra petición al Gobierno de España para que transfiera la gestión del Ingreso Mínimo Vital a Castilla y León, con el fin de mejorar su coordinación con las políticas autonómicas de inclusión social.",
+      "pagina": 83,
+      "tags": [
+        "#ServiciosSociales",
+        "#IMV",
+        "#Pobreza",
+        "#Competencias"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que la Junta de Castilla y León debería ser quien gestione y reparta el Ingreso Mínimo Vital en lugar del Gobierno central?"
+    },
+    {
+      "id": 92,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Repoblación",
+      "titulo_corto": "Plantación de 50 millones de árboles",
+      "resumen": "Gran plan de reforestación para aumentar la fijación de carbono, recuperar zonas incendiadas y generar riqueza forestal.",
+      "cita_literal": "Incrementaremos nuestra superficie forestal arbolada... Para ello plantaremos más de 50 millones de árboles, creando nuevas masas arboladas y regenerando todas las superficies arboladas de montes de utilidad pública afectadas por los incendios.",
+      "pagina": 107,
+      "tags": [
+        "#MedioAmbiente",
+        "#Reforestacion",
+        "#Montes",
+        "#CambioClimatico"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Apoya un gran plan de inversión pública para plantar 50 millones de árboles en los montes de la región durante los próximos años?"
+    },
+    {
+      "id": 93,
+      "categoria": "Otros",
+      "subcategoria": "Caza",
+      "titulo_corto": "Defensa del sector cinegético y caza sostenible",
+      "resumen": "Proteger la caza como motor económico rural, facilitando trámites a cazadores y controlando la sobreabundancia de especies que dañan la agricultura.",
+      "cita_literal": "Defenderemos los intereses del sector cinegético para poder seguir cazando las especies de avifauna, respetando los principios de gestión responsable y adaptativa... Gestionaremos los problemas puntuales de sobreabundancia de poblaciones (jabalí, ciervo, corzo, conejo).",
+      "pagina": 105,
+      "tags": [
+        "#MedioRural",
+        "#Caza",
+        "#Tradiciones",
+        "#Agricultura"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con apoyar legalmente y fomentar la actividad de la caza como motor económico y de control de fauna en los pueblos?"
+    },
+    {
+      "id": 94,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Prevención",
+      "titulo_corto": "Ampliación del cribado neonatal (Prueba del talón)",
+      "resumen": "Aumentar el número de enfermedades raras y metabólicas que se detectan a los recién nacidos para adelantar sus tratamientos.",
+      "cita_literal": "Ampliaremos el cribado neonatal, incorporando nuevas pruebas endocrinometabólicas y de diagnóstico prenatal, y ofreceremos las terapias y recursos para todos los niños y niñas diagnosticados.",
+      "pagina": 67,
+      "tags": [
+        "#SanidadPublica",
+        "#Infancia",
+        "#Prevencion",
+        "#EnfermedadesRaras"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece prioritario aumentar el número de enfermedades raras que el sistema público investiga de forma obligatoria en los recién nacidos?"
+    },
+    {
+      "id": 95,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Dependencia",
+      "titulo_corto": "Sistemas de Teleasistencia Avanzada y domótica",
+      "resumen": "Instalar equipos en hogares de dependientes severos que monitoricen su salud de forma constante y conecten directamente con emergencias.",
+      "cita_literal": "Dotaremos los hogares de las personas con mayores grados de dependencia y con enfermedades crónicas de alto riesgo de un sistema de atención sociosanitaria integrado en la Teleasistencia Avanzada capaz de monitorizar de forma personalizada constantes de salud.",
+      "pagina": 81,
+      "tags": [
+        "#ServiciosSociales",
+        "#Dependencia",
+        "#Tecnologia",
+        "#Mayores"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Daría ayudas para instalar monitores de salud y sistemas inteligentes gratis en las casas de las personas mayores que viven solas?"
+    },
+    {
+      "id": 96,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Mujer Rural",
+      "titulo_corto": "Apoyo a la Mujer Rural Emprendedora",
+      "resumen": "Programas específicos de asesoramiento, digitalización y financiación para proyectos empresariales liderados por mujeres en los pueblos.",
+      "cita_literal": "Elaboraremos proyectos de apoyo a la Mujer Rural Emprendedora que presten asesoramiento a la difusión y comercialización digital de bienes, productos y servicios a través del diseño de páginas web.",
+      "pagina": 85,
+      "tags": [
+        "#Empleo",
+        "#MujerRural",
+        "#Emprendimiento",
+        "#Igualdad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Cree que la Junta debe tener líneas de subvenciones exclusivas para las mujeres que quieran abrir un negocio en el mundo rural?"
+    },
+    {
+      "id": 97,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Protección Civil",
+      "titulo_corto": "Nueva sede 112 y Helicóptero de Rescate",
+      "resumen": "Modernizar el centro coordinador de emergencias 112 y dotar a la Comunidad de un segundo helicóptero con puente grúa y asistencia médica.",
+      "cita_literal": "Construiremos una nueva sede de Emergencias Castilla y León y 112, con su centro de respaldo... Pondremos en marcha una segunda base de helicóptero con puente grúa, con un Segundo Grupo de Rescate y Salvamento.",
+      "pagina": 111,
+      "tags": [
+        "#MedioAmbiente",
+        "#Emergencias",
+        "#ProteccionCivil",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoyaría invertir presupuesto autonómico en un nuevo centro de coordinación del 112 y un segundo helicóptero medicalizado de rescate?"
+    },
+    {
+      "id": 98,
+      "categoria": "Vivienda",
+      "subcategoria": "Alquiler Asequible",
+      "titulo_corto": "Deducción fiscal a propietarios por alquilar viviendas vacías",
+      "resumen": "Rebajas en el IRPF para dueños de casas desocupadas que las pongan en el mercado de alquiler a un precio asequible.",
+      "cita_literal": "Aprobaremos nuevas deducciones en el IRPF para particulares que pongan en el mercado de alquiler viviendas desocupadas destinadas a satisfacer las necesidades de vivienda permanente, a un precio asequible.",
+      "pagina": 31,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler",
+        "#Impuestos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con dar rebajas en el IRPF a los dueños de casas vacías si deciden alquilarlas a precios asequibles?"
+    },
+    {
+      "id": 99,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Oncología",
+      "titulo_corto": "Nuevas unidades satélite de radioterapia",
+      "resumen": "Completar la red regional de tratamiento contra el cáncer abriendo unidades de radioterapia en Palencia, Segovia y el Bierzo.",
+      "cita_literal": "Continuaremos ofreciendo la mejor tecnología frente al cáncer, completando la red de Unidades Satélites de Radioterapia con Palencia, Segovia y el Bierzo, cubriendo así todas las áreas de salud.",
+      "pagina": 71,
+      "tags": [
+        "#SanidadPublica",
+        "#Cancer",
+        "#Infraestructuras"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya la inversión para abrir unidades de radioterapia en Palencia, Segovia y El Bierzo para que los pacientes no tengan que viajar a otras provincias?"
+    },
+    {
+      "id": 100,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Enfermedad Celiaca",
+      "titulo_corto": "Ayudas económicas a familias con hijos celiacos",
+      "resumen": "Establecer compensaciones para aliviar el sobrecoste de la cesta de la compra en hogares con niños que requieran alimentación sin gluten.",
+      "cita_literal": "Apoyaremos a las familias con hijos menores con enfermedad celiaca, por los sobrecostes económicos en la compra de alimentación libre de gluten.",
+      "pagina": 83,
+      "tags": [
+        "#ServiciosSociales",
+        "#Familias",
+        "#Salud",
+        "#Ayudas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien que la Junta dé ayudas económicas directas a las familias con hijos celiacos para compensar el alto precio de los alimentos sin gluten?"
+    },
+    {
+      "id": 101,
+      "categoria": "Vivienda",
+      "subcategoria": "Pisos Turísticos",
+      "titulo_corto": "Pacto nacional para regular las viviendas turísticas",
+      "resumen": "Promover un acuerdo a nivel estatal para fijar criterios comunes frente al auge de los pisos turísticos, protegiendo a los vecinos y al sector reglado.",
+      "cita_literal": "Promoveremos un pacto nacional dirigido a conseguir criterios comunes sobre determinados subsectores como los pisos turísticos.",
+      "pagina": 51,
+      "tags": [
+        "#Vivienda",
+        "#Turismo",
+        "#PisosTuristicos"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que debería haber una ley nacional estricta que regule por igual en toda España la proliferación de pisos turísticos?"
+    },
+    {
+      "id": 102,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Inclusión Escolar",
+      "titulo_corto": "Programa de inclusión para el alumnado gitano",
+      "resumen": "Reforzar la colaboración con fundaciones para garantizar el éxito escolar y el salto al mundo laboral de los jóvenes de etnia gitana.",
+      "cita_literal": "Seguiremos apoyando la inclusión del colectivo gitano a través de colaboraciones entre la consejería y la Fundación Secretariado Gitano, como es el programa “promociona de la escuela al empleo”.",
+      "pagina": 57,
+      "tags": [
+        "#Educacion",
+        "#Inclusion",
+        "#Igualdad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya destinar fondos a programas educativos específicos para mejorar las tasas de graduación escolar de estudiantes de etnia gitana?"
+    },
+    {
+      "id": 103,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Videojuegos",
+      "titulo_corto": "Impulso autonómico al sector del videojuego",
+      "resumen": "Dotar de facilidades e incentivos a esta industria emergente en alianza con las universidades para retener a los jóvenes programadores en la región.",
+      "cita_literal": "Apoyaremos el sector emergente del videojuego, mediante la dotación de medios, eventos y facilidades que permitan que Castilla y León se convierta en un referente en esta materia.",
+      "pagina": 21,
+      "tags": [
+        "#Empleo",
+        "#Tecnologia",
+        "#Jovenes",
+        "#Videojuegos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Cree que la Junta debe dar subvenciones a empresas de videojuegos para retener a los informáticos y creadores jóvenes en la región?"
+    },
+    {
+      "id": 104,
+      "categoria": "Otros",
+      "subcategoria": "Idioma Español",
+      "titulo_corto": "Estrategia de atracción de estudiantes de español",
+      "resumen": "Promocionar la enseñanza del castellano para alcanzar los 250.000 estudiantes internacionales en la Comunidad y generar impacto económico.",
+      "cita_literal": "Desarrollaremos medidas de atracción de nuevos colectivos de alumnos de español... con el objetivo de alcanzar 250.000 alumnos a lo largo de la legislatura.",
+      "pagina": 117,
+      "tags": [
+        "#Cultura",
+        "#TurismoIdiomatico",
+        "#Educacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya invertir dinero público en campañas internacionales para atraer a miles de extranjeros a estudiar español en nuestra Comunidad?"
+    },
+    {
+      "id": 105,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Burocracia",
+      "titulo_corto": "Traducción de trámites a lenguaje fácil",
+      "resumen": "Reescribir los 20 procedimientos administrativos más habituales usando un lenguaje sencillo para el ciudadano común y personas con discapacidad intelectual.",
+      "cita_literal": "Traduciremos a “lenguaje fácil” los veinte trámites administrativos más demandados por los ciudadanos con carácter general, y todos los que se consideran específicos para personas con discapacidad intelectual.",
+      "pagina": 127,
+      "tags": [
+        "#Transparencia",
+        "#Administracion",
+        "#Accesibilidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Considera prioritario que la Administración reescriba el papeleo más común para que cualquier ciudadano lo entienda sin usar lenguaje técnico o jurídico?"
+    },
+    {
+      "id": 106,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Retorno de Talento",
+      "titulo_corto": "Becas de 10.000 euros para estudiar posgrados",
+      "resumen": "Aumentar la ayuda económica para que los descendientes y residentes en el extranjero vuelvan a las universidades de la Comunidad a hacer un máster.",
+      "cita_literal": "Reforzaremos el Programa de Becas para cursar estudios oficiales de postgrado en universidades públicas de Castilla y León dirigido a castellanos y leoneses y sus descendientes residentes en el extranjero, ampliando la cuantía individual de cada beca de 7.000 a 10.000 euros.",
+      "pagina": 121,
+      "tags": [
+        "#RetoDemografico",
+        "#Universidad",
+        "#Becas",
+        "#Retorno"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien dar becas de 10.000 euros a los jóvenes descendientes de emigrantes de la región para que vengan a cursar aquí su máster?"
+    },
+    {
+      "id": 107,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Fauna Salvaje",
+      "titulo_corto": "Nueva estrategia para la gestión del lobo ibérico",
+      "resumen": "Organizar un congreso internacional para rediseñar el control de grandes carnívoros, defendiendo una coexistencia viable con la ganadería.",
+      "cita_literal": "Organizaremos un congreso internacional de gestión de grandes carnívoros y resolución de conflictos, apostando por una nueva estrategia para el lobo que defienda el manejo de sus poblaciones garantizando su coexistencia de forma integradora con la ganadería.",
+      "pagina": 105,
+      "tags": [
+        "#MedioAmbiente",
+        "#Ganaderia",
+        "#Lobo",
+        "#MundoRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con flexibilizar la protección del lobo para permitir un mayor control de sus manadas en defensa de los ganaderos?"
+    },
+    {
+      "id": 108,
+      "categoria": "Otros",
+      "subcategoria": "Juego y Apuestas",
+      "titulo_corto": "Consolidación de la ley del juego y control de locales",
+      "resumen": "Mantener el equilibrio legal del sector de las apuestas, protegiendo a colectivos vulnerables y dando seguridad jurídica a las empresas.",
+      "cita_literal": "Abordaremos las políticas de juego consolidando el marco normativo regulador del juego y de las apuestas bajo el prisma del respeto a dos principios esenciales: promover y proteger un juego responsable... y otorgar seguridad jurídica al sector empresarial.",
+      "pagina": 131,
+      "tags": [
+        "#Derechos",
+        "#CasasDeApuestas",
+        "#SaludPublica"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya mantener una ley autonómica que busque el equilibrio entre permitir operar a los salones de apuestas y proteger a la población frente a la ludopatía?"
+    },
+    {
+      "id": 109,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Apicultura",
+      "titulo_corto": "Obligación de etiquetar el origen de la miel",
+      "resumen": "Proteger a los apicultores locales presionando para que las etiquetas detallen claramente la procedencia frente a las importaciones encubiertas.",
+      "cita_literal": "Apoyaremos la apicultura como práctica sostenible en nuestras explotaciones agrarias y continuaremos defendiendo una diferenciación más clara de las mieles para garantizar su origen al consumidor.",
+      "pagina": 97,
+      "tags": [
+        "#SectorPrimario",
+        "#Apicultura",
+        "#Consumo",
+        "#Transparencia"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Cree que la ley debería obligar a los fabricantes de miel a poner de forma muy destacada en la etiqueta el país exacto donde ha sido recolectada?"
+    },
+    {
+      "id": 110,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Estancia Hospitalaria",
+      "titulo_corto": "Televisión y WiFi gratis en todos los hospitales",
+      "resumen": "Eliminar el cobro por ver la televisión en las habitaciones de los hospitales públicos y garantizar conexión a internet gratuita para los ingresados.",
+      "cita_literal": "Extenderemos la conectividad WIFI para los pacientes hospitalizados, facilitando su comunicación y el acceso a información y servicios digitales durante su estancia. Se facilitará el acceso gratuito a los servicios de TV.",
+      "pagina": 73,
+      "tags": [
+        "#SanidadPublica",
+        "#Hospitales",
+        "#Derechos",
+        "#Gratuidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien que la Junta asuma el coste para que ver la televisión y usar el WiFi en las habitaciones de los hospitales públicos sea totalmente gratis?"
+    },
+    {
+      "id": 111,
+      "categoria": "Servicios Sociales y Cuidados",
+      "subcategoria": "Residencias",
+      "titulo_corto": "Eliminación de ataduras en residencias de mayores",
+      "resumen": "Avanzar hacia un modelo de cuidados ético prohibiendo progresivamente el uso de sujeciones físicas y químicas (sedantes) en ancianos.",
+      "cita_literal": "Consolidaremos la eliminación de las sujeciones físicas y químicas en los centros de carácter residencial y centros de día de servicios sociales para cuidados de larga duración.",
+      "pagina": 81,
+      "tags": [
+        "#ServiciosSociales",
+        "#Mayores",
+        "#Dependencia",
+        "#DerechosHumanos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con prohibir por ley que a los ancianos en residencias se les ate a las camas o sillas o se les sede por sistema?"
+    },
+    {
+      "id": 112,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Burocracia",
+      "titulo_corto": "Silencio administrativo positivo por defecto",
+      "resumen": "Cambiar la ley para que, si la Administración tarda más de lo permitido en responder a la petición de una empresa o ciudadano, se considere aprobada automáticamente.",
+      "cita_literal": "Impulsaremos... un cambio en la normativa básica de prevención ambiental con objeto de simplificar la tramitación... e implantar, cuando sea posible, el silencio positivo como fórmula general de actuación.",
+      "pagina": 127,
+      "tags": [
+        "#Economia",
+        "#Empresas",
+        "#Burocracia",
+        "#Agilidad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Apoya que si la Administración no le responde a tiempo a un papeleo o permiso, la ley le dé automáticamente la razón a usted (silencio positivo)?"
+    },
+    {
+      "id": 113,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención Rural",
+      "titulo_corto": "Unidades del dolor crónico en centros rurales",
+      "resumen": "Llevar especialistas en el tratamiento del dolor a los pueblos para evitar que los pacientes mayores tengan que viajar a la capital.",
+      "cita_literal": "Extenderemos las unidades de afrontamiento activo del dolor crónico al medio rural, y estableceremos con ayuntamientos y diputaciones programas de afianzamiento en el tiempo de esta medida.",
+      "pagina": 69,
+      "tags": [
+        "#SanidadPublica",
+        "#MedioRural",
+        "#Mayores",
+        "#DolorCronico"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Cree prioritario destinar médicos especialistas en dolor crónico a los consultorios de los pueblos para que los mayores no tengan que ir al hospital?"
     }
   ]
 }
