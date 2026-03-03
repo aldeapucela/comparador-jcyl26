@@ -306,8 +306,20 @@ body {
 }
 
 .home-feature-link.is-disabled {
-    opacity: 0.55;
+    opacity: 1;
     pointer-events: none;
+    color: #475569;
+    border-color: #cbd5e1;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    box-shadow: none;
+}
+
+.home-feature-link.is-disabled .w-10.h-10 {
+    background: #e2e8f0;
+}
+
+.home-feature-link.is-disabled .w-10.h-10 i {
+    color: #64748b;
 }
 
 .party-zone-warning {
