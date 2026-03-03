@@ -13,7 +13,12 @@
     "story_video": {
       "enabled": true,
       "path": "video/mev.mp4"
-    }
+    },
+    "zonas": [
+      "Palencia",
+      "Salamanca",
+      "Valladolid"
+    ]
   },
   "propuestas": [
     {

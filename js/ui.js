@@ -731,7 +731,7 @@ export const UI = {
     },
 
     renderPartyHeader(metadata, partyInfo, options = {}) {
-        const { showStoryRing = false, onStoryClick = null } = options;
+        const { showStoryRing = false, onStoryClick = null, zoneWarningText = '' } = options;
         this.elements.partyTitle.textContent = partyInfo.name;
         const partyColor = partyInfo.color || metadata.color || '#334155';
         this.elements.partyTitle.style.color = partyColor;
@@ -799,6 +799,17 @@ export const UI = {
             this.elements.partyLogo.removeAttribute('role');
             this.elements.partyLogo.removeAttribute('tabindex');
             this.elements.partyLogo.removeAttribute('aria-label');
+        }
+
+        const zoneWarningEl = document.getElementById('party-zone-warning');
+        if (zoneWarningEl) {
+            if (zoneWarningText) {
+                zoneWarningEl.textContent = zoneWarningText;
+                zoneWarningEl.classList.remove('hidden');
+            } else {
+                zoneWarningEl.textContent = '';
+                zoneWarningEl.classList.add('hidden');
+            }
         }
 
         // Add link to complete program

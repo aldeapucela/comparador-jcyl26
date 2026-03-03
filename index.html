@@ -33,9 +33,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20260303135510">
+    <link rel="stylesheet" href="css/style.css?v=20260303171824">
     <link rel="stylesheet" href="css/stories.css?v=20260301193000">
-    <script type="module" src="js/main.js?v=20260303135510"></script>
+    <script type="module" src="js/main.js?v=20260303171824"></script>
     </head>
 
 <body class="bg-slate-50 text-slate-900 min-h-screen">
@@ -77,6 +77,13 @@
                     <i class="fa-solid fa-arrow-left text-sm"></i>
                     <span>Volver</span>
                 </button>
+                <div id="header-zone-control" class="header-zone-control">
+                    <label class="zone-select-wrap" for="zone-select">
+                        <select id="zone-select" aria-label="Seleccionar zona">
+                            <!-- Dynamic options -->
+                        </select>
+                    </label>
+                </div>
             </div>
         </div>
     </header>
@@ -103,7 +110,7 @@
                 </a>
                 <a class="mobile-menu-link" href="#/afinidad">
                     <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
-                    <span>Cuestionario de afinidad</span>
+                    <span id="mobile-menu-afinidad-label">Cuestionario de afinidad</span>
                 </a>
                 <a class="mobile-menu-link" href="#/explora">
                     <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
@@ -163,7 +170,8 @@
                         <div class="absolute inset-0 bg-gradient-to-r from-indigo-100/40 via-transparent to-sky-100/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-200 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </a>
-                    <p class="text-slate-400 mt-4 text-sm font-light">Descubre en 3 minutos tu afinidad con los partidos</p>
+                    <p id="afinidad-home-subtitle" class="text-slate-400 mt-4 text-sm font-light">Descubre en 3 minutos tu afinidad con los partidos</p>
+                    <p id="afinidad-home-unavailable" class="hidden text-amber-700 mt-2 text-sm font-medium">Actualmente solo disponible en Valladolid</p>
                 </div>
 
                 <div class="mb-5">
@@ -241,7 +249,7 @@
             
             <div class="max-w-2xl mx-auto mt-12 text-left">
                 <p class="text-slate-500 text-sm font-light leading-relaxed">
-                    Información basada en las principales formaciones que se presentan por la provincia de Valladolid y que han publicado oficialmente un programa electoral. 
+                    Información basada en las principales formaciones que se presentan por la zona de Valladolid y que han publicado oficialmente un programa electoral. 
                 </p>
                 <p class="text-slate-500 text-sm font-light leading-relaxed mt-2">
                     ¿Falta algo o tienes alguna sugerencia? Envíanos <a href="mailto:contacto@aldeapucela.org" class="text-slate-600 hover:text-slate-800 underline underline-offset-2 transition-colors font-medium">un correo</a> o <a href="https://foro.aldeapucela.org/t/nueva-web-de-aldea-pucela-para-seguir-las-elecciones-de-cyl-de-forma-clara-y-sencilla/951" class="text-slate-600 hover:text-slate-800 underline underline-offset-2 transition-colors font-medium">en nuestro foro</a>.
@@ -261,8 +269,14 @@
                         <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                     </button>
                     <p class="explora-kicker">Explora propuestas</p>
+                    <div class="explora-zone-row">
+                        <div class="explora-zone-control">
+                            <select id="explora-zone-select" class="explora-zone-select" aria-label="Seleccionar zona en Explora">
+                                <!-- Dynamic options -->
+                            </select>
+                        </div>
+                    </div>
                     <h2 class="explora-setup-title">¿Qué quieres ver?</h2>
-
                     <div class="explora-choice-grid" role="radiogroup" aria-label="Modo de exploración">
                         <button type="button" class="explora-choice active" data-explora-choice="random">
                             <i class="fa-solid fa-shuffle"></i>
@@ -352,6 +366,7 @@
             <!-- Party Header Metadata -->
             <div id="party-metadata-container"
                 class="mb-10 flex flex-col md:flex-row items-center gap-6 pb-8 border-b border-slate-200/60">
+                <div id="party-zone-warning" class="party-zone-warning hidden"></div>
                 <div id="party-logo-detail"
                     class="w-20 h-20 rounded-full flex items-center justify-center text-3xl shadow-sm"></div>
                 <div class="text-center md:text-left flex-1">
@@ -495,12 +510,12 @@
                         <i class="fa-solid fa-heart-pulse"></i>
                         Cuestionario de afinidad
                     </p>
-                    <h2 class="text-2xl md:text-3xl font-semibold text-slate-800 leading-tight">En 3 minutos sabrás qué partido encaja más contigo</h2>
-                    <p class="text-slate-600 mt-4 leading-relaxed">
+                    <h2 id="afinidad-intro-title" class="text-2xl md:text-3xl font-semibold text-slate-800 leading-tight">En 3 minutos sabrás qué partido encaja más contigo</h2>
+                    <p id="afinidad-intro-description" class="text-slate-600 mt-4 leading-relaxed">
                         Te haremos preguntas cortas sobre temas clave. Responde rápido, sin pensar demasiado.
                     </p>
 
-                    <div class="mt-6 space-y-3 text-sm text-slate-600">
+                    <div id="afinidad-intro-details" class="mt-6 space-y-3 text-sm text-slate-600">
                         <div class="flex items-start gap-3">
                             <i class="fa-regular fa-star text-amber-600 mt-0.5"></i>
                             <p>Puedes marcar <strong>"Este tema me importa mucho"</strong> para dar más peso a lo que más te importa.</p>
@@ -511,11 +526,15 @@
                         </div>
                     </div>
 
+                    <div id="afinidad-unavailable-note" class="hidden mt-6 p-4 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 text-sm">
+                        <!-- Dynamic content -->
+                    </div>
+
                     <button id="afinidad-start-btn" class="mt-8 w-full sm:w-auto px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl transition-colors font-semibold inline-flex items-center justify-center gap-2">
                         <i class="fa-solid fa-play"></i>
                         <span>Empezar</span>
                     </button>
-                    <a href="./docs/metodologia.html" target="_blank" rel="noopener noreferrer" class="mt-5 block text-xs text-slate-400 hover:text-slate-600 transition-colors text-center">
+                    <a id="afinidad-intro-methodology" href="./docs/metodologia.html" target="_blank" rel="noopener noreferrer" class="mt-5 block text-xs text-slate-400 hover:text-slate-600 transition-colors text-center">
                         Metodología
                     </a>
                 </div>
@@ -771,8 +790,8 @@
         </div>
     </footer>
 
-    <script src="js/analytics.js?v=20260303135510"></script>
-    <script type="module" src="js/main.js?v=20260303135510"></script>
+    <script src="js/analytics.js?v=20260303171824"></script>
+    <script type="module" src="js/main.js?v=20260303171824"></script>
 </body>
 
 </html>

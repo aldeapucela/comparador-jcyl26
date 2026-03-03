@@ -60,8 +60,8 @@ export function createStoriesController(appState) {
                 if (partyVideoShownInSession.has(partyId)) return false;
                 if (hasCandidateVideoBeenSeen(partyId)) return false;
 
-                if (appState.stories.source === 'party') {
-                    const selectedPartyIds = getSelectedPartyIds();
+            if (appState.stories.source === 'party') {
+                    const selectedPartyIds = getSelectedPartyIds({ allowOutOfProvince: true });
                     if (selectedPartyIds.length !== 1 || selectedPartyIds[0] !== partyId) return false;
                     const nextIndex = (appState.stories.currentIndex + 1) % appState.stories.feed.length;
                     const nextPosition = nextIndex + 1;
@@ -672,12 +672,14 @@ export function createStoriesController(appState) {
         return unseenCount;
     }
 
-    function getSelectedPartyIds() {
+    function getSelectedPartyIds({ allowOutOfProvince = false } = {}) {
         const raw = Array.isArray(appState.stories.selectedPartyIds)
             ? appState.stories.selectedPartyIds
             : (appState.stories.selectedPartyId ? [appState.stories.selectedPartyId] : []);
 
-        const allowed = new Set(PARTIES.map((party) => party.id));
+        const allowed = allowOutOfProvince
+            ? new Set(Object.keys(appState.allData || {}))
+            : new Set(PARTIES.map((party) => party.id));
         const unique = [];
         raw.forEach((id) => {
             const normalized = String(id || '').trim();
@@ -688,8 +690,10 @@ export function createStoriesController(appState) {
         return unique;
     }
 
-    function setSelectedPartyIds(ids = [], { ensureOne = false } = {}) {
-        const allowed = new Set(PARTIES.map((party) => party.id));
+    function setSelectedPartyIds(ids = [], { ensureOne = false, allowOutOfProvince = false } = {}) {
+        const allowed = allowOutOfProvince
+            ? new Set(Object.keys(appState.allData || {}))
+            : new Set(PARTIES.map((party) => party.id));
         const unique = [];
         (Array.isArray(ids) ? ids : []).forEach((id) => {
             const normalized = String(id || '').trim();
@@ -697,8 +701,12 @@ export function createStoriesController(appState) {
             unique.push(normalized);
         });
 
-        if (ensureOne && unique.length === 0 && PARTIES[0]?.id) {
-            unique.push(PARTIES[0].id);
+        const fallbackId = allowOutOfProvince
+            ? Object.keys(appState.allData || {})[0]
+            : PARTIES[0]?.id;
+
+        if (ensureOne && unique.length === 0 && fallbackId) {
+            unique.push(fallbackId);
         }
 
         appState.stories.selectedPartyIds = unique;
@@ -746,7 +754,7 @@ export function createStoriesController(appState) {
 
     function canStartExplora() {
         if (appState.stories.source !== 'party') return true;
-        return getSelectedPartyIds().length > 0;
+        return getSelectedPartyIds({ allowOutOfProvince: true }).length > 0;
     }
 
     function syncExploraStartButtonState() {
@@ -806,11 +814,19 @@ export function createStoriesController(appState) {
     }
 
     function buildStoriesFeed() {
+        const { source, selectedTopic } = appState.stories;
+        const selectedPartyIds = getSelectedPartyIds({ allowOutOfProvince: source === 'party' });
+        const selectedSet = new Set(selectedPartyIds);
+        const visibleProvincePartyIds = new Set(PARTIES.map((party) => party.id));
+        const allPartiesCatalog = Array.isArray(appState.allPartiesCatalog) ? appState.allPartiesCatalog : [];
         const allItems = [];
 
         Object.entries(appState.allData).forEach(([partyId, partyData]) => {
-            const partyInfo = PARTIES.find((party) => party.id === partyId);
+            const partyInfo = PARTIES.find((party) => party.id === partyId)
+                || allPartiesCatalog.find((party) => party.id === partyId);
             if (!partyInfo || !Array.isArray(partyData?.propuestas)) return;
+            if (source !== 'party' && !visibleProvincePartyIds.has(partyId)) return;
+            if (source === 'party' && selectedSet.size > 0 && !selectedSet.has(partyId)) return;
 
             partyData.propuestas.forEach((proposal) => {
                 allItems.push({
@@ -821,12 +837,9 @@ export function createStoriesController(appState) {
             });
         });
 
-        const { source, selectedTopic } = appState.stories;
-        const selectedPartyIds = getSelectedPartyIds();
         let filtered = allItems;
 
         if (source === 'party' && selectedPartyIds.length > 0) {
-            const selectedSet = new Set(selectedPartyIds);
             filtered = filtered.filter((item) => selectedSet.has(item.party.id));
         }
 
@@ -1494,7 +1507,11 @@ export function createStoriesController(appState) {
     function startFeed() {
         const topicSelect = document.getElementById('explora-topic-select');
 
-        setSelectedPartyIds(getSelectedPartyIds(), { ensureOne: false });
+        const allowOutOfProvince = appState.stories.source === 'party';
+        setSelectedPartyIds(
+            getSelectedPartyIds({ allowOutOfProvince }),
+            { ensureOne: false, allowOutOfProvince }
+        );
         if (!canStartExplora()) {
             syncExploraStartButtonState();
             UI.navigateHash('#/explora');
@@ -1553,7 +1570,7 @@ export function createStoriesController(appState) {
     function focusOnParty(partyId) {
         if (!partyId) return;
         setSource('party');
-        setSelectedPartyIds([partyId], { ensureOne: true });
+        setSelectedPartyIds([partyId], { ensureOne: true, allowOutOfProvince: true });
         // Force a fresh feed on next /explora/play entry so it doesn't reuse
         // a previously started party feed.
         appState.stories.started = false;

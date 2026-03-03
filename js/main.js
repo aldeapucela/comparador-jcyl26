@@ -11,6 +11,16 @@ import { readSavedStoryIds, getStoryUniqueIdByParts } from './stories/saved.js';
 const APP_VERSION = new URL(import.meta.url).searchParams.get('v') || '';
 window.__APP_VERSION__ = APP_VERSION;
 
+const ZONE_STORAGE_KEY = 'selectedZone';
+const DEFAULT_FALLBACK_ZONE = 'Valladolid';
+const FALLBACK_ZONES = [DEFAULT_FALLBACK_ZONE];
+
+let allPartiesCatalog = [];
+let availableZones = [...FALLBACK_ZONES];
+let defaultZone = DEFAULT_FALLBACK_ZONE;
+let afinidadAvailableZones = [DEFAULT_FALLBACK_ZONE];
+let partyZonesMap = {};
+
 let appState = {
     selectedParty: null,
     currentData: null,
@@ -18,6 +28,7 @@ let appState = {
     highlightedId: null,
     currentHash: '#/',
     previousHash: null,
+    selectedZone: DEFAULT_FALLBACK_ZONE,
 
     // Topic-First state
     mode: 'party', // 'party' or 'topic'
@@ -51,6 +62,236 @@ const storiesController = createStoriesController(appState);
 // Inyectar el controlador de historias y el estado de la aplicación en el módulo de afinidad
 setStoriesController(storiesController);
 setAppState(appState);
+
+function withAppVersion(path) {
+    const version = window.__APP_VERSION__;
+    if (!version) return path;
+    const sep = path.includes('?') ? '&' : '?';
+    return `${path}${sep}v=${encodeURIComponent(version)}`;
+}
+
+function normalizeZoneName(value = '') {
+    return String(value || '').trim();
+}
+
+async function loadAvailableZonesConfig() {
+    try {
+        const response = await fetch(withAppVersion('./data/zones.json'));
+        if (!response.ok) throw new Error('Could not load zones config');
+        const data = await response.json();
+        const zones = Array.isArray(data?.zones)
+            ? data.zones.map(normalizeZoneName).filter(Boolean)
+            : [];
+        const safeZones = zones.length > 0 ? zones : [...FALLBACK_ZONES];
+        defaultZone = normalizeZoneName(data?.defaultZone) || safeZones[0] || DEFAULT_FALLBACK_ZONE;
+        if (!safeZones.includes(defaultZone)) {
+            defaultZone = safeZones[0] || DEFAULT_FALLBACK_ZONE;
+        }
+        const afinidadRaw = Array.isArray(data?.afinidadAvailableZones)
+            ? data.afinidadAvailableZones.map(normalizeZoneName).filter(Boolean)
+            : [];
+        afinidadAvailableZones = afinidadRaw.filter((zone) => safeZones.includes(zone));
+        if (afinidadAvailableZones.length === 0) {
+            afinidadAvailableZones = [defaultZone];
+        }
+        return safeZones;
+    } catch (error) {
+        console.error('Error loading zones config:', error);
+        defaultZone = DEFAULT_FALLBACK_ZONE;
+        afinidadAvailableZones = [DEFAULT_FALLBACK_ZONE];
+        return [...FALLBACK_ZONES];
+    }
+}
+
+function buildPartyZonesMap() {
+    const map = {};
+    allPartiesCatalog.forEach((party) => {
+        const zonesRaw = appState.allData?.[party.id]?.metadatos?.zonas;
+        const normalized = Array.isArray(zonesRaw)
+            ? zonesRaw.map(normalizeZoneName).filter(Boolean)
+            : [];
+        map[party.id] = normalized.length > 0 ? normalized : [...availableZones];
+    });
+    return map;
+}
+
+function getAvailablePartyIdsByZone(zone) {
+    return allPartiesCatalog
+        .filter((party) => {
+            const zones = partyZonesMap[party.id] || [];
+            return zones.includes(zone);
+        })
+        .map((party) => party.id);
+}
+
+function applyZonePartyFilter(zone) {
+    const allowedPartyIds = new Set(getAvailablePartyIdsByZone(zone));
+    const filteredParties = allPartiesCatalog.filter((party) => allowedPartyIds.has(party.id));
+    PARTIES.splice(0, PARTIES.length, ...filteredParties);
+}
+
+function isAfinidadEnabledForZone(zone) {
+    return afinidadAvailableZones.includes(zone);
+}
+
+function renderAfinidadAvailabilityIntro() {
+    const isEnabled = isAfinidadEnabledForZone(appState.selectedZone);
+    const noteEl = document.getElementById('afinidad-unavailable-note');
+    const startBtn = document.getElementById('afinidad-start-btn');
+    const introTitleEl = document.getElementById('afinidad-intro-title');
+    const introDescriptionEl = document.getElementById('afinidad-intro-description');
+    const introDetailsEl = document.getElementById('afinidad-intro-details');
+    const introMethodologyEl = document.getElementById('afinidad-intro-methodology');
+    if (!noteEl || !startBtn) return;
+
+    if (isEnabled) {
+        noteEl.classList.add('hidden');
+        noteEl.innerHTML = '';
+        introTitleEl?.classList.remove('hidden');
+        introDescriptionEl?.classList.remove('hidden');
+        introDetailsEl?.classList.remove('hidden');
+        introMethodologyEl?.classList.remove('hidden');
+        startBtn.disabled = false;
+        startBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        startBtn.setAttribute('aria-disabled', 'false');
+        return;
+    }
+
+    noteEl.innerHTML = `
+        <p>Ahora mismo el cuestionario no está disponible para ${appState.selectedZone}.</p>
+        <p class="mt-2">Puedes cambiar el selector de la parte superior y hacerlo en: ${afinidadAvailableZones.join(', ')}.</p>
+        <p class="mt-2">Esta es una herramienta creada por vecinos voluntarios, iremos ampliándola en cuanto nos sea posible.</p>
+    `;
+    noteEl.classList.remove('hidden');
+    introTitleEl?.classList.add('hidden');
+    introDescriptionEl?.classList.add('hidden');
+    introDetailsEl?.classList.add('hidden');
+    introMethodologyEl?.classList.add('hidden');
+    startBtn.disabled = true;
+    startBtn.classList.add('opacity-50', 'cursor-not-allowed');
+    startBtn.setAttribute('aria-disabled', 'true');
+}
+
+function getSavedZone() {
+    try {
+        const saved = localStorage.getItem(ZONE_STORAGE_KEY);
+        if (saved && availableZones.includes(saved)) return saved;
+    } catch (error) {
+        console.error('Error reading saved zone:', error);
+    }
+    return availableZones.includes(defaultZone)
+        ? defaultZone
+        : (availableZones[0] || defaultZone);
+}
+
+function persistZone(zone) {
+    try {
+        localStorage.setItem(ZONE_STORAGE_KEY, zone);
+    } catch (error) {
+        console.error('Error persisting selected zone:', error);
+    }
+}
+
+function renderZoneSelector() {
+    const zoneOptionsHtml = availableZones
+        .slice()
+        .sort((a, b) => a.localeCompare(b, 'es', { sensitivity: 'base' }))
+        .map((zoneName) => `<option value="${zoneName}">${zoneName}</option>`)
+        .join('');
+    const headerSelect = document.getElementById('zone-select');
+    const exploraSelect = document.getElementById('explora-zone-select');
+    if (headerSelect) headerSelect.innerHTML = zoneOptionsHtml;
+    if (exploraSelect) exploraSelect.innerHTML = zoneOptionsHtml;
+    syncZoneSelectors();
+    syncExploraZoneSelectWidth();
+}
+
+function refreshZoneLabel() {
+    // Zone is communicated through the selector value in the header.
+}
+
+function refreshAfinidadAvailabilityUI() {
+    const isEnabled = isAfinidadEnabledForZone(appState.selectedZone);
+    const homeButton = document.getElementById('btn-goto-afinidad');
+    const unavailableText = document.getElementById('afinidad-home-unavailable');
+    const homeSubtitle = document.getElementById('afinidad-home-subtitle');
+    const mobileMenuLabel = document.getElementById('mobile-menu-afinidad-label');
+
+    if (homeButton) {
+        homeButton.classList.toggle('is-disabled', !isEnabled);
+        homeButton.setAttribute('aria-disabled', String(!isEnabled));
+    }
+    if (unavailableText) {
+        unavailableText.classList.toggle('hidden', isEnabled);
+    }
+    if (homeSubtitle) {
+        homeSubtitle.classList.toggle('hidden', !isEnabled);
+    }
+    if (mobileMenuLabel) {
+        mobileMenuLabel.textContent = isEnabled
+            ? 'Cuestionario de afinidad'
+            : `Cuestionario de afinidad (solo ${afinidadAvailableZones.join(', ')})`;
+    }
+    renderAfinidadAvailabilityIntro();
+}
+
+function applyZoneSelection(zone, { persist = true } = {}) {
+    const fallbackZone = availableZones.includes(defaultZone)
+        ? defaultZone
+        : (availableZones[0] || defaultZone);
+    const nextZone = availableZones.includes(zone) ? zone : fallbackZone;
+    appState.selectedZone = nextZone;
+    if (persist) persistZone(nextZone);
+
+    applyZonePartyFilter(nextZone);
+    appState.selectedParties = appState.selectedParties.filter((partyId) =>
+        PARTIES.some((party) => party.id === partyId)
+    );
+    appState.searchPartyFilters = appState.searchPartyFilters.filter((partyId) =>
+        PARTIES.some((party) => party.id === partyId)
+    );
+    if (appState.selectedParties.length === 0 && PARTIES.length > 0) {
+        appState.selectedParties = PARTIES.slice(0, 2).map((party) => party.id);
+    }
+    refreshZoneLabel();
+    refreshAfinidadAvailabilityUI();
+}
+
+function syncZoneSelectors() {
+    const value = appState.selectedZone;
+    const headerSelect = document.getElementById('zone-select');
+    const exploraSelect = document.getElementById('explora-zone-select');
+    if (headerSelect && headerSelect.value !== value) headerSelect.value = value;
+    if (exploraSelect && exploraSelect.value !== value) exploraSelect.value = value;
+    syncExploraZoneSelectWidth();
+}
+
+function syncExploraZoneSelectWidth() {
+    const exploraSelect = document.getElementById('explora-zone-select');
+    if (!exploraSelect) return;
+    const selectedText = String(
+        exploraSelect.options?.[exploraSelect.selectedIndex]?.text || exploraSelect.value || ''
+    ).trim();
+    const ruler = document.createElement('span');
+    const styles = window.getComputedStyle(exploraSelect);
+    ruler.textContent = selectedText || 'ZONA';
+    ruler.style.position = 'absolute';
+    ruler.style.visibility = 'hidden';
+    ruler.style.whiteSpace = 'pre';
+    ruler.style.fontSize = styles.fontSize;
+    ruler.style.fontWeight = styles.fontWeight;
+    ruler.style.fontFamily = styles.fontFamily;
+    ruler.style.letterSpacing = styles.letterSpacing;
+    ruler.style.textTransform = styles.textTransform;
+    document.body.appendChild(ruler);
+    const textWidth = Math.ceil(ruler.getBoundingClientRect().width);
+    ruler.remove();
+    exploraSelect.style.width = `${Math.max(textWidth + 20, 90)}px`;
+}
+
+function rerenderAfterZoneChange() {
+    handleRouting();
+}
 
 
 function safeDecodeURIComponent(value = '') {
@@ -592,12 +833,19 @@ function setupMobileMenu() {
 
 async function init() {
     await loadPartiesCatalog();
+    allPartiesCatalog = [...PARTIES];
+    appState.allPartiesCatalog = [...allPartiesCatalog];
 
     // 1. Bulk Load all data at start (including afinidad data)
     appState.allData = await fetchAllPartiesData();
+    availableZones = await loadAvailableZonesConfig();
+    partyZonesMap = buildPartyZonesMap();
     
     // Also pre-load afinidad data
     await initAfinidad();
+
+    applyZoneSelection(getSavedZone(), { persist: false });
+    renderZoneSelector();
 
     UI.renderPartySelection();
     syncHomeSavedEntryVisibility();
@@ -608,6 +856,32 @@ async function init() {
 }
 
 function setupEventListeners() {
+    const onZoneChange = (event) => {
+        const nextZone = event.target?.value || defaultZone;
+        applyZoneSelection(nextZone);
+        syncZoneSelectors();
+        UI.renderPartySelection();
+        syncHomeSavedEntryVisibility();
+        rerenderAfterZoneChange();
+    };
+
+    const zoneSelect = document.getElementById('zone-select');
+    if (zoneSelect) zoneSelect.addEventListener('change', onZoneChange);
+
+    const exploraZoneSelect = document.getElementById('explora-zone-select');
+    if (exploraZoneSelect) exploraZoneSelect.addEventListener('change', onZoneChange);
+    const exploraZoneControl = document.querySelector('.explora-zone-control');
+    if (exploraZoneControl && exploraZoneSelect) {
+        exploraZoneControl.addEventListener('click', () => {
+            exploraZoneSelect.focus();
+            if (typeof exploraZoneSelect.showPicker === 'function') {
+                exploraZoneSelect.showPicker();
+            } else {
+                exploraZoneSelect.click();
+            }
+        });
+    }
+
     // Hash change router
     window.addEventListener('hashchange', handleRouting);
     window.addEventListener('saved-proposals-changed', () => {
@@ -630,7 +904,7 @@ function setupEventListeners() {
         const route = (appState.currentHash || '#/')
             .split('/')
             .filter(p => p && p !== '#')[0] || '';
-        const isPartyRoute = PARTIES.some(p => p.id === route);
+        const isPartyRoute = allPartiesCatalog.some(p => p.id === route);
 
         if (route === 'explora') {
             const storiesReturnHash = appState.stories?.returnHash || '#/';
@@ -734,6 +1008,7 @@ function setupEventListeners() {
     const btnAfinidad = document.getElementById('btn-goto-afinidad');
     if (btnAfinidad) {
         btnAfinidad.addEventListener('click', () => {
+            if (!isAfinidadEnabledForZone(appState.selectedZone)) return;
             window.location.hash = '#/afinidad';
         });
     }
@@ -742,6 +1017,7 @@ function setupEventListeners() {
     document.addEventListener('click', (e) => {
         const startBtn = e.target.closest('#afinidad-start-btn');
         if (startBtn) {
+            if (!isAfinidadEnabledForZone(appState.selectedZone)) return;
             startAfinidad();
             return;
         }
@@ -924,7 +1200,7 @@ function getPageTitle(hash) {
     }
     
     // Find party name
-    const party = PARTIES.find(p => p.id === partyId) || PARTIES.find(p => p.id === normalizePartyId(partyId));
+    const party = allPartiesCatalog.find(p => p.id === partyId) || allPartiesCatalog.find(p => p.id === normalizePartyId(partyId));
     if (party) {
         return `${party.name} - Programa Electoral CyL 2026`;
     }
@@ -1038,11 +1314,16 @@ async function handleRouting() {
         appState.mode = 'afinidad';
         trackSpaPageView(hash);
         UI.switchView('afinidad');
+        renderAfinidadAvailabilityIntro();
 
         if (hasLegacySharedData) {
             window.location.hash = '#/afinidad';
             return;
         } else {
+            if (!isAfinidadEnabledForZone(appState.selectedZone)) {
+                showAfinidadIntro();
+                return;
+            }
             // Avoid cross-module cache mismatch: inspect storage here without extra imports.
             // If completed, start flow directly; renderQuestion will restore and show results.
             let hasStoredCompletedResults = false;
@@ -1092,7 +1373,7 @@ async function handleRouting() {
 }
 
 async function doPartySelect(partyId) {
-    const partyInfo = PARTIES.find(p => p.id === partyId);
+    const partyInfo = allPartiesCatalog.find(p => p.id === partyId);
     if (!partyInfo) {
         window.location.hash = '#/';
         return;
@@ -1105,8 +1386,14 @@ async function doPartySelect(partyId) {
         const categories = getCategoriesFromProposals(data.propuestas);
         UI.switchView('detail');
         const unseenCount = storiesController.countUnseenStoriesForParty(partyInfo.id, data.propuestas);
+        const partyZones = partyZonesMap[partyInfo.id] || [];
+        const isAvailableInSelectedZone = partyZones.includes(appState.selectedZone);
+        const zoneWarningText = isAvailableInSelectedZone
+            ? ''
+            : `Esta formación no se presenta en ${appState.selectedZone}`;
         UI.renderPartyHeader(data.metadatos, partyInfo, {
             showStoryRing: unseenCount > 0,
+            zoneWarningText,
             onStoryClick: () => {
                 const fallbackPartyHash = `#/${partyInfo.id}`;
                 const currentHash = window.location.hash || fallbackPartyHash;

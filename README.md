@@ -21,6 +21,7 @@ Incluye estas funcionalidades principales:
 Datos consumidos por la web:
 
 - `data/partidos/*.json`: propuestas por partido.
+- `data/zones.json`: zonas activas para el selector + `defaultZone` + `afinidadAvailableZones`.
 - `data/master-questions.json`: preguntas del cuestionario con `id`, `categoria`, `pregunta`, `tema` y `contexto`.
 - `data/party-scores.json`: matriz de puntuaciones para afinidad.
 

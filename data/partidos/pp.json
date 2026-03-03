@@ -10,7 +10,18 @@
     "color": "#0056a3",
     "lema": "Castilla y León Mejores",
     "anio": 2026,
-    "logo": "img/pp.png"
+    "logo": "img/pp.png",
+    "zonas": [
+      "Ávila",
+      "Burgos",
+      "León",
+      "Palencia",
+      "Salamanca",
+      "Segovia",
+      "Soria",
+      "Valladolid",
+      "Zamora"
+    ]
   },
   "propuestas": [
     {

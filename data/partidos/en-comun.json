@@ -11,7 +11,18 @@
     "coalicion": "Izquierda Unida, Movimiento Sumar, Verdes Equo",
     "lema": "El camino hacia el bienestar de todas las personas",
     "anio": 2026,
-    "logo": "img/encomun.svg"
+    "logo": "img/encomun.svg",
+    "zonas": [
+      "Ávila",
+      "Burgos",
+      "León",
+      "Palencia",
+      "Salamanca",
+      "Segovia",
+      "Soria",
+      "Valladolid",
+      "Zamora"
+    ]
   },
   "propuestas": [
     {

@@ -10,7 +10,18 @@
     "color": "#63be21",
     "lema": "Un programa con sentido común",
     "anio": 2026,
-    "logo": "img/vox.svg"
+    "logo": "img/vox.svg",
+    "zonas": [
+      "Ávila",
+      "Burgos",
+      "León",
+      "Palencia",
+      "Salamanca",
+      "Segovia",
+      "Soria",
+      "Valladolid",
+      "Zamora"
+    ]
   },
   "propuestas": [
     {
