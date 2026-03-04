@@ -263,24 +263,27 @@ function refreshZoneLabel() {
 function refreshAfinidadAvailabilityUI() {
     const isEnabled = isAfinidadEnabledForZone(appState.selectedZone);
     const homeButton = document.getElementById('btn-goto-afinidad');
-    const unavailableText = document.getElementById('afinidad-home-unavailable');
+    const homeLabel = document.getElementById('afinidad-home-label');
     const homeSubtitle = document.getElementById('afinidad-home-subtitle');
+    const homeStatus = document.getElementById('afinidad-home-status');
     const mobileMenuLabel = document.getElementById('mobile-menu-afinidad-label');
 
     if (homeButton) {
         homeButton.classList.toggle('is-disabled', !isEnabled);
         homeButton.setAttribute('aria-disabled', String(!isEnabled));
     }
-    if (unavailableText) {
-        unavailableText.classList.toggle('hidden', isEnabled);
+    if (homeLabel) {
+        homeLabel.textContent = 'Cuestionario de afinidad';
+    }
+    if (homeStatus) {
+        homeStatus.textContent = `Aún no disponible en ${appState.selectedZone}`;
+        homeStatus.classList.toggle('hidden', isEnabled);
     }
     if (homeSubtitle) {
         homeSubtitle.classList.toggle('hidden', !isEnabled);
     }
     if (mobileMenuLabel) {
-        mobileMenuLabel.textContent = isEnabled
-            ? 'Cuestionario de afinidad'
-            : `Cuestionario de afinidad (solo ${afinidadAvailableZones.join(', ')})`;
+        mobileMenuLabel.textContent = 'Cuestionario de afinidad';
     }
     renderAfinidadAvailabilityIntro();
 }
