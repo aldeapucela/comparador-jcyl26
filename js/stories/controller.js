@@ -323,22 +323,66 @@ export function createStoriesController(appState) {
     }
 
     function trackStoriesEvent(action = '', name = '', value = null) {
-        if (typeof _paq === 'undefined') return;
+        const paq = window._paq = window._paq || [];
         const cleanAction = String(action || '').trim();
         const cleanName = String(name || '').trim();
         if (!cleanAction || !cleanName) return;
 
         if (Number.isFinite(value)) {
-            _paq.push(['trackEvent', 'Stories', cleanAction, cleanName, Number(value)]);
+            paq.push(['trackEvent', 'Stories', cleanAction, cleanName, Number(value)]);
             return;
         }
 
-        _paq.push(['trackEvent', 'Stories', cleanAction, cleanName]);
+        paq.push(['trackEvent', 'Stories', cleanAction, cleanName]);
+    }
+
+    function getStoriesPlayRouteMeta(modeName = '') {
+        const cleanMode = String(modeName || '').trim();
+        if (!cleanMode) return null;
+
+        let hash = '#/explora/play/random';
+        let title = 'Explora Play: Random - CyL 2026';
+        if (cleanMode.startsWith('topic:')) {
+            const topicSlug = cleanMode.slice('topic:'.length) || 'general';
+            hash = `#/explora/play/topic/${topicSlug}`;
+            title = `Explora Play: Tema ${topicSlug} - CyL 2026`;
+        } else if (cleanMode.startsWith('parties:')) {
+            const partiesValue = cleanMode.slice('parties:'.length) || 'none';
+            hash = `#/explora/play/parties/${partiesValue}`;
+            title = `Explora Play: Partidos ${partiesValue} - CyL 2026`;
+        }
+
+        return { hash, title };
+    }
+
+    function trackStoriesVirtualPageView(modeName = '') {
+        const paq = window._paq = window._paq || [];
+        const meta = getStoriesPlayRouteMeta(modeName);
+        if (!meta) return;
+        const baseUrl = `${window.location.origin}${window.location.pathname}`;
+        paq.push(['setCustomUrl', `${baseUrl}${meta.hash}`]);
+        paq.push(['setDocumentTitle', meta.title]);
+        paq.push(['trackPageView']);
+    }
+
+    function syncStoriesBrowserHash(modeName = '') {
+        const meta = getStoriesPlayRouteMeta(modeName);
+        if (!meta) return false;
+
+        const target = `${window.location.pathname}${window.location.search}${meta.hash}`;
+        const current = `${window.location.pathname}${window.location.search}${window.location.hash || '#/'}`;
+        if (target === current) return false;
+        window.history.replaceState(null, '', target);
+        return true;
     }
 
     function startTrackingSession() {
         trackingModeName = buildTrackingModeName();
         trackingSessionEnded = false;
+        const didSyncHash = syncStoriesBrowserHash(trackingModeName);
+        if (didSyncHash) {
+            trackStoriesVirtualPageView(trackingModeName);
+        }
         trackStoriesEvent('Start', trackingModeName);
     }
 
@@ -1582,7 +1626,20 @@ export function createStoriesController(appState) {
             UI.navigateHash('#/explora');
             return;
         }
-        appState.stories.selectedTopic = topicSelect?.value || CATEGORIES[0]?.name || '';
+        if (appState.stories.source === 'topic') {
+            const fallbackTopic = CATEGORIES[0]?.name || '';
+            const requestedTopic = String(appState.stories.selectedTopic || '').trim();
+            const hasRequestedTopic = CATEGORIES.some((category) => category?.name === requestedTopic);
+            const nextTopic = hasRequestedTopic
+                ? requestedTopic
+                : (topicSelect?.value || fallbackTopic);
+            appState.stories.selectedTopic = nextTopic;
+            if (topicSelect && nextTopic) {
+                topicSelect.value = nextTopic;
+            }
+        } else {
+            appState.stories.selectedTopic = topicSelect?.value || CATEGORIES[0]?.name || '';
+        }
         appState.stories.feed = buildStoriesFeed();
         appState.stories.currentIndex = 0;
         appState.stories.currentDurationMs = EXPLORA_MIN_STORY_DURATION_MS;

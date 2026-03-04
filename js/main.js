@@ -452,6 +452,75 @@ function replaceSearchHash(term, partyIds = []) {
     window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}${nextHash}`);
 }
 
+function slugifyExploraTopic(value = '') {
+    return String(value || '')
+        .trim()
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+}
+
+function applyExploraPlayRouteConfig(parts = []) {
+    const modeSegment = String(parts[2] || '').trim().toLowerCase();
+    const valueSegment = String(parts[3] || '').trim();
+
+    if (modeSegment === 'topic') {
+        const requestedSlug = slugifyExploraTopic(safeDecodeURIComponent(valueSegment));
+        const matchedCategory = CATEGORIES.find((category) => slugifyExploraTopic(category?.name || '') === requestedSlug);
+        appState.stories.source = 'topic';
+        if (matchedCategory?.name) {
+            appState.stories.selectedTopic = matchedCategory.name;
+        } else if (!appState.stories.selectedTopic) {
+            appState.stories.selectedTopic = CATEGORIES[0]?.name || '';
+        }
+        return;
+    }
+
+    if (modeSegment === 'parties') {
+        const allowed = new Set(Object.keys(appState.allData || {}));
+        const requestedIds = safeDecodeURIComponent(valueSegment)
+            .split(',')
+            .map((id) => String(id || '').trim().toLowerCase())
+            .filter((id) => id && allowed.has(id));
+        const unique = Array.from(new Set(requestedIds));
+        appState.stories.source = 'party';
+        appState.stories.selectedPartyIds = unique;
+        appState.stories.selectedPartyId = unique[0] || '';
+        return;
+    }
+
+    if (modeSegment === 'random') {
+        appState.stories.source = 'random';
+        return;
+    }
+}
+
+function buildExploraPlayHashFromCurrentSelection() {
+    const source = String(appState.stories.source || 'random');
+    if (source === 'topic') {
+        const topicSelect = document.getElementById('explora-topic-select');
+        const topicName = String(topicSelect?.value || appState.stories.selectedTopic || CATEGORIES[0]?.name || '').trim();
+        const topicSlug = slugifyExploraTopic(topicName) || 'general';
+        return `#/explora/play/topic/${topicSlug}`;
+    }
+
+    if (source === 'party') {
+        const partyIds = Array.isArray(appState.stories.selectedPartyIds)
+            ? appState.stories.selectedPartyIds
+            : (appState.stories.selectedPartyId ? [appState.stories.selectedPartyId] : []);
+        const normalized = Array.from(new Set(
+            partyIds
+                .map((id) => String(id || '').trim().toLowerCase())
+                .filter(Boolean)
+        )).sort();
+        return `#/explora/play/parties/${normalized.join(',') || 'none'}`;
+    }
+
+    return '#/explora/play/random';
+}
+
 function searchAllProposals(term, partyIds = []) {
     if (!term) return [];
 
@@ -1141,7 +1210,7 @@ function setupEventListeners() {
     });
 
     document.getElementById('btn-explora-start')?.addEventListener('click', () => {
-        UI.navigateHash('#/explora/play');
+        UI.navigateHash(buildExploraPlayHashFromCurrentSelection());
     });
 
     document.addEventListener('keydown', (event) => {
@@ -1338,7 +1407,9 @@ async function handleRouting() {
         trackSpaPageView(hash);
         UI.switchView('stories');
         if (exploraSubroute === 'play') {
-            if (!appState.stories.started) {
+            applyExploraPlayRouteConfig(parts);
+            const isNewPlayRoute = appState.previousHash !== hash;
+            if (!appState.stories.started || isNewPlayRoute) {
                 storiesController.startFeed();
             } else {
                 storiesController.renderPrototype();
