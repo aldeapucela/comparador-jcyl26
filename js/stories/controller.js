@@ -1259,6 +1259,16 @@ export function createStoriesController(appState) {
         }, storyCaptionStepMs);
     }
 
+    function triggerSuggestionHapticFeedback() {
+        const suggestionScreen = UI.containers.storiesCard?.querySelector('.story-screen--suggestion-premium');
+        if (!suggestionScreen || typeof navigator === 'undefined' || typeof navigator.vibrate !== 'function') return;
+        try {
+            navigator.vibrate([10, 35, 10]);
+        } catch {
+            // Ignore unsupported/blocked vibration API.
+        }
+    }
+
     function playStoryCaptionSequence(storyDurationMs = 7000, revealStepMs = EXPLORA_CAPTION_STEP_MS) {
         stopStoryCaptionSequence();
 
@@ -1312,6 +1322,7 @@ export function createStoriesController(appState) {
             clearPlaybackTimers();
             stopStoryCaptionSequence();
             definition.render(activeInterstitial.context || {});
+            triggerSuggestionHapticFeedback();
             appState.stories.currentDurationMs = Number(definition.durationMs) || EXPLORA_ENGAGEMENT_DURATION_MS;
             definition.bindActions?.(activeInterstitial.context || {});
 
