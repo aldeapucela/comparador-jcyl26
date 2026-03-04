@@ -36,6 +36,9 @@ export function createStoriesController(appState) {
     const candidateVideoByAnchorIndex = new Map();
     const warmedCandidateVideoPaths = new Set();
     let candidateVideoMutedPreference = readCandidateVideoMutedPreference();
+    let trackingModeName = '';
+    let trackingSessionEnded = false;
+    let trackingLifecycleBound = false;
     const escapeHtml = (value = '') => String(value)
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
@@ -292,6 +295,67 @@ export function createStoriesController(appState) {
     function incrementViewedStoriesCount() {
         engagementSessionViewedCount += 1;
         return engagementSessionViewedCount;
+    }
+
+    function toSlug(value = '') {
+        return String(value || '')
+            .trim()
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, '');
+    }
+
+    function buildTrackingModeName() {
+        const source = String(appState.stories.source || 'random');
+        if (source === 'topic') {
+            return `topic:${toSlug(appState.stories.selectedTopic || CATEGORIES[0]?.name || 'general') || 'general'}`;
+        }
+        if (source === 'party') {
+            const parties = getSelectedPartyIds({ allowOutOfProvince: true })
+                .map((id) => String(id || '').trim())
+                .filter(Boolean)
+                .sort();
+            return parties.length ? `parties:${parties.join(',')}` : 'parties:none';
+        }
+        return 'random';
+    }
+
+    function trackStoriesEvent(action = '', name = '', value = null) {
+        if (typeof _paq === 'undefined') return;
+        const cleanAction = String(action || '').trim();
+        const cleanName = String(name || '').trim();
+        if (!cleanAction || !cleanName) return;
+
+        if (Number.isFinite(value)) {
+            _paq.push(['trackEvent', 'Stories', cleanAction, cleanName, Number(value)]);
+            return;
+        }
+
+        _paq.push(['trackEvent', 'Stories', cleanAction, cleanName]);
+    }
+
+    function startTrackingSession() {
+        trackingModeName = buildTrackingModeName();
+        trackingSessionEnded = false;
+        trackStoriesEvent('Start', trackingModeName);
+    }
+
+    function endTrackingSession() {
+        if (trackingSessionEnded || !trackingModeName) return;
+        trackingSessionEnded = true;
+        trackStoriesEvent('End', trackingModeName, engagementSessionViewedCount);
+    }
+
+    function bindTrackingLifecycle() {
+        if (trackingLifecycleBound) return;
+        trackingLifecycleBound = true;
+
+        window.addEventListener('pagehide', () => {
+            if (!appState.stories.started) return;
+            endTrackingSession();
+        });
     }
 
     function markEngagementShared() {
@@ -1188,6 +1252,7 @@ export function createStoriesController(appState) {
 
     function closeStoriesToHome() {
         if (appState.mode !== 'stories' || !appState.stories.started) return;
+        endTrackingSession();
         const returnHash = appState.stories?.returnHash || '#/';
         clearPlaybackTimers();
         stopStoryCaptionSequence();
@@ -1534,6 +1599,8 @@ export function createStoriesController(appState) {
         exploraWasPausedByHold = false;
         document.body.classList.remove('explora-paused');
         clearPlaybackTimers();
+        startTrackingSession();
+        bindTrackingLifecycle();
 
         syncExploraSetupUI();
         renderCurrentStoryCard();
@@ -1596,6 +1663,9 @@ export function createStoriesController(appState) {
     }
 
     function resetForRouteEnter() {
+        if (appState.stories.started) {
+            endTrackingSession();
+        }
         clearPlaybackTimers();
         stopStoryCaptionSequence();
         appState.stories.started = false;
@@ -1617,6 +1687,9 @@ export function createStoriesController(appState) {
     }
 
     function teardownForRouteLeave() {
+        if (appState.stories.started) {
+            endTrackingSession();
+        }
         clearPlaybackTimers();
         stopStoryCaptionSequence();
         exploraPlaybackElapsedMs = 0;
