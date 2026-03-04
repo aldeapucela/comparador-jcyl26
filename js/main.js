@@ -944,7 +944,7 @@ function setupMobileMenu() {
             if (skipPendingStoryClick) return;
             closeMenu();
             storiesController.focusOnParty(pendingPartyBtn.dataset.partyId);
-            UI.navigateHash('#/explora/play');
+            UI.navigateHash(buildExploraPlayHashFromCurrentSelection());
         }
     });
 
@@ -1610,7 +1610,7 @@ async function doPartySelect(partyId) {
                 const currentHash = window.location.hash || fallbackPartyHash;
                 appState.stories.returnHash = currentHash.startsWith(fallbackPartyHash) ? currentHash : fallbackPartyHash;
                 storiesController.focusOnParty(partyInfo.id);
-                UI.navigateHash('#/explora/play');
+                UI.navigateHash(buildExploraPlayHashFromCurrentSelection());
             }
         });
         renderNavigation(categories);
