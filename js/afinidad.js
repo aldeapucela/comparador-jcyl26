@@ -136,7 +136,7 @@ function loadFromSession(autoComplete = true) {
             
             // If completed, show results directly
             if (data.completed && data.results) {
-                renderResults(data.results);
+                renderResults(data.results, { resultsZone: data.resultsZone || null });
                 return true; // Indicate results were loaded
             }
 
@@ -219,6 +219,14 @@ export function restartAfinidadFromIntro() {
     resetAfinidadState();
     showAfinidadIntro();
     window.scrollTo(0, 0);
+}
+
+export function clearAfinidadSession() {
+    localStorage.removeItem(getStorageKey());
+    afinidadState.currentIndex = 0;
+    afinidadState.answers = {};
+    afinidadState.importantQuestions = new Set();
+    afinidadState.restored = false;
 }
 
 export function renderQuestion() {
@@ -329,7 +337,7 @@ const LOGO_SCALE_BY_PARTY = {
 };
 
 const COVERAGE_PENALTY_WEIGHT = 0.5;
-const LOW_COVERAGE_THRESHOLD = 40;
+const COVERAGE_NOTICE_THRESHOLD = 60;
 
 function getWinnerLogoScale(partyId) {
     if (!partyId) return 0.74;
@@ -338,7 +346,7 @@ function getWinnerLogoScale(partyId) {
 
 export function calculateAndShowResults() {
     const results = calculateAffinity();
-    renderResults(results);
+    renderResults(results, { resultsZone: appState?.selectedZone || null });
     
     // Track anonymous affinity result
     trackAffinityResult(results);
@@ -353,12 +361,16 @@ function calculateAffinity() {
     const answers = afinidadState.answers;
     const partyScoresRaw = afinidadState.partyScores;
     const importantQuestions = afinidadState.importantQuestions;
+    const activePartyIds = new Set(PARTIES.map((party) => normalizePartyId(party.id)));
     
     const results = {};
     
-    // Iteramos por cada partido en los scores
+    // Iteramos solo por partidos activos en la zona seleccionada
     for (const [rawPartyName, scores] of Object.entries(partyScoresRaw)) {
         const partyId = normalizePartyId(rawPartyName);
+        if (activePartyIds.size > 0 && !activePartyIds.has(partyId)) {
+            continue;
+        }
         let totalDistance = 0;
         const categoryDistances = {};
         const categoryCoverage = {};
@@ -434,7 +446,32 @@ function calculateAffinity() {
     }
     return results;
 }
-export function renderResults(results) {
+
+function getPartyInfo(partyId) {
+    const normalizedId = normalizePartyId(partyId);
+    const activeParty = PARTIES.find((party) => normalizePartyId(party.id) === normalizedId);
+    if (activeParty) return activeParty;
+
+    const allDataEntries = Object.entries(appState?.allData || {});
+    const matchingEntry = allDataEntries.find(([id]) => normalizePartyId(id) === normalizedId);
+    const metadata = matchingEntry?.[1]?.metadatos || {};
+
+    return {
+        id: partyId,
+        name: metadata.partido || partyId,
+        logo: metadata.logo || '',
+        color: metadata.color || '#475569'
+    };
+}
+
+function getZoneLabel(zoneCode) {
+    if (!zoneCode) return '';
+    const zones = appState?.zones || [];
+    const zone = zones.find((z) => z.code === zoneCode);
+    return zone?.name || zoneCode;
+}
+
+export function renderResults(results, { resultsZone = null } = {}) {
     const introEl = document.getElementById('afinidad-intro');
     if (introEl) introEl.classList.add('hidden');
 
@@ -448,7 +485,8 @@ export function renderResults(results) {
         importantQuestions: Array.from(afinidadState.importantQuestions),
         currentIndex: afinidadState.currentIndex,
         completed: true,
-        results: results
+        results: results,
+        resultsZone: resultsZone || appState?.selectedZone || null
     };
     localStorage.setItem(getStorageKey(), JSON.stringify(completionData));
     
@@ -456,7 +494,7 @@ export function renderResults(results) {
     if (sorted.length === 0) return;
     
     const winnerId = sorted[0][0];
-    const winner = PARTIES.find(p => p.id === winnerId);
+    const winner = getPartyInfo(winnerId);
     const winnerLogoScale = getWinnerLogoScale(winner?.id);
     
     // Verificar si hay historias pendientes para el partido ganador
@@ -467,6 +505,12 @@ export function renderResults(results) {
     // 1. Renderizar Ganador
     document.getElementById('afinidad-winner').innerHTML = `
         <div class="bg-white rounded-2xl p-8 text-center border border-slate-200 shadow-sm">
+            ${resultsZone && appState?.selectedZone && resultsZone !== appState.selectedZone ? `
+                <div class="mb-4 rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-left text-xs text-amber-900">
+                    <strong>Atención:</strong> este resultado se calculó para <strong>${getZoneLabel(resultsZone)}</strong> y ahora tienes seleccionada <strong>${getZoneLabel(appState.selectedZone)}</strong>.
+                    Si quieres, puedes mantenerlo o <button id="afinidad-restart-different-zone" class="underline font-semibold hover:text-amber-950">volver a hacer el cuestionario</button> para recalcular.
+                </div>
+            ` : ''}
             <p class="text-slate-500 text-sm font-medium mb-2">Tu partido más afín</p>
             <div class="group">
                 <button class="block w-full cursor-pointer mb-4" onclick="handleWinnerLogoClick('${winnerId}')" aria-label="Ver ${hasPendingStories ? 'historias de' : 'programa de'} ${winner?.name || winnerId}">
@@ -491,7 +535,7 @@ export function renderResults(results) {
     
     // 3. Definir función para manejar el clic en el logo del ganador
     window.handleWinnerLogoClick = (partyId) => {
-        const party = PARTIES.find(p => p.id === partyId);
+        const party = getPartyInfo(partyId);
         if (!party) return;
         
         // Reutilizar el cálculo de historias pendientes ya hecho en renderResults
@@ -530,7 +574,7 @@ export function renderResults(results) {
     document.getElementById('afinidad-chart').innerHTML = `
         <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm">
             ${sorted.map(([partyId, data]) => {
-        const party = PARTIES.find(p => p.id === partyId);
+        const party = getPartyInfo(partyId);
         const partyScoresRaw = afinidadState.partyScores;
         const partyKeyInScores = Object.keys(partyScoresRaw).find(k => normalizePartyId(k) === partyId);
         const scores = partyScoresRaw[partyKeyInScores];
@@ -538,7 +582,9 @@ export function renderResults(results) {
         const coverage = typeof data.coverage === 'number' ? data.coverage : 0;
         const coveredCount = typeof data.coveredCount === 'number' ? data.coveredCount : 0;
         const totalAnsweredCount = typeof data.totalAnsweredCount === 'number' ? data.totalAnsweredCount : 0;
-        const hasLimitedProgram = coverage < LOW_COVERAGE_THRESHOLD;
+        const penaltyFactor = typeof data.affinityPenaltyFactor === 'number' ? data.affinityPenaltyFactor : 1;
+        const penaltyReductionPct = Math.max(0, Math.round((1 - penaltyFactor) * 100));
+        const showCoverageNotice = coverage <= COVERAGE_NOTICE_THRESHOLD && penaltyReductionPct > 0;
         
         const acuerdos = [], desacuerdos = [], silencios = [];
         
@@ -576,7 +622,9 @@ export function renderResults(results) {
                     <div class="flex-1 bg-slate-100 rounded-full h-5 overflow-hidden">
                         <div class="h-full transition-all duration-700" style="width: ${data.affinity}%; background-color: ${party?.color || '#666'}"></div>
                     </div>
-                    <div class="w-10 text-left font-bold text-slate-700 text-sm">${data.affinity}%</div>
+                    <div class="w-16 text-left font-bold text-slate-700 text-sm">
+                        ${data.affinity}%${showCoverageNotice ? '<span class="ml-0.5 align-super text-[10px] font-extrabold text-amber-600" title="Este porcentaje está ajustado por cobertura del programa. Despliega para ver el detalle." aria-label="Porcentaje ajustado por cobertura">*</span>' : ''}
+                    </div>
                     <i class="fa-solid fa-chevron-down text-slate-300 text-xs"></i>
                 </div>
                 
@@ -585,17 +633,15 @@ export function renderResults(results) {
                     <div class="p-5 bg-slate-50 border border-slate-200 rounded-2xl space-y-6 text-sm">
                         <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
                             <p class="font-bold text-slate-700 leading-tight">Cobertura del programa</p>
-                            <p class="text-slate-500 mt-1 text-xs">Este partido se moja en <strong>${coverage}%</strong> de los temas del cuestionario que has contestado (${coveredCount}/${totalAnsweredCount}).</p>
-                            ${hasLimitedProgram ? `
-                                <p class="mt-2 inline-flex items-center gap-2 rounded-lg border border-amber-300 bg-amber-50 px-2 py-1 text-[11px] font-semibold text-amber-800">
-                                    <i class="fa-solid fa-triangle-exclamation"></i>
-                                    Programa Limitado: Este partido no se posiciona en la mayoría de temas del test
+                            <p class="text-slate-500 mt-1 text-xs">Este partido se moja en el <strong>${coverage}%</strong> de los temas del cuestionario que has contestado (${coveredCount}/${totalAnsweredCount}).</p>
+                            ${showCoverageNotice ? `
+                                <p class="mt-2 rounded-lg border border-amber-300 bg-amber-50 px-2 py-1 text-[11px] text-amber-900">
+                                    <strong>Aviso:</strong> este partido no se posiciona en muchos temas. Por eso su resultado baja de <strong>${data.affinityRaw}%</strong> a <strong>${data.affinity}%</strong> por el factor de corrección. <a href="./docs/metodologia.html#ajuste-cobertura" target="_blank" rel="noopener noreferrer" class="ml-1 font-semibold text-amber-800 underline hover:text-amber-900">Ver por qué</a>
                                 </p>
                             ` : ''}
                             <a
                                 href="#/${partyId}"
                                 class="inline-flex items-center gap-2 mt-3 text-xs font-semibold text-indigo-700 hover:text-indigo-800"
-                                onclick="event.stopPropagation()"
                             >
                                 Ver todas sus propuestas
                                 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
@@ -671,6 +717,14 @@ export function renderResults(results) {
             <p class="text-slate-400 text-xs text-center mt-4">Clic en cada partido para detalles</p>
         </div>
     `;
+    const restartForZoneBtn = document.getElementById('afinidad-restart-different-zone');
+    if (restartForZoneBtn) {
+        restartForZoneBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            restartAfinidadFromIntro();
+        });
+    }
     
     renderCategoryBreakdown(results);
     setupShareLinks(results);
@@ -712,9 +766,9 @@ function renderCategoryBreakdown(allResults) {
                 ${categoryWinners.map(cw => {
                     if (cw.affinity < 20) return '';
                     const firstWinner = cw.winners[0];
-                    const party = firstWinner ? PARTIES.find(p => p.id === firstWinner.partyId) : null;
+                    const party = firstWinner ? getPartyInfo(firstWinner.partyId) : null;
                     const tieNames = cw.winners
-                        .map(w => PARTIES.find(p => p.id === w.partyId)?.name)
+                        .map(w => getPartyInfo(w.partyId)?.name)
                         .filter(Boolean)
                         .join(', ');
                     const topBarColor = cw.isTie ? '#94a3b8' : (party?.color || '#94a3b8');
@@ -776,7 +830,7 @@ function urlToImageDataUrl(url, {
 
 function setupShareLinks(results) {
   const sorted = Object.entries(results).sort((a, b) => b[1].affinity - a[1].affinity);
-  const winner = PARTIES.find(p => p.id === sorted[0][0]);
+  const winner = getPartyInfo(sorted[0][0]);
 
   const basePath = window.location.pathname.replace(/\/+$/, '');
   const isDevelopment =
@@ -928,7 +982,7 @@ function setupShareLinks(results) {
         <div style="background:#fff; border:2px solid #e2e8f0; border-radius:16px; padding:32px 24px; margin-bottom:32px; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
           <div style="border-radius:12px; padding:24px;">
             ${sorted.map(([partyId, data]) => {
-              const p = PARTIES.find(part => part.id === partyId);
+              const p = getPartyInfo(partyId);
               return `
                 <div style="display:flex; align-items:center; margin-bottom:16px; padding:10px 0;">
                   <div style="width:100px; text-align:right; font-weight:600; color:#334155; font-size:15px; line-height:1.3; margin-right:20px; letter-spacing:0.01em;">

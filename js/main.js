@@ -302,6 +302,7 @@ function applyZoneSelection(zone, { persist = true } = {}) {
     if (appState.selectedParties.length === 0 && PARTIES.length > 0) {
         appState.selectedParties = PARTIES.slice(0, 2).map((party) => party.id);
     }
+
     refreshZoneLabel();
     refreshAfinidadAvailabilityUI();
 }

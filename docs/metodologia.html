@@ -107,14 +107,14 @@
             </section>
 
             <!-- Cálculo de Afinidad (Algoritmo) -->
-            <section class="bg-white rounded-xl border border-slate-200 p-8">
+            <section id="ajuste-cobertura" class="bg-white rounded-xl border border-slate-200 p-8">
                 <h2 class="text-xl font-semibold text-slate-800 mb-6 flex items-center">
                     <i class="fa-solid fa-calculator text-indigo-600 mr-3"></i>
                     El Algoritmo: Distancia de Manhattan Inversa
                 </h2>
                 <div class="space-y-4">
                     <p class="text-slate-600 leading-relaxed">
-                        A diferencia de los test simples de "sumar puntos", esta herramienta utiliza el estándar de las <strong><a class="text-indigo-600 hover:text-indigo-800" href="https://en.wikipedia.org/wiki/Voting_advice_application" target="_blank">VAA (Voting Advice Applications)</a></strong> académicas. Calcula la "distancia" matemática entre la postura del usuario y la del partido. A menor distancia, mayor afinidad.
+                        No es un simple test de "sumar puntos". Usamos la lógica estándar de las <strong><a class="text-indigo-600 hover:text-indigo-800" href="https://en.wikipedia.org/wiki/Voting_advice_application" target="_blank">VAA (Voting Advice Applications)</a></strong> para medir la distancia entre tu postura y la de cada partido en cada pregunta: cuanto menor es esa distancia, mayor es la afinidad.
                     </p>
                     
                     <div class="grid md:grid-cols-2 gap-6 mt-6">
@@ -125,7 +125,7 @@
                                 Silencios y cobertura
                             </h4>
                             <p class="text-slate-700 text-sm">
-                                Cuando un partido no tiene postura en una pregunta (<strong>N/A</strong>), esa pregunta se excluye del cálculo para ese partido: no suma distancia ni distancia máxima posible. Después aplicamos un ajuste por cobertura para que los silencios programáticos reduzcan proporcionalmente la afinidad final.
+                                Si un partido no se pronuncia en una pregunta (<strong>N/A</strong>), esa pregunta no cuenta ni a favor ni en contra. Después aplicamos un ajuste de cobertura: si se pronuncia en pocos temas, su resultado final baja.
                             </p>
                         </div>
                         
@@ -136,7 +136,7 @@
                                 El factor peso (multiplicador)
                             </h4>
                             <p class="text-slate-700 text-sm">
-                                Las preguntas que el usuario marca como "Este tema me importa mucho" aplican un multiplicador <strong>(×2)</strong> sobre la distancia calculada. Esto garantiza que las prioridades personales del vecino alteren drásticamente el resultado final.
+                                Si marcas "Este tema me importa mucho", esa pregunta pesa el doble (<strong>×2</strong>). Así, tus prioridades influyen más en el resultado.
                             </p>
                         </div>
                     </div>
@@ -161,12 +161,28 @@
                     Equilibrio por Representatividad Programática
                 </h2>
                 <p class="text-slate-700 leading-relaxed">
-                    El sistema aplica un factor corrector para evitar que partidos que no se posicionan en temas clave aparezcan como mejores matches que partidos con programas completos.
-                    Esta penalización es proporcional al nivel de cobertura y garantiza que el resultado de <strong>Match</strong> refleje un compromiso real en el conjunto de áreas competenciales de la Junta.
+                    Aplicamos un ajuste para que un partido que se pronuncia en pocos temas no salga artificialmente beneficiado frente a otro que sí se posiciona en casi todo el cuestionario.
+                    El ajuste es <strong>proporcional a la cobertura</strong>: cuanto menos se posiciona un partido, más se reduce su afinidad final.
                 </p>
                 <p class="text-slate-700 leading-relaxed mt-3">
-                    Importante: los valores <strong>N/A</strong> no se convierten en <strong>0</strong> ideológico. Se mantienen como ausencia de datos, y su efecto se incorpora únicamente mediante el multiplicador de cobertura.
+                    Importante: un <strong>N/A</strong> no significa postura neutral ni se convierte en <strong>0</strong> ideológico.
+                    Se mantiene como ausencia de evidencia y su efecto entra solo por el multiplicador de cobertura.
                 </p>
+            </section>
+
+            <section class="bg-white rounded-xl border border-slate-200 p-8">
+                <h2 class="text-xl font-semibold text-slate-800 mb-4 flex items-center">
+                    <i class="fa-solid fa-diagram-project text-indigo-600 mr-3"></i>
+                    Modelo lógico para partidos provinciales (SYA, VB, UPL, XAV)
+                </h2>
+                <div class="space-y-4 text-slate-700 leading-relaxed">
+                    <p>En partidos provinciales o regionalistas aplicamos exactamente la misma regla que al resto: solo puntuamos lo que está escrito de forma explícita en el eje exacto de cada pregunta. Si no hay evidencia suficiente, asignamos <strong>N/A</strong>.</p>
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                        <p class="font-semibold text-slate-800 mb-2">Por qué su afinidad puede salir más baja</p>
+                        <p class="text-sm">Muchos partidos locales se centran en pocos bloques (despoblación, campo, movilidad, sanidad de proximidad). Si en otros temas no hay postura explícita, esas preguntas quedan en <strong>N/A</strong>. Esto evita atribuirles posturas que no han escrito.</p>
+                    </div>
+                    <p class="text-sm text-slate-600">Además aplicamos el ajuste de cobertura para evitar afinidades artificialmente altas cuando un partido se pronuncia en pocos temas (o en temas de consenso). El <strong>N/A</strong> no se interpreta como postura ideológica: solo reduce proporcionalmente la afinidad final según cobertura (<code>W=0.5</code>).</p>
+                </div>
             </section>
             <!-- Tabla de calibracion por pregunta -->
             <section class="bg-white rounded-xl border border-slate-200 p-8">
@@ -358,10 +374,101 @@
     const linkEl = document.getElementById('score-explain-link');
 
     const table = calibrationSection.querySelector('table');
+    const LOCAL_PARTIES = [
+        { key: 'UPL', label: 'UPL' },
+        { key: 'soria-ya', label: 'Soria Ya' },
+        { key: 'por-avila', label: 'Por Ávila' },
+        { key: 'via-burgalesa', label: 'Vía Burgalesa' }
+    ];
+    const LOCAL_PARTY_SCORES = {
+        UPL: {"SAN_1": null, "SAN_2": 1, "EDU_1": null, "EDU_2": null, "SOC_1": 1, "SOC_2": null, "RET_1": 2, "RET_2": null, "VIV_1": null, "VIV_2": -1, "FIS_1": 1, "FIS_2": null, "AGR_1": null, "AGR_2": 1, "AMB_1": 2, "AMB_2": 1, "MOV_1": 1, "MOV_2": null, "TRA_1": null, "TRA_2": null, "CUL_1": null, "CUL_2": null},
+        "soria-ya": {"SAN_1": null, "SAN_2": 1, "EDU_1": null, "EDU_2": null, "SOC_1": 1, "SOC_2": null, "RET_1": 2, "RET_2": null, "VIV_1": null, "VIV_2": 0, "FIS_1": 0, "FIS_2": null, "AGR_1": 1, "AGR_2": null, "AMB_1": null, "AMB_2": null, "MOV_1": 2, "MOV_2": 2, "TRA_1": null, "TRA_2": null, "CUL_1": null, "CUL_2": null},
+        "por-avila": {"SAN_1": null, "SAN_2": 1, "EDU_1": null, "EDU_2": null, "SOC_1": null, "SOC_2": null, "RET_1": 2, "RET_2": null, "VIV_1": null, "VIV_2": null, "FIS_1": null, "FIS_2": null, "AGR_1": null, "AGR_2": null, "AMB_1": null, "AMB_2": null, "MOV_1": null, "MOV_2": null, "TRA_1": null, "TRA_2": null, "CUL_1": null, "CUL_2": null},
+        "via-burgalesa": {"SAN_1": null, "SAN_2": 2, "EDU_1": null, "EDU_2": null, "SOC_1": 1, "SOC_2": null, "RET_1": 2, "RET_2": null, "VIV_1": null, "VIV_2": -2, "FIS_1": 0, "FIS_2": null, "AGR_1": 1, "AGR_2": null, "AMB_1": 2, "AMB_2": 2, "MOV_1": 2, "MOV_2": 2, "TRA_1": null, "TRA_2": null, "CUL_1": null, "CUL_2": null}
+    };
+    const LOCAL_EVIDENCE = {
+        UPL: {
+            SAN_2: { quote: "promoveremos la creación de hospitales comarcales en Astorga y Ciudad Rodrigo, la conversión del infrautilizado Hospital de Béjar en Hospital pluricomarcal", link: "../index.html#/upl/Sanidad%20P%C3%BAblica/11" },
+            SOC_1: { quote: "impulsaremos la creación de residencias de ancianos y centros de día en nuestros pueblos [...] de modo que se facilite que nuestros mayores puedan seguir residiendo en sus municipios", link: "../index.html#/upl/Servicios%20Sociales%20y%20Cuidados/34" },
+            RET_1: { quote: "insistiremos en que se dote de una fiscalidad diferenciada a nuestras comarcas rurales [...] con rebajas en el IRPF y ayudas directas a empresas y autónomos", link: "../index.html#/upl/Reto%20Demogr%C3%A1fico%20y%20Despoblaci%C3%B3n/35" },
+            VIV_2: { quote: "dotación de una línea específica de ayudas para acometer la reforma de viviendas en mal estado, con mayores incentivos para la reforma de aquellas situadas en pequeñas localidades", link: "../index.html#/upl/Vivienda/31" },
+            FIS_1: { quote: "insistiremos en que se dote de una fiscalidad diferenciada a nuestras comarcas rurales [...] con rebajas en el IRPF y ayudas directas a empresas y autónomos", link: "../index.html#/upl/Reto%20Demogr%C3%A1fico%20y%20Despoblaci%C3%B3n/35" },
+            AGR_2: { quote: "debe haber una moratoria para que no se autoricen más proyectos mientras no haya una planificación específica [...] con una distancia mínima de 3 kilómetros a cualquier casco urbano", link: "../index.html#/upl/Medio%20Ambiente%20y%20Energ%C3%ADa/30" },
+            AMB_1: { quote: "consideramos de justicia la implantación de un canon energético que beneficie a la Región Leonesa [...] proponemos que se instauren descuentos en la factura eléctrica", link: "../index.html#/upl/Econom%C3%ADa%2C%20Empleo%20y%20Fiscalidad/23" },
+            AMB_2: { quote: "debe haber una moratoria para que no se autoricen más proyectos mientras no haya una planificación específica [...] con una distancia mínima de 3 kilómetros a cualquier casco urbano", link: "../index.html#/upl/Medio%20Ambiente%20y%20Energ%C3%ADa/30" },
+            MOV_1: { quote: "dotación de ambulancias de Soporte Vital Básico a Santa María del Páramo, Villablino y Carbajales de Alba [...] o dotar de ambulancias de Soporte Vital Avanzado a Toro, Sahagún y Villablino.", link: "../index.html#/upl/Sanidad%20P%C3%BAblica/5" }
+        },
+        "soria-ya": {
+            SAN_2: { quote: "Puesta en marcha de un programa “envejecer en casa y en el pueblo”, mediante viviendas colaborativas senior (cohousing rural) [...] servicio público itinerante de comida a domicilio para personas mayores", link: "../index.html#/soria-ya/Servicios%20Sociales%20y%20Cuidados/26" },
+            SOC_1: { quote: "establezcan ratios de personal ajustadas a las necesidades reales [...] Fijar reglamentariamente [...] la presencia obligatoria de profesionales sanitarios titulados como enfermeras o fisioterapeutas.", link: "../index.html#/soria-ya/Servicios%20Sociales%20y%20Cuidados/27" },
+            RET_1: { quote: "En fondos públicos cuyo reparto provincializado se hace atendiendo a criterios de población, para el caso de provincias despobladas como Soria, partir siempre de un presupuesto mínimo", link: "../index.html#/soria-ya/Reto%20Demogr%C3%A1fico%20y%20Despoblaci%C3%B3n/33" },
+            VIV_2: { quote: "Elaborar y ejecutar un plan para catalogación e inventario pormenorizado de las edificaciones en ruinas [...] ayudas destinadas a la rehabilitación [...] programa de alquiler", link: "../index.html#/soria-ya/Vivienda/17" },
+            FIS_1: { quote: "Ampliar la duración de esta bonificación un año más a nuevos trabajadores por cuenta propia que residan en municipios de Castilla y León con una densidad de población igual o menor a los 12,5 habitantes por kilómetro cuadrado.", link: "../index.html#/soria-ya/Econom%C3%ADa%2C%20Empleo%20y%20Fiscalidad/5" },
+            AGR_1: { quote: "Revisión de los coeficientes de pastos en Soria para adaptarlos a la realidad del pastoreo extensivo soriano [...] Controlar de forma más efectiva la fauna salvaje", link: "../index.html#/soria-ya/Sector%20Primario%20%28Agricultura%20y%20Ganader%C3%ADa%29/32" },
+            MOV_1: { quote: "Creación de comarcas administrativas reales [...] en la accesibilidad a servicios (máximo 30 minutos), con cabeceras comarcales reforzadas", link: "../index.html#/soria-ya/Calidad%20Democr%C3%A1tica%20y%20Transparencia/36" },
+            MOV_2: { quote: "Garantizar conectividad mínima universal con 100 Mbps reales en todos los núcleos de población de la provincia de Soria", link: "../index.html#/soria-ya/Conectividad%20y%20Movilidad/9" }
+        },
+        "por-avila": {
+            SAN_2: { quote: "Por una sanidad pública digna y de calidad para todos, con más especialidades y servicios en la provincia.", link: "../index.html#/por-avila/Sanidad%20P%C3%BAblica/1" },
+            RET_1: { quote: "Por el desarrollo de medidas concretas y efectivas para frenar la despoblación en nuestro medio rural.", link: "../index.html#/por-avila/Reto%20Demogr%C3%A1fico%20y%20Despoblaci%C3%B3n/4" }
+        },
+        "via-burgalesa": {
+            SAN_2: { quote: "reforzar las plantillas de hospitales y centros de salud, evitando externalizar los servicios a la sanidad privada [...] permitir reducir significativamente las listas de espera.", link: "../index.html#/via-burgalesa/Sanidad%20P%C3%BAblica/13" },
+            SOC_1: { quote: "Revertir progresivamente la financiación de las residencias a cargo total de la Junta de Castilla y León, que actualmente se cofinancia con las Diputaciones.", link: "../index.html#/via-burgalesa/Servicios%20Sociales%20y%20Cuidados/17" },
+            RET_1: { quote: "creación de una Agencia de Desarrollo del Mundo Rural, inspirada en el modelo de las Tierras Altas de Escocia y dotada con un presupuesto de al menos 60 millones de euros.", link: "../index.html#/via-burgalesa/Reto%20Demogr%C3%A1fico%20y%20Despoblaci%C3%B3n/5" },
+            VIV_2: { quote: "PROMOCIÓN PÚBLICA DE VIVIENDAS DE ALQUILER SOCIAL. Sin derecho a compra, al menos hasta disponer de un parque de alquiler suficientemente nutrido.", link: "../index.html#/via-burgalesa/Vivienda/1" },
+            FIS_1: { quote: "Deducción del 15% por residencia habitual en zonas despobladas para ingresos inferiores a 50.000 €.", link: "../index.html#/via-burgalesa/Econom%C3%ADa%2C%20Empleo%20y%20Fiscalidad/27" },
+            AGR_1: { quote: "Establecer un sistema de indemnizaciones rápido, justo y efectivo para evitar las pérdidas económicas generadas por el lobo.", link: "../index.html#/via-burgalesa/Sector%20Primario%20%28Agricultura%20y%20Ganader%C3%ADa%29/39" },
+            AMB_1: { quote: "Proponemos que el criterio de reparto, al menos en un 50% sean el de la zona de producción y no el de la zona de consumo.", link: "../index.html#/via-burgalesa/Econom%C3%ADa%2C%20Empleo%20y%20Fiscalidad/32" },
+            AMB_2: { quote: "Ley Autonómica de Energías Renovables [...] excluyendo aquellos incompatibles con el entorno natural.", link: "../index.html#/via-burgalesa/Medio%20Ambiente%20y%20Energ%C3%ADa/35" },
+            MOV_1: { quote: "cumplan el principio 100/30/30. Esto implica garantizar conexión mínima a Internet de 100 megas; población a menos de 30 minutos de servicios básicos; y a menos de 30 minutos de una vía de alta capacidad.", link: "../index.html#/via-burgalesa/Reto%20Demogr%C3%A1fico%20y%20Despoblaci%C3%B3n/6" },
+            MOV_2: { quote: "cumplan el principio 100/30/30. Esto implica garantizar conexión mínima a Internet de 100 megas; población a menos de 30 minutos de servicios básicos; y a menos de 30 minutos de una vía de alta capacidad.", link: "../index.html#/via-burgalesa/Reto%20Demogr%C3%A1fico%20y%20Despoblaci%C3%B3n/6" }
+        }
+    };
+
+    function scoreBadge(value) {
+        if (value === null || value === undefined) return '<span class="inline-flex items-center justify-center whitespace-nowrap px-2 py-1 rounded text-xs font-bold bg-slate-100 text-slate-500 border border-slate-300">N/A</span>';
+        const v = Number(value);
+        if (v === 2) return '<span class="inline-flex items-center justify-center whitespace-nowrap px-2 py-1 rounded text-xs font-bold bg-green-100 text-green-800">+2</span>';
+        if (v === 1) return '<span class="inline-flex items-center justify-center whitespace-nowrap px-2 py-1 rounded text-xs font-bold bg-emerald-100 text-emerald-800">+1</span>';
+        if (v === 0) return '<span class="inline-flex items-center justify-center whitespace-nowrap px-2 py-1 rounded text-xs font-bold bg-slate-100 text-slate-700">0</span>';
+        if (v === -1) return '<span class="inline-flex items-center justify-center whitespace-nowrap px-2 py-1 rounded text-xs font-bold bg-orange-100 text-orange-800">-1</span>';
+        return '<span class="inline-flex items-center justify-center whitespace-nowrap px-2 py-1 rounded text-xs font-bold bg-red-100 text-red-800">-2</span>';
+    }
+
+    function addLocalistColumns() {
+        const headerRow = table.querySelector('thead tr');
+        if (!headerRow) return;
+        LOCAL_PARTIES.forEach((party) => {
+            const th = document.createElement('th');
+            th.className = 'px-3 py-3 text-center min-w-[88px]';
+            th.textContent = party.label;
+            headerRow.appendChild(th);
+        });
+
+        table.querySelectorAll('tbody tr').forEach((tr) => {
+            const qid = tr.getAttribute('data-qid');
+            LOCAL_PARTIES.forEach((party) => {
+                const raw = LOCAL_PARTY_SCORES?.[party.key]?.[qid];
+                const valueText = raw === null || raw === undefined ? 'N/A' : (raw > 0 ? `+${raw}` : String(raw));
+                const td = document.createElement('td');
+                td.className = 'px-3 py-3 text-center min-w-[88px]';
+                td.innerHTML = `<button type="button" class="score-cell inline-flex items-center justify-center whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-indigo-300 rounded" data-qid="${qid}" data-party="${party.key}" data-value="${valueText}" aria-label="Ver explicación: ${valueText}">${scoreBadge(raw)}</button>`;
+                tr.appendChild(td);
+            });
+        });
+    }
+
+    addLocalistColumns();
+    table.querySelectorAll('button.score-cell').forEach((btn) => {
+        btn.classList.add('inline-flex', 'items-center', 'justify-center', 'whitespace-nowrap');
+        const badge = btn.querySelector('span');
+        if (badge) badge.classList.add('inline-flex', 'items-center', 'justify-center', 'whitespace-nowrap');
+    });
     const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent.trim());
     const scrollTopBtn = document.getElementById('scroll-to-top');
 
-    function reasonFor(value) {
+    function reasonFor(value, payload = {}) {
         if (value === 'N/A') return 'No aparece una medida explícita y verificable sobre este punto con el nivel de concreción exigido por esta pregunta. Por eso no suma ni resta en afinidad.';
         if (value === '+2') return 'Se detecta apoyo explícito y fuerte en la misma dirección de la pregunta. Se calibra como prioridad clara.';
         if (value === '+1') return 'Hay apoyo explícito en la dirección de la pregunta, pero con menor intensidad o centralidad que un +2.';
@@ -376,15 +483,15 @@
         topicEl.textContent = payload.topic;
         questionEl.textContent = payload.question;
         valueEl.textContent = payload.value;
-        reasonEl.textContent = reasonFor(payload.value);
+        reasonEl.textContent = reasonFor(payload.value, payload);
 
-        const ev = EVIDENCE?.[payload.qid]?.[payload.partyKey];
-        if (payload.value !== 'N/A' && payload.value !== '0' && ev && ev.quote) {
+        const ev = EVIDENCE?.[payload.qid]?.[payload.partyKey] || LOCAL_EVIDENCE?.[payload.partyKey]?.[payload.qid];
+        if (payload.value !== 'N/A' && ev && ev.quote) {
             evidenceBox.classList.remove('hidden');
-            quoteEl.textContent = `"${ev.quote}"` + (ev.page ? ` (pág. ${ev.page})` : '');
+            quoteEl.textContent = `"${ev.quote}"` + (ev.page ? ` (${String(ev.page).startsWith('pág.') ? ev.page : `pág. ${ev.page}`})` : '');
             if (ev.link) {
                 linkEl.href = ev.link;
-                linkEl.textContent = ev.page ? `Ver propuesta en el comparador (cita en pág. ${ev.page})` : 'Ver propuesta en el comparador';
+                linkEl.textContent = ev.page ? `Ver propuesta en el comparador (cita en ${String(ev.page).startsWith('pág.') ? ev.page : `pág. ${ev.page}`})` : 'Ver propuesta en el comparador';
             }
         } else {
             evidenceBox.classList.add('hidden');
