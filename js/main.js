@@ -284,6 +284,14 @@ function refreshAfinidadAvailabilityUI() {
         mobileMenuLabel.textContent = 'Cuestionario de afinidad';
     }
     renderAfinidadAvailabilityIntro();
+    refreshAfinidadAldeaPromoVisibility();
+}
+
+function refreshAfinidadAldeaPromoVisibility() {
+    const promoEl = document.getElementById('afinidad-aldea-promo');
+    if (!promoEl) return;
+    const shouldShow = appState.selectedZone === DEFAULT_FALLBACK_ZONE;
+    promoEl.classList.toggle('hidden', !shouldShow);
 }
 
 function applyZoneSelection(zone, { persist = true } = {}) {
@@ -1394,6 +1402,7 @@ async function handleRouting() {
         trackSpaPageView(hash);
         UI.switchView('afinidad');
         renderAfinidadAvailabilityIntro();
+        refreshAfinidadAldeaPromoVisibility();
 
         if (hasLegacySharedData) {
             window.location.hash = '#/afinidad';
