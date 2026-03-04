@@ -208,6 +208,50 @@ function renderTelegramInterstitialCard(container, data = {}) {
     `;
 }
 
+function renderAfinidadInterstitialCard(container, data = {}) {
+    if (!container) return;
+
+    const {
+        transitionDirection = 'next'
+    } = data;
+
+    const transitionClass = transitionDirection === 'prev'
+        ? 'story-screen--enter-prev'
+        : 'story-screen--enter-next';
+
+    container.innerHTML = `
+        <article class="story-screen story-screen--engagement ${transitionClass}" style="--party-color: #4f46e5; --story-accent: #a5b4fc;">
+            <div class="story-screen-overlay"></div>
+
+            <header class="story-top">
+                <div class="story-progress-track" aria-hidden="true">
+                    <span id="story-progress-fill-live" class="story-progress-fill" style="width: 0%"></span>
+                </div>
+                <div class="story-meta-row">
+                    <span class="story-counter">Sugerencia</span>
+                </div>
+            </header>
+
+            <section class="story-body story-body--engagement">
+                <h3 class="story-title">Descubre qué partido encaja más contigo</h3>
+                <div class="story-summary">
+                    <p>Haz el test de afinidad en 3 minutos y compara tu resultado con los programas.</p>
+                </div>
+                <button class="stories-cta-primary stories-cta-primary--share" id="btn-story-afinidad-start" type="button" aria-label="Hacer test de afinidad">
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>Hacer test de afinidad</span>
+                </button>
+            </section>
+
+            <footer class="story-actions story-actions--engagement">
+                <button class="story-engagement-optout" id="btn-story-afinidad-optout" type="button">
+                    No volver a mostrar
+                </button>
+            </footer>
+        </article>
+    `;
+}
+
 function renderCandidateVideoCard(container, data = {}) {
     if (!container) return;
 
@@ -287,5 +331,6 @@ export const StoriesView = {
     renderStoriesCard,
     renderEngagementShareCard,
     renderTelegramInterstitialCard,
+    renderAfinidadInterstitialCard,
     renderCandidateVideoCard
 };

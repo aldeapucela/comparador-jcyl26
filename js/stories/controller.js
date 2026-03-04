@@ -10,11 +10,13 @@ const EXPLORA_ENGAGEMENT_DURATION_MS = 12000;
 const EXPLORA_SEEN_STORIES_STORAGE_KEY = 'explora_seen_stories_v1';
 const EXPLORA_SHARE_ENGAGEMENT_STORAGE_KEY = 'explora_share_engagement_v1';
 const EXPLORA_TELEGRAM_INTERSTITIAL_STORAGE_KEY = 'explora_telegram_interstitial_v1';
+const EXPLORA_AFINIDAD_INTERSTITIAL_STORAGE_KEY = 'explora_afinidad_interstitial_v1';
 const EXPLORA_CANDIDATE_VIDEO_SEEN_STORAGE_KEY = 'explora_candidate_video_seen_v1';
 const EXPLORA_CANDIDATE_VIDEO_MUTED_STORAGE_KEY = 'explora_candidate_video_muted_v1';
 const SAVE_TOAST_ID = 'story-save-toast';
 const TELEGRAM_CHAT_URL = 'https://t.me/aldeapucela/115494';
 const INTERSTITIAL_POSITION_TELEGRAM = 6;
+const INTERSTITIAL_POSITION_AFINIDAD = 9;
 
 export function createStoriesController(appState) {
     let exploraTouchStart = null;
@@ -31,6 +33,8 @@ export function createStoriesController(appState) {
     let activeInterstitial = null;
     let engagementSessionViewedCount = 0;
     let engagementSessionNextPromptAt = 10;
+    let afinidadSessionNextPromptAt = INTERSTITIAL_POSITION_AFINIDAD;
+    let lastInterstitialViewedCount = -1000;
     const interstitialShownInSession = new Set();
     const partyVideoShownInSession = new Set();
     const candidateVideoByAnchorIndex = new Map();
@@ -47,8 +51,59 @@ export function createStoriesController(appState) {
         .replace(/'/g, '&#39;');
     const SHARE_PROMPT_FIRST_THRESHOLD = 10;
     const SHARE_PROMPT_REPEAT_INTERVAL = 15;
+    const AFINIDAD_PROMPT_FIRST_THRESHOLD = INTERSTITIAL_POSITION_AFINIDAD;
+    const AFINIDAD_PROMPT_REPEAT_INTERVAL = 20;
+    const INTERSTITIAL_GLOBAL_COOLDOWN_STORIES = 3;
 
     const INTERSTITIAL_STORIES = [
+        {
+            id: 'afinidad-promo',
+            placement: {
+                type: 'viewed-count',
+                firstAt: AFINIDAD_PROMPT_FIRST_THRESHOLD,
+                repeatEvery: AFINIDAD_PROMPT_REPEAT_INTERVAL
+            },
+            durationMs: EXPLORA_ENGAGEMENT_DURATION_MS,
+            shouldShow() {
+                const state = readAfinidadInterstitialState();
+                if (state.optOut) return false;
+                if (hasCompletedAfinidadTest()) return false;
+                return engagementSessionViewedCount >= afinidadSessionNextPromptAt;
+            },
+            onShow() {
+                consumeAfinidadPrompt();
+            },
+            render() {
+                StoriesView.renderAfinidadInterstitialCard(UI.containers.storiesCard, {
+                    transitionDirection: appState.stories.transitionDirection
+                });
+            },
+            bindActions() {
+                const afinidadBtn = document.getElementById('btn-story-afinidad-start');
+                if (afinidadBtn) {
+                    const stopTapPropagation = (event) => event.stopPropagation();
+                    afinidadBtn.addEventListener('pointerdown', stopTapPropagation);
+                    afinidadBtn.addEventListener('touchstart', stopTapPropagation, { passive: true });
+                    afinidadBtn.addEventListener('click', () => {
+                        if (typeof _paq !== 'undefined') {
+                            _paq.push(['trackEvent', 'Conversion', 'AfinidadStory', 'Click']);
+                        }
+                        UI.navigateHash('#/afinidad');
+                    });
+                }
+
+                const afinidadOptOutBtn = document.getElementById('btn-story-afinidad-optout');
+                if (afinidadOptOutBtn) {
+                    const stopTapPropagation = (event) => event.stopPropagation();
+                    afinidadOptOutBtn.addEventListener('pointerdown', stopTapPropagation);
+                    afinidadOptOutBtn.addEventListener('touchstart', stopTapPropagation, { passive: true });
+                    afinidadOptOutBtn.addEventListener('click', () => {
+                        markAfinidadInterstitialOptOut();
+                        clearActiveInterstitialAndContinue();
+                    });
+                }
+            }
+        },
         {
             id: 'party-candidate-video',
             placement: {
@@ -448,6 +503,58 @@ export function createStoriesController(appState) {
         return engagementSessionNextPromptAt;
     }
 
+    function readAfinidadInterstitialState() {
+        try {
+            const raw = localStorage.getItem(EXPLORA_AFINIDAD_INTERSTITIAL_STORAGE_KEY);
+            if (!raw) {
+                return { optOut: false };
+            }
+            const parsed = JSON.parse(raw);
+            return {
+                optOut: Boolean(parsed?.optOut)
+            };
+        } catch {
+            return { optOut: false };
+        }
+    }
+
+    function writeAfinidadInterstitialState(state = {}) {
+        try {
+            localStorage.setItem(EXPLORA_AFINIDAD_INTERSTITIAL_STORAGE_KEY, JSON.stringify({
+                optOut: Boolean(state.optOut)
+            }));
+        } catch {
+            // Ignore storage quota/privacy failures.
+        }
+    }
+
+    function markAfinidadInterstitialOptOut() {
+        const current = readAfinidadInterstitialState();
+        writeAfinidadInterstitialState({
+            ...current,
+            optOut: true
+        });
+    }
+
+    function consumeAfinidadPrompt() {
+        afinidadSessionNextPromptAt = Math.max(
+            AFINIDAD_PROMPT_FIRST_THRESHOLD,
+            afinidadSessionNextPromptAt + AFINIDAD_PROMPT_REPEAT_INTERVAL
+        );
+        return afinidadSessionNextPromptAt;
+    }
+
+    function hasCompletedAfinidadTest() {
+        try {
+            const raw = localStorage.getItem('afinidad_answers_latest');
+            if (!raw) return false;
+            const parsed = JSON.parse(raw);
+            return Boolean(parsed?.completed && parsed?.results);
+        } catch {
+            return false;
+        }
+    }
+
     function readSeenCandidateVideoPartyIds() {
         try {
             const raw = localStorage.getItem(EXPLORA_CANDIDATE_VIDEO_SEEN_STORAGE_KEY);
@@ -561,7 +668,14 @@ export function createStoriesController(appState) {
 
     function shouldShowInterstitial(definition, context = {}) {
         if (!definition) return false;
+        const placementType = definition.placement?.type;
         if (interstitialShownInSession.has(definition.id) && definition.placement?.type === 'position') {
+            return false;
+        }
+        // Keep fixed-position interstitials deterministic (e.g. Telegram at #6).
+        // Cooldown applies to non-position prompts to avoid suggestion clustering.
+        if (placementType !== 'position'
+            && engagementSessionViewedCount - lastInterstitialViewedCount < INTERSTITIAL_GLOBAL_COOLDOWN_STORIES) {
             return false;
         }
         if (!matchesInterstitialPlacement(definition)) return false;
@@ -574,13 +688,16 @@ export function createStoriesController(appState) {
             story: getCurrentStory(),
             anchorIndex: appState.stories.currentIndex
         };
-        for (const definition of INTERSTITIAL_STORIES) {
-            if (shouldShowInterstitial(definition, context)) {
-                return {
-                    id: definition.id,
-                    context
-                };
-            }
+        const byPriority = [
+            ...INTERSTITIAL_STORIES.filter((item) => item?.placement?.type === 'position'),
+            ...INTERSTITIAL_STORIES.filter((item) => item?.placement?.type !== 'position')
+        ];
+        for (const definition of byPriority) {
+            if (!shouldShowInterstitial(definition, context)) continue;
+            return {
+                id: definition.id,
+                context
+            };
         }
         return null;
     }
@@ -1579,6 +1696,7 @@ export function createStoriesController(appState) {
                 const definition = getInterstitialById(nextInterstitial.id);
                 activeInterstitial = nextInterstitial;
                 definition?.onShow?.(nextInterstitial.context || {});
+                lastInterstitialViewedCount = engagementSessionViewedCount;
                 renderCurrentStoryCard();
                 return;
             }
@@ -1651,6 +1769,8 @@ export function createStoriesController(appState) {
         candidateVideoByAnchorIndex.clear();
         engagementSessionViewedCount = 0;
         engagementSessionNextPromptAt = SHARE_PROMPT_FIRST_THRESHOLD;
+        afinidadSessionNextPromptAt = AFINIDAD_PROMPT_FIRST_THRESHOLD;
+        lastInterstitialViewedCount = -1000;
         exploraPlaybackElapsedMs = 0;
         exploraIsPaused = false;
         exploraWasPausedByHold = false;
@@ -1736,6 +1856,8 @@ export function createStoriesController(appState) {
         candidateVideoByAnchorIndex.clear();
         engagementSessionViewedCount = 0;
         engagementSessionNextPromptAt = SHARE_PROMPT_FIRST_THRESHOLD;
+        afinidadSessionNextPromptAt = AFINIDAD_PROMPT_FIRST_THRESHOLD;
+        lastInterstitialViewedCount = -1000;
         exploraPlaybackElapsedMs = 0;
         exploraIsPaused = false;
         exploraWasPausedByHold = false;
@@ -1758,6 +1880,8 @@ export function createStoriesController(appState) {
         candidateVideoByAnchorIndex.clear();
         engagementSessionViewedCount = 0;
         engagementSessionNextPromptAt = SHARE_PROMPT_FIRST_THRESHOLD;
+        afinidadSessionNextPromptAt = AFINIDAD_PROMPT_FIRST_THRESHOLD;
+        lastInterstitialViewedCount = -1000;
         document.body.classList.remove('explora-paused');
         exitExploraFullscreenIfActive();
     }
