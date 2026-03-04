@@ -896,3 +896,231 @@ body.explora-layout #explora-player .story-screen {
         padding-bottom: 2rem;
     }
 }
+
+/* Premium suggestion interstitials */
+.story-screen--suggestion-premium {
+    background: #1a1b34;
+    isolation: isolate;
+}
+
+.story-screen--suggestion-premium .story-mesh {
+    position: absolute;
+    inset: -10% -8%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.story-screen--suggestion-premium .story-mesh-blob {
+    position: absolute;
+    width: clamp(18rem, 72vw, 33rem);
+    aspect-ratio: 1;
+    border-radius: 999px;
+    filter: blur(64px);
+    opacity: 0.82;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+.story-screen--suggestion-premium .story-mesh-blob-a {
+    top: -6%;
+    left: -10%;
+    background: color-mix(in oklab, var(--mesh-1), white 6%);
+    animation: storyBlobDriftA 16s ease-in-out infinite alternate;
+}
+
+.story-screen--suggestion-premium .story-mesh-blob-b {
+    top: 8%;
+    right: -14%;
+    background: color-mix(in oklab, var(--mesh-2), white 12%);
+    animation: storyBlobDriftB 18s ease-in-out infinite alternate;
+}
+
+.story-screen--suggestion-premium .story-mesh-blob-c {
+    bottom: -12%;
+    left: -8%;
+    background: color-mix(in oklab, var(--mesh-3), black 8%);
+    animation: storyBlobDriftC 20s ease-in-out infinite alternate;
+}
+
+.story-screen--suggestion-premium .story-mesh-blob-d {
+    bottom: -14%;
+    right: -10%;
+    background: color-mix(in oklab, var(--mesh-4), black 4%);
+    animation: storyBlobDriftD 22s ease-in-out infinite alternate;
+}
+
+.story-screen--suggestion-premium .story-screen-overlay {
+    background:
+        radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.16) 0%, transparent 42%),
+        linear-gradient(180deg, rgba(8, 12, 28, 0.12), rgba(8, 12, 28, 0.32));
+}
+
+.story-screen--suggestion-premium .story-top {
+    background: linear-gradient(180deg, rgba(8, 12, 28, 0.2), rgba(8, 12, 28, 0));
+    padding-top: max(0.6rem, env(safe-area-inset-top));
+}
+
+.story-screen--suggestion-premium .story-body--engagement {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1.4rem;
+    padding: clamp(2.5rem, 9vh, 5.2rem) clamp(1.45rem, 5.8vw, 2.3rem) clamp(1.4rem, 5vh, 2.7rem);
+}
+
+.story-screen--suggestion-premium .story-title--premium {
+    font-family: 'Inter', sans-serif;
+    text-transform: none;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    max-width: 12ch;
+    margin: 0;
+    font-size: clamp(2.2rem, 11vw, 3.75rem);
+    animation: storyTitlePop 560ms cubic-bezier(0.16, 1, 0.3, 1);
+    text-shadow: 0 6px 24px rgba(7, 12, 30, 0.38);
+}
+
+
+.story-screen--suggestion-premium .story-suggestion-content {
+    width: min(92%, 27rem);
+    margin: 0 auto;
+    padding: 1.65rem 1.45rem;
+    border-radius: 1.2rem;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.story-screen--suggestion-premium .story-summary--suggestion {
+    display: grid;
+    gap: 0.68rem;
+    min-height: 0;
+    max-width: 28ch;
+    margin: 0 auto;
+    font-size: clamp(1.03rem, 4.6vw, 1.34rem);
+    line-height: 1.52;
+    letter-spacing: 0;
+    text-wrap: balance;
+    text-shadow: 0 3px 14px rgba(6, 10, 28, 0.3);
+}
+
+
+.story-screen--suggestion-premium .story-summary--suggestion strong {
+    font-weight: 800;
+}
+
+.story-screen--suggestion-premium .story-suggestion-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: storyLineReveal 540ms ease forwards;
+    animation-delay: calc(180ms * var(--line-index));
+}
+
+.story-screen--suggestion-premium .stories-cta-primary--suggestion {
+    margin-top: 0.45rem;
+    border-radius: 999px;
+    border: 0;
+    background: var(--cta-bg, #ffffff);
+    color: var(--cta-color, #020617);
+    font-weight: 800;
+    min-height: 3.55rem;
+    min-width: min(88vw, 19.5rem);
+    padding: 0 1.55rem;
+    font-size: 1.02rem;
+    justify-content: center;
+    box-shadow: var(--cta-shadow, 0 20px 38px rgba(2, 6, 23, 0.42), 0 0 0 4px rgba(255, 255, 255, 0.18));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    animation: storyCtaPulse 1.8s ease-in-out infinite;
+}
+
+.story-screen--suggestion-premium .stories-cta-primary--suggestion i {
+    font-size: 1.24rem;
+}
+
+.story-screen--suggestion-premium .story-actions--engagement {
+    align-items: center;
+    padding-bottom: max(2.2rem, env(safe-area-inset-bottom));
+}
+
+
+.story-screen--suggestion-premium .story-engagement-optout {
+    margin-bottom: clamp(1.75rem, 5vh, 2.6rem);
+}
+
+@keyframes storyBlobDriftA {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to { transform: translate3d(12%, 8%, 0) scale(1.08); }
+}
+
+@keyframes storyBlobDriftB {
+    from { transform: translate3d(0, 0, 0) scale(1.02); }
+    to { transform: translate3d(-10%, 10%, 0) scale(0.96); }
+}
+
+@keyframes storyBlobDriftC {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to { transform: translate3d(10%, -12%, 0) scale(1.06); }
+}
+
+@keyframes storyBlobDriftD {
+    from { transform: translate3d(0, 0, 0) scale(1.04); }
+    to { transform: translate3d(-8%, -10%, 0) scale(0.98); }
+}
+
+@keyframes storyTitlePop {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes storyLineReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes storyCtaPulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .story-screen--suggestion-premium .story-mesh-blob,
+    .story-screen--suggestion-premium .story-title--premium,
+    .story-screen--suggestion-premium .story-suggestion-line,
+    .story-screen--suggestion-premium .stories-cta-primary--suggestion {
+        animation: none;
+    }
+
+    
+.story-screen--suggestion-premium .story-summary--suggestion strong {
+    font-weight: 800;
+}
+
+.story-screen--suggestion-premium .story-suggestion-line {
+        opacity: 1;
+        transform: none;
+    }
+}

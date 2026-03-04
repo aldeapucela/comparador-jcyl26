@@ -138,26 +138,33 @@ function renderEngagementShareCard(container, data = {}) {
         : 'story-screen--enter-next';
 
     container.innerHTML = `
-        <article class="story-screen story-screen--engagement ${transitionClass}" style="--party-color: #334155; --story-accent: #22c55e;">
+        <article class="story-screen story-screen--engagement story-screen--suggestion-premium story-screen--suggestion-share ${transitionClass}" style="--party-color: #0f766e; --story-accent: #99f6e4; --mesh-1: #14b87a; --mesh-2: #18d5cf; --mesh-3: #52e3a5; --mesh-4: #7de7e6; --cta-bg: #ffffff; --cta-color: #0b1220; --cta-border: transparent; --cta-shadow: 0 20px 34px rgba(5, 67, 54, 0.34), 0 0 0 4px rgba(255, 255, 255, 0.17);">
+            <div class="story-mesh" aria-hidden="true">
+                <span class="story-mesh-blob story-mesh-blob-a"></span>
+                <span class="story-mesh-blob story-mesh-blob-b"></span>
+                <span class="story-mesh-blob story-mesh-blob-c"></span>
+                <span class="story-mesh-blob story-mesh-blob-d"></span>
+            </div>
             <div class="story-screen-overlay"></div>
 
             <header class="story-top">
                 <div class="story-progress-track" aria-hidden="true">
                     <span id="story-progress-fill-live" class="story-progress-fill" style="width: 0%"></span>
                 </div>
-                <div class="story-meta-row">
-                    <span class="story-counter">Sugerencia</span>
-                </div>
             </header>
 
             <section class="story-body story-body--engagement">
-                <h3 class="story-title">¿Te está gustando esta web?</h3>
-                <div class="story-summary">
-                    <p>Compártela con amigos y familiares en redes y grupos. Ayudas a que más vecinos decidan informados.</p>
+                <div class="story-suggestion-content">
+                    <h3 class="story-title story-title--premium">¡Pasa la voz a tus vecinos!</h3>
+                    <div class="story-summary story-summary--suggestion" aria-label="Mensaje sugerido">
+                        <span class="story-suggestion-line" style="--line-index: 0;">La información es poder.</span>
+                        <span class="story-suggestion-line" style="--line-index: 1;">Ayuda a que tu comunidad vote <strong>informada</strong>.</span>
+                        <span class="story-suggestion-line" style="--line-index: 2;">Comparte esta web en <strong>tus grupos</strong>.</span>
+                    </div>
                 </div>
-                <button class="stories-cta-primary stories-cta-primary--share" id="btn-story-engagement-share" type="button" aria-label="Compartir esta web">
+                <button class="stories-cta-primary stories-cta-primary--suggestion" id="btn-story-engagement-share" type="button" aria-label="Compartir con amigos">
                     <i class="fa-solid fa-share-nodes"></i>
-                    <span>Compartir esta web</span>
+                    <span>Compartir con amigos</span>
                 </button>
             </section>
 
@@ -182,26 +189,33 @@ function renderTelegramInterstitialCard(container, data = {}) {
         : 'story-screen--enter-next';
 
     container.innerHTML = `
-        <article class="story-screen story-screen--engagement story-screen--telegram ${transitionClass}" style="--party-color: #229ed9; --story-accent: #8ed8ff;">
+        <article class="story-screen story-screen--engagement story-screen--suggestion-premium story-screen--telegram ${transitionClass}" style="--party-color: #312e81; --story-accent: #22d3ee; --mesh-1: #5f4ff5; --mesh-2: #4f7dff; --mesh-3: #3a52e6; --mesh-4: #37d9ff; --cta-bg: #ffffff; --cta-color: #0f172a; --cta-border: transparent;">
+            <div class="story-mesh" aria-hidden="true">
+                <span class="story-mesh-blob story-mesh-blob-a"></span>
+                <span class="story-mesh-blob story-mesh-blob-b"></span>
+                <span class="story-mesh-blob story-mesh-blob-c"></span>
+                <span class="story-mesh-blob story-mesh-blob-d"></span>
+            </div>
             <div class="story-screen-overlay"></div>
 
             <header class="story-top">
                 <div class="story-progress-track" aria-hidden="true">
                     <span id="story-progress-fill-live" class="story-progress-fill" style="width: 0%"></span>
                 </div>
-                <div class="story-meta-row">
-                    <span class="story-counter">Sugerencia</span>
-                </div>
             </header>
 
             <section class="story-body story-body--engagement story-body--telegram">
-                <h3 class="story-title">Tus vecinos están opinando en directo 💬</h3>
-                <div class="story-summary">
-                    <p>¿Qué te parecen estas propuestas? Únete al chat vecinal de Aldea Pucela para debatir de forma libre y sin ruido</p>
+                <div class="story-suggestion-content">
+                    <h3 class="story-title story-title--premium">¿Qué opinan tus vecinos?</h3>
+                    <div class="story-summary story-summary--suggestion" aria-label="Mensaje sugerido">
+                        <span class="story-suggestion-line" style="--line-index: 0;">No leas solo las propuestas.</span>
+                        <span class="story-suggestion-line" style="--line-index: 1;">Únete al chat vecinal <strong>en directo</strong>.</span>
+                        <span class="story-suggestion-line" style="--line-index: 2;">Debate de forma libre y <strong>sin ruido</strong>.</span>
+                    </div>
                 </div>
-                <button class="stories-cta-primary stories-cta-primary--telegram" id="btn-story-telegram-join" type="button" aria-label="Entrar al chat vecinal de Telegram">
-                    <i class="fa-brands fa-telegram"></i>
-                    <span>Entrar al chat vecinal ➔</span>
+                <button class="stories-cta-primary stories-cta-primary--suggestion" id="btn-story-telegram-join" type="button" aria-label="Entrar al chat vecinal de Telegram">
+                    <i class="fa-solid fa-message"></i>
+                    <span>Entrar al chat vecinal</span>
                 </button>
             </section>
         </article>
@@ -220,25 +234,32 @@ function renderAfinidadInterstitialCard(container, data = {}) {
         : 'story-screen--enter-next';
 
     container.innerHTML = `
-        <article class="story-screen story-screen--engagement ${transitionClass}" style="--party-color: #4f46e5; --story-accent: #a5b4fc;">
+        <article class="story-screen story-screen--engagement story-screen--suggestion-premium story-screen--suggestion-afinidad ${transitionClass}" style="--party-color: #be123c; --story-accent: #fb7185; --mesh-1: #ff58d8; --mesh-2: #ff8d35; --mesh-3: #ff6aa8; --mesh-4: #ffbb45; --cta-bg: #ffffff; --cta-color: #111827; --cta-border: transparent;">
+            <div class="story-mesh" aria-hidden="true">
+                <span class="story-mesh-blob story-mesh-blob-a"></span>
+                <span class="story-mesh-blob story-mesh-blob-b"></span>
+                <span class="story-mesh-blob story-mesh-blob-c"></span>
+                <span class="story-mesh-blob story-mesh-blob-d"></span>
+            </div>
             <div class="story-screen-overlay"></div>
 
             <header class="story-top">
                 <div class="story-progress-track" aria-hidden="true">
                     <span id="story-progress-fill-live" class="story-progress-fill" style="width: 0%"></span>
                 </div>
-                <div class="story-meta-row">
-                    <span class="story-counter">Sugerencia</span>
-                </div>
             </header>
 
             <section class="story-body story-body--engagement">
-                <h3 class="story-title">Descubre qué partido encaja más contigo</h3>
-                <div class="story-summary">
-                    <p>Haz el test de afinidad en 3 minutos y compara tu resultado con los programas.</p>
+                <div class="story-suggestion-content">
+                    <h3 class="story-title story-title--premium">¿Cuál es tu partido ideal?</h3>
+                    <div class="story-summary story-summary--suggestion" aria-label="Mensaje sugerido">
+                        <span class="story-suggestion-line" style="--line-index: 0;">Ahorra tiempo de lectura.</span>
+                        <span class="story-suggestion-line" style="--line-index: 1;">Haz el test de afinidad en <strong>2 min</strong>.</span>
+                        <span class="story-suggestion-line" style="--line-index: 2;">Descubre quién piensa realmente <strong>como tú</strong>.</span>
+                    </div>
                 </div>
-                <button class="stories-cta-primary stories-cta-primary--share" id="btn-story-afinidad-start" type="button" aria-label="Hacer test de afinidad">
-                    <i class="fa-solid fa-sliders"></i>
+                <button class="stories-cta-primary stories-cta-primary--suggestion" id="btn-story-afinidad-start" type="button" aria-label="Hacer test de afinidad">
+                    <i class="fa-solid fa-bolt"></i>
                     <span>Hacer test de afinidad</span>
                 </button>
             </section>
