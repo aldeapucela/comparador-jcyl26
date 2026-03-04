@@ -1314,43 +1314,45 @@ function getPageTitle(hash) {
     const parts = hashWithoutQuery.split('/').filter(p => p && p !== '#');
     
     if (parts.length === 0) {
-        return 'Comparador Programas Electorales CyL 2026';
+        return 'Programas electorales Castilla y León 2026 | Comparador';
     }
     
     const partyId = parts[0];
     
     if (partyId === 'comparar') {
         const topicId = safeDecodeURIComponent(parts[1] || '');
-        return `Comparar: ${topicId} - CyL 2026`;
+        return topicId
+            ? `Comparar propuestas sobre ${topicId} | Elecciones CyL 2026`
+            : 'Comparar propuestas por tema | Elecciones CyL 2026';
     }
     
     if (partyId === 's') {
         const searchRoute = parseSearchRouteFromHash(hash);
         const term = searchRoute?.term || '';
         return term
-            ? `Buscar: ${term} - CyL 2026`
-            : 'Buscar medidas - CyL 2026';
+            ? `Buscar propuestas: ${term} | Elecciones CyL 2026`
+            : 'Buscar propuestas electorales | Elecciones CyL 2026';
     }
 
     if (partyId === 'afinidad') {
-        return 'Cuestionario de Afinidad - CyL 2026';
+        return 'Test de afinidad política | Elecciones CyL 2026';
     }
 
     if (partyId === 'explora') {
-        return 'Explora propuestas - CyL 2026';
+        return 'Explorar propuestas electorales | Elecciones CyL 2026';
     }
 
     if (partyId === 'guardadas') {
-        return 'Propuestas guardadas - CyL 2026';
+        return 'Propuestas guardadas | Elecciones CyL 2026';
     }
     
     // Find party name
     const party = allPartiesCatalog.find(p => p.id === partyId) || allPartiesCatalog.find(p => p.id === normalizePartyId(partyId));
     if (party) {
-        return `${party.name} - Programa Electoral CyL 2026`;
+        return `${party.name} | Programa electoral en Castilla y León 2026`;
     }
     
-    return 'Comparador Programas Electorales CyL 2026';
+    return 'Programas electorales Castilla y León 2026 | Comparador';
 }
 
 function getCanonicalPartyRouteHash(partyId, categoryName, propId) {
