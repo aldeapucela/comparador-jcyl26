@@ -272,12 +272,13 @@ function refreshAfinidadAvailabilityUI() {
         homeButton.setAttribute('aria-disabled', String(!isEnabled));
     }
     if (homeLabel) {
-        homeLabel.textContent = isEnabled
-            ? 'Cuestionario de afinidad'
-            : `Aún no disponible en ${appState.selectedZone}`;
+        homeLabel.textContent = 'Cuestionario de afinidad';
     }
     if (homeSubtitle) {
-        homeSubtitle.classList.toggle('hidden', !isEnabled);
+        homeSubtitle.textContent = isEnabled
+            ? 'Descubre en 3 minutos tu afinidad con los partidos'
+            : `Aún no disponible en ${appState.selectedZone}`;
+        homeSubtitle.classList.remove('hidden');
     }
     if (mobileMenuLabel) {
         mobileMenuLabel.textContent = 'Cuestionario de afinidad';
