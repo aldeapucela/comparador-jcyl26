@@ -465,17 +465,15 @@ function slugifyExploraTopic(value = '') {
 function applyExploraPlayRouteConfig(parts = []) {
     const modeSegment = String(parts[2] || '').trim().toLowerCase();
     const valueSegment = String(parts[3] || '').trim();
+    const firstCategoryName = CATEGORIES[0]?.name || '';
 
     if (modeSegment === 'topic') {
         const requestedSlug = slugifyExploraTopic(safeDecodeURIComponent(valueSegment));
         const matchedCategory = CATEGORIES.find((category) => slugifyExploraTopic(category?.name || '') === requestedSlug);
         appState.stories.source = 'topic';
-        if (matchedCategory?.name) {
-            appState.stories.selectedTopic = matchedCategory.name;
-        } else if (!appState.stories.selectedTopic) {
-            appState.stories.selectedTopic = CATEGORIES[0]?.name || '';
-        }
-        return;
+        appState.stories.selectedTopic = matchedCategory?.name || appState.stories.selectedTopic || firstCategoryName;
+        const selectedSlug = slugifyExploraTopic(appState.stories.selectedTopic) || 'general';
+        return `#/explora/play/topic/${selectedSlug}`;
     }
 
     if (modeSegment === 'parties') {
@@ -484,17 +482,15 @@ function applyExploraPlayRouteConfig(parts = []) {
             .split(',')
             .map((id) => String(id || '').trim().toLowerCase())
             .filter((id) => id && allowed.has(id));
-        const unique = Array.from(new Set(requestedIds));
+        const unique = Array.from(new Set(requestedIds)).sort();
         appState.stories.source = 'party';
         appState.stories.selectedPartyIds = unique;
         appState.stories.selectedPartyId = unique[0] || '';
-        return;
+        return `#/explora/play/parties/${unique.join(',') || 'none'}`;
     }
 
-    if (modeSegment === 'random') {
-        appState.stories.source = 'random';
-        return;
-    }
+    appState.stories.source = 'random';
+    return '#/explora/play/random';
 }
 
 function buildExploraPlayHashFromCurrentSelection() {
@@ -1324,8 +1320,8 @@ function getPageTitle(hash) {
     const partyId = parts[0];
     
     if (partyId === 'comparar') {
-        const topicId = parts[1] || '';
-        return `Comparar: ${decodeURIComponent(topicId)} - CyL 2026`;
+        const topicId = safeDecodeURIComponent(parts[1] || '');
+        return `Comparar: ${topicId} - CyL 2026`;
     }
     
     if (partyId === 's') {
@@ -1355,6 +1351,42 @@ function getPageTitle(hash) {
     }
     
     return 'Comparador Programas Electorales CyL 2026';
+}
+
+function getCanonicalPartyRouteHash(partyId, categoryName, propId) {
+    if (!appState.currentData || !Array.isArray(appState.currentData.propuestas)) {
+        return `#/${partyId}`;
+    }
+
+    const proposals = appState.currentData.propuestas;
+    const categories = getCategoriesFromProposals(proposals);
+    const validCategory = categoryName && categories.includes(categoryName) ? categoryName : null;
+
+    let validPropId = null;
+    if (propId) {
+        const hasProposal = proposals.some((proposal) => {
+            const sameId = String(proposal?.id) === String(propId);
+            if (!sameId) return false;
+            if (!validCategory) return true;
+            return String(proposal?.categoria || '') === validCategory;
+        });
+        if (hasProposal) validPropId = propId;
+    }
+
+    let canonicalHash = `#/${partyId}`;
+    if (validCategory) canonicalHash += `/${encodeURIComponent(validCategory)}`;
+    if (validPropId) canonicalHash += `/${encodeURIComponent(validPropId)}`;
+    return canonicalHash;
+}
+
+function getCanonicalTopicHash(parts = []) {
+    if (!parts[1]) return '#/comparar';
+    const topicId = safeDecodeURIComponent(parts[1]).trim();
+    if (!topicId) return '#/comparar';
+    const valid = CATEGORIES.some((category) => String(category?.id || '') === topicId);
+    if (!valid) return '#/comparar';
+    const canonicalTopicHash = `#/comparar/${encodeURIComponent(topicId)}`;
+    return canonicalTopicHash;
 }
 
 function trackSpaPageView(hash) {
@@ -1399,6 +1431,14 @@ async function handleRouting() {
     const partyId = parts[0];
 
     if (partyId === 'explora') {
+        const canonicalExploraHash = parts[1] === 'play'
+            ? applyExploraPlayRouteConfig(parts)
+            : '#/explora';
+        if (hashWithoutQuery !== canonicalExploraHash) {
+            UI.navigateHash(canonicalExploraHash);
+            return;
+        }
+
         const exploraSubroute = parts[1] || '';
         if (!appState.stories.returnHash) {
             appState.stories.returnHash = '#/';
@@ -1407,7 +1447,6 @@ async function handleRouting() {
         trackSpaPageView(hash);
         UI.switchView('stories');
         if (exploraSubroute === 'play') {
-            applyExploraPlayRouteConfig(parts);
             const isNewPlayRoute = appState.previousHash !== hash;
             if (!appState.stories.started || isNewPlayRoute) {
                 storiesController.startFeed();
@@ -1423,6 +1462,10 @@ async function handleRouting() {
     }
 
     if (partyId === 'guardadas') {
+        if (hashWithoutQuery !== '#/guardadas') {
+            UI.navigateHash('#/guardadas');
+            return;
+        }
         appState.mode = 'saved';
         trackSpaPageView(hash);
         UI.switchView('saved');
@@ -1432,7 +1475,12 @@ async function handleRouting() {
 
     // Check if it's comparison mode
     if (partyId === 'comparar') {
-        const topicId = parts[1] || null;
+        const canonicalTopicHash = getCanonicalTopicHash(parts);
+        if (hashWithoutQuery !== canonicalTopicHash) {
+            UI.navigateHash(canonicalTopicHash);
+            return;
+        }
+        const topicId = parts[1] ? safeDecodeURIComponent(parts[1]).trim() : null;
         appState.mode = 'topic';
         appState.currentCategory = topicId;
 
@@ -1468,52 +1516,50 @@ async function handleRouting() {
 
     // Check if it's afinidad mode
     if (partyId === 'afinidad') {
-        const hasLegacySharedData = Boolean(parts[1]);
+        if (hashWithoutQuery !== '#/afinidad') {
+            UI.navigateHash('#/afinidad');
+            return;
+        }
         appState.mode = 'afinidad';
         trackSpaPageView(hash);
         UI.switchView('afinidad');
         renderAfinidadAvailabilityIntro();
         refreshAfinidadAldeaPromoVisibility();
 
-        if (hasLegacySharedData) {
-            window.location.hash = '#/afinidad';
+        if (!isAfinidadEnabledForZone(appState.selectedZone)) {
+            showAfinidadIntro();
             return;
-        } else {
-            if (!isAfinidadEnabledForZone(appState.selectedZone)) {
-                showAfinidadIntro();
-                return;
+        }
+        // Avoid cross-module cache mismatch: inspect storage here without extra imports.
+        // If completed, start flow directly; renderQuestion will restore and show results.
+        let hasStoredCompletedResults = false;
+        try {
+            const saved = localStorage.getItem('afinidad_answers_latest');
+            if (saved) {
+                const parsed = JSON.parse(saved);
+                hasStoredCompletedResults = Boolean(parsed?.completed && parsed?.results);
             }
-            // Avoid cross-module cache mismatch: inspect storage here without extra imports.
-            // If completed, start flow directly; renderQuestion will restore and show results.
-            let hasStoredCompletedResults = false;
-            try {
-                const saved = localStorage.getItem('afinidad_answers_latest');
-                if (saved) {
-                    const parsed = JSON.parse(saved);
-                    hasStoredCompletedResults = Boolean(parsed?.completed && parsed?.results);
-                }
-            } catch (err) {
-                console.error('Error reading saved afinidad state:', err);
-            }
+        } catch (err) {
+            console.error('Error reading saved afinidad state:', err);
+        }
 
-            if (hasStoredCompletedResults) {
-                startAfinidad();
-                // Show survey when displaying saved results
-                setTimeout(() => {
-                    if (typeof window.showVoteImpactSurveyIfNeeded === 'function') {
-                        window.showVoteImpactSurveyIfNeeded();
-                    }
-                }, 1000);
-            } else {
-                showAfinidadIntro();
-            }
+        if (hasStoredCompletedResults) {
+            startAfinidad();
+            // Show survey when displaying saved results
+            setTimeout(() => {
+                if (typeof window.showVoteImpactSurveyIfNeeded === 'function') {
+                    window.showVoteImpactSurveyIfNeeded();
+                }
+            }, 1000);
+        } else {
+            showAfinidadIntro();
         }
         return;
     }
 
     // --- Party-first mode ---
-    const categoryName = parts[1] ? decodeURIComponent(parts[1]) : null;
-    const propId = parts[2] || null;
+    const categoryName = parts[1] ? safeDecodeURIComponent(parts[1]) : null;
+    const propId = parts[2] ? safeDecodeURIComponent(parts[2]) : null;
 
     appState.mode = 'party';
     trackSpaPageView(hash);
@@ -1521,6 +1567,12 @@ async function handleRouting() {
     // In mobile back/forward flows, selectedParty can match while UI is still
     // in topic view, which would update hash but not switch screen.
     doPartySelect(partyId);
+
+    const canonicalPartyHash = getCanonicalPartyRouteHash(partyId, categoryName, propId);
+    if (hashWithoutQuery !== canonicalPartyHash) {
+        UI.navigateHash(canonicalPartyHash);
+        return;
+    }
 
     // 2. Navigate to category if specified
     doCategorySelect(categoryName);
