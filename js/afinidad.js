@@ -957,8 +957,8 @@ function setupShareLinks(results) {
     const originalText = btn.innerHTML;
     btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Generando...';
 
+    const isTie = topTied.length > 1;
     const winnerLogoScale = getWinnerLogoScale(winner?.id);
-    const winnerLogoSizePct = Math.round(winnerLogoScale * 100);
 
     try {
       const urlPng = urlToImageDataUrl(shareUrlForImage, {
@@ -989,14 +989,32 @@ function setupShareLinks(results) {
 
         <div style="background:#fff; border:2px solid #e2e8f0; border-radius:16px; padding:32px 24px; text-align:center; margin-bottom:32px; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
           <p style="color:#64748b; font-size:16px; margin:0 0 16px 0; line-height:1.4; font-weight:500; letter-spacing:0.01em;">
-            Tu partido más afín
+            ${isTie ? 'Tus partidos más afines' : 'Tu partido más afín'}
           </p>
-          <div style="width:88px; height:88px; margin:0 auto 20px; background:#f8fafc; border-radius:50%; display:flex; align-items:center; justify-content:center; border:2px solid #e2e8f0; overflow:hidden;">
-            <img src="${window.location.origin}/${winner.logo}" style="width:${winnerLogoSizePct}%; height:${winnerLogoSizePct}%; object-fit:contain; object-position:center; display:block;" onerror="this.style.display='none'">
-          </div>
-          <h2 style="font-size:36px; margin:0 0 12px 0; line-height:1.2; font-weight:700; letter-spacing:-0.02em; color:${winner.color};">
-            ${winner.name}
-          </h2>
+          ${isTie
+            ? `<div style="display:flex; justify-content:center; gap:14px; margin:0 0 16px 0; flex-wrap:wrap;">
+                ${topTied.map(([partyId]) => {
+                  const party = getPartyInfo(partyId);
+                  const logoScale = getWinnerLogoScale(party?.id);
+                  return `
+                    <div style="text-align:center;">
+                      <div style="width:74px; height:74px; margin:0 auto 10px; background:#f8fafc; border-radius:50%; display:flex; align-items:center; justify-content:center; border:2px solid #e2e8f0; overflow:hidden;">
+                        <img src="${window.location.origin}/${party?.logo || ''}" style="width:auto; height:auto; max-width:100%; max-height:100%; display:block; transform:scale(${logoScale}); transform-origin:center;" onerror="this.style.display='none'">
+                      </div>
+                      <p style="font-size:18px; margin:0; line-height:1.25; font-weight:700; letter-spacing:-0.01em; color:${party?.color || '#334155'};">
+                        ${party?.name || partyId}
+                      </p>
+                    </div>
+                  `;
+                }).join('')}
+              </div>`
+            : `<div style="width:88px; height:88px; margin:0 auto 20px; background:#f8fafc; border-radius:50%; display:flex; align-items:center; justify-content:center; border:2px solid #e2e8f0; overflow:hidden;">
+                 <img src="${window.location.origin}/${winner.logo}" style="width:auto; height:auto; max-width:100%; max-height:100%; display:block; transform:scale(${winnerLogoScale}); transform-origin:center;" onerror="this.style.display='none'">
+               </div>
+               <h2 style="font-size:36px; margin:0 0 12px 0; line-height:1.2; font-weight:700; letter-spacing:-0.02em; color:${winner.color};">
+                 ${winner.name}
+               </h2>`
+          }
           <p style="font-size:64px; font-weight:800; margin:0; line-height:1.1; letter-spacing:-0.03em; color:#000000; text-shadow:0 2px 4px rgba(0,0,0,0.05);">
             ${sorted[0][1].affinity}%
           </p>
