@@ -462,6 +462,61 @@ body.explora-paused .story-progress-fill {
     gap: 0;
 }
 
+.story-video-subtitles-wrap {
+    position: absolute;
+    left: 50%;
+    bottom: clamp(6.5rem, 22vh, 11rem);
+    transform: translateX(-50%);
+    width: min(88%, 26rem);
+    margin-inline: auto;
+    display: grid;
+    gap: 0.65rem;
+    justify-items: center;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.story-video-subtitle-active {
+    min-height: 2.5em;
+    font-size: clamp(1rem, 2.9vw, 1.45rem);
+    font-weight: 900;
+    line-height: 1.22;
+    color: #fff;
+    text-align: center;
+    text-wrap: balance;
+    letter-spacing: 0.01em;
+    text-shadow: 0 3px 18px rgba(2, 6, 23, 0.72);
+    background: color-mix(in srgb, var(--party-color, #334155) 84%, #000 16%);
+    border-radius: 22px;
+    padding: 0.68rem 1.35rem;
+    width: fit-content;
+    max-width: 85%;
+    margin-inline: auto;
+    transition: transform 0.16s ease, opacity 0.16s ease;
+    transform: translateY(0);
+    opacity: 1;
+    box-shadow: 0 10px 24px rgba(2, 6, 23, 0.26);
+}
+
+.story-video-subtitle-active.is-refreshing {
+    transform: translateY(2px);
+    opacity: 0.92;
+}
+
+@media (max-width: 640px) {
+    .story-video-subtitles-wrap {
+        bottom: clamp(5.8rem, 20vh, 9.5rem);
+        width: min(90%, 22rem);
+    }
+
+    .story-video-subtitle-active {
+        font-size: clamp(1rem, 4.9vw, 1.25rem);
+        padding: 0.65rem 1.25rem;
+        border-radius: 20px;
+        max-width: 85%;
+    }
+}
+
 .stories-cta-primary--telegram {
     border: 1px solid rgba(255, 255, 255, 0.4);
     background: rgba(255, 255, 255, 0.2);

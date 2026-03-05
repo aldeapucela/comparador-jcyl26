@@ -33,18 +33,32 @@ function resolvePartyLogo(metadataLogo = '', partyId = '') {
 
 function resolveStoryVideo(metadataStoryVideo = null) {
     if (!metadataStoryVideo) return null;
+
     if (typeof metadataStoryVideo === 'string') {
         const path = metadataStoryVideo.trim();
-        return path ? { path, enabled: true } : null;
+        if (!path) return null;
+        return {
+            path,
+            enabled: true,
+            subtitlesPath: path.replace(/\.[^./?#]+(?=([?#].*)?$)/, '.vtt')
+        };
     }
+
     if (typeof metadataStoryVideo !== 'object') return null;
+
     const path = String(metadataStoryVideo.path || '').trim();
     if (!path) return null;
+
+    const rawSubtitlesPath = String(metadataStoryVideo.subtitles_path || metadataStoryVideo.subtitlesPath || '').trim();
+    const subtitlesPath = rawSubtitlesPath || path.replace(/\.[^./?#]+(?=([?#].*)?$)/, '.vtt');
+
     return {
         path,
-        enabled: metadataStoryVideo.enabled !== false
+        enabled: metadataStoryVideo.enabled !== false,
+        subtitlesPath
     };
 }
+
 
 function normalizeCandidateName(rawCandidateName = '') {
     const normalized = String(rawCandidateName || '').trim();

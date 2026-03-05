@@ -40,6 +40,7 @@ export function createStoriesController(appState) {
     const partyVideoShownInSession = new Set();
     const candidateVideoByAnchorIndex = new Map();
     const warmedCandidateVideoPaths = new Set();
+    const candidateVideoSubtitleCache = new Map();
     let candidateVideoMutedPreference = readCandidateVideoMutedPreference();
     let trackingModeName = '';
     let trackingSessionEnded = false;
@@ -178,6 +179,8 @@ export function createStoriesController(appState) {
 
                 const videoEl = document.getElementById('story-candidate-video-player');
                 if (!videoEl) return;
+                let subtitleCues = [];
+                const syncSubtitleUI = () => syncCandidateVideoSubtitleUI(videoEl, subtitleCues);
                 const audioToggleBtn = document.getElementById('btn-story-video-audio-toggle');
                 const loadingEl = document.getElementById('story-candidate-video-loading');
                 const showVideoLoading = () => loadingEl?.classList.remove('is-hidden');
@@ -217,17 +220,37 @@ export function createStoriesController(appState) {
                         scheduleAutoAdvance();
                     }
                 });
-                videoEl.addEventListener('loadeddata', hideVideoLoading);
+                videoEl.addEventListener('loadeddata', () => {
+                    hideVideoLoading();
+                    syncSubtitleUI();
+                });
                 videoEl.addEventListener('canplay', hideVideoLoading);
-                videoEl.addEventListener('playing', hideVideoLoading);
+                videoEl.addEventListener('playing', () => {
+                    hideVideoLoading();
+                    syncSubtitleUI();
+                });
+                videoEl.addEventListener('timeupdate', syncSubtitleUI);
+                videoEl.addEventListener('seeked', syncSubtitleUI);
+                videoEl.addEventListener('pause', syncSubtitleUI);
+                videoEl.addEventListener('ended', () => {
+                    syncSubtitleUI();
+                    clearActiveInterstitialAndContinue();
+                });
+
                 videoEl.addEventListener('waiting', showVideoLoading);
                 videoEl.addEventListener('stalled', showVideoLoading);
                 videoEl.addEventListener('error', showVideoLoading);
 
-                videoEl.addEventListener('ended', () => {
-                    clearActiveInterstitialAndContinue();
-                });
-
+                syncSubtitleUI();
+                loadCandidateVideoSubtitles(context.story?.party?.storyVideo)
+                    .then((loadedCues) => {
+                        subtitleCues = loadedCues;
+                        syncSubtitleUI();
+                    })
+                    .catch(() => {
+                        subtitleCues = [];
+                        syncSubtitleUI();
+                    });
                 tryAutoplay();
             }
         },
@@ -571,9 +594,11 @@ export function createStoriesController(appState) {
 
     function readCandidateVideoMutedPreference() {
         try {
-            return localStorage.getItem(EXPLORA_CANDIDATE_VIDEO_MUTED_STORAGE_KEY) === '1';
+            const raw = localStorage.getItem(EXPLORA_CANDIDATE_VIDEO_MUTED_STORAGE_KEY);
+            if (raw === null) return true;
+            return raw === '1';
         } catch {
-            return false;
+            return true;
         }
     }
 
@@ -583,6 +608,173 @@ export function createStoriesController(appState) {
         } catch {
             // Ignore storage failures.
         }
+    }
+
+    function normalizeCandidateVideoSubtitleCues(rawCues = []) {
+        if (!Array.isArray(rawCues)) return [];
+        return rawCues
+            .map((cue, index) => ({
+                index,
+                start: Number(cue?.start),
+                end: Number(cue?.end),
+                text: String(cue?.text || '').replace(/\s+/g, ' ').trim()
+            }))
+            .filter((cue) => Number.isFinite(cue.start) && Number.isFinite(cue.end) && cue.end > cue.start && cue.text)
+            .sort((a, b) => a.start - b.start);
+    }
+
+    function parseVttToSubtitleCues(vttText = '') {
+        const lines = String(vttText || '').replace(/\r/g, '').split('\n');
+        const cues = [];
+        let cursor = 0;
+
+        const parseTimeToSeconds = (timeText = '') => {
+            const value = String(timeText || '').trim();
+            const match = value.match(/^(?:(\d+):)?(\d{2}):(\d{2})[\.,](\d{3})$/);
+            if (!match) return null;
+            const hours = Number(match[1] || 0);
+            const minutes = Number(match[2] || 0);
+            const seconds = Number(match[3] || 0);
+            const millis = Number(match[4] || 0);
+            return (hours * 3600) + (minutes * 60) + seconds + (millis / 1000);
+        };
+
+        while (cursor < lines.length) {
+            const line = lines[cursor].trim();
+            if (!line || line === 'WEBVTT') {
+                cursor += 1;
+                continue;
+            }
+
+            let timingLine = line;
+            if (!timingLine.includes('-->') && cursor + 1 < lines.length) {
+                cursor += 1;
+                timingLine = lines[cursor].trim();
+            }
+
+            if (!timingLine.includes('-->')) {
+                cursor += 1;
+                continue;
+            }
+
+            const [startRaw, endRawWithSettings] = timingLine.split('-->');
+            const endRaw = String(endRawWithSettings || '').trim().split(/\s+/)[0];
+            const start = parseTimeToSeconds(startRaw);
+            const end = parseTimeToSeconds(endRaw);
+
+            cursor += 1;
+            const textLines = [];
+            while (cursor < lines.length && lines[cursor].trim()) {
+                textLines.push(lines[cursor].trim());
+                cursor += 1;
+            }
+
+            const text = textLines.join(' ').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+            if (Number.isFinite(start) && Number.isFinite(end) && end > start && text) {
+                cues.push({ start, end, text });
+            }
+
+            cursor += 1;
+        }
+
+        return normalizeCandidateVideoSubtitleCues(cues);
+    }
+
+    async function loadCandidateVideoSubtitles(storyVideo = null) {
+        const subtitlesPath = String(storyVideo?.subtitlesPath || '').trim();
+        if (!subtitlesPath) return [];
+
+        const cached = candidateVideoSubtitleCache.get(subtitlesPath);
+        if (cached) return cached;
+
+        const request = (async () => {
+            try {
+                const response = await fetch(subtitlesPath, { cache: 'force-cache' });
+                if (!response.ok) return [];
+                const vttText = await response.text();
+                return parseVttToSubtitleCues(vttText);
+            } catch {
+                return [];
+            }
+        })();
+
+        candidateVideoSubtitleCache.set(subtitlesPath, request);
+        return request;
+    }
+
+    function syncCandidateVideoSubtitleUI(videoEl = null, cues = []) {
+        const subtitleEl = document.getElementById('story-video-subtitle-active');
+        if (!subtitleEl) return;
+
+        if (!videoEl || !cues.length) {
+            subtitleEl.textContent = '';
+            return;
+        }
+
+        const currentTime = Number(videoEl.currentTime) || 0;
+        const activeCueIndex = cues.findIndex((cue) => currentTime >= cue.start && currentTime < cue.end);
+        if (activeCueIndex < 0) {
+            subtitleEl.textContent = '';
+            return;
+        }
+
+        const cue = cues[activeCueIndex];
+        const chunks = splitSubtitleCueIntoLines(cue.text);
+        if (!chunks.length) {
+            subtitleEl.textContent = '';
+            return;
+        }
+
+        if (chunks.length === 1) {
+            subtitleEl.textContent = chunks[0];
+            return;
+        }
+
+        const cueDuration = Math.max(0.2, cue.end - cue.start);
+        const progress = Math.min(0.999, Math.max(0, (currentTime - cue.start) / cueDuration));
+        const chunkIndex = Math.min(chunks.length - 1, Math.floor(progress * chunks.length));
+        const nextText = chunks[chunkIndex];
+        if (subtitleEl.textContent !== nextText) {
+            subtitleEl.classList.remove('is-refreshing');
+            void subtitleEl.offsetWidth;
+            subtitleEl.classList.add('is-refreshing');
+            subtitleEl.textContent = nextText;
+            window.setTimeout(() => {
+                subtitleEl.classList.remove('is-refreshing');
+            }, 170);
+        }
+    }
+
+    function splitSubtitleCueIntoLines(text = '') {
+        const clean = String(text || '').replace(/\s+/g, ' ').trim();
+        if (!clean) return [];
+        const tokens = clean.split(' ').filter(Boolean);
+        if (tokens.length <= 5) return [clean];
+
+        const chunks = [];
+        let current = [];
+        let currentLen = 0;
+        const maxWords = 5;
+        const maxChars = 28;
+
+        for (const token of tokens) {
+            const projectedLen = currentLen + token.length + (current.length ? 1 : 0);
+            const endsSentence = /[.,;:!?]$/.test(token);
+            if (current.length && (current.length >= maxWords || projectedLen > maxChars)) {
+                chunks.push(current.join(' '));
+                current = [];
+                currentLen = 0;
+            }
+            current.push(token);
+            currentLen += token.length + (current.length > 1 ? 1 : 0);
+            if (endsSentence && current.length >= 3) {
+                chunks.push(current.join(' '));
+                current = [];
+                currentLen = 0;
+            }
+        }
+        if (current.length) chunks.push(current.join(' '));
+        return chunks.length ? chunks : [clean];
     }
 
     function syncCandidateVideoAudioToggleUI(videoEl = null) {
@@ -677,6 +869,7 @@ export function createStoriesController(appState) {
         // Keep fixed-position interstitials deterministic (e.g. Telegram at #6).
         // Cooldown applies to non-position prompts to avoid suggestion clustering.
         if (placementType !== 'position'
+            && definition.id !== 'party-candidate-video'
             && engagementSessionViewedCount - lastInterstitialViewedCount < INTERSTITIAL_GLOBAL_COOLDOWN_STORIES) {
             return false;
         }
@@ -706,7 +899,6 @@ export function createStoriesController(appState) {
 
     function clearActiveInterstitialAndContinue() {
         if (!activeInterstitial) return;
-        activeInterstitial = null;
         moveToNextStory();
     }
 

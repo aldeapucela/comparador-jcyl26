@@ -301,6 +301,7 @@ function renderCandidateVideoCard(container, data = {}) {
                 class="story-candidate-video-bg"
                 src="${escapeHtml(videoPath)}"
                 autoplay
+                muted
                 playsinline
                 webkit-playsinline
                 preload="auto"
@@ -343,6 +344,9 @@ function renderCandidateVideoCard(container, data = {}) {
                     <i class="fa-solid fa-share-nodes"></i>
                 </button>
             </footer>
+            <div class="story-video-subtitles-wrap" aria-live="polite" aria-atomic="true">
+                <div id="story-video-subtitle-active" class="story-video-subtitle-active"></div>
+            </div>
         </article>
     `;
 }
