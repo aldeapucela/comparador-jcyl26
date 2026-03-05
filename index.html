@@ -33,9 +33,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20260305101810">
+    <link rel="stylesheet" href="css/style.css?v=20260305115925">
     <link rel="stylesheet" href="css/stories.css?v=20260301193000">
-    <script type="module" src="js/main.js?v=20260305101810"></script>
+    <script type="module" src="js/main.js?v=20260305115925"></script>
     </head>
 
 <body class="bg-slate-50 text-slate-900 min-h-screen">
@@ -170,18 +170,20 @@
                 <div class="mb-5">
                     <div id="afinidad-home-card"
                         class="home-feature-link group block relative w-full bg-gradient-to-br from-[#F3E8FF] to-white text-[#4c1d95] border border-violet-200/70 p-6 rounded-2xl text-lg shadow-lg hover:shadow-xl hover:border-violet-300/80 transition-all duration-300 overflow-hidden">
-                        <div class="afinidad-home-content relative z-10 flex min-h-[11rem] w-full flex-col items-center justify-center text-center">
-                            <div class="afinidad-home-main flex flex-col items-center">
-                                <div class="feature-icon w-12 h-12 rounded-xl bg-violet-100/70 flex items-center justify-center group-hover:bg-violet-200/80 transition-colors">
-                                    <i class="fa-solid fa-heart-pulse text-violet-700 text-lg"></i>
-                                </div>
-                                <span id="afinidad-home-label" class="mt-4 font-bold text-[#4c1d95]">¿Qué partido piensa como tú?</span>
+                        <div class="afinidad-home-content relative z-10 flex w-full flex-col items-center justify-center text-center">
+                            <div class="feature-icon w-12 h-12 rounded-xl bg-violet-100/70 flex items-center justify-center group-hover:bg-violet-200/80 transition-colors">
+                                <i class="fa-solid fa-heart-pulse text-violet-700 text-lg"></i>
                             </div>
-                            <p id="afinidad-home-subtitle" class="mt-3 text-sm text-violet-700/80 font-normal">Responde al cuestionario en 3 minutos y descubre tu afinidad real</p>
-                            <button id="btn-goto-afinidad" type="button"
-                                class="mt-5 inline-flex items-center justify-center rounded-xl bg-violet-700 px-5 py-2.5 text-sm font-semibold text-white transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2">
-                                Empezar
-                            </button>
+                            <div class="afinidad-home-textcol mt-4 flex flex-col items-center">
+                                <span id="afinidad-home-label" class="font-bold text-[#4c1d95]">¿Qué partido piensa como tú?</span>
+                            </div>
+                            <div class="afinidad-home-cta mt-3 flex flex-col items-center gap-3">
+                                <p id="afinidad-home-subtitle" class="text-sm text-violet-700/80 font-normal">Responde al cuestionario en 3 minutos y descubre tu afinidad real</p>
+                                <button id="btn-goto-afinidad" type="button"
+                                    class="inline-flex items-center justify-center rounded-xl bg-violet-700 px-5 py-2.5 text-sm font-semibold text-white transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2">
+                                    Empezar
+                                </button>
+                            </div>
                         </div>
                         <div class="absolute inset-0 bg-gradient-to-r from-violet-100/30 via-transparent to-violet-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-300/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -801,8 +803,8 @@
         </div>
     </footer>
 
-    <script src="js/analytics.js?v=20260305101810"></script>
-    <script type="module" src="js/main.js?v=20260305101810"></script>
+    <script src="js/analytics.js?v=20260305115925"></script>
+    <script type="module" src="js/main.js?v=20260305115925"></script>
 </body>
 
 </html>
