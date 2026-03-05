@@ -285,8 +285,16 @@ function refreshAfinidadAvailabilityUI() {
         homeCard.setAttribute('aria-disabled', String(!isEnabled));
     }
     if (homeButton) {
-        homeButton.disabled = !isEnabled;
         homeButton.setAttribute('aria-disabled', String(!isEnabled));
+        if (isEnabled) {
+            homeButton.setAttribute('href', '#/afinidad');
+            homeButton.classList.remove('is-disabled');
+            homeButton.removeAttribute('tabindex');
+        } else {
+            homeButton.removeAttribute('href');
+            homeButton.classList.add('is-disabled');
+            homeButton.setAttribute('tabindex', '-1');
+        }
         homeButton.textContent = isEnabled && hasCompletedResults ? 'Ver resultados' : 'Empezar';
     }
     if (homeLabel) {

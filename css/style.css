@@ -398,10 +398,11 @@ body {
     gap: 0.5rem;
 }
 
-#btn-goto-afinidad:disabled {
+#btn-goto-afinidad.is-disabled {
     opacity: 0.65;
     cursor: not-allowed;
     transform: none;
+    pointer-events: none;
 }
 
 .party-zone-warning {
