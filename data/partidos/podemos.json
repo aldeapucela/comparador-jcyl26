@@ -3213,6 +3213,139 @@
         "foco_rural": true
       },
       "pregunta_afinidad": "¿Está de acuerdo con derogar la reforma urbanística que facilita nuevas minas a cielo abierto?"
+    },
+    {
+      "id": 172,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Lucha contra la corrupción",
+      "titulo_corto": "Crear una agencia anticorrupción con control de contratación",
+      "resumen": "Crear una agencia anticorrupción que integre una oficina independiente de regulación y supervisión de la contratación, con divisiones especializadas en subvenciones y urbanismo.",
+      "cita_literal": "Crearemos una agencia anticorrupción en la que se integrará la nueva Oficina Independiente de Regulación y Supervisión de la Contratación, integrando también divisiones especializadas en materia de subvenciones y urbanismo.",
+      "pagina": 62,
+      "tags": [
+        "#Transparencia",
+        "#Anticorrupcion",
+        "#ContratacionPublica"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con crear una agencia autonómica anticorrupción con capacidad de supervisión de la contratación pública?"
+    },
+    {
+      "id": 173,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Contratación pública",
+      "titulo_corto": "Aprobar una ley autonómica de contratos públicos",
+      "resumen": "Aprobar una ley de contratos públicos de Castilla y León para reforzar integridad, eficiencia y transparencia en el uso de recursos públicos.",
+      "cita_literal": "Impulsaremos una ley de contratos públicos de Castilla y León para reforzar la integridad y la eficiencia en el uso de los recursos públicos, así como para evitar las privatizaciones y avanzar en sostenibilidad e innovación pública.",
+      "pagina": 62,
+      "tags": [
+        "#Transparencia",
+        "#ContratacionPublica",
+        "#IntegridadPublica"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aprobar una ley autonómica de contratos públicos para reforzar la integridad y el control del gasto?"
+    },
+    {
+      "id": 174,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Integridad institucional",
+      "titulo_corto": "Prohibir puertas giratorias tras cargos en la administración",
+      "resumen": "Desarrollar normativa para impedir puertas giratorias desde puestos de gobierno o administración autonómica hacia empresas de especial repercusión en el territorio.",
+      "cita_literal": "Desarrollaremos normativa para prohibir el uso de “puertas giratorias” desde un trabajo político previo en el ámbito del Gobierno o la administración autonómica de Castilla y León, especialmente hacia aquellas empresas o agentes de especial repercusión en nuestro territorio.",
+      "pagina": 63,
+      "tags": [
+        "#Transparencia",
+        "#IntegridadPublica",
+        "#BuenGobierno"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con prohibir las puertas giratorias de ex cargos autonómicos hacia empresas vinculadas a su ámbito de decisión?"
+    },
+    {
+      "id": 175,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Financiación sanitaria",
+      "titulo_corto": "Elevar la financiación sanitaria hasta el 9% del PIB",
+      "resumen": "Aumentar financiación sanitaria hasta el 9% del PIB en sanidad pública y alcanzar el 25% del gasto sanitario en atención primaria.",
+      "cita_literal": "Llevaremos a cabo un aumento de la financiación garantizando unos presupuestos sanitarios que lleguen a un 9% del PIB para el conjunto de la sanidad pública y del 25% del total en el caso de la atención primaria.",
+      "pagina": 10,
+      "tags": [
+        "#SanidadPublica",
+        "#AtencionPrimaria",
+        "#FinanciacionPublica"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con elevar la financiación sanitaria pública hasta el 9% del PIB y reforzar la atención primaria?"
+    },
+    {
+      "id": 176,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Gestión pública sanitaria",
+      "titulo_corto": "Aprobar un plan integral de desprivatización de la sanidad",
+      "resumen": "Aprobar un plan integral de desprivatización sanitaria para blindar la gestión pública y revertir privatizaciones en el sistema de salud de Castilla y León.",
+      "cita_literal": "Aprobaremos un plan integral de desprivatización de la sanidad para blindar el carácter público del sistema sanitario de Castilla y León y revertir todas las privatizaciones.",
+      "pagina": 10,
+      "tags": [
+        "#SanidadPublica",
+        "#GestionPublica",
+        "#ServiciosPublicos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aprobar un plan autonómico de desprivatización para reforzar la gestión pública sanitaria?"
+    },
+    {
+      "id": 177,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Conectividad rural",
+      "titulo_corto": "Garantizar cobertura móvil y banda ancha en todos los municipios",
+      "resumen": "Garantizar infraestructuras de telecomunicaciones y redes de alta capacidad en el medio rural para que cobertura móvil e internet de banda ancha lleguen a todos los municipios.",
+      "cita_literal": "Garantizaremos la infraestructura de telecomunicaciones y redes de alta capacidad en todo el medio rural de nuestro territorio. Estableceremos las herramientas necesarias desde el Gobierno autonómico, en colaboración con las compañías, para que la cobertura de telefonía móvil y el internet de banda ancha llegue a todos los municipios del territorio.",
+      "pagina": 77,
+      "tags": [
+        "#Movilidad",
+        "#Conectividad",
+        "#BrechaDigital"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con garantizar cobertura móvil y banda ancha en todos los municipios, incluidos los más pequeños?"
+    },
+    {
+      "id": 178,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Universidad pública",
+      "titulo_corto": "Impulsar una nueva ley de universidades de Castilla y León",
+      "resumen": "Impulsar una nueva ley autonómica de universidades para reforzar el derecho a la educación superior, su planificación y su carácter público.",
+      "cita_literal": "Impulsaremos una nueva Ley de Universidades de Castilla y León.",
+      "pagina": 28,
+      "tags": [
+        "#Educacion",
+        "#UniversidadPublica",
+        "#MarcoNormativo"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aprobar una nueva ley autonómica de universidades para reforzar el sistema público?"
     }
   ]
 }

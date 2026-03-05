@@ -122,7 +122,7 @@
     "PODEMOS": {
         "SAN_1": 2,
         "SAN_2": 2,
-        "EDU_1": 0,
+        "EDU_1": 2,
         "EDU_2": -1,
         "SOC_1": 1,
         "SOC_2": 2,
@@ -137,9 +137,9 @@
         "AMB_1": 2,
         "AMB_2": 1,
         "MOV_1": 1,
-        "MOV_2": null,
-        "TRA_1": null,
-        "TRA_2": null,
+        "MOV_2": 1,
+        "TRA_1": 2,
+        "TRA_2": 2,
         "CUL_1": 2,
         "CUL_2": 2
     },
