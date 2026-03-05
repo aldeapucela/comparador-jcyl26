@@ -287,7 +287,7 @@ function refreshAfinidadAvailabilityUI() {
     if (homeButton) {
         homeButton.disabled = !isEnabled;
         homeButton.setAttribute('aria-disabled', String(!isEnabled));
-        homeButton.textContent = isEnabled && hasCompletedResults ? 'Ver resultados' : 'Empezar test';
+        homeButton.textContent = isEnabled && hasCompletedResults ? 'Ver resultados' : 'Empezar';
     }
     if (homeLabel) {
         homeLabel.textContent = isEnabled && hasCompletedResults
