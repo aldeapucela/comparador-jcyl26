@@ -571,7 +571,7 @@ export function renderResults(results, { resultsZone = null } = {}) {
             const currentHash = window.location.hash || fallbackPartyHash;
             appState.stories.returnHash = currentHash.startsWith(fallbackPartyHash) ? currentHash : fallbackPartyHash;
             storiesController.focusOnParty(partyId);
-            UI.navigateHash('#/explora/play');
+            UI.navigateHash(`#/explora/play/parties/${encodeURIComponent(partyId)}`);
         } else {
             // Ir al programa del partido
             window.location.hash = `#/${partyId}`;
