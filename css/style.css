@@ -322,6 +322,73 @@ body {
     color: #64748b;
 }
 
+.home-feature-link.is-disabled .feature-icon {
+    background: #e2e8f0;
+}
+
+.home-feature-link.is-disabled .feature-icon i {
+    color: #64748b;
+}
+
+.home-feature-link.is-completed {
+    background: linear-gradient(135deg, #fcfaff 0%, #ffffff 100%);
+    border-color: #e9d5ff;
+    box-shadow: 0 2px 8px rgba(76, 29, 149, 0.06);
+    color: #6d28d9;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+}
+
+.home-feature-link.is-completed .feature-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.6rem;
+    background: #f5f3ff;
+}
+
+.home-feature-link.is-completed .feature-icon i {
+    color: #6d28d9;
+    font-size: 0.85rem;
+}
+
+.home-feature-link.is-completed .afinidad-home-content {
+    min-height: auto;
+    gap: 0.45rem;
+}
+
+.home-feature-link.is-completed .afinidad-home-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.home-feature-link.is-completed #afinidad-home-label {
+    margin-top: 0;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.home-feature-link.is-completed #btn-goto-afinidad {
+    margin-top: 0;
+    background: #ede9fe;
+    color: #5b21b6;
+    padding: 0.38rem 0.8rem;
+    font-size: 0.78rem;
+    line-height: 1.1;
+}
+
+.home-feature-link.is-completed #btn-goto-afinidad:hover {
+    transform: none;
+}
+
+#btn-goto-afinidad:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
 .party-zone-warning {
     width: 100%;
     margin-top: -0.2rem;

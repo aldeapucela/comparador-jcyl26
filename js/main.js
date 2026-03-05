@@ -262,23 +262,43 @@ function refreshZoneLabel() {
 
 function refreshAfinidadAvailabilityUI() {
     const isEnabled = isAfinidadEnabledForZone(appState.selectedZone);
+    let hasCompletedResults = false;
+    try {
+        const saved = localStorage.getItem('afinidad_answers_latest');
+        if (saved) {
+            const parsed = JSON.parse(saved);
+            hasCompletedResults = Boolean(parsed?.completed && parsed?.results);
+        }
+    } catch (err) {
+        console.error('Error reading saved afinidad state:', err);
+    }
+
+    const homeCard = document.getElementById('afinidad-home-card');
     const homeButton = document.getElementById('btn-goto-afinidad');
     const homeLabel = document.getElementById('afinidad-home-label');
     const homeSubtitle = document.getElementById('afinidad-home-subtitle');
     const mobileMenuLabel = document.getElementById('mobile-menu-afinidad-label');
 
+    if (homeCard) {
+        homeCard.classList.toggle('is-disabled', !isEnabled);
+        homeCard.classList.toggle('is-completed', isEnabled && hasCompletedResults);
+        homeCard.setAttribute('aria-disabled', String(!isEnabled));
+    }
     if (homeButton) {
-        homeButton.classList.toggle('is-disabled', !isEnabled);
+        homeButton.disabled = !isEnabled;
         homeButton.setAttribute('aria-disabled', String(!isEnabled));
+        homeButton.textContent = isEnabled && hasCompletedResults ? 'Ver resultados' : 'Empezar test';
     }
     if (homeLabel) {
-        homeLabel.textContent = 'Cuestionario de afinidad';
+        homeLabel.textContent = isEnabled && hasCompletedResults
+            ? 'Cuestionario de afinidad'
+            : '¿Qué partido piensa como tú?';
     }
     if (homeSubtitle) {
         homeSubtitle.textContent = isEnabled
-            ? 'Descubre en 3 minutos tu afinidad con los partidos'
+            ? (hasCompletedResults ? '' : 'Haz el cuestionario en 3 minutos y descubre tu afinidad real')
             : `Aún no disponible en ${appState.selectedZone}`;
-        homeSubtitle.classList.remove('hidden');
+        homeSubtitle.classList.toggle('hidden', isEnabled && hasCompletedResults);
     }
     if (mobileMenuLabel) {
         mobileMenuLabel.textContent = 'Cuestionario de afinidad';
@@ -1424,6 +1444,7 @@ async function handleRouting() {
     if (parts.length === 0) {
         trackSpaPageView(hash);
         UI.switchView('selection');
+        refreshAfinidadAvailabilityUI();
         syncHomeSavedEntryVisibility();
         appState.selectedParty = null;
         appState.currentCategory = null;
