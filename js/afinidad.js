@@ -493,13 +493,17 @@ export function renderResults(results, { resultsZone = null } = {}) {
     const sorted = Object.entries(results).sort((a, b) => b[1].affinity - a[1].affinity);
     if (sorted.length === 0) return;
     
+    const topAffinity = sorted[0][1].affinity;
+    const topTied = sorted.filter(([, data]) => data.affinity === topAffinity);
+    const isTie = topTied.length > 1;
     const winnerId = sorted[0][0];
     const winner = getPartyInfo(winnerId);
     const winnerLogoScale = getWinnerLogoScale(winner?.id);
     
-    // Verificar si hay historias pendientes para el partido ganador
-    const unseenCount = storiesController ? 
-        storiesController.countUnseenStoriesForParty(winnerId, Object.values(appState?.allData?.[winnerId]?.propuestas || [])) : 0;
+    // Verificar si hay historias pendientes para el partido ganador (solo si no hay empate)
+    const unseenCount = (!isTie && storiesController)
+        ? storiesController.countUnseenStoriesForParty(winnerId, Object.values(appState?.allData?.[winnerId]?.propuestas || []))
+        : 0;
     const hasPendingStories = unseenCount > 0;
     
     // 1. Renderizar Ganador
@@ -511,19 +515,38 @@ export function renderResults(results, { resultsZone = null } = {}) {
                     Si quieres, puedes mantenerlo o <button id="afinidad-restart-different-zone" class="underline font-semibold hover:text-amber-950">volver a hacer el cuestionario</button> para recalcular.
                 </div>
             ` : ''}
-            <p class="text-slate-500 text-sm font-medium mb-2">Tu partido más afín</p>
-            <div class="group">
-                <button class="block w-full cursor-pointer mb-4" onclick="handleWinnerLogoClick('${winnerId}')" aria-label="Ver ${hasPendingStories ? 'historias de' : 'programa de'} ${winner?.name || winnerId}">
-                    <div class="w-20 h-20 mx-auto rounded-full flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-105 ${hasPendingStories ? 'party-story-ring' : ''}" style="background-color: ${winner?.color || '#666'}20">
-                        <img src="${winner?.logo || ''}" alt="${winner?.name || ''}" class="w-full h-full object-contain" style="transform: scale(${winnerLogoScale}); transform-origin: center;">
-                    </div>
-                </button>
-                <a href="#/${winnerId}" class="block group">
-                    <h2 class="text-3xl font-bold mb-2 transition-colors duration-200 group-hover:text-indigo-600" style="color: ${winner?.color || '#334155'}">${winner?.name || winnerId}</h2>
-                </a>
-            </div>
-            <p class="text-5xl font-black text-slate-800">${sorted[0][1].affinity}%</p>
-            <p class="text-slate-400 mt-2">de afinidad global</p>
+            ${isTie ? `
+                <p class="text-slate-500 text-sm font-medium mb-2">Tus partidos más afines</p>
+                <div class="grid gap-4 sm:grid-cols-2 mt-4">
+                    ${topTied.map(([partyId, data]) => {
+                        const party = getPartyInfo(partyId);
+                        const logoScale = getWinnerLogoScale(party?.id);
+                        return `
+                            <a href="#/${partyId}" class="block rounded-xl border border-slate-200 p-4 hover:border-indigo-300 hover:bg-indigo-50/40 transition-colors">
+                                <div class="w-14 h-14 mx-auto rounded-full flex items-center justify-center overflow-hidden mb-2" style="background-color: ${party?.color || '#666'}20">
+                                    <img src="${party?.logo || ''}" alt="${party?.name || partyId}" class="w-full h-full object-contain" style="transform: scale(${logoScale}); transform-origin: center;">
+                                </div>
+                                <p class="font-bold" style="color: ${party?.color || '#334155'}">${party?.name || partyId}</p>
+                                <p class="text-2xl font-black text-slate-800 mt-1">${data.affinity}%</p>
+                            </a>
+                        `;
+                    }).join('')}
+                </div>
+            ` : `
+                <p class="text-slate-500 text-sm font-medium mb-2">Tu partido más afín</p>
+                <div class="group">
+                    <button class="block w-full cursor-pointer mb-4" onclick="handleWinnerLogoClick('${winnerId}')" aria-label="Ver ${hasPendingStories ? 'historias de' : 'programa de'} ${winner?.name || winnerId}">
+                        <div class="w-20 h-20 mx-auto rounded-full flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-105 ${hasPendingStories ? 'party-story-ring' : ''}" style="background-color: ${winner?.color || '#666'}20">
+                            <img src="${winner?.logo || ''}" alt="${winner?.name || ''}" class="w-full h-full object-contain" style="transform: scale(${winnerLogoScale}); transform-origin: center;">
+                        </div>
+                    </button>
+                    <a href="#/${winnerId}" class="block group">
+                        <h2 class="text-3xl font-bold mb-2 transition-colors duration-200 group-hover:text-indigo-600" style="color: ${winner?.color || '#334155'}">${winner?.name || winnerId}</h2>
+                    </a>
+                </div>
+                <p class="text-5xl font-black text-slate-800">${sorted[0][1].affinity}%</p>
+                <p class="text-slate-400 mt-2">de afinidad global</p>
+            `}
         </div>
     `;
     
@@ -830,6 +853,8 @@ function urlToImageDataUrl(url, {
 
 function setupShareLinks(results) {
   const sorted = Object.entries(results).sort((a, b) => b[1].affinity - a[1].affinity);
+  const topAffinity = sorted[0][1].affinity;
+  const topTied = sorted.filter(([, data]) => data.affinity === topAffinity);
   const winner = getPartyInfo(sorted[0][0]);
 
   const basePath = window.location.pathname.replace(/\/+$/, '');
@@ -841,9 +866,10 @@ function setupShareLinks(results) {
   const shareUrlForImage = `${window.location.hostname}${basePath}`;
 
   const shareUrl = `${window.location.origin}${basePath}?utm_source=share`;
-  const shareText =
-    `Mi resultado en el Cuestionario de Afinidad CyL 2026: ${sorted[0][1].affinity}% afín a ${winner.name}\n\n` +
-    `Descubre la tuya:\n${shareUrl}`;
+  const shareHeadline = topTied.length > 1
+    ? `Mi resultado en el Cuestionario de Afinidad CyL 2026: empate al ${topAffinity}% entre ${topTied.map(([id]) => getPartyInfo(id)?.name || id).join(' y ')}`
+    : `Mi resultado en el Cuestionario de Afinidad CyL 2026: ${sorted[0][1].affinity}% afín a ${winner.name}`;
+  const shareText = `${shareHeadline}\n\nDescubre la tuya:\n${shareUrl}`;
 
   // --- helpers (robustos para html2canvas) ---
 
