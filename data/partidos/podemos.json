@@ -2757,6 +2757,462 @@
         "foco_rural": true
       },
       "pregunta_afinidad": "¿Está de acuerdo con priorizar esta medida de empleo y economía?"
+    },
+    {
+      "id": 148,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Comercialización alimentaria",
+      "titulo_corto": "Crear la red pública de supermercados de proximidad SUPERCYL",
+      "resumen": "Impulsar una red pública de supermercados de proximidad para garantizar precios justos en origen y facilitar el acceso a alimentos básicos a precios asequibles. Reforzar los circuitos cortos y la soberanía alimentaria.",
+      "cita_literal": "Impulsaremos una red pública de supermercados de proximidad (SUPERCYL) para garantizar precios justos en origen a pequeños y medianos productores y productoras de Castilla y León y facilitar a la ciudadanía el acceso a alimentos básicos a precios asequibles.",
+      "pagina": 67,
+      "tags": [
+        "#SectorPrimario",
+        "#Alimentacion",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con crear una red pública de supermercados de proximidad para precios justos y compra local?"
+    },
+    {
+      "id": 149,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Educación pública",
+      "titulo_corto": "Implantar cocina in situ en comedores escolares públicos",
+      "resumen": "Desplegar progresivamente cocina in situ en centros públicos y priorizar alimentos del sector primario de Castilla y León mediante compra pública de proximidad.",
+      "cita_literal": "Garantizaremos la implantación progresiva de cocina in situ en los comedores escolares de los centros educativos públicos, promoviendo una alimentación saludable y priorizando el suministro de alimentos procedentes del sector primario de Castilla y León mediante compra pública de proximidad.",
+      "pagina": 67,
+      "tags": [
+        "#Educacion",
+        "#EscuelaPublica",
+        "#Alimentacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con implantar cocina in situ en comedores escolares públicos con compra alimentaria de proximidad?"
+    },
+    {
+      "id": 150,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Cadena alimentaria y precios",
+      "titulo_corto": "Crear observatorios provinciales de precios y reforzar la cadena alimentaria",
+      "resumen": "Crear un observatorio de precios en cada provincia con participación de organizaciones agrarias y reforzar el control de prácticas abusivas como la venta a pérdidas y la venta a resultas.",
+      "cita_literal": "Crearemos un Observatorio de Precios en cada provincia de Castilla y León, con participación de las organizaciones agrarias, para evaluar y vigilar los costes de producción y los procesos contractuales, evitando la venta por debajo de costes y garantizando las rentas agrarias: perseguiremos con rigor la venta a pérdidas y combatiremos eficazmente la venta a resultas.",
+      "pagina": 68,
+      "tags": [
+        "#SectorPrimario",
+        "#PreciosAgrarios",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforzar el control de precios agrarios y prohibir prácticas de venta por debajo de costes?"
+    },
+    {
+      "id": 151,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Compra pública alimentaria",
+      "titulo_corto": "Central de compras y ley de compra pública alimentaria",
+      "resumen": "Crear una central de compras autonómica con participación local y aprobar una ley de compra pública alimentaria para priorizar producto de Castilla y León en centros públicos.",
+      "cita_literal": "Crearemos una Central de Compras Autonómica, con participación de entidades locales, para apoyar a pequeños productores y productoras y canales cortos. Aprobaremos la Ley de Compra Pública Alimentaria, priorizando productos de Castilla y León en centros públicos.",
+      "pagina": 69,
+      "tags": [
+        "#SectorPrimario",
+        "#CompraPublica",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar legalmente productos locales en la compra alimentaria de centros públicos?"
+    },
+    {
+      "id": 152,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Transformación agroalimentaria local",
+      "titulo_corto": "Registro sanitario autonómico para elaboraciones artesanas",
+      "resumen": "Poner en marcha un registro sanitario autonómico para elaboraciones artesanas y facilitar la transformación local de recursos agrarios y ganaderos.",
+      "cita_literal": "Pondremos en marcha el Registro Sanitario Autonómico para elaboraciones artesanas. Promoveremos la transformación local de los recursos agrarios y ganaderos mediante obradores comunitarios, mataderos locales e industrias artesanas.",
+      "pagina": 69,
+      "tags": [
+        "#SectorPrimario",
+        "#Agroindustria",
+        "#EconomiaLocal"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con facilitar la transformación agroalimentaria artesanal con un registro sanitario autonómico?"
+    },
+    {
+      "id": 153,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Ganadería extensiva",
+      "titulo_corto": "Aprobar un plan estratégico de ganadería extensiva y pastoralismo",
+      "resumen": "Aprobar un plan estratégico específico para reforzar la ganadería extensiva y el pastoralismo como modelo sostenible y de arraigo territorial.",
+      "cita_literal": "Aprobaremos el Plan Estratégico para la Ganadería Extensiva y el Pastoralismo.",
+      "pagina": 69,
+      "tags": [
+        "#SectorPrimario",
+        "#Ganaderia",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar un plan estratégico específico para ganadería extensiva y pastoralismo?"
+    },
+    {
+      "id": 154,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Programa piloto para reducir la jornada laboral a 30 horas",
+      "resumen": "Lanzar un programa piloto con subvenciones a empresas de hasta 20 personas trabajadoras para reducir jornada a 30 horas en parte de su plantilla y mantenerla durante al menos 24 meses.",
+      "cita_literal": "Pondremos en marcha un Programa Piloto en el ámbito laboral de la Comunidad Autónoma para la Reducción de la Jornada Laboral a 30 horas, a desarrollarse a través de una línea de subvenciones dirigida a empresas de hasta 20 personas trabajadoras.",
+      "pagina": 71,
+      "tags": [
+        "#Empleo",
+        "#TrabajoDigno",
+        "#PoliticaLaboral"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con un programa piloto autonómico para reducir la jornada laboral a 30 horas?"
+    },
+    {
+      "id": 155,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y economía",
+      "titulo_corto": "Plan autonómico para reducir la siniestralidad laboral",
+      "resumen": "Desarrollar un plan de prevención de riesgos laborales con seguimiento del cumplimiento material de la normativa y medidas de reducción de accidentes laborales.",
+      "cita_literal": "Desarrollaremos un Plan que fomente entre las empresas la implantación de medidas tendentes a la reducción o eliminación de la siniestralidad laboral.",
+      "pagina": 71,
+      "tags": [
+        "#Empleo",
+        "#SeguridadLaboral",
+        "#TrabajoDigno"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforzar desde la comunidad autónoma la prevención de riesgos para reducir la siniestralidad laboral?"
+    },
+    {
+      "id": 156,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Desarrollo rural",
+      "titulo_corto": "Crear una empresa pública de multiservicios para el medio rural",
+      "resumen": "Crear una empresa pública de multiservicios orientada a mejorar acceso a servicios, generar empleo y fijar población en el medio rural.",
+      "cita_literal": "Crearemos una empresa pública de multiservicios para el medio rural, con la finalidad de luchar contra las dificultades de acceso al mercado y fijar población mediante la creación de empleo.",
+      "pagina": 73,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#ServiciosPublicos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con crear una empresa pública de multiservicios para reforzar empleo y servicios en el medio rural?"
+    },
+    {
+      "id": 157,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Desarrollo rural",
+      "titulo_corto": "Programa piloto de renta básica para revitalización rural",
+      "resumen": "Promover un programa piloto de renta básica en Castilla y León para evaluar su impacto en bienestar social y lucha contra la despoblación rural.",
+      "cita_literal": "Promoveremos un programa piloto de renta básica en Castilla y León con la finalidad de evaluar sus efectos desde la doble perspectiva del bienestar social y la revitalización del medio rural.",
+      "pagina": 73,
+      "tags": [
+        "#RetoDemografico",
+        "#Despoblacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con un programa piloto de renta básica para evaluar su efecto sobre la despoblación rural?"
+    },
+    {
+      "id": 158,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Protección territorial",
+      "titulo_corto": "Moratoria urgente a megaproyectos tóxicos en el territorio",
+      "resumen": "Establecer una moratoria urgente a megaproyectos considerados tóxicos, como biogás o minería ambientalmente insostenible, y revisar su impacto territorial.",
+      "cita_literal": "Estableceremos, con carácter urgente, una moratoria ante los megaproyectos tóxicos que proliferan en Castilla y León (biogás, minería ambientalmente insostenible, etc.).",
+      "pagina": 73,
+      "tags": [
+        "#MedioAmbiente",
+        "#ProteccionAmbiental",
+        "#Territorio"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con establecer una moratoria urgente a megaproyectos con alto impacto ambiental y territorial?"
+    },
+    {
+      "id": 159,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Ganadería y territorio",
+      "titulo_corto": "Moratoria permanente a nuevas macrogranjas de intensivo",
+      "resumen": "Establecer una moratoria permanente a nuevas macrogranjas de ganadería intensiva e impulsar una transición hacia modelos de pequeña y mediana producción.",
+      "cita_literal": "Estableceremos una moratoria de carácter permanente a la instalación de nuevas macrogranjas de ganadería intensiva y trabajaremos por el establecimiento de un plan de transición hacia modelos de pequeñas y medianas producciones.",
+      "pagina": 74,
+      "tags": [
+        "#MedioAmbiente",
+        "#Ganaderia",
+        "#ProteccionAmbiental"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con una moratoria permanente a nuevas macrogranjas de ganadería intensiva?"
+    },
+    {
+      "id": 160,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Relevo generacional agrario",
+      "titulo_corto": "Implantar una renta básica agraria para jóvenes incorporados",
+      "resumen": "Implantar una renta básica agraria equivalente al SMI durante dos años para jóvenes que se incorporen a la actividad agrícola o ganadera.",
+      "cita_literal": "Implantaremos una Renta Básica Agraria equivalente al SMI durante dos años para jóvenes que se incorporen a la actividad agrícola o ganadera, como medida clave para garantizar el relevo generacional.",
+      "pagina": 74,
+      "tags": [
+        "#SectorPrimario",
+        "#RelevoGeneracional",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con una renta básica agraria temporal para facilitar el relevo generacional en el campo?"
+    },
+    {
+      "id": 161,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Marco normativo agrario",
+      "titulo_corto": "Poner en marcha la ley de agricultura familiar",
+      "resumen": "Desarrollar una ley de agricultura familiar que integre reconocimiento profesional, incorporación juvenil, igualdad de género y modernización de estructuras agrarias.",
+      "cita_literal": "Pondremos en marcha la Ley de Agricultura Familiar, integrando y modernizando la legislación vigente en materia de reconocimiento profesional, igualdad de género, incorporación de jóvenes, estructuras agrarias y políticas públicas de apoyo.",
+      "pagina": 74,
+      "tags": [
+        "#SectorPrimario",
+        "#Agricultura",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con una ley autonómica específica de agricultura familiar?"
+    },
+    {
+      "id": 162,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Innovación y acceso a la tierra",
+      "titulo_corto": "Crear espacios test agrarios y una red pública de fincas piloto",
+      "resumen": "Impulsar espacios test agrarios para la inserción progresiva de nuevos proyectos y concertar una red de fincas piloto con tierras públicas para innovación agraria.",
+      "cita_literal": "Impulsaremos los Espacios Test Agrarios, que permitan una inserción progresiva de nuevos proyectos agrícolas, ganaderos o forestales. Concertaremos una Red de Fincas Piloto para la innovación agraria, con las tierras disponibles de titularidad pública.",
+      "pagina": 75,
+      "tags": [
+        "#SectorPrimario",
+        "#InnovacionAgraria",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con crear espacios test y fincas piloto públicas para facilitar nuevas incorporaciones agrarias?"
+    },
+    {
+      "id": 163,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Salud mental",
+      "titulo_corto": "Implantar un plan autonómico de prevención del suicidio",
+      "resumen": "Implementar un plan autonómico de prevención del suicidio con coordinación entre niveles sanitarios y servicios sociales, y con inversión específica.",
+      "cita_literal": "Implementaremos un Plan de Prevención del Suicidio que involucre a todos los niveles sanitarios y a la Consejería de Familia con inversión específica.",
+      "pagina": 17,
+      "tags": [
+        "#SanidadPublica",
+        "#SaludMental",
+        "#Prevencion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con implantar un plan autonómico de prevención del suicidio con financiación específica?"
+    },
+    {
+      "id": 164,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Salud pública preventiva",
+      "titulo_corto": "Aplicar el enfoque One Health en la política sanitaria",
+      "resumen": "Adoptar el enfoque One Health para anticipar riesgos y reforzar la salud pública mediante una visión integrada de salud humana, animal y ambiental.",
+      "cita_literal": "Apostaremos por el enfoque One Health para preservar la salud global y anticiparnos a futuras pandemias.",
+      "pagina": 18,
+      "tags": [
+        "#SanidadPublica",
+        "#SaludPublica",
+        "#Prevencion"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con incorporar el enfoque One Health en las políticas autonómicas de salud pública?"
+    },
+    {
+      "id": 165,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Universidad pública",
+      "titulo_corto": "Alcanzar la gratuidad progresiva de la universidad pública",
+      "resumen": "Avanzar en una legislatura hacia la gratuidad total de grado, máster y doctorado en universidades públicas, reforzando becas y ayudas.",
+      "cita_literal": "Se alcanzará la gratuidad total de la Universidad pública, de manera progresiva en el horizonte de una legislatura, en todos los cursos y niveles (grado, máster y doctorado).",
+      "pagina": 29,
+      "tags": [
+        "#Educacion",
+        "#UniversidadPublica",
+        "#EquidadEducativa"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con avanzar hacia la gratuidad total de la universidad pública en grado, máster y doctorado?"
+    },
+    {
+      "id": 166,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Universidad pública",
+      "titulo_corto": "Desprivatizar el sistema universitario y frenar nuevas privadas",
+      "resumen": "Aprobar un plan de desprivatización universitaria que impida nuevas universidades privadas y refuerce la gestión pública directa en el sistema.",
+      "cita_literal": "Se aprobará un Plan de desprivatización del sistema universitario de Castilla y León, impidiendo la creación de nuevas universidades privadas, promoviendo la gestión pública directa de los servicios universitarios.",
+      "pagina": 29,
+      "tags": [
+        "#Educacion",
+        "#UniversidadPublica",
+        "#ServiciosPublicos"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con impedir nuevas universidades privadas y reforzar la gestión pública del sistema universitario?"
+    },
+    {
+      "id": 167,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Universidad pública",
+      "titulo_corto": "Eliminar los numerus clausus en universidades públicas",
+      "resumen": "Eliminar los numerus clausus que limitan acceso a universidades públicas y ampliar la igualdad de oportunidades para estudiantes de rentas trabajadoras.",
+      "cita_literal": "Eliminaremos los “números clausus” que limitan el acceso a las Universidades Públicas de los hijos e hijas de las clases trabajadoras.",
+      "pagina": 31,
+      "tags": [
+        "#Educacion",
+        "#UniversidadPublica",
+        "#EquidadEducativa"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con eliminar los numerus clausus en universidades públicas para ampliar el acceso?"
+    },
+    {
+      "id": 168,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Movilidad sostenible",
+      "titulo_corto": "Aprobar una ley autonómica de movilidad sostenible",
+      "resumen": "Aprobar una ley de movilidad sostenible coordinada con entidades locales y promover planes integrales de movilidad interurbana.",
+      "cita_literal": "Elaboraremos una Ley de Movilidad Sostenible en colaboración y participada por las administraciones locales y, asimismo, fomentar la elaboración de planes integrales de movilidad interurbana.",
+      "pagina": 78,
+      "tags": [
+        "#Movilidad",
+        "#TransportePublico",
+        "#Conectividad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aprobar una ley autonómica de movilidad sostenible con planificación interurbana?"
+    },
+    {
+      "id": 169,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Infraestructuras viarias",
+      "titulo_corto": "Plan integral de mantenimiento de carreteras secundarias",
+      "resumen": "Desarrollar un plan integral de mantenimiento y mejora de carreteras secundarias para sostener conexiones dignas entre municipios.",
+      "cita_literal": "Realizaremos un Plan integral de mantenimiento y mejora de carreteras secundarias que mantenga las conexiones entre nuestros municipios en condiciones dignas.",
+      "pagina": 78,
+      "tags": [
+        "#Movilidad",
+        "#Infraestructuras",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con priorizar un plan de mantenimiento de carreteras secundarias para mejorar la conexión entre municipios?"
+    },
+    {
+      "id": 170,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Protección del suelo agrario",
+      "titulo_corto": "Aprobar una ley de protección de suelos fértiles",
+      "resumen": "Desarrollar una ley autonómica para proteger suelos fértiles y evitar cambios de uso no agrarios o ganaderos.",
+      "cita_literal": "Desarrollaremos una ley de protección de los suelos fértiles, para evitar su uso con fines que no sean agrarios o ganaderos.",
+      "pagina": 80,
+      "tags": [
+        "#MedioAmbiente",
+        "#SueloAgrario",
+        "#ProteccionAmbiental"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aprobar una ley autonómica para proteger suelos fértiles de usos no agrarios?"
+    },
+    {
+      "id": 171,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Minería y ordenación del territorio",
+      "titulo_corto": "Derogar la reforma urbanística que facilita minas a cielo abierto",
+      "resumen": "Derogar la modificación de la ley urbanística autonómica que facilita explotación minera y reforzar la oposición a nuevas minas a cielo abierto.",
+      "cita_literal": "Derogaremos la modificación de la Ley de urbanismo de Castilla y León que facilita la explotación minera en nuestro territorio e impulsaremos la defensa del no establecimiento de minas a cielo abierto.",
+      "pagina": 82,
+      "tags": [
+        "#MedioAmbiente",
+        "#Mineria",
+        "#Territorio"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con derogar la reforma urbanística que facilita nuevas minas a cielo abierto?"
     }
   ]
 }
