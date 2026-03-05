@@ -12,6 +12,10 @@
     "lema": "El camino hacia el bienestar de todas las personas",
     "anio": 2026,
     "logo": "img/encomun.svg",
+    "story_video": {
+      "enabled": true,
+      "path": "video/en-comun.mp4"
+    },
     "zonas": [
       "Ávila",
       "Burgos",
