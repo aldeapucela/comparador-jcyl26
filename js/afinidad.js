@@ -1100,8 +1100,13 @@ function setupShareLinks(results) {
 
 // Track anonymous affinity result with Matomo
 function trackAffinityResult(results) {
-    // Find the party with highest affinity
+    // Find top affinity and detect ties
     const sorted = Object.entries(results).sort((a, b) => b[1].affinity - a[1].affinity);
+    if (sorted.length === 0) return;
+    const topAffinity = sorted[0][1].affinity;
+    const topTied = sorted.filter(([, data]) => data.affinity === topAffinity);
+    const isTie = topTied.length > 1;
+
     const winnerId = sorted[0][0];
     const winnerAffinity = sorted[0][1].affinity;
     const selectedZone = String(appState?.selectedZone || 'desconocida').trim() || 'desconocida';
@@ -1119,10 +1124,21 @@ function trackAffinityResult(results) {
     
     // Track with Matomo as custom event
     if (typeof _paq !== 'undefined') {
-        _paq.push(['trackEvent', 'Afinidad', 'Resultado', winnerId, winnerAffinity]);
+        if (isTie) {
+            const tieIds = topTied.map(([partyId]) => partyId).sort();
+            const tieLabel = tieIds.join('|');
+            // Keep legacy action name for compatibility, encode tie in label
+            _paq.push(['trackEvent', 'Afinidad', 'Resultado', tieLabel, topAffinity]);
+            // Keep legacy winner action name; one event per tied party
+            tieIds.forEach((partyId) => {
+                _paq.push(['trackEvent', 'Afinidad', 'Partido', partyId]);
+            });
+        } else {
+            _paq.push(['trackEvent', 'Afinidad', 'Resultado', winnerId, winnerAffinity]);
+            _paq.push(['trackEvent', 'Afinidad', 'Partido', winnerId]);
+        }
         
-        // Also track without value for compatibility
-        _paq.push(['trackEvent', 'Afinidad', 'Partido', winnerId]);
+        // Common dimensions
         _paq.push(['trackEvent', 'Afinidad', 'Provincia', selectedZone]);
         
         // Mark as tracked today
