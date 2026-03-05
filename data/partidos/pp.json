@@ -2269,6 +2269,86 @@
         "foco_rural": true
       },
       "pregunta_afinidad": "¿Cree prioritario destinar médicos especialistas en dolor crónico a los consultorios de los pueblos para que los mayores no tengan que ir al hospital?"
+    },
+    {
+      "id": 114,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Ganadería Extensiva",
+      "titulo_corto": "Plan específico para la ganadería extensiva",
+      "resumen": "Impulsar un plan específico para la ganadería extensiva con relevo generacional, modernización de explotaciones, fomento del pastoreo e inversiones en infraestructuras comunes.",
+      "cita_literal": "Aprobaremos un plan específico para la ganadería extensiva que apueste por la incorporación de jóvenes, la modernización de explotaciones, el fomento del pastoreo, las ayudas a las inversiones en infraestructuras comunes y el apoyo a la comercialización.",
+      "pagina": 49,
+      "tags": [
+        "#SectorPrimario",
+        "#GanaderiaExtensiva",
+        "#Pastoreo",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parece bien priorizar ayudas públicas a la ganadería extensiva y al pastoreo frente a modelos intensivos?"
+    },
+    {
+      "id": 115,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Energía Eólica",
+      "titulo_corto": "Repotenciación de parques eólicos existentes",
+      "resumen": "Modernizar la generación eólica mediante repotenciación de instalaciones existentes para ganar eficiencia de red y reducir el impacto ambiental de parques antiguos.",
+      "cita_literal": "Modernizaremos la generación eólica a través del fomento de la repotenciación de las instalaciones existentes, que contribuya a dotar de mayor eficiencia a los accesos a la red, a reducir el impacto ambiental de los parques más antiguos y a traccionar las capacidades de reciclaje de aerogeneradores en Castilla y León.",
+      "pagina": 14,
+      "tags": [
+        "#MedioAmbiente",
+        "#Energia",
+        "#Eolica",
+        "#Repotenciacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Le parece bien modernizar parques eólicos ya existentes para reducir impacto ambiental y mejorar su eficiencia?"
+    },
+    {
+      "id": 116,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Ganadería Extensiva",
+      "titulo_corto": "Abastecimiento de agua para ganadería extensiva",
+      "resumen": "Apoyar planes específicos de abastecimiento de agua para explotaciones de ganadería extensiva.",
+      "cita_literal": "Apoyaremos planes de abastecimiento de agua para nuestra ganadería extensiva.",
+      "pagina": 50,
+      "tags": [
+        "#SectorPrimario",
+        "#GanaderiaExtensiva",
+        "#Agua",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Debería la Junta financiar planes de agua para sostener la ganadería extensiva?"
+    },
+    {
+      "id": 117,
+      "categoria": "Otros",
+      "subcategoria": "Memoria Histórica",
+      "titulo_corto": "Difusión de la memoria de la Transición",
+      "resumen": "Promover la memoria de la Transición en Castilla y León destacando actores, primeras elecciones democráticas y periodo preautonómico.",
+      "cita_literal": "Reconoceremos especialmente y difundiremos la memoria de la transición en nuestra Comunidad Autónoma, valorando a los principales actores de Castilla y León, la importancia de nuestras primeras elecciones democráticas, así como el conocimiento del periodo preautonómico de Castilla y León.",
+      "pagina": 59,
+      "tags": [
+        "#Cultura",
+        "#Memoria",
+        "#Transicion",
+        "#Democracia"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Le parece bien que la Junta impulse programas sobre memoria democrática centrados en la Transición?"
     }
   ]
 }
