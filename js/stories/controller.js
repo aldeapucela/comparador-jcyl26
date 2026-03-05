@@ -17,6 +17,7 @@ const SAVE_TOAST_ID = 'story-save-toast';
 const TELEGRAM_CHAT_URL = 'https://t.me/aldeapucela/115494';
 const INTERSTITIAL_POSITION_TELEGRAM = 6;
 const INTERSTITIAL_POSITION_AFINIDAD = 9;
+const TELEGRAM_TARGET_ZONE = 'valladolid';
 
 export function createStoriesController(appState) {
     let exploraTouchStart = null;
@@ -238,7 +239,8 @@ export function createStoriesController(appState) {
             },
             durationMs: EXPLORA_ENGAGEMENT_DURATION_MS,
             shouldShow() {
-                return !isTelegramConverted();
+                const selectedZone = String(appState?.selectedZone || '').trim().toLowerCase();
+                return !isTelegramConverted() && selectedZone === TELEGRAM_TARGET_ZONE;
             },
             onShow() {
                 interstitialShownInSession.add('telegram-promo');
