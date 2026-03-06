@@ -109,6 +109,7 @@ body {
 /* Methodology Accordion Styles */
 .methodology-accordion {
     transition: all 0.2s ease;
+    box-shadow: none;
 }
 
 .methodology-summary {
@@ -129,8 +130,53 @@ body {
     transform: rotate(180deg);
 }
 
+.methodology-title-icon {
+    font-size: 1.5rem;
+    color: #1e293b;
+    width: 24px;
+    text-align: center;
+}
+
 .methodology-content {
     animation: slideDown 0.2s ease-out;
+    background-color: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+    line-height: 1.7;
+}
+
+.methodology-points {
+    display: grid;
+    gap: 0.25rem;
+}
+
+.methodology-point {
+    display: grid;
+    grid-template-columns: 1.5rem 1fr;
+    column-gap: 0.75rem;
+    align-items: start;
+    padding: 0.3rem 0;
+}
+
+.methodology-point-icon {
+    font-size: 0.8rem;
+    width: 1.5rem;
+    text-align: center;
+    line-height: 1;
+    margin-top: 0.38rem;
+}
+
+.methodology-point-icon--match {
+    color: #3f5f4f;
+}
+
+.methodology-point-icon--diff {
+    color: #8f5a4a;
+}
+
+.methodology-point-icon--neutral {
+    color: #9a7b37;
 }
 
 @keyframes slideDown {
