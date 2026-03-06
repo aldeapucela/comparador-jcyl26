@@ -239,7 +239,9 @@ body {
 
 .home-feature-grid {
     --home-feature-cols: 3;
+    margin-top: 0.95rem;
 }
+
 
 .explora-zone-row {
     display: flex;
@@ -1579,6 +1581,11 @@ body.mobile-menu-open {
     border-radius: 0.25rem;
 }
 
+#header-subtitle {
+    margin-top: 0.28rem !important;
+}
+
+
 /* Mobile Optimizations */
 @media (max-width: 1024px) {
     aside {
@@ -1610,6 +1617,10 @@ body.mobile-menu-open {
 }
 
 @media (max-width: 640px) {
+    #home-feature-grid {
+        margin-top: 0.75rem;
+    }
+
     #header-inner {
         position: relative;
         padding-bottom: 0;
@@ -1667,6 +1678,7 @@ body.mobile-menu-open {
         align-items: baseline;
         gap: 0.2rem;
     }
+
 
     .zone-select-wrap {
         padding-right: 0.56rem;
