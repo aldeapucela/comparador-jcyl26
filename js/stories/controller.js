@@ -13,6 +13,10 @@ const EXPLORA_TELEGRAM_INTERSTITIAL_STORAGE_KEY = 'explora_telegram_interstitial
 const EXPLORA_AFINIDAD_INTERSTITIAL_STORAGE_KEY = 'explora_afinidad_interstitial_v1';
 const EXPLORA_CANDIDATE_VIDEO_SEEN_STORAGE_KEY = 'explora_candidate_video_seen_v1';
 const EXPLORA_CANDIDATE_VIDEO_MUTED_STORAGE_KEY = 'explora_candidate_video_muted_v1';
+const EXPLORA_SWIPE_ONBOARDING_SEEN_STORAGE_KEY = 'explora_swipe_onboarding_seen_v1';
+const EXPLORA_SWIPE_ONBOARDING_DURATION_MS = 2000;
+const EXPLORA_DRAG_CLOSE_THRESHOLD_RATIO = 0.3;
+const EXPLORA_DRAG_CLOSE_MIN_START_PX = 14;
 const SAVE_TOAST_ID = 'story-save-toast';
 const TELEGRAM_CHAT_URL = 'https://t.me/aldeapucela/115494';
 const INTERSTITIAL_POSITION_TELEGRAM = 6;
@@ -26,7 +30,10 @@ export function createStoriesController(appState) {
     let exploraWasPausedByHold = false;
     let exploraAutoAdvanceTimer = null;
     let exploraProgressRaf = null;
+    let exploraSwipeOnboardingTimer = null;
     let exploraPlaybackElapsedMs = 0;
+    let exploraDragActive = false;
+    let exploraDragTranslateY = 0;
     let storyCaptionTimer = null;
     let storyCaptionChunks = [];
     let storyCaptionCurrentIndex = 0;
@@ -590,6 +597,117 @@ export function createStoriesController(appState) {
         } catch {
             return new Set();
         }
+    }
+
+    function hasSeenSwipeOnboarding() {
+        try {
+            return localStorage.getItem(EXPLORA_SWIPE_ONBOARDING_SEEN_STORAGE_KEY) === '1';
+        } catch {
+            return true;
+        }
+    }
+
+    function markSwipeOnboardingSeen() {
+        try {
+            localStorage.setItem(EXPLORA_SWIPE_ONBOARDING_SEEN_STORAGE_KEY, '1');
+        } catch {
+            // Ignore storage failures.
+        }
+    }
+
+    function clearSwipeOnboardingTimer() {
+        if (!exploraSwipeOnboardingTimer) return;
+        clearTimeout(exploraSwipeOnboardingTimer);
+        exploraSwipeOnboardingTimer = null;
+    }
+
+    function maybeShowSwipeOnboarding() {
+        if (hasSeenSwipeOnboarding()) return;
+        const storyScreen = UI.containers.storiesCard?.querySelector('.story-screen');
+        if (!storyScreen) return;
+        if (storyScreen.querySelector('.story-swipe-onboarding')) return;
+
+        const onboarding = document.createElement('div');
+        onboarding.className = 'story-swipe-onboarding';
+        onboarding.setAttribute('aria-hidden', 'true');
+        onboarding.innerHTML = `
+            <div class="story-swipe-onboarding-inner">
+                <span class="story-swipe-onboarding-hand" aria-hidden="true">
+                <i class="fa-solid fa-hand-pointer"></i>
+                </span>
+                <span class="story-swipe-onboarding-label">Desliza para salir</span>
+            </div>
+        `;
+        storyScreen.appendChild(onboarding);
+
+        markSwipeOnboardingSeen();
+        clearSwipeOnboardingTimer();
+        exploraSwipeOnboardingTimer = window.setTimeout(() => {
+            onboarding.classList.add('is-hidden');
+            window.setTimeout(() => onboarding.remove(), 240);
+            exploraSwipeOnboardingTimer = null;
+        }, EXPLORA_SWIPE_ONBOARDING_DURATION_MS);
+    }
+
+    function getStoryScreenEl() {
+        return UI.containers.storiesCard?.querySelector('.story-screen') || null;
+    }
+
+    function applyDragVisualState(translateY = 0) {
+        const storyScreen = getStoryScreenEl();
+        if (!storyScreen) return;
+        const y = Math.max(0, Number(translateY) || 0);
+        const viewportHeight = Math.max(window.innerHeight || 1, 1);
+        const ratio = Math.min(1, y / viewportHeight);
+        const scale = 1 - (ratio * 0.05);
+        storyScreen.classList.add('is-dragging');
+        storyScreen.classList.remove('is-snapback');
+        storyScreen.style.transform = `translateY(${y}px) scale(${scale.toFixed(3)})`;
+        exploraDragTranslateY = y;
+    }
+
+    function resetDragVisualState({ snapback = false } = {}) {
+        const storyScreen = getStoryScreenEl();
+        if (!storyScreen) {
+            exploraDragTranslateY = 0;
+            return;
+        }
+        storyScreen.classList.remove('is-dragging');
+        storyScreen.classList.toggle('is-snapback', snapback);
+        storyScreen.style.transform = '';
+        if (snapback) {
+            window.setTimeout(() => {
+                storyScreen.classList.remove('is-snapback');
+            }, 280);
+        }
+        exploraDragTranslateY = 0;
+    }
+
+    function closeStoriesFromDrag() {
+        const storyScreen = getStoryScreenEl();
+        if (!storyScreen) {
+            closeStoriesToHome();
+            return;
+        }
+
+        const returnHash = appState.stories?.returnHash || '#/';
+        endTrackingSession();
+        clearPlaybackTimers();
+        stopStoryCaptionSequence();
+        exploraPlaybackElapsedMs = 0;
+        exploraIsPaused = false;
+        exploraWasPausedByHold = false;
+        document.body.classList.remove('explora-paused');
+
+        storyScreen.classList.remove('is-dragging', 'is-snapback');
+        storyScreen.style.transition = 'transform 180ms cubic-bezier(0.16, 0.84, 0.28, 1)';
+        requestAnimationFrame(() => {
+            storyScreen.style.transform = `translateY(${Math.max(window.innerHeight || 0, exploraDragTranslateY + 180)}px) scale(0.94)`;
+        });
+        window.setTimeout(() => {
+            storyScreen.style.transition = '';
+            UI.navigateHash(returnHash);
+        }, 185);
     }
 
     function readCandidateVideoMutedPreference() {
@@ -1583,6 +1701,9 @@ export function createStoriesController(appState) {
 
         bindExploraGestures();
         scheduleAutoAdvance();
+        if (appState.stories.currentIndex === 0) {
+            maybeShowSwipeOnboarding();
+        }
 
         UI.containers.storiesCard.querySelectorAll('.btn-detail').forEach((btn) => {
             btn.addEventListener('click', () => {
@@ -1618,6 +1739,8 @@ export function createStoriesController(appState) {
 
     function closeStoriesToHome() {
         if (appState.mode !== 'stories' || !appState.stories.started) return;
+        resetDragVisualState();
+        exploraDragActive = false;
         endTrackingSession();
         const returnHash = appState.stories?.returnHash || '#/';
         clearPlaybackTimers();
@@ -1661,10 +1784,12 @@ export function createStoriesController(appState) {
 
         storyCard.onwheel = null;
         storyCard.onpointerdown = null;
+        storyCard.onpointermove = null;
         storyCard.onpointerup = null;
         storyCard.onpointercancel = null;
         storyCard.onpointerleave = null;
         storyCard.ontouchstart = null;
+        storyCard.ontouchmove = null;
         storyCard.ontouchend = null;
         storyCard.ontouchcancel = null;
 
@@ -1694,6 +1819,8 @@ export function createStoriesController(appState) {
             if (appState.mode !== 'stories' || !appState.stories.started) return;
             if (isInteractiveTarget(event.target)) return;
             exploraTouchStart = { x: event.clientX, y: event.clientY };
+            exploraDragActive = false;
+            exploraDragTranslateY = 0;
             if (typeof storyCard.setPointerCapture === 'function') {
                 try {
                     storyCard.setPointerCapture(event.pointerId);
@@ -1706,16 +1833,41 @@ export function createStoriesController(appState) {
             exploraWasPausedByHold = true;
         };
 
+        storyCard.onpointermove = (event) => {
+            if (!exploraWasPausedByHold || !exploraTouchStart) return;
+            const deltaX = event.clientX - exploraTouchStart.x;
+            const deltaY = event.clientY - exploraTouchStart.y;
+            const isVerticalIntent = deltaY > EXPLORA_DRAG_CLOSE_MIN_START_PX && Math.abs(deltaY) > Math.abs(deltaX) * 1.1;
+            if (!isVerticalIntent && !exploraDragActive) return;
+            if (deltaY <= 0) {
+                if (exploraDragActive) {
+                    applyDragVisualState(0);
+                }
+                return;
+            }
+            exploraDragActive = true;
+            applyDragVisualState(deltaY);
+        };
+
         const releaseHold = (event) => {
             if (exploraWasPausedByHold && event && exploraTouchStart) {
                 const deltaX = event.clientX - exploraTouchStart.x;
                 const deltaY = event.clientY - exploraTouchStart.y;
-                const isDownSwipeToClose = deltaY > 90 && Math.abs(deltaY) > Math.abs(deltaX) * 1.15;
+                const closeThresholdPx = Math.max(
+                    120,
+                    Math.floor((window.innerHeight || 0) * EXPLORA_DRAG_CLOSE_THRESHOLD_RATIO)
+                );
+                const isDownSwipeToClose = deltaY > closeThresholdPx && Math.abs(deltaY) > Math.abs(deltaX) * 1.1;
                 if (isDownSwipeToClose) {
                     exploraTouchStart = null;
                     exploraWasPausedByHold = false;
-                    closeStoriesToHome();
+                    exploraDragActive = false;
+                    closeStoriesFromDrag();
                     return;
+                }
+                if (exploraDragActive) {
+                    resetDragVisualState({ snapback: true });
+                    exploraDragActive = false;
                 }
                 const isHorizontalSwipe = Math.abs(deltaX) > 46 && Math.abs(deltaX) > Math.abs(deltaY) * 1.15;
                 if (isHorizontalSwipe) {
@@ -1733,6 +1885,10 @@ export function createStoriesController(appState) {
             exploraTouchStart = null;
             if (!exploraWasPausedByHold) return;
             exploraWasPausedByHold = false;
+            if (exploraDragActive) {
+                resetDragVisualState({ snapback: true });
+                exploraDragActive = false;
+            }
             resumePlayback();
             resumeActiveVideoPlayback(getActiveVideoEl());
         };
@@ -1753,9 +1909,30 @@ export function createStoriesController(appState) {
             const point = getTouchPoint(event);
             if (!point) return;
             exploraTouchStart = point;
+            exploraDragActive = false;
+            exploraDragTranslateY = 0;
             pausePlayback();
             getActiveVideoEl()?.pause();
             exploraWasPausedByHold = true;
+        };
+
+        storyCard.ontouchmove = (event) => {
+            if (!exploraWasPausedByHold || !exploraTouchStart) return;
+            const point = getTouchPoint(event);
+            if (!point) return;
+            const deltaX = point.x - exploraTouchStart.x;
+            const deltaY = point.y - exploraTouchStart.y;
+            const isVerticalIntent = deltaY > EXPLORA_DRAG_CLOSE_MIN_START_PX && Math.abs(deltaY) > Math.abs(deltaX) * 1.1;
+            if (!isVerticalIntent && !exploraDragActive) return;
+            if (deltaY <= 0) {
+                if (exploraDragActive) {
+                    applyDragVisualState(0);
+                }
+                return;
+            }
+            exploraDragActive = true;
+            applyDragVisualState(deltaY);
+            event.preventDefault();
         };
 
         storyCard.ontouchend = (event) => {
@@ -1764,12 +1941,21 @@ export function createStoriesController(appState) {
             if (point) {
                 const deltaX = point.x - exploraTouchStart.x;
                 const deltaY = point.y - exploraTouchStart.y;
-                const isDownSwipeToClose = deltaY > 90 && Math.abs(deltaY) > Math.abs(deltaX) * 1.15;
+                const closeThresholdPx = Math.max(
+                    120,
+                    Math.floor((window.innerHeight || 0) * EXPLORA_DRAG_CLOSE_THRESHOLD_RATIO)
+                );
+                const isDownSwipeToClose = deltaY > closeThresholdPx && Math.abs(deltaY) > Math.abs(deltaX) * 1.1;
                 if (isDownSwipeToClose) {
                     exploraTouchStart = null;
                     exploraWasPausedByHold = false;
-                    closeStoriesToHome();
+                    exploraDragActive = false;
+                    closeStoriesFromDrag();
                     return;
+                }
+                if (exploraDragActive) {
+                    resetDragVisualState({ snapback: true });
+                    exploraDragActive = false;
                 }
                 const isHorizontalSwipe = Math.abs(deltaX) > 46 && Math.abs(deltaX) > Math.abs(deltaY) * 1.15;
                 if (isHorizontalSwipe) {
@@ -1785,6 +1971,10 @@ export function createStoriesController(appState) {
             }
             exploraTouchStart = null;
             exploraWasPausedByHold = false;
+            if (exploraDragActive) {
+                resetDragVisualState({ snapback: true });
+                exploraDragActive = false;
+            }
             resumePlayback();
             resumeActiveVideoPlayback(getActiveVideoEl());
         };
@@ -1793,15 +1983,21 @@ export function createStoriesController(appState) {
             exploraTouchStart = null;
             if (!exploraWasPausedByHold) return;
             exploraWasPausedByHold = false;
+            if (exploraDragActive) {
+                resetDragVisualState({ snapback: true });
+                exploraDragActive = false;
+            }
             resumePlayback();
             resumeActiveVideoPlayback(getActiveVideoEl());
         };
     }
 
     function resetPlaybackInteractionState() {
+        resetDragVisualState();
         exploraPlaybackElapsedMs = 0;
         exploraIsPaused = false;
         exploraWasPausedByHold = false;
+        exploraDragActive = false;
         document.body.classList.remove('explora-paused');
         clearPlaybackTimers();
     }
@@ -2031,6 +2227,11 @@ export function createStoriesController(appState) {
 
     function handleKeydown(event) {
         if (appState.mode !== 'stories') return false;
+        if (event.key === 'Escape') {
+            event.preventDefault();
+            closeStoriesToHome();
+            return true;
+        }
         if (event.key === 'ArrowDown' || event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') {
             event.preventDefault();
             moveToNextStory();
@@ -2067,6 +2268,7 @@ export function createStoriesController(appState) {
         exploraIsPaused = false;
         exploraWasPausedByHold = false;
         document.body.classList.remove('explora-paused');
+        clearSwipeOnboardingTimer();
         exitExploraFullscreenIfActive();
     }
 
@@ -2088,6 +2290,7 @@ export function createStoriesController(appState) {
         afinidadSessionNextPromptAt = AFINIDAD_PROMPT_FIRST_THRESHOLD;
         lastInterstitialViewedCount = -1000;
         document.body.classList.remove('explora-paused');
+        clearSwipeOnboardingTimer();
         exitExploraFullscreenIfActive();
     }
 

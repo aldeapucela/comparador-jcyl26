@@ -60,6 +60,15 @@
     -webkit-user-select: none;
     user-select: none;
     -webkit-touch-callout: none;
+    will-change: transform;
+}
+
+.story-screen.is-dragging {
+    transition: none;
+}
+
+.story-screen.is-snapback {
+    transition: transform 260ms cubic-bezier(0.2, 0.9, 0.22, 1.08);
 }
 
 .story-screen--enter-next {
@@ -122,6 +131,71 @@
         linear-gradient(180deg, rgba(15, 23, 42, 0.04), rgba(2, 6, 23, 0.28));
 }
 
+.story-swipe-onboarding {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(2, 6, 23, 0.48), rgba(2, 6, 23, 0.32));
+    opacity: 1;
+    transition: opacity 220ms ease;
+}
+
+.story-swipe-onboarding.is-hidden {
+    opacity: 0;
+}
+
+.story-swipe-onboarding-inner {
+    display: grid;
+    justify-items: center;
+    gap: 0.65rem;
+    color: #fff;
+    padding: 0.7rem 0.95rem;
+    border-radius: 0.9rem;
+    background: rgba(2, 6, 23, 0.64);
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    box-shadow: 0 12px 34px rgba(2, 6, 23, 0.44);
+}
+
+.story-swipe-onboarding-hand {
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.36);
+    box-shadow: 0 10px 28px rgba(2, 6, 23, 0.34);
+    animation: storySwipeOnboardingHand 580ms ease-out infinite;
+}
+
+.story-swipe-onboarding-label {
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+    text-shadow: 0 3px 12px rgba(2, 6, 23, 0.85);
+}
+
+@keyframes storySwipeOnboardingHand {
+    0% {
+        transform: translateY(-8px);
+        opacity: 0.7;
+    }
+    70% {
+        transform: translateY(22px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(28px);
+        opacity: 0.75;
+    }
+}
+
 .story-screen--engagement .story-screen-overlay {
     background:
         radial-gradient(circle at 12% 14%, rgba(34, 197, 94, 0.24) 0%, transparent 42%),
@@ -150,10 +224,21 @@
     background: linear-gradient(180deg, rgba(2, 6, 23, 0.62), rgba(2, 6, 23, 0));
 }
 
+.story-top::before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin: 0.1rem auto 0.42rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.46);
+    pointer-events: none;
+}
+
 .story-actions {
     position: sticky;
     bottom: 0;
-    padding: 0.45rem max(1rem, env(safe-area-inset-right)) max(0.45rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
+    padding: 0.45rem max(1rem, env(safe-area-inset-right)) max(1.6rem, calc(env(safe-area-inset-bottom) + 1rem)) max(1rem, env(safe-area-inset-left));
     background: linear-gradient(0deg, rgba(2, 6, 23, 0.72), rgba(2, 6, 23, 0));
 }
 
@@ -952,6 +1037,7 @@ body.explora-layout #explora-player .story-screen {
         padding-bottom: 2rem;
     }
 }
+
 
 /* Premium suggestion interstitials */
 .story-screen--suggestion-premium {
