@@ -33,9 +33,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20260306170415">
+    <link rel="stylesheet" href="css/style.css?v=20260306172432">
     <link rel="stylesheet" href="css/stories.css?v=20260301193000">
-    <script type="module" src="js/main.js?v=20260306170415"></script>
+    <script type="module" src="js/main.js?v=20260306172432"></script>
     </head>
 
 <body class="bg-slate-50 text-slate-900 min-h-screen">
@@ -173,14 +173,16 @@
                         <div class="afinidad-home-content relative z-10 flex w-full flex-col items-center justify-center text-center">
                             <div class="feature-icon w-12 h-12 rounded-xl bg-violet-100/70 flex items-center justify-center group-hover:bg-violet-200/80 transition-colors">
                                 <i class="fa-solid fa-heart-pulse text-violet-700 text-lg"></i>
+                                <span class="afinidad-complete-badge" aria-hidden="true">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
                             </div>
                             <div class="afinidad-home-textcol mt-4 flex flex-col items-center">
                                 <span id="afinidad-home-label" class="font-bold text-[#4c1d95]">¿Qué partido piensa como tú?</span>
                             </div>
                             <div class="afinidad-home-cta mt-3 flex flex-col items-center gap-3">
                                 <p id="afinidad-home-subtitle" class="text-sm text-violet-700/80 font-normal">Responde al cuestionario en 3 minutos y descubre tu afinidad real</p>
-                                <a id="btn-goto-afinidad" href="#/afinidad"
-                                    class="inline-flex items-center justify-center rounded-xl bg-violet-700 px-5 py-2.5 text-sm font-semibold text-white transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2">
+                                <a id="btn-goto-afinidad" href="#/afinidad" class="home-afinidad-cta">
                                     Empezar
                                 </a>
                             </div>
@@ -802,8 +804,8 @@
         </div>
     </footer>
 
-    <script src="js/analytics.js?v=20260306170415"></script>
-    <script type="module" src="js/main.js?v=20260306170415"></script>
+    <script src="js/analytics.js?v=20260306172432"></script>
+    <script type="module" src="js/main.js?v=20260306172432"></script>
 </body>
 
 </html>
