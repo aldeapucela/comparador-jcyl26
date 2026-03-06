@@ -1,0 +1,1122 @@
+{
+  "bloque_informacion": {
+    "rango_paginas": "Web",
+    "estado": "finalizado"
+  },
+  "metadatos": {
+    "partido": "Ciudadanos",
+    "candidato": "Mitzin Mariana Trápaga Peñaflor",
+    "foto_candidato": "img/candidatos/mitzin-trapaga.png",
+    "color": "#eb6109",
+    "lema": "Vota Valiente",
+    "anio": 2026,
+    "logo": "img/ciudadanos.png",
+    "programa_url": "https://www.castillayleonvaliente.es/",
+    "zonas": [
+      "Ávila",
+      "Burgos",
+      "León",
+      "Salamanca",
+      "Soria",
+      "Valladolid",
+      "Zamora"
+    ]
+  },
+  "propuestas": [
+    {
+      "id": 1,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y actividad económica",
+      "titulo_corto": "Bonificar empleo estable en la España vaciada",
+      "resumen": "Asumir parte de las cotizaciones empresariales para incentivar contratos estables en municipios con poca población.",
+      "cita_literal": "Incentivos a la contratación. Hasta el 25% de la cuota empresarial por trabajador durante cuatro años en zonas despobladas, y hasta el 50% en los municipios con menor densidad. Crear empleo estable aquí tendrá premio.",
+      "pagina": 1,
+      "tags": [
+        "#Empleo",
+        "#DesarrolloRural",
+        "#Empresas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con bonificar empleo estable en la España vaciada?"
+    },
+    {
+      "id": 2,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y actividad económica",
+      "titulo_corto": "Reducir cuota a autónomos en zonas despobladas",
+      "resumen": "Cubrir el 50% de la cotización durante dos años para favorecer actividad económica en zonas con pérdida de población.",
+      "cita_literal": "Autónomos en zonas despobladas, tu cuota a la mitad. Programa autonómico que cubre hasta el 50% de la cuota durante dos años. Si apuestas por esta tierra, la administración apostará por ti.",
+      "pagina": 1,
+      "tags": [
+        "#Empleo",
+        "#Autonomos",
+        "#Empresas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reducir cuota a autónomos en zonas despobladas?"
+    },
+    {
+      "id": 3,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y actividad económica",
+      "titulo_corto": "Cuota cero para autónomos con bebés",
+      "resumen": "Eximir de cuota durante doce meses a autónomos con hijos menores de un año.",
+      "cita_literal": "Cuota cero si tienes un hijo. Ayuda del 100% de la cuota durante un año para autónomos con hijos menores de un año. Facilitaremos la natalidad y que continúes con tu negocio.",
+      "pagina": 1,
+      "tags": [
+        "#Empleo",
+        "#Autonomos",
+        "#Empresas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con cuota cero para autónomos con bebés?"
+    },
+    {
+      "id": 4,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y actividad económica",
+      "titulo_corto": "Rebaja autonómica del IRPF en municipios en riesgo",
+      "resumen": "Aplicar deducciones fiscales reforzadas a residentes en áreas con despoblación.",
+      "cita_literal": "Menos IRPF si vives donde más falta haces. Deducciones de hasta el 30% en el tramo autonómico del IRPF para residentes en zonas despobladas.",
+      "pagina": 1,
+      "tags": [
+        "#Empleo",
+        "#DesarrolloRural",
+        "#Fiscalidad"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con rebaja autonómica del IRPF en municipios en riesgo?"
+    },
+    {
+      "id": 5,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y actividad económica",
+      "titulo_corto": "Aliviar cargas a pymes en fase de crecimiento",
+      "resumen": "Elevar umbrales regulatorios para evitar que crecer implique nuevas trabas administrativas inmediatas.",
+      "cita_literal": "Empresas que crecen sin corsés. Umbrales más altos antes de asumir nuevas cargas administrativas. Crecer no puede ser un castigo.",
+      "pagina": 1,
+      "tags": [
+        "#Empleo",
+        "#DesarrolloRural",
+        "#Empresas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aliviar cargas a pymes en fase de crecimiento?"
+    },
+    {
+      "id": 6,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y actividad económica",
+      "titulo_corto": "Red de espacios comarcales para teletrabajar",
+      "resumen": "Habilitar centros de trabajo remoto en comarcas para facilitar empleo digital sin salir del entorno local.",
+      "cita_literal": "Centros de teletrabajo comarcales. Teletrabajar desde tu pueblo será tan fácil como desde una capital.",
+      "pagina": 1,
+      "tags": [
+        "#Empleo",
+        "#DesarrolloRural",
+        "#Empresas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con red de espacios comarcales para teletrabajar?"
+    },
+    {
+      "id": 7,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y actividad económica",
+      "titulo_corto": "Impulso minero vinculado a empleo local",
+      "resumen": "Impulsar recursos estratégicos como palanca industrial y laboral en territorios con menos oportunidades.",
+      "cita_literal": "Minería estratégica. Tungsteno, tierras raras y empleo local en las zonas que más lo necesitan.",
+      "pagina": 1,
+      "tags": [
+        "#Empleo",
+        "#DesarrolloRural",
+        "#Empresas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con impulso minero vinculado a empleo local?"
+    },
+    {
+      "id": 8,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y actividad económica",
+      "titulo_corto": "Derogar burocracia al aprobar nuevas normas",
+      "resumen": "Retirar dos regulaciones antiguas por cada norma nueva para reducir complejidad administrativa.",
+      "cita_literal": "Por cada nueva norma, dos viejas fuera. Simplificación real. Más facilidades y menos cargas.",
+      "pagina": 1,
+      "tags": [
+        "#Empleo",
+        "#DesarrolloRural",
+        "#Empresas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con derogar burocracia al aprobar nuevas normas?"
+    },
+    {
+      "id": 9,
+      "categoria": "Economía, Empleo y Fiscalidad",
+      "subcategoria": "Empleo y actividad económica",
+      "titulo_corto": "Revisar cada año el impacto de las medidas",
+      "resumen": "Introducir evaluación pública periódica para corregir políticas que no cumplan objetivos.",
+      "cita_literal": "Evaluación para que funcione. Evaluación anual con indicadores públicos. Lo que no funciona, se corrige.",
+      "pagina": 1,
+      "tags": [
+        "#Empleo",
+        "#DesarrolloRural",
+        "#Empresas"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con revisar cada año el impacto de las medidas?"
+    },
+    {
+      "id": 10,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso y mercado de alquiler",
+      "titulo_corto": "Financiación sin intereses para primera vivienda",
+      "resumen": "Facilitar compra o rehabilitación de vivienda habitual con apoyo público, incluyendo el medio rural.",
+      "cita_literal": "Préstamos sin interés para tu primera vivienda. Para adquisición y rehabilitación, con plan específico para el mundo rural.",
+      "pagina": 1,
+      "tags": [
+        "#Vivienda",
+        "#AccesoVivienda",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con financiación sin intereses para primera vivienda?"
+    },
+    {
+      "id": 11,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso y mercado de alquiler",
+      "titulo_corto": "Aval público para dar seguridad al alquiler",
+      "resumen": "Actuar como garante público para reducir impagos y aumentar oferta de vivienda en alquiler.",
+      "cita_literal": "Garantía Pública del Alquiler. La administración como avalista. Cobro garantizado al propietario, vivienda estable para el inquilino. Más confianza, más pisos en el mercado y mejores precios.",
+      "pagina": 1,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con aval público para dar seguridad al alquiler?"
+    },
+    {
+      "id": 12,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso y mercado de alquiler",
+      "titulo_corto": "Ventajas fiscales a rentas de alquiler asequible",
+      "resumen": "Otorgar incentivos tributarios autonómicos a propietarios que alquilen por debajo de precios tensionados.",
+      "cita_literal": "Incentivos fiscales para alquiler moderado. Si pones tu vivienda a precios accesibles, tendrás ventajas fiscales. La solución no es intervenir, sino que al propietario le compense.",
+      "pagina": 1,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con ventajas fiscales a rentas de alquiler asequible?"
+    },
+    {
+      "id": 13,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso y mercado de alquiler",
+      "titulo_corto": "Rehabilitar casas a cambio de alquiler asequible",
+      "resumen": "Financiar mejoras de viviendas privadas con compromiso temporal de destinarlas a alquiler protegido.",
+      "cita_literal": "Rehabilitación para alquiler protegido. Financiación pública para mejorar viviendas a cambio de alquiler asequible. Cumplido el plazo, recuperarás tu vivienda rehabilitada.",
+      "pagina": 1,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con rehabilitar casas a cambio de alquiler asequible?"
+    },
+    {
+      "id": 14,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso y mercado de alquiler",
+      "titulo_corto": "Crear una ventanilla única de alquiler público",
+      "resumen": "Concentrar toda la oferta pública de alquiler en una plataforma común para mejorar transparencia y acceso.",
+      "cita_literal": "Bolsa pública única de alquiler. Plataforma transparente que centralice toda la oferta pública. Fin a las irregularidades.",
+      "pagina": 1,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con crear una ventanilla única de alquiler público?"
+    },
+    {
+      "id": 15,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso y mercado de alquiler",
+      "titulo_corto": "Liberar suelo y acortar trámites urbanísticos",
+      "resumen": "Aumentar oferta residencial reduciendo barreras administrativas y tiempos de desarrollo urbanístico.",
+      "cita_literal": "Más suelo, menos burocracia. Liberar suelo edificable y simplificar trámites. La burocracia encarece la vivienda antes de poner el primer ladrillo.",
+      "pagina": 1,
+      "tags": [
+        "#Vivienda",
+        "#AccesoVivienda",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con liberar suelo y acortar trámites urbanísticos?"
+    },
+    {
+      "id": 16,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso y mercado de alquiler",
+      "titulo_corto": "Herramientas contra morosidad y ocupación",
+      "resumen": "Reforzar protección de la propiedad para incrementar seguridad jurídica y ampliar oferta de alquiler.",
+      "cita_literal": "Registro de morosos y ocupas. Tu propiedad protegida. El respeto a la propiedad genera confianza, y la confianza genera oferta.",
+      "pagina": 1,
+      "tags": [
+        "#Vivienda",
+        "#AccesoVivienda",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con herramientas contra morosidad y ocupación?"
+    },
+    {
+      "id": 17,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso y mercado de alquiler",
+      "titulo_corto": "Mayor contribución vecinal de viviendas turísticas",
+      "resumen": "Aplicar una cuota comunitaria reforzada a viviendas turísticas para compensar impactos en residentes.",
+      "cita_literal": "Pisos turísticos. Doble cuota a la comunidad de vecinos. Compensación para los principales afectados.",
+      "pagina": 1,
+      "tags": [
+        "#Vivienda",
+        "#Alquiler",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con mayor contribución vecinal de viviendas turísticas?"
+    },
+    {
+      "id": 18,
+      "categoria": "Vivienda",
+      "subcategoria": "Acceso y mercado de alquiler",
+      "titulo_corto": "Pago de impuestos con inmuebles",
+      "resumen": "Aceptar determinados bienes inmuebles como forma de pago de tributos autonómicos.",
+      "cita_literal": "Fincas por impuestos. Listado de impuestos autonómicos que podrán pagarse con inmuebles. Te liberas de cargas y generamos más suelo productivo.",
+      "pagina": 1,
+      "tags": [
+        "#Vivienda",
+        "#AccesoVivienda",
+        "#Seguridad"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con pago de impuestos con inmuebles?"
+    },
+    {
+      "id": 19,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención rural y accesibilidad",
+      "titulo_corto": "Generalizar videoconsulta en la sanidad pública",
+      "resumen": "Ampliar la atención telemática para reducir desplazamientos y mejorar continuidad asistencial.",
+      "cita_literal": "Videoconsultas públicas. La privada ya las ofrece, la pública también lo hará. Menos desplazamientos, más atención.",
+      "pagina": 1,
+      "tags": [
+        "#SanidadPublica",
+        "#AtencionPrimaria",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con generalizar videoconsulta en la sanidad pública?"
+    },
+    {
+      "id": 20,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención rural y accesibilidad",
+      "titulo_corto": "Refuerzo de plantillas y condiciones sanitarias",
+      "resumen": "Reforzar plantillas sanitarias, formación y capacidad profesional de enfermería.",
+      "cita_literal": "Más plantilla y mejores condiciones para médicos y enfermería. Aumento de plantilla, mejor formación, mayor protagonismo de enfermería. Si queremos más sanitarios en los pueblos, hay que mejorar sus condiciones.",
+      "pagina": 1,
+      "tags": [
+        "#SanidadPublica",
+        "#AtencionPrimaria",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con refuerzo de plantillas y condiciones sanitarias?"
+    },
+    {
+      "id": 21,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención rural y accesibilidad",
+      "titulo_corto": "Primeros intervinientes y desfibriladores en pueblos",
+      "resumen": "Desplegar una red de respuesta temprana rural con formación en emergencias básicas.",
+      "cita_literal": "Red de primeros auxilios rurales. Crearemos la figura del primer interviniente rural formado en primeros auxilios, ampliaremos la implantación de desfibriladores y formación en RCP. Donde la ambulancia tarda en llegar, cada minuto cuenta.",
+      "pagina": 1,
+      "tags": [
+        "#SanidadPublica",
+        "#AtencionPrimaria",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con primeros intervinientes y desfibriladores en pueblos?"
+    },
+    {
+      "id": 22,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención rural y accesibilidad",
+      "titulo_corto": "Farmacias rurales como apoyo asistencial",
+      "resumen": "Integrar a las farmacias rurales en seguimiento de constantes y acceso guiado a atención remota.",
+      "cita_literal": "Farmacias rurales como puntos de salud. Ayudarán con toma de constantes, envío de datos y videoconsulta asistida. La farmacia de tu pueblo, también podrá ser tu punto de salud.",
+      "pagina": 1,
+      "tags": [
+        "#SanidadPublica",
+        "#AtencionPrimaria",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con farmacias rurales como apoyo asistencial?"
+    },
+    {
+      "id": 23,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención rural y accesibilidad",
+      "titulo_corto": "Unidades sanitarias móviles con calendario público",
+      "resumen": "Acercar pruebas y atención mediante equipos itinerantes donde no hay servicios estables de proximidad.",
+      "cita_literal": "Equipos sanitarios itinerantes. Con calendario público y equipos diagnósticos que van donde estás tú.",
+      "pagina": 1,
+      "tags": [
+        "#SanidadPublica",
+        "#AtencionPrimaria",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con unidades sanitarias móviles con calendario público?"
+    },
+    {
+      "id": 24,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención rural y accesibilidad",
+      "titulo_corto": "Atención psicológica rural presencial y remota",
+      "resumen": "Incorporar salud mental en primaria rural con formato itinerante y apoyo por videoconsulta.",
+      "cita_literal": "Psicólogos en Atención Primaria rural. Itinerantes y por videoconsulta. La salud mental no es un lujo: es prevención.",
+      "pagina": 1,
+      "tags": [
+        "#SanidadPublica",
+        "#AtencionPrimaria",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con atención psicológica rural presencial y remota?"
+    },
+    {
+      "id": 25,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención rural y accesibilidad",
+      "titulo_corto": "Cobertura dental básica para mayores rurales",
+      "resumen": "Garantizar atención bucodental esencial para mayores de 65 años con unidades móviles comarcales.",
+      "cita_literal": "Salud bucodental gratuita para mayores de 65 años. Para atenciones de primera necesidad, con unidades móviles de odontología en cabeceras comarcales. La boca es la puerta de enfermedades que podemos evitar.",
+      "pagina": 1,
+      "tags": [
+        "#SanidadPublica",
+        "#AtencionPrimaria",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con cobertura dental básica para mayores rurales?"
+    },
+    {
+      "id": 26,
+      "categoria": "Sanidad Pública",
+      "subcategoria": "Atención rural y accesibilidad",
+      "titulo_corto": "Teléfono sanitario 900 para orientación inmediata",
+      "resumen": "Habilitar una línea gratuita para resolver dudas clínicas y evitar desplazamientos innecesarios.",
+      "cita_literal": "Teléfono 900 de orientación médica. Pediátrico y para adultos. Orientación gratuita e inmediata que evita desplazamientos.",
+      "pagina": 1,
+      "tags": [
+        "#SanidadPublica",
+        "#AtencionPrimaria",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con teléfono sanitario 900 para orientación inmediata?"
+    },
+    {
+      "id": 27,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Gobernanza rural",
+      "titulo_corto": "Vicepresidencia específica para el medio rural",
+      "resumen": "Incorporar una vicepresidencia autonómica dedicada a coordinar políticas rurales.",
+      "cita_literal": "Vicepresidencia de Medio Rural. Un Vicepresidente que coordine y mejore todas las políticas rurales, y que represente a Castilla y León en foros donde se decida el futuro del campo.",
+      "pagina": 1,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#Gobernanza"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con vicepresidencia específica para el medio rural?"
+    },
+    {
+      "id": 28,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Competitividad y relevo",
+      "titulo_corto": "Blindar rentabilidad agraria con precios justos",
+      "resumen": "Proteger al productor frente a competencia desleal y reforzar liquidez del sector primario.",
+      "cita_literal": "Defensa del sector agrario y precios justos. Exigencia de mismos estándares para productos importados, flexibilizaremos la PAC y adelantaremos pagos hasta un 90% y reduciremos impuestos en el mundo agrícola. Prohibición de la venta a pérdidas y precios justos que garanticen ganancias.",
+      "pagina": 1,
+      "tags": [
+        "#SectorPrimario",
+        "#Agricultura",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con blindar rentabilidad agraria con precios justos?"
+    },
+    {
+      "id": 29,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Competitividad y relevo",
+      "titulo_corto": "Digitalizar el campo con IA y riego inteligente",
+      "resumen": "Modernizar el campo con monitorización avanzada para mejorar productividad y eficiencia.",
+      "cita_literal": "Tecnología e innovación agrícola. Drones de supervisión, inteligencia artificial y riego inteligente. Producir más con menos. Nuestro campo ya es potencia europea. Con tecnología, será imbatible.",
+      "pagina": 1,
+      "tags": [
+        "#SectorPrimario",
+        "#Agricultura",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con digitalizar el campo con IA y riego inteligente?"
+    },
+    {
+      "id": 30,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Competitividad y relevo",
+      "titulo_corto": "Clústeres agroindustriales para retener valor",
+      "resumen": "Integrar producción y transformación local para elevar márgenes y empleo.",
+      "cita_literal": "Agroindustria inteligente. Clústeres locales que conectan cooperativas y hubs digitales para aumentar ganancias. Menos intermediarios, más margen para el productor y más empleo directo.",
+      "pagina": 1,
+      "tags": [
+        "#SectorPrimario",
+        "#Agricultura",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con clústeres agroindustriales para retener valor?"
+    },
+    {
+      "id": 31,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Transición energética y recursos",
+      "titulo_corto": "Compensar a municipios por servicios ecosistémicos",
+      "resumen": "Compensar a ayuntamientos que preserven entornos naturales por su función ambiental.",
+      "cita_literal": "Pagos por cuidar la tierra. Compensación directa a municipios que protegen bosques, riberas y humedales. Cuidar nuestro entorno será rentable.",
+      "pagina": 1,
+      "tags": [
+        "#MedioAmbiente",
+        "#Agua",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con compensar a municipios por servicios ecosistémicos?"
+    },
+    {
+      "id": 32,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Transición energética y recursos",
+      "titulo_corto": "Plan hídrico con regadío eficiente y reutilización",
+      "resumen": "Modernizar infraestructuras de agua y reforzar resiliencia ante periodos de sequía.",
+      "cita_literal": "Gestión del agua. Modernización de regadíos, garantía de suministro en épocas de sequía y reutilización de aguas depuradas.",
+      "pagina": 1,
+      "tags": [
+        "#MedioAmbiente",
+        "#Agua",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con plan hídrico con regadío eficiente y reutilización?"
+    },
+    {
+      "id": 33,
+      "categoria": "Sector Primario (Agricultura y Ganadería)",
+      "subcategoria": "Competitividad y relevo",
+      "titulo_corto": "Atraer jóvenes y mujeres al trabajo agrario",
+      "resumen": "Incentivar relevo generacional en explotaciones agrarias para asegurar continuidad del sector.",
+      "cita_literal": "Relevo generacional. Incentivos para atraer más jóvenes y mujeres al campo para garantizar el futuro.",
+      "pagina": 1,
+      "tags": [
+        "#SectorPrimario",
+        "#Agricultura",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con atraer jóvenes y mujeres al trabajo agrario?"
+    },
+    {
+      "id": 34,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Transición energética y recursos",
+      "titulo_corto": "Pausa a nuevos macroparques sin almacenamiento",
+      "resumen": "Condicionar expansión renovable a capacidad real de absorción y a modelos de autoconsumo.",
+      "cita_literal": "Moratoria de nuevos parques eólicos y fotovoltaicos. No generar energía que no se absorbe ni abrir más instalaciones sin almacenamiento ni autoconsumo. Protegemos la viabilidad económica de las actuales.",
+      "pagina": 1,
+      "tags": [
+        "#MedioAmbiente",
+        "#Energia",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con pausa a nuevos macroparques sin almacenamiento?"
+    },
+    {
+      "id": 35,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Transición energética y recursos",
+      "titulo_corto": "Energía local a partir de biomasa y biometano",
+      "resumen": "Impulsar valorización de residuos para generar energía y actividad económica en territorio rural.",
+      "cita_literal": "Biometano y biomasa como fuentes de energía. Residuos convertidos en energía. Menos incendios, menos dependencia fósil, más actividad local.",
+      "pagina": 1,
+      "tags": [
+        "#MedioAmbiente",
+        "#Energia",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con energía local a partir de biomasa y biometano?"
+    },
+    {
+      "id": 36,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Emergencias y prevención",
+      "titulo_corto": "Prevención forestal permanente por comarcas",
+      "resumen": "Priorizar actuaciones preventivas continuas para reducir riesgo de incendios antes del verano.",
+      "cita_literal": "Prevención de incendios. Aumento de prevención sobre la superficie forestal, creación de cuadrillas comarcales y plan contra el abandono de parcelas. La mejor emergencia es la que no ocurre.",
+      "pagina": 1,
+      "tags": [
+        "#MedioAmbiente",
+        "#Incendios",
+        "#ServiciosPublicos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con prevención forestal permanente por comarcas?"
+    },
+    {
+      "id": 37,
+      "categoria": "Medio Ambiente y Energía",
+      "subcategoria": "Emergencias y prevención",
+      "titulo_corto": "Sistema autonómico profesionalizado de bomberos",
+      "resumen": "Avanzar hacia un modelo regional homogéneo y coordinado de emergencias contra incendios.",
+      "cita_literal": "Modelo regional de bomberos. Profesionalización y convergencia hacia un servicio único. Más eficiente, más seguro.",
+      "pagina": 1,
+      "tags": [
+        "#MedioAmbiente",
+        "#Incendios",
+        "#ServiciosPublicos"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con sistema autonómico profesionalizado de bomberos?"
+    },
+    {
+      "id": 38,
+      "categoria": "Reto Demográfico y Despoblación",
+      "subcategoria": "Financiación municipal",
+      "titulo_corto": "Más financiación y autonomía para pequeños municipios",
+      "resumen": "Reforzar recursos locales y simplificar gestión para mejorar servicios en pueblos.",
+      "cita_literal": "Aumento de la financiación rural. Más recursos y trámites más sencillos y creación de un Estatuto del Pequeño Municipio, para que los pueblos puedan dar servicio con más calidad.",
+      "pagina": 1,
+      "tags": [
+        "#RetoDemografico",
+        "#MedioRural",
+        "#Municipios"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con más financiación y autonomía para pequeños municipios?"
+    },
+    {
+      "id": 39,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Movilidad y conectividad rural",
+      "titulo_corto": "Transporte bajo demanda apoyado en tecnología",
+      "resumen": "Adaptar frecuencias de transporte rural con rutas flexibles ajustadas a la demanda real.",
+      "cita_literal": "Transporte rural inteligente. Inteligencia artificial para rutas flexibles. El bus que viene cuando lo necesitas, no cuando nadie lo usa.",
+      "pagina": 1,
+      "tags": [
+        "#Movilidad",
+        "#Digitalizacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con transporte bajo demanda apoyado en tecnología?"
+    },
+    {
+      "id": 40,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Movilidad y conectividad rural",
+      "titulo_corto": "Oficinas comarcales de acompañamiento digital",
+      "resumen": "Crear puntos de ayuda para trámites electrónicos dirigidos a población con brecha digital.",
+      "cita_literal": "Asistencia digital en cada comarca. Puntos de apoyo digital para personas con menos conocimientos informáticos y para gestiones sin desplazarte. Nadie debería recorrer kilómetros para un trámite.",
+      "pagina": 1,
+      "tags": [
+        "#Movilidad",
+        "#Digitalizacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con oficinas comarcales de acompañamiento digital?"
+    },
+    {
+      "id": 41,
+      "categoria": "Conectividad y Movilidad",
+      "subcategoria": "Movilidad y conectividad rural",
+      "titulo_corto": "Conectividad equivalente entre ciudad y pueblo",
+      "resumen": "Garantizar internet con prestaciones y precios comparables en todo el territorio.",
+      "cita_literal": "Internet en todos los pueblos. Acceso y costes equivalentes a los de las ciudades. Igualdad digital es igualdad de oportunidades.",
+      "pagina": 1,
+      "tags": [
+        "#Movilidad",
+        "#Digitalizacion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con conectividad equivalente entre ciudad y pueblo?"
+    },
+    {
+      "id": 42,
+      "categoria": "Otros",
+      "subcategoria": "Integración y cohesión social",
+      "titulo_corto": "Integración laboral y social de nueva población",
+      "resumen": "Facilitar inserción laboral y arraigo con aprendizaje de idioma, homologación de títulos y acompañamiento.",
+      "cita_literal": "Inmigración e integración para sumar. Planes de cohesión social, apoyo en el idioma, acompañamiento y homologación ágil de títulos para quienes vienen a trabajar.",
+      "pagina": 1,
+      "tags": [
+        "#Derechos",
+        "#Inmigracion",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Shared",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con integración laboral y social de nueva población?"
+    },
+    {
+      "id": 43,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Formación y talento",
+      "titulo_corto": "Escuelas infantiles como eje de arraigo rural",
+      "resumen": "Ampliar plazas y horarios de escuelas infantiles para facilitar conciliación y sostener población joven.",
+      "cita_literal": "Escuelas infantiles rurales. Apuesta por las familias con plazas garantizadas y horarios adaptados para conciliar. Sin escuela no hay familias.",
+      "pagina": 1,
+      "tags": [
+        "#Educacion",
+        "#Juventud",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con escuelas infantiles como eje de arraigo rural?"
+    },
+    {
+      "id": 44,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Formación y talento",
+      "titulo_corto": "Formación Profesional diseñada por comarca",
+      "resumen": "Adaptar la oferta de FP al tejido productivo comarcal para mejorar inserción laboral.",
+      "cita_literal": "FP ligada al territorio. Especialidades que respondan a lo que cada comarca necesita. Formarte aquí será un pasaporte al empleo.",
+      "pagina": 1,
+      "tags": [
+        "#Educacion",
+        "#Juventud",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con formación Profesional diseñada por comarca?"
+    },
+    {
+      "id": 45,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Formación y talento",
+      "titulo_corto": "Prácticas universitarias rurales con Becas Delibes",
+      "resumen": "Financiar prácticas en empresas del territorio para retener talento joven.",
+      "cita_literal": "Becas Delibes. Prácticas universitarias en empresas rurales. Conocer el territorio es el primer paso para querer quedarse.",
+      "pagina": 1,
+      "tags": [
+        "#Educacion",
+        "#Juventud",
+        "#MedioRural"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con prácticas universitarias rurales con Becas Delibes?"
+    },
+    {
+      "id": 46,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Formación y talento",
+      "titulo_corto": "Prueba de acceso universitaria homogénea en España",
+      "resumen": "Implantar una selectividad común para reducir desigualdades entre estudiantes por comunidad autónoma.",
+      "cita_literal": "Selectividad única. Misma prueba, misma dificultad en toda España. Nuestros alumnos merecen competir en igualdad.",
+      "pagina": 1,
+      "tags": [
+        "#Educacion",
+        "#Juventud",
+        "#IgualdadOportunidades"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con prueba de acceso universitaria homogénea en España?"
+    },
+    {
+      "id": 47,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Formación y talento",
+      "titulo_corto": "Educación financiera y emocional en secundaria",
+      "resumen": "Incorporar competencias financieras y emocionales en secundaria para mejorar autonomía personal.",
+      "cita_literal": "Educación financiera y emocional. En ESO y Bachillerato. Herramientas reales para que los jóvenes aprendan a gestionar su dinero y su vida.",
+      "pagina": 1,
+      "tags": [
+        "#Educacion",
+        "#Juventud",
+        "#IgualdadOportunidades"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con educación financiera y emocional en secundaria?"
+    },
+    {
+      "id": 48,
+      "categoria": "Educación y Futuro",
+      "subcategoria": "Formación y talento",
+      "titulo_corto": "Abaratar libros con ediciones compartidas y reutilización",
+      "resumen": "Reducir el coste de libros mediante reutilización y coordinación editorial entre comunidades.",
+      "cita_literal": "Libros de texto más baratos. Ediciones comunes con otras comunidades y vigencia editorial mínima de 4 años para que puedan ser reutilizados. Dos vías para que las familias paguen menos.",
+      "pagina": 1,
+      "tags": [
+        "#Educacion",
+        "#Juventud",
+        "#IgualdadOportunidades"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con abaratar libros con ediciones compartidas y reutilización?"
+    },
+    {
+      "id": 49,
+      "categoria": "Otros",
+      "subcategoria": "Cultura y deporte",
+      "titulo_corto": "Piscina olímpica para deporte base y eventos",
+      "resumen": "Combinar promoción deportiva, atracción de competiciones y retorno económico local con nueva infraestructura.",
+      "cita_literal": "Piscina olímpica con homologación internacional. Acogeremos competiciones y eventos de primer orden. Fomento del deporte de base y atracción económica.",
+      "pagina": 1,
+      "tags": [
+        "#Cultura",
+        "#Deporte",
+        "#Juventud"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con piscina olímpica para deporte base y eventos?"
+    },
+    {
+      "id": 50,
+      "categoria": "Otros",
+      "subcategoria": "Cultura y deporte",
+      "titulo_corto": "Premio literario de alto impacto para Castilla y León",
+      "resumen": "Crear un galardón de novela para reforzar proyección cultural de la comunidad.",
+      "cita_literal": "Premio Castilla y León de Novela. Reconocimiento de gran dotación económica para novelas ambientadas aquí. Cultura que proyecta nuestra tierra.",
+      "pagina": 1,
+      "tags": [
+        "#Cultura",
+        "#Deporte",
+        "#Juventud"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con premio literario de alto impacto para Castilla y León?"
+    },
+    {
+      "id": 51,
+      "categoria": "Otros",
+      "subcategoria": "Cultura y deporte",
+      "titulo_corto": "Circuitos culturales estables en municipios rurales",
+      "resumen": "Impulsar programación escénica en municipios pequeños para equilibrar acceso cultural territorial.",
+      "cita_literal": "Cultura en los pueblos. Ayudas para circuitos de artes escénicas en zonas rurales. Los pueblos merecen cultura de primera.",
+      "pagina": 1,
+      "tags": [
+        "#Cultura",
+        "#MedioRural",
+        "#Juventud"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": true
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con circuitos culturales estables en municipios rurales?"
+    },
+    {
+      "id": 52,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Reforma institucional",
+      "titulo_corto": "Reforma de financiación autonómica por infrafinanciación",
+      "resumen": "Reivindicar un nuevo reparto estatal de recursos que compense déficit histórico de la comunidad.",
+      "cita_literal": "Sistema de financiación autonómica a la altura. Compensación de la infrafinanciación histórica que ha recibido nuestra tierra.",
+      "pagina": 1,
+      "tags": [
+        "#Transparencia",
+        "#Participacion"
+      ],
+      "analisis": {
+        "competencia": "Petition",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforma de financiación autonómica por infrafinanciación?"
+    },
+    {
+      "id": 53,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Reforma institucional",
+      "titulo_corto": "Elección más personalizada de procuradores provinciales",
+      "resumen": "Reforzar vínculo directo entre representación en Cortes y ciudadanía de cada provincia.",
+      "cita_literal": "Un procurador elegido por ti. Una candidatura individual en cada provincia con representantes que respondan ante ti, no ante su partido. Nuestros procuradores lo harán desde el primer día.",
+      "pagina": 1,
+      "tags": [
+        "#Transparencia",
+        "#Participacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con elección más personalizada de procuradores provinciales?"
+    },
+    {
+      "id": 54,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Reforma institucional",
+      "titulo_corto": "Despachos parlamentarios abiertos con horario anual",
+      "resumen": "Establecer atención presencial periódica de procuradores para rendir cuentas ante vecinos.",
+      "cita_literal": "Despacho abierto para escucharte. Cada procurador tendrá un despacho abierto 300 horas al año. Lo haremos desde el primer día. Escuchar a los vecinos y rendir cuentas.",
+      "pagina": 1,
+      "tags": [
+        "#Transparencia",
+        "#Participacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con despachos parlamentarios abiertos con horario anual?"
+    },
+    {
+      "id": 55,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Reforma institucional",
+      "titulo_corto": "Límite de ocho años para cargos de gobierno",
+      "resumen": "Limitar mandatos del presidente y consejeros para evitar cronificación del poder.",
+      "cita_literal": "Regeneración real con limitación de mandatos. Máximo de 8 años consecutivos para el Presidente y consejeros.",
+      "pagina": 1,
+      "tags": [
+        "#Transparencia",
+        "#Participacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con límite de ocho años para cargos de gobierno?"
+    },
+    {
+      "id": 56,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Reforma institucional",
+      "titulo_corto": "Control externo con indicadores públicos de gestión",
+      "resumen": "Implantar seguimiento independiente de empleo, deuda, servicios y ejecución presupuestaria.",
+      "cita_literal": "Evaluación independiente del gobierno. Indicadores públicos de empleo, deuda, servicios y ejecución presupuestaria. Si algo no funciona, se sabrá y se corregirá.",
+      "pagina": 1,
+      "tags": [
+        "#Transparencia",
+        "#Participacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con control externo con indicadores públicos de gestión?"
+    },
+    {
+      "id": 57,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Reforma institucional",
+      "titulo_corto": "Topes a subvenciones de entidades dependientes",
+      "resumen": "Limitar financiación pública a organizaciones con baja autonomía financiera para mejorar transparencia.",
+      "cita_literal": "Tope a las subvenciones a organizaciones «independientes». Coeficientes que limiten las ayudas a organizaciones que dependen casi exclusivamente de fondos públicos. Autonomía real y transparencia.",
+      "pagina": 1,
+      "tags": [
+        "#Transparencia",
+        "#Participacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con topes a subvenciones de entidades dependientes?"
+    },
+    {
+      "id": 58,
+      "categoria": "Calidad Democrática y Transparencia",
+      "subcategoria": "Reforma institucional",
+      "titulo_corto": "Reforma interna de la administración autonómica",
+      "resumen": "Mejorar eficiencia administrativa combinando meritocracia, movilidad y teletrabajo en servicios públicos.",
+      "cita_literal": "Administración moderna. Movilidad de funcionarios, meritocracia en designaciones y teletrabajo. Menos burocracia interna, mejor servicio al ciudadano.",
+      "pagina": 1,
+      "tags": [
+        "#Transparencia",
+        "#Participacion"
+      ],
+      "analisis": {
+        "competencia": "Directa",
+        "foco_rural": false
+      },
+      "pregunta_afinidad": "¿Está de acuerdo con reforma interna de la administración autonómica?"
+    }
+  ]
+}
