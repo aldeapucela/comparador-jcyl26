@@ -483,11 +483,12 @@ body.explora-paused .story-progress-fill {
     line-height: 1.22;
     color: #fff;
     text-align: center;
+    text-transform: uppercase;
     text-wrap: balance;
     letter-spacing: 0.01em;
     text-shadow: 0 3px 18px rgba(2, 6, 23, 0.72);
     background: color-mix(in srgb, var(--party-color, #334155) 84%, #000 16%);
-    border-radius: 22px;
+    border-radius: 0;
     padding: 0.68rem 1.35rem;
     width: fit-content;
     max-width: 85%;
@@ -512,7 +513,7 @@ body.explora-paused .story-progress-fill {
     .story-video-subtitle-active {
         font-size: clamp(1rem, 4.9vw, 1.25rem);
         padding: 0.65rem 1.25rem;
-        border-radius: 20px;
+        border-radius: 0;
         max-width: 85%;
     }
 }
