@@ -662,8 +662,9 @@ export const UI = {
         
         const finalUrl = `${window.location.origin}${window.location.pathname}${pathWithoutQuery}?${params.toString()}`;
         const scopeText = selectedNames.length > 0 ? ` (${selectedNames.join(', ')})` : '';
-        const shareText = `Qué dicen sobre "${term}"${scopeText} en las elecciones a las Cortes de CyL 2026:\n\n${finalUrl}`;
-        const fullMessage = shareText;
+        const shareTextWithUrl = `Qué dicen sobre "${term}"${scopeText} en las elecciones a las Cortes de CyL 2026:\n\n${finalUrl}`;
+        const shareText = `Qué dicen sobre "${term}"${scopeText} en las elecciones a las Cortes de CyL 2026:`;
+        const fullMessage = shareTextWithUrl;
 
         if (navigator.share) {
             try {
