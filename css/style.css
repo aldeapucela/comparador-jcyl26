@@ -1575,6 +1575,27 @@ body.mobile-menu-open {
     color: #334155;
 }
 
+
+#header-home-link.header-title-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.72rem;
+}
+
+.header-brand-logo {
+    width: auto;
+    height: clamp(2.75rem, 4vw, 3.25rem);
+    opacity: 0.65;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.header-title-text {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.03;
+}
 #header-home-link:focus-visible {
     outline: 2px solid #94a3b8;
     outline-offset: 3px;
@@ -1582,7 +1603,7 @@ body.mobile-menu-open {
 }
 
 #header-subtitle {
-    margin-top: 0.28rem !important;
+    margin-top: 0.4rem !important;
 }
 
 
@@ -1641,8 +1662,11 @@ body.mobile-menu-open {
     #header-actions {
         width: auto;
         margin-left: auto;
-        justify-content: flex-end;
-        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+        gap: 0.4rem;
         flex-shrink: 0;
     }
 
@@ -1660,6 +1684,15 @@ body.mobile-menu-open {
         font-size: 1rem !important;
     }
 
+    #header-home-link.header-title-link {
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .header-brand-logo {
+        height: 2.15rem;
+    }
+
     #header-title {
         font-size: 1.45rem !important;
         line-height: 1.08 !important;
@@ -1670,13 +1703,10 @@ body.mobile-menu-open {
     #header-subtitle {
         font-size: 0.74rem !important;
         line-height: 1.25 !important;
-        margin-top: 0.15rem !important;
+        margin-top: 0.50rem !important;
         font-style: normal !important;
         color: #64748b !important;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        gap: 0.2rem;
+        display: block;
     }
 
 
@@ -1699,16 +1729,16 @@ body.mobile-menu-open {
         color: #cbd5e1 !important;
     }
 
-    #btn-back {
+    #btn-mobile-menu {
         order: 1;
+    }
+
+    #btn-back {
+        order: 2;
     }
 
     #btn-global-search {
         display: none;
-    }
-
-    #btn-mobile-menu {
-        order: 2;
     }
 
     .header-action-btn {

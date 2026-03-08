@@ -508,7 +508,7 @@ export function renderResults(results, { resultsZone = null } = {}) {
     
     // 1. Renderizar Ganador
     document.getElementById('afinidad-winner').innerHTML = `
-        <div class="bg-white rounded-2xl p-8 text-center border border-slate-200 shadow-sm">
+        <div class="bg-white rounded-2xl p-8 mt-4 text-center border border-slate-200 shadow-sm">
             ${resultsZone && appState?.selectedZone && resultsZone !== appState.selectedZone ? `
                 <div class="mb-4 rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-left text-xs text-amber-900">
                     <strong>Atención:</strong> este resultado se calculó para <strong>${getZoneLabel(resultsZone)}</strong> y ahora tienes seleccionada <strong>${getZoneLabel(appState.selectedZone)}</strong>.
