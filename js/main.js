@@ -250,11 +250,16 @@ function renderZoneSelector() {
     syncZoneSelectors();
     refreshZoneLabel();
     syncExploraZoneSelectWidth();
+    syncHeaderZoneSelectWidth();
 }
 
 function refreshZoneLabel() {
     const zone = appState.selectedZone || defaultZone || DEFAULT_FALLBACK_ZONE;
     const disclaimer = document.getElementById('home-zone-disclaimer');
+    const headerZoneLabel = document.getElementById('zone-select-label');
+    if (headerZoneLabel) {
+        headerZoneLabel.textContent = zone;
+    }
     if (disclaimer) {
         disclaimer.textContent = `Información basada en las principales formaciones que se presentan por ${zone} y que han publicado oficialmente un programa electoral.`;
     }
@@ -349,18 +354,20 @@ function syncZoneSelectors() {
     const exploraSelect = document.getElementById('explora-zone-select');
     if (headerSelect && headerSelect.value !== value) headerSelect.value = value;
     if (exploraSelect && exploraSelect.value !== value) exploraSelect.value = value;
+    syncHeaderZoneSelectWidth();
     syncExploraZoneSelectWidth();
 }
 
-function syncExploraZoneSelectWidth() {
-    const exploraSelect = document.getElementById('explora-zone-select');
-    if (!exploraSelect) return;
+function measureSelectTextWidth(select, fallbackText = '') {
+    if (!select) return 0;
+
     const selectedText = String(
-        exploraSelect.options?.[exploraSelect.selectedIndex]?.text || exploraSelect.value || ''
+        select.options?.[select.selectedIndex]?.text || select.value || fallbackText
     ).trim();
+
     const ruler = document.createElement('span');
-    const styles = window.getComputedStyle(exploraSelect);
-    ruler.textContent = selectedText || 'ZONA';
+    const styles = window.getComputedStyle(select);
+    ruler.textContent = selectedText || fallbackText;
     ruler.style.position = 'absolute';
     ruler.style.visibility = 'hidden';
     ruler.style.whiteSpace = 'pre';
@@ -372,6 +379,23 @@ function syncExploraZoneSelectWidth() {
     document.body.appendChild(ruler);
     const textWidth = Math.ceil(ruler.getBoundingClientRect().width);
     ruler.remove();
+    return textWidth;
+}
+
+function syncHeaderZoneSelectWidth() {
+    const headerSelect = document.getElementById('zone-select');
+    const headerZoneLabel = document.getElementById('zone-select-label');
+    const zoneSelectWrap = headerSelect?.closest('.zone-select-wrap');
+    if (!headerSelect || !headerZoneLabel || !zoneSelectWrap) return;
+
+    const textWidth = measureSelectTextWidth(headerSelect, 'Provincia');
+    zoneSelectWrap.style.width = `${Math.max(textWidth + 12, 40)}px`;
+}
+
+function syncExploraZoneSelectWidth() {
+    const exploraSelect = document.getElementById('explora-zone-select');
+    if (!exploraSelect) return;
+    const textWidth = measureSelectTextWidth(exploraSelect, 'ZONA');
     exploraSelect.style.width = `${Math.max(textWidth + 20, 90)}px`;
 }
 
@@ -1057,6 +1081,10 @@ function setupEventListeners() {
 
     // Hash change router
     window.addEventListener('hashchange', handleRouting);
+    window.addEventListener('resize', () => {
+        syncHeaderZoneSelectWidth();
+        syncExploraZoneSelectWidth();
+    });
     window.addEventListener('saved-proposals-changed', () => {
         syncHomeSavedEntryVisibility();
         if ((window.location.hash || '#/').startsWith('#/guardadas')) {

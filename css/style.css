@@ -294,28 +294,38 @@ body {
     display: inline-flex;
     align-items: center;
     position: relative;
-    padding-right: 0.72rem;
+    padding-right: 0.78rem;
+    line-height: 1;
+}
+
+.zone-select-label {
+    color: #1e3a8a;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
 }
 
 .zone-select-wrap select {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
     border: 0;
     border-radius: 0;
     background: transparent;
-    color: #1e3a8a;
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1;
-    padding: 0;
-    min-width: 0;
-    text-decoration: none;
+    color: transparent;
+    opacity: 0;
     cursor: pointer;
-    transition: color 0.2s ease;
+    min-width: 0;
 }
 
-.zone-select-wrap:hover select {
+.zone-select-wrap:hover .zone-select-label {
     color: #1e40af;
 }
 
@@ -323,12 +333,12 @@ body {
     content: '';
     position: absolute;
     right: 0;
-    top: 52%;
+    top: 44%;
     width: 0.46rem;
     height: 0.46rem;
     border-right: 1px solid #64748b;
     border-bottom: 1px solid #64748b;
-    transform: translateY(-58%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
     pointer-events: none;
 }
 
@@ -1715,6 +1725,10 @@ body.mobile-menu-open {
     }
 
     .zone-select-wrap select {
+        width: 100%;
+    }
+
+    .zone-select-label {
         font-size: 0.76rem;
     }
 
