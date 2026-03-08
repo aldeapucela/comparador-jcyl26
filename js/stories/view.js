@@ -317,14 +317,6 @@ function renderCandidateVideoCard(container, data = {}) {
                 </div>
                 <div class="story-meta-row">
                     <span class="story-counter">Vídeo</span>
-                    <button type="button"
-                        id="btn-story-video-audio-toggle"
-                        class="story-video-audio-btn"
-                        aria-label="Silenciar vídeo"
-                        aria-pressed="false"
-                        title="Silenciar vídeo">
-                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
-                    </button>
                 </div>
                 <div class="story-party-row">
                     <button type="button" class="story-party-link btn-story-party" data-party="${escapeHtml(party.id)}" aria-label="Ir al programa de ${escapeHtml(party.name)}">
@@ -344,6 +336,14 @@ function renderCandidateVideoCard(container, data = {}) {
                     <i class="fa-solid fa-share-nodes"></i>
                 </button>
             </footer>
+            <button type="button"
+                id="btn-story-video-audio-toggle"
+                class="story-video-audio-btn story-video-audio-btn--floating"
+                aria-label="Silenciar vídeo"
+                aria-pressed="false"
+                title="Silenciar vídeo">
+                <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+            </button>
             <div class="story-video-subtitles-wrap" aria-live="polite" aria-atomic="true">
                 <div id="story-video-subtitle-active" class="story-video-subtitle-active"></div>
             </div>
