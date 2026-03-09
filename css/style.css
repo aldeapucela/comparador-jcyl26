@@ -332,8 +332,8 @@ body {
 .zone-select-wrap::after {
     content: '';
     position: absolute;
-    right: 0;
-    top: 44%;
+    right: -11px;
+    top: 32%;
     width: 0.46rem;
     height: 0.46rem;
     border-right: 1px solid #64748b;
@@ -1735,6 +1735,7 @@ body.mobile-menu-open {
     .zone-select-wrap::after {
         width: 0.34rem;
         height: 0.34rem;
+        right: -2px !important;
     }
 
     #header-byline {
