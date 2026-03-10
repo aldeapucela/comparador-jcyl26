@@ -282,6 +282,7 @@ function refreshAfinidadAvailabilityUI() {
     const homeButton = document.getElementById('btn-goto-afinidad');
     const homeLabel = document.getElementById('afinidad-home-label');
     const homeSubtitle = document.getElementById('afinidad-home-subtitle');
+    const homeSocialProof = document.getElementById('afinidad-home-social-proof');
     const mobileMenuLabel = document.getElementById('mobile-menu-afinidad-label');
 
     if (homeCard) {
@@ -312,6 +313,9 @@ function refreshAfinidadAvailabilityUI() {
             ? (hasCompletedResults ? '' : 'Haz el cuestionario en 3 minutos y descubre tu afinidad real')
             : `Aún no disponible en ${appState.selectedZone}`;
         homeSubtitle.classList.toggle('hidden', isEnabled && hasCompletedResults);
+    }
+    if (homeSocialProof) {
+        homeSocialProof.classList.toggle('hidden', isEnabled && hasCompletedResults);
     }
     if (mobileMenuLabel) {
         mobileMenuLabel.textContent = 'Cuestionario de afinidad';
